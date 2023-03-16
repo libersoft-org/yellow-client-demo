@@ -1,0 +1,28 @@
+html, body {
+ height: 100%;
+ margin: 0;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+ display: flex;
+ height: 100%;
+}
+
+.panel {
+ height: 100%;
+ overflow: auto;
+ resize: horizontal;
+ border-right: 3px solid #000;
+}
+
+.left-panel {
+ background-color: #6ba1ff;
+ width: 50%;
+}
+
+.right-panel {
+ background-color: #85ffab;
+ width: 50%;
+ box-sizing: border-box;
+}
