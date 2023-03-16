@@ -1,4 +1,3 @@
-- hide semi-transparent resizer
 - add check icon to conversations list
 - fix conversations CSS
 - shadow is not working
@@ -11,3 +10,4 @@
 - fix icons position in user bar
 - remove red background from icons
 - adjust for mobile resolution
+- add menu
