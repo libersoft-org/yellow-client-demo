@@ -1,10 +1,65 @@
+:root {
+ --primary-color-hue: 49;
+ --primary-color-sat: 97%;
+ --primary-color-lig: 53%;
+ --primary-color: hsl(var(--primary-color-hue), var(--primary-color-sat), var(--primary-color-lig));
+ --secondary-color: #336699;
+ --panel-left-width: 400px;
+ --resizer-width: 5px;
+ --bar-height: 64px;
+}
+
 html, body {
  height: 100%;
+}
+
+body {
  margin: 0;
  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.container {
+a {
+ cursor: pointer;
+}
+
+input {
+ padding: 10px;
+ border-radius: 10px;
+ border: 1px solid #808080;
+ color: #000;
+}
+
+.icon {
+ padding: 10px;
+ width: 24px;
+ height: 24px;
+ background-color: red;
+}
+
+.shadow {
+ box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75)
+}
+
+.photo-circle {
+ border-radius: 50%;
+}
+
+.photo-circle.small {
+ width: 32px;
+ height: 32px;
+}
+
+.photo-circle.medium {
+ width: 50px;
+ height: 50px;
+}
+
+.photo-circle.large {
+ width: 100px;
+ height: 100px;
+}
+
+#page {
  display: flex;
  height: 100%;
 }
@@ -12,17 +67,124 @@ html, body {
 .panel {
  height: 100%;
  overflow: auto;
- resize: horizontal;
- border-right: 3px solid #000;
 }
 
-.left-panel {
- background-color: #6ba1ff;
- width: 50%;
+.panel.left {
+ width: var(--panel-left-width);
 }
 
-.right-panel {
- background-color: #85ffab;
- width: 50%;
- box-sizing: border-box;
+.panel.right {
+ width: calc(100% - var(--panel-left-width));
+}
+
+.resizer {
+ z-index: 100;
+ position: absolute;
+ width: var(--resizer-width);
+ height: 100%;
+ top: 0;
+ left: calc(var(--panel-left-width) - (var(--resizer-width) / 2));
+ cursor: ew-resize;
+ background-color: rgba(0, 0, 0, 0.2);
+}
+
+#searchbar, #userbar {
+ display: flex;
+ align-items: center;
+ padding: 0 10px;
+ height: var(--bar-height);
+ background-color: var(--primary-color);
+}
+
+#userbar .text {
+ text-overflow: ellipsis;
+ overflow: hidden;
+ white-space: nowrap;
+ padding-left: 10px;
+}
+
+#userbar .text .name {
+ font-size: 1.2em;
+ font-weight: bold;
+ color: #000;
+}
+
+#userbar .text .address {
+ font-size: 0.9em;
+ color: #303030;
+}
+
+#userbar .icons {
+ float: right;
+}
+
+#account {
+ padding: 0 10px;
+ display: flex;
+ align-items: center;
+ height: 50px;
+ background-color: #1D1D1D;
+}
+
+#account .text {
+ padding-left: 10px;
+ color: #FFFEF8;
+}
+
+#conversations {
+ height: calc(100% - var(--bar-height) - 50px);
+ background-color: hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 35%));
+}
+
+#conversations .conversation {
+ padding: 10px;
+ border-bottom: 1px solid #808080;
+}
+
+#conversations .conversation.active {
+ background-color: var(--primary-color);
+}
+
+#conversations .conversation .text .name {
+ text-overflow: ellipsis;
+ overflow: hidden;
+ white-space: nowrap;
+ font-weight: bold;
+}
+
+#conversations .conversation .text .message {
+ text-overflow: ellipsis;
+ overflow: hidden;
+ white-space: nowrap;
+}
+
+#conversations .conversation .status {
+ float: right;
+}
+
+#conversations .conversation .status .time {
+ font-size: 0.8em;
+ color: #808080;
+}
+
+#conversations .conversation .status .unread {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 30px;
+ height: 30px;
+ border-radius: 50%;
+ font-size: 0.8em;
+ font-weight: bold;
+ color: #FFFEF8;
+ background-color: var(--secondary-color);
+}
+
+#chat {
+ height: calc(100% - var(--bar-height) - 20px);
+ padding: 10px;
+ background-color: hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 40%));
+ background-image: url('../img/background/doodle.png');
+ background-repeat: repeat;
+ background-size: 300px;
 }

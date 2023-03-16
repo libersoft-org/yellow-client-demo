@@ -9,14 +9,37 @@
   <script src="js/functions.js"></script>
  </head>
  <body>
-  <div class="container">
-   <div class="panel left-panel">
-    <h2>Left panel</h2>
-    <p>Left panel content</p>
+  <div id="page">
+   <div class="panel left shadow">
+    <div id="searchbar">
+     <a class="icon" onclick="menu()"><img src="img/icons/menu.svg" alt="Menu" /></a>
+     <span class="search">
+      <input type="text" placeholder="Search ..." />
+     </span>
+    </div>
+    <div id="account">
+     <img class="photo-circle small" src="https://i.pravatar.cc/300?u=ownprofile" />
+     <span class="text">verylongname@verylongdomain.com</span>
+    </div>
+    <div id="conversations"></div>
    </div>
-   <div class="panel right-panel">
-    <h2>Right panel</h2>
-    <p>Right panel content</p>
+   <div class="resizer"></div>
+   <div class="panel right shadow">
+    <div id="userbar">
+     <img class="photo-circle medium" src="https://i.pravatar.cc/300?u=user2" />
+     <div class="text">
+      <div class="name">Veryveryvery Long Username - Some Other Company Ltd.</div>
+      <div class="address">
+       <a onclick="copy('extremelyultralongusername@veryveryverylongdomain.com')">extremelyultralongusername@veryveryveryveryveryveryverylongdomain.com</a>
+      </div>
+     </div>
+     <div class="icons">
+      <a class="icon" onclick=""><img src="img/icons/settings.svg" /></a>
+      <a class="icon" onclick=""><img src="img/icons/settings.svg" /></a>
+      <a class="icon" onclick=""><img src="img/icons/settings.svg" /></a>
+     </div>
+    </div>
+    <div id="chat">Chat</div>
    </div>
   </div>
  </body>

@@ -1,0 +1,11 @@
+- hide semi-transparent resizer
+- add check icon to conversations list
+- fix conversations CSS
+- shadow is not working
+- hide number of unread if it's zero
+- fix doodle background
+- bottom panel (text)
+- chat bubbles + days
+- adjust some icons without yellow square
+- add caret and its menu with other accounts to own profile (black bar)
+- remove red background from icons
