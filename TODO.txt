@@ -8,4 +8,6 @@
 - chat bubbles + days
 - adjust some icons without yellow square
 - add caret and its menu with other accounts to own profile (black bar)
+- fix icons position in user bar
 - remove red background from icons
+- adjust for mobile resolution
