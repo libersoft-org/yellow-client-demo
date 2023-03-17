@@ -12,3 +12,4 @@
 - add an ability to show just conversation icons (like telegram) when left panel is shrinked
 - remove outline when textbox is selected
 - remove red background from icons
+- add an open / close animation to menu
