@@ -1,12 +1,14 @@
-- fix chat bubbles
+- fix chat bubbles + put them on sides
 - fix conversations
 - fix menu design
 - shadow is not working
+- menu icon is not centerd verticaly
 - hide number of unread if it's zero
 - add checkmark icon to conversations list
 - fix icons position in user bar
 - add caret and its menu with other accounts to own profile (black bar)
 - adjust some icons without yellow square
 - adjust for mobile resolution
+- add an ability to show just conversation icons (like telegram) when left panel is shrinked
 - remove outline when textbox is selected
 - remove red background from icons

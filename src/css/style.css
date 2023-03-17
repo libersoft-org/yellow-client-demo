@@ -79,6 +79,7 @@ input {
 }
 
 .panel.left {
+ z-index: 200;
  width: var(--panel-left-width);
 }
 
@@ -157,6 +158,7 @@ input {
 }
 
 #conversations .conversation {
+ //display: flex;
  padding: 10px;
  border-bottom: 1px solid #808080;
 }
