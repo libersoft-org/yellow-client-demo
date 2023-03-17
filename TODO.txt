@@ -13,3 +13,4 @@
 - remove outline when textbox is selected
 - remove red background from icons
 - add an open / close animation to menu
+- add some example of voice message, video message, emoji / sticker, images, file
