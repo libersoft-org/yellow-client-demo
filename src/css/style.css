@@ -128,10 +128,11 @@ input {
 }
 
 #menu {
+ display: none;
  position: absolute;
  z-index: 200;
  top: var(--searchbar-height);
- width: 200px;
+ width: 300px;
  height: calc(100% - var(--searchbar-height));
  background-color: #FFFEF8;
 }

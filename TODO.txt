@@ -1,14 +1,12 @@
-- add check icon to conversations list
-- fix conversations CSS
+- fix chat bubbles
+- fix conversations
+- fix menu design
 - shadow is not working
 - hide number of unread if it's zero
-- fix doodle background
-- bottom panel (text)
-- chat bubbles + days
-- adjust some icons without yellow square
-- add caret and its menu with other accounts to own profile (black bar)
+- add checkmark icon to conversations list
 - fix icons position in user bar
-- remove red background from icons
+- add caret and its menu with other accounts to own profile (black bar)
+- adjust some icons without yellow square
 - adjust for mobile resolution
-- enlarge search bar
-- add menu
+- remove outline when textbox is selected
+- remove red background from icons
