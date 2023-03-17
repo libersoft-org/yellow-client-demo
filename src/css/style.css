@@ -104,6 +104,10 @@ input {
  background-color: var(--primary-color);
 }
 
+#searchbar .text {
+ width: 100%;
+}
+
 #userbar .text {
  padding-left: 10px;
 }
@@ -254,10 +258,11 @@ input {
  background-color: #1D1D1D;
 }
 
-#inputbar input {
+#inputbar .text {
+ width: 100%;
  border: 0;
  border-bottom: 1px solid #FFFEF8;
  border-radius: 0px;
- background-color: #1D1D1D;
  color: #FFFEF8;
+ background-color: #1D1D1D;
 }
