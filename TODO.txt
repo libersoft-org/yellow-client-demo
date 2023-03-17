@@ -10,4 +10,5 @@
 - fix icons position in user bar
 - remove red background from icons
 - adjust for mobile resolution
+- enlarge search bar
 - add menu

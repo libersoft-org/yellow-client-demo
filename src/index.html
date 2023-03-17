@@ -4,13 +4,14 @@
   <title>NEMP Web Client</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <link rel="shortcut icon" href="favicon.svg" />
   <script src="js/functions.js"></script>
  </head>
  <body>
   <div id="page">
-   <div class="panel left shadow">
+   <div class="panel left">
     <div id="searchbar">
      <a class="icon" onclick="menu()"><img src="img/icons/menu.svg" alt="Menu" /></a>
      <span class="search">
@@ -21,7 +22,7 @@
      <img class="photo-circle small" src="https://i.pravatar.cc/300?u=ownprofile" />
      <span class="text nowrap">verylongname@verylongdomain.com</span>
     </div>
-    <div id="conversations"></div>
+    <div id="conversations" class="shadow"></div>
    </div>
    <div class="resizer"></div>
    <div class="panel right">
@@ -39,7 +40,40 @@
       <a class="icon" onclick=""><img src="img/icons/settings.svg" /></a>
      </div>
     </div>
-    <div id="chat">Chat</div>
+    <div id="chat">
+     <div class="container">
+      <div class="date">17 March 2023</div>
+
+      <div class="message received">
+       <img class="photo-circle medium" src="https://i.pravatar.cc/300?u=user2" alt="NAME">
+       <div class="content">
+        <div class="text">Hi, how are you?</div>
+        <div class="meta">
+         <span class="time">14:23</span>
+         <span class="checkmark">✔</span>
+        </div>
+       </div>
+      </div>
+
+      <div class="message sent">
+       <img class="photo-circle medium" src="https://i.pravatar.cc/300?u=ownprofile" alt="NAME" />
+       <div class="content">
+        <div class="text">Hi, I am fine, thank you!</div>
+        <div class="meta">
+         <span class="time">14:25</span>
+         <span class="checkmark">✔</span>
+        </div>
+       </div>
+      </div>
+
+     </div>
+    </div>
+
+    <div id="inputbar">
+     <input type="text" placeholder="Type a message ..." />
+     <img class="icon" src="img/icons/send.svg" alt="Send" />
+    </div>
+
    </div>
   </div>
  </body>
