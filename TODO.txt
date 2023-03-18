@@ -1,3 +1,4 @@
+- add "shadow" class to inputbar and userbar so it throws shadow onto the chat
 - fix chat bubbles + put them on sides
 - fix conversations
 - fix menu design
