@@ -24,6 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
    leftPanel.style.width = newLeftPanelWidth + 'px';
    rightPanel.style.width = pageWidth - newLeftPanelWidth + 'px';
    resizer.style.left = newLeftPanelWidth - (resizer.offsetWidth / 2) + 'px';
+   var conversations_text = document.querySelectorAll('#conversations > a .text');
+   var input_bar = document.querySelector('#inputbar');
+   input_bar.style.marginLeft = newLeftPanelWidth + 'px';
+   conversations_text.forEach((text) => {
+    text.style.width = newLeftPanelWidth + 'px';
+   });
+   text.style.width = newLeftPanelWidth + 'px';
   }
  });
  getConversations();

@@ -1,3 +1,6 @@
+*:focus {
+ outline: none;
+}
 :root {
  --primary-color-hue: 49;
  --primary-color-sat: 97%;
@@ -32,6 +35,9 @@ input {
 }
 
 .icon {
+ display: flex;
+ justify-content: center;
+ align-items: center;
  padding: 10px;
  width: 32px;
  height: 32px;
@@ -46,6 +52,7 @@ input {
  text-overflow: ellipsis;
  overflow: hidden;
  white-space: nowrap;
+ width: 72%;
 }
 
 .photo-circle {
@@ -85,8 +92,8 @@ input {
 
 .panel.right {
  width: calc(100% - var(--panel-left-width));
+ position: relative;
 }
-
 .resizer {
  z-index: 100;
  position: absolute;
@@ -155,18 +162,25 @@ input {
  z-index: 50;
  height: calc(100% - var(--bar-height) - 50px);
  background-color: hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 40%));
+ overflow: hidden;
 }
 
 #conversations .conversation {
- //display: flex;
+ display: flex;
  padding: 10px;
  border-bottom: 1px solid #808080;
+ justify-content: space-between;
+ max-height: 70px;
 }
 
 #conversations .conversation.active {
  background-color: var(--primary-color);
 }
 
+#conversations .conversation .text {
+ margin: 4px 10px;
+ width: var(--panel-left-width);
+}
 #conversations .conversation .text .name {
  font-weight: bold;
 }
@@ -205,17 +219,18 @@ input {
 }
 
 #chat .container {
- display: flex;
  align-items: center;
  justify-content: center;
  flex-direction: column;
  max-width: 1000px;
  background-color: #FFFEF8;
+ padding: 0.5rem;
+ padding-bottom: 7rem;
 }
 
 #chat .container .message {
  display: flex;
- margin: 5px 0;
+ margin: 10px;
 }
 
 #chat .container .message.received {
@@ -231,6 +246,7 @@ input {
  border-radius: 10px;
  padding: 10px;
  margin: 0 10px;
+ max-width: 560px;
 }
 
 #chat .container .message.received .content::before {
@@ -260,6 +276,16 @@ input {
  padding: 5px 10px;
  border-radius: 20px;
  background-color: var(--primary-color);
+ max-width: 200px;
+ margin: 20px auto;
+}
+
+#wrapper {
+ position: relative;
+}
+
+#umbrella {
+ position: absolute;
 }
 
 #inputbar {
@@ -268,6 +294,11 @@ input {
  padding: 0 10px;
  height: var(--inputbar-height);
  background-color: #1D1D1D;
+ position: fixed;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ margin-left: var(--panel-left-width);
 }
 
 #inputbar .text {
