@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
  const leftPanel = document.querySelector('#page .panel.left');
  const rightPanel = document.querySelector('#page .panel.right');
  var resizer = document.querySelector('#page .resizer');
+ var searchBar = document.querySelector('#searchbar');
+ var userBar = document.querySelector('#userbar');
+ var input_bar = document.querySelector('#inputbar');
  var dragging = false;
 
  resizer.addEventListener('mousedown', () => {
@@ -23,14 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
    newLeftPanelWidth = newLeftPanelWidth < leftPanelMaxWidth ? newLeftPanelWidth : leftPanelMaxWidth;
    leftPanel.style.width = newLeftPanelWidth + 'px';
    rightPanel.style.width = pageWidth - newLeftPanelWidth + 'px';
+   searchBar.style.width = (newLeftPanelWidth - 20) + 'px';
+   userBar.style.width = pageWidth - newLeftPanelWidth + 'px';
    resizer.style.left = newLeftPanelWidth - (resizer.offsetWidth / 2) + 'px';
    var conversations_text = document.querySelectorAll('#conversations > a .text');
-   var input_bar = document.querySelector('#inputbar');
    input_bar.style.marginLeft = newLeftPanelWidth + 'px';
    conversations_text.forEach((text) => {
     text.style.width = newLeftPanelWidth + 'px';
    });
-   text.style.width = newLeftPanelWidth + 'px';
   }
  });
  getConversations();
@@ -83,6 +86,7 @@ async function getConversations() {
  await addConversation('3', 'https://i.pravatar.cc/300?u=user3', 'Short Name', 'Norem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 888, false);
  await addConversation('4', 'https://i.pravatar.cc/300?u=user4', 'John Doe', 'Oorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 5, false);
  await addConversation('5', 'https://i.pravatar.cc/300?u=user5', 'Jane Smith', 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 5, false);
+//  await addConversation('6', 'https://i.pravatar.cc/300?u=user6', 'User Name', 'Vorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 888, false);
 }
 
 async function getConversation(id) {
