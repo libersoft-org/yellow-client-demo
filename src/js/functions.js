@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
    var conversations_text = document.querySelectorAll('#conversations > a .text');
    input_bar.style.marginLeft = newLeftPanelWidth + 'px';
    conversations_text.forEach((text) => {
-    text.style.width = newLeftPanelWidth + 'px';
+    text.style.width = (newLeftPanelWidth - 150) + 'px';
    });
   }
  });
@@ -46,11 +46,13 @@ function menu() {
 }
 
 function menuShow() {
- document.querySelector('#menu').style.display = 'flex';
+//  document.querySelector('#menu').style.display = 'flex';
+ document.querySelector('#menu').classList.toggle('show');
 }
 
 function menuHide() {
- document.querySelector('#menu').style.display = 'none';
+//  document.querySelector('#menu').style.display = 'none';
+ document.querySelector('#menu').classList.toggle('show');
 }
 
 function copy(text) {
@@ -65,9 +67,14 @@ async function addConversation(id, photo, name, message, time, unread, active) {
   '{MESSAGE}': message,
   '{TIME}': time,
   '{UNREAD}': unread,
-  '{ACTIVE}': active ? ' active' : ''
+  '{ACTIVE}': active ? ' active' : '',
+  '{READ-ICON}': '',
+  '{READ-TEXT}': '✔',
  });
  document.querySelector('#conversations').innerHTML += html;
+ document.querySelectorAll('#conversations .conversation .status .unread').forEach((item) => {
+    if(item.innerHTML === '0') item.style.display = 'none';
+ });
 }
 
 function translate(template, dictionary) {
@@ -86,7 +93,7 @@ async function getConversations() {
  await addConversation('3', 'https://i.pravatar.cc/300?u=user3', 'Short Name', 'Norem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 888, false);
  await addConversation('4', 'https://i.pravatar.cc/300?u=user4', 'John Doe', 'Oorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 5, false);
  await addConversation('5', 'https://i.pravatar.cc/300?u=user5', 'Jane Smith', 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 5, false);
-//  await addConversation('6', 'https://i.pravatar.cc/300?u=user6', 'User Name', 'Vorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 888, false);
+ await addConversation('6', 'https://i.pravatar.cc/300?u=user6', 'User Name', 'Vorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 888, false);
 }
 
 async function getConversation(id) {
