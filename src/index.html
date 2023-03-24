@@ -11,12 +11,12 @@
  </head>
  <body>
   <div id="page">
-   <div class="panel left">
+   <div class="panel left shadow">
     <div id="searchbar">
      <a class="icon" onclick="menu()"><img src="img/icons/menu.svg" alt="Menu" /></a>
      <input class="text" type="text" placeholder="Search ..." />
     </div>
-    <div id="menu">
+    <div id="menu" class="slide-in">
      <a class="item" onclick="">
       <div class="menuitem"><img class="icon" src="img/icons/conversation.svg" alt="New conversation" />New conversation</div>
       <div class="menuitem"><img class="icon" src="img/icons/group.svg" alt="New chat group" />New chat group</div>
@@ -32,13 +32,12 @@
       </div>
      </a>
     </div>
-    <div class="shadow"></div>
-     <div id="account">
-      <img class="photo-circle small" src="https://i.pravatar.cc/300?u=ownprofile" />
-      <span class="text nowrap">verylongname@verylongdomain.com</span>
-     </div>
-     <div id="conversations"></div>
+    <div id="account">
+     <img class="photo-circle small" src="https://i.pravatar.cc/300?u=ownprofile" />
+     <span class="text nowrap">verylongname@verylongdomain.com</span>
+     <a onclick="" class="accounts-icon">&#x5e;</a> <!-- can be replaced with an svg -->
     </div>
+    <div id="conversations"></div>
    </div>
    <div class="resizer"></div>
    <div class="panel right">
@@ -54,7 +53,7 @@
       <a class="icon" onclick=""><img src="img/icons/settings.svg" /></a>
       <a class="icon" onclick=""><img src="img/icons/video_message.svg" /></a>
       <a class="icon" onclick=""><img src="img/icons/voice_message.svg" /></a>
-      <!-- <a class="icon" onclick=""><img src="img/icons/menu.svg" /></a> -->  <!-- three dots icon here -->
+      <a class="icon" onclick=""><img src="img/icons/dots.svg" /></a>
      </div>
     </div>
     <div id="chat">
@@ -83,9 +82,42 @@
        </div>
       </div>
 
+      <div class="message received">
+        <img class="photo-circle medium" src="https://i.pravatar.cc/300?u=user2" alt="NAME">
+        <div class="content">
+         <div class="text">Test convo for design</div>
+         <div class="meta">
+          <span class="time">14:23</span>
+          <span class="checkmark">✔</span>
+         </div>
+        </div>
+       </div>
+       
+      <div class="message received">
+        <img class="photo-circle medium" src="https://i.pravatar.cc/300?u=user2" alt="NAME">
+        <div class="content">
+         <div class="text">Don't mind me. Some random elongated message here. I am writing this as lorem ipsum, just to see how the UI looks when a message is too long. Still debugging the css :)</div>
+         <div class="meta">
+          <span class="time">14:23</span>
+          <span class="checkmark">✔</span>
+         </div>
+        </div>
+       </div>
+
+       <div class="message sent">
+        <img class="photo-circle medium" src="https://i.pravatar.cc/300?u=ownprofile" alt="NAME" />
+        <div class="content">
+         <div class="text">Sure, no problem</div>
+         <div class="meta">
+          <span class="time">14:25</span>
+          <span class="checkmark">✔</span>
+         </div>
+        </div>
+       </div>
+
      </div>
     </div>
-
+    
     <div id="inputbar" class="shadow">
      <img class="icon" src="img/icons/attachment.svg" alt="Attachment" />
      <input class="text" type="text" placeholder="Type a message ..." />

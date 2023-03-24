@@ -34,6 +34,18 @@ input {
  color: #000;
 }
 
+#searchbar .icon {
+ margin-right: 10px;
+ margin-left: -5px;
+}
+
+.accounts-icon {
+ color: #FFFEF8;
+ rotate: 180deg;
+ margin-left: auto;
+ font-size: 1rem;
+}
+
 .icon {
  display: flex;
  justify-content: center;
@@ -50,14 +62,13 @@ input {
 }
 
 .shadow {
- box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75)
+ box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75)
 }
 
 .nowrap {
  text-overflow: ellipsis;
  overflow: hidden;
  white-space: nowrap;
- width: 72%;
 }
 
 .photo-circle {
@@ -146,18 +157,31 @@ input {
 }
 
 #userbar .icons {
- float: right;
  display: flex;
+ position: absolute;
+ right: 0;
+ margin-right: 10px;
 }
 
 #menu {
- display: none;
+ /* display: none; */
  position: absolute;
  z-index: 200;
  top: var(--searchbar-height);
- width: 300px;
+ /* width: 300px; */
  height: calc(100% - var(--searchbar-height));
  background-color: #FFFEF8;
+ /* justify-content: space-evenly; */
+}
+
+.slide-in {
+ width: 0;
+ overflow-x: hidden;
+ transition: width 1s;
+}
+
+.slide-in.show {
+ width: 300px;
 }
 
 #menu .menuitem {
@@ -172,6 +196,7 @@ input {
  height: 50px;
  background-color: #1D1D1D;
  margin-top: var(--searchbar-height);
+ justify-content: space-between;
 }
 
 #account .text {
@@ -204,7 +229,7 @@ input {
  padding: 10px;
  border-bottom: 1px solid #808080;
  justify-content: space-between;
- max-height: 70px;
+ height: 70px;
 }
 
 #conversations .conversation.active {
@@ -213,8 +238,8 @@ input {
 }
 
 #conversations .conversation .text {
- margin: 4px 10px;
- width: var(--panel-left-width);
+ margin: .7rem 10px 4px 10px;
+ width: calc(var(--panel-left-width) - 150px);
 }
 #conversations .conversation .text .name {
  font-weight: bold;
@@ -344,4 +369,10 @@ input {
  border-radius: 0px;
  color: #FFFEF8;
  background-color: #1D1D1D;
+}
+
+#menu .about {
+ text-align: center;
+ width: 100%;
+ margin-top: 30px;
 }
