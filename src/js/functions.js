@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
  var resizer = document.querySelector('#page .resizer');
  var searchBar = document.querySelector('#searchbar');
  var userBar = document.querySelector('#userbar');
+ var selfName = document.querySelector('#userbar > .text > .name');
+ var selfAddress = document.querySelector('#userbar > .text > .address');
  var input_bar = document.querySelector('#inputbar');
  var dragging = false;
 
@@ -27,12 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
    leftPanel.style.width = newLeftPanelWidth + 'px';
    rightPanel.style.width = pageWidth - newLeftPanelWidth + 'px';
    searchBar.style.width = (newLeftPanelWidth - 20) + 'px';
-   userBar.style.width = pageWidth - newLeftPanelWidth + 'px';
+   selfName.style.width = (pageWidth - newLeftPanelWidth - 290) + 'px';
+   selfAddress.style.width = (pageWidth - newLeftPanelWidth - 290) + 'px';
+   userBar.style.width = (pageWidth - newLeftPanelWidth - 20) + 'px';
    resizer.style.left = newLeftPanelWidth - (resizer.offsetWidth / 2) + 'px';
    var conversations_text = document.querySelectorAll('#conversations > a .text');
    input_bar.style.marginLeft = newLeftPanelWidth + 'px';
    conversations_text.forEach((text) => {
-    text.style.width = (newLeftPanelWidth - 150) + 'px';
+    text.style.width = (newLeftPanelWidth - 170) + 'px';
    });
   }
  });
@@ -68,7 +72,7 @@ async function addConversation(id, photo, name, message, time, unread, active) {
   '{TIME}': time,
   '{UNREAD}': unread,
   '{ACTIVE}': active ? ' active' : '',
-  '{READ-ICON}': '',
+  '{READ-ICON}': 'recieved.svg',
   '{READ-TEXT}': '✔',
  });
  document.querySelector('#conversations').innerHTML += html;
