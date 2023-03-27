@@ -46,6 +46,10 @@ input {
  font-size: 1rem;
 }
 
+.menuitem .icon {
+ margin-right: 10px;
+}
+
 .icon {
  display: flex;
  justify-content: center;
@@ -54,6 +58,7 @@ input {
  width: 40px;
  height: 40px;
  /* background-color: red; */
+ cursor: pointer;
 }
 
 .icon img {
@@ -62,7 +67,7 @@ input {
 }
 
 .shadow {
- box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75)
+ box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
 .nowrap {
@@ -81,6 +86,9 @@ input {
  height: 32px;
 }
 
+.icon-small {
+ margin-left: 10px;
+}
 .photo-circle.medium {
  width: 50px;
  height: 50px;
@@ -165,20 +173,19 @@ input {
 }
 
 #menu {
- /* display: none; */
  position: absolute;
  z-index: 200;
  top: var(--searchbar-height);
  width: 300px;
  height: calc(100% - var(--searchbar-height));
  background-color: #FFFEF8;
- /* justify-content: space-evenly; */
+ padding-top: 20px;
 }
 
 .slide-in {
  margin-left: -300px;
  overflow-x: hidden;
- transition: margin-left 1s;
+ transition: margin-left .5s;
 }
 
 .slide-in.show {
@@ -230,7 +237,7 @@ input {
  padding: 10px;
  border-bottom: 1px solid #808080;
  justify-content: space-between;
- height: 70px;
+ height: 60px;
 }
 
 #conversations .conversation.active {
@@ -253,7 +260,8 @@ input {
 
 #conversations .conversation .status {
  float: right;
- margin-top: 5px;
+ margin-top: 2px;
+ margin-left: 28px;
 }
 
 #conversations .conversation .status .time {
@@ -272,6 +280,9 @@ input {
  font-weight: bold;
  color: #FFFEF8;
  background-color: var(--secondary-color);
+ position: absolute;
+ left: 0;
+ margin-left: -28px;
 }
 
 #chat {
@@ -298,7 +309,8 @@ input {
 }
 .row {
  justify-content: space-between;
- width: 100%;
+ width: 83px;
+ position: relative;
 }
 
 #chat .container .message.received {
@@ -408,4 +420,8 @@ input {
  text-align: center;
  width: 100%;
  margin-top: 30px;
+}
+
+.mt {
+ margin-top: 4px;
 }
