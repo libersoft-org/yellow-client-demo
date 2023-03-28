@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
   searchBar.style.width = '100%';
   searchBarInput.style.marginRight = '2rem';
  }
+
 });
 
 function menu() {

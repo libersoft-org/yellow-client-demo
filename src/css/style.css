@@ -339,7 +339,7 @@ input {
  margin: 5px 10px;
 }
 
-#chat .container .message.received .content::before {
+.sent + .received .content::before, .date + .received .content::before {
  content: "";
  position: absolute;
  left: -22px;
@@ -349,7 +349,7 @@ input {
  border-top-right-radius: 20px;
 }
 
-#chat .container .message.received .content:after {
+.sent + .received .content::after, .date + .received .content::after {
  content: "";
  position: absolute;
  left: -28px;
@@ -360,7 +360,7 @@ input {
  border-top-right-radius: 20px;
 }
 
-#chat .container .message.sent .content::before {
+.received + .sent .content::before, .date + .sent .content::before {
  content: "";
  position: absolute;
  right: -22px;
@@ -370,7 +370,7 @@ input {
  border-top-left-radius: 20px;
 }
    
-#chat .container .message.sent .content:after {
+.received + .sent .content::after, .date + .sent .content::after {
  content: "";
  position: absolute;
  right: -28px;
