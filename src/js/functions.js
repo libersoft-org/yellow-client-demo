@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
  var resizer = document.querySelector('#page .resizer');
  var searchBar = document.querySelector('#searchbar');
  var userBar = document.querySelector('#userbar');
+ var searchBarInput = document.querySelector('#searchbar > .text'); console.log({searchBarInput})
  var selfName = document.querySelector('#userbar > .text > .name');
  var selfAddress = document.querySelector('#userbar > .text > .address');
  var input_bar = document.querySelector('#inputbar');
@@ -41,6 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
  });
  getConversations();
+ if(window.matchMedia('(max-width: 768px)').matches) {
+  resizer.style.display = 'none';
+  rightPanel.style.display = 'none';
+  leftPanel.style.width = '100%';
+  searchBar.style.width = '100%';
+  searchBarInput.style.marginRight = '2rem';
+ }
 });
 
 function menu() {

@@ -148,6 +148,7 @@ input {
 
 #searchbar .text {
  width: 100%;
+ box-sizing: border-box;
 }
 
 #userbar .text {
@@ -291,22 +292,26 @@ input {
  background-repeat: repeat;
  background-size: 300px;
  margin-top: var(--searchbar-height);
+ position: relative;
 }
 
 #chat .container {
- align-items: center;
+ display: flex;
  justify-content: center;
  flex-direction: column;
  max-width: 1000px;
  background-color: #FFFEF8;
  padding: 0.5rem;
- padding-bottom: 7rem;
+ position: absolute;
+ width: 100%;
+ bottom: 0;
 }
 
 #chat .container .message, .row {
  display: flex;
  margin: 10px;
 }
+
 .row {
  justify-content: space-between;
  width: 83px;
@@ -424,4 +429,11 @@ input {
 
 .mt {
  margin-top: 4px;
+}
+
+@media screen and (max-width: 768px){
+ #conversations .conversation .text {
+  margin: .7rem 10px 4px 10px;
+  width: calc(100vw - 170px);
+ }
 }
