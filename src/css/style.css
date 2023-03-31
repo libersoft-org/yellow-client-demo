@@ -310,7 +310,7 @@ input {
  left: 0;
  scroll-behavior: smooth;
  overflow-y: auto;
- height: calc(100vh - var(--userbar-height) - var(--inputbar-height) - 50px);
+ height: calc(100vh - var(--userbar-height) - var(--inputbar-height) - 20px);
 }
 
 #chat .container .message {
