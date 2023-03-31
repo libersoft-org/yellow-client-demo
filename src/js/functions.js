@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
  var resizer = document.querySelector('#page .resizer');
  var searchBar = document.querySelector('#searchbar');
  var userBar = document.querySelector('#userbar');
- var searchBarInput = document.querySelector('#searchbar > .text'); console.log({searchBarInput})
+ var searchBarInput = document.querySelector('#searchbar > .text');
  var selfName = document.querySelector('#userbar > .text > .name');
  var selfAddress = document.querySelector('#userbar > .text > .address');
  var input_bar = document.querySelector('#inputbar');
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
    selfAddress.style.width = (pageWidth - newLeftPanelWidth - 290) + 'px';
    userBar.style.width = (pageWidth - newLeftPanelWidth - 20) + 'px';
    resizer.style.left = newLeftPanelWidth - (resizer.offsetWidth / 2) + 'px';
-   var conversations_text = document.querySelectorAll('#conversations > a .text');
+   var conversations_text = document.querySelectorAll('#conversations > a .conversation >.text');
    input_bar.style.marginLeft = newLeftPanelWidth + 'px';
    conversations_text.forEach((text) => {
     text.style.width = (newLeftPanelWidth - 170) + 'px';
@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
  });
  getConversations();
+ getConversation(2);
  if(window.matchMedia('(max-width: 768px)').matches) {
   resizer.style.display = 'none';
   rightPanel.style.display = 'none';
@@ -110,5 +111,60 @@ async function getConversations() {
 }
 
 async function getConversation(id) {
- console.log(id);
+ var chat_container = document.querySelector('#chat > .container');
+ var active = document.querySelector('.active');
+ var a = document.querySelector(`a[onClick="getConversation('${id}')"]`);
+ var clicked = a ? a.querySelector('.conversation') : null;
+ active ? active.classList.remove('active'): null;
+ clicked ? clicked.classList.add('active') : null;
+ var messages = [
+   {
+      date: "17 March 2023",
+      content: [
+       {
+        text: "Hi, how are you?",
+        sender_photo: "https://i.pravatar.cc/300?u=user2",
+        meta: {
+         time: "14:23",
+         checkmark: "✔"
+        }
+       },
+       {
+        text: "Hi, I am fine, thank you!",
+        sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
+        meta: {
+         time: "14:25",
+         checkmark: "✔"
+        }
+       },
+      ]
+   }
+ ];
+ chat_container.innerHTML = '';
+ var reversedMessages = messages.slice().reverse();
+ for (var i=0; i<reversedMessages.length; i+=1) {
+  var message = reversedMessages[i];
+  var div = document.createElement('div');
+  div.innerHTML = `<div class="date">${message.date}</div>`;
+  for(var j=0; j<message.content.length; j+=1) {
+   var content = message.content[j];
+   var content_div = document.createElement('div');
+   content_div.classList.add('message');
+   if(content.sender_photo.split('?u=')[1] === 'ownprofile') content_div.classList.add('sent');
+   else content_div.classList.add('received');
+   content_div.innerHTML = `
+    <img class="photo-circle medium" src="${content.sender_photo}" alt="NAME" />
+    <div class="content">
+     <div class="text">${content.text}</div>
+     <div class="meta">
+      <span class="time">${content.meta.time}</span>
+      <span class="checkmark">&ensp;${content.meta.checkmark}</span>
+     </div>
+    </div>
+   `;
+   div.appendChild(content_div);
+  }
+  chat_container.appendChild(div);
+ }
+ chat_container.scrollTop = chat_container.scrollHeight - chat_container.clientHeight;
 }
