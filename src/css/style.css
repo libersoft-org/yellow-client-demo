@@ -241,6 +241,10 @@ input {
  height: 60px;
 }
 
+#conversations .conversation:hover {
+ opacity: 0.8
+}
+
 #conversations .conversation.active {
  background-color: var(--primary-color);
  opacity: 0.9;
@@ -291,20 +295,26 @@ input {
  background-image: url('../img/background/doodle.png');
  background-repeat: repeat;
  background-size: 300px;
- margin-top: var(--searchbar-height);
+ margin-top: var(--userbar-height);
  position: relative;
 }
 
 #chat .container {
  display: flex;
- justify-content: center;
- flex-direction: column;
+ justify-content: flex-start;
+ flex-direction: column-reverse;
  max-width: 1000px;
  background-color: #FFFEF8;
  padding: 0.5rem;
- position: absolute;
- width: 100%;
- bottom: 0;
+ width: 98%;
+ left: 0;
+ scroll-behavior: smooth;
+ overflow-y: auto;
+ height: calc(100vh - var(--userbar-height) - var(--inputbar-height) - 50px);
+}
+
+#chat .container .message {
+ align-content: flex-end;
 }
 
 #chat .container .message, .row {
@@ -339,7 +349,7 @@ input {
  margin: 5px 10px;
 }
 
-#chat .container .message.received .content::before {
+.sent + .received .content::before, .date + .received .content::before {
  content: "";
  position: absolute;
  left: -22px;
@@ -349,7 +359,7 @@ input {
  border-top-right-radius: 20px;
 }
 
-#chat .container .message.received .content:after {
+.sent + .received .content::after, .date + .received .content::after {
  content: "";
  position: absolute;
  left: -28px;
@@ -360,7 +370,7 @@ input {
  border-top-right-radius: 20px;
 }
 
-#chat .container .message.sent .content::before {
+.received + .sent .content::before, .date + .sent .content::before {
  content: "";
  position: absolute;
  right: -22px;
@@ -370,7 +380,7 @@ input {
  border-top-left-radius: 20px;
 }
    
-#chat .container .message.sent .content:after {
+.received + .sent .content::after, .date + .sent .content::after {
  content: "";
  position: absolute;
  right: -28px;
@@ -396,6 +406,7 @@ input {
  background-color: var(--primary-color);
  max-width: 200px;
  margin: 20px auto;
+ margin-bottom: 0;
 }
 
 #inputbar {
