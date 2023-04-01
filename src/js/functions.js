@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
  var searchBarInput = document.querySelector('#searchbar > .text');
  var selfName = document.querySelector('#userbar > .text > .name');
  var selfAddress = document.querySelector('#userbar > .text > .address');
- var input_bar = document.querySelector('#inputbar');
+ var inputBar = document.querySelector('#inputbar');
  var dragging = false;
 
  resizer.addEventListener('mousedown', () => {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
    userBar.style.width = (pageWidth - newLeftPanelWidth - 20) + 'px';
    resizer.style.left = newLeftPanelWidth - (resizer.offsetWidth / 2) + 'px';
    var conversations_text = document.querySelectorAll('#conversations > a .conversation >.text');
-   input_bar.style.marginLeft = newLeftPanelWidth + 'px';
+   inputBar.style.marginLeft = newLeftPanelWidth + 'px';
    conversations_text.forEach((text) => {
     text.style.width = (newLeftPanelWidth - 170) + 'px';
    });
@@ -49,6 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
   leftPanel.style.width = '100%';
   searchBar.style.width = '100%';
   searchBarInput.style.marginRight = '2rem';
+  setTimeout(() => {
+   var active = document.querySelectorAll('.active')[0];
+   console.log({active})
+   active.classList.remove('active');
+  }, 1500);
  }
 
 });
@@ -117,6 +122,16 @@ async function getConversation(id) {
  var clicked = a ? a.querySelector('.conversation') : null;
  active ? active.classList.remove('active'): null;
  clicked ? clicked.classList.add('active') : null;
+ if(window.matchMedia('(max-width: 768px)').matches) {
+   var resizer = document.querySelector('#page .resizer');
+   const leftPanel = document.querySelector('#page .panel.left');
+   const rightPanel = document.querySelector('#page .panel.right');
+   var userBar = document.querySelector('#userbar');
+   var inputBar = document.querySelector('#inputbar');
+   clicked ? clicked.addEventListener('click', () => {
+    showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar)
+   }) : null;
+ }
  var messages = [
    {
       date: "17 March 2023",
@@ -167,4 +182,14 @@ async function getConversation(id) {
   chat_container.appendChild(div);
  }
  chat_container.scrollTop = chat_container.scrollHeight - chat_container.clientHeight;
+}
+
+function showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar) {
+ resizer.style.display = 'none';
+ rightPanel.style.width = '100%';
+ rightPanel.style.display = 'block';
+ leftPanel.style.display = 'none';
+ userBar.style.width = '100%';
+ inputBar.style.width = '100%';
+ inputBar.style.marginLeft = '0';
 }
