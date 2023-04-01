@@ -180,7 +180,6 @@ input {
  width: 300px;
  height: calc(100% - var(--searchbar-height));
  background-color: #FFFEF8;
- padding-top: 20px;
 }
 
 .slide-in {
@@ -196,6 +195,11 @@ input {
 #menu .menuitem {
  display: flex;
  align-items: center;
+ margin: 20px 10px;
+}
+
+#menu .menuitem:hover {
+ opacity: 0.8
 }
 
 #account {
@@ -278,11 +282,11 @@ input {
  display: flex;
  align-items: center;
  justify-content: center;
- width: 30px;
- height: 30px;
+ width: 25px;
+ height: 25px;
  border-radius: 50%;
- font-size: 0.8em;
- font-weight: bold;
+ font-size: 0.7em;
+ /* font-weight: bold; */
  color: #FFFEF8;
  background-color: var(--secondary-color);
  position: absolute;
@@ -311,6 +315,7 @@ input {
  scroll-behavior: smooth;
  overflow-y: auto;
  height: calc(100vh - var(--userbar-height) - var(--inputbar-height) - 20px);
+ margin: 0 auto;
 }
 
 #chat .container .message {
@@ -379,7 +384,7 @@ input {
  border-bottom: 35px solid #F0F0F0;
  border-top-left-radius: 20px;
 }
-   
+
 .received + .sent .content::after, .date + .sent .content::after {
  content: "";
  position: absolute;
