@@ -111,11 +111,17 @@ async function getConversations() {
  await addConversation('2', 'https://i.pravatar.cc/300?u=user2', 'Veryveryvery Long Username - Some Other Company Ltd.', 'Morem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 0, true);
  await addConversation('3', 'https://i.pravatar.cc/300?u=user3', 'Short Name', 'Norem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 888, false);
  await addConversation('4', 'https://i.pravatar.cc/300?u=user4', 'John Doe', 'Oorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 5, false);
- await addConversation('5', 'https://i.pravatar.cc/300?u=user5', 'Jane Smith', 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 5, false);
-//  await addConversation('6', 'https://i.pravatar.cc/300?u=user6', 'User Name', 'Vorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 888, false);
+ await addConversation('5', 'https://i.pravatar.cc/300?u=user5', 'Jane Smith', 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 9, false);
+ await addConversation('6', 'https://i.pravatar.cc/300?u=user6', 'Jane Smith', 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 11, false);
+ await addConversation('7', 'https://i.pravatar.cc/300?u=user7', 'User Name', 'Vorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 650, false);
+ await addConversation('8', 'https://i.pravatar.cc/300?u=user8', 'Test User', 'Worem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 92, false);
+ await addConversation('9', 'https://i.pravatar.cc/300?u=user9', 'Some Name', 'Torem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 83, false);
+ await addConversation('10', 'https://i.pravatar.cc/300?u=user10', 'Nemp User', 'Sorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 74, false);
+ await addConversation('11', 'https://i.pravatar.cc/300?u=user11', 'Name Here', 'Borem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 101, false);
 }
 
 async function getConversation(id) {
+ var chat = document.querySelector('#chat');
  var chat_container = document.querySelector('#chat > .container');
  var active = document.querySelector('.active');
  var a = document.querySelector(`a[onClick="getConversation('${id}')"]`);
@@ -133,33 +139,62 @@ async function getConversation(id) {
    }) : null;
  }
  var messages = [
-   {
-      date: "17 March 2023",
-      content: [
-       {
-        text: "Hi, how are you?",
-        sender_photo: "https://i.pravatar.cc/300?u=user2",
-        meta: {
-         time: "14:23",
-         checkmark: "✔"
-        }
-       },
-       {
-        text: "Hi, I am fine, thank you!",
-        sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-        meta: {
-         time: "14:25",
-         checkmark: "✔"
-        }
-       },
-      ]
-   }
+  {
+     date: "17 March 2023",
+     content: [
+      {
+       text: "Hi, how are you?",
+       sender_photo: "https://i.pravatar.cc/300?u=user2",
+       meta: {
+        time: "14:23",
+        checkmark: "✔"
+       }
+      },
+      {
+       text: "Hi, I am fine, thank you!",
+       sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
+       meta: {
+        time: "14:25",
+        checkmark: "✔"
+       }
+      },
+     ]
+  },
+  {
+     date: "18 March 2023",
+     content: [
+      {
+       text: "Hi, how are you?",
+       sender_photo: "https://i.pravatar.cc/300?u=user2",
+       meta: {
+        time: "14:23",
+        checkmark: "✔"
+       }
+      },
+      {
+       text: "Hi, I am fine, thank you!",
+       sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
+       meta: {
+        time: "14:25",
+        checkmark: "✔"
+       }
+      },
+      {
+       text: "Two consecutive messages by same user. To check the chat bubble arrows.",
+       sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
+       meta: {
+        time: "14:25",
+        checkmark: "✔"
+       }
+      },
+     ]
+  },
  ];
  chat_container.innerHTML = '';
- var reversedMessages = messages.slice().reverse();
- for (var i=0; i<reversedMessages.length; i+=1) {
-  var message = reversedMessages[i];
+ for (var i=0; i<messages.length; i+=1) {
+  var message = messages[i];
   var div = document.createElement('div');
+  div.classList.add('chat-item');
   div.innerHTML = `<div class="date">${message.date}</div>`;
   for(var j=0; j<message.content.length; j+=1) {
    var content = message.content[j];
@@ -181,7 +216,7 @@ async function getConversation(id) {
   }
   chat_container.appendChild(div);
  }
- chat_container.scrollTop = chat_container.scrollHeight - chat_container.clientHeight;
+ chat.scrollTop = chat.scrollHeight - chat.clientHeight;
 }
 
 function showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar) {
@@ -192,4 +227,33 @@ function showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar) {
  userBar.style.width = '100%';
  inputBar.style.width = '100%';
  inputBar.style.marginLeft = '0';
+}
+
+function toggleUserAccounts() {
+ const accountsDiv = document.querySelector('#user-accounts');
+ const userAccounts = [
+  {
+    id: 1, email: 'verylongname@verylongdomain.com', selected: true
+  },
+  {
+    id: 2, email: 'otherlongname@otherlongdomain.com', selected: false
+  },
+  {
+    id: 3, email: 'otherverylongname@otherverylongdomain.com', selected: false
+  },
+  {
+    id: 4, email: 'longname@longdomain.com', selected: false
+  }
+ ];
+ accountsDiv.innerHTML = ``;
+ for (let i = 0; i < userAccounts.length; i++) {
+  const account = userAccounts[i];
+  accountsDiv.innerHTML += `
+   <li class='shadow acc-item ${account.selected ? 'active' : ''}'>
+    <a href = '#'> ${account.email} </a>
+   </li>
+  `;
+ }
+ accountsDiv.classList.toggle('hidden');
+ accountsDiv.classList.toggle('visible');
 }

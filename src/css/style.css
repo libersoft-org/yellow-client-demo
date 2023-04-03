@@ -23,6 +23,18 @@ body {
  font-family: Ubuntu, sans-serif;
 }
 
+body::-webkit-scrollbar {
+ width: 7px;
+}
+
+body::-webkit-scrollbar-track {
+ background-color: #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb {
+ background: rgba(0, 0, 0, 0.35);
+}
+
 a {
  cursor: pointer;
 }
@@ -37,6 +49,43 @@ input {
 #searchbar .icon {
  margin-right: 10px;
  margin-left: -5px;
+}
+
+#user-accounts {
+ z-index: 9;
+ padding: 1rem;
+ line-height: 200%;
+ max-height: 170px;
+}
+
+#user-accounts a {
+ text-decoration: none;
+}
+
+#user-accounts .active {
+ background-color: var(--primary-color);
+ color: rgba(0, 0, 0, 0.75);
+}
+
+.acc-item {
+ padding: 2px;
+ margin: 0 0 7px 0;
+ list-style: none;
+ text-align: center;
+ font-size: 0.9rem;
+ border-radius: 11px;
+ cursor: pointer;
+}
+
+.hidden {
+ height: 0;
+ margin-top: -35px;
+ transition: all 0.5s ease-in-out;
+}
+
+.visible {
+ height: 100%;
+ transition: all 0.5s ease-in-out;
 }
 
 .accounts-icon {
@@ -113,6 +162,8 @@ input {
 .panel.left {
  z-index: 200;
  width: var(--panel-left-width);
+ scrollbar-width: thin;
+ scrollbar-color: #888 #f1f1f1;
 }
 
 .panel.right {
@@ -199,7 +250,7 @@ input {
 }
 
 #menu .menuitem:hover {
- opacity: 0.8
+ color: var(--primary-color);
 }
 
 #account {
@@ -210,6 +261,8 @@ input {
  background-color: #1D1D1D;
  margin-top: var(--searchbar-height);
  justify-content: space-between;
+ position: relative;
+ z-index: 99;
 }
 
 #account .text {
@@ -222,6 +275,7 @@ input {
  height: calc(100% - var(--bar-height) - 50px);
  background-color: hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 40%));
  overflow: hidden;
+ position: relative;
 }
 
 .panel.left::-webkit-scrollbar {
@@ -236,7 +290,18 @@ input {
 .panel.left::-webkit-scrollbar-thumb:hover {
  background: rgba(0, 0, 0, 0.55)
 }
-
+.panel.left::-moz-scrollbar {
+ width: 7px;
+}
+.panel.left::-moz-scrollbar-track {
+ background: #f1f1f1; 
+}
+.panel.left::-moz-scrollbar-thumb {
+ background: rgba(0, 0, 0, 0.35); 
+}
+.panel.left::-moz-scrollbar-thumb:hover {
+ background: rgba(0, 0, 0, 0.55)
+}
 #conversations .conversation {
  display: flex;
  padding: 10px;
@@ -246,7 +311,8 @@ input {
 }
 
 #conversations .conversation:hover {
- opacity: 0.8
+ opacity: 0.8;
+ background-color: var(--primary-color);
 }
 
 #conversations .conversation.active {
@@ -256,7 +322,7 @@ input {
 
 #conversations .conversation .text {
  margin: .7rem 10px 4px 10px;
- width: calc(var(--panel-left-width) - 170px);
+ width: calc(var(--panel-left-width) - 180px);
 }
 #conversations .conversation .text .name {
  font-weight: bold;
@@ -268,9 +334,8 @@ input {
 }
 
 #conversations .conversation .status {
- float: right;
  margin-top: 2px;
- margin-left: 28px;
+ margin-left: 20px;
 }
 
 #conversations .conversation .status .time {
@@ -286,7 +351,6 @@ input {
  height: 25px;
  border-radius: 50%;
  font-size: 0.7em;
- /* font-weight: bold; */
  color: #FFFEF8;
  background-color: var(--secondary-color);
  position: absolute;
@@ -301,21 +365,19 @@ input {
  background-size: 300px;
  margin-top: var(--userbar-height);
  position: relative;
+ scroll-behavior: smooth;
+ overflow-y: auto;
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-end;
 }
 
 #chat .container {
- display: flex;
- justify-content: flex-start;
- flex-direction: column-reverse;
  max-width: 1000px;
- background-color: #FFFEF8;
- padding: 0.5rem;
- width: 98%;
- left: 0;
- scroll-behavior: smooth;
- overflow-y: auto;
- height: calc(100vh - var(--userbar-height) - var(--inputbar-height) - 20px);
  margin: 0 auto;
+ background-color: #FFFEF8;
+ width: 100%;
+ padding: 0.5rem;
 }
 
 #chat .container .message {
