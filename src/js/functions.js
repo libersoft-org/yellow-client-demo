@@ -180,7 +180,15 @@ async function getConversation(id) {
        }
       },
       {
-       text: "Two consecutive messages by same user. To check the chat bubble arrows.",
+       text: "More consecutive messages by same user. To check the chat bubble arrows.",
+       sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
+       meta: {
+        time: "14:25",
+        checkmark: "✔"
+       }
+      },
+      {
+       text: "More consecutive messages by same user. To check the chat bubble arrows.",
        sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
        meta: {
         time: "14:25",

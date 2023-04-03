@@ -351,19 +351,41 @@ input {
  background-size: 300px;
  margin-top: var(--userbar-height);
  position: relative;
- scroll-behavior: smooth;
  overflow-y: auto;
  display: flex;
  flex-direction: column;
  justify-content: flex-end;
+ width: 100%;
 }
 
 #chat .container {
  max-width: 1000px;
  margin: 0 auto;
- background-color: #FFFEF8;
  width: 100%;
  padding: 0.5rem;
+ background-color: #FFFEF8;
+}
+
+.chat-item {
+ background-color: #FFFEF8;
+}
+
+.container::-webkit-scrollbar {
+ width: 7px;
+ position: fixed;
+ right: 0;
+ top: 0;
+ height: 100vh;
+ background-color: #f1f1f1;
+}
+.container::-webkit-scrollbar-track {
+ background: #f1f1f1; 
+}
+.container::-webkit-scrollbar-thumb {
+ background: rgba(0, 0, 0, 0.35); 
+}
+.container::-webkit-scrollbar-thumb:hover {
+ background: rgba(0, 0, 0, 0.55)
 }
 
 #chat .container .message {
