@@ -370,7 +370,7 @@ input {
  max-width: 1000px;
  margin: 0 auto;
  width: 100%;
- /* padding: 0.5rem; */
+ height: 100%;
  background-color: #FFFEF8;
 }
 
