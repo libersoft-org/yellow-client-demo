@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
  var selfAddress = document.querySelector('#userbar > .text > .address');
  var inputBar = document.querySelector('#inputbar');
  var dragging = false;
+ updateChatDisplay();
 
  resizer.addEventListener('mousedown', () => {
   dragging = true;
@@ -263,7 +264,6 @@ async function getConversation(id) {
    div.appendChild(content_div);
   }
   chat_container.appendChild(div);
-  updateChatDisplay()
  }
 chat.scrollTo({ top: chat.clientHeight, behavior: 'smooth' });
 }
@@ -272,6 +272,7 @@ function updateChatDisplay() {
  var chat_container = document.querySelector('#chat > .container');
  let container_height = chat_container.offsetHeight;
  const viewportHeight = window.innerHeight;
+ console.log({chat_container, container_height, viewportHeight}, container_height > viewportHeight);
  if(container_height > viewportHeight) document.querySelector('#chat').style.display = 'block';
  else document.querySelector('#chat').style.display = 'flex';
 }
