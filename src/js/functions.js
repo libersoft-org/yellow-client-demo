@@ -272,8 +272,6 @@ function updateChatDisplay() {
  var chat_container = document.querySelector('#chat > .container');
  let container_height = chat_container.offsetHeight;
  const viewportHeight = window.innerHeight;
- const offsetHeightInViewportHeight = `${(container_height / viewportHeight) * 100}vh`;
- console.log({container_height, viewportHeight, offsetHeightInViewportHeight, oshivh:(container_height / viewportHeight) * 100});
  if(container_height > viewportHeight) document.querySelector('#chat').style.display = 'block';
  else document.querySelector('#chat').style.display = 'flex';
 }
