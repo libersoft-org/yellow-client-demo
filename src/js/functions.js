@@ -187,14 +187,14 @@ async function getConversation(id) {
         checkmark: "✔"
        }
       },
-      // {
-      //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
-      //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-      //  meta: {
-      //   time: "14:25",
-      //   checkmark: "✔"
-      //  }
-      // },
+      {
+       text: "More consecutive messages by same user. To check the chat bubble arrows.",
+       sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
+       meta: {
+        time: "14:25",
+        checkmark: "✔"
+       }
+      },
       // {
       //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
       //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
@@ -263,13 +263,22 @@ async function getConversation(id) {
    div.appendChild(content_div);
   }
   chat_container.appendChild(div);
-  let container_height = chat_container.offsetHeight;
-  console.log(container_height)
-  if(container_height > 850) document.querySelector('#chat').style.display = 'block';
+  updateChatDisplay()
  }
-//  chat.scrollTop = chat.scrollHeight - chat.clientHeight;
 chat.scrollTo({ top: chat.clientHeight, behavior: 'smooth' });
 }
+
+function updateChatDisplay() {
+ var chat_container = document.querySelector('#chat > .container');
+ let container_height = chat_container.offsetHeight;
+ const viewportHeight = window.innerHeight;
+ const offsetHeightInViewportHeight = `${(container_height / viewportHeight) * 100}vh`;
+ console.log({container_height, viewportHeight, offsetHeightInViewportHeight, oshivh:(container_height / viewportHeight) * 100});
+ if(container_height > viewportHeight) document.querySelector('#chat').style.display = 'block';
+ else document.querySelector('#chat').style.display = 'flex';
+}
+
+window.addEventListener('resize', updateChatDisplay);
 
 function showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar) {
  resizer.style.display = 'none';
@@ -284,7 +293,7 @@ function showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar) {
 function toggleUserAccounts() {
  const accountsDiv = document.querySelector('#user-accounts');
  const userAccounts = [
-  {
+ {
     id: 1, email: 'verylongname@verylongdomain.com', selected: true
   },
   {
