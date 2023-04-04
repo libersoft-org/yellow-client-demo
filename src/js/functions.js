@@ -187,14 +187,54 @@ async function getConversation(id) {
         checkmark: "✔"
        }
       },
-      {
-       text: "More consecutive messages by same user. To check the chat bubble arrows.",
-       sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-       meta: {
-        time: "14:25",
-        checkmark: "✔"
-       }
-      },
+      // {
+      //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
+      //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
+      //  meta: {
+      //   time: "14:25",
+      //   checkmark: "✔"
+      //  }
+      // },
+      // {
+      //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
+      //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
+      //  meta: {
+      //   time: "14:25",
+      //   checkmark: "✔"
+      //  }
+      // },
+      // {
+      //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
+      //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
+      //  meta: {
+      //   time: "14:25",
+      //   checkmark: "✔"
+      //  }
+      // },
+      // {
+      //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
+      //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
+      //  meta: {
+      //   time: "14:25",
+      //   checkmark: "✔"
+      //  }
+      // },
+      // {
+      //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
+      //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
+      //  meta: {
+      //   time: "14:25",
+      //   checkmark: "✔"
+      //  }
+      // },
+      // {
+      //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
+      //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
+      //  meta: {
+      //   time: "14:25",
+      //   checkmark: "✔"
+      //  }
+      // },
      ]
   },
  ];
@@ -223,8 +263,12 @@ async function getConversation(id) {
    div.appendChild(content_div);
   }
   chat_container.appendChild(div);
+  let container_height = chat_container.offsetHeight;
+  console.log(container_height)
+  if(container_height > 850) document.querySelector('#chat').style.display = 'block';
  }
- chat.scrollTop = chat.scrollHeight - chat.clientHeight;
+//  chat.scrollTop = chat.scrollHeight - chat.clientHeight;
+chat.scrollTo({ top: chat.clientHeight, behavior: 'smooth' });
 }
 
 function showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar) {
