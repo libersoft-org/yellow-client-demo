@@ -183,6 +183,10 @@ input {
  height: 1px;
 }
 
+.br {
+ padding-bottom: 10px;
+}
+
 #searchbar {
  width: calc(var(--panel-left-width) - 20px);
 }
@@ -370,8 +374,10 @@ input {
  max-width: 1000px;
  margin: 0 auto;
  width: 100%;
- height: 100%;
  background-color: #FFFEF8;
+ /* flex: 1 1 auto; */
+ /* flex-grow: 1; */
+ min-height: 0px;
 }
 
 .chat-item {
