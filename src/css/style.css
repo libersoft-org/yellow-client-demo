@@ -41,9 +41,8 @@ input {
 
 #user-accounts {
  z-index: 9;
- padding: 1rem;
- line-height: 200%;
- max-height: 170px;
+ padding-bottom: 2rem;
+ max-height: 300px;
 }
 
 #user-accounts a {
@@ -77,10 +76,12 @@ input {
 }
 
 .accounts-icon {
- color: #FFFEF8;
- -webkit-transform: rotate(180deg);
  margin-left: auto;
- font-size: 1rem;
+ position: absolute;
+ right: 0;
+ width: 20px;
+ top: 0;
+ margin-top: 20px;
 }
 
 .menuitem .icon {
@@ -265,11 +266,11 @@ input {
 #account .text {
  padding-left: 10px;
  color: #FFFEF8;
+ flex-grow: 1;
 }
 
 #conversations {
  z-index: 50;
- height: calc(100% - var(--bar-height) - 50px);
  background-color: hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 40%));
  overflow: hidden;
  position: relative;
@@ -299,15 +300,17 @@ input {
 .panel.left::-moz-scrollbar-thumb:hover {
  background: rgba(0, 0, 0, 0.55)
 }
-#conversations .conversation {
+#conversations .conversation, div.conversation {
  display: flex;
  padding: 10px;
  border-bottom: 1px solid #808080;
- justify-content: space-between;
  height: 60px;
 }
+#conversations .conversation {
+ justify-content: space-between;
+}
 
-#conversations .conversation:hover {
+#conversations .conversation:hover, div.conversation:hover {
  opacity: 0.8;
  background-color: var(--primary-color);
 }
@@ -317,9 +320,14 @@ input {
  opacity: 0.9;
 }
 
-#conversations .conversation .text {
+#conversations .conversation .text, div.autogen {
  margin: .7rem 10px 4px 10px;
+}
+#conversations .conversation .text {
  width: calc(var(--panel-left-width) - 180px);
+}
+div.autogen {
+ width: calc(var(--panel-left-width) - 160px);
 }
 #conversations .conversation .text .name {
  font-weight: bold;
