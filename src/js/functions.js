@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
   searchBarInput.style.marginRight = '2rem';
   setTimeout(() => {
    var active = document.querySelectorAll('.active')[0];
-   console.log({active})
    active.classList.remove('active');
   }, 1500);
  }
@@ -298,11 +297,21 @@ function toggleUserAccounts() {
  for (let i = 0; i < userAccounts.length; i++) {
   const account = userAccounts[i];
   accountsDiv.innerHTML += `
-   <li class='shadow acc-item ${account.selected ? 'active' : ''}'>
-    <a href = '#'> ${account.email} </a>
-   </li>
+   <a onclick="">
+    <div class='conversation ${account.selected ? 'active' : ''}'>
+     <img class="photo-circle medium" src="https://i.pravatar.cc/300?u=ownprofile"/>
+     <div class="text autogen"><div class="name nowrap">${account.email}</div></div>
+    </div>
+   </a>
   `;
  }
  accountsDiv.classList.toggle('hidden');
  accountsDiv.classList.toggle('visible');
+ let button = document.querySelector("#toggleAccounts");
+ if(accountsDiv.classList.contains('hidden')) {
+  button.src="img/icons/caret-down.svg";
+ }
+ else if(accountsDiv.classList.contains('visible')) {
+  button.src="img/icons/caret-up.svg";
+ }
 }
