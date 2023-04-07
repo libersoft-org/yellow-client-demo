@@ -390,7 +390,7 @@ div.autogen {
 
 .chat-item {
  background-color: #FFFEF8;
- padding-top: 20px;
+ padding: 10px 0;
 }
 
 .container::-webkit-scrollbar {
@@ -502,7 +502,7 @@ div.autogen {
  padding: 5px 10px;
  border-radius: 20px;
  background-color: var(--primary-color);
- max-width: 200px;
+ max-width: 100px;
  margin: 20px auto;
  margin-bottom: 0;
 }
@@ -543,11 +543,25 @@ div.autogen {
  }
 }
 
-@media screen and (max-width: 920px){
+@media screen and (max-width: 768px){
  div {
   font-size: 0.7rem;
  }
  #conversations .conversation, div.conversation {
   height: 50px;
+ }
+ #userbar .text .name, #userbar .text .address {
+  width: calc(100% - 100px);
+ }
+ .photo-circle.medium {
+  width: 30px;
+  height: 30px;
+ }
+ #chat .container .message .content {
+ background-color: #F0F0F0;
+ border-radius: 10px;
+ padding: 5px 7px;
+ margin: -2px 10px;
+ max-width: 310px;
  }
 }

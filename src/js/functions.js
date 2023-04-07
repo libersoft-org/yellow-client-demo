@@ -201,7 +201,6 @@ async function getConversation(id) {
    div.appendChild(content_div);
   }
   chat_container.appendChild(div);
-  chat_container.innerHTML += `<div class="br"></div>`;
  }
 chat.scrollTo({ top: chat.clientHeight, behavior: 'smooth' });
 }
