@@ -82,6 +82,7 @@ input {
  width: 20px;
  top: 0;
  margin-top: 20px;
+ margin-right: 10px;
 }
 
 .menuitem .icon {
@@ -95,7 +96,6 @@ input {
  padding: 2px;
  width: 40px;
  height: 40px;
- /* background-color: red; */
  cursor: pointer;
 }
 

@@ -3,11 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
  const rightPanel = document.querySelector('#page .panel.right');
  var resizer = document.querySelector('#page .resizer');
  var searchBar = document.querySelector('#searchbar');
- var userBar = document.querySelector('#userbar');
  var searchBarInput = document.querySelector('#searchbar > .text');
- var selfName = document.querySelector('#userbar > .text > .name');
- var selfAddress = document.querySelector('#userbar > .text > .address');
- var inputBar = document.querySelector('#inputbar');
  var dragging = false;
 
  resizer.addEventListener('mousedown', () => {
@@ -22,23 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
  });
  document.addEventListener('mousemove', (e) => {
   if (dragging) {
-   var pageWidth = leftPanel.parentElement.clientWidth;
-   var leftPanelMinWidth = 250;
-   var leftPanelMaxWidth = pageWidth - 500;
-   var newLeftPanelWidth = e.clientX > leftPanelMinWidth ? e.clientX : leftPanelMinWidth;
-   newLeftPanelWidth = newLeftPanelWidth < leftPanelMaxWidth ? newLeftPanelWidth : leftPanelMaxWidth;
-   leftPanel.style.width = newLeftPanelWidth + 'px';
-   rightPanel.style.width = pageWidth - newLeftPanelWidth + 'px';
-   searchBar.style.width = (newLeftPanelWidth - 20) + 'px';
-   selfName.style.width = (pageWidth - newLeftPanelWidth - 290) + 'px';
-   selfAddress.style.width = (pageWidth - newLeftPanelWidth - 290) + 'px';
-   userBar.style.width = (pageWidth - newLeftPanelWidth - 20) + 'px';
-   resizer.style.left = newLeftPanelWidth - (resizer.offsetWidth / 2) + 'px';
-   var conversations_text = document.querySelectorAll('#conversations > a .conversation >.text');
-   inputBar.style.marginLeft = newLeftPanelWidth + 'px';
-   conversations_text.forEach((text) => {
-    text.style.width = (newLeftPanelWidth - 170) + 'px';
-   });
+   setContent(e, resizer);
   }
  });
  getConversations();
@@ -64,12 +44,10 @@ function menu() {
 }
 
 function menuShow() {
-//  document.querySelector('#menu').style.display = 'flex';
  document.querySelector('#menu').classList.toggle('show');
 }
 
 function menuHide() {
-//  document.querySelector('#menu').style.display = 'none';
  document.querySelector('#menu').classList.toggle('show');
 }
 
@@ -194,46 +172,6 @@ async function getConversation(id) {
         checkmark: "✔"
        }
       },
-      // {
-      //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
-      //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-      //  meta: {
-      //   time: "14:25",
-      //   checkmark: "✔"
-      //  }
-      // },
-      // {
-      //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
-      //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-      //  meta: {
-      //   time: "14:25",
-      //   checkmark: "✔"
-      //  }
-      // },
-      // {
-      //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
-      //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-      //  meta: {
-      //   time: "14:25",
-      //   checkmark: "✔"
-      //  }
-      // },
-      // {
-      //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
-      //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-      //  meta: {
-      //   time: "14:25",
-      //   checkmark: "✔"
-      //  }
-      // },
-      // {
-      //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
-      //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-      //  meta: {
-      //   time: "14:25",
-      //   checkmark: "✔"
-      //  }
-      // },
      ]
   },
  ];
@@ -314,4 +252,44 @@ function toggleUserAccounts() {
  else if(accountsDiv.classList.contains('visible')) {
   button.src="img/icons/caret-up.svg";
  }
+}
+
+window.addEventListener('resize', (e) => {
+  var resizer = document.querySelector('#page .resizer');
+  const leftPanel = document.querySelector('#page .panel.left');
+  leftPanel.style.width = "var(--panel-left-width);";
+  setContent(e, resizer);
+});
+
+function setContent(e, resizer) {
+ const leftPanel = document.querySelector('#page .panel.left');
+ const rightPanel = document.querySelector('#page .panel.right');
+ var searchBar = document.querySelector('#searchbar');
+ var userBar = document.querySelector('#userbar');
+ var selfName = document.querySelector('#userbar > .text > .name');
+ var selfAddress = document.querySelector('#userbar > .text > .address');
+ var inputBar = document.querySelector('#inputbar');
+ 
+ var pageRect = leftPanel.parentElement.getBoundingClientRect();
+ var leftPanelMinWidth = 250;
+ var leftPanelMaxWidth = pageRect.width - 500;
+ var newLeftPanelWidth;
+ if(e.type === 'mousemove') {
+  newLeftPanelWidth = e.clientX - pageRect.left > leftPanelMinWidth ? e.clientX - pageRect.left : leftPanelMinWidth;
+ } else if(e.type === 'resize') {
+  newLeftPanelWidth =  400
+ }
+ newLeftPanelWidth = newLeftPanelWidth < leftPanelMaxWidth ? newLeftPanelWidth : leftPanelMaxWidth;
+ leftPanel.style.width = newLeftPanelWidth + 'px';
+ rightPanel.style.width = pageRect.width - newLeftPanelWidth + 'px';
+ searchBar.style.width = (newLeftPanelWidth - 20) + 'px';
+ selfName.style.width = (pageRect.width - newLeftPanelWidth - 290) + 'px';
+ selfAddress.style.width = (pageRect.width - newLeftPanelWidth - 290) + 'px';
+ userBar.style.width = (pageRect.width - newLeftPanelWidth - 20) + 'px';
+ resizer.style.left = newLeftPanelWidth - (resizer.offsetWidth / 2) + 'px';
+ var conversations_text = document.querySelectorAll('#conversations > a .conversation >.text');
+ inputBar.style.marginLeft = newLeftPanelWidth + 'px';
+ conversations_text.forEach((text) => {
+  text.style.width = (newLeftPanelWidth - 180) + 'px';
+ });
 }
