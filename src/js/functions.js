@@ -3,11 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
  const rightPanel = document.querySelector('#page .panel.right');
  var resizer = document.querySelector('#page .resizer');
  var searchBar = document.querySelector('#searchbar');
- var userBar = document.querySelector('#userbar');
  var searchBarInput = document.querySelector('#searchbar > .text');
- var selfName = document.querySelector('#userbar > .text > .name');
- var selfAddress = document.querySelector('#userbar > .text > .address');
- var inputBar = document.querySelector('#inputbar');
  var dragging = false;
 
  resizer.addEventListener('mousedown', () => {
@@ -22,27 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
  });
  document.addEventListener('mousemove', (e) => {
   if (dragging) {
-   var pageWidth = leftPanel.parentElement.clientWidth;
-   var leftPanelMinWidth = 250;
-   var leftPanelMaxWidth = pageWidth - 500;
-   var newLeftPanelWidth = e.clientX > leftPanelMinWidth ? e.clientX : leftPanelMinWidth;
-   newLeftPanelWidth = newLeftPanelWidth < leftPanelMaxWidth ? newLeftPanelWidth : leftPanelMaxWidth;
-   leftPanel.style.width = newLeftPanelWidth + 'px';
-   rightPanel.style.width = pageWidth - newLeftPanelWidth + 'px';
-   searchBar.style.width = (newLeftPanelWidth - 20) + 'px';
-   selfName.style.width = (pageWidth - newLeftPanelWidth - 290) + 'px';
-   selfAddress.style.width = (pageWidth - newLeftPanelWidth - 290) + 'px';
-   userBar.style.width = (pageWidth - newLeftPanelWidth - 20) + 'px';
-   resizer.style.left = newLeftPanelWidth - (resizer.offsetWidth / 2) + 'px';
-   var conversations_text = document.querySelectorAll('#conversations > a .conversation >.text');
-   inputBar.style.marginLeft = newLeftPanelWidth + 'px';
-   conversations_text.forEach((text) => {
-    text.style.width = (newLeftPanelWidth - 170) + 'px';
-   });
+   setContent(e, resizer);
   }
  });
  getConversations();
- getConversation(2);
+ if(window.matchMedia('(min-width: 768px)').matches) getConversation(2);
  if(window.matchMedia('(max-width: 768px)').matches) {
   resizer.style.display = 'none';
   rightPanel.style.display = 'none';
@@ -64,12 +44,10 @@ function menu() {
 }
 
 function menuShow() {
-//  document.querySelector('#menu').style.display = 'flex';
  document.querySelector('#menu').classList.toggle('show');
 }
 
 function menuHide() {
-//  document.querySelector('#menu').style.display = 'none';
  document.querySelector('#menu').classList.toggle('show');
 }
 
@@ -123,20 +101,21 @@ async function getConversation(id) {
  var chat = document.querySelector('#chat');
  var chat_container = document.querySelector('#chat > .container');
  var active = document.querySelector('.active');
+ const leftPanel = document.querySelector('#page .panel.left');
+ const rightPanel = document.querySelector('#page .panel.right');
+ var resizer = document.querySelector('#page .resizer');
+ var userBar = document.querySelector('#userbar');
+ var inputBar = document.querySelector('#inputbar');
  var a = document.querySelector(`a[onClick="getConversation('${id}')"]`);
  var clicked = a ? a.querySelector('.conversation') : null;
+ console.log({clicked})
+//  clicked ? clicked.addEventListener('click', () => {
+//   console.log('clicked twice....')
+  showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar)
+//  }) : null;
  active ? active.classList.remove('active'): null;
  clicked ? clicked.classList.add('active') : null;
- if(window.matchMedia('(max-width: 768px)').matches) {
-   var resizer = document.querySelector('#page .resizer');
-   const leftPanel = document.querySelector('#page .panel.left');
-   const rightPanel = document.querySelector('#page .panel.right');
-   var userBar = document.querySelector('#userbar');
-   var inputBar = document.querySelector('#inputbar');
-   clicked ? clicked.addEventListener('click', () => {
-    showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar)
-   }) : null;
- }
+ console.log('clicked once....');
  var messages = [
   {
      date: "17 March 2023",
@@ -194,46 +173,6 @@ async function getConversation(id) {
         checkmark: "✔"
        }
       },
-      // {
-      //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
-      //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-      //  meta: {
-      //   time: "14:25",
-      //   checkmark: "✔"
-      //  }
-      // },
-      // {
-      //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
-      //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-      //  meta: {
-      //   time: "14:25",
-      //   checkmark: "✔"
-      //  }
-      // },
-      // {
-      //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
-      //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-      //  meta: {
-      //   time: "14:25",
-      //   checkmark: "✔"
-      //  }
-      // },
-      // {
-      //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
-      //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-      //  meta: {
-      //   time: "14:25",
-      //   checkmark: "✔"
-      //  }
-      // },
-      // {
-      //  text: "More consecutive messages by same user. To check the chat bubble arrows.",
-      //  sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-      //  meta: {
-      //   time: "14:25",
-      //   checkmark: "✔"
-      //  }
-      // },
      ]
   },
  ];
@@ -262,19 +201,22 @@ async function getConversation(id) {
    div.appendChild(content_div);
   }
   chat_container.appendChild(div);
-  chat_container.innerHTML += `<div class="br"></div>`;
  }
 chat.scrollTo({ top: chat.clientHeight, behavior: 'smooth' });
 }
 
 function showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar) {
- resizer.style.display = 'none';
- rightPanel.style.width = '100%';
- rightPanel.style.display = 'block';
- leftPanel.style.display = 'none';
- userBar.style.width = '100%';
- inputBar.style.width = '100%';
- inputBar.style.marginLeft = '0';
+ if(window.matchMedia('(max-width: 768px)').matches) {
+  resizer.style.display = 'none';
+  rightPanel.style.width = '100%';
+  rightPanel.style.display = 'block';
+  leftPanel.style.display = 'none';
+  userBar.style.width = '100%';
+  inputBar.style.width = '100%';
+  inputBar.style.marginLeft = '0';
+ } else {
+  console.log('building switch chats...')
+ }
 }
 
 function toggleUserAccounts() {
@@ -314,4 +256,44 @@ function toggleUserAccounts() {
  else if(accountsDiv.classList.contains('visible')) {
   button.src="img/icons/caret-up.svg";
  }
+}
+
+window.addEventListener('resize', (e) => {
+  var resizer = document.querySelector('#page .resizer');
+  const leftPanel = document.querySelector('#page .panel.left');
+  leftPanel.style.width = "var(--panel-left-width);";
+  setContent(e, resizer);
+});
+
+function setContent(e, resizer) {
+ const leftPanel = document.querySelector('#page .panel.left');
+ const rightPanel = document.querySelector('#page .panel.right');
+ var searchBar = document.querySelector('#searchbar');
+ var userBar = document.querySelector('#userbar');
+ var selfName = document.querySelector('#userbar > .text > .name');
+ var selfAddress = document.querySelector('#userbar > .text > .address');
+ var inputBar = document.querySelector('#inputbar');
+ 
+ var pageRect = leftPanel.parentElement.getBoundingClientRect();
+ var leftPanelMinWidth = 250;
+ var leftPanelMaxWidth = pageRect.width - 500;
+ var newLeftPanelWidth;
+ if(e.type === 'mousemove') {
+  newLeftPanelWidth = e.clientX - pageRect.left > leftPanelMinWidth ? e.clientX - pageRect.left : leftPanelMinWidth;
+ } else if(e.type === 'resize') {
+  newLeftPanelWidth =  400
+ }
+ newLeftPanelWidth = newLeftPanelWidth < leftPanelMaxWidth ? newLeftPanelWidth : leftPanelMaxWidth;
+ leftPanel.style.width = newLeftPanelWidth + 'px';
+ rightPanel.style.width = pageRect.width - newLeftPanelWidth + 'px';
+ searchBar.style.width = (newLeftPanelWidth - 20) + 'px';
+ selfName.style.width = (pageRect.width - newLeftPanelWidth - 290) + 'px';
+ selfAddress.style.width = (pageRect.width - newLeftPanelWidth - 290) + 'px';
+ userBar.style.width = (pageRect.width - newLeftPanelWidth - 20) + 'px';
+ resizer.style.left = newLeftPanelWidth - (resizer.offsetWidth / 2) + 'px';
+ var conversations_text = document.querySelectorAll('#conversations > a .conversation >.text');
+ inputBar.style.marginLeft = newLeftPanelWidth + 'px';
+ conversations_text.forEach((text) => {
+  text.style.width = (newLeftPanelWidth - 180) + 'px';
+ });
 }
