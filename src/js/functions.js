@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
  });
  getConversations();
- getConversation(2);
+ if(window.matchMedia('(min-width: 768px)').matches) getConversation(2);
  if(window.matchMedia('(max-width: 768px)').matches) {
   resizer.style.display = 'none';
   rightPanel.style.display = 'none';
@@ -101,20 +101,21 @@ async function getConversation(id) {
  var chat = document.querySelector('#chat');
  var chat_container = document.querySelector('#chat > .container');
  var active = document.querySelector('.active');
+ const leftPanel = document.querySelector('#page .panel.left');
+ const rightPanel = document.querySelector('#page .panel.right');
+ var resizer = document.querySelector('#page .resizer');
+ var userBar = document.querySelector('#userbar');
+ var inputBar = document.querySelector('#inputbar');
  var a = document.querySelector(`a[onClick="getConversation('${id}')"]`);
  var clicked = a ? a.querySelector('.conversation') : null;
+ console.log({clicked})
+//  clicked ? clicked.addEventListener('click', () => {
+//   console.log('clicked twice....')
+  showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar)
+//  }) : null;
  active ? active.classList.remove('active'): null;
  clicked ? clicked.classList.add('active') : null;
- if(window.matchMedia('(max-width: 768px)').matches) {
-   var resizer = document.querySelector('#page .resizer');
-   const leftPanel = document.querySelector('#page .panel.left');
-   const rightPanel = document.querySelector('#page .panel.right');
-   var userBar = document.querySelector('#userbar');
-   var inputBar = document.querySelector('#inputbar');
-   clicked ? clicked.addEventListener('click', () => {
-    showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar)
-   }) : null;
- }
+ console.log('clicked once....');
  var messages = [
   {
      date: "17 March 2023",
@@ -206,13 +207,17 @@ chat.scrollTo({ top: chat.clientHeight, behavior: 'smooth' });
 }
 
 function showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar) {
- resizer.style.display = 'none';
- rightPanel.style.width = '100%';
- rightPanel.style.display = 'block';
- leftPanel.style.display = 'none';
- userBar.style.width = '100%';
- inputBar.style.width = '100%';
- inputBar.style.marginLeft = '0';
+ if(window.matchMedia('(max-width: 768px)').matches) {
+  resizer.style.display = 'none';
+  rightPanel.style.width = '100%';
+  rightPanel.style.display = 'block';
+  leftPanel.style.display = 'none';
+  userBar.style.width = '100%';
+  inputBar.style.width = '100%';
+  inputBar.style.marginLeft = '0';
+ } else {
+  console.log('building switch chats...')
+ }
 }
 
 function toggleUserAccounts() {

@@ -542,3 +542,12 @@ div.autogen {
   width: calc(100vw - 170px);
  }
 }
+
+@media screen and (max-width: 920px){
+ div {
+  font-size: 0.7rem;
+ }
+ #conversations .conversation, div.conversation {
+  height: 50px;
+ }
+}
