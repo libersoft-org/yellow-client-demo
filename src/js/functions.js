@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
  const leftPanel = document.querySelector('#page .panel.left');
  const rightPanel = document.querySelector('#page .panel.right');
  var resizer = document.querySelector('#page .resizer');
- var searchBar = document.querySelector('#searchbar');
- var searchBarInput = document.querySelector('#searchbar > .text');
+ //var searchBar = document.querySelector('#searchbar');
+ //var searchBarInput = document.querySelector('#searchbar > .text');
  var dragging = false;
 
  resizer.addEventListener('mousedown', () => {
@@ -16,9 +16,45 @@ document.addEventListener('DOMContentLoaded', () => {
   leftPanel.style.removeProperty('user-select');
   rightPanel.style.removeProperty('user-select');
  });
- document.addEventListener('mousemove', (e) => { if (dragging) setContent(e, resizer); });
+ document.addEventListener('mousemove', (e) => {
+  if (dragging) {
+   var pageWidth = leftPanel.parentElement.clientWidth;
+   var leftPanelMinWidth = 250;
+   var leftPanelMaxWidth = pageWidth - 500;
+   var newLeftPanelWidth = e.clientX > leftPanelMinWidth ? e.clientX : leftPanelMinWidth;
+   newLeftPanelWidth = newLeftPanelWidth < leftPanelMaxWidth ? newLeftPanelWidth : leftPanelMaxWidth;
+   leftPanel.style.width = newLeftPanelWidth + 'px';
+   rightPanel.style.width = pageWidth - newLeftPanelWidth + 'px';
+   resizer.style.left = newLeftPanelWidth - (resizer.offsetWidth / 2) + 'px';
+   var conversations_text = document.querySelectorAll('#conversations > a .text');
+   document.querySelector('#inputbar').style.marginLeft = newLeftPanelWidth + 'px';
+   conversations_text.forEach((text) => { text.style.width = newLeftPanelWidth + 'px'; });
+   text.style.width = newLeftPanelWidth + 'px';
+ 
+   
+  /*
+   document.querySelector('#userbar').style.width = (pageRect.width - newLeftPanelWidth - 20) + 'px';
+   document.querySelector('#inputbar').style.marginLeft = newLeftPanelWidth + 'px';
+   document.querySelector('#searchbar').style.width = (newLeftPanelWidth - 20) + 'px';
+   var selfName = document.querySelector('#userbar > .text > .name');
+   var selfAddress = document.querySelector('#userbar > .text > .address');
+   var pageRect = leftPanel.parentElement.getBoundingClientRect();
+   var newLeftPanelWidth;
+   if (e.type === 'mousemove') newLeftPanelWidth = e.clientX - pageRect.left > leftPanelMinWidth ? e.clientX - pageRect.left : leftPanelMinWidth;
+   else if (e.type === 'resize') newLeftPanelWidth = 400;
+   newLeftPanelWidth = newLeftPanelWidth < leftPanelMaxWidth ? newLeftPanelWidth : leftPanelMaxWidth;
+   selfName.style.width = (pageRect.width - newLeftPanelWidth - 290) + 'px';
+   selfAddress.style.width = (pageRect.width - newLeftPanelWidth - 290) + 'px';
+   resizer.style.left = newLeftPanelWidth - (resizer.offsetWidth / 2) + 'px';
+   var conversations_text = document.querySelectorAll('#conversations > a .conversation >.text');
+   conversations_text.forEach((text) => { text.style.width = (newLeftPanelWidth - 180) + 'px'; });
+   */
+  };
+ });
  getConversations();
- if (window.matchMedia('(min-width: 768px)').matches) getConversation(2);
+ getChats();
+ 
+ /* TODO: convert to CSS
  if (window.matchMedia('(max-width: 768px)').matches) {
   resizer.style.display = 'none';
   rightPanel.style.display = 'none';
@@ -30,24 +66,23 @@ document.addEventListener('DOMContentLoaded', () => {
    active.classList.remove('active');
   }, 1500);
  }
+*/
+
+
 });
 
-function menu() {
- var menu = document.querySelector('#menu');
- if (getComputedStyle(menu).display == 'none') menuShow();
- else menuHide();
-}
-
-function menuShow() {
- document.querySelector('#menu').classList.toggle('show');
-}
-
-function menuHide() {
- document.querySelector('#menu').classList.toggle('show');
-}
-
-function copy(text) {
- navigator.clipboard.writeText(text);
+async function getConversations() {
+ await addConversation('1', 'https://i.pravatar.cc/300?u=user1', 'Ultraultraultra Long Username - Company Ltd.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 10, false);
+ await addConversation('2', 'https://i.pravatar.cc/300?u=user2', 'Veryveryvery Long Username - Some Other Company Ltd.', 'Morem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 0, true);
+ await addConversation('3', 'https://i.pravatar.cc/300?u=user3', 'Short Name', 'Norem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 888, false);
+ await addConversation('4', 'https://i.pravatar.cc/300?u=user4', 'John Doe', 'Oorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 5, false);
+ await addConversation('5', 'https://i.pravatar.cc/300?u=user5', 'Jane Smith', 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 9, false);
+ await addConversation('6', 'https://i.pravatar.cc/300?u=user6', 'Jane Smith', 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 11, false);
+ await addConversation('7', 'https://i.pravatar.cc/300?u=user7', 'User Name', 'Vorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 650, false);
+ await addConversation('8', 'https://i.pravatar.cc/300?u=user8', 'Test User', 'Worem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 92, false);
+ await addConversation('9', 'https://i.pravatar.cc/300?u=user9', 'Some Name', 'Torem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 83, false);
+ await addConversation('10', 'https://i.pravatar.cc/300?u=user10', 'Nemp User', 'Sorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 74, false);
+ await addConversation('11', 'https://i.pravatar.cc/300?u=user11', 'Name Here', 'Borem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 101, false);
 }
 
 async function addConversation(id, photo, name, message, time, unread, active) {
@@ -68,9 +103,14 @@ async function addConversation(id, photo, name, message, time, unread, active) {
  });
 }
 
-function translate(template, dictionary) {
- for (var key in dictionary) template = template.replaceAll(key, dictionary[key]);
- return template;
+async function getChats() {
+ addChatDate('17 March 2023');
+ await addChatMessage('https://i.pravatar.cc/300?u=user2', 'Hi, how are you?', '11:22:33', true, true);
+ await addChatMessage('https://i.pravatar.cc/300?u=ownprofile', 'Hi, I\'m fine and you?', '11:23:00', false, true);
+ addChatDate('18 March 2023');
+ await addChatMessage('https://i.pravatar.cc/300?u=user2', 'I am sending you very very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long long message.', '15:35:00', true, true);
+ await addChatMessage('https://i.pravatar.cc/300?u=ownprofile', 'I am also sending you very very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long long message.', '16:25:15', false, false);
+ await addChatMessage('https://i.pravatar.cc/300?u=ownprofile', 'Cool!', '16:35:59', false, false);
 }
 
 async function getFileContent(file) {
@@ -78,119 +118,41 @@ async function getFileContent(file) {
  return content.text();
 }
 
-async function getConversations() {
- await addConversation('1', 'https://i.pravatar.cc/300?u=user1', 'Ultraultraultra Long Username - Company Ltd.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 10, false);
- await addConversation('2', 'https://i.pravatar.cc/300?u=user2', 'Veryveryvery Long Username - Some Other Company Ltd.', 'Morem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 0, true);
- await addConversation('3', 'https://i.pravatar.cc/300?u=user3', 'Short Name', 'Norem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 888, false);
- await addConversation('4', 'https://i.pravatar.cc/300?u=user4', 'John Doe', 'Oorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 5, false);
- await addConversation('5', 'https://i.pravatar.cc/300?u=user5', 'Jane Smith', 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 9, false);
- await addConversation('6', 'https://i.pravatar.cc/300?u=user6', 'Jane Smith', 'Porem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 11, false);
- await addConversation('7', 'https://i.pravatar.cc/300?u=user7', 'User Name', 'Vorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 650, false);
- await addConversation('8', 'https://i.pravatar.cc/300?u=user8', 'Test User', 'Worem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 92, false);
- await addConversation('9', 'https://i.pravatar.cc/300?u=user9', 'Some Name', 'Torem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 83, false);
- await addConversation('10', 'https://i.pravatar.cc/300?u=user10', 'Nemp User', 'Sorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 74, false);
- await addConversation('11', 'https://i.pravatar.cc/300?u=user11', 'Name Here', 'Borem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 101, false);
+function menu() {
+ document.querySelector('#menu').classList.toggle('show');
 }
 
-async function getConversation(id) {
- var chat = document.querySelector('#chat');
- var chat_container = document.querySelector('#chat > .container');
- var active = document.querySelector('.active');
- const leftPanel = document.querySelector('#page .panel.left');
- const rightPanel = document.querySelector('#page .panel.right');
- var resizer = document.querySelector('#page .resizer');
- var userBar = document.querySelector('#userbar');
- var inputBar = document.querySelector('#inputbar');
- var a = document.querySelector(`a[onClick="getConversation('${id}')"]`);
- var clicked = a ? a.querySelector('.conversation') : null;
- console.log({clicked});
- showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar);
- active ? active.classList.remove('active'): null;
- clicked ? clicked.classList.add('active') : null;
- console.log('clicked once....');
- var messages = [
-  {
-   date: "17 March 2023",
-   content: [{
-    text: "Hi, how are you?",
-    sender_photo: "https://i.pravatar.cc/300?u=user2",
-    meta: {
-     time: "14:23",
-     checkmark: "✔"
-    }
-   }, {
-    text: "Hi, I am fine, thank you!",
-    sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-    meta: {
-     time: "14:25",
-     checkmark: "✔"
-    }
-   }
-  ]},
-  {
-   date: "18 March 2023",
-   content: [
-    {
-     text: "Hi, how are you?",
-     sender_photo: "https://i.pravatar.cc/300?u=user2",
-     meta: {
-      time: "14:23",
-      checkmark: "✔"
-     }
-    }, {
-     text: "Hi, I am fine, thank you!",
-     sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-     meta: {
-      time: "14:25",
-      checkmark: "✔"
-     }
-    }, {
-     text: "More consecutive messages by same user. To check the chat bubble arrows.",
-     sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-     meta: {
-      time: "14:25",
-      checkmark: "✔"
-     }
-    }, {
-     text: "More consecutive messages by same user. To check the chat bubble arrows.",
-     sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-     meta: {
-      time: "14:25",
-      checkmark: "✔"
-     }
-    },
-   ]
-  },
- ];
- chat_container.innerHTML = '';
- for (var i = 0; i < messages.length; i += 1) {
-  var message = messages[i];
-  var div = document.createElement('div');
-  div.classList.add('chat-item');
-  div.innerHTML = `<div class="date">${message.date}</div>`;
-  for(var j=0; j<message.content.length; j+=1) {
-   var content = message.content[j];
-   var content_div = document.createElement('div');
-   content_div.classList.add('message');
-   if (content.sender_photo.split('?u=')[1] === 'ownprofile') content_div.classList.add('sent');
-   else content_div.classList.add('received');
-   content_div.innerHTML = `
-    <img class="photo-circle medium" src="${content.sender_photo}" alt="NAME" />
-    <div class="content">
-     <div class="text">${content.text}</div>
-     <div class="meta">
-      <span class="time">${content.meta.time}</span>
-      <span class="checkmark">&ensp;${content.meta.checkmark}</span>
-     </div>
-    </div>
-   `;
-   div.appendChild(content_div);
-  }
-  chat_container.appendChild(div);
- }
-chat.scrollTo({ top: chat.clientHeight, behavior: 'smooth' });
+function copy(text) {
+ navigator.clipboard.writeText(text);
 }
 
+function translate(template, dictionary) {
+ for (var key in dictionary) template = template.replaceAll(key, dictionary[key]);
+ return template;
+}
+
+function addChatDate(date) {
+ document.querySelector('#container').innerHTML += '<div class="date">' + date + '</div>';
+}
+
+async function addChatMessage(photo, message, time, sent, read) {
+ const html = translate(await getFileContent('html/temp-message.html'), {
+  '{SENT}': sent ? 'sent' : 'received',
+  '{PHOTO}': photo,
+  '{MESSAGE}': message,
+  '{TIME}': time,
+  '{READ}': read,
+  '{ACTIVE}': active ? ' active' : '',
+  '{SECURE_IMG}': secure ? 'secure_yes.svg' : 'secure_no.svg',
+  '{READ-ICON}': read ? 'read_yes.svg' : 'read_no.svg',
+  '{READ-TEXT}': read ? 'Read' : 'Unread'
+ });
+ document.querySelector('#chat .container').innerHTML += html;
+ const chat = document.querySelector('#chat');
+ chat.scrollTop(chat.scrollHeight);
+}
+
+/*
 function showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar) {
  if (window.matchMedia('(max-width: 768px)').matches) {
   resizer.style.display = 'none';
@@ -202,6 +164,7 @@ function showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar) {
   inputBar.style.marginLeft = '0';
  } else console.log('building switch chats...');
 }
+*/
 
 function toggleUserAccounts() {
  const accountsDiv = document.querySelector('#user-accounts');
@@ -228,38 +191,4 @@ function toggleUserAccounts() {
  let button = document.querySelector("#toggleAccounts");
  if (accountsDiv.classList.contains('hidden')) button.src="img/icons/caret-down.svg";
  else if (accountsDiv.classList.contains('visible')) button.src="img/icons/caret-up.svg";
-}
-
-window.addEventListener('resize', (e) => {
- var resizer = document.querySelector('#page .resizer');
- const leftPanel = document.querySelector('#page .panel.left');
- leftPanel.style.width = "var(--panel-left-width);";
- setContent(e, resizer);
-});
-
-function setContent(e, resizer) {
- const leftPanel = document.querySelector('#page .panel.left');
- const rightPanel = document.querySelector('#page .panel.right');
- var searchBar = document.querySelector('#searchbar');
- var userBar = document.querySelector('#userbar');
- var selfName = document.querySelector('#userbar > .text > .name');
- var selfAddress = document.querySelector('#userbar > .text > .address');
- var inputBar = document.querySelector('#inputbar');
- var pageRect = leftPanel.parentElement.getBoundingClientRect();
- var leftPanelMinWidth = 250;
- var leftPanelMaxWidth = pageRect.width - 500;
- var newLeftPanelWidth;
- if (e.type === 'mousemove') newLeftPanelWidth = e.clientX - pageRect.left > leftPanelMinWidth ? e.clientX - pageRect.left : leftPanelMinWidth;
- else if (e.type === 'resize') newLeftPanelWidth = 400;
- newLeftPanelWidth = newLeftPanelWidth < leftPanelMaxWidth ? newLeftPanelWidth : leftPanelMaxWidth;
- leftPanel.style.width = newLeftPanelWidth + 'px';
- rightPanel.style.width = pageRect.width - newLeftPanelWidth + 'px';
- searchBar.style.width = (newLeftPanelWidth - 20) + 'px';
- selfName.style.width = (pageRect.width - newLeftPanelWidth - 290) + 'px';
- selfAddress.style.width = (pageRect.width - newLeftPanelWidth - 290) + 'px';
- userBar.style.width = (pageRect.width - newLeftPanelWidth - 20) + 'px';
- resizer.style.left = newLeftPanelWidth - (resizer.offsetWidth / 2) + 'px';
- var conversations_text = document.querySelectorAll('#conversations > a .conversation >.text');
- inputBar.style.marginLeft = newLeftPanelWidth + 'px';
- conversations_text.forEach((text) => { text.style.width = (newLeftPanelWidth - 180) + 'px'; });
 }
