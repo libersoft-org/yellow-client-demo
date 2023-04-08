@@ -9,6 +9,7 @@
  --searchbar-height: 64px;
  --userbar-height: 64px;
  --inputbar-height: 64px;
+ --accountbar-height: 50px;
 }
 
 *:focus {
@@ -33,26 +34,6 @@ input {
  border-radius: 10px;
  border: 1px solid #808080;
  color: #000;
-}
-
-#searchbar .icon {
- margin-right: 10px;
- margin-left: -5px;
-}
-
-#user-accounts {
- z-index: 9;
- padding-bottom: 2rem;
- max-height: 300px;
-}
-
-#user-accounts a {
- text-decoration: none;
-}
-
-#user-accounts .active {
- background-color: var(--primary-color);
- color: rgba(0, 0, 0, 0.75);
 }
 
 .acc-item {
@@ -170,7 +151,7 @@ input {
  cursor: ew-resize;
 }
 
-#searchbar, #userbar {
+#page #searchbar, #userbar {
  display: flex;
  align-items: center;
  padding: 0 10px;
@@ -191,42 +172,42 @@ input {
  padding-bottom: 10px;
 }
 
-#searchbar {
+#page #searchbar {
  width: calc(var(--panel-left-width) - 20px);
 }
 
-#userbar {
+#page #userbar {
  width: calc(100% - var(--panel-left-width) - 20px);
 }
 
-#searchbar .text {
+#page #searchbar .text {
  width: 100%;
  box-sizing: border-box;
 }
 
-#userbar .text {
+#page #userbar .text {
  padding-left: 10px;
 }
 
-#userbar .text .name {
+#page #userbar .text .name {
  font-size: 1.2em;
  font-weight: bold;
  color: #000;
 }
 
-#userbar .text .address {
+#page #userbar .text .address {
  font-size: 0.9em;
  color: #303030;
 }
 
-#userbar .icons {
+#page #userbar .icons {
  display: flex;
  position: absolute;
  right: 0;
  margin-right: 10px;
 }
 
-#menu {
+#page #menu {
  position: absolute;
  z-index: 200;
  top: var(--searchbar-height);
@@ -238,36 +219,37 @@ input {
 .slide-in {
  margin-left: -300px;
  overflow-x: hidden;
- transition: margin-left .5s;
+ transition: margin-left .2s;
 }
 
 .slide-in.show {
  margin-left: 0px;
 }
 
-#menu .menuitem {
+#page #menu .menuitem {
  display: flex;
  align-items: center;
  margin: 20px 10px;
 }
 
-#menu .menuitem:hover {
+#page #menu .menuitem:hover {
  color: var(--primary-color);
 }
 
-#account {
- padding: 0 10px;
+#page #account {
+ z-index: 100;
  display: flex;
- align-items: center;
- height: 50px;
- background-color: #1D1D1D;
- margin-top: var(--searchbar-height);
  justify-content: space-between;
- position: relative;
- z-index: 99;
+ align-items: center;
+ position: absolute;
+ width: var(--panel-left-width);
+ height: 50px;
+ margin-top: var(--searchbar-height);
+ padding: 0 10px;
+ background-color: #1D1D1D;
 }
 
-#account .text {
+#page #account .text {
  padding-left: 10px;
  color: #FFFEF8;
  flex-grow: 1;
@@ -305,64 +287,60 @@ input {
  background: rgba(0, 0, 0, 0.55)
 }
 
-#conversations {
+#page #conversations {
  z-index: 50;
  background-color: hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 44%));
  overflow: hidden;
  position: relative;
 }
 
-#conversations .conversation, div.conversation {
+#page #conversations .conversation, div.conversation {
  display: flex;
  padding: 10px;
  border-bottom: 1px solid #808080;
  height: 60px;
 }
 
-#conversations .conversation {
+#page #conversations .conversation {
  justify-content: space-between;
 }
 
-#conversations .conversation:hover, div.conversation:hover {
+#page #conversations .conversation:hover, div.conversation:hover {
  background-color: var(--primary-color);
 }
 
-#conversations .conversation.active {
+#page #conversations .conversation.active {
  background-color: var(--primary-color);
 }
 
-#conversations .conversation .text, div.autogen {
+#page #conversations .conversation .text, div.autogen {
  margin: .7rem 10px 4px 10px;
 }
 
-#conversations .conversation .text {
+#page #conversations .conversation .text {
  width: calc(var(--panel-left-width) - 180px);
 }
 
-div.autogen {
- width: calc(var(--panel-left-width) - 160px);
-}
-
-#conversations .conversation .text .name {
+#page #conversations .conversation .text .name {
  font-weight: bold;
 }
 
-#conversations .conversation .text .message {
+#page #conversations .conversation .text .message {
  font-size: 0.8em;
  position: relative;
 }
 
-#conversations .conversation .status {
+#page #conversations .conversation .status {
  margin-top: 2px;
  margin-left: 20px;
 }
 
-#conversations .conversation .status .time {
+#page #conversations .conversation .status .time {
  font-size: 0.8em;
  color: #808080;
 }
 
-#conversations .conversation .status .unread {
+#page #conversations .conversation .status .unread {
  display: flex;
  align-items: center;
  justify-content: center;
@@ -377,7 +355,7 @@ div.autogen {
  margin-left: -28px;
 }
 
-#chat {
+#page #chat {
  display: flex;
  flex-direction: column;
  justify-content: flex-end;
@@ -393,12 +371,52 @@ div.autogen {
  background-color: hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 44%));
 }
 
-#chat .container {
+#page #chat .container {
  max-width: 1000px;
  margin: 0 auto;
  width: 100%;
  background-color: #FFFEF8;
  min-height: 0px;
+}
+
+#page #chat .container .message {
+ align-content: flex-end;
+}
+
+#page #chat .container .message, .row {
+ display: flex;
+ margin: 10px;
+}
+
+.row {
+ justify-content: space-between;
+ width: 83px;
+ position: relative;
+}
+
+#page #chat .container .message.received {
+ flex-direction: row;
+}
+
+#page #chat .container .message.sent {
+ flex-direction: row-reverse;
+}
+
+#page #chat .container .message .content {
+ background-color: #F0F0F0;
+ border-radius: 10px;
+ padding: 10px;
+ margin: 0 10px;
+ max-width: 530px;
+ position: relative;
+}
+
+#page #chat .container .message .content .text {
+ margin: 5px 10px;
+}
+
+div.autogen {
+ width: calc(var(--panel-left-width) - 160px);
 }
 
 .container::-webkit-scrollbar {
@@ -420,42 +438,6 @@ div.autogen {
 
 .container::-webkit-scrollbar-thumb:hover {
  background: rgba(0, 0, 0, 0.55)
-}
-
-#chat .container .message {
- align-content: flex-end;
-}
-
-#chat .container .message, .row {
- display: flex;
- margin: 10px;
-}
-
-.row {
- justify-content: space-between;
- width: 83px;
- position: relative;
-}
-
-#chat .container .message.received {
- flex-direction: row;
-}
-
-#chat .container .message.sent {
- flex-direction: row-reverse;
-}
-
-#chat .container .message .content {
- background-color: #F0F0F0;
- border-radius: 10px;
- padding: 10px;
- margin: 0 10px;
- max-width: 530px;
- position: relative;
-}
-
-#chat .container .message .content .text {
- margin: 5px 10px;
 }
 
 .sent + .received .content::before, .date + .received .content::before {
