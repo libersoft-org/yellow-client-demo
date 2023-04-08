@@ -35,17 +35,15 @@ input {
  border: 1px solid #808080;
  color: #000;
 }
-
-.acc-item {
- padding: 2px;
- margin: 0 0 7px 0;
+/*
+#account .item {
  list-style: none;
  text-align: center;
  font-size: 0.9rem;
  border-radius: 11px;
  cursor: pointer;
 }
-
+*/
 .hidden {
  height: 0;
  margin-top: -35px;
@@ -98,6 +96,27 @@ input {
 
 .icon-small {
  margin-left: 10px;
+}
+
+.mt {
+ position: fixed;
+ margin-top: var(--userbar-height);
+ width: calc(100% - var(--panel-left-width));
+ height: 1px;
+}
+
+.br {
+ padding-bottom: 10px;
+}
+
+.slide-in {
+ margin-left: -300px;
+ overflow-x: hidden;
+ transition: margin-left .2s;
+}
+
+.slide-in.show {
+ margin-left: 0px;
 }
 
 .photo-circle {
@@ -161,17 +180,6 @@ input {
  z-index: 999;
 }
 
-.mt {
- position: fixed;
- margin-top: var(--userbar-height);
- width: calc(100% - var(--panel-left-width));
- height: 1px;
-}
-
-.br {
- padding-bottom: 10px;
-}
-
 #page #searchbar {
  width: calc(var(--panel-left-width) - 20px);
 }
@@ -214,16 +222,6 @@ input {
  width: 300px;
  height: calc(100% - var(--searchbar-height));
  background-color: #FFFEF8;
-}
-
-.slide-in {
- margin-left: -300px;
- overflow-x: hidden;
- transition: margin-left .2s;
-}
-
-.slide-in.show {
- margin-left: 0px;
 }
 
 #page #menu .menuitem {
@@ -500,7 +498,7 @@ div.autogen {
  margin-bottom: 0;
 }
 
-#inputbar {
+#page #inputbar {
  display: flex;
  align-items: center;
  padding: 0 10px;
@@ -514,7 +512,7 @@ div.autogen {
  z-index: 999;
 }
 
-#inputbar .text {
+#page #inputbar .text {
  width: 100%;
  border: 0;
  border-bottom: 1px solid #FFFEF8;
@@ -529,36 +527,3 @@ div.autogen {
  margin-top: 30px;
 }
 
-@media screen and (max-width: 768px){
- #conversations .conversation .text {
-  margin: .7rem 10px 4px 10px;
-  width: calc(100vw - 170px);
- }
-}
-
-@media screen and (max-width: 768px){
- div {
-  font-size: 0.7rem;
- }
- 
- #conversations .conversation, div.conversation {
-  height: 50px;
- }
- 
- #userbar .text .name, #userbar .text .address {
-  width: calc(100% - 100px);
- }
- 
- .photo-circle.medium {
-  width: 30px;
-  height: 30px;
- }
- 
- #chat .container .message .content {
-  background-color: #F0F0F0;
-  border-radius: 10px;
-  padding: 5px 7px;
-  margin: -2px 10px;
-  max-width: 310px;
- }
-}
