@@ -16,7 +16,7 @@
      <a class="icon" onclick="menu()"><img src="img/icons/menu.svg" alt="Menu" /></a>
      <input class="text" type="text" placeholder="Search ..." />
     </div>
-    <div id="menu" class="slide-in">
+    <div id="menu" class="shadow slide-in">
      <a class="item" onclick="">
       <div class="menuitem"><img class="icon" src="img/icons/new_conversation.svg" alt="New conversation" />New conversation</div>
       <div class="menuitem"><img class="icon" src="img/icons/new_chat.svg" alt="New chat group" />New chat group</div>
@@ -28,15 +28,17 @@
       <div class="about">
        <div class="name">NEMP Web Client</div>
        <div class="version">Version: 0.0.1</div>
-       <div class="website">https://nemp.io</div>
+       <div class="website"><a href="https://nemp.io">https://nemp.io</a></div>
       </div>
      </a>
     </div>
-    <div id="account">
-     <img class="photo-circle small" src="https://i.pravatar.cc/300?u=ownprofile" alt="own-photo"/>
-     <span class="text nowrap">verylongname@verylongdomain.com</span>
-     <a onclick="toggleUserAccounts()"><img id="toggleAccounts" class="accounts-icon" src="img/icons/caret-down.svg" alt="search"/></a>
-    </div>
+    <a onclick="toggleUserAccounts()">
+     <div id="account">
+      <img class="photo-circle small" src="https://i.pravatar.cc/300?u=ownprofile" alt="own-photo"/>
+      <span class="text nowrap">verylongname@verylongdomain.com</span>
+      <img id="toggleAccounts" class="accounts-icon" src="img/icons/caret-down.svg" alt="search"/>
+     </div>
+    </a>
     <div id="user-accounts" class="hidden"></div>
     <div id="conversations"></div>
    </div>
@@ -61,7 +63,6 @@
     <div id="chat">
      <div class="container"></div>
     </div>
-    
     <div id="inputbar" class="shadow">
      <img class="icon" src="img/icons/attachment.svg" alt="Attachment" />
      <input class="text" type="text" placeholder="Type a message ..." />
@@ -70,7 +71,6 @@
      <img class="icon" src="img/icons/emoji.svg" alt="Emoji" />
      <img class="icon" src="img/icons/send.svg" alt="Send" />
     </div>
-
    </div>
   </div>
  </body>

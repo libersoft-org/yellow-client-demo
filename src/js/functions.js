@@ -16,14 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
   leftPanel.style.removeProperty('user-select');
   rightPanel.style.removeProperty('user-select');
  });
- document.addEventListener('mousemove', (e) => {
-  if (dragging) {
-   setContent(e, resizer);
-  }
- });
+ document.addEventListener('mousemove', (e) => { if (dragging) setContent(e, resizer); });
  getConversations();
- if(window.matchMedia('(min-width: 768px)').matches) getConversation(2);
- if(window.matchMedia('(max-width: 768px)').matches) {
+ if (window.matchMedia('(min-width: 768px)').matches) getConversation(2);
+ if (window.matchMedia('(max-width: 768px)').matches) {
   resizer.style.display = 'none';
   rightPanel.style.display = 'none';
   leftPanel.style.width = '100%';
@@ -34,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
    active.classList.remove('active');
   }, 1500);
  }
-
 });
 
 function menu() {
@@ -69,7 +64,7 @@ async function addConversation(id, photo, name, message, time, unread, active) {
  });
  document.querySelector('#conversations').innerHTML += html;
  document.querySelectorAll('#conversations .conversation .status .unread').forEach((item) => {
-    if(item.innerHTML === '0') item.style.display = 'none';
+  if (item.innerHTML === '0') item.style.display = 'none';
  });
 }
 
@@ -108,76 +103,67 @@ async function getConversation(id) {
  var inputBar = document.querySelector('#inputbar');
  var a = document.querySelector(`a[onClick="getConversation('${id}')"]`);
  var clicked = a ? a.querySelector('.conversation') : null;
- console.log({clicked})
-//  clicked ? clicked.addEventListener('click', () => {
-//   console.log('clicked twice....')
-  showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar)
-//  }) : null;
+ console.log({clicked});
+ showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar);
  active ? active.classList.remove('active'): null;
  clicked ? clicked.classList.add('active') : null;
  console.log('clicked once....');
  var messages = [
   {
-     date: "17 March 2023",
-     content: [
-      {
-       text: "Hi, how are you?",
-       sender_photo: "https://i.pravatar.cc/300?u=user2",
-       meta: {
-        time: "14:23",
-        checkmark: "✔"
-       }
-      },
-      {
-       text: "Hi, I am fine, thank you!",
-       sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-       meta: {
-        time: "14:25",
-        checkmark: "✔"
-       }
-      },
-     ]
-  },
+   date: "17 March 2023",
+   content: [{
+    text: "Hi, how are you?",
+    sender_photo: "https://i.pravatar.cc/300?u=user2",
+    meta: {
+     time: "14:23",
+     checkmark: "✔"
+    }
+   }, {
+    text: "Hi, I am fine, thank you!",
+    sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
+    meta: {
+     time: "14:25",
+     checkmark: "✔"
+    }
+   }
+  ]},
   {
-     date: "18 March 2023",
-     content: [
-      {
-       text: "Hi, how are you?",
-       sender_photo: "https://i.pravatar.cc/300?u=user2",
-       meta: {
-        time: "14:23",
-        checkmark: "✔"
-       }
-      },
-      {
-       text: "Hi, I am fine, thank you!",
-       sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-       meta: {
-        time: "14:25",
-        checkmark: "✔"
-       }
-      },
-      {
-       text: "More consecutive messages by same user. To check the chat bubble arrows.",
-       sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-       meta: {
-        time: "14:25",
-        checkmark: "✔"
-       }
-      },
-      {
-       text: "More consecutive messages by same user. To check the chat bubble arrows.",
-       sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
-       meta: {
-        time: "14:25",
-        checkmark: "✔"
-       }
-      },
-     ]
+   date: "18 March 2023",
+   content: [
+    {
+     text: "Hi, how are you?",
+     sender_photo: "https://i.pravatar.cc/300?u=user2",
+     meta: {
+      time: "14:23",
+      checkmark: "✔"
+     }
+    }, {
+     text: "Hi, I am fine, thank you!",
+     sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
+     meta: {
+      time: "14:25",
+      checkmark: "✔"
+     }
+    }, {
+     text: "More consecutive messages by same user. To check the chat bubble arrows.",
+     sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
+     meta: {
+      time: "14:25",
+      checkmark: "✔"
+     }
+    }, {
+     text: "More consecutive messages by same user. To check the chat bubble arrows.",
+     sender_photo: "https://i.pravatar.cc/300?u=ownprofile",
+     meta: {
+      time: "14:25",
+      checkmark: "✔"
+     }
+    },
+   ]
   },
  ];
  chat_container.innerHTML = '';
- for (var i=0; i<messages.length; i+=1) {
+ for (var i = 0; i < messages.length; i += 1) {
   var message = messages[i];
   var div = document.createElement('div');
   div.classList.add('chat-item');
@@ -186,7 +172,7 @@ async function getConversation(id) {
    var content = message.content[j];
    var content_div = document.createElement('div');
    content_div.classList.add('message');
-   if(content.sender_photo.split('?u=')[1] === 'ownprofile') content_div.classList.add('sent');
+   if (content.sender_photo.split('?u=')[1] === 'ownprofile') content_div.classList.add('sent');
    else content_div.classList.add('received');
    content_div.innerHTML = `
     <img class="photo-circle medium" src="${content.sender_photo}" alt="NAME" />
@@ -206,7 +192,7 @@ chat.scrollTo({ top: chat.clientHeight, behavior: 'smooth' });
 }
 
 function showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar) {
- if(window.matchMedia('(max-width: 768px)').matches) {
+ if (window.matchMedia('(max-width: 768px)').matches) {
   resizer.style.display = 'none';
   rightPanel.style.width = '100%';
   rightPanel.style.display = 'block';
@@ -214,26 +200,16 @@ function showMobileChat(resizer, rightPanel, leftPanel, userBar, inputBar) {
   userBar.style.width = '100%';
   inputBar.style.width = '100%';
   inputBar.style.marginLeft = '0';
- } else {
-  console.log('building switch chats...')
- }
+ } else console.log('building switch chats...');
 }
 
 function toggleUserAccounts() {
  const accountsDiv = document.querySelector('#user-accounts');
  const userAccounts = [
- {
-    id: 1, email: 'verylongname@verylongdomain.com', selected: true
-  },
-  {
-    id: 2, email: 'otherlongname@otherlongdomain.com', selected: false
-  },
-  {
-    id: 3, email: 'otherverylongname@otherverylongdomain.com', selected: false
-  },
-  {
-    id: 4, email: 'longname@longdomain.com', selected: false
-  }
+  { id: 1, email: 'verylongname@verylongdomain.com', selected: true },
+  { id: 2, email: 'otherlongname@otherlongdomain.com', selected: false },
+  { id: 3, email: 'otherverylongname@otherverylongdomain.com', selected: false },
+  { id: 4, email: 'longname@longdomain.com', selected: false }
  ];
  accountsDiv.innerHTML = ``;
  for (let i = 0; i < userAccounts.length; i++) {
@@ -250,19 +226,15 @@ function toggleUserAccounts() {
  accountsDiv.classList.toggle('hidden');
  accountsDiv.classList.toggle('visible');
  let button = document.querySelector("#toggleAccounts");
- if(accountsDiv.classList.contains('hidden')) {
-  button.src="img/icons/caret-down.svg";
- }
- else if(accountsDiv.classList.contains('visible')) {
-  button.src="img/icons/caret-up.svg";
- }
+ if (accountsDiv.classList.contains('hidden')) button.src="img/icons/caret-down.svg";
+ else if (accountsDiv.classList.contains('visible')) button.src="img/icons/caret-up.svg";
 }
 
 window.addEventListener('resize', (e) => {
-  var resizer = document.querySelector('#page .resizer');
-  const leftPanel = document.querySelector('#page .panel.left');
-  leftPanel.style.width = "var(--panel-left-width);";
-  setContent(e, resizer);
+ var resizer = document.querySelector('#page .resizer');
+ const leftPanel = document.querySelector('#page .panel.left');
+ leftPanel.style.width = "var(--panel-left-width);";
+ setContent(e, resizer);
 });
 
 function setContent(e, resizer) {
@@ -273,16 +245,12 @@ function setContent(e, resizer) {
  var selfName = document.querySelector('#userbar > .text > .name');
  var selfAddress = document.querySelector('#userbar > .text > .address');
  var inputBar = document.querySelector('#inputbar');
- 
  var pageRect = leftPanel.parentElement.getBoundingClientRect();
  var leftPanelMinWidth = 250;
  var leftPanelMaxWidth = pageRect.width - 500;
  var newLeftPanelWidth;
- if(e.type === 'mousemove') {
-  newLeftPanelWidth = e.clientX - pageRect.left > leftPanelMinWidth ? e.clientX - pageRect.left : leftPanelMinWidth;
- } else if(e.type === 'resize') {
-  newLeftPanelWidth =  400
- }
+ if (e.type === 'mousemove') newLeftPanelWidth = e.clientX - pageRect.left > leftPanelMinWidth ? e.clientX - pageRect.left : leftPanelMinWidth;
+ else if (e.type === 'resize') newLeftPanelWidth = 400;
  newLeftPanelWidth = newLeftPanelWidth < leftPanelMaxWidth ? newLeftPanelWidth : leftPanelMaxWidth;
  leftPanel.style.width = newLeftPanelWidth + 'px';
  rightPanel.style.width = pageRect.width - newLeftPanelWidth + 'px';
@@ -293,7 +261,5 @@ function setContent(e, resizer) {
  resizer.style.left = newLeftPanelWidth - (resizer.offsetWidth / 2) + 'px';
  var conversations_text = document.querySelectorAll('#conversations > a .conversation >.text');
  inputBar.style.marginLeft = newLeftPanelWidth + 'px';
- conversations_text.forEach((text) => {
-  text.style.width = (newLeftPanelWidth - 180) + 'px';
- });
+ conversations_text.forEach((text) => { text.style.width = (newLeftPanelWidth - 180) + 'px'; });
 }

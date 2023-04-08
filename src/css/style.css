@@ -1,6 +1,3 @@
-*:focus {
- outline: none;
-}
 :root {
  --primary-color-hue: 49;
  --primary-color-sat: 97%;
@@ -14,13 +11,17 @@
  --inputbar-height: 64px;
 }
 
+*:focus {
+ outline: none;
+}
+
 html, body {
  height: 100%;
 }
 
 body {
  margin: 0;
- font-family: Ubuntu, sans-serif;
+ font-family: Ubuntu, Verdana, Geneva, Tahoma, sans-serif;
 }
 
 a {
@@ -114,6 +115,10 @@ input {
  white-space: nowrap;
 }
 
+.icon-small {
+ margin-left: 10px;
+}
+
 .photo-circle {
  border-radius: 50%;
  border: 1px solid #000;
@@ -124,9 +129,6 @@ input {
  height: 32px;
 }
 
-.icon-small {
- margin-left: 10px;
-}
 .photo-circle.medium {
  width: 50px;
  height: 50px;
@@ -143,21 +145,22 @@ input {
  height: 100%;
 }
 
-.panel {
+#page .panel {
  height: 100%;
  overflow: auto;
 }
 
-.panel.left {
+#page .panel.left {
  z-index: 200;
  width: var(--panel-left-width);
 }
 
-.panel.right {
+#page .panel.right {
  width: calc(100% - var(--panel-left-width));
  position: relative;
 }
-.resizer {
+
+#page .resizer {
  z-index: 100;
  position: absolute;
  width: var(--resizer-width);
@@ -191,6 +194,7 @@ input {
 #searchbar {
  width: calc(var(--panel-left-width) - 20px);
 }
+
 #userbar {
  width: calc(100% - var(--panel-left-width) - 20px);
 }
@@ -269,66 +273,76 @@ input {
  flex-grow: 1;
 }
 
+.panel.left::-webkit-scrollbar {
+ width: 7px;
+}
+
+.panel.left::-webkit-scrollbar-track {
+ background: #f1f1f1; 
+}
+
+.panel.left::-webkit-scrollbar-thumb {
+ background: rgba(0, 0, 0, 0.35); 
+}
+
+.panel.left::-webkit-scrollbar-thumb:hover {
+ background: rgba(0, 0, 0, 0.55)
+}
+
+.panel.left::-moz-scrollbar {
+ width: 7px;
+}
+
+.panel.left::-moz-scrollbar-track {
+ background: #f1f1f1; 
+}
+
+.panel.left::-moz-scrollbar-thumb {
+ background: rgba(0, 0, 0, 0.35); 
+}
+
+.panel.left::-moz-scrollbar-thumb:hover {
+ background: rgba(0, 0, 0, 0.55)
+}
+
 #conversations {
  z-index: 50;
- background-color: hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 40%));
+ background-color: hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 44%));
  overflow: hidden;
  position: relative;
 }
 
-.panel.left::-webkit-scrollbar {
- width: 7px;
-}
-.panel.left::-webkit-scrollbar-track {
- background: #f1f1f1; 
-}
-.panel.left::-webkit-scrollbar-thumb {
- background: rgba(0, 0, 0, 0.35); 
-}
-.panel.left::-webkit-scrollbar-thumb:hover {
- background: rgba(0, 0, 0, 0.55)
-}
-.panel.left::-moz-scrollbar {
- width: 7px;
-}
-.panel.left::-moz-scrollbar-track {
- background: #f1f1f1; 
-}
-.panel.left::-moz-scrollbar-thumb {
- background: rgba(0, 0, 0, 0.35); 
-}
-.panel.left::-moz-scrollbar-thumb:hover {
- background: rgba(0, 0, 0, 0.55)
-}
 #conversations .conversation, div.conversation {
  display: flex;
  padding: 10px;
  border-bottom: 1px solid #808080;
  height: 60px;
 }
+
 #conversations .conversation {
  justify-content: space-between;
 }
 
 #conversations .conversation:hover, div.conversation:hover {
- opacity: 0.8;
  background-color: var(--primary-color);
 }
 
 #conversations .conversation.active {
  background-color: var(--primary-color);
- opacity: 0.9;
 }
 
 #conversations .conversation .text, div.autogen {
  margin: .7rem 10px 4px 10px;
 }
+
 #conversations .conversation .text {
  width: calc(var(--panel-left-width) - 180px);
 }
+
 div.autogen {
  width: calc(var(--panel-left-width) - 160px);
 }
+
 #conversations .conversation .text .name {
  font-weight: bold;
 }
@@ -364,18 +378,19 @@ div.autogen {
 }
 
 #chat {
- height: calc(100% - var(--userbar-height) - var(--inputbar-height));
- background-image: url('../img/background/doodle.png');
- background-repeat: repeat;
- background-size: 300px;
- margin-top: var(--userbar-height);
- margin-bottom: var(--inputbar-height);
- position: relative;
- overflow-y: auto;
  display: flex;
  flex-direction: column;
  justify-content: flex-end;
+ position: relative;
+ overflow-y: auto;
  width: 100%;
+ height: calc(100% - var(--userbar-height) - var(--inputbar-height));
+ margin-top: var(--userbar-height);
+ margin-bottom: var(--inputbar-height);
+ background-image: url('../img/background/doodle.png');
+ background-repeat: repeat;
+ background-size: 300px;
+ background-color: hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 44%));
 }
 
 #chat .container {
@@ -383,14 +398,7 @@ div.autogen {
  margin: 0 auto;
  width: 100%;
  background-color: #FFFEF8;
- /* flex: 1 1 auto; */
- /* flex-grow: 1; */
  min-height: 0px;
-}
-
-.chat-item {
- background-color: #FFFEF8;
- padding: 10px 0;
 }
 
 .container::-webkit-scrollbar {
@@ -401,12 +409,15 @@ div.autogen {
  height: 100vh;
  background-color: #f1f1f1;
 }
+
 .container::-webkit-scrollbar-track {
  background: #f1f1f1; 
 }
+
 .container::-webkit-scrollbar-thumb {
  background: rgba(0, 0, 0, 0.35); 
 }
+
 .container::-webkit-scrollbar-thumb:hover {
  background: rgba(0, 0, 0, 0.55)
 }
@@ -547,21 +558,25 @@ div.autogen {
  div {
   font-size: 0.7rem;
  }
+ 
  #conversations .conversation, div.conversation {
   height: 50px;
  }
+ 
  #userbar .text .name, #userbar .text .address {
   width: calc(100% - 100px);
  }
+ 
  .photo-circle.medium {
   width: 30px;
   height: 30px;
  }
+ 
  #chat .container .message .content {
- background-color: #F0F0F0;
- border-radius: 10px;
- padding: 5px 7px;
- margin: -2px 10px;
- max-width: 310px;
+  background-color: #F0F0F0;
+  border-radius: 10px;
+  padding: 5px 7px;
+  margin: -2px 10px;
+  max-width: 310px;
  }
 }
