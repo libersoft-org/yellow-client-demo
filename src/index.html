@@ -4,18 +4,24 @@
   <title>NEMP Web Client</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="css/scss/main.css" type="text/css" />
+
   <link rel="shortcut icon" href="favicon.svg" />
   <script src="js/functions.js"></script>
  </head>
  <body>
   <div id="page">
-   <div class="panel left shadow">
-    <div id="searchbar">
-     <a class="icon" onclick="menu()"><img src="img/icons/menu.svg" alt="Menu" /></a>
-     <input class="text" type="text" placeholder="Search ..." />
+   <div class="panel panel-left">
+    
+    <div class="search-bar">
+      <div class="search-bar__menu-toggle" onclick="menu()"></div>
+      <div class="search-bar__search">
+        <input class="text" type="text" placeholder="Search ..." />
+      </div>
     </div>
+
     <div id="menu" class="shadow slide-in">
      <a class="item" onclick="">
       <div class="menuitem"><img class="icon" src="img/icons/new_conversation.svg" alt="New conversation" />New conversation</div>
@@ -32,21 +38,83 @@
       </div>
      </a>
     </div>
-    <a onclick="toggleUserAccounts()">
-     <div id="accountbar">
-      <div><img class="photo-circle small" src="https://i.pravatar.cc/300?u=ownprofile" alt="own-photo" /></div>
-      <div class="text nowrap">verylongname@verylongdomain.com</div>
-      <div><img id="toggleAccounts" class="accounts-icon" src="img/icons/caret-down.svg" alt="search" /></div>
-     </div>
-    </a>
-    <div id="user-accounts" class="hidden"></div>
-    <div id="conversations"></div>
+    <div class="resizer" tabindex="0"></div>
+
+    <div class="accounts-bar" onclick="toggleUserAccounts()">
+      <div class="accounts-bar__active-account">
+        <div class="account account--active">
+          <div class="account__photo">
+            <img class="photo-circle photo-circle--small" src="https://i.pravatar.cc/300?u=ownprofile" alt="own-photo" />
+          </div>
+          <div class="account__name">
+            verylongname@verylongdomain.com
+          </div>
+          <div class="account__arrow"></div>
+        </div>
+      </div>
+      <div class="accounts-bar__other-accounts">
+        <div class="accounts">
+          <div class="account">
+            <div class="account__photo">
+              <img class="photo-circle photo-circle--small" src="https://i.pravatar.cc/300?u=user7" alt="own-photo" />
+            </div>
+            <div class="account__name">
+              janedoe@verylongdomain.com
+            </div>
+          </div>
+          <div class="account">
+            <div class="account__photo">
+              <img class="photo-circle photo-circle--small" src="https://i.pravatar.cc/300?u=user6" alt="own-photo" />
+            </div>
+            <div class="account__name">
+              johndoe@verylongdomain.com
+            </div>
+          </div>
+          <div class="account">
+            <div class="account__photo">
+              <img class="photo-circle photo-circle--small" src="https://i.pravatar.cc/300?u=user5" alt="own-photo" />
+            </div>
+            <div class="account__name">
+              worklife@verylongdomain.com
+            </div>
+          </div>
+        </div>
+        <div class="blurer"></div>
+      </div>
+    </div>
+
+    <div class="conversations-panel">
+      <!-- CONVERSATION HTML MARKUP - DONT REMOVE
+      <div class="conversation conversation--active">
+        <div class="conversation__user-photo">
+          <img class="photo-circle photo-circle--medium" src="https://i.pravatar.cc/300?u=user1" alt="https://i.pravatar.cc/300?u=user1">
+        </div>
+        <div class="conversation__info">
+          <div class="conversation__info__user-name">
+            Ultraultraultra Long Username - Company Ltd.
+          </div>
+          <div class="conversation__info__last-message">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.
+          </div>
+        </div>
+        <div class="conversation__status">
+          <div class="conversation__status__date-time">12:59:59</div>
+          <div class="conversation__status__icons">
+            <div class="conversation__status__icons__unread-messages">10</div>
+            <div class="conversation__status__icons__read-state conversation__status__icons__read-state--unread"></div>
+          </div>
+        </div>
+      </div>
+      -->
+    </div>
    </div>
-   <div class="resizer" tabindex="0"></div>
-   <div class="panel right">
+   
+   
+   
+   <div class="panel panel-right">
     <div id="userbar">
      <div class="shadow mt"></div>
-     <img class="photo-circle medium" src="https://i.pravatar.cc/300?u=user2" alt="user2"/>
+     <img class="photo-circle photo-circle--medium" src="https://i.pravatar.cc/300?u=user2" alt="user2"/>
      <div class="text">
       <div class="name nowrap">Veryveryvery Long Username - Some Other Company Ltd.</div>
       <div class="address nowrap">

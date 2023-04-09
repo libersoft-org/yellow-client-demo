@@ -1,0 +1,27 @@
+.search-bar {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+  width: var(--panel-left-width);
+  height: var(--searchbar-height);
+  background-color: var(--primary-color);
+  z-index: 20;
+
+  &__menu-toggle {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    background-image: url('../../img/icons/menu.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__search {
+    padding-left: 10px;
+    width: 100%;
+    input {
+      width: 85%;
+    }
+  }
+ }

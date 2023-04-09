@@ -1,0 +1,66 @@
+$account-height: 50px;
+
+.account {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $account-height;
+  padding: 0 10px;
+  cursor: pointer;
+  background-color: grey;
+
+  &--active {
+    background-color: #1D1D1D;
+  }
+
+  &--active &__arrow {
+    display: block;
+  }
+
+  &:not(&--active):hover {
+    background-color: darken(grey, 10%);
+  }
+
+  //&__photo {}
+
+  &__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: 0px 10px;
+    color: #FFFEF8;
+    flex-grow: 3; 
+    flex-shrink: 1; 
+    flex-basis: 0%;
+  } 
+
+  &__arrow {
+    display: none;
+    width: 12px;
+    height: 10px;
+    background-image: url('../../img/icons/caret-down.svg');
+    background-repeat: no-repeat;
+  }
+}
+
+.accounts-bar {
+  margin-top: var(--searchbar-height);
+  position: relative;
+
+  &__other-accounts {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: $account-height;
+    z-index: 10;
+    backdrop-filter: blur(3px);
+
+    &.active {
+      display: block;
+    }
+  }
+
+ }

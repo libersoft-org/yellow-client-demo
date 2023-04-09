@@ -1,20 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 26.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Vrstva_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 150 150" style="enable-background:new 0 0 150 150;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:url(#SVGID_1_);}
-	.st1{fill:#0E101F;}
-	.st2{fill:#FCD213;}
-	.st3{fill:#010202;}
-</style>
-<g>
-</g>
-<g>
-	
-		<rect x="5.09" y="19.95" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -17.3689 14.2302)" class="st3" width="6.8" height="16.26"/>
-	<polygon class="st3" points="27.19,38.64 13.29,24.73 18.1,19.93 27.19,29.02 44.85,11.36 49.66,16.17 	"/>
-	
-		<rect x="22.45" y="15.28" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -4.5954 26.2572)" class="st3" width="13.89" height="6.8"/>
-</g>
+<svg width="52" height="34" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1"/>
+  <g id="svg_2">
+   <rect id="svg_3" fill="#010202" height="16.26" width="6.8" class="st3" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -17.3689 14.2302)" y="15.00131" x="11.45512"/>
+   <polygon id="svg_4" fill="#010202" points="28.191556930541992,30.64000129699707 14.291555404663086,16.730003356933594 19.10155487060547,11.930001258850098 28.191556930541992,21.020004272460938 45.8515567779541,3.3600006103515625 50.66155815124512,8.170001029968262 " class="st3"/>
+   <rect id="svg_5" fill="#010202" height="6.8" width="13.89" class="st3" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -4.5954 26.2572)" y="10.33131" x="28.81512"/>
+  </g>
+ </g>
 </svg>

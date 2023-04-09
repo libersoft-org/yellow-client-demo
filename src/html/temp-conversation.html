@@ -1,16 +1,16 @@
-<a onclick="getConversation('{ID}')">
- <div class="conversation{ACTIVE}">
-  <img class="photo-circle medium" src="{PHOTO}" alt="{PHOTO}"/>
-  <div class="text">
-   <div class="name nowrap">{NAME}</div>
-   <div class="message nowrap">{MESSAGE}</div>
+<div class="conversation {ACTIVE}" onclick="getConversation('{ID}')">
+  <div class="conversation__user-photo">
+    <img class="photo-circle photo-circle--medium" src="{PHOTO}" alt="{PHOTO}">
   </div>
-  <div class="status">
-   <div class="time">{TIME}</div>
-   <div class="row">
-    <div class="unread">{UNREAD}</div>
-    <img class="icon-small" src="img/icons/{READ-ICON}" alt="{READ-TEXT}" />
-   </div>
+  <div class="conversation__info">
+    <div class="conversation__info__user-name">{NAME}</div>
+    <div class="conversation__info__last-message">{MESSAGE}</div>
   </div>
- </div>
-</a>
+  <div class="conversation__status">
+    <div class="conversation__status__date-time">{TIME}</div>
+    <div class="conversation__status__icons">
+      <div class="conversation__status__icons__unread-messages">{UNREAD}</div>
+      <div class="conversation__status__icons__read-state conversation__status__icons__read-state--unread"></div>
+    </div>
+  </div>
+</div>

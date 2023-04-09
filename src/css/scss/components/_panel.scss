@@ -1,0 +1,16 @@
+.panel {
+  height: 100%;
+  overflow: auto;
+
+  &.panel-left {
+    z-index: 200;
+    width: var(--panel-left-width);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  &.panel-right {
+    width: calc(100% - var(--panel-left-width));
+    position: relative;
+  }
+
+ }
