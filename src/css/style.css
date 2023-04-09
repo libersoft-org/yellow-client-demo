@@ -118,22 +118,7 @@
  .slide-in.show {
   margin-left: 0px;
  }
- 
- #page {
-  display: flex;
-  height: 100%;
- }
- 
- #page .resizer {
-  z-index: 100;
-  position: absolute;
-  width: var(--resizer-width);
-  height: 100%;
-  top: 0;
-  left: calc(var(--panel-left-width) - (var(--resizer-width) / 2));
-  cursor: ew-resize;
- }
- 
+  
  #userbar {
   display: flex;
   align-items: center;
@@ -214,18 +199,6 @@
   background-color: hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 44%));
  }
  
- #page #chat #container {
-  max-width: 1000px;
-  margin: 0 auto;
-  width: 100%;
-  background-color: #FFFEF8;
-  min-height: 0px;
- }
- 
- #page #chat .container .message {
-  align-content: flex-end;
- }
- 
  #page #chat .container .message, .row {
   display: flex;
   margin: 10px;
@@ -235,27 +208,6 @@
   justify-content: space-between;
   width: 83px;
   position: relative;
- }
- 
- #page #chat .container .message.received {
-  flex-direction: row;
- }
- 
- #page #chat .container .message.sent {
-  flex-direction: row-reverse;
- }
- 
- #page #chat .container .message .content {
-  background-color: #F0F0F0;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 0 10px;
-  max-width: 530px;
-  position: relative;
- }
- 
- #page #chat .container .message .content .text {
-  margin: 5px 10px;
  }
  
  .autogen {
@@ -311,17 +263,7 @@
   font-size: 12px;
   margin-top: 4px;
  }
- 
- #page #chat .container .date {
-  text-align: center;
-  padding: 5px 10px;
-  border-radius: 20px;
-  background-color: var(--primary-color);
-  max-width: 100px;
-  margin: 20px auto;
-  margin-bottom: 0;
- }
- 
+
  #page #inputbar {
   display: flex;
   align-items: center;
@@ -350,5 +292,3 @@
   width: 100%;
   margin-top: 30px;
  }
- 
- 

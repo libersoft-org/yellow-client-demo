@@ -1,5 +1,4 @@
 .search-bar {
-  position: fixed;
   display: flex;
   align-items: center;
   padding: 0px 10px;
@@ -7,6 +6,7 @@
   height: var(--searchbar-height);
   background-color: var(--primary-color);
   z-index: 20;
+  box-sizing: border-box;
 
   &__menu-toggle {
     width: 25px;

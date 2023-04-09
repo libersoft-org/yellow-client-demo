@@ -4,12 +4,12 @@
   <title>NEMP Web Client</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <link rel="stylesheet" href="css/scss/main.css" type="text/css" />
-
   <link rel="shortcut icon" href="favicon.svg" />
   <script src="js/functions.js"></script>
+  <script src="js/ui.js"></script>
  </head>
  <body>
   <div id="page">
@@ -109,35 +109,63 @@
     </div>
    </div>
    
-   
-   
    <div class="panel panel-right">
-    <div id="userbar">
-     <div class="shadow mt"></div>
-     <img class="photo-circle photo-circle--medium" src="https://i.pravatar.cc/300?u=user2" alt="user2"/>
-     <div class="text">
-      <div class="name nowrap">Veryveryvery Long Username - Some Other Company Ltd.</div>
-      <div class="address nowrap">
-       <a onclick="copy('extremelyultralongusername@veryveryverylongdomain.com')">extremelyultralongusername@veryveryveryveryveryveryverylongdomain.com</a>
+    <div class="user-bar">
+      <div class="conversation-user">
+        <div class="conversation-user__photo">
+          <img class="photo-circle photo-circle--medium" src="https://i.pravatar.cc/300?u=user2" alt="user2"/>
+        </div>
+        <div class="conversation-user__detail">
+          <div class="conversation-user__detail__name">Veryveryvery Long Username - Some Other Company Ltd.</div>
+          <div class="conversation-user__detail__address" onclick="copy('extremelyultralongusername@veryveryverylongdomain.com')">
+            extremelyultralongusername@veryveryveryveryveryveryverylongdomain.com
+          </div>
+        </div>
       </div>
-     </div>
-     <div class="icons">
-      <a class="icon" onclick=""><img src="img/icons/search.svg" alt="search"/></a>
-      <a class="icon" onclick=""><img src="img/icons/videocall.svg" alt="videocall"/></a>
-      <a class="icon" onclick=""><img src="img/icons/call.svg" alt="call"/></a>
-      <a class="icon" onclick=""><img src="img/icons/dots.svg" alt="dots"/></a>
+     <div class="conversation-controlls">
+        <a class="icon" onclick=""><img src="img/icons/search.svg" alt="search"/></a>
+        <a class="icon" onclick=""><img src="img/icons/videocall.svg" alt="videocall"/></a>
+        <a class="icon" onclick=""><img src="img/icons/call.svg" alt="call"/></a>
+        <a class="icon" onclick=""><img src="img/icons/dots.svg" alt="dots"/></a>
      </div>
     </div>
-    <div id="chat">
-     <div id="container"></div>
+    <div class="conversation-detail">
+      <div class="messages-box">
+        <div class="messages">
+          <!--
+          <div class="messages__info">
+            <div class="messages__info__date">17 March 2023</div>
+          </div>
+          <div class="message message--sent">
+            <div class="message__sender-photo">
+              <img class="photo-circle photo-circle--medium" src="https://i.pravatar.cc/300?u=ownprofile" alt="Test">
+            </div>
+            <div class="message__content">
+              <div class="message__content__text">
+                I am also sending you very very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long long message.
+              </div>
+              <div class="message__content__info">
+                <div class="message__content__info__date-time">16:25:15</div>
+                <div class="message__content__info__icons">
+                  <div class="message__content__info__icons__icon message__content__info__icons__icon--secure"></div>
+                  <div class="message__content__info__icons__icon message__content__info__icons__icon--read"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          -->
+        </div>
+      </div>
     </div>
-    <div id="inputbar" class="shadow">
+
+
+    <div class="input-bar">
      <img class="icon" src="img/icons/attachment.svg" alt="Attachment" />
-     <input class="text" type="text" placeholder="Type a message ..." />
+     <input id="#message-text-input" class="text" type="text" placeholder="Type a message ..." />
      <img class="icon" src="img/icons/video_message.svg" alt="Voice message" />
      <img class="icon" src="img/icons/voice_message.svg" alt="Voice message" />
      <img class="icon" src="img/icons/emoji.svg" alt="Emoji" />
-     <img class="icon" src="img/icons/send.svg" alt="Send" />
+     <img onClick="sendMessage()" class="icon" src="img/icons/send.svg" alt="Send" />
     </div>
    </div>
   </div>
