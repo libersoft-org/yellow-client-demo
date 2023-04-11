@@ -2,6 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
   getConversations();
   getChats(); 
  });
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    sendMessage();
+  }
+});
+
  
 async function getConversations() {
   await addConversation('1', 'https://i.pravatar.cc/300?u=user1', 'Ultraultraultra Long Username - Company Ltd.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.', '12:59:59', 10, false);
@@ -40,6 +47,7 @@ function sendMessage() {
    '{TIME}': time,
    '{UNREAD}': unread,
    '{ACTIVE}': active ? ' conversation--active' : '',
+   '{EMAIL}': `${name.slice(0, 6).replaceAll(' ', '.').toLowerCase()}@nemp.io`,
   });
   document.querySelector('.conversations-panel').innerHTML += html;
   document.querySelectorAll('#conversations .conversation .status .unread').forEach((item) => {
@@ -97,7 +105,7 @@ function sendMessage() {
    '{TIME}': time,
    '{READ}': read,
    '{ACTIVE}': active ? ' active' : '',
-   '{SECURE_IMG}': secure ? 'secure_yes.svg' : 'secure_no.svg',
+   '{SECURE}': secure ? 'secure' : 'non-secure',
    '{READ-ICON}': read ? 'read_yes.svg' : 'read_no.svg',
    '{READ-TEXT}': read ? 'Read' : 'Unread'
   });

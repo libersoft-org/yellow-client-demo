@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
  
     //document.querySelector('.input-bar').style.marginLeft = newLeftPanelWidth + 'px';
     document.querySelector('.search-bar').style.width = (newLeftPanelWidth) + 'px';
+    document.querySelector('.accounts-bar').style.width = (newLeftPanelWidth) + 'px';
+
    };
   });
  });
@@ -37,11 +39,14 @@ function copy(text) {
   navigator.clipboard.writeText(text);
 }
 
-function menu() {
+function menuToggle() {
   document.querySelector('#menu').classList.toggle('show');
+  document.querySelector('#menu-toggle').classList.toggle('menu-opened');
 }
 
 function toggleUserAccounts() {
+  const activeAccount = document.querySelector('#active-account');
+  activeAccount.classList.toggle('menu-opened');
   const otherUserAccounts = document.querySelector('.accounts-bar__other-accounts');
   otherUserAccounts.classList.toggle('active');
 }

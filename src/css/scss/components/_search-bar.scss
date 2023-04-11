@@ -1,4 +1,5 @@
 .search-bar {
+  position: fixed;
   display: flex;
   align-items: center;
   padding: 0px 10px;
@@ -15,13 +16,19 @@
     background-image: url('../../img/icons/menu.svg');
     background-position: center;
     background-repeat: no-repeat;
+
+    &.menu-opened {
+      background-image: url('../../img/icons/transparent/close-cross.svg');
+    }
   }
 
   &__search {
     padding-left: 10px;
+    box-sizing: border-box;
+
     width: 100%;
     input {
-      width: 85%;
+      width: calc(100% - 15px);
     }
   }
  }

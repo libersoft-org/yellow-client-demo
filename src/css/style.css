@@ -118,87 +118,9 @@
  .slide-in.show {
   margin-left: 0px;
  }
+
   
- #userbar {
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-  height: var(--searchbar-height);
-  background-color: var(--primary-color);
-  position: fixed;
-  z-index: 999;
- }
- 
- #page #searchbar {
-  width: calc(var(--panel-left-width) - 20px);
- }
- 
- #page #userbar {
-  width: calc(100% - var(--panel-left-width) - 20px);
- }
- 
- #page #searchbar .text {
-  width: 100%;
-  box-sizing: border-box;
- }
- 
- #page #userbar .text {
-  padding-left: 10px;
- }
- 
- #page #userbar .text .name {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #000;
- }
- 
- #page #userbar .text .address {
-  font-size: 0.9em;
-  color: #303030;
- }
- 
- #page #userbar .icons {
-  display: flex;
-  position: absolute;
-  right: 0;
-  margin-right: 10px;
- }
- 
- #page #menu {
-  position: absolute;
-  z-index: 200;
-  top: var(--searchbar-height);
-  width: 300px;
-  height: calc(100% - var(--searchbar-height));
-  background-color: #FFFEF8;
- }
- 
- #page #menu .menuitem {
-  display: flex;
-  align-items: center;
-  margin: 20px 10px;
- }
- 
- #page #menu .menuitem:hover {
-  color: var(--primary-color);
- }
- 
- #page #chat {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  position: relative;
-  overflow-y: auto;
-  width: 100%;
-  height: calc(100% - var(--userbar-height) - var(--inputbar-height));
-  margin-top: var(--userbar-height);
-  margin-bottom: var(--inputbar-height);
-  background-image: url('../img/background/doodle.png');
-  background-repeat: repeat;
-  background-size: 300px;
-  background-color: hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 44%));
- }
- 
+
  #page #chat .container .message, .row {
   display: flex;
   margin: 10px;
@@ -286,9 +208,4 @@
   color: #FFFEF8;
   background-color: #1D1D1D;
  }
- 
- #menu .about {
-  text-align: center;
-  width: 100%;
-  margin-top: 30px;
- }
+

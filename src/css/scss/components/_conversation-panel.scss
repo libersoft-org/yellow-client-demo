@@ -1,4 +1,10 @@
 .conversations-panel {
+  height: 100%;
+  padding-top: 114px;
+  overflow-y: auto;
+  box-sizing: border-box;
+
+
   .conversation {
     display: flex;
     justify-content: space-between;
@@ -6,7 +12,6 @@
     border-bottom: 1px solid #808080;
     height: 60px;
     background-color: hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 44%));
-    justify-content: space-between;
     cursor: pointer;
 
     &:hover {
@@ -35,7 +40,16 @@
         white-space: nowrap;
       }
 
+      &__user-email{
+        font-size: 0.8rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-bottom: 8px;
+      }
+
       &__last-message {
+        color: grey;
         font-size: 0.8em;
         text-overflow: ellipsis;
         overflow: hidden;
@@ -69,8 +83,8 @@
          }
 
          &__read-state {
-            width: 25px;
-            height: 25px;
+            width: 20px;
+            height: 20px;
             background-image: url('../../img/icons/recieved.svg');
             background-size: contain;
             background-position: center;

@@ -36,6 +36,7 @@
         background-color: var(--primary-color);
         margin: 20px auto;
         margin-bottom: 0;
+        box-shadow: 0px 4px 16px 0px #1D1D1D3D;
       }
      }
   }
@@ -48,11 +49,11 @@
   margin-bottom: 50px;
   position: relative;
 
-  &--recieved {
+  &--sent {
     flex-direction: row;
 
     #{$component}__content {
-      background: #FFFEF8;
+      background-color: #FAEFBE;
 
       &:after {
         content: '';
@@ -63,16 +64,16 @@
         height: 0; 
         border-style: solid;
         border-width: 13px 16px 13px 0;
-        border-color: transparent #FFFEF8 transparent transparent;
+        border-color: transparent #FAEFBE transparent transparent;
       }
     }
   }
 
-  &--sent {
+  &--recieved {
     flex-direction: row-reverse;
 
     #{$component}__content {
-      background-color: #FAEFBE;
+      background: #FFFEF8;
 
       &:after {
         content: '';
@@ -83,13 +84,16 @@
         height: 0; 
         border-style: solid;
         border-width: 13px 0 13px 16px;
-        border-color: transparent transparent transparent #FAEFBE;
+        border-color: transparent transparent transparent #FFFEF8;
       }
     }
   }
 
   &__sender-photo {
     margin-top: 4px;
+    img {
+      box-shadow: 0px 4px 16px 0px #1D1D1D3D;
+    }
   }
 
   &__content {
@@ -110,6 +114,7 @@
       letter-spacing: 0em;
       text-align: left;
       margin-bottom: 16px;
+      word-wrap: break-word;
     }
 
     &__info {
@@ -126,15 +131,19 @@
         display: flex;
 
         &__icon {
-          width: 20px;
-          height: 20px;
+          width: 15px;
+          height: 15px;
           margin-right: 5px;
           background-size: contain;
           background-position: center;
           background-repeat: no-repeat;
 
           &--secure {
-            background-image: url(../../img/icons/secure_yes.svg);
+            background-image: url(../../img/icons/transparent/secure.svg);
+          }
+
+          &--non-secure {
+            background-image: url(../../img/icons/transparent/non-secure.svg);
           }
 
           &--read {

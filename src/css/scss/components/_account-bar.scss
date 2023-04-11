@@ -1,5 +1,35 @@
 $account-height: 50px;
 
+.accounts-bar {
+  padding-top: var(--searchbar-height);
+  position: fixed;  
+  width: var(--panel-left-width);
+
+  &__active-account {
+    &.menu-opened {
+      .account__arrow {
+        background-image: url('../../img/icons/caret-up.svg');
+      }
+    }
+  }
+
+  &__other-accounts {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 114px;
+    z-index: 10;
+    backdrop-filter: blur(3px);
+    background-color: rgba(0,0,0,0.3);
+
+
+    &.active {
+      display: block;
+    }
+  }
+ }
+
 .account {
   box-sizing: border-box;
   display: flex;
@@ -44,22 +74,3 @@ $account-height: 50px;
     background-repeat: no-repeat;
   }
 }
-
-.accounts-bar {
-  position: relative;
-
-  &__other-accounts {
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    top: $account-height;
-    z-index: 10;
-    backdrop-filter: blur(3px);
-
-    &.active {
-      display: block;
-    }
-  }
-
- }
