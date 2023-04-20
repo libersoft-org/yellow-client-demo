@@ -2,6 +2,8 @@
 
 This is the web client client software for [**NEMP Server**](https://github.com/libersoft-org/nemp-server/).
 
+If you just want to get your free NEMP mailbox hosted on our server, please navigate to: **https://nemp.io**
+
 ## Installation
 
 - Please use [**NEMP Installer**](https://github.com/libersoft-org/nemp-install/) repository.

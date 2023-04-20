@@ -75,7 +75,7 @@ function sendMessage() {
   await addChatMessage('https://i.pravatar.cc/300?u=ownprofile', 'I am also sending you very very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long long message.', '16:25:15', false, false);
   await addChatMessage('https://i.pravatar.cc/300?u=ownprofile', 'Cool!', '16:35:59', false, false);
   addChatDate(formattedDate);
-  await addChatMessage('https://i.pravatar.cc/300?u=user2', 'Hey, are you gonna be on the podcast today?', formattedTime, true, false);
+  await addChatMessage('https://i.pravatar.cc/300?u=user2', 'Hey, what\'s up?', formattedTime, true, false);
 
  }
  
