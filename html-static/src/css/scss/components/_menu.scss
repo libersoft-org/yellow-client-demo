@@ -1,0 +1,45 @@
+.menu {
+  position: absolute;
+  z-index: 200;
+  top: var(--searchbar-height);
+  width: 300px;
+  height: calc(100% - var(--searchbar-height));
+  background-color: #FFFEF8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin: 12px 10px;
+    padding: 4px;
+    border-radius: 12px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #F4F4F4;
+
+    }
+
+    &__icon {
+      margin-right: 10px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__app-info {
+    text-align: center;
+    font-size: 0.8rem;
+    width: 100%;
+    padding-top: 15px;
+    margin-bottom: 15px;
+
+
+    a {
+      color: var(--secondary-color);
+      text-decoration: none;
+    }
+   }
+}

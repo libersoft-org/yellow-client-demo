@@ -2,6 +2,14 @@
   height: 100%;
   position: relative;
 
+  &.show {
+    display: flex;
+  }
+
+  &.hide {
+    display: none;
+  }
+
   &.panel-left {
     z-index: 200;
     width: var(--panel-left-width);

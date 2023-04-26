@@ -1,0 +1,33 @@
+#page {
+  display: flex;
+  height: 100%;
+
+  @media (max-width: 480px) {
+   flex-direction: column;
+
+   .panel {
+    width: 100% !important;
+      &-left {
+         box-shadow: 0px 0px 0px transparent !important;
+      }
+
+      &-right {
+        display: none;
+      }
+    }
+
+    .resizer {
+      display: none;
+    }
+  }
+  
+  .resizer {
+    z-index: 100;
+    position: absolute;
+    width: var(--resizer-width);
+    height: 100%;
+    top: 0;
+    left: calc(var(--panel-left-width) - (var(--resizer-width) / 2));
+    cursor: ew-resize;
+   }
+ }

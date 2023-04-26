@@ -19,6 +19,9 @@
     -webkit-box-shadow: 0px 0px 0px transparent !important;
             box-shadow: 0px 0px 0px transparent !important;
   }
+  #page .panel-right {
+    display: none;
+  }
   #page .resizer {
     display: none;
   }
@@ -68,6 +71,16 @@
 .panel {
   height: 100%;
   position: relative;
+}
+
+.panel.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.panel.hide {
+  display: none;
 }
 
 .panel.panel-left {
