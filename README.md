@@ -20,3 +20,7 @@ Donations are important to support the ongoing development and maintenance of th
 To find out how to donate our project, please navigate here: **https://libersoft.org/donations**
 
 Thank you for being a part of this project's success!
+
+## Star history
+
+[![Star History Chart](https://api.star-history.com/svg?repos=libersoft-org/nemp-client-web&type=Date)](https://star-history.com/#libersoft-org/nemp-client-web&Date)
