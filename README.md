@@ -1,6 +1,6 @@
-# NEMP Web Client
+# Yellow Web Client
 
-[![Created Badge](https://badges.pufler.dev/created/libersoft-org/nemp-client-web)](https://badges.pufler.dev) [![Updated Badge](https://badges.pufler.dev/updated/libersoft-org/nemp-client-web)](https://badges.pufler.dev) [![Visits Badge](https://badges.pufler.dev/visits/libersoft-org/nemp-client-web)](https://badges.pufler.dev)
+[![Created Badge](https://badges.pufler.dev/created/libersoft-org/yellow-client-web)](https://badges.pufler.dev) [![Updated Badge](https://badges.pufler.dev/updated/libersoft-org/yellow-client-web)](https://badges.pufler.dev) [![Visits Badge](https://badges.pufler.dev/visits/libersoft-org/yellow-client-web)](https://badges.pufler.dev)
 
 This is the web client implementation of [**ODTP Protocol**](https://github.com/libersoft-org/odtp-documentation/).
 
