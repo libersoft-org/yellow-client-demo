@@ -1,0 +1,51 @@
+# TODO List for Design
+
+- [x] Remove the bottom horizontal scrollbar (for smaller resolutions)
+- [x] Mobile version should start at larger resolutions
+- [ ] Add shadow under photos and dates in chat
+- [x] Resizer malfunctions at smaller widths
+- [x] In mobile version in FF, there's a white strip on the right side of the search bar
+- [x] In mobile version, chat is under conversations - it shouldn't be
+- [ ] Add an open/closed lock icon without yellow background at the contact on top in the yellow bar
+- [ ] Gray checkmarks
+- [x] Left panel scrollbar - should start at conversations, not at the top (it goes behind the accounts at the top)
+- [ ] When there's a blur effect when clicking on the account list, add black opacity
+- [ ] Place the time on the bubbles to the right and left of the lock
+- [x] Reduce scrollbars - like on meetrush
+- [ ] Menu is missing shadow
+- [ ] Enable multiline (with shift + enter) on message input box - change to textarea
+- [ ] The color of the chat bubble doesn't come from --primary-color
+- [ ] For smaller resolutions - extremely long words come out of the chat bubble, it needs some CSS word wrap
+- [ ] Write all sizes in "em"
+- [ ] Modal (yellow title bar with X on the right)
+- [ ] Add icons above the account
+- [ ] Make accounts bold
+- [ ] Does the account list have a scrollbar?
+- [ ] Modal - seed creation + QR code + 2 columns for printing
+- [ ] Modal - add account
+- [ ] Modal - block contacts/domains
+- [ ] Show multipart message (images, links, buttons) - everything will be in the conversation bubble
+- [ ] Show poll
+- [ ] Show video message
+- [ ] Show animated sticker
+- [ ] Show gifs
+- [ ] Show file transfer (to server + P2P) - add mockup for uploading
+- [ ] Show location on the map
+- [ ] Show message with a contact
+- [ ] Add conversation folders
+- [ ] Add a contacts page
+- [ ] Show chat group example
+- [ ] Show news group example
+- [ ] Show chatbot example
+- [ ] Show message translation example
+- [ ] Show message template example
+- [ ] Add voice + video call
+- [ ] Add video conference
+- [ ] Add call history
+- [ ] Followers (add / remove)
+- [ ] Live stream
+- [ ] YouTube + paid
+- [ ] Newsfeed
+- [ ] Stories - similar to WhatsApp
+- [ ] Registration - to the list for Viber users
+- [ ] E-shop + payment gateway (Burger King) - same as chatbot
