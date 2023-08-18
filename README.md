@@ -1,40 +1,47 @@
-# yellow-client-web-svelte
+# Yellow Web Client
 
-Simple design prototype for tellow-cliebt app.
+[![Created Badge](https://badges.pufler.dev/created/libersoft-org/yellow-client-web)](https://badges.pufler.dev) [![Updated Badge](https://badges.pufler.dev/updated/libersoft-org/yellow-client-web)](https://badges.pufler.dev) [![Visits Badge](https://badges.pufler.dev/visits/libersoft-org/yellow-client-web)](https://badges.pufler.dev)
 
-## Creating a project
+This is the web client implementation of [**ODTP Protocol**](https://github.com/libersoft-org/odtp-documentation/).
 
-Simple installation guide for testing purposes.
+If you just want to get your free [**Yellow**](https://yellow.libersoft.org) account hosted on our server, please navigate to:
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+[![YellowNet.io](https://raw.githubusercontent.com/libersoft-org/odtp-documentation/main/logo.png)](https://yellownet.io)
 
-# create a new project in my-app
-npm create svelte@latest yellow-client-web-svelte
-```
+## Installation
 
-## Developing
+- For developing purposes just follow these steps:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-```bash
-npm run dev
+    git clone [this repo]
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+    git checkout sveltekit
 
-## Building
+    git pull
 
-To create a production version of your app:
 
-```bash
-npm run build
-```
+    npm install  (you'll need node version ~18+ installed)
 
-You can preview the production build with `npm run preview`.
+    npm run bulid
 
-Add --host domain.com to expose web.
+    npm run preview -- --host 0.0.0.0    for net access
 
-To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Documentation
+
+- [**Development roadmap**](./ROADMAP.md)
+- [**Initial TODO**](./todomd) 
+- [**License**](./LICENSE)
+
+## Donations
+
+Donations are important to support the ongoing development and maintenance of our open source projects. Your contributions help us cover costs and support our team in improving our software. We appreciate any support you can offer.
+
+To find out how to donate our projects, please navigate here:
+
+[![Donate](https://raw.githubusercontent.com/libersoft-org/documents/main/donate.png)](https://libersoft.org/donations)
+
+Thank you for being a part of our projects' success!
+
+## Star history
+
+[![Star History Chart](https://api.star-history.com/svg?repos=libersoft-org/yellow-client-web&type=Date)](https://star-history.com/#libersoft-org/yellow-client-web&Date)
