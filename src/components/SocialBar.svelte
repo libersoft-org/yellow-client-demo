@@ -1,18 +1,21 @@
 <script>
 </script>
 <div class="social-icons">
-    <!-- Instagram Icon -->
-    <img src="img/icons/social/icons8-instagram.svg" alt="Instagram Icon" class="icon">
+    <!-- Conversations Icon -->
+    <img src="img/icons/icon_nemp_v4.svg" alt="Conversations" class="icon">
 
-    <!-- Facebook Icon -->
-    <img src="img/icons/social/icons8-facebook-messenger.svg" alt="Facebook Icon" class="icon">
+    <!-- Contacts Icon -->
+    <img src="img/icons/icon_contacts.svg" alt="Contacts" class="icon">
 
-    <!-- WhatsApp Icon -->
-    <img src="img/icons/social/icons8-whatsapp.svg" alt="WhatsApp Icon" class="icon">
+    <!-- Calls Icon -->
+    <img src="img/icons/icon_calls.svg" alt="Calls" class="icon">
 
-    <!-- Telegram Icon -->
-    <img src="img/icons/social/icons8-telegram-app.svg" alt="Telegram Icon" class="icon">
+    <!-- Newsfeed Icon -->
+    <img src="img/icons/icon_newsfeed.svg" alt="Newsfeed" class="icon">
 
-    <!-- Slack Icon -->
-        <img src="img/icons/social/icons8-slack-new.svg" alt="Slack Icon" class="icon">
+    <!-- Videocalls Icon -->
+        <img src="img/icons/icon_videocall.svg" alt="Video calls" class="icon">
+
+    <!-- Videomeetings Icon -->
+         <img src="img/icons/icon_videocall.svg" alt="Video meetings" class="icon">
 </div>

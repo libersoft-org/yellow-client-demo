@@ -24,14 +24,26 @@
 
 	function updatePanelSizes() {
 		if (leftPanel && rightPanel) {
+
 			const containerWidth = leftPanel.parentElement.clientWidth;
-			const leftWidth = parseInt(getComputedStyle(leftPanel).width);
-			const rightWidth = containerWidth - leftWidth;
+            const leftMinWidth = parseInt(getComputedStyle(leftPanel).minWidth);
+            const leftMaxWidth = parseInt(getComputedStyle(leftPanel).maxWidth);
+            const rightMinWidth = parseInt(getComputedStyle(rightPanel).minWidth);
+            const rightMaxWidth = parseInt(getComputedStyle(rightPanel).maxWidth);
 
-			leftPanel.style.width = `${leftWidth}px`;
-			rightPanel.style.width = `${rightWidth}px`;
+			let newLeftWidth = parseInt(getComputedStyle(leftPanel).width);
 
-			resizerElement.style.left = `${leftWidth}px`;
+			newLeftWidth = Math.max(newLeftWidth, leftMinWidth);
+            newLeftWidth = Math.min(newLeftWidth, leftMaxWidth);
+            let newRightWidth = containerWidth - newLeftWidth;
+            newRightWidth = Math.max(newRightWidth, rightMinWidth);
+            newRightWidth = Math.min(newRightWidth, rightMaxWidth);
+            leftPanel.style.width = `${newLeftWidth}px`;
+            rightPanel.style.width = `${newRightWidth}px`;
+
+
+
+			resizerElement.style.left = `${newLeftWidth}px`;
 		}
 	}
 

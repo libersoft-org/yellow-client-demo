@@ -4,8 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('keydown', function (event) {
-	if (event.key === 'Enter') {
+	let textarea = document.getElementById('message-text-input');
+	let heightInpx = getComputedStyle(textarea).height;
+	let lineInpx = getComputedStyle(textarea).lineHeight;
+	if (event.key === 'Enter' &&!event.shiftKey) {
+		event.preventDefault();
 		sendMessage();
+	} else if (event.key ==='Enter' &&event.shiftKey) {
+
+        if ((parseFloat(heightInpx)+parseFloat(lineInpx))/parseFloat(lineInpx)<4)
+		  textarea.style.height=parseFloat(heightInpx)+parseFloat(lineInpx)+"px";
 	}
 });
 
@@ -112,7 +120,7 @@ async function getConversations() {
 }
 
 function sendMessage() {
-	const input = document.getElementById('#message-text-input');
+	const input = document.getElementById('message-text-input');
 	const now = new Date();
 	const hours = now.getHours().toString().padStart(2, '0');
 	const minutes = now.getMinutes().toString().padStart(2, '0');
@@ -120,6 +128,7 @@ function sendMessage() {
 	const formattedTime = `${hours}:${minutes}:${seconds}`;
 
 	if (input.value) {
+		input.style.height = getComputedStyle(input).lineHeight;
 		addChatMessage(
 			'https://i.pravatar.cc/300?u=ownprofile',
 			input.value,
@@ -222,7 +231,7 @@ async function addChatMessage(photo, message, time, sent, read, active, secure) 
 	const html = translate(await getFileContent('html/temp-message.html'), {
 		'{SENT}': sent ? 'sent' : 'recieved',
 		'{PHOTO}': photo,
-		'{MESSAGE}': message,
+		'{MESSAGE}': message.replace(/\n/g, '<br>'),
 		'{TIME}': time,
 		'{READ}': read,
 		'{ACTIVE}': active ? ' active' : '',

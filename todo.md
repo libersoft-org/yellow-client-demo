@@ -2,7 +2,7 @@
 
 - [x] Remove the bottom horizontal scrollbar (for smaller resolutions)
 - [x] Mobile version should start at larger resolutions
-- [ ] Add shadow under photos and dates in chat
+- [x] Add shadow under photos and dates in chat
 - [x] Resizer malfunctions at smaller widths
 - [x] In mobile version in FF, there's a white strip on the right side of the search bar
 - [x] In mobile version, chat is under conversations - it shouldn't be

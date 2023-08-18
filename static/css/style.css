@@ -11,11 +11,11 @@
 	--panel-left-width: 400px;
 	--resizer-width: 10px;
 	--searchbar-height: 64px;
-	--userbar-height: 96px;
+	--userbar-height: 64px;
 	--inputbar-height: 64px;
 	--accountbar-height: 50px;
 	--leftpanel-min-width: 360px;
-	--leftpanel-max-width: 640px;
+	--leftpanel-max-width: 720px;
 	--rightpanel-min-width: 360px;
 	--rightpanel-max-width: 4096px;
 }
