@@ -1,5 +1,4 @@
 <script>
-    import { reactive } from 'svelte';
     import { accountsIsOpen } from '../stores/mainstore.js';
 
 
@@ -12,7 +11,7 @@
     }
 </script>
 
-<div class="accounts-bar" on:click={toggleAccountsBar}>
+<div class="accounts-bar" on:click={toggleAccountsBar} on:keypress={toggleAccountsBar}>
 	<div id="active-account" class="accounts-bar__active-account {!isOpen ? '' : 'menu-opened'}">
 		<div class="account account--active">
 			<div class="account__photo">

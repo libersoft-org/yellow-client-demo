@@ -15,12 +15,14 @@
 		navigator.clipboard.writeText(text);
 	}
 
-	function menuToggle() {
+	function menuTogglex() {
+	console.log("x");
 		document.querySelector('#menu').classList.toggle('show');
 		document.querySelector('#menu-toggle').classList.toggle('menu-opened');
 	}
 
 	function toggleUserAccounts() {
+	console.log("xx");
 		const activeAccount = document.querySelector('#active-account');
 		activeAccount.classList.toggle('menu-opened');
 		const otherUserAccounts = document.querySelector('.accounts-bar__other-accounts');

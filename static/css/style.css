@@ -8,7 +8,7 @@
 		var(--primary-color-lig)
 	);
 	--secondary-color: #336699;
-	--panel-left-width: 400px;
+	--panel-left-width: 360px;
 	--resizer-width: 10px;
 	--searchbar-height: 64px;
 	--userbar-height: 64px;
@@ -17,7 +17,7 @@
 	--leftpanel-min-width: 360px;
 	--leftpanel-max-width: 720px;
 	--rightpanel-min-width: 360px;
-	--rightpanel-max-width: 4096px;
+	--rightpanel-max-width: 8192px;
 }
 
 *:focus {
