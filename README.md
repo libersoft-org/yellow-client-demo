@@ -12,32 +12,22 @@ If you just want to get your free [**Yellow**](https://yellow.libersoft.org) acc
 
 - For developing purposes just follow these steps:
 
-<div style="background-color: gray;">
-
+```sh
     git clone https://github.com/libersoft-org/yellow-client-web.git
-
     cd yellow-client-web
-
     git checkout svelte
-
     git pull
-
-
-    npm install  (you'll need node version ~18+ installed)
-
+    npm i    
     npm run bulid
-
-    npm run preview -- --host 0.0.0.0    for net access
-
-</div>
+    npm run preview -- --host 0.0.0.0
+```
 
 - For start testing server directly (simply script for last two commands):
 
-<div style="background-color: gray;">
-
+```sh
     npm run liveserver
+```
 
-</div>
 
 ## Documentation
 
