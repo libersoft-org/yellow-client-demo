@@ -18,7 +18,7 @@ If you just want to get your free [**Yellow**](https://yellow.libersoft.org) acc
     git checkout svelte
     git pull
     npm i    
-    npm run bulid
+    npm run build
     npm run preview -- --host 0.0.0.0
 ```
 
