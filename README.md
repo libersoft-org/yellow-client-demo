@@ -14,7 +14,7 @@ If you just want to get your free [**Yellow**](https://yellow.libersoft.org) acc
 
 <div style="background-color: gray;">
 
-    git clone https://github.com/fladirm/yellow-client-web.git
+    git clone https://github.com/libersoft-org/yellow-client-web.git
 
     cd yellow-client-web
 
