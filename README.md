@@ -26,6 +26,13 @@ If you just want to get your free [**Yellow**](https://yellow.libersoft.org) acc
 
     npm run preview -- --host 0.0.0.0    for net access
 
+
+- For start testing server directly (simply script for last two commands):
+
+
+    npm run liveserver
+
+
 ## Documentation
 
 - [**Development roadmap**](./ROADMAP.md)
