@@ -14,9 +14,11 @@ If you just want to get your free [**Yellow**](https://yellow.libersoft.org) acc
 
 <div style="background-color: gray;">
 
-    git clone [this repo]
+    git clone https://github.com/fladirm/yellow-client-ws.git
 
-    git checkout sveltekit
+    cd yellow-client-web
+
+    git checkout svelte
 
     git pull
 
