@@ -12,6 +12,7 @@ If you just want to get your free [**Yellow**](https://yellow.libersoft.org) acc
 
 - For developing purposes just follow these steps:
 
+<div style="background-color: gray;">
 
     git clone [this repo]
 
@@ -26,12 +27,15 @@ If you just want to get your free [**Yellow**](https://yellow.libersoft.org) acc
 
     npm run preview -- --host 0.0.0.0    for net access
 
+</div>
 
 - For start testing server directly (simply script for last two commands):
 
+<div style="background-color: gray;">
 
     npm run liveserver
 
+</div>
 
 ## Documentation
 
