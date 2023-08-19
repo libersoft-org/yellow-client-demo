@@ -8,16 +8,16 @@
 		var(--primary-color-lig)
 	);
 	--secondary-color: #336699;
-	--panel-left-width: 360px;
+	--panel-left-width: 400px;
 	--resizer-width: 10px;
 	--searchbar-height: 64px;
 	--userbar-height: 64px;
 	--inputbar-height: 64px;
 	--accountbar-height: 50px;
 	--leftpanel-min-width: 360px;
-	--leftpanel-max-width: 720px;
+	--leftpanel-max-width: 50vw;
 	--rightpanel-min-width: 360px;
-	--rightpanel-max-width: 8192px;
+	--rightpanel-max-width: 100vw;
 }
 
 *:focus {
@@ -119,7 +119,7 @@ input {
 }
 
 .slide-in {
-	margin-left: -300px;
+	margin-left: -305px;
 	overflow-x: hidden;
 	transition: margin-left 0.2s;
 }

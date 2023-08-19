@@ -2,21 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	getConversations();
 	getChats();
 });
-
-document.addEventListener('keydown', function (event) {
-	let textarea = document.getElementById('message-text-input');
-	let heightInpx = getComputedStyle(textarea).height;
-	let lineInpx = getComputedStyle(textarea).lineHeight;
-	if (event.key === 'Enter' &&!event.shiftKey) {
-		event.preventDefault();
-		sendMessage();
-	} else if (event.key ==='Enter' &&event.shiftKey) {
-
-        if ((parseFloat(heightInpx)+parseFloat(lineInpx))/parseFloat(lineInpx)<4)
-		  textarea.style.height=parseFloat(heightInpx)+parseFloat(lineInpx)+"px";
-	}
-});
-
 async function getConversations() {
 	await addConversation(
 		'1',
@@ -119,7 +104,8 @@ async function getConversations() {
 	);
 }
 
-function sendMessage() {
+ window.sendMessage = function() {
+	console.log("sin");
 	const input = document.getElementById('message-text-input');
 	const now = new Date();
 	const hours = now.getHours().toString().padStart(2, '0');
