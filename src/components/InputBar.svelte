@@ -55,6 +55,8 @@
 		class="text"
 		contenteditable="true"
 		placeholder="Type a message ..."
+	 	data-placeholder="Type a message ..."
+
 	></div>
 	<img class="icon" src="img/icons/video_message.svg" alt="Voice message" />
 	<img class="icon" src="img/icons/voice_message.svg" alt="Voice message" />

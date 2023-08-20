@@ -112,16 +112,16 @@ window.sendMessage = function () {
 	const seconds = now.getSeconds().toString().padStart(2, '0');
 	const formattedTime = `${hours}:${minutes}:${seconds}`;
 
-	if (input.value) {
-		input.style.height = getComputedStyle(input).lineHeight;
+	if (input.innerText) {
+		//input.style.height = getComputedStyle(input).lineHeight;
 		addChatMessage(
 			'https://i.pravatar.cc/300?u=ownprofile',
-			input.value,
+			input.innerText,
 			formattedTime,
 			false,
 			false
 		);
-		input.value = '';
+		input.innerText = '';
 	}
 };
 

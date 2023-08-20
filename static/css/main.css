@@ -84,6 +84,11 @@
 	font-size: 1.2em;
 	margin-bottom: 8px;
 }
+#message-text-input:empty:not(:focus):before {
+	content: attr(data-placeholder);
+	color: #888; /* Placeholder text color */
+	pointer-events: none; /* Ensure the pseudo-element doesn't interfere with user interactions */
+}
 
 /* extracted.css */
 .toggle-container {
