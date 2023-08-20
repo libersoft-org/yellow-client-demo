@@ -104,27 +104,6 @@ async function getConversations() {
 	);
 }
 
-window.sendMessage = function () {
-	const input = document.getElementById('message-text-input');
-	const now = new Date();
-	const hours = now.getHours().toString().padStart(2, '0');
-	const minutes = now.getMinutes().toString().padStart(2, '0');
-	const seconds = now.getSeconds().toString().padStart(2, '0');
-	const formattedTime = `${hours}:${minutes}:${seconds}`;
-
-	if (input.innerText) {
-		//input.style.height = getComputedStyle(input).lineHeight;
-		addChatMessage(
-			'https://i.pravatar.cc/300?u=ownprofile',
-			input.innerText,
-			formattedTime,
-			false,
-			false
-		);
-		input.innerText = '';
-	}
-};
-
 async function addConversation(id, photo, name, message, time, unread, active) {
 	var html = translate(await getFileContent('html/temp-conversation.html'), {
 		'{ID}': id,
@@ -214,7 +193,7 @@ function addChatDate(date) {
 
 async function addChatMessage(photo, message, time, sent, read, active, secure) {
 	const html = translate(await getFileContent('html/temp-message.html'), {
-		'{SENT}': sent ? 'sent' : 'recieved',
+		'{SENT}': sent ? 'sent' : 'received',
 		'{PHOTO}': photo,
 		'{MESSAGE}': message.replace(/\n/g, '<br>'),
 		'{TIME}': time,

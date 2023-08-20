@@ -1,7 +1,12 @@
 <script>
 	import ToggleSwitch from './ToggleSwitch.svelte';
 	import { conversationSelected } from '../stores/mainstore.js';
+	import { sendMessageStore } from '../stores/mainstore.js';
 	import { onMount } from 'svelte';
+
+	function callSendMessage() {
+		sendMessageStore.set(true);
+	}
 
 	let isConversationSelected = false;
 
@@ -35,7 +40,7 @@
 			(checked1 && event.key === 'Enter' && (event.shiftKey || event.ctrlKey))
 		) {
 			event.preventDefault();
-			window.sendMessage();
+			callSendMessage();
 		} else if (event.key === 'Enter' && event.ctrlKey) {
 			event.preventDefault();
 			const selection = window.getSelection();
@@ -81,5 +86,5 @@
 	<img class="icon" src="img/icons/icon_video_message.svg" alt="Voice message" />
 	<img class="icon" src="img/icons/icon_voice_message.svg" alt="Voice message" />
 	<img class="icon" src="img/icons/icon_emoji_filled.svg" alt="Emoji" />
-	<img onClick="sendMessage()" class="icon" src="img/icons/send.svg" alt="Send" />
+	<img on:click={callSendMessage} class="icon" src="img/icons/send.svg" alt="Send" />
 </div>

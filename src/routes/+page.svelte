@@ -19,7 +19,7 @@
 	}
 
 	onMount(async () => {
-		await getChats();
+		//await getChats();
 	});
 </script>
 

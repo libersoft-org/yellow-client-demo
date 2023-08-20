@@ -323,7 +323,7 @@
 .conversations-panel .conversation__status__icons__read-state {
 	width: 20px;
 	height: 20px;
-	background-image: url('../../img/icons/recieved.svg');
+	background-image: url('../../img/icons/received.svg');
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -723,18 +723,18 @@
 	border-color: transparent #faefbe transparent transparent;
 }
 
-.message--recieved {
+.message--received {
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: reverse;
 	-ms-flex-direction: row-reverse;
 	flex-direction: row-reverse;
 }
 
-.message--recieved .message__content {
+.message--received .message__content {
 	background: #fffef8;
 }
 
-.message--recieved .message__content:after {
+.message--received .message__content:after {
 	content: '';
 	position: absolute;
 	top: 20px;
@@ -821,6 +821,6 @@
 }
 
 .message__content__info__icons__icon--read {
-	background-image: url(../../img/icons/recieved.svg);
+	background-image: url(../../img/icons/received.svg);
 	opacity: 0.5;
 }
