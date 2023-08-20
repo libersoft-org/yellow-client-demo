@@ -18,5 +18,5 @@
 	<img src="img/icons/icon_videocall.svg" alt="Video calls" class="icon" />
 
 	<!-- Videomeetings Icon -->
-	<img src="img/icons/icon_videocall.svg" alt="Video meetings" class="icon" />
+	<img src="img/icons/icon_video_meeting.svg" alt="Video meetings" class="icon" />
 </div>

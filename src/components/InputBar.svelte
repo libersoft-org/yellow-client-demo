@@ -67,7 +67,7 @@
 </script>
 
 <div class="input-bar" class:invisible={!isConversationSelected}>
-	<img class="icon" src="img/icons/attachment.svg" alt="Attachment" />
+	<img class="icon" src="img/icons/icon_attachment.svg" alt="Attachment" />
 	<ToggleSwitch bind:checked={checked1} on:checked={handleChange1} />
 	<div
 		on:keypress={handleKeydown}
@@ -78,8 +78,8 @@
 		placeholder="Type a message ..."
 		data-placeholder="Type a message ..."
 	/>
-	<img class="icon" src="img/icons/video_message.svg" alt="Voice message" />
-	<img class="icon" src="img/icons/voice_message.svg" alt="Voice message" />
-	<img class="icon" src="img/icons/emoji.svg" alt="Emoji" />
+	<img class="icon" src="img/icons/icon_video_message.svg" alt="Voice message" />
+	<img class="icon" src="img/icons/icon_voice_message.svg" alt="Voice message" />
+	<img class="icon" src="img/icons/icon_emoji_filled.svg" alt="Emoji" />
 	<img onClick="sendMessage()" class="icon" src="img/icons/send.svg" alt="Send" />
 </div>
