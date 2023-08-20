@@ -102,14 +102,14 @@
 					<div class="account__name">onlyfans@verylongdomain.com</div>
 				</div>
 				<div class="account">
-					<div class="account__photo invisible">
+					<div class="account__photo">
 						<img
 							class="photo-circle photo-circle--small"
-							src="https://i.pravatar.cc/300?u=user3"
+							src="./img/icons/icons8-plus.svg"
 							alt="Nobody"
 						/>
 					</div>
-					<div class="account__name"><b>+ add new account</b></div>
+					<div class="account__name"><b>add new account</b></div>
 				</div>
 			</div>
 			<div class="blurer" />

@@ -2,6 +2,8 @@
 	import ToggleComponent from './ToggleComponent.svelte';
 	import { menuOpen, toggleMenu } from '../stores/mainstore.js';
 	import { onMount, onDestroy } from 'svelte';
+    import DraggableSwipe from './DraggableSwipe.svelte';
+
 	const id = '#menu-toggle';
 	onMount(() => {
 		const closeHandler = (event) => {
@@ -67,5 +69,7 @@
 				<a target="_blank" href="https://yellow.libersoft.org">https://yellow.libersoft.org</a>
 			</div>
 		</div>
+		<DraggableSwipe target={"#menu-toggle"} />
+
 	</div>
 </ToggleComponent>
