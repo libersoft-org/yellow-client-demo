@@ -22,10 +22,10 @@
 		const numOfLines = editableDiv.innerText.split('\n').length;
 
 		if (numOfLines <= 1 && editableDiv.innerText.length > 0) {
-			editableDiv.style.height = lineHeight + "px";
+			editableDiv.style.height = lineHeight + 'px';
 		} else {
-			editableDiv.style.height = "auto";
-			editableDiv.style.height = editableDiv.scrollHeight + "px";
+			editableDiv.style.height = 'auto';
+			editableDiv.style.height = editableDiv.scrollHeight + 'px';
 		}
 	}
 
@@ -36,9 +36,30 @@
 		) {
 			event.preventDefault();
 			window.sendMessage();
+		} else if (event.key === 'Enter' && event.ctrlKey) {
+			event.preventDefault();
+			const selection = window.getSelection();
+			const range = selection.getRangeAt(0);
+			range.deleteContents();
+			const br1 = document.createElement('br');
+			range.insertNode(br1);
+			const br2 = document.createElement('br');
+			range.insertNode(br2);
+			range.setStartAfter(br2);
+			range.setEndAfter(br2);
+			selection.removeAllRanges();
+			selection.addRange(range);
 		}
 	}
-
+	function simulateShiftEnter(element) {
+		const shiftEnterEvent = new KeyboardEvent('keydown', {
+			key: 'Enter',
+			shiftKey: true,
+			bubbles: true,
+			cancelable: true
+		});
+		element.dispatchEvent(shiftEnterEvent);
+	}
 	onMount(() => {
 		//editableDiv.addEventListener('input', adjustDivHeight);
 		//adjustDivHeight();
@@ -55,9 +76,8 @@
 		class="text"
 		contenteditable="true"
 		placeholder="Type a message ..."
-	 	data-placeholder="Type a message ..."
-
-	></div>
+		data-placeholder="Type a message ..."
+	/>
 	<img class="icon" src="img/icons/video_message.svg" alt="Voice message" />
 	<img class="icon" src="img/icons/voice_message.svg" alt="Voice message" />
 	<img class="icon" src="img/icons/emoji.svg" alt="Emoji" />
