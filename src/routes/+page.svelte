@@ -18,11 +18,9 @@
 		navigator.clipboard.writeText(text);
 	}
 
-	onMount(() => {
-		console.log('Page initialized!');
-		//getConversations();
-		getChats();
-	});
+	onMount(async () => {
+        await getChats();
+    });
 </script>
 
 <svelte:head>
