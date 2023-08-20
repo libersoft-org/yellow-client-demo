@@ -28,7 +28,7 @@
 	{id}
 	bind:isOpen
 	toggleElementSelector="#active-account"
-	targetSelector=".accounts-bar__other-accounts"
+	targetSelector={['.accounts-bar__other-accounts']}
 	toggleClass="invisible"
 	closeOnEsc={false}
 	closeOnClickOutside={true}

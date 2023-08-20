@@ -41,8 +41,8 @@
 	</div>
 	<Resizer leftSelector=".panel-left" rightSelector=".panel-right" />
 	<div class="panel panel-right">
-		<UserBar />
-		<ConversationDetail />
-		<InputBar />
+		<UserBar id="f-user-bar" />
+		<ConversationDetail id="f-conversation-detail" />
+		<InputBar id="f-input-bar" />
 	</div>
 </div>

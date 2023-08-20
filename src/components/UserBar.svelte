@@ -1,7 +1,14 @@
 <script>
+	import { conversationSelected } from '../stores/mainstore.js';
+
+	let isConversationSelected = false;
+
+	conversationSelected.subscribe((value) => {
+		isConversationSelected = value;
+	});
 </script>
 
-<div class="user-bar">
+<div class="user-bar" class:invisible={!isConversationSelected}>
 	<div class="conversation-user">
 		<div class="conversation-user__photo">
 			<img

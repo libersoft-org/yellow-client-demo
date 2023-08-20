@@ -22,7 +22,7 @@
 	bind:isOpen={$menuOpen}
 	toggleClass="show"
 	toggleElementSelector="#menu-toggle"
-	targetSelector="#menu"
+	targetSelector={['#menu']}
 	closeOnEsc={false}
 	closeOnClickOutside={true}
 >
@@ -64,7 +64,7 @@
 			<div class="name">Yellow Web Client</div>
 			<div class="version">Version: 0.0.1</div>
 			<div class="website">
-				<a target="_blank" href="https://yellow.liberland.org">https://yellow.liberlang.org</a>
+				<a target="_blank" href="https://yellow.libersoft.org">https://yellow.libersoft.org</a>
 			</div>
 		</div>
 	</div>

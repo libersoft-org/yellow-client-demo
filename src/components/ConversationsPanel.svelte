@@ -22,7 +22,8 @@
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
 			time: '12:59:59',
 			unreadMessages: 10,
-			isRead: false
+			isRead: false,
+			email: 'nobody@domain.com'
 		},
 		{
 			id: '2',
@@ -32,7 +33,8 @@
 				'Morem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
 			time: '12:59:59',
 			unreadMessages: 0,
-			isRead: true
+			isRead: true,
+			email: 'nobodywithlong.long@domain.com'
 		},
 		{
 			id: '3',
@@ -42,7 +44,8 @@
 				'Norem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
 			time: '12:59:59',
 			unreadMessages: 888,
-			isRead: false
+			isRead: false,
+			email: 'testuser@undefinedlongdomain.com'
 		},
 		{
 			id: '4',
@@ -52,7 +55,8 @@
 				'Oorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
 			time: '12:59:59',
 			unreadMessages: 5,
-			isRead: false
+			isRead: false,
+			email: 'nobody.anybody@domain.com'
 		},
 		{
 			id: '5',
@@ -62,7 +66,8 @@
 				'Porem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
 			time: '12:59:59',
 			unreadMessages: 9,
-			isRead: false
+			isRead: false,
+			email: 'seznam@radsianineznam.cz'
 		},
 		{
 			id: '6',
@@ -72,7 +77,8 @@
 				'Porem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
 			time: '12:59:59',
 			unreadMessages: 11,
-			isRead: false
+			isRead: false,
+			email: 'undefined.name@on.undefined.domain'
 		},
 		{
 			id: '7',
@@ -82,7 +88,8 @@
 				'Vorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
 			time: '12:59:59',
 			unreadMessages: 650,
-			isRead: false
+			isRead: false,
+			email: 'nobody@domain.com'
 		},
 		{
 			id: '8',
@@ -92,7 +99,8 @@
 				'Worem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
 			time: '12:59:59',
 			unreadMessages: 92,
-			isRead: false
+			isRead: false,
+			email: 'info@yellownet.io'
 		},
 		{
 			id: '9',
@@ -102,7 +110,8 @@
 				'Torem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
 			time: '12:59:59',
 			unreadMessages: 83,
-			isRead: false
+			isRead: false,
+			email: 'nobody@domain.com'
 		},
 		{
 			id: '10',
@@ -112,7 +121,8 @@
 				'Sorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
 			time: '12:59:59',
 			unreadMessages: 74,
-			isRead: false
+			isRead: false,
+			email: 'nobo@domain.com'
 		},
 		{
 			id: '11',
@@ -122,7 +132,8 @@
 				'Borem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
 			time: '12:59:59',
 			unreadMessages: 101,
-			isRead: false
+			isRead: false,
+			email: 'hobo@domain.com'
 		}
 	];
 </script>
@@ -134,7 +145,9 @@
 			isActive={activeConversationId === conversation.id}
 			onSelect={() => {
 				selectConversation(conversation.id);
-				document.querySelector(`#message-text-input`).focus();
+				setTimeout(() => {
+					document.querySelector(`#message-text-input`).focus();
+				}, 5);
 			}}
 		/>
 	{/each}
