@@ -15,26 +15,21 @@
 		checked1 = event.detail.checked;
 	}
 
-	let textarea; // Reference to the textarea element
+	let editableDiv; // Reference to the contenteditable div
 
-	function adjustTextareaHeight(textarea) {
-		const lineHeight = parseFloat(window.getComputedStyle(textarea).lineHeight);
+	function adjustDivHeight() {
+		const lineHeight = parseFloat(getComputedStyle(editableDiv).lineHeight);
+		const numOfLines = editableDiv.innerText.split('\n').length;
 
-		const numOfLines = textarea.value === '' ? 1 : textarea.value.split('\n').length;
-
-		if (numOfLines === 1) {
-			textarea.rows = 1;
+		if (numOfLines <= 1 && editableDiv.innerText.length > 0) {
+			editableDiv.style.height = lineHeight + "px";
 		} else {
-			textarea.rows = numOfLines;
+			editableDiv.style.height = "auto";
+			editableDiv.style.height = editableDiv.scrollHeight + "px";
 		}
-
-		textarea.style.height = lineHeight * textarea.rows + 'px';
 	}
 
 	function handleKeydown(event) {
-		let heightInpx = getComputedStyle(textarea).height;
-		let lineInpx = getComputedStyle(textarea).lineHeight;
-
 		if (
 			(!checked1 && event.key === 'Enter' && !event.shiftKey && !event.ctrlKey) ||
 			(checked1 && event.key === 'Enter' && (event.shiftKey || event.ctrlKey))
@@ -45,24 +40,22 @@
 	}
 
 	onMount(() => {
-		textarea.addEventListener('input', function () {
-			adjustTextareaHeight(this);
-		});
-
-		adjustTextareaHeight(textarea);
+		//editableDiv.addEventListener('input', adjustDivHeight);
+		//adjustDivHeight();
 	});
 </script>
 
 <div class="input-bar" class:invisible={!isConversationSelected}>
 	<img class="icon" src="img/icons/attachment.svg" alt="Attachment" />
 	<ToggleSwitch bind:checked={checked1} on:checked={handleChange1} />
-	<textarea
+	<div
 		on:keypress={handleKeydown}
-		bind:this={textarea}
+		bind:this={editableDiv}
 		id="message-text-input"
 		class="text"
+		contenteditable="true"
 		placeholder="Type a message ..."
-	/>
+	></div>
 	<img class="icon" src="img/icons/video_message.svg" alt="Voice message" />
 	<img class="icon" src="img/icons/voice_message.svg" alt="Voice message" />
 	<img class="icon" src="img/icons/emoji.svg" alt="Emoji" />
