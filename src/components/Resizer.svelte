@@ -86,4 +86,9 @@
 	});
 </script>
 
-<div bind:this={resizerElement} class="resizer" on:mousedown={handleMousedown} on:touchstart={handleMousedown} />
+<div
+	bind:this={resizerElement}
+	class="resizer"
+	on:mousedown={handleMousedown}
+	on:touchstart={handleMousedown}
+/>

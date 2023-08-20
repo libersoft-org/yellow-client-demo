@@ -10,18 +10,18 @@
 	import InputBar from '../components/InputBar.svelte';
 	import Resizer from '../components/Resizer.svelte';
 	import SocialBar from '../components/SocialBar.svelte';
-    import { setupGlobalListeners } from '../functions/globalListeners.js';
+	import { setupGlobalListeners } from '../functions/globalListeners.js';
 
-    setupGlobalListeners();
+	setupGlobalListeners();
 
 	function copy(text) {
 		navigator.clipboard.writeText(text);
 	}
 
 	onMount(() => {
-        console.log("Page initialized!");
-        //getConversations();
-        getChats();
+		console.log('Page initialized!');
+		//getConversations();
+		getChats();
 	});
 </script>
 

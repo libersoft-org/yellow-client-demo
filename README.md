@@ -17,7 +17,7 @@ If you just want to get your free [**Yellow**](https://yellow.libersoft.org) acc
     cd yellow-client-web
     git checkout svelte
     git pull
-    npm i    
+    npm i
     npm run build
     npm run preview -- --host 0.0.0.0
 ```
@@ -28,11 +28,10 @@ If you just want to get your free [**Yellow**](https://yellow.libersoft.org) acc
     npm run liveserver
 ```
 
-
 ## Documentation
 
 - [**Development roadmap**](./ROADMAP.md)
-- [**Initial TODO**](./todomd) 
+- [**Initial TODO**](./todomd)
 - [**License**](./LICENSE)
 
 ## Donations

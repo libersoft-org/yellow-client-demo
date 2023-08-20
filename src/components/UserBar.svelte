@@ -25,6 +25,7 @@
 	<div class="conversation-controlls">
 		<!-- ... ovládací prvky konverzace ... -->
 	</div>
-	<div class="message__content__info__icons__icon message__content__info__icons__icon--non-secure">
-	</div>
+	<div
+		class="message__content__info__icons__icon message__content__info__icons__icon--non-secure"
+	/>
 </div>

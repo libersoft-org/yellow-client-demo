@@ -104,7 +104,7 @@ async function getConversations() {
 	);
 }
 
- window.sendMessage = function() {
+window.sendMessage = function () {
 	const input = document.getElementById('message-text-input');
 	const now = new Date();
 	const hours = now.getHours().toString().padStart(2, '0');
@@ -123,7 +123,7 @@ async function getConversations() {
 		);
 		input.value = '';
 	}
-}
+};
 
 async function addConversation(id, photo, name, message, time, unread, active) {
 	var html = translate(await getFileContent('html/temp-conversation.html'), {

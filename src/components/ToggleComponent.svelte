@@ -1,79 +1,87 @@
 <script>
-    import { onMount, onDestroy } from 'svelte';
-    import { addGlobalListener, removeGlobalListener } from '../functions/globalListeners.js';
-    import { openComponentsStack } from '../stores/openComponentsStack.js';
+	import { onMount, onDestroy } from 'svelte';
+	import { addGlobalListener, removeGlobalListener } from '../functions/globalListeners.js';
+	import { openComponentsStack } from '../stores/openComponentsStack.js';
 
-    export let id = '';
-    export let modal = false;
-    export let toggleClass = '';
-    export let toggleElementSelector = '';
-    export let targetSelector = '';
-    export let closeOnEsc = true;
-    export let closeOnClickOutside = true;
+	export let id = '';
+	export let modal = false;
+	export let toggleClass = '';
+	export let toggleElementSelector = '';
+	export let targetSelector = '';
+	export let closeOnEsc = true;
+	export let closeOnClickOutside = true;
 
-    export let isOpen = false;
-    let prevIsOpen = isOpen;
+	export let isOpen = false;
+	let prevIsOpen = isOpen;
 
-    $: {
-        if (isOpen !== prevIsOpen) {
-            if (isOpen) {
-                togOpen();
-            } else {
-                togClose();
-            }
-            prevIsOpen = isOpen;
-        }
-    }
+	$: {
+		if (isOpen !== prevIsOpen) {
+			if (isOpen) {
+				togOpen();
+			} else {
+				togClose();
+			}
+			prevIsOpen = isOpen;
+		}
+	}
 
-    function togOpen() {
-        document.querySelector(targetSelector).classList.add(toggleClass);
-        openComponentsStack.update(stack => [...stack, toggleElementSelector]);
-    }
+	function togOpen() {
+		document.querySelector(targetSelector).classList.add(toggleClass);
 
-    function togClose() {
-        document.querySelector(targetSelector).classList.remove(toggleClass);
-        openComponentsStack.update(stack => stack.filter(comp => comp !== toggleElementSelector));
-    }
+		if (closeOnEsc) {
+			openComponentsStack.update((stack) => [...stack, toggleElementSelector]);
+		}
+	}
 
-    function handleOutsideClick(event) {
-        if (closeOnClickOutside) {
-            const targetElement = document.querySelector(targetSelector);
-            const toggleElement = document.querySelector(toggleElementSelector);
+	function togClose() {
+		document.querySelector(targetSelector).classList.remove(toggleClass);
+		openComponentsStack.update((stack) => stack.filter((comp) => comp !== toggleElementSelector));
+	}
 
-            if (event.target === targetElement || toggleElement.contains(event.target)) {
-                return;
-            }
+	function handleOutsideClick(event) {
+		if (closeOnClickOutside) {
+			const targetElement = document.querySelector(targetSelector);
+			const toggleElement = document.querySelector(toggleElementSelector);
 
-            if (targetElement && !targetElement.contains(event.target) && isOpen) {
-                simulateToggleElementClick();
-            }
-        }
-    }
+			if (event.target === targetElement || toggleElement.contains(event.target)) {
+				return;
+			}
 
-    function handleEscKey(event) {
-        let topComponentId = $openComponentsStack[$openComponentsStack.length - 1];
-        if (topComponentId === toggleElementSelector && closeOnEsc && event.key === 'Escape' && isOpen) {
-            console.log("Closing component with id:", toggleElementSelector);
-            simulateToggleElementClick();
-            event.preventDefault();
-            event.stopPropagation();
-            openComponentsStack.update(stack => stack.filter(comp => comp !== toggleElementSelector));
-        }
-    }
+			if (targetElement && !targetElement.contains(event.target) && isOpen) {
+				simulateToggleElementClick();
+			}
+		}
+	}
 
-    function simulateToggleElementClick() {
-        document.querySelector(`${toggleElementSelector}`).click();
-    }
+	function handleEscKey(event) {
+		let topComponentId = $openComponentsStack[$openComponentsStack.length - 1];
+		if (
+			topComponentId === toggleElementSelector &&
+			closeOnEsc &&
+			event.key === 'Escape' &&
+			isOpen
+		) {
+			console.log('Closing component with id:', toggleElementSelector);
+			simulateToggleElementClick();
+			event.preventDefault();
+			event.stopPropagation();
+			openComponentsStack.update((stack) => stack.filter((comp) => comp !== toggleElementSelector));
+		}
+	}
 
-    onMount(() => {
-        addGlobalListener('click', handleOutsideClick);
-    //    addGlobalListener('keydown', handleEscKey);
-    });
+	function simulateToggleElementClick() {
+		document.querySelector(`${toggleElementSelector}`).click();
+	}
 
-    onDestroy(() => {
-        removeGlobalListener('click', handleOutsideClick);
-     //   removeGlobalListener('keydown', handleEscKey);
-    });
+	onMount(() => {
+		addGlobalListener('click', handleOutsideClick);
+		//    addGlobalListener('keydown', handleEscKey);
+	});
+
+	onDestroy(() => {
+		removeGlobalListener('click', handleOutsideClick);
+		//   removeGlobalListener('keydown', handleEscKey);
+	});
 </script>
 
-<slot></slot>
+<slot />

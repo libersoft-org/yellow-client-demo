@@ -4,7 +4,7 @@ export const accountsIsOpen = writable(false);
 
 export const menuOpen = writable(false);
 export function toggleMenu() {
-    menuOpen.update(state => !state);
+	menuOpen.update((state) => !state);
 }
 
 export const conversationSelected = writable(false);

@@ -6,7 +6,7 @@
 }
 #page .resizer {
 	cursor: ew-resize;
-	left:var(--panel-left-width);
+	left: var(--panel-left-width);
 	width: var(--resizer-width);
 	margin-left: -5px;
 	margin-right: -5px;
@@ -47,31 +47,32 @@
 .social-icons .icon {
 	width: 32px;
 	height: 32px;
-	cursor: default;  /* This ensures that the cursor doesn't change to a pointer on hover */
+	cursor: default; /* This ensures that the cursor doesn't change to a pointer on hover */
 }
 
-.invisible{
-	display: none!important;
+.invisible {
+	display: none !important;
 	transition: 250ms;
 }
 
 .blurred {
 	filter: blur(3px);
 	position: relative;
-	overflow: hidden; /* Pokud chcete, aby pseudoelement nevyčníval mimo rodičovský div */
+	overflow: hidden;
+	pointer-events: none;
 }
 
 .blurred::before {
-	content: "";
+	content: '';
 	display: block;
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: rgba(0, 0, 0, 0.5); /* Ztmaví obsah */
-	pointer-events: none; /* Aby pseudoelement neblokoval interakci s obsahem divu */
-	z-index: 1; /* Aby byl pseudoelement nad obsahem divu */
+	background-color: rgba(0, 0, 0, 0.5);
+	pointer-events: none;
+	z-index: 1;
 }
 #message-text-input {
 	width: 100%;
@@ -82,7 +83,8 @@
 	height: 1.5em;
 	line-height: 1.5em;
 	font-size: 1.2em;
-	margin-bottom: 8px }
+	margin-bottom: 8px;
+}
 
 /* extracted.css */
 .toggle-container {
@@ -104,7 +106,6 @@
 	height: 100%;
 }
 
-
 .toggle-switch input {
 	opacity: 0;
 	width: 0;
@@ -119,19 +120,19 @@
 	right: 0;
 	bottom: 0;
 	background-color: gray;
-	transition: .4s;
+	transition: 0.4s;
 	border-radius: 10px;
 }
 
 .toggle-switch .slider:before {
 	position: absolute;
-	content: "";
+	content: '';
 	height: 8px;
 	width: 8px;
 	left: 1px;
 	bottom: 1px;
 	background-color: var(--primary-color);
-	transition: .4s;
+	transition: 0.4s;
 	border-radius: 50%;
 }
 
@@ -146,8 +147,8 @@
 	#page {
 		grid-template-columns: 1fr;
 	}
-	.panel-left  {
-		min-width:100%;
+	.panel-left {
+		min-width: 100%;
 	}
 	.panel-right {
 		display: none;
@@ -228,7 +229,11 @@
 }
 
 .conversations-panel .conversation:hover {
-	background-color: hsl( var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 35%));
+	background-color: hsl(
+		var(--primary-color-hue),
+		var(--primary-color-sat),
+		calc(var(--primary-color-lig) + 35%)
+	);
 }
 
 .conversations-panel .conversation.active {
@@ -338,7 +343,7 @@
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	box-shadow: 4px 0px 8px 0px #1d1d1d
+	box-shadow: 4px 0px 8px 0px #1d1d1d;
 }
 
 .menu__item {
@@ -492,8 +497,8 @@
 	/* padding-top: var(--searchbar-height);
   position: fixed;
   */
-  height:var(--accountbar-height);
-  z-index:10;
+	height: var(--accountbar-height);
+	z-index: 10;
 }
 
 .accounts-bar__active-account.menu-opened .account__arrow {
@@ -506,7 +511,7 @@
 	width: 100%;
 	max-height: 33vh;
 	overflow-y: auto;
-    /*top: 114px;*/
+	/*top: 114px;*/
 	z-index: 10;
 	background-color: #2d2d2d;
 	/*-webkit-backdrop-filter: blur(3px);
@@ -553,12 +558,12 @@
 	background-color: #1d1d1d;
 }
 .active-account-name {
-	font-weight: 600!important;
+	font-weight: 600 !important;
 }
 .account__name {
-	white-space: nowrap;       /* Zabrání zalomení textu na nový řádek */
-	overflow: hidden;         /* Skryje přebytečný obsah mimo prvek */
-	text-overflow: ellipsis;  /* Přidá tři tečky na konec, pokud je text oříznut */
+	white-space: nowrap; /* Zabrání zalomení textu na nový řádek */
+	overflow: hidden; /* Skryje přebytečný obsah mimo prvek */
+	text-overflow: ellipsis; /* Přidá tři tečky na konec, pokud je text oříznut */
 	font-weight: 300;
 	font-size: 1rem;
 	padding: 0px 10px;
@@ -633,7 +638,6 @@
 	-webkit-box-shadow: inset 10px 0 10px -10px rgba(0, 0, 0, 0.5);
 	box-shadow: inset 10px 0 10px -10px rgba(0, 0, 0, 0.5);
 	color: #676767;
-
 }
 
 .conversation-detail .messages-box {
@@ -642,7 +646,7 @@
 	padding: 0px 20px;
 }
 
-.conversation-detail   .centered-message {
+.conversation-detail .centered-message {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -692,7 +696,11 @@
 }
 
 .message--sent .message__content {
-	background-color: hsl( var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 35%));
+	background-color: hsl(
+		var(--primary-color-hue),
+		var(--primary-color-sat),
+		calc(var(--primary-color-lig) + 35%)
+	);
 }
 
 .message--sent .message__content:after {
@@ -776,7 +784,7 @@
 
 .message__content__info__date-time {
 	font-size: 0.8rem;
-	margin-right:10px;
+	margin-right: 10px;
 }
 
 .message__content__info__icons {
