@@ -13,12 +13,11 @@
         let heightInpx = getComputedStyle(textarea).height;
         let lineInpx = getComputedStyle(textarea).lineHeight;
 
-        if (event.key === 'Enter' && !event.shiftKey && checked1) {
-            console.log("sin.xxx");
+        if ((!checked1 && event.key === 'Enter' && !event.shiftKey && !event.ctrlKey)|| (checked1 && event.key === 'Enter' && (event.shiftKey || event.ctrlKey))) {
             event.preventDefault();
             window.sendMessage();
         } else if (event.key === 'Enter') {
-            if ((parseFloat(heightInpx) + parseFloat(lineInpx)) / parseFloat(lineInpx) < 4)
+            if ((parseFloat(heightInpx) + parseFloat(lineInpx)) / parseFloat(lineInpx) < 11)
                 textarea.style.height = parseFloat(heightInpx) + parseFloat(lineInpx) + "px";
         }
     }

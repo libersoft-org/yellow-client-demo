@@ -10,24 +10,19 @@
 	import InputBar from '../components/InputBar.svelte';
 	import Resizer from '../components/Resizer.svelte';
 	import SocialBar from '../components/SocialBar.svelte';
+    import { setupGlobalListeners } from '../functions/globalListeners.js';
+
+    setupGlobalListeners();
 
 	function copy(text) {
 		navigator.clipboard.writeText(text);
 	}
 
-	function menuTogglex() {
-	console.log("x");
-		document.querySelector('#menu').classList.toggle('show');
-		document.querySelector('#menu-toggle').classList.toggle('menu-opened');
-	}
-
-	function toggleUserAccounts() {
-	console.log("xx");
-		const activeAccount = document.querySelector('#active-account');
-		activeAccount.classList.toggle('menu-opened');
-		const otherUserAccounts = document.querySelector('.accounts-bar__other-accounts');
-		otherUserAccounts.classList.toggle('active');
-	}
+	onMount(() => {
+        console.log("Page initialized!");
+        //getConversations();
+        getChats();
+	});
 </script>
 
 <svelte:head>
@@ -38,11 +33,11 @@
 
 <div id="page">
 	<div class="panel panel-left">
-		<Menu />
 		<SearchBar />
 		<SocialBar />
 		<AccountsBar />
 		<ConversationsPanel />
+		<Menu />
 	</div>
 	<Resizer leftSelector=".panel-left" rightSelector=".panel-right" />
 	<div class="panel panel-right">

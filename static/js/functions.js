@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-	getConversations();
-	getChats();
+	//getConversations();
+	//getChats();
 });
 async function getConversations() {
 	await addConversation(
@@ -105,7 +105,6 @@ async function getConversations() {
 }
 
  window.sendMessage = function() {
-	console.log("sin");
 	const input = document.getElementById('message-text-input');
 	const now = new Date();
 	const hours = now.getHours().toString().padStart(2, '0');

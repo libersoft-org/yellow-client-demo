@@ -45,29 +45,44 @@
 }
 
 .social-icons .icon {
-	width: 24px;
-	height: 24px;
+	width: 32px;
+	height: 32px;
 	cursor: default;  /* This ensures that the cursor doesn't change to a pointer on hover */
 }
 
 .invisible{
-	display: none;
+	display: none!important;
 	transition: 250ms;
 }
 
 .blurred {
 	filter: blur(3px);
+	position: relative;
+	overflow: hidden; /* Pokud chcete, aby pseudoelement nevyčníval mimo rodičovský div */
 }
 
+.blurred::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5); /* Ztmaví obsah */
+	pointer-events: none; /* Aby pseudoelement neblokoval interakci s obsahem divu */
+	z-index: 1; /* Aby byl pseudoelement nad obsahem divu */
+}
 #message-text-input {
 	width: 100%;
 	overflow: hidden;
 	resize: none;
-	border: 1px solid gray;
-	max-height: 5em;
-	height: 1em;
-	line-height: 1em;
- }
+	border-bottom: 1px solid gray;
+	max-height: 16em;
+	height: 1.5em;
+	line-height: 1.5em;
+	font-size: 1.2em;
+	margin-bottom: 8px }
 
 /* extracted.css */
 .toggle-container {
@@ -76,8 +91,10 @@
 	max-width: 24px;
 	display: inline-block;
 	height: 10px;
-	width: 24px; /* 2 times the height for a proportional look */
-	padding: 4px; /* To give space for the slider to move */
+	width: 24px;
+	padding-bottom: 16px;
+	padding-left: 4px;
+	padding-right: 4px;
 }
 
 .toggle-switch {
@@ -123,9 +140,9 @@
 }
 
 .toggle-switch input:checked + .slider:before {
-	transform: translateX(15px);
+	transform: translateX(14px);
 }
-@media (max-width: 720px) {
+@media (max-width: 800px) {
 	#page {
 		grid-template-columns: 1fr;
 	}
@@ -171,6 +188,19 @@
 	border-radius: 8px;
 }
 
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--primary-color) transparent;
+}
+
+*::-ms-scrollbar {
+	width: 6px;
+}
+
+*::-ms-scrollbar-thumb {
+	background-color: var(--primary-color);
+	border-radius: 8px;
+}
 .conversations-panel {
 	height: 100%;
 	overflow-y: auto;
@@ -188,7 +218,6 @@
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 	padding: 10px;
-	border-bottom: 1px solid #808080;
 	height: 60px;
 	background-color: hsl(
 		var(--primary-color-hue),
@@ -199,10 +228,10 @@
 }
 
 .conversations-panel .conversation:hover {
-	background-color: var(--primary-color);
+	background-color: hsl( var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 35%));
 }
 
-.conversations-panel .conversation--active {
+.conversations-panel .conversation.active {
 	background-color: var(--primary-color);
 }
 
@@ -227,7 +256,6 @@
 	flex-basis: 0%;
 	overflow: hidden;
 }
-
 .conversations-panel .conversation__info__user-name {
 	font-weight: bold;
 	text-overflow: ellipsis;
@@ -465,7 +493,7 @@
   position: fixed;
   */
   height:var(--accountbar-height);
-  z-index: 10;
+  z-index:10;
 }
 
 .accounts-bar__active-account.menu-opened .account__arrow {
@@ -476,11 +504,11 @@
 	/* display: none; */
 	position: relative;
 	width: 100%;
-	max-height: 12vh;
+	max-height: 33vh;
 	overflow-y: auto;
     /*top: 114px;*/
 	z-index: 10;
-	background-color: #ccc;
+	background-color: #2d2d2d;
 	/*-webkit-backdrop-filter: blur(3px);
 	backdrop-filter: blur(3px);
 	background-color: rgba(0, 0, 0, 0.3);
@@ -507,24 +535,30 @@
 	height: 50px;
 	padding: 0 10px;
 	cursor: pointer;
-	background-color: grey;
+	background-color: #2d2d2d;
 }
 
 .account--active {
 	background-color: #1d1d1d;
 }
 
+#accountsBarComponent {
+	z-index: 25;
+}
 .account--active .account__arrow {
 	display: block;
 }
 
 .account:not(.account--active):hover {
-	background-color: #676767;
+	background-color: #1d1d1d;
 }
-
+.active-account-name {
+	font-weight: 600!important;
+}
 .account__name {
-	overflow: hidden;
-	text-overflow: ellipsis;
+	white-space: nowrap;       /* Zabrání zalomení textu na nový řádek */
+	overflow: hidden;         /* Skryje přebytečný obsah mimo prvek */
+	text-overflow: ellipsis;  /* Přidá tři tečky na konec, pokud je text oříznut */
 	font-weight: 300;
 	font-size: 1rem;
 	padding: 0px 10px;
@@ -536,6 +570,7 @@
 	flex-shrink: 1;
 	-ms-flex-preferred-size: 0%;
 	flex-basis: 0%;
+	max-width: 85%;
 }
 
 .account__arrow {
@@ -549,12 +584,11 @@
 .input-bar {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-end;
 	/*padding: 1rem;*/
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	height: var(--inputbar-height);
+	-webkit-box-align: end;
+	-ms-flex-align: end;
+	min-height: var(--inputbar-height);
 	background-color: #1d1d1d;
 	-webkit-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.65);
 	box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.65);
@@ -598,6 +632,7 @@
 	flex: 1;
 	-webkit-box-shadow: inset 10px 0 10px -10px rgba(0, 0, 0, 0.5);
 	box-shadow: inset 10px 0 10px -10px rgba(0, 0, 0, 0.5);
+	color: #676767;
 
 }
 
@@ -605,6 +640,15 @@
 	overflow-y: auto;
 	width: 100%;
 	padding: 0px 20px;
+}
+
+.conversation-detail   .centered-message {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	font-size: 1.5em;
+	text-align: center;
 }
 
 .conversation-detail .messages {
@@ -648,7 +692,7 @@
 }
 
 .message--sent .message__content {
-	background-color: #faefbe;
+	background-color: hsl( var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 35%));
 }
 
 .message--sent .message__content:after {
