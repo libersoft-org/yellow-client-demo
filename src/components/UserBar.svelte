@@ -30,9 +30,15 @@
 		</div>
 	</div>
 	<div class="conversation-controlls">
-		<!-- ... ovládací prvky konverzace ... -->
+		<a class="icon" onclick=""><img src="img/icons/search.svg" alt="search" /></a>
+		<a class="icon" onclick=""><img src="img/icons/videocall.svg" alt="videocall" /></a>
+		<a class="icon" onclick=""><img src="img/icons/call.svg" alt="call" /></a>
+		<a class="icon" onclick=""
+			><img class="non-secure" src="img/icons/transparent/non-secure.svg" alt="secure" /></a
+		>
+		<a class="icon" onclick=""><img src="img/icons/dots.svg" alt="dots" /></a>
 	</div>
-	<div
+	<!--<div
 		class="message__content__info__icons__icon message__content__info__icons__icon--non-secure"
-	/>
+	/>-->
 </div>
