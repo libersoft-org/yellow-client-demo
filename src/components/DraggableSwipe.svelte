@@ -19,7 +19,7 @@
 
 		// Posun zprava doleva
 		if (distanceX < 0) {
-			//event.currentTarget.parentElement.style.transform = `translateX(${distanceX}px)`;
+			event.currentTarget.parentElement.style.transform = `translateX(${distanceX}px)`;
 		}
 		event.stopPropagation();
 	}

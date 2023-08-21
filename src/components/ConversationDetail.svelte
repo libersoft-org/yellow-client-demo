@@ -3,6 +3,7 @@
 	import { conversationSelected } from '../stores/mainstore.js';
 	import { openComponentsStack } from '../stores/openComponentsStack.js';
 	import MessagesList from './MessagesList.svelte';
+	import { activeConversationIdStore } from '../stores/mainstore.js';
 
 	let storeSize;
 	openComponentsStack.subscribe((value) => {
@@ -19,6 +20,7 @@
 		function handleKeydown(event) {
 			if (event.key === 'Escape' && storeSize == 0) {
 				conversationSelected.set(false);
+				activeConversationIdStore.set(null);
 			}
 		}
 		document.addEventListener('keydown', handleKeydown);

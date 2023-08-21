@@ -4,15 +4,19 @@
 	import { scrollToBottomStore } from '../stores/mainstore.js';
 	import { get } from 'svelte/store';
 	import { tick } from 'svelte';
+	import { activeConversationIdStore } from '../stores/mainstore.js';
 
-	let blurred;
 	let activeConversationId = null;
+	activeConversationIdStore.subscribe((value) => (activeConversationId = value));
+	let blurred;
 
 	accountsIsOpen.subscribe((value) => (blurred = value));
 
 	async function selectConversation(id) {
-		conversationSelected.set(true);
+		activeConversationIdStore.set(id);
+		conversationSelected.set(id !== null);
 		activeConversationId = id;
+		console.log(activeConversationId);
 		const scrollToBottom = get(scrollToBottomStore);
 		if (scrollToBottom) {
 			tick;

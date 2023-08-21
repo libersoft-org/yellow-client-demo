@@ -42,11 +42,12 @@
 	justify-content: space-evenly;
 	background-color: #1d1d1d;
 	padding-top: 8px;
+	padding-bottom: 8px;
 }
 
 .social-icons .icon {
-	width: 32px;
-	height: 32px;
+	width: 48px;
+	height: 48px;
 	cursor: default; /* This ensures that the cursor doesn't change to a pointer on hover */
 }
 
@@ -423,6 +424,7 @@
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	width: 100%;
+	padding-right: 8px;
 }
 
 .search-bar__search input {
@@ -707,7 +709,7 @@
 	background-color: hsl(
 		var(--primary-color-hue),
 		var(--primary-color-sat),
-		calc(var(--primary-color-lig) + 15%)
+		calc(var(--primary-color-lig) + 35%)
 	);
 }
 
@@ -721,7 +723,7 @@
 	border-style: solid;
 	border-width: 13px 16px 13px 0;
 	border-color: transparent
-		hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 15%))
+		hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 35%))
 		transparent transparent;
 }
 

@@ -11,3 +11,4 @@ export const conversationSelected = writable(false);
 export const openedComponentsStack = writable([]);
 export const sendMessageStore = writable(null);
 export const scrollToBottomStore = writable(null);
+export const activeConversationIdStore = writable(null);
