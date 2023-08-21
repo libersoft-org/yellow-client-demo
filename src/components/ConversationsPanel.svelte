@@ -16,7 +16,6 @@
 		activeConversationIdStore.set(id);
 		conversationSelected.set(id !== null);
 		activeConversationId = id;
-		console.log(activeConversationId);
 		const scrollToBottom = get(scrollToBottomStore);
 		if (scrollToBottom) {
 			tick;
@@ -156,6 +155,8 @@
 			{conversation}
 			isActive={activeConversationId === conversation.id}
 			onSelect={() => {
+				document.querySelector(`.panel-right`).classList.add('active-panel');
+				document.querySelector(`.panel-left`).classList.remove('active-panel');
 				selectConversation(conversation.id);
 				setTimeout(() => {
 					document.querySelector(`#message-text-input`).focus();

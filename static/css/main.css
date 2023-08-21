@@ -83,7 +83,7 @@
 	max-height: 15em;
 	line-height: 1.5em;
 	font-size: 1.2em;
-	margin-bottom: 8px;
+	margin-bottom: 12px;
 }
 #message-text-input:empty:not(:focus):before {
 	content: attr(data-placeholder);
@@ -148,18 +148,38 @@
 .toggle-switch input:checked + .slider:before {
 	transform: translateX(14px);
 }
+
+.active-panel {
+	height:100vh;
+	min-height:100vh;
+}
+.back-button {
+	display:none;
+}
 @media (max-width: 794px) {
 	#page {
 		grid-template-columns: 1fr;
 	}
 	.panel-left {
 		min-width: 100%;
+		height: 0px;
 	}
 	.panel-right {
-		display: none;
+		min-width :100%;
+		height: 0px;
 	}
 	.resizer {
 		display: none;
+	}
+	.active-panel {
+		height:100vh;
+		min-height:100vh;
+	}
+	.user-bar{
+		padding: 0!important;
+	}
+	.back-button{
+		display: flex;
 	}
 }
 
@@ -647,7 +667,7 @@
 	flex: 1;
 	-webkit-box-shadow: inset var(--basic-shadow);
 	box-shadow: inset var(--basic-shadow);
-	color: #676767;
+	color: #000000;
 }
 
 .conversation-detail .messages-box {

@@ -30,7 +30,7 @@
 </svelte:head>
 
 <div id="page">
-	<div class="panel panel-left">
+	<div class="panel panel-left active-panel">
 		<SearchBar />
 		<SocialBar />
 		<AccountsBar />

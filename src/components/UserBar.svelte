@@ -1,5 +1,13 @@
 <script>
-	import { conversationSelected } from '../stores/mainstore.js';
+	import {activeConversationIdStore, conversationSelected} from '../stores/mainstore.js';
+
+
+	function backButtonClick() {
+		conversationSelected.set(false);
+		activeConversationIdStore.set(null);
+		document.querySelector(`.panel-left`).classList.add('active-panel');
+		document.querySelector(`.panel-right`).classList.remove('active-panel');
+	}
 
 	let isConversationSelected = false;
 
@@ -9,6 +17,9 @@
 </script>
 
 <div class="user-bar" class:invisible={!isConversationSelected}>
+	<div class="back-button">
+		<a class="icon" on:click="{backButtonClick}"><img src="img/icons/icon_back.svg" alt="search" /></a>
+	</div>
 	<div class="conversation-user">
 		<div class="conversation-user__photo">
 			<img
