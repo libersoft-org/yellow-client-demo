@@ -8,23 +8,27 @@
 	let messages = [];
 	let messageBox;
 	let multipartMes =`
-        <div class="multipart-message.version1">
-            <p>Hey, what's up? <b>Nothing new?</b></p>
-            <p><img src="./img/obrazek.jpeg" alt="Example Image"></p>
-            <p><a href="https://example.com/link">Click here</a></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
-            <button>Button 1</button>
-            <button>Button 2</button>
+        <div class="multipart-message">
+            <div class="element">"Hey, what's up? <b>Nothing new?</b></div>
+            <div class="element"><div class="image-container"><img  src="./img/obrazek.jpeg" alt="Example Image"></div></div>
+            <div class="element link"><b><i><a href="https://example.com/link">Click here</a></i></b></div>
+            <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</div>
+            <div class="element">
+            <button>Send</button>
+            <button>Download</button>
+            </div>
         </div>
     `;
 	let multipartMes2 =`
-        <div class="multipart-message.version2">
-            <p>Hey, what's up? <b>Nothing new?</b></p>
-            <p><img src="./img/obrazek.jpeg" alt="Example Image"></p>
-            <p><a href="https://example.com/link">Click here</a></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
-            <button>Button 1</button>
-            <button>Button 2</button>
+        <div class="multipart-message">
+            <div class="element">"Hey, what's up? <b>Nothing new?</b></div>
+            <div class="element"><div class="image-container"><img  src="./img/obrazek2.jpeg" alt="Example Image"></div></div>
+            <div class="element link"><b><a href="https://example.com/link">Click here</a></b></div>
+            <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</div>
+            <div class="element">
+            <button>Reply</button>
+            <button>Like</button>
+            </div>
         </div>
     `;
 	onMount(() => {

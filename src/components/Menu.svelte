@@ -28,7 +28,7 @@
 	closeOnEsc={false}
 	closeOnClickOutside={true}
 >
-	<div id="menu" class="menu slide-in">
+	<div id="menu" class="menu slide-in no-select">
 		<div class="menu__items">
 			<div class="menu__item">
 				<img

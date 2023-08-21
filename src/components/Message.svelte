@@ -39,19 +39,3 @@
 	</div>
 </div>
 
-<style>
-	.hide-avatar .message__sender-photo {
-		visibility: hidden !important;
-	}
-
-	.reduce-margin {
-		margin-bottom: 5px !important;
-	}
-
-	.hide-after .message__content::after {
-		content: none !important;
-	}
-
-
-
-</style>

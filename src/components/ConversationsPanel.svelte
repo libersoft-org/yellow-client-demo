@@ -270,7 +270,7 @@
 	];
 </script>
 
-<div class="conversations-panel {!blurred ? '' : 'blurred'}">
+<div class="conversations-panel no-select{!blurred ? '' : 'blurred'}">
 	{#each conversations as conversation}
 		<ConversationItem
 			{conversation}

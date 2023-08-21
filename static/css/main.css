@@ -160,6 +160,46 @@
 .back-button {
 	display: none;
 }
+
+.no-select {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Safari */
+	-khtml-user-select: none;    /* Konqueror HTML */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* Internet Explorer/Edge */
+	user-select: none;           /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
+.multipart-message .element {
+		margin-bottom: 4px;
+}
+.multipart-message .element .image-container {
+	border: 2px solid #333;    /* Okraj kolem divu */
+	border-radius: 10px;       /* Kulaté rohy */
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Stín */
+	overflow: hidden;          /* Skryje části obrázku, které by vystupovaly mimo kulaté rohy */
+	height: 250px;             /* Příklad výšky divu */
+}
+
+.multipart-message .element .image-container img {
+	width: 100%;               /* Obrázek bude mít šířku rovnou šířce divu */
+	height: 100%;              /* Obrázek bude mít výšku rovnou výšce divu */
+	object-fit: cover;         /* Obrázek bude oříznut, pokud nebude odpovídat poměru stran divu */
+}
+.multipart-message .element.link a {
+	color: var(--secondary-color);
+	text-decoration: none/* Obrázek bude oříznut, pokud nebude odpovídat poměru stran divu */
+}.multipart-message .element button {
+		border-radius: 3px;
+		border: 1px solid var(--secondary-color);
+		background-color: var(--secondary-color);
+		color: var(--primary-color);
+		padding: 4px;
+		margin-right: 4px;
+		font-weight: bold;
+		cursor: pointer;
+		min-width:80px;
+	text-align: center;
+ }
 @media (max-width: 794px) {
 	#page {
 		grid-template-columns: 1fr;
@@ -353,6 +393,18 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	opacity: 0.5;
+}
+
+.hide-avatar .message__sender-photo {
+	visibility: hidden !important;
+}
+
+.reduce-margin {
+	margin-bottom: 5px !important;
+}
+
+.hide-after .message__content::after {
+	content: none !important;
 }
 
 .menu {
