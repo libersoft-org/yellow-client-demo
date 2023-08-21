@@ -7,7 +7,17 @@
 
 	let messages = [];
 	let messageBox;
-
+	let multipartMes = "test";
+	let mess =`
+        <div class="message-content">
+            Hey, what's up? <b>Nothing new?</b>
+            <img src="https://example.com/path/to/image.jpg" alt="Example Image">
+            <a href="https://example.com/link">Click here</a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+            <button>Button 1</button>
+            <button>Button 2</button>
+        </div>
+    `;
 	onMount(() => {
 		const unsubscribe = sendMessageStore.subscribe((value) => {
 			if (value) {
@@ -140,7 +150,15 @@
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
-			message: "Hey, what's up? Nothing new?",
+			message: "Hey, what's up? <b>Nothing new?</b>",
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: multipartMes,
 			time: new Date().toLocaleTimeString(),
 			sent: true,
 			read: false,

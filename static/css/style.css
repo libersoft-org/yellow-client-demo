@@ -12,7 +12,7 @@
 	--resizer-width: 10px;
 	--searchbar-height: 64px;
 	--userbar-height: 64px;
-	--inputbar-height: 50px;
+	--inputbar-height: 44px;
 	--accountbar-height: 50px;
 	--leftpanel-min-width: 397px;
 	--leftpanel-max-width: 50vw;
@@ -139,7 +139,7 @@ input {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 2px;
+	/*padding: 2px;*/
 	width: 40px;
 	height: 40px;
 	cursor: pointer;

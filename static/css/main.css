@@ -83,7 +83,7 @@
 	max-height: 15em;
 	line-height: 1.5em;
 	font-size: 1.2em;
-	margin-bottom: 12px;
+	margin-bottom: 8px;
 }
 #message-text-input:empty:not(:focus):before {
 	content: attr(data-placeholder);
@@ -632,6 +632,7 @@
 	-webkit-box-shadow: var(--basic-shadow);
 	box-shadow: var(--basic-shadow);
 	z-index: 20;
+	padding-bottom: 2px;
 }
 
 .input-bar .text {
