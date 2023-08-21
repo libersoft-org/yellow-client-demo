@@ -7,7 +7,7 @@
 
 	let messages = [];
 	let messageBox;
-	let multipartMes =`
+	let multipartMes = `
         <div class="multipart-message">
             <div class="element">"Hey, what's up? <b>Nothing new?</b></div>
             <div class="element"><div class="image-container"><img  src="./img/obrazek.jpeg" alt="Example Image"></div></div>
@@ -19,7 +19,7 @@
             </div>
         </div>
     `;
-	let multipartMes2 =`
+	let multipartMes2 = `
         <div class="multipart-message">
             <div class="element">"Hey, what's up? <b>Nothing new?</b></div>
             <div class="element"><div class="image-container"><img  src="./img/obrazek2.jpeg" alt="Example Image"></div></div>
