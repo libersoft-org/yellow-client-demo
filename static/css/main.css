@@ -87,8 +87,12 @@
 }
 #message-text-input:empty:not(:focus):before {
 	content: attr(data-placeholder);
-	color: #888; /* Placeholder text color */
-	pointer-events: none; /* Ensure the pseudo-element doesn't interfere with user interactions */
+	color: #888;
+	pointer-events: none;
+	font-size: 0.8em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 /* extracted.css */
