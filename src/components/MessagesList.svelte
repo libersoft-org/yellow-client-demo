@@ -90,6 +90,56 @@
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: 'Hi, how are you?',
+			time: '11:22:33',
+			sent: true,
+			read: true,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=ownprofile',
+			message: "Hi, I'm fine and you?",
+			time: '11:23:00',
+			sent: false,
+			read: true,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			message:
+					'I am sending you very very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long long message.',
+			time: '15:35:00',
+			sent: true,
+			read: true,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=ownprofile',
+			message:
+					'I am also sending you very very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long long message.',
+			time: '16:25:15',
+			sent: false,
+			read: false,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=ownprofile',
+			message: 'Cool!',
+			time: '16:35:59',
+			sent: false,
+			read: false,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: "Hey, what's up?",
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
 			message: "Hey, what's up? Nothing new?",
 			time: new Date().toLocaleTimeString(),
 			sent: true,
