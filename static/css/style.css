@@ -95,6 +95,48 @@ a {
 	cursor: pointer;
 }
 
+
+
+
+/*******************************************************************/
+.multipart-message.version2 {
+	border: 1px solid #eee;
+	padding: 25px;
+	width: 350px;
+	font-family: 'Times New Roman', serif;
+	background-color: #f9f9f9;
+}
+
+.multipart-message.version2 p {
+	margin-bottom: 20px;
+	color: #333;
+}
+
+.multipart-message.version2 img {
+	max-width: 100%;
+	display: block;
+	margin-bottom: 20px;
+	border-radius: 10px;
+}
+
+.multipart-message.version2 .buttons .btn-primary {
+	padding: 12px 18px;
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+.multipart-message.version2 .buttons .btn-secondary {
+	padding: 12px 18px;
+	background-color: #FFC107;
+	color: #333;
+	border: none;
+	cursor: pointer;
+	margin-left: 10px;
+}
+/**********************************************************************/
+
 input {
 	padding: 10px;
 	border-radius: 10px;

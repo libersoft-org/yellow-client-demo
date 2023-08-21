@@ -8,10 +8,20 @@
 	let messages = [];
 	let messageBox;
 	let multipartMes =`
-        <div class="message-content">
-            <p></p>Hey, what's up? <b>Nothing new?</b></p>
+        <div class="multipart-message.version1">
+            <p>Hey, what's up? <b>Nothing new?</b></p>
             <p><img src="./img/obrazek.jpeg" alt="Example Image"></p>
-            <a href="https://example.com/link">Click here</a>
+            <p><a href="https://example.com/link">Click here</a></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+            <button>Button 1</button>
+            <button>Button 2</button>
+        </div>
+    `;
+	let multipartMes2 =`
+        <div class="multipart-message.version2">
+            <p>Hey, what's up? <b>Nothing new?</b></p>
+            <p><img src="./img/obrazek.jpeg" alt="Example Image"></p>
+            <p><a href="https://example.com/link">Click here</a></p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
             <button>Button 1</button>
             <button>Button 2</button>
@@ -135,6 +145,14 @@
 			photo: 'https://i.pravatar.cc/300?u=ownprofile',
 			message: 'Cool!',
 			time: '16:35:59',
+			sent: false,
+			read: false,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: multipartMes2,
+			time: new Date().toLocaleTimeString(),
 			sent: false,
 			read: false,
 			secure: false

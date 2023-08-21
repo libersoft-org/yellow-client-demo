@@ -51,4 +51,7 @@
 	.hide-after .message__content::after {
 		content: none !important;
 	}
+
+
+
 </style>
