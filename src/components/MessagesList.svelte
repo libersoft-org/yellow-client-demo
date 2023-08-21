@@ -7,11 +7,10 @@
 
 	let messages = [];
 	let messageBox;
-	let multipartMes = "test";
-	let mess =`
+	let multipartMes =`
         <div class="message-content">
-            Hey, what's up? <b>Nothing new?</b>
-            <img src="https://example.com/path/to/image.jpg" alt="Example Image">
+            <p></p>Hey, what's up? <b>Nothing new?</b></p>
+            <p><img src="./img/obrazek.jpeg" alt="Example Image"></p>
             <a href="https://example.com/link">Click here</a>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
             <button>Button 1</button>

@@ -20,7 +20,7 @@
 		<img class="photo-circle photo-circle--medium" src={photo} alt="User Photo" />
 	</div>
 	<div class="message__content">
-		<div class="message__content__text">{message}</div>
+		<div class="message__content__text">{@html message}</div>
 		<div class="message__content__info">
 			<div class="message__content__info__date-time">{time}</div>
 			<div class="message__content__info__icons">
