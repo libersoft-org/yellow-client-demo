@@ -1,6 +1,8 @@
 <script>
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	export let target; // cílový prvek, na který se má simulovat kliknutí
+	export let swipeable; //prvek pro swipe
+	export let swipeableAmount = 0;
 	let startX;
 	let currentX;
 	let isDragging = false;
@@ -19,7 +21,8 @@
 
 		// Posun zprava doleva
 		if (distanceX < 0) {
-			event.currentTarget.parentElement.style.transform = `translateX(${distanceX}px)`;
+			let swipes = parseInt(swipeableAmount) + parseInt(distanceX);
+			document.querySelector(swipeable).style.transform = `translateX(${swipes}px)`;
 		}
 		event.stopPropagation();
 	}
@@ -27,7 +30,6 @@
 	function handleEnd(event) {
 		isDragging = false;
 		const distanceX = currentX - startX;
-
 		// Pokud je posun větší než např. 100px, simulujeme kliknutí na cílový prvek
 		if (distanceX < -parseFloat(getComputedStyle(mydiv.parentElement).width) / 2) {
 			const targetElement = document.querySelector(target);
@@ -35,9 +37,9 @@
 				// console.log("Simutated click on:"+targetElement.id);
 				targetElement.click();
 			}
-		} else {
-			event.currentTarget.parentElement.style.transform = '';
 		}
+
+		setTimeout((document.querySelector(swipeable).style.transform = ''), 0);
 		event.stopPropagation();
 	}
 

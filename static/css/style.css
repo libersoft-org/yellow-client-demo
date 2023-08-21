@@ -186,7 +186,7 @@ input {
 }
 
 .slide-in.show {
-	margin-left: 0px;
+	transform: translateX(325px);
 }
 
 #page #chat .container .message,
