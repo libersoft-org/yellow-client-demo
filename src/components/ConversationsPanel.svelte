@@ -145,6 +145,127 @@
 			unreadMessages: 101,
 			isRead: false,
 			email: 'hobo@domain.com'
+		},
+		{
+			id: '1',
+			imageUrl: 'https://i.pravatar.cc/300?u=user1',
+			name: 'Ultraultraultra Long Username - Company Ltd.',
+			lastMessage:
+				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
+			time: '12:59:59',
+			unreadMessages: 10,
+			isRead: false,
+			email: 'nobody@domain.com'
+		},
+		{
+			id: '2',
+			imageUrl: 'https://i.pravatar.cc/300?u=user2',
+			name: 'Veryveryvery Long Username - Some Other Company Ltd.',
+			lastMessage:
+				'Morem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
+			time: '12:59:59',
+			unreadMessages: 0,
+			isRead: true,
+			email: 'nobodywithlong.long@domain.com'
+		},
+		{
+			id: '3',
+			imageUrl: 'https://i.pravatar.cc/300?u=user3',
+			name: 'Short Name',
+			lastMessage:
+				'Norem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
+			time: '12:59:59',
+			unreadMessages: 888,
+			isRead: false,
+			email: 'testuser@undefinedlongdomain.com'
+		},
+		{
+			id: '4',
+			imageUrl: 'https://i.pravatar.cc/300?u=user4',
+			name: 'John Doe',
+			lastMessage:
+				'Oorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
+			time: '12:59:59',
+			unreadMessages: 5,
+			isRead: false,
+			email: 'nobody.anybody@domain.com'
+		},
+		{
+			id: '5',
+			imageUrl: 'https://i.pravatar.cc/300?u=user5',
+			name: 'Jane Smith',
+			lastMessage:
+				'Porem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
+			time: '12:59:59',
+			unreadMessages: 9,
+			isRead: false,
+			email: 'seznam@radsianineznam.cz'
+		},
+		{
+			id: '6',
+			imageUrl: 'https://i.pravatar.cc/300?u=user6',
+			name: 'Jane Smith',
+			lastMessage:
+				'Porem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
+			time: '12:59:59',
+			unreadMessages: 11,
+			isRead: false,
+			email: 'undefined.name@on.undefined.domain'
+		},
+		{
+			id: '7',
+			imageUrl: 'https://i.pravatar.cc/300?u=user7',
+			name: 'User Name',
+			lastMessage:
+				'Vorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
+			time: '12:59:59',
+			unreadMessages: 650,
+			isRead: false,
+			email: 'nobody@domain.com'
+		},
+		{
+			id: '8',
+			imageUrl: 'https://i.pravatar.cc/300?u=user8',
+			name: 'Test User',
+			lastMessage:
+				'Worem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
+			time: '12:59:59',
+			unreadMessages: 92,
+			isRead: false,
+			email: 'info@yellownet.io'
+		},
+		{
+			id: '9',
+			imageUrl: 'https://i.pravatar.cc/300?u=user9',
+			name: 'Some Name',
+			lastMessage:
+				'Torem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
+			time: '12:59:59',
+			unreadMessages: 83,
+			isRead: false,
+			email: 'nobody@domain.com'
+		},
+		{
+			id: '10',
+			imageUrl: 'https://i.pravatar.cc/300?u=user10',
+			name: 'Nemp User',
+			lastMessage:
+				'Sorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
+			time: '12:59:59',
+			unreadMessages: 74,
+			isRead: false,
+			email: 'nobo@domain.com'
+		},
+		{
+			id: '11',
+			imageUrl: 'https://i.pravatar.cc/300?u=user11',
+			name: 'Name Here',
+			lastMessage:
+				'Borem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
+			time: '12:59:59',
+			unreadMessages: 101,
+			isRead: false,
+			email: 'hobo@domain.com'
 		}
 	];
 </script>

@@ -107,7 +107,7 @@
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
 			message:
-					'I am sending you very very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long long message.',
+				'I am sending you very very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long long message.',
 			time: '15:35:00',
 			sent: true,
 			read: true,
@@ -116,7 +116,7 @@
 		{
 			photo: 'https://i.pravatar.cc/300?u=ownprofile',
 			message:
-					'I am also sending you very very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long long message.',
+				'I am also sending you very very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long long message.',
 			time: '16:25:15',
 			sent: false,
 			read: false,
