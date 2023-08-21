@@ -632,7 +632,7 @@
 	-webkit-box-shadow: var(--basic-shadow);
 	box-shadow: var(--basic-shadow);
 	z-index: 20;
-	padding-bottom: 2px;
+	padding-bottom: 4px;
 }
 
 .input-bar .text {
