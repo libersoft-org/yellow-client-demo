@@ -1,7 +1,12 @@
 <script>
 	import Message from './Message.svelte';
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { sendMessageStore } from '../stores/mainstore.js';
+	import { scrollToBottomStore } from '../stores/mainstore.js';
+	export let visible = true;
+
+	let messages = [];
+	let messageBox;
 
 	onMount(() => {
 		const unsubscribe = sendMessageStore.subscribe((value) => {
@@ -10,12 +15,28 @@
 				sendMessageStore.set(false);
 			}
 		});
+		scrollToBottomStore.set(scrollToBottom);
+		// Inicializace z mockupMessages
+		for (let i = 0; i < mockupMessages.length; i++) {
+			const currentMessage = mockupMessages[i];
+			const previousMessage = messages[messages.length - 1];
 
-		return unsubscribe; // Odhlásit se při zničení komponenty
+			if (previousMessage && previousMessage.sent === currentMessage.sent) {
+				previousMessage.hideAvatar = true;
+				previousMessage.reduceMargin = true;
+				previousMessage.hideAfter = true;
+			}
+
+			messages = [...messages, currentMessage];
+		}
+		scrollToBottom(messageBox);
+		return unsubscribe;
 	});
 
-	export let visible = true;
-
+	const scrollToBottom = async (node) => {
+		if (!node) node = messageBox;
+		node.scroll({ top: node.scrollHeight, behavior: 'smooth' });
+	};
 	const mockupMessages = [
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
@@ -66,57 +87,61 @@
 			sent: true,
 			read: false,
 			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: "Hey, what's up? Nothing new?",
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false
 		}
 	];
 
-	let messages = [];
+	function adjustLastMessage() {
+		const lastMessage = messages[messages.length - 1];
+		if (lastMessage && lastMessage.sent === false) {
+			lastMessage.hideAvatar = true;
+			lastMessage.reduceMargin = true;
+			lastMessage.hideAfter = true;
+		}
+	}
 
-	function addMessage() {
-		// Přidání nové zprávy do seznamu
-		messages.push({
+	async function addMessage() {
+		adjustLastMessage();
+		const newMessage = {
 			photo: 'https://i.pravatar.cc/300?u=profile',
 			message: 'Nová zpráva',
 			time: new Date().toLocaleTimeString(),
 			sent: false,
 			read: false,
 			secure: false
-		});
+		};
+		messages = [...messages, newMessage];
+		await tick();
+		scrollToBottom(messageBox);
 	}
 
-	function deleteMessage(index) {
-		// Odstranění zprávy ze seznamu podle indexu
-		messages.splice(index, 1);
-	}
-
-	function searchMessage(query) {
-		// Prohledávání zpráv podle dotazu
-		return messages.filter((msg) => msg.message.includes(query));
-	}
-
-	function sendMessage() {
+	async function sendMessage() {
 		const input = document.getElementById('message-text-input');
-		const now = new Date();
-		const hours = now.getHours().toString().padStart(2, '0');
-		const minutes = now.getMinutes().toString().padStart(2, '0');
-		const seconds = now.getSeconds().toString().padStart(2, '0');
-		const formattedTime = `${hours}:${minutes}:${seconds}`;
+		const formattedTime = new Date().toLocaleTimeString();
 
+		adjustLastMessage();
 		if (input.innerText) {
-			addChatMessage(
-				'https://i.pravatar.cc/300?u=ownprofile',
-				input.innerText,
-				formattedTime,
-				false,
-				false,
-				false
-			);
+			const newMessage = {
+				photo: 'https://i.pravatar.cc/300?u=ownprofile',
+				message: input.innerText,
+				time: formattedTime,
+				sent: false,
+				read: false,
+				secure: false
+			};
+			messages = [...messages, newMessage];
+			await tick();
+			scrollToBottom(messageBox);
 			input.innerText = '';
 		}
 	}
-
-	onMount(() => {
-		messages = mockupMessages;
-	});
 
 	function computeDate(index) {
 		const startDate = new Date(2023, 1, 1); // 1. února 2023
@@ -130,15 +155,20 @@
 
 <!--<button on:click={addMessage}>Přidat zprávu</button>-->
 
-<div class="messages-box" class:invisible={!visible}>
+<div bind:this={messageBox} class="messages-box" class:invisible={!visible}>
 	<div class="messages">
 		{#each messages as msg, index}
-			{#if index % 3 === 0}
+			{#if index % 5 === 0}
 				<div class="messages__info">
 					<div class="messages__info__date">{computeDate(index)}</div>
 				</div>
 			{/if}
-			<Message {...msg} />
+			<Message
+				{...msg}
+				hideAvatar={msg.hideAvatar}
+				reduceMargin={msg.reduceMargin}
+				hideAfter={msg.hideAfter}
+			/>
 			<!--<button on:click={() => deleteMessage(index)}>Odstranit</button> -->
 		{/each}
 	</div>

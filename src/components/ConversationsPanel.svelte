@@ -1,15 +1,23 @@
 <script>
 	import { accountsIsOpen, conversationSelected } from '../stores/mainstore.js';
 	import ConversationItem from './ConversationItem.svelte';
+	import { scrollToBottomStore } from '../stores/mainstore.js';
+	import { get } from 'svelte/store';
+	import { tick } from 'svelte';
 
 	let blurred;
 	let activeConversationId = null;
 
 	accountsIsOpen.subscribe((value) => (blurred = value));
 
-	function selectConversation(id) {
+	async function selectConversation(id) {
 		conversationSelected.set(true);
 		activeConversationId = id;
+		const scrollToBottom = get(scrollToBottomStore);
+		if (scrollToBottom) {
+			tick;
+			scrollToBottom();
+		}
 	}
 
 	// Sample data for dynamically loaded conversations

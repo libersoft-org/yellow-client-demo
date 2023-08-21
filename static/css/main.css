@@ -52,7 +52,7 @@
 
 .invisible {
 	display: none !important;
-	transition: 250ms;
+	transition: 25ms;
 }
 
 .blurred {
@@ -720,7 +720,9 @@
 	height: 0;
 	border-style: solid;
 	border-width: 13px 16px 13px 0;
-	border-color: transparent #faefbe transparent transparent;
+	border-color: transparent
+		hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 15%))
+		transparent transparent;
 }
 
 .message--received {
