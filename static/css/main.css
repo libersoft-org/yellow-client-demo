@@ -185,7 +185,7 @@
 	height: 100%; /* Obrázek bude mít výšku rovnou výšce divu */
 	object-fit: cover; /* Obrázek bude oříznut, pokud nebude odpovídat poměru stran divu */
 }
-.multipart-message .element .image-container video{
+.multipart-message .element .image-container video {
 	width: 100%; /* Obrázek bude mít šířku rovnou šířce divu */
 	height: 100%; /* Obrázek bude mít výšku rovnou výšce divu */
 	object-fit: cover; /* Obrázek bude oříznut, pokud nebude odpovídat poměru stran divu */
@@ -229,13 +229,13 @@
 	height: 10px;
 	background-repeat: no-repeat;
 
-	background-image: url('../../img/icons/caret-up.svg');
+	background-image: url('../img/icons/caret-up.svg');
 }
 .g-opened {
 	width: 12px;
 	height: 10px;
 	background-repeat: no-repeat;
-	background-image: url('../../img/icons/caret-down.svg')!important;
+	background-image: url('../img/icons/caret-down.svg') !important;
 }
 
 .group-name {
@@ -244,18 +244,18 @@
 }
 
 .photo-circle-grouped {
-	margin-left:-20px;
+	margin-left: -20px;
 	z-index: -1;
 }
 .photo-circle-user-grouped {
-	margin-left:25px;
+	margin-left: 25px;
 	z-index: -1;
 }
 .message__content .map {
-	width:320px;
+	width: 320px;
 }
-.leaflet-container .leaflet-right{
-	opacity:0!important;
+.leaflet-container .leaflet-right {
+	opacity: 0 !important;
 }
 .fast-replies {
 	position: absolute;
@@ -270,29 +270,84 @@
 	padding: 10px;
 	margin: 0px;
 	font-size: 1em;
-
 }
 .fast-replies p:hover {
 	background-color: #2d2d2d;
 }
 
 .controls-menu {
-	 position: absolute;
-	 right: 0px;
-	 top: 52px;
-	 margin-right: 0px;
-	 background-color: hsl( var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 35%) );
- }
+	position: absolute;
+	right: 0px;
+	top: 52px;
+	margin-right: 0px;
+	background-color: hsl(
+		var(--primary-color-hue),
+		var(--primary-color-sat),
+		calc(var(--primary-color-lig) + 35%)
+	);
+}
 .controls-menu p {
 	cursor: pointer;
 	padding: 10px;
 	margin: 0px;
 	font-size: 1em;
-
 }
 .controls-menu p:hover {
 	background-color: var(--primary-color-hue);
 }
+.modal {
+	position: fixed;
+	display: flex;
+	flex-direction: column; /* Přidáno pro správné uspořádání obsahu */
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 25vw;
+	max-width: 80vw;
+	max-height: 80vh;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: var(--basic-shadow);
+	z-index: 1000;
+	overflow: hidden;
+}
+
+.modal .modal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 1rem; /* Přidáno pro odsazení obsahu od okrajů */
+	width: 100%;
+	padding: 5px;
+	background-color: var(--primary-color);
+	font-size: 1em;
+}
+
+.modal .modal-title {
+	flex: 1; /* Zajistí, že titulek zabere co nejvíce dostupného místa */
+	font-weight: bold;
+	margin-left: 5px; /* Přidáno pro zarovnání ikony k pravému okraji */ /* Přidáno pro zarovnání ikony k pravému okraji */ /* Přidáno pro zarovnání ikony k pravému okraji */
+}
+
+.modal .close-icon {
+	cursor: pointer;
+	width: 32px; /* Opravena hodnota z '48x' na '48px' */
+	height: 32px;
+	background-color: var(--primary-color);
+	background-image: url('../img/icons/icons8-close.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	margin-left: auto;
+	margin-right: 5px;
+}
+
+.modal .modal-body {
+	overflow-y: auto; /* Přidáno pro automatický posuvník, pokud je obsah příliš dlouhý */
+	flex: 1; /* Zajistí, že tělo modálního okna zabere zbývající místo */
+	padding: 10px;
+}
+
 @media (max-width: 794px) {
 	#page {
 		grid-template-columns: 1fr;
@@ -484,7 +539,7 @@
 .conversations-panel .conversation__status__icons__read-state {
 	width: 20px;
 	height: 20px;
-	background-image: url('../../img/icons/received.svg');
+	background-image: url('../img/icons/received.svg');
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -579,7 +634,7 @@
 	width: 25px;
 	height: 25px;
 	cursor: pointer;
-	background-image: url('../../img/icons/icons8-menu.svg');
+	background-image: url('../img/icons/icons8-menu.svg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 25px;
@@ -587,7 +642,7 @@
 
 .search-bar__menu-toggle.menu-opened {
 	/*background-image: url('../../img/icons/transparent/close-cross.svg');*/
-	background-image: url('../../img/icons/icons8-close.svg');
+	background-image: url('../img/icons/icons8-close.svg');
 	background-size: 25px;
 }
 
@@ -639,7 +694,7 @@
 
 .user-bar .conversation-user__photo {
 	padding-right: 20px;
-	display:flex;
+	display: flex;
 }
 
 .user-bar .conversation-user__detail {
@@ -685,7 +740,7 @@
 }
 
 .accounts-bar__active-account.menu-opened .account__arrow {
-	background-image: url('../../img/icons/caret-up.svg');
+	background-image: url('../img/icons/caret-up.svg');
 }
 
 .accounts-bar__other-accounts {
@@ -765,7 +820,7 @@
 	display: none;
 	width: 12px;
 	height: 10px;
-	background-image: url('../../img/icons/caret-down.svg');
+	background-image: url('../img/icons/caret-down.svg');
 	background-repeat: no-repeat;
 }
 
@@ -805,7 +860,7 @@
 	justify-content: center;
 	overflow-y: auto;
 	width: 100%;
-	background-image: url('../../img/background/doodle.png');
+	background-image: url('../img/background/doodle.png');
 	background-repeat: repeat;
 	background-size: 500px;
 	background-color: hsl(
@@ -993,14 +1048,14 @@
 }
 
 .message__content__info__icons__icon--secure {
-	background-image: url(../../img/icons/transparent/secure.svg);
+	background-image: url(../img/icons/transparent/secure.svg);
 }
 
 .message__content__info__icons__icon--non-secure {
-	background-image: url(../../img/icons/transparent/non-secure.svg);
+	background-image: url(../img/icons/transparent/non-secure.svg);
 }
 
 .message__content__info__icons__icon--read {
-	background-image: url(../../img/icons/received.svg);
+	background-image: url(../img/icons/received.svg);
 	opacity: 0.5;
 }

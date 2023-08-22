@@ -1,9 +1,17 @@
 <script>
 	import { activeConversationIdStore, conversationSelected } from '../stores/mainstore.js';
-	import {parse} from "cookie";
+	import { parse } from 'cookie';
 	import ToggleComponent from './ToggleComponent.svelte';
-	import {onMount} from "svelte";
+	import { onMount } from 'svelte';
+	import Modal from './Modal.svelte';
+	let showModal = false;
+
+	function closeModal() {
+		showModal = false;
+	}
+
 	const id = '.icon-controls';
+
 	onMount(() => {
 		const closeHandler = (event) => {
 			if (event.detail === id) {
@@ -41,7 +49,7 @@
 		>
 	</div>
 	<div class="conversation-user">
-		<div class="conversation-user__photo">
+		<div class="conversation-user__photo" on:click={() => (showModal = true)}>
 			<img
 				class="photo-circle photo-circle--medium"
 				src="https://i.pravatar.cc/300?u=user2"
@@ -49,9 +57,9 @@
 			/>
 			{#if idConversation === 1}
 				<img
-				class="photo-circle photo-circle--medium photo-circle-grouped"
-				src="https://i.pravatar.cc/300?u=user3"
-				alt="user2"
+					class="photo-circle photo-circle--medium photo-circle-grouped"
+					src="https://i.pravatar.cc/300?u=user3"
+					alt="user2"
 				/>
 			{/if}
 		</div>
@@ -74,17 +82,45 @@
 		<a class="icon" onclick=""
 			><img class="non-secure" src="img/icons/transparent/non-secure.svg" alt="secure" /></a
 		>
-		<div class="icon icon-controls" on:click={() => showControlsMenu = !showControlsMenu}>
-		<img src="img/icons/dots.svg" alt="dots" />
-	</div>
-		<ToggleComponent bind:isOpen={showControlsMenu} toggleElementSelector=".icon-controls" targetSelector={['.controls-menu']} toggleClass="invisible">
+		<div class="icon icon-controls" on:click={() => (showControlsMenu = !showControlsMenu)}>
+			<img src="img/icons/dots.svg" alt="dots" />
+		</div>
+		<ToggleComponent
+			bind:isOpen={showControlsMenu}
+			toggleElementSelector=".icon-controls"
+			targetSelector={['.controls-menu']}
+			toggleClass="invisible"
+		>
 			<div class="controls-menu no-select" class:invisible={!showControlsMenu}>
-				<p on:click={() => {/* Handle mute notifications */}}>Mute notifications</p>
-				<p on:click={() => {/* Handle export history */}}>Export history</p>
-				<p on:click={() => {/* Handle delete conversation */}}>Delete conversation</p>
+				<p
+					on:click={() => {
+						/* Handle mute notifications */
+					}}
+				>
+					Mute notifications
+				</p>
+				<p
+					on:click={() => {
+						/* Handle export history */
+					}}
+				>
+					Export history
+				</p>
+				<p
+					on:click={() => {
+						/* Handle delete conversation */
+					}}
+				>
+					Delete conversation
+				</p>
 			</div>
 		</ToggleComponent>
 	</div>
+	{#if showModal}
+		<Modal title="User profile" on:close={closeModal}>
+			<p>User profile loading, please wait..</p>
+		</Modal>
+	{/if}
 	<!--<div
 		class="message__content__info__icons__icon message__content__info__icons__icon--non-secure"
 	/>-->

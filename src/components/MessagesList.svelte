@@ -1,9 +1,9 @@
 <script>
 	import Message from './Message.svelte';
 	import { onMount, tick } from 'svelte';
-	import {activeConversationIdStore, sendMessageStore} from '../stores/mainstore.js';
+	import { activeConversationIdStore, sendMessageStore } from '../stores/mainstore.js';
 	import { scrollToBottomStore } from '../stores/mainstore.js';
-	import {derived} from "svelte/store";
+	import { derived } from 'svelte/store';
 	export let visible = true;
 	import { afterUpdate } from 'svelte';
 
@@ -13,7 +13,6 @@
 
 	let actualMessages = [];
 	function refreshMessages() {
-
 		if (parseInt($activeConversationIdStore) === 1) {
 			actualMessages = [...groupMessages];
 		} else {
@@ -49,7 +48,7 @@
             </div>
         </div>
     `;
-	let multipartMes3 =`
+	let multipartMes3 = `
 		<div class="multipart-message">
             <div class="element">"Hey, what's up? <b>Check my new video :)</b></div>
             <div class="element"><div class="image-container">
@@ -146,12 +145,12 @@
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=ownprofile',
-			message: "..map location",
+			message: '..map location',
 			time: new Date().toLocaleTimeString(),
 			sent: false,
 			read: false,
 			secure: false,
-			messagetype: "map"
+			messagetype: 'map'
 		}
 	];
 	const mockupMessages = [
@@ -297,7 +296,6 @@
 			read: false,
 			secure: false
 		}
-
 	];
 
 	function adjustLastMessage() {
@@ -339,10 +337,8 @@
 				secure: false
 			};
 			actualMessages = [...actualMessages, newMessage];
-			if (parseInt($activeConversationIdStore)!=1)
-				messages = [...messages, newMessage]
-			else
-				groupMessages = [...groupMessages, newMessage];
+			if (parseInt($activeConversationIdStore) != 1) messages = [...messages, newMessage];
+			else groupMessages = [...groupMessages, newMessage];
 			await tick();
 			scrollToBottom(messageBox);
 			input.innerText = '';
@@ -364,20 +360,18 @@
 <div bind:this={messageBox} class="messages-box" class:invisible={!visible}>
 	<div class="messages">
 		{#each actualMessages as msg, index}
-
-		{#if index % 5 === 0}
-					<div class="messages__info">
-						<div class="messages__info__date">{computeDate(index)}</div>
-					</div>
-				{/if}
-				<Message
-						{...msg}
-						hideAvatar={msg.hideAvatar}
-						reduceMargin={msg.reduceMargin}
-						hideAfter={msg.hideAfter}
-				/>
-				<!--<button on:click={() => deleteMessage(index)}>Odstranit</button> -->
-			{/each}
-
+			{#if index % 5 === 0}
+				<div class="messages__info">
+					<div class="messages__info__date">{computeDate(index)}</div>
+				</div>
+			{/if}
+			<Message
+				{...msg}
+				hideAvatar={msg.hideAvatar}
+				reduceMargin={msg.reduceMargin}
+				hideAfter={msg.hideAfter}
+			/>
+			<!--<button on:click={() => deleteMessage(index)}>Odstranit</button> -->
+		{/each}
 	</div>
 </div>

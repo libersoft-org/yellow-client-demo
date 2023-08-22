@@ -3,7 +3,7 @@
 	import { conversationSelected } from '../stores/mainstore.js';
 	import { sendMessageStore } from '../stores/mainstore.js';
 	import { onMount } from 'svelte';
-	import ToggleComponent from "./ToggleComponent.svelte";
+	import ToggleComponent from './ToggleComponent.svelte';
 	const id = '.icon-message-template';
 	onMount(() => {
 		const closeHandler = (event) => {
@@ -95,20 +95,25 @@
 <div class="input-bar" class:invisible={!isConversationSelected}>
 	<img class="icon" src="img/icons/icon_attachment.svg" alt="Attachment" />
 	<ToggleComponent
-			toggleElementSelector=".icon-message-template"
-			targetSelector={['.fast-replies']}
-			toggleClass="invisible"
-			closeOnEsc={false}
-			closeOnClickOutside={true}
-			bind:isOpen={showFastReplies}
+		toggleElementSelector=".icon-message-template"
+		targetSelector={['.fast-replies']}
+		toggleClass="invisible"
+		closeOnEsc={false}
+		closeOnClickOutside={true}
+		bind:isOpen={showFastReplies}
 	>
-		<img class="icon icon-message-template" on:click={toggleFastReplies} src="img/icons/icon_message_template.svg" alt="Attachment" />
+		<img
+			class="icon icon-message-template"
+			on:click={toggleFastReplies}
+			src="img/icons/icon_message_template.svg"
+			alt="Attachment"
+		/>
 		<div class="fast-replies no-select" class:invisible={!showFastReplies}>
-			<p on:click={() => selectQuickReply("Call me later..")}>Call me later..</p>
+			<p on:click={() => selectQuickReply('Call me later..')}>Call me later..</p>
 			<p on:click={() => selectQuickReply("I'll let you know.")}>I'll let you know.</p>
 			<p on:click={() => selectQuickReply("It's not my fault.")}>It's not my fault.</p>
-			<p on:click={() => selectQuickReply("Leave me a message.")}>Leave me a message.</p>
-			<p on:click={() => selectQuickReply("Reply 5")}>Reply 5</p>
+			<p on:click={() => selectQuickReply('Leave me a message.')}>Leave me a message.</p>
+			<p on:click={() => selectQuickReply("Don't call me again!")}>Don't call me again!</p>
 		</div>
 	</ToggleComponent>
 	<ToggleSwitch bind:checked={checked1} on:checked={handleChange1} />

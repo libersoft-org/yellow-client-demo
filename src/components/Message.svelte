@@ -1,7 +1,7 @@
 <script>
 	export let photo;
-	export let messagetype;
-	export let url;
+	export let messagetype = null;
+	export let url = null;
 	export let message;
 	export let time;
 	export let sent = true;
@@ -10,10 +10,8 @@
 	export let hideAvatar = false;
 	export let reduceMargin = false;
 	export let hideAfter = false;
-	import AudioPlayer from "./AudioPlayer.svelte";
-	import LeafMap from "./utils/LeafMap.svelte";
-
-
+	import AudioPlayer from './AudioPlayer.svelte';
+	import LeafMap from './utils/LeafMap.svelte';
 </script>
 
 <div
@@ -26,18 +24,21 @@
 		<img class="photo-circle photo-circle--medium" src={photo} alt="User Photo" />
 	</div>
 	<div class="message__content">
-		{#if messagetype === "audio"}
+		{#if messagetype === 'audio'}
 			<div class="message__content__text">
 				<div class="multipart-message element">{message}></div>
 				<div class="multipart-message element audio"><AudioPlayer audioUrl={url} /></div>
 			</div>
 		{/if}
-		{#if messagetype === "map"}
-			<div class="multipart-message element map"><div class="multipart-message element image-container">
-				<LeafMap/></div></div>
+		{#if messagetype === 'map'}
+			<div class="multipart-message element map">
+				<div class="multipart-message element image-container">
+					<LeafMap />
+				</div>
+			</div>
 		{/if}
-		{#if (!messagetype)}
-		<div class="message__content__text">{@html message}</div>
+		{#if !messagetype}
+			<div class="message__content__text">{@html message}</div>
 		{/if}
 		<div class="message__content__info">
 			<div class="message__content__info__date-time">{time}</div>

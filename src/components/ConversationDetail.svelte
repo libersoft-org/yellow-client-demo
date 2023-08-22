@@ -37,7 +37,7 @@
 </script>
 
 <div class="conversation-detail">
-	<MessagesList visible={isConversationSelected} conversationId={conversationId} />
+	<MessagesList visible={isConversationSelected} {conversationId} />
 	<div class="centered-message" class:invisible={isConversationSelected}>
 		Please select your conversation...
 	</div>

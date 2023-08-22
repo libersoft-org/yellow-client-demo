@@ -10,8 +10,7 @@
 	activeConversationIdStore.subscribe((value) => (activeConversationId = value));
 	let blurred;
 
-
-	let groups = ["Others","Work","Family","Friend","Bitches", "Nonames", "Blocked"];
+	let groups = ['Others', 'Work', 'Family', 'Friend', 'Bitches', 'Nonames', 'Blocked'];
 	accountsIsOpen.subscribe((value) => (blurred = value));
 
 	async function selectConversation(id) {
@@ -285,7 +284,7 @@
 		}
 
 		while (nextElement && !nextElement.classList.contains('group-conversation')) {
-			nextElement.style.display = (nextElement.style.display === 'none') ? '' : 'none';
+			nextElement.style.display = nextElement.style.display === 'none' ? '' : 'none';
 			nextElement = nextElement.nextElementSibling;
 		}
 	}
@@ -294,7 +293,10 @@
 <div class="conversations-panel no-select{!blurred ? '' : 'blurred'}">
 	{#each conversations as conversation, index}
 		{#if index % 5 === 0}
-			<div class="group-conversation" on:click={toggleConversations}><div class="group-icon"></div><div class="group-name">{groups[index/5]}</div><div class="group-arrow" />
+			<div class="group-conversation" on:click={toggleConversations}>
+				<div class="group-icon" />
+				<div class="group-name">{groups[index / 5]}</div>
+				<div class="group-arrow" />
 			</div>
 		{/if}
 		<ConversationItem
