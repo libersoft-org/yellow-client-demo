@@ -257,6 +257,24 @@
 .leaflet-container .leaflet-right{
 	opacity:0!important;
 }
+.fast-replies {
+	position: absolute;
+	margin-left: 36px;
+	margin-bottom: 44px;
+	background-color: #1d1d1d;
+	color: #ffffff;
+	padding: 0px;
+}
+.fast-replies p {
+	cursor: pointer;
+	padding: 10px;
+	margin: 0px;
+	font-size: 1em;
+
+}
+.fast-replies p:hover {
+	background-color: #2d2d2d;
+}
 @media (max-width: 794px) {
 	#page {
 		grid-template-columns: 1fr;

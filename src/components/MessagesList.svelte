@@ -338,7 +338,11 @@
 				read: false,
 				secure: false
 			};
-			messages = [...messages, newMessage];
+			actualMessages = [...actualMessages, newMessage];
+			if (parseInt($activeConversationIdStore)!=1)
+				messages = [...messages, newMessage]
+			else
+				groupMessages = [...groupMessages, newMessage];
 			await tick();
 			scrollToBottom(messageBox);
 			input.innerText = '';
