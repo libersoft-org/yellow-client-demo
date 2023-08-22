@@ -8,7 +8,7 @@
 	export let toggleClass = '';
 	export let toggleElementSelector = '';
 	export let targetSelector = '';
-	export let closeOnEsc = true;
+	export let closeOnEsc = false;
 	export let closeOnClickOutside = true;
 
 	export let isOpen = false;

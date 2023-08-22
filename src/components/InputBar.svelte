@@ -98,12 +98,12 @@
 			toggleElementSelector=".icon-message-template"
 			targetSelector={['.fast-replies']}
 			toggleClass="invisible"
-			closeOnEsc={true}
+			closeOnEsc={false}
 			closeOnClickOutside={true}
 			bind:isOpen={showFastReplies}
 	>
 		<img class="icon icon-message-template" on:click={toggleFastReplies} src="img/icons/icon_message_template.svg" alt="Attachment" />
-		<div class="fast-replies" class:invisible={!showFastReplies}>
+		<div class="fast-replies no-select" class:invisible={!showFastReplies}>
 			<p on:click={() => selectQuickReply("Call me later..")}>Call me later..</p>
 			<p on:click={() => selectQuickReply("I'll let you know.")}>I'll let you know.</p>
 			<p on:click={() => selectQuickReply("It's not my fault.")}>It's not my fault.</p>

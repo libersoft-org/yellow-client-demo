@@ -275,6 +275,24 @@
 .fast-replies p:hover {
 	background-color: #2d2d2d;
 }
+
+.controls-menu {
+	 position: absolute;
+	 right: 0px;
+	 top: 52px;
+	 margin-right: 0px;
+	 background-color: hsl( var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 35%) );
+ }
+.controls-menu p {
+	cursor: pointer;
+	padding: 10px;
+	margin: 0px;
+	font-size: 1em;
+
+}
+.controls-menu p:hover {
+	background-color: var(--primary-color-hue);
+}
 @media (max-width: 794px) {
 	#page {
 		grid-template-columns: 1fr;

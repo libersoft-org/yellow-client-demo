@@ -1,7 +1,23 @@
 <script>
 	import { activeConversationIdStore, conversationSelected } from '../stores/mainstore.js';
 	import {parse} from "cookie";
+	import ToggleComponent from './ToggleComponent.svelte';
+	import {onMount} from "svelte";
+	const id = '.icon-controls';
+	onMount(() => {
+		const closeHandler = (event) => {
+			if (event.detail === id) {
+				// Zavřete tuto komponentu
+				document.querySelector(`${id}`).click();
+			}
+		};
+		document.addEventListener('closeToggleComponent', closeHandler);
+		return () => {
+			document.removeEventListener('closeToggleComponent', closeHandler);
+		};
+	});
 
+	let showControlsMenu = false;
 	function backButtonClick() {
 		conversationSelected.set(false);
 		activeConversationIdStore.set(null);
@@ -58,7 +74,16 @@
 		<a class="icon" onclick=""
 			><img class="non-secure" src="img/icons/transparent/non-secure.svg" alt="secure" /></a
 		>
-		<a class="icon" onclick=""><img src="img/icons/dots.svg" alt="dots" /></a>
+		<div class="icon icon-controls" on:click={() => showControlsMenu = !showControlsMenu}>
+		<img src="img/icons/dots.svg" alt="dots" />
+	</div>
+		<ToggleComponent bind:isOpen={showControlsMenu} toggleElementSelector=".icon-controls" targetSelector={['.controls-menu']} toggleClass="invisible">
+			<div class="controls-menu no-select" class:invisible={!showControlsMenu}>
+				<p on:click={() => {/* Handle mute notifications */}}>Mute notifications</p>
+				<p on:click={() => {/* Handle export history */}}>Export history</p>
+				<p on:click={() => {/* Handle delete conversation */}}>Delete conversation</p>
+			</div>
+		</ToggleComponent>
 	</div>
 	<!--<div
 		class="message__content__info__icons__icon message__content__info__icons__icon--non-secure"
