@@ -175,7 +175,7 @@
 .multipart-message .element .image-container {
 	border: 2px solid #333; /* Okraj kolem divu */
 	border-radius: 10px; /* Kulaté rohy */
-	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Stín */
+	box-shadow: var(--basic-shadow);
 	overflow: hidden; /* Skryje části obrázku, které by vystupovaly mimo kulaté rohy */
 	height: 250px; /* Příklad výšky divu */
 }
@@ -265,6 +265,19 @@
 	color: #ffffff;
 	padding: 0px;
 }
+.fast-replies::after {
+	content: '';
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transform: scaley(0.99);
+	box-shadow: var(--basic-shadow-right);
+	pointer-events: none;
+	z-index: -1;
+}
 .fast-replies p {
 	cursor: pointer;
 	padding: 10px;
@@ -285,6 +298,7 @@
 		var(--primary-color-sat),
 		calc(var(--primary-color-lig) + 35%)
 	);
+	box-shadow: var(--basic-shadow);
 }
 .controls-menu p {
 	cursor: pointer;
@@ -405,13 +419,13 @@
 
 ::-webkit-scrollbar-thumb {
 	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-	background-color: var(--primary-color);
+	background-color: var(--primary-color-15);
 	border-radius: 8px;
 }
 
 * {
 	scrollbar-width: thin;
-	scrollbar-color: var(--primary-color) transparent;
+	scrollbar-color: var(--primary-color-15) transparent;
 }
 
 *::-ms-scrollbar {
@@ -419,7 +433,7 @@
 }
 
 *::-ms-scrollbar-thumb {
-	background-color: var(--primary-color);
+	background-color: var(--primary-color-15);
 	border-radius: 8px;
 }
 .conversations-panel {
