@@ -10,6 +10,8 @@
 	activeConversationIdStore.subscribe((value) => (activeConversationId = value));
 	let blurred;
 
+
+	let groups = ["Others","Work","Family","Friend","Bitches", "Nonames", "Blocked"];
 	accountsIsOpen.subscribe((value) => (blurred = value));
 
 	async function selectConversation(id) {
@@ -27,7 +29,9 @@
 	let conversations = [
 		{
 			id: '1',
-			imageUrl: 'https://i.pravatar.cc/300?u=user1',
+			imageUrl: 'https://i.pravatar.cc/300?u=user2',
+			imageUrl2: 'https://i.pravatar.cc/300?u=user3',
+			imageUrl3: 'https://i.pravatar.cc/300?u=user3',
 			name: 'Ultraultraultra Long Username - Company Ltd.',
 			lastMessage:
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
@@ -268,10 +272,31 @@
 			email: 'hobo@domain.com'
 		}
 	];
+
+	function toggleConversations(event) {
+		let nextElement = event.currentTarget.nextElementSibling;
+		const arrowElement = event.currentTarget.querySelector('.group-arrow');
+
+		// Přepnout třídy pro šipku
+		if (arrowElement.classList.contains('g-opened')) {
+			arrowElement.classList.remove('g-opened');
+		} else {
+			arrowElement.classList.add('g-opened');
+		}
+
+		while (nextElement && !nextElement.classList.contains('group-conversation')) {
+			nextElement.style.display = (nextElement.style.display === 'none') ? '' : 'none';
+			nextElement = nextElement.nextElementSibling;
+		}
+	}
 </script>
 
 <div class="conversations-panel no-select{!blurred ? '' : 'blurred'}">
-	{#each conversations as conversation}
+	{#each conversations as conversation, index}
+		{#if index % 5 === 0}
+			<div class="group-conversation" on:click={toggleConversations}><div class="group-icon"></div><div class="group-name">{groups[index/5]}</div><div class="group-arrow" />
+			</div>
+		{/if}
 		<ConversationItem
 			{conversation}
 			isActive={activeConversationId === conversation.id}

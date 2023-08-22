@@ -5,13 +5,30 @@
 </script>
 
 <div class="conversation {isActive ? 'active' : ''}" on:click={onSelect}>
+	{#if conversation.imageUrl2}
+		<div class="conversation__user-photo">
+			<img
+					class="photo-circle photo-circle--small"
+					src={conversation.imageUrl}
+					alt={conversation.imageUrl}
+			/>
+			<img
+					class="photo-circle photo-circle--small photo-circle-grouped"
+					src={conversation.imageUrl2}
+					alt={conversation.imageUrl2}
+			/>
+		</div>
+	{/if}
+	{#if !conversation.imageUrl2}
 	<div class="conversation__user-photo">
 		<img
 			class="photo-circle photo-circle--medium"
 			src={conversation.imageUrl}
 			alt={conversation.imageUrl}
 		/>
+
 	</div>
+	{/if}
 	<div class="conversation__info">
 		<div class="conversation__info__user-name">{conversation.name}</div>
 		<div class="conversation__info__user-email">{conversation.email}</div>

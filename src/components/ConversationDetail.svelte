@@ -11,11 +11,15 @@
 	});
 
 	let isConversationSelected = false;
+	let conversationId;
 
 	conversationSelected.subscribe((value) => {
 		isConversationSelected = value;
 	});
 
+	activeConversationIdStore.subscribe((value) => {
+		conversationId = value;
+	});
 	onMount(() => {
 		function handleKeydown(event) {
 			if (event.key === 'Escape' && storeSize == 0) {
@@ -33,7 +37,7 @@
 </script>
 
 <div class="conversation-detail">
-	<MessagesList visible={isConversationSelected} />
+	<MessagesList visible={isConversationSelected} conversationId={conversationId} />
 	<div class="centered-message" class:invisible={isConversationSelected}>
 		Please select your conversation...
 	</div>

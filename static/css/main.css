@@ -185,6 +185,11 @@
 	height: 100%; /* Obrázek bude mít výšku rovnou výšce divu */
 	object-fit: cover; /* Obrázek bude oříznut, pokud nebude odpovídat poměru stran divu */
 }
+.multipart-message .element .image-container video{
+	width: 100%; /* Obrázek bude mít šířku rovnou šířce divu */
+	height: 100%; /* Obrázek bude mít výšku rovnou výšce divu */
+	object-fit: cover; /* Obrázek bude oříznut, pokud nebude odpovídat poměru stran divu */
+}
 .multipart-message .element.link a {
 	color: var(--secondary-color);
 	text-decoration: none; /* Obrázek bude oříznut, pokud nebude odpovídat poměru stran divu */
@@ -200,6 +205,57 @@
 	cursor: pointer;
 	min-width: 80px;
 	text-align: center;
+}
+#waveform {
+	border: 1px solid #333;
+	overflow: hidden;
+	background-color: var(--secondary-color);
+	border-radius: 10px;
+}
+.group-conversation {
+	display: flex;
+	align-items: center;
+	padding: 8px 8px;
+	background-color: #1d1d1d;
+	color: white;
+	font-weight: bold;
+}
+
+.group-icon {
+	diaplay: none;
+}
+.group-arrow {
+	width: 12px;
+	height: 10px;
+	background-repeat: no-repeat;
+
+	background-image: url('../../img/icons/caret-up.svg');
+}
+.g-opened {
+	width: 12px;
+	height: 10px;
+	background-repeat: no-repeat;
+	background-image: url('../../img/icons/caret-down.svg')!important;
+}
+
+.group-name {
+	flex-grow: 1;
+	padding: 0 4px;
+}
+
+.photo-circle-grouped {
+	margin-left:-20px;
+	z-index: -1;
+}
+.photo-circle-user-grouped {
+	margin-left:25px;
+	z-index: -1;
+}
+.message__content .map {
+	width:320px;
+}
+.leaflet-container .leaflet-right{
+	opacity:0!important;
 }
 @media (max-width: 794px) {
 	#page {
@@ -231,16 +287,19 @@
 .photo-circle {
 	border-radius: 50%;
 	border: 1px solid black;
+	z-index: 1;
 }
 
 .photo-circle--small {
 	width: 32px;
 	height: 32px;
+	z-index: 1;
 }
 
 .photo-circle--medium {
 	width: 50px;
 	height: 50px;
+	z-index: 1;
 }
 
 .photo-circle--large {
@@ -401,7 +460,7 @@
 }
 
 .reduce-margin {
-	margin-bottom: 5px !important;
+	margin-bottom: 2px !important;
 }
 
 .hide-after .message__content::after {
@@ -544,6 +603,7 @@
 
 .user-bar .conversation-user__photo {
 	padding-right: 20px;
+	display:flex;
 }
 
 .user-bar .conversation-user__detail {
@@ -794,8 +854,8 @@
 .message--sent .message__content:after {
 	content: '';
 	position: absolute;
-	top: 20px;
-	left: -16px;
+	bottom: 20px;
+	left: -14px;
 	width: 0;
 	height: 0;
 	border-style: solid;
@@ -819,8 +879,8 @@
 .message--received .message__content:after {
 	content: '';
 	position: absolute;
-	top: 20px;
-	right: -16px;
+	bottom: 20px;
+	right: -14px;
 	width: 0;
 	height: 0;
 	border-style: solid;
@@ -830,6 +890,8 @@
 
 .message__sender-photo {
 	margin-top: 4px;
+	display: flex;
+	align-items: flex-end;
 }
 
 .message__sender-photo img {

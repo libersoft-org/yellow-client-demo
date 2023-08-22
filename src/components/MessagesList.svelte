@@ -1,16 +1,34 @@
 <script>
 	import Message from './Message.svelte';
 	import { onMount, tick } from 'svelte';
-	import { sendMessageStore } from '../stores/mainstore.js';
+	import {activeConversationIdStore, sendMessageStore} from '../stores/mainstore.js';
 	import { scrollToBottomStore } from '../stores/mainstore.js';
+	import {derived} from "svelte/store";
 	export let visible = true;
+	import { afterUpdate } from 'svelte';
+
+	afterUpdate(() => {
+		refreshMessages();
+	});
+
+	let actualMessages = [];
+	function refreshMessages() {
+
+		if (parseInt($activeConversationIdStore) === 1) {
+			actualMessages = [...groupMessages];
+		} else {
+			actualMessages = [...messages];
+		}
+	}
 
 	let messages = [];
+	let groupMessages = [];
+
 	let messageBox;
 	let multipartMes = `
         <div class="multipart-message">
             <div class="element">"Hey, what's up? <b>Nothing new?</b></div>
-            <div class="element"><div class="image-container"><img  src="./img/obrazek.jpeg" alt="Example Image"></div></div>
+            <div class="element"><div class="image-container"><img  src="./content/obrazek.jpeg" alt="Example Image"></div></div>
             <div class="element link"><b><i><a href="https://example.com/link">Click here</a></i></b></div>
             <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</div>
             <div class="element">
@@ -22,7 +40,7 @@
 	let multipartMes2 = `
         <div class="multipart-message">
             <div class="element">"Hey, what's up? <b>Nothing new?</b></div>
-            <div class="element"><div class="image-container"><img  src="./img/obrazek2.jpeg" alt="Example Image"></div></div>
+            <div class="element"><div class="image-container"><img  src="./content/obrazek2.jpeg" alt="Example Image"></div></div>
             <div class="element link"><b><a href="https://example.com/link">Click here</a></b></div>
             <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</div>
             <div class="element">
@@ -31,6 +49,25 @@
             </div>
         </div>
     `;
+	let multipartMes3 =`
+		<div class="multipart-message">
+            <div class="element">"Hey, what's up? <b>Check my new video :)</b></div>
+            <div class="element"><div class="image-container">
+                <video src="./content/lordi.mp4" autoplay loop muted playsinline id="videomessage"
+                    controls
+                    poster="./content/poster.jpeg"
+                    on:touchmove|preventDefault={handleMove}
+                    on:mousedown|preventDefault
+                    on:mouseup|preventDefault
+                    bind:currentTime={time}
+                    bind:duration
+                    bind:paused>
+                      <track kind="captions"/>
+            	</video>
+            </div>
+        </div>
+	`;
+
 	onMount(() => {
 		const unsubscribe = sendMessageStore.subscribe((value) => {
 			if (value) {
@@ -52,6 +89,18 @@
 
 			messages = [...messages, currentMessage];
 		}
+		for (let i = 0; i < groupMockup.length; i++) {
+			const currentMessage = groupMockup[i];
+			const previousMessage = groupMessages[groupMessages.length - 1];
+
+			if (previousMessage && previousMessage.sent === currentMessage.sent) {
+				previousMessage.hideAvatar = true;
+				previousMessage.reduceMargin = true;
+				previousMessage.hideAfter = true;
+			}
+
+			groupMessages = [...groupMessages, currentMessage];
+		}
 		scrollToBottom(messageBox);
 		return unsubscribe;
 	});
@@ -60,6 +109,51 @@
 		if (!node) node = messageBox;
 		node.scroll({ top: node.scrollHeight, behavior: 'smooth' });
 	};
+	const groupMockup = [
+		{
+			photo: 'https://i.pravatar.cc/300?u=user1',
+			message: "Hey, what's up? <b>Nothing new?</b>",
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: multipartMes,
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=ownprofile',
+			message: 'Audio message',
+			time: new Date().toLocaleTimeString(),
+			sent: false,
+			read: false,
+			secure: false,
+			messagetype: 'audio',
+			url: '../content/voicemessage.ogg'
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user3',
+			message: multipartMes3,
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=ownprofile',
+			message: "..map location",
+			time: new Date().toLocaleTimeString(),
+			sent: false,
+			read: false,
+			secure: false,
+			messagetype: "map"
+		}
+	];
 	const mockupMessages = [
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
@@ -154,7 +248,7 @@
 			secure: false
 		},
 		{
-			photo: 'https://i.pravatar.cc/300?u=user2',
+			photo: 'https://i.pravatar.cc/300?u=ownprofile',
 			message: multipartMes2,
 			time: new Date().toLocaleTimeString(),
 			sent: false,
@@ -184,7 +278,26 @@
 			sent: true,
 			read: false,
 			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: 'Audio message',
+			time: new Date().toLocaleTimeString(),
+			sent: false,
+			read: false,
+			secure: false,
+			messagetype: 'audio',
+			url: '../content/voicemessage.ogg'
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: multipartMes3,
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false
 		}
+
 	];
 
 	function adjustLastMessage() {
@@ -199,7 +312,7 @@
 	async function addMessage() {
 		adjustLastMessage();
 		const newMessage = {
-			photo: 'https://i.pravatar.cc/300?u=profile',
+			photo: 'https://i.pravatar.cc/300?u=ownprofile',
 			message: 'Nová zpráva',
 			time: new Date().toLocaleTimeString(),
 			sent: false,
@@ -246,19 +359,21 @@
 
 <div bind:this={messageBox} class="messages-box" class:invisible={!visible}>
 	<div class="messages">
-		{#each messages as msg, index}
-			{#if index % 5 === 0}
-				<div class="messages__info">
-					<div class="messages__info__date">{computeDate(index)}</div>
-				</div>
-			{/if}
-			<Message
-				{...msg}
-				hideAvatar={msg.hideAvatar}
-				reduceMargin={msg.reduceMargin}
-				hideAfter={msg.hideAfter}
-			/>
-			<!--<button on:click={() => deleteMessage(index)}>Odstranit</button> -->
-		{/each}
+		{#each actualMessages as msg, index}
+
+		{#if index % 5 === 0}
+					<div class="messages__info">
+						<div class="messages__info__date">{computeDate(index)}</div>
+					</div>
+				{/if}
+				<Message
+						{...msg}
+						hideAvatar={msg.hideAvatar}
+						reduceMargin={msg.reduceMargin}
+						hideAfter={msg.hideAfter}
+				/>
+				<!--<button on:click={() => deleteMessage(index)}>Odstranit</button> -->
+			{/each}
+
 	</div>
 </div>

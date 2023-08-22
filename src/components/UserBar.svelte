@@ -1,5 +1,6 @@
 <script>
 	import { activeConversationIdStore, conversationSelected } from '../stores/mainstore.js';
+	import {parse} from "cookie";
 
 	function backButtonClick() {
 		conversationSelected.set(false);
@@ -7,11 +8,14 @@
 		document.querySelector(`.panel-left`).classList.add('active-panel');
 		document.querySelector(`.panel-right`).classList.remove('active-panel');
 	}
-
+	let idConversation;
 	let isConversationSelected = false;
 
 	conversationSelected.subscribe((value) => {
 		isConversationSelected = value;
+	});
+	activeConversationIdStore.subscribe((value) => {
+		idConversation = parseInt(value);
 	});
 </script>
 
@@ -27,6 +31,13 @@
 				src="https://i.pravatar.cc/300?u=user2"
 				alt="user2"
 			/>
+			{#if idConversation === 1}
+				<img
+				class="photo-circle photo-circle--medium photo-circle-grouped"
+				src="https://i.pravatar.cc/300?u=user3"
+				alt="user2"
+				/>
+			{/if}
 		</div>
 		<div class="conversation-user__detail">
 			<div class="conversation-user__detail__name">
