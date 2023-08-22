@@ -49,31 +49,37 @@
 		>
 	</div>
 	<div class="conversation-user">
-		<div class="conversation-user__photo" on:click={() => (showModal = true)}>
-			<img
-				class="photo-circle photo-circle--medium"
-				src="https://i.pravatar.cc/300?u=user2"
-				alt="user2"
-			/>
-			{#if idConversation === 1}
+		{#if idConversation === 1}
+			<div class="conversation-user__photo" on:click={() => (showModal = true)}>
 				<img
-					class="photo-circle photo-circle--medium photo-circle-grouped"
+					class="photo-circle photo-circle--medium"
+					src="../img/icons/icon_nemp_v4_filled.svg"
+					alt="user2"
+				/>
+			</div>
+			<div class="conversation-user__detail">
+				<div class="conversation-user__detail__name">Yellow - development group</div>
+			</div>
+		{:else}
+			<div class="conversation-user__photo" on:click={() => (showModal = true)}>
+				<img
+					class="photo-circle photo-circle--medium"
 					src="https://i.pravatar.cc/300?u=user3"
 					alt="user2"
 				/>
-			{/if}
-		</div>
-		<div class="conversation-user__detail">
-			<div class="conversation-user__detail__name">
-				Veryveryvery Long Username - Some Other Company Ltd.
 			</div>
-			<div
-				class="conversation-user__detail__address"
-				onclick="copy('extremelyultralongusername@veryveryverylongdomain.com')"
-			>
-				extremelyultralongusername@veryveryveryveryveryveryverylongdomain.com
+			<div class="conversation-user__detail">
+				<div class="conversation-user__detail__name">
+					Veryveryvery Long Username - Some Other Company Ltd.
+				</div>
+				<div
+					class="conversation-user__detail__address"
+					onclick="copy('extremelyultralongusername@veryveryverylongdomain.com')"
+				>
+					extremelyultralongusername@veryveryveryveryveryveryverylongdomain.com
+				</div>
 			</div>
-		</div>
+		{/if}
 	</div>
 	<div class="conversation-controlls">
 		<a class="icon" onclick=""><img src="img/icons/search.svg" alt="search" /></a>

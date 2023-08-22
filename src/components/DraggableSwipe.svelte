@@ -18,7 +18,7 @@
 		if (!isDragging) return;
 		currentX = event.touches ? event.touches[0].pageX : event.pageX;
 		const distanceX = currentX - startX;
-
+		console.log(distanceX);
 		// Posun zprava doleva
 		if (distanceX < 0) {
 			let swipes = parseInt(swipeableAmount) + parseInt(distanceX);
@@ -30,6 +30,8 @@
 	function handleEnd(event) {
 		isDragging = false;
 		const distanceX = currentX - startX;
+		console.log(distanceX + ':' + parseFloat(getComputedStyle(mydiv.parentElement).width) / 2);
+		startX = null;
 		// Pokud je posun větší než např. 100px, simulujeme kliknutí na cílový prvek
 		if (distanceX < -parseFloat(getComputedStyle(mydiv.parentElement).width) / 2) {
 			const targetElement = document.querySelector(target);
@@ -39,7 +41,7 @@
 			}
 		}
 
-		setTimeout((document.querySelector(swipeable).style.transform = ''), 0);
+		document.querySelector(swipeable).style.transform = '';
 		event.stopPropagation();
 	}
 
@@ -52,10 +54,12 @@
 		const parentElement = mydiv.parentElement;
 		parentElement.addEventListener('mousedown', handleStart);
 		parentElement.addEventListener('mousemove', handleMove);
-		parentElement.addEventListener('mouseup', handleEnd);
+		//parentElement.addEventListener('mouseup', handleEnd);
+		document.addEventListener('mouseup', handleEnd);
 		parentElement.addEventListener('touchstart', handleStart);
 		parentElement.addEventListener('touchmove', handleMove);
-		parentElement.addEventListener('touchend', handleEnd);
+		//parentElement.addEventListener('touchend', handleEnd);
+		document.addEventListener('touchend', handleEnd);
 	});
 </script>
 

@@ -89,33 +89,18 @@
 	function selectQuickReply(reply) {
 		editableDiv.innerText = reply;
 		showFastReplies = false;
+		editableDiv.focus();
 	}
 </script>
 
 <div class="input-bar" class:invisible={!isConversationSelected}>
 	<img class="icon" src="img/icons/icon_attachment.svg" alt="Attachment" />
-	<ToggleComponent
-		toggleElementSelector=".icon-message-template"
-		targetSelector={['.fast-replies']}
-		toggleClass="invisible"
-		closeOnEsc={false}
-		closeOnClickOutside={true}
-		bind:isOpen={showFastReplies}
-	>
-		<img
-			class="icon icon-message-template"
-			on:click={toggleFastReplies}
-			src="img/icons/icon_message_template.svg"
-			alt="Attachment"
-		/>
-		<div class="fast-replies no-select" class:invisible={!showFastReplies}>
-			<p on:click={() => selectQuickReply('Call me later..')}>Call me later..</p>
-			<p on:click={() => selectQuickReply("I'll let you know.")}>I'll let you know.</p>
-			<p on:click={() => selectQuickReply("It's not my fault.")}>It's not my fault.</p>
-			<p on:click={() => selectQuickReply('Leave me a message.')}>Leave me a message.</p>
-			<p on:click={() => selectQuickReply("Don't call me again!")}>Don't call me again!</p>
-		</div>
-	</ToggleComponent>
+	<img
+		class="icon icon-message-template"
+		on:click={toggleFastReplies}
+		src="img/icons/icon_message_template.svg"
+		alt="Attachment"
+	/>
 	<ToggleSwitch bind:checked={checked1} on:checked={handleChange1} />
 	<div
 		on:keypress={handleKeydown}
@@ -131,3 +116,23 @@
 	<img class="icon" src="img/icons/icon_emoji_filled.svg" alt="Emoji" />
 	<img on:click={callSendMessage} class="icon" src="img/icons/send.svg" alt="Send" />
 </div>
+<ToggleComponent
+	toggleElementSelector=".icon-message-template"
+	targetSelector={['.fast-replies']}
+	toggleClass="invisible"
+	closeOnEsc={false}
+	closeOnClickOutside={true}
+	bind:isOpen={showFastReplies}
+>
+	<div class="fast-replies no-select" class:invisible={!showFastReplies}>
+		<div on:click={() => selectQuickReply('Call me later..')}>Call me later..</div>
+		<div on:click={() => selectQuickReply("I'll let you know.")}>I'll let you know.</div>
+		<div on:click={() => selectQuickReply("It's not my fault.")}>It's not my fault.</div>
+		<div on:click={() => selectQuickReply('Leave me a message.')}>Leave me a message.</div>
+		<div on:click={() => selectQuickReply("Don't call me again!")}>Don't call me again!</div>
+		<div class="last" on:click={() => console.log('')}>
+			<img src="./img/icons/icons8-plus.svg" alt="Nobody" />
+			Add a new template
+		</div>
+	</div>
+</ToggleComponent>

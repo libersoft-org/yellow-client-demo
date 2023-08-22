@@ -31,7 +31,7 @@
 	<div class="conversation__info">
 		<div class="conversation__info__user-name">{conversation.name}</div>
 		<div class="conversation__info__user-email">{conversation.email}</div>
-		<div class="conversation__info__last-message">{conversation.lastMessage}</div>
+		<div class="conversation__info__last-message">{@html conversation.lastMessage}</div>
 	</div>
 	<div class="conversation__status">
 		<div class="conversation__status__date-time">12:59:59</div>

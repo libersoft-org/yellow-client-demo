@@ -1,4 +1,6 @@
 <script>
+	import MultiTick from './MultiTick.svelte';
+
 	export let photo;
 	export let messagetype = null;
 	export let url = null;
@@ -26,7 +28,7 @@
 	<div class="message__content">
 		{#if messagetype === 'audio'}
 			<div class="message__content__text">
-				<div class="multipart-message element">{message}></div>
+				<div class="multipart-message element"><b>{message}</b></div>
 				<div class="multipart-message element audio"><AudioPlayer audioUrl={url} /></div>
 			</div>
 		{/if}
@@ -48,11 +50,12 @@
 						? 'secure'
 						: 'non-secure'}"
 				/>
-				<div
+				<div class="ticks"><MultiTick classList={['sent', 'sent', 'readed', 'done']} /></div>
+				<!--<div
 					class="message__content__info__icons__icon message__content__info__icons__icon--{read
 						? 'read'
 						: 'unread'}"
-				/>
+				/> -->
 			</div>
 		</div>
 	</div>

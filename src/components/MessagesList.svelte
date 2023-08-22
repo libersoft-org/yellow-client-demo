@@ -52,7 +52,7 @@
 		<div class="multipart-message">
             <div class="element">"Hey, what's up? <b>Check my new video :)</b></div>
             <div class="element"><div class="image-container">
-                <video src="./content/lordi.mp4" autoplay loop muted playsinline id="videomessage"
+                <video src="./content/yellow.mp4" autoplay loop muted playsinline id="videomessage"
                     controls
                     poster="./content/poster.jpeg"
                     on:touchmove|preventDefault={handleMove}

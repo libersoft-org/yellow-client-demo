@@ -10,7 +10,7 @@
 	activeConversationIdStore.subscribe((value) => (activeConversationId = value));
 	let blurred;
 
-	let groups = ['Others', 'Work', 'Family', 'Friend', 'Bitches', 'Nonames', 'Blocked'];
+	let groups = ['Work', 'Family', 'Friend', 'Others', 'Blocked'];
 	accountsIsOpen.subscribe((value) => (blurred = value));
 
 	async function selectConversation(id) {
@@ -25,19 +25,17 @@
 	}
 
 	// Sample data for dynamically loaded conversations
+	let lmes = `<b>John Smith:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.`;
 	let conversations = [
 		{
 			id: '1',
-			imageUrl: 'https://i.pravatar.cc/300?u=user2',
-			imageUrl2: 'https://i.pravatar.cc/300?u=user3',
-			imageUrl3: 'https://i.pravatar.cc/300?u=user3',
-			name: 'Ultraultraultra Long Username - Company Ltd.',
-			lastMessage:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
+			imageUrl: '../img/icons/icon_nemp_v4_filled.svg',
+			name: 'Yellow - development group',
+			lastMessage: lmes,
 			time: '12:59:59',
 			unreadMessages: 10,
 			isRead: false,
-			email: 'nobody@domain.com'
+			email: ' '
 		},
 		{
 			id: '2',
@@ -290,12 +288,18 @@
 	}
 </script>
 
-<div class="conversations-panel no-select{!blurred ? '' : 'blurred'}">
+<div class="conversations-panel no-select {!blurred ? '' : 'blurred'}">
 	{#each conversations as conversation, index}
 		{#if index % 5 === 0}
 			<div class="group-conversation" on:click={toggleConversations}>
 				<div class="group-icon" />
 				<div class="group-name">{groups[index / 5]}</div>
+				<div class="conversation__status__icons ingroup">
+					<div class="conversation__status__icons__unread-messages">888</div>
+					<div
+						class="conversation__status__icons__read-state conversation__status__icons__read-state--unread ingroup-status"
+					/>
+				</div>
 				<div class="group-arrow" />
 			</div>
 		{/if}

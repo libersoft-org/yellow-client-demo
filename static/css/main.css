@@ -207,17 +207,17 @@
 	text-align: center;
 }
 #waveform {
-	border: 1px solid #333;
+	/*border: 1px solid #333; */
 	overflow: hidden;
-	background-color: var(--secondary-color);
+	background-color: transparent;
 	border-radius: 10px;
 }
 .group-conversation {
 	display: flex;
 	align-items: center;
 	padding: 8px 8px;
-	background-color: #1d1d1d;
-	color: white;
+	background-color: var(--primary-color);
+	color: #1d1d1d;
 	font-weight: bold;
 }
 
@@ -228,14 +228,15 @@
 	width: 12px;
 	height: 10px;
 	background-repeat: no-repeat;
-
-	background-image: url('../img/icons/caret-up.svg');
+	margin-left: 6px;
+	background-image: url('../img/icons/caret-up-black.svg');
 }
 .g-opened {
 	width: 12px;
 	height: 10px;
+	margin-left: 6px;
 	background-repeat: no-repeat;
-	background-image: url('../img/icons/caret-down.svg') !important;
+	background-image: url('../img/icons/caret-down-black.svg') !important;
 }
 
 .group-name {
@@ -264,28 +265,39 @@
 	background-color: #1d1d1d;
 	color: #ffffff;
 	padding: 0px;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	overflow: hidden;
+	box-shadow: var(--basic-shadow);
+	bottom: 4px;
+	z-index: 1;
 }
-.fast-replies::after {
-	content: '';
-	display: block;
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	right: 0;
-	top: 0;
-	transform: scaley(0.99);
-	box-shadow: var(--basic-shadow-right);
-	pointer-events: none;
-	z-index: -1;
-}
-.fast-replies p {
+
+.fast-replies div {
 	cursor: pointer;
-	padding: 10px;
 	margin: 0px;
 	font-size: 1em;
+	height: 38px;
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	display: flex;
+	align-items: center;
 }
-.fast-replies p:hover {
+.fast-replies div:hover {
 	background-color: #2d2d2d;
+}
+.fast-replies .last {
+	display: flex; /* Přidáno: nastaví flexbox */
+	align-items: center;
+}
+.fast-replies div img {
+	width: 24px;
+	height: 22px;
+	margin-right: 0.5em;
 }
 
 .controls-menu {
@@ -309,6 +321,11 @@
 .controls-menu p:hover {
 	background-color: var(--primary-color-hue);
 }
+.account__photo .plus-icon {
+	width: 36x;
+	height: 36px;
+}
+
 .modal {
 	position: fixed;
 	display: flex;
@@ -362,6 +379,16 @@
 	padding: 10px;
 }
 
+.conversation__status__icons__read-state.conversation__status__icons__read-state--unread.ingroup-status {
+	margin-top: 2px;
+}
+
+.ticks {
+	display: inline-flex; /* Aby se ikony zarovnaly vedle sebe */
+	align-items: center; /* Vertikální zarovnání ikon na střed */
+	height: 18px; /* Výška se přizpůsobí rodičovskému elementu */
+	width: auto; /* Šířka se přizpůsobí obsahu */
+}
 @media (max-width: 794px) {
 	#page {
 		grid-template-columns: 1fr;
@@ -531,6 +558,12 @@
 	padding-top: 10px;
 }
 
+.conversations-panel .conversation__status__icons.ingroup {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding-top: 2px !important;
+}
 .conversations-panel .conversation__status__icons__unread-messages {
 	margin: 0px 5px;
 	display: -webkit-box;
@@ -764,7 +797,7 @@
 	max-height: 33vh;
 	overflow-y: auto;
 	/*top: 114px;*/
-	z-index: 10;
+	z-index: -1;
 	background-color: #2d2d2d;
 	/*-webkit-backdrop-filter: blur(3px);
 	backdrop-filter: blur(3px);
@@ -797,6 +830,7 @@
 
 .account--active {
 	background-color: #1d1d1d;
+	z-index: 2;
 }
 
 #accountsBarComponent {
@@ -1047,9 +1081,9 @@
 
 .message__content__info__icons {
 	text-align: right;
-	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	align-items: center;
 }
 
 .message__content__info__icons__icon {

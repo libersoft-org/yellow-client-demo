@@ -103,11 +103,7 @@
 				</div>
 				<div class="account">
 					<div class="account__photo">
-						<img
-							class="photo-circle photo-circle--small"
-							src="./img/icons/icons8-plus.svg"
-							alt="Nobody"
-						/>
+						<img class="plus-icon" src="./img/icons/icons8-plus.svg" alt="Nobody" />
 					</div>
 					<div class="account__name"><b>add new account</b></div>
 				</div>
