@@ -18,8 +18,18 @@
 		navigator.clipboard.writeText(text);
 	}
 
-	onMount(async () => {
-		//await getChats();
+	function enterFullscreen() {
+		try {
+			if (!document.fullscreenElement) {
+				document.documentElement.requestFullscreen();
+			}
+		} catch(e){console.log()};
+	}
+
+	onMount(() => {
+		if (window.innerWidth <= 795) {
+			enterFullscreen();
+		}
 	});
 </script>
 

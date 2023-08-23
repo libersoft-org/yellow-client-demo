@@ -352,10 +352,10 @@
 		const formattedTime = new Date().toLocaleTimeString();
 
 		adjustLastMessage();
-		if (input.innerText) {
+		if (input.innerHTML) {
 			const newMessage = {
 				photo: 'https://i.pravatar.cc/300?u=ownprofile',
-				message: input.innerText,
+				message: input.innerHTML,
 				time: formattedTime,
 				sent: false,
 				read: false,
@@ -366,7 +366,7 @@
 			else groupMessages = [...groupMessages, newMessage];
 			await tick();
 			scrollToBottom(messageBox);
-			input.innerText = '';
+			input.innerHTML = '';
 		}
 	}
 

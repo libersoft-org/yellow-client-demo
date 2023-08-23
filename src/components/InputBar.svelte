@@ -115,15 +115,6 @@
 	<img class="icon" src="img/icons/icon_voice_message.svg" alt="Voice message" />
 	<img class="icon" src="img/icons/icon_emoji_filled.svg" alt="Emoji" />
 	<img on:click={callSendMessage} class="icon" src="img/icons/send.svg" alt="Send" />
-</div>
-<ToggleComponent
-	toggleElementSelector=".icon-message-template"
-	targetSelector={['.fast-replies']}
-	toggleClass="invisible"
-	closeOnEsc={false}
-	closeOnClickOutside={true}
-	bind:isOpen={showFastReplies}
->
 	<div class="fast-replies no-select" class:invisible={!showFastReplies}>
 		<div on:click={() => selectQuickReply('Call me later..')}>Call me later..</div>
 		<div on:click={() => selectQuickReply("I'll let you know.")}>I'll let you know.</div>
@@ -135,4 +126,13 @@
 			Add a new template
 		</div>
 	</div>
+</div>
+<ToggleComponent
+	toggleElementSelector=".icon-message-template"
+	targetSelector={['.fast-replies']}
+	toggleClass="invisible"
+	closeOnEsc={false}
+	closeOnClickOutside={true}
+	bind:isOpen={showFastReplies}
+>
 </ToggleComponent>
