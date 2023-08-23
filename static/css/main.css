@@ -264,7 +264,7 @@
 .fast-replies {
 	position: absolute;
 	margin-left: 36px;
-	margin-bottom: 44px;
+	margin-bottom: 0px;
 	background-color: #1d1d1d;
 	color: #ffffff;
 	padding: 0px;
@@ -273,7 +273,7 @@
 	flex-direction: column;
 	overflow: hidden;
 	box-shadow: var(--basic-shadow);
-	bottom: 4px;
+	bottom: 48px;
 	z-index: 1;
 }
 
