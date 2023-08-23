@@ -12,14 +12,14 @@
 		startX = event.touches ? event.touches[0].pageX : event.pageX;
 		isDragging = true;
 		event.stopPropagation();
+		document.addEventListener('mouseup', handleEnd);
+		document.addEventListener('touchend', handleEnd);
 	}
 
 	function handleMove(event) {
 		if (!isDragging) return;
 		currentX = event.touches ? event.touches[0].pageX : event.pageX;
 		const distanceX = currentX - startX;
-		console.log(distanceX);
-		// Posun zprava doleva
 		if (distanceX < 0) {
 			let swipes = parseInt(swipeableAmount) + parseInt(distanceX);
 			document.querySelector(swipeable).style.transform = `translateX(${swipes}px)`;
@@ -30,16 +30,16 @@
 	function handleEnd(event) {
 		isDragging = false;
 		const distanceX = currentX - startX;
-		console.log(distanceX + ':' + parseFloat(getComputedStyle(mydiv.parentElement).width) / 2);
 		startX = null;
 		// Pokud je posun větší než např. 100px, simulujeme kliknutí na cílový prvek
 		if (distanceX < -parseFloat(getComputedStyle(mydiv.parentElement).width) / 2) {
 			const targetElement = document.querySelector(target);
 			if (targetElement) {
-				// console.log("Simutated click on:"+targetElement.id);
 				targetElement.click();
 			}
 		}
+		document.removeEventListener('touchend', handleEnd);
+		document.removeEventListener('mouseup', handleEnd);
 
 		document.querySelector(swipeable).style.transform = '';
 		event.stopPropagation();

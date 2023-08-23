@@ -6,8 +6,28 @@
 	import { derived } from 'svelte/store';
 	export let visible = true;
 	import { afterUpdate } from 'svelte';
+	import Modal from './Modal.svelte'; // Cesta k Modal.svelte
+	let isOpen = false;
+	let currentImage = '';
+	let modal;
+	function closeModal() {
+		isOpen = false;
+	}
+	function addImageClickListeners() {
+		const images = document.querySelectorAll('.image-container img');
+		images.forEach((img) => {
+			img.removeEventListener('click', handleImageClick); // Odebrání stávajícího posluchače, pokud existuje
+			img.addEventListener('click', handleImageClick);
+		});
+	}
+
+	function handleImageClick(event) {
+		currentImage = event.target.src;
+		isOpen = true;
+	}
 
 	afterUpdate(() => {
+		addImageClickListeners();
 		refreshMessages();
 	});
 
@@ -27,9 +47,11 @@
 	let multipartMes = `
         <div class="multipart-message">
             <div class="element">"Hey, what's up? <b>Nothing new?</b></div>
-            <div class="element"><div class="image-container"><img  src="./content/obrazek.jpeg" alt="Example Image"></div></div>
-            <div class="element link"><b><i><a href="https://example.com/link">Click here</a></i></b></div>
-            <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</div>
+<div class="element">
+<div class="image-container">
+<img src="./content/obrazek.jpeg" alt="Example Image" style="cursor: pointer;"/>
+</div>
+</div>            <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</div>
             <div class="element">
             <button>Send</button>
             <button>Download</button>
@@ -39,8 +61,11 @@
 	let multipartMes2 = `
         <div class="multipart-message">
             <div class="element">"Hey, what's up? <b>Nothing new?</b></div>
-            <div class="element"><div class="image-container"><img  src="./content/obrazek2.jpeg" alt="Example Image"></div></div>
-            <div class="element link"><b><a href="https://example.com/link">Click here</a></b></div>
+<div class="element">
+<div class="image-container">
+<img src="./content/obrazek2.jpeg" alt="Example Image" style="cursor: pointer;"/>
+</div>
+</div><div class="element link"><b><a href="https://example.com/link">Click here</a></b></div>
             <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</div>
             <div class="element">
             <button>Reply</button>
@@ -374,4 +399,9 @@
 			<!--<button on:click={() => deleteMessage(index)}>Odstranit</button> -->
 		{/each}
 	</div>
+	{#if isOpen}
+		<Modal title="Image Preview" bind:this={modal} on:close={closeModal}>
+			<img src={currentImage} alt="Modal Image" style="max-width: 100%; height: 100%; width:100%" />
+		</Modal>
+	{/if}
 </div>
