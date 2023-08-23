@@ -62,7 +62,7 @@
 		alt="Play/Pause"
 		on:click={togglePlay}
 	/>
-	<div>
+	<div class="wavecontainer">
 		<div id="waveform" />
 		<div><span id="time">0:00</span> / <span id="duration">0:00</span></div>
 	</div>

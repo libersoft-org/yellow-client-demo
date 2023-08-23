@@ -177,7 +177,9 @@
 	overflow: hidden; /* Skryje části obrázku, které by vystupovaly mimo kulaté rohy */
 	height: 250px; /* Příklad výšky divu */
 }
-
+.multipart-message .audio div img {
+	height: 52px;
+}
 .multipart-message .element .image-container img {
 	width: 100%; /* Obrázek bude mít šířku rovnou šířce divu */
 	height: 100%; /* Obrázek bude mít výšku rovnou výšce divu */
@@ -211,6 +213,7 @@
 	background-color: transparent;
 	border-radius: 10px;
 }
+
 .group-conversation {
 	display: flex;
 	align-items: center;
@@ -323,6 +326,10 @@
 .account__photo .plus-icon {
 	width: 36px;
 	height: 36px;
+}
+.wavecontainer {
+	padding-top: 4px;
+	padding-bottom: 0px;
 }
 
 .modal {
