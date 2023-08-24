@@ -176,7 +176,7 @@
 	// Přidání události focus pro skrytí nápovědy
 </script>
 
-<div class="input-bar" class:invisible={!isConversationSelected || parseInt(conversationId) === 2}>
+<div class="input-bar" class:hidden-bar={!isConversationSelected || parseInt(conversationId) === 2}>
 	<img class="icon" src="img/icons/icon_attachment.svg" alt="Attachment" />
 	<img
 		on:click={toggleFastReplies}

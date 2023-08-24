@@ -200,7 +200,7 @@ input {
 .slide-in {
 	margin-left: -325px;
 	overflow-x: hidden;
-	transition: margin-left 0.2s;
+	transition: margin-left 0.3s;
 }
 
 .slide-in.show {

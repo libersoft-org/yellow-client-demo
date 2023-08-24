@@ -43,7 +43,8 @@
 	});
 </script>
 
-<div class="user-bar" class:invisible={!isConversationSelected}>
+<div class="user-bar" class:hidden-bar={!isConversationSelected}>
+	<div class="user-bar-container">
 	<div class="back-button">
 		<a class="icon" on:click={backButtonClick}><img src="img/icons/icon_back.svg" alt="search" /></a
 		>
@@ -141,4 +142,5 @@
 	<!--<div
 		class="message__content__info__icons__icon message__content__info__icons__icon--non-secure"
 	/>-->
+	</div>
 </div>

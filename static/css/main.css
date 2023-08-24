@@ -14,9 +14,12 @@
 	background-color: transparent;
 	z-index: 100;
 }
-.panel-left {
+.panel {
 	display: grid;
-	grid-template-rows: auto auto auto 1fr;
+}
+.panel-left {
+
+	grid-template-rows: var(--searchbar-height) var(--searchbar-height) var(--accountbar-height) 1fr auto;
 
 	background-color: #fff;
 
@@ -30,9 +33,9 @@
 	min-width: var(--rightpanel-min-width);
 	max-width: var(--rightpanel-max-width);
 	background-color: #eee;
+	/*grid-template-rows: var(--searchbar-height) 1fr var(--inputbar-height);*/
 	display: flex;
-	flex: 1;
-	flex-direction: column;
+	flex-direction: column;;
 	overflow-y: hidden;
 	overflow-x: hidden;
 	/*width: 100vw; viewport width */
@@ -43,7 +46,7 @@
 	justify-content: space-evenly;
 	background-color: #1d1d1d;
 	padding-top: 8px;
-	padding-bottom: 8px;
+	/*padding-bottom: 8px;*/
 }
 
 .social-icons .icon {
@@ -54,6 +57,16 @@
 
 .invisible {
 	display: none !important;
+}
+.userinvisible {
+	visibility: hidden;
+}
+
+.hidden-bar {
+	height: 0!important;
+	visibility: hidden;
+	overflow: hidden;
+	min-height:0!important;
 }
 
 .blurred {
@@ -991,7 +1004,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1rem;
+	padding: 0 1em;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
@@ -1008,7 +1021,12 @@
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
-
+.user-bar .user-bar-container {
+	padding:1rem;
+	width:100%;
+	height:100%;
+	display:contents;
+}
 .user-bar .conversation-user {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1188,7 +1206,6 @@
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	overflow-y: auto;
 	width: 100%;
 	background-image: url('../img/background/doodle.png');
 	background-repeat: repeat;
@@ -1198,15 +1215,13 @@
 		var(--primary-color-sat),
 		calc(var(--primary-color-lig) + 44%)
 	);
-	padding-bottom: calc(50px + var(--inputbar-height));
+	/*padding-bottom: calc(50px + var(--inputbar-height));*/
 	padding: 0px;
 	overflow-y: auto;
-	-webkit-box-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
 	-webkit-box-shadow: inset var(--basic-shadow);
 	box-shadow: inset var(--basic-shadow);
 	color: #000000;
+	flex-grow: 1;
 }
 
 .conversation-detail .messages-box {
