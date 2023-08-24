@@ -1248,7 +1248,7 @@
 .message--sent .message__content::after {
 	content: '';
 	position: absolute;
-	bottom: 20px;
+	bottom: 16px;
 	left: -14px;
 	width: 0;
 	height: 0;
@@ -1274,7 +1274,7 @@
 .message--received .message__content::after {
 	content: '';
 	position: absolute;
-	bottom: 20px;
+	bottom: 16px;
 	right: -14px;
 	width: 0;
 	height: 0;
