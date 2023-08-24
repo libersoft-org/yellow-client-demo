@@ -232,7 +232,6 @@
 		<div class="element message-template-modal">
 			<div class="multipart-message">
 				<div class="element"><b>Template name:</b></div>
-
 				<div
 					class="element text-input"
 					contenteditable="true"
@@ -242,6 +241,7 @@
 				<div class="element">
 					<span class="hint1">This field can't be empty!</span>
 				</div>
+				<div class="element"><b>Template content:</b></div>
 				<div
 					class="element area-input"
 					contenteditable="true"

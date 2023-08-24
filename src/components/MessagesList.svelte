@@ -105,17 +105,12 @@
 	let multipartUpload = `
 		<div class="multipart-message">
 			<div class="element container">
-				<!-- První div s textem -->
 				<div class="element text-div">
 					<b>Uploading file: bigfile.zip</b>
 				</div>
-
-				<!-- Druhý div s progress barem -->
 				<div class="element progress-div">
 					<progress style="width:100%" value="0.8" max="3.2"></progress>
 				</div>
-
-				<!-- Třetí div se dvěma span elementy -->
 				<div class="element video-time-info">
 					<span>0.8GB z 3.2GB</span>
 					<span>25%</span>
