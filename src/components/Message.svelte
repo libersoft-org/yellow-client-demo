@@ -179,7 +179,7 @@
 							? 'secure'
 							: 'non-secure'}"
 					/>
-					<div class="ticks"><MultiTick classList={['sent', 'sent', 'done']} /></div>
+					<div class="ticks"><MultiTick classList={['done', 'done', 'base']} /></div>
 					<!--<div
 					class="message__content__info__icons__icon message__content__info__icons__icon--{read
 						? 'read'

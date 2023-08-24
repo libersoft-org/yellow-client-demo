@@ -38,7 +38,7 @@
 	<div class="conversation__status">
 		<div class="conversation__status__date-time">12:59:59</div>
 		<div class="conversation__status__icons">
-			<div class="ticks"><MultiTick classList={['base', 'base', 'done']} /></div>
+			<div class="ticks"><MultiTick classList={['done', 'base', 'base']} /></div>
 			<div class="conversation__status__icons__unread-messages">{conversation.unreadMessages}</div>
 			<!--<div
 				class="conversation__status__icons__read-state conversation__status__icons__read-state--unread"

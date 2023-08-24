@@ -41,7 +41,7 @@
 		fill: limegreen;
 	}
 	.base {
-		fill: #1d1d1d;
+		fill: gray;
 	}
 
 	.svg-container {
