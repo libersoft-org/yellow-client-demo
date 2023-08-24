@@ -45,7 +45,7 @@
 		return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
 	}
 	function toggleVideoPlayback(event) {
-		event.stopPropagation();
+		//event.stopPropagation();
 		const videoContainer = event.currentTarget.closest('.image-container');
 		const videoElement = videoContainer.querySelector('video');
 		if (videoElement.paused) {
@@ -59,14 +59,14 @@
 
 	function handleVideoPlay(event) {
 		const videoElement = event.currentTarget;
-		videoElement.controls = true;
+		//videoElement.controls = true;
 		const iconContainer = videoElement.previousElementSibling;
 		iconContainer.style.display = 'none';
 	}
 
 	function handleVideoPause(event) {
 		const videoElement = event.currentTarget;
-		videoElement.controls = false;
+		//videoElement.controls = false;
 		const iconContainer = videoElement.previousElementSibling;
 		iconContainer.style.display = 'none';
 	}

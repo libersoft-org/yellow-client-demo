@@ -127,8 +127,8 @@
                         <img class="photo-circle photo-circle--medium" src="https://i.pravatar.cc/300?u=user5" alt="https://i.pravatar.cc/300?u=user5"/>
                     </div>
                     <div class="conversation__info">
-                        <div class="conversation__info__user-name"><b>Jane Smith</b></div>
-                        <div class="conversation__info__user-email">seznam@radsianineznam.cz</div>
+                        <div class="conversation__info__user__name"><b>Jane Smith</b></div>
+                        <div class="conversation__info__user__email" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">seznam@radsianineznam.cz</div>
                     </div>
         	    </div>
             </div>

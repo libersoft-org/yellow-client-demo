@@ -59,7 +59,7 @@
 
 <div style="display: flex; align-items: start;">
 	<img
-		src={isPlaying ? '../img/icons/icn_pause.svg' : '../img/icons/icn_playb.svg'}
+		src={isPlaying ? '../img/icons/icn_pause.svg' : '../img/icons/icn_playn.svg'}
 		alt="Play/Pause"
 		on:click={togglePlay}
 	/>

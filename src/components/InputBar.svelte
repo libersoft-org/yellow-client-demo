@@ -233,7 +233,6 @@
 			<div class="multipart-message" 	>
 				<div class="element"><b>Template name:</b></div>
 				<div
-					style="display: flex; margin-top:10px; margin-bottom:4px; height:1.2em;"
 					class="element text-input"
 					contenteditable="true"
 					maxlength="50"
@@ -244,13 +243,12 @@
 				</div>
 				<div class="element" style="margin-top: 10px;"><b>Template content:</b></div>
 				<div
-						class="element area-input"
+					class="element area-input"
 					contenteditable="true"
-					style="height: 10em; display: flex; margin-top:10px; margin-bottom:4px;"
 					bind:this={templateContentDiv}
 				/>
 				<div class="element" style="height:0.8em"><span class="hint2">This field can't be empty!</span></div>
-				<div class="element" style="margin-top: 10px;">
+				<div class="element" style="margin-top: 5px; display:flex;">
 					<button on:click={handleAddTemplate}>Add template</button>
 				</div>
 			</div>
