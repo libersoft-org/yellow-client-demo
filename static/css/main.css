@@ -14,15 +14,11 @@
 	background-color: transparent;
 	z-index: 100;
 }
-.panel {
-	display: grid;
-}
+
 .panel-left {
-
+	display: grid;
 	grid-template-rows: var(--searchbar-height) var(--searchbar-height) var(--accountbar-height) 1fr auto;
-
 	background-color: #fff;
-
 	overflow-y: hidden;
 	overflow-x: hidden;
 	min-width: var(--leftpanel-min-width);
@@ -166,10 +162,6 @@
 	transform: translateX(14px);
 }
 
-.active-panel {
-	height: 100vh;
-	min-height: 100vh;
-}
 .back-button {
 	display: none;
 }
@@ -626,23 +618,35 @@
 	width: auto; /* Šířka se přizpůsobí obsahu */
 }
 @media (max-width: 794px) {
+
 	#page {
-		grid-template-columns: 1fr;
+		height:100%;
+		margin:0;
+		overflow: hidden;
+
 	}
 	.panel-left {
-		min-width: 100%;
-		height: 0px;
+		height:0px;
+		width:0px;
+		min-width:0px;
 	}
 	.panel-right {
-		min-width: 100%;
-		height: 0px;
+		height:0px;
+		width:0px;
+		min-width:0px;
 	}
 	.resizer {
 		display: none;
 	}
 	.active-panel {
-		height: 100vh;
-		min-height: 100vh;
+		position: fixed; /* Panel bude vždy viditelný na obrazovce */
+		top: 0; /* Od horního okraje */
+		left: 0; /* Od levého okraje */
+		width: 100%; /* Plná šířka obrazovky */
+		height: 100%; /* Plná výška obrazovky */
+		min-width: 100vw;
+		display: flex;
+		flex-direction: column;
 	}
 	.user-bar {
 		padding: 0 !important;
@@ -1222,6 +1226,7 @@
 	box-shadow: inset var(--basic-shadow);
 	color: #000000;
 	flex-grow: 1;
+	max-height: 100%;
 }
 
 .conversation-detail .messages-box {
