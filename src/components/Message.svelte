@@ -68,7 +68,7 @@
 		const videoElement = event.currentTarget;
 		videoElement.controls = false;
 		const iconContainer = videoElement.previousElementSibling;
-		iconContainer.style.display = 'block';
+		iconContainer.style.display = 'none';
 	}
 </script>
 
@@ -115,10 +115,10 @@
 				<div class="element"><b>Video message</b></div>
 				<div class="element">
 					<div
-						class="image-container svelte-{isPaused ? 'paused' : ''}"
+						class="image-container svelte-{isPaused ? 'paused' : ''}" on:click={toggleVideoPlayback}
 					>
 						<div class="icon-container">
-							<img src="../img/icons/icn_play.svg" alt="Play" class="play-icon" on:click={toggleVideoPlayback}/>
+							<img src="../img/icons/icn_play.svg" alt="Play" class="play-icon" />
 						</div>
 						<video
 							id="videonessage-{uniqueId}"
@@ -143,11 +143,11 @@
 				<div class="element">{message}</div>
 				<div class="element">
 					<div
-						class="image-container svelte-{isPaused ? 'paused' : ''}"
+						class="image-container svelte-{isPaused ? 'paused' : ''}" on:click={toggleVideoPlayback}
 
 					>
 						<div class="icon-container">
-							<img src="../img/icons/icn_play.svg" alt="Play" class="play-icon"  on:click={toggleVideoPlayback}/>
+							<img src="../img/icons/icn_play.svg" alt="Play" class="play-icon"  />
 						</div>
 						<video
 							id="video-{uniqueId}"
