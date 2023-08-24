@@ -534,7 +534,7 @@
 	width: 24px; /* Opravena hodnota z '48x' na '48px' */
 	height: 24px;
 	background-color: white;
-	background-image: url('../img/icons/icons8-closeb.svg');
+	background-image: url('../img/icons/icons8_closeb.svg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
