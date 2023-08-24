@@ -29,9 +29,9 @@
 	}
 
 	onMount(() => {
-		if (window.innerWidth <= 794) {
-			enterFullscreen();
-		}
+		//if (window.innerWidth <= 794) {
+		//	enterFullscreen();
+		//}
 	});
 </script>
 
