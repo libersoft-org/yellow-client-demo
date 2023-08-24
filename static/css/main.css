@@ -768,25 +768,6 @@
 	);
 }
 
-.x-multipart-message .progressbar {
-	background-color: #1d1d1d;
-	height: 15px;
-	width: 100%;
-	border-radius: 20px;
-	padding: 3px;
-	margin-top: 10px;
-
-}
-
-.x-multipart-message .fill {
-	width: 65%;
-	height: 100%;
-	border-radius: 10px;
-	background: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
-	background-color: var(--primary-color);
-	background-size: 9px;
-	animation: move 1s linear infinite;
-}
 .multipart-message .progressbar {
 	background-color: #1d1d1d;
 	height: 15px;
@@ -794,18 +775,17 @@
 	border-radius: 20px;
 	padding: 3px;
 	margin-top: 10px;
-	box-sizing: border-box;  /* Přidáno */
+
 }
 
 .multipart-message .fill {
-	width: 100%;  /* upraveno na 100% */
+	width: 75%;
 	height: 100%;
-	border-radius: 20px;  /* upraveno na 20px */
+	border-radius: 10px;
 	background: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
 	background-color: var(--primary-color);
-	background-size: 9px;  /* upraveno na 40px */
+	background-size: 15px;
 	animation: move 1s linear infinite;
-	box-sizing: border-box;  /* Přidáno */
 }
 
 @keyframes move {
@@ -813,7 +793,7 @@
 		background-position: 0 0;
 	}
 	100% {
-		background-position: 9px 0; /* posunutí o velikost pozadí */
+		background-position: 15px 0; /* posunutí o velikost pozadí */
 	}
 }
 .conversations-panel .conversation__info {
