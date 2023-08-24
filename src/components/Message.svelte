@@ -53,6 +53,8 @@
 		} else {
 			videoElement.pause();
 		}
+		event.preventDefault(); // Zastavte výchozí událost
+
 	}
 
 	function handleVideoPlay(event) {
