@@ -3,7 +3,7 @@
 	import { onMount, tick } from 'svelte';
 	import { activeConversationIdStore, sendMessageStore } from '../stores/mainstore.js';
 	import { scrollToBottomStore } from '../stores/mainstore.js';
-	import animationData from '../content/.json';
+	import animationData from '../content/animated.json';
 
 	export let visible = true;
 	import { afterUpdate } from 'svelte';
