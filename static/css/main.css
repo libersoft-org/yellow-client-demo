@@ -533,7 +533,7 @@
 	cursor: pointer;
 	width: 24px; /* Opravena hodnota z '48x' na '48px' */
 	height: 24px;
-	background-color: white;
+	background-color: black;
 	background-image: url('../img/icons/icons8_closeb.svg');
 	background-repeat: no-repeat;
 	background-position: center;
