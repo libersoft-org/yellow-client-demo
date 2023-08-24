@@ -27,8 +27,10 @@
 
 	function togOpen() {
 		targetSelector.forEach((selector) => {
+			console.log('tog-open');
 			const element = document.querySelector(selector);
 			if (element) {
+				console.log('tog add');
 				element.classList.add(toggleClass);
 			}
 		});
@@ -39,9 +41,11 @@
 	}
 
 	function togClose() {
+		console.log('tog-close');
 		targetSelector.forEach((selector) => {
 			const element = document.querySelector(selector);
 			if (element) {
+				console.log('tog rem');
 				element.classList.remove(toggleClass);
 			}
 		});
@@ -49,6 +53,7 @@
 	}
 
 	function handleOutsideClick(event) {
+		console.log('handel');
 		if (closeOnClickOutside) {
 			let clickedOutsideAllTargets = true;
 

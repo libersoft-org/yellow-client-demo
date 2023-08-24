@@ -54,11 +54,22 @@
 				<img
 					class="photo-circle photo-circle--medium"
 					src="../img/icons/icon_nemp_v4_filled.svg"
-					alt="user2"
+					alt="Yellow development"
 				/>
 			</div>
 			<div class="conversation-user__detail">
 				<div class="conversation-user__detail__name">Yellow - development group</div>
+			</div>
+		{:else if idConversation === 2}
+			<div class="conversation-user__photo" on:click={() => (showModal = true)}>
+				<img
+					class="photo-circle photo-circle--medium"
+					src="../img/icons/icon_nemp_v5.svg"
+					alt="Yellow announcements"
+				/>
+			</div>
+			<div class="conversation-user__detail">
+				<div class="conversation-user__detail__name">Yellow - announcements newsgroup</div>
 			</div>
 		{:else}
 			<div class="conversation-user__photo" on:click={() => (showModal = true)}>

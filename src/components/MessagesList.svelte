@@ -3,27 +3,48 @@
 	import { onMount, tick } from 'svelte';
 	import { activeConversationIdStore, sendMessageStore } from '../stores/mainstore.js';
 	import { scrollToBottomStore } from '../stores/mainstore.js';
-	import { derived } from 'svelte/store';
+	import animationData from '../content/email.json';
+
 	export let visible = true;
 	import { afterUpdate } from 'svelte';
 	import Modal from './Modal.svelte'; // Cesta k Modal.svelte
 	let isOpen = false;
 	let currentImage = '';
 	let modal;
-	function closeModal() {
-		isOpen = false;
-	}
-	function addImageClickListeners() {
-		const images = document.querySelectorAll('.image-container img');
-		images.forEach((img) => {
-			img.removeEventListener('click', handleImageClick); // Odebrání stávajícího posluchače, pokud existuje
-			img.addEventListener('click', handleImageClick);
-		});
+	let isPaused = true; // Initial state set to paused
+	let time, duration;
+
+	let uniqueId = 0; // A counter to generate unique IDs
+
+	function generateUniqueId(prefix = '') {
+		uniqueId++;
+		return `${prefix}${uniqueId}`;
 	}
 
 	function handleImageClick(event) {
 		currentImage = event.target.src;
 		isOpen = true;
+	}
+
+	function handleVideoStateChange(event) {
+		const videoElement = event.target;
+		if (videoElement.paused) {
+			videoElement.play();
+		} else {
+			videoElement.pause();
+		}
+	}
+
+	function closeModal() {
+		isOpen = false;
+	}
+
+	function addImageClickListeners() {
+		const images = document.querySelectorAll('.image-container img.handled');
+		images.forEach((img) => {
+			img.removeEventListener('click', handleImageClick); // Odebrání stávajícího posluchače, pokud existuje
+			img.addEventListener('click', handleImageClick);
+		});
 	}
 
 	afterUpdate(() => {
@@ -32,9 +53,12 @@
 	});
 
 	let actualMessages = [];
+
 	function refreshMessages() {
 		if (parseInt($activeConversationIdStore) === 1) {
 			actualMessages = [...groupMessages];
+		} else if (parseInt($activeConversationIdStore) === 2) {
+			actualMessages = [...newsgroupMessages];
 		} else {
 			actualMessages = [...messages];
 		}
@@ -42,30 +66,35 @@
 
 	let messages = [];
 	let groupMessages = [];
+	let newsgroupMessages = [];
 
 	let messageBox;
-	let multipartMes = `
+	let multipartImageA = `
         <div class="multipart-message">
             <div class="element">"Hey, what's up? <b>Nothing new?</b></div>
-<div class="element">
-<div class="image-container">
-<img src="./content/obrazek.jpeg" alt="Example Image" style="cursor: pointer;"/>
-</div>
-</div>            <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</div>
+			<div class="element">
+				<div class="image-container">
+					<a href="./content/obrazek.jpeg" target="_blank">
+						<img id="{id}" src="./content/obrazek.jpeg" alt="Example Image" style="cursor: pointer;"/>
+					</a>
+				</div>
+			</div>
+			<div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</div>
             <div class="element">
             <button>Send</button>
             <button>Download</button>
             </div>
         </div>
     `;
-	let multipartMes2 = `
+	let multipartImageH = `
         <div class="multipart-message">
             <div class="element">"Hey, what's up? <b>Nothing new?</b></div>
-<div class="element">
-<div class="image-container">
-<img src="./content/obrazek2.jpeg" alt="Example Image" style="cursor: pointer;"/>
-</div>
-</div><div class="element link"><b><a href="https://example.com/link">Click here</a></b></div>
+			<div class="element">
+				<div class="image-container">
+					<img class="handled" src="./content/obrazek2.jpeg" alt="Example Image" style="cursor: pointer;"/>
+				</div>
+			</div>
+			<div class="element link"><b><a href="https://example.com/link">Click here</a></b></div>
             <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</div>
             <div class="element">
             <button>Reply</button>
@@ -73,24 +102,112 @@
             </div>
         </div>
     `;
-	let multipartMes3 = `
+	let multipartUpload = `
 		<div class="multipart-message">
-            <div class="element">"Hey, what's up? <b>Check my new video :)</b></div>
-            <div class="element"><div class="image-container">
-                <video src="./content/yellow.mp4" autoplay loop muted playsinline id="videomessage"
-                    controls
-                    poster="./content/poster.jpeg"
-                    on:touchmove|preventDefault={handleMove}
-                    on:mousedown|preventDefault
-                    on:mouseup|preventDefault
-                    bind:currentTime={time}
-                    bind:duration
-                    bind:paused>
-                      <track kind="captions"/>
-            	</video>
+			<div class="element container">
+				<!-- První div s textem -->
+				<div class="element text-div">
+					<b>Uploading file: bigfile.zip</b>
+				</div>
+
+				<!-- Druhý div s progress barem -->
+				<div class="element progress-div">
+					<progress style="width:100%" value="0.8" max="3.2"></progress>
+				</div>
+
+				<!-- Třetí div se dvěma span elementy -->
+				<div class="element video-time-info">
+					<span>0.8GB z 3.2GB</span>
+					<span>25%</span>
+				</div>
+		    </div>
+        </div>
+`;
+	let multipartContact = `
+		<div class="multipart-message">
+			<div class="element container">
+                <div class="element"><b>Contact</b></div>
+                <div class="element contact">
+                    <div class="conversation__user-photo">
+                        <img class="photo-circle photo-circle--medium" src="https://i.pravatar.cc/300?u=user5" alt="https://i.pravatar.cc/300?u=user5"/>
+                    </div>
+                    <div class="conversation__info">
+                        <div class="conversation__info__user-name"><b>Jane Smith</b></div>
+                        <div class="conversation__info__user-email">seznam@radsianineznam.cz</div>
+                    </div>
+        	    </div>
             </div>
         </div>
 	`;
+	let multipartGif = `
+        <div class="multipart-message">
+       		<div class="element container">
+    			<div class="element">
+	    			<div class="image-container">
+					    <img src="./content/travolta.gif" alt="Pulp Fiction" style="cursor: default;"/>
+				    </div>
+			    </div>
+            </div>
+        </div>
+    `;
+	let newsgroupMesssage1 = `
+        <div class="multipart-message">
+            <div class="element"><b>Important announcement about new version.</b></div>
+            <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+            </div>
+			<div class="element">
+				<div class="image-container">
+						<img id="{id}" src="./content/obrazek.jpeg" alt="Example Image" />
+				</div>
+			</div>
+			<div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</div>
+			<div class="element horizontal-line"/>
+
+			<div class="element comment">
+                <!-- První div s ikonou komentáře -->
+                <div class="icon-comment">
+                    <img src="./img/icons/icon_comment.svg" alt="Comment Icon">
+                </div>
+
+                <!-- Druhý div s textem "Leave a comment" -->
+                <div class="comment-text">
+                    Leave a comment
+                </div>
+
+                <!-- Třetí div s ikonou odeslání -->
+                <div class="icon-send">
+                    <img src="./img/icons/send_black.svg" alt="Send Icon">
+                </div>
+            </div>
+        </div>
+    `;
+	let newsgroupMesssage2 = `
+        <div class="multipart-message">
+            <div class="element"><b>Important announcement about new version.</b></div>
+            <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+            </div>
+			<div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</div>
+			<div class="element horizontal-line"/>
+			<div class="element comment">
+                <!-- První div s ikonou komentáře -->
+                <div class="icon-comment">
+                    <img src="./img/icons/icon_comment.svg" alt="Comment Icon">
+                </div>
+
+                <!-- Druhý div s textem "Leave a comment" -->
+                <div class="comment-text">
+                    Leave a comment..
+                </div>
+
+                <!-- Třetí div s ikonou odeslání -->
+                <div class="icon-send">
+                    <img src="./img/icons/send_black.svg" alt="Send Icon">
+                </div>
+            </div>
+        </div>
+    `;
 
 	onMount(() => {
 		const unsubscribe = sendMessageStore.subscribe((value) => {
@@ -125,6 +242,14 @@
 
 			groupMessages = [...groupMessages, currentMessage];
 		}
+		for (let i = 0; i < newsgroupMockup.length; i++) {
+			const currentMessage = newsgroupMockup[i];
+			currentMessage.hideAvatar = true;
+			//currentMessage.reduceMargin = true;
+			currentMessage.hideAfter = true;
+
+			newsgroupMessages = [...newsgroupMessages, currentMessage];
+		}
 		scrollToBottom(messageBox);
 		return unsubscribe;
 	});
@@ -133,6 +258,27 @@
 		if (!node) node = messageBox;
 		node.scroll({ top: node.scrollHeight, behavior: 'smooth' });
 	};
+
+	const newsgroupMockup = [
+		{
+			photo: 'https://i.pravatar.cc/300?u=ownprofile',
+			messagetype: 'news',
+			message: newsgroupMesssage1,
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=ownprofile',
+			messagetype: 'news',
+			message: newsgroupMesssage2,
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false
+		}
+	];
 	const groupMockup = [
 		{
 			photo: 'https://i.pravatar.cc/300?u=user1',
@@ -144,11 +290,14 @@
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
-			message: multipartMes,
+			message: 'Check my new video',
 			time: new Date().toLocaleTimeString(),
 			sent: true,
 			read: false,
-			secure: false
+			secure: false,
+			messagetype: 'videomessage',
+			url: './content/yellow2.mp4',
+			preview: './content/poster2.jpeg'
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=ownprofile',
@@ -161,14 +310,6 @@
 			url: '../content/voicemessage.ogg'
 		},
 		{
-			photo: 'https://i.pravatar.cc/300?u=user3',
-			message: multipartMes3,
-			time: new Date().toLocaleTimeString(),
-			sent: true,
-			read: false,
-			secure: false
-		},
-		{
 			photo: 'https://i.pravatar.cc/300?u=ownprofile',
 			message: '..map location',
 			time: new Date().toLocaleTimeString(),
@@ -176,6 +317,15 @@
 			read: false,
 			secure: false,
 			messagetype: 'map'
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			messagetype: 'lottie',
+			message: animationData,
+			time: '11:22:33',
+			sent: true,
+			read: true,
+			secure: false
 		}
 	];
 	const mockupMessages = [
@@ -256,24 +406,17 @@
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=ownprofile',
-			message:
-				'I am also sending you very very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long long message.',
-			time: '16:25:15',
+			messagetype: 'multipart',
+			message: multipartImageA,
+			time: new Date().toLocaleTimeString(),
 			sent: false,
 			read: false,
 			secure: false
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=ownprofile',
-			message: 'Cool!',
-			time: '16:35:59',
-			sent: false,
-			read: false,
-			secure: false
-		},
-		{
-			photo: 'https://i.pravatar.cc/300?u=ownprofile',
-			message: multipartMes2,
+			messagetype: 'multipart',
+			message: multipartImageH,
 			time: new Date().toLocaleTimeString(),
 			sent: false,
 			read: false,
@@ -281,7 +424,8 @@
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
-			message: "Hey, what's up?",
+			messagetype: 'multipart',
+			message: multipartContact,
 			time: new Date().toLocaleTimeString(),
 			sent: true,
 			read: false,
@@ -289,15 +433,17 @@
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
-			message: "Hey, what's up? <b>Nothing new?</b>",
+			messagetype: 'multipart',
+			message: multipartGif,
 			time: new Date().toLocaleTimeString(),
-			sent: true,
+			sent: false,
 			read: false,
 			secure: false
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
-			message: multipartMes,
+			messagetype: 'multipart',
+			message: multipartUpload,
 			time: new Date().toLocaleTimeString(),
 			sent: true,
 			read: false,
@@ -315,11 +461,14 @@
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
-			message: multipartMes3,
+			message: 'Check my new video',
 			time: new Date().toLocaleTimeString(),
 			sent: true,
 			read: false,
-			secure: false
+			secure: false,
+			messagetype: 'video',
+			url: './content/yellow.mp4',
+			preview: './content/poster.png'
 		}
 	];
 
@@ -380,8 +529,6 @@
 	}
 </script>
 
-<!--<button on:click={addMessage}>Přidat zprávu</button>-->
-
 <div bind:this={messageBox} class="messages-box" class:invisible={!visible}>
 	<div class="messages">
 		{#each actualMessages as msg, index}
@@ -395,12 +542,12 @@
 				hideAvatar={msg.hideAvatar}
 				reduceMargin={msg.reduceMargin}
 				hideAfter={msg.hideAfter}
+				uniqueId={generateUniqueId('msg-')}
 			/>
-			<!--<button on:click={() => deleteMessage(index)}>Odstranit</button> -->
 		{/each}
 	</div>
 	{#if isOpen}
-		<Modal title="Image Preview" bind:this={modal} on:close={closeModal}>
+		<Modal title="Image Preview" overlay="true" bind:this={modal} on:close={closeModal}>
 			<img src={currentImage} alt="Modal Image" style="max-width: 100%; height: 100%; width:100%" />
 		</Modal>
 	{/if}

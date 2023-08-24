@@ -54,7 +54,6 @@
 
 .invisible {
 	display: none !important;
-	transition: 25ms;
 }
 
 .blurred {
@@ -170,8 +169,90 @@
 	-ms-user-select: none; /* Internet Explorer/Edge */
 	user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
 }
+
+.icon-comment {
+	flex-shrink: 0;
+	height: 1em;
+	width: 1em;
+}
 .multipart-message .element {
-	margin-bottom: 4px;
+	margin-right: 5px;
+	align-items: center;
+	width: 100%;
+	display: flex;
+}
+
+.multipart-message .element.text-input {
+	border-radius: 5px;
+	border: 2px solid #ccc;
+	margin: 10px 0px;
+	padding: 5px;
+	width: auto;
+}
+.multipart-message .hint1,
+.multipart-message .hint2 {
+	font-size: 0.8em;
+	color: red;
+	position: absolute;
+	display: none;
+	pointer-events: none; /* Aby nápověda neblokovala interakci s inputem */
+}
+
+.multipart-message .element.area-input {
+	border-radius: 5px;
+	border: 2px solid #ccc;
+	margin: 10px 0px;
+	padding: 5px;
+	width: auto;
+	align-items: flex-start;
+}
+.message-template-modal .multipart-message .element button {
+	font-size: 0.8em !important;
+	margin-right: 0px;
+	margin-left: auto;
+}
+.multipart-message .element {
+	margin-right: 5px;
+	align-items: center;
+	width: 100%;
+}
+.multipart-message .element.comment {
+	margin-right: 5px;
+	align-items: center;
+	width: 100%;
+	display: flex;
+	margin-bottom: 5px;
+}
+.horizontal-line {
+	width: 100%; /* or any desired width */
+	height: 1px; /* thickness of the line */
+	background-color: #1d1d1d; /* color of the line */
+	margin-bottom: 5px;
+}
+.comment-text {
+	flex-grow: 1;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: left;
+	color: #ccc;
+}
+
+.icon-send {
+	flex-shrink: 0;
+	height: 2em;
+	width: 2em;
+	cursor: pointer;
+}
+
+.multipart-message .element.contact {
+	display: flex;
+	background-color: var(--primary-color);
+	padding-left: 10px;
+	padding-top: 10px;
+	border-radius: 10px;
+}
+.multipart-message .element .conversation__info {
+	margin: 5px 10px;
 }
 .multipart-message .element .image-container {
 	border-radius: 10px; /* Kulaté rohy */
@@ -197,8 +278,8 @@
 }
 .multipart-message .element button {
 	background-color: var(--secondary-color);
-	color: var(--primary-color);
-
+	color: #ffffff;
+	font-size: 1em;
 	margin-right: 4px;
 	font-weight: bold;
 	cursor: pointer;
@@ -208,6 +289,44 @@
 	border-radius: 10px;
 	padding: 10px;
 }
+.video-container {
+	position: relative;
+}
+
+.play-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50px;
+	height: 50px;
+	z-index: 10;
+	cursor: pointer;
+}
+.paused .icon-container {
+	display: none !important;
+}
+.video-time-info {
+	display: flex;
+	justify-content: space-between;
+	/*padding: 5px 10px;*/
+	font-size: 0.8em;
+}
+.icon-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80px;
+	height: 80px;
+	border-radius: 10px;
+	background-color: #1d1d1d7f;
+	z-index: 10;
+}
+.video-container.paused .play-icon {
+	display: block;
+}
+
 #waveform {
 	/*border: 1px solid #333; */
 	overflow: hidden;
@@ -222,6 +341,7 @@
 	background-color: var(--primary-color);
 	color: #1d1d1d;
 	font-weight: bold;
+	cursor: pointer;
 }
 
 .group-icon {
@@ -264,16 +384,15 @@
 .fast-replies {
 	position: absolute;
 	margin-left: 36px;
-	margin-bottom: 0px;
 	background-color: #1d1d1d;
 	color: #ffffff;
 	padding: 0px;
-	display: flex;
+
 	align-items: flex-start;
 	flex-direction: column;
 	overflow: hidden;
 	box-shadow: var(--basic-shadow);
-	bottom: 48px;
+	bottom: 100%;
 	z-index: 1;
 }
 
@@ -331,6 +450,7 @@
 .wavecontainer {
 	padding-top: 4px;
 	padding-bottom: 0px;
+	width: 185px;
 }
 
 .modal {
@@ -347,6 +467,25 @@
 	overflow: hidden;
 	user-select: none; /* Zabrání výběru textu */
 	pointer-events: auto;
+}
+.modal-o {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+.modal .modal-body-o {
+	overflow-y: hidden; /* Přidáno pro automatický posuvník, pokud je obsah příliš dlouhý */
+	flex: 1; /* Zajistí, že tělo modálního okna zabere zbývající místo */
+	padding: 10px;
+	align-items: center;
 }
 
 .modal .modal-header {
@@ -379,6 +518,21 @@
 	margin-right: 12px;
 }
 
+.modal-o .close-icon-o {
+	position: fixed;
+	right: 0px;
+	top: 4px;
+	cursor: pointer;
+	width: 24px; /* Opravena hodnota z '48x' na '48px' */
+	height: 24px;
+	background-color: transparent;
+	background-image: url('../img/icons/icons8-close.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	margin-left: auto;
+	margin-right: 4px;
+}
 .modal .modal-body {
 	overflow-y: auto; /* Přidáno pro automatický posuvník, pokud je obsah příliš dlouhý */
 	flex: 1; /* Zajistí, že tělo modálního okna zabere zbývající místo */
@@ -549,7 +703,11 @@
 }
 
 .conversations-panel .conversation.active {
-	background-color: var(--primary-color);
+	background-color: hsl(
+		var(--primary-color-hue),
+		var(--primary-color-sat),
+		calc(var(--primary-color-lig) - 25%)
+	);
 }
 
 .conversations-panel .conversation__info {
@@ -607,6 +765,7 @@
 	display: -ms-flexbox;
 	display: flex;
 	padding-top: 10px;
+	align-items: center;
 }
 
 .conversations-panel .conversation__status__icons.ingroup {
@@ -646,6 +805,11 @@
 
 .hide-avatar .message__sender-photo {
 	visibility: hidden !important;
+}
+
+.message__sender-photo.news {
+	visibility: hidden !important;
+	display: none !important;
 }
 
 .reduce-margin {
@@ -925,6 +1089,7 @@
 
 .input-bar {
 	display: flex;
+	position: relative;
 	justify-content: space-between;
 	align-items: flex-end;
 	/*padding: 1rem;*/
@@ -1101,6 +1266,9 @@
 	-webkit-box-shadow: var(--basic-shadow);
 	box-shadow: var(--basic-shadow);
 }
+.message__content.news {
+	max-width: 100%;
+}
 
 .message__content__text {
 	/*font-family: Roboto;*/
@@ -1124,10 +1292,27 @@
 	-ms-flex-align: center;
 	align-items: center;
 }
+.message__content__info__translate {
+	background-image: url('../img/icons/icon_translate.svg');
+	margin-left: 0px;
+	cursor: pointer;
+	margin-right: auto;
+	width: 15px;
+	height: 15px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
 
 .message__content__info__date-time {
 	font-size: 0.8rem;
 	margin-right: 10px;
+}
+
+.translation {
+	border-radius: 10px;
+	padding: 10px;
+	box-shadow: var(--basic-shadow);
 }
 
 .message__content__info__icons {

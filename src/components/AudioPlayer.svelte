@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import WaveSurfer from 'wavesurfer.js';
 	export let audioUrl = '/audio.mp3';
+	export let id;
 
 	let wavesurfer;
 	let isPlaying = false;
@@ -14,13 +15,13 @@
 
 	onMount(() => {
 		wavesurfer = WaveSurfer.create({
-			container: '#waveform',
+			container: '#waveform-' + id,
 			height: 24,
 			splitChannels: false,
 			normalize: true,
 			waveColor: '#fbd113',
-			progressColor: '#6699ff',
-			cursorColor: '#3366cc',
+			progressColor: '#1d1d1d',
+			cursorColor: 'transparent',
 			canvasColor: 'transparent',
 			cursorWidth: 1,
 			barWidth: 2,
@@ -31,7 +32,7 @@
 			minPxPerSec: 1,
 			fillParent: true,
 			url: audioUrl,
-			mediaControls: true,
+			mediaControls: false,
 			autoplay: false,
 			interact: true,
 			hideScrollbar: true,
@@ -63,8 +64,11 @@
 		on:click={togglePlay}
 	/>
 	<div class="wavecontainer">
-		<div id="waveform" />
-		<div><span id="time">0:00</span> / <span id="duration">0:00</span></div>
+		<div id="waveform-{id}" />
+		<div class="video-time-info">
+			<span id="time" />
+			<span id="duration" />
+		</div>
 	</div>
 </div>
 

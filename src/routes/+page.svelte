@@ -23,7 +23,9 @@
 			if (!document.fullscreenElement) {
 				document.documentElement.requestFullscreen();
 			}
-		} catch(e){console.log()};
+		} catch (e) {
+			console.log();
+		}
 	}
 
 	onMount(() => {

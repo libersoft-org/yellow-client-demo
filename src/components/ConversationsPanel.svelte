@@ -5,6 +5,7 @@
 	import { get } from 'svelte/store';
 	import { tick } from 'svelte';
 	import { activeConversationIdStore } from '../stores/mainstore.js';
+	import MultiTick from './MultiTick.svelte';
 
 	let activeConversationId = null;
 	activeConversationIdStore.subscribe((value) => (activeConversationId = value));
@@ -39,14 +40,14 @@
 		},
 		{
 			id: '2',
-			imageUrl: 'https://i.pravatar.cc/300?u=user2',
-			name: 'Veryveryvery Long Username - Some Other Company Ltd.',
+			imageUrl: '../img/icons/icon_nemp_v5.svg',
+			name: 'Yellow - announcements newsgroup',
 			lastMessage:
-				'Morem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
+				'<b>Another news about new version..</b> Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
 			time: '12:59:59',
-			unreadMessages: 0,
+			unreadMessages: 5,
 			isRead: true,
-			email: 'nobodywithlong.long@domain.com'
+			email: ''
 		},
 		{
 			id: '3',
@@ -55,7 +56,7 @@
 			lastMessage:
 				'Norem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.',
 			time: '12:59:59',
-			unreadMessages: 888,
+			unreadMessages: 88,
 			isRead: false,
 			email: 'testuser@undefinedlongdomain.com'
 		},
@@ -148,7 +149,7 @@
 			email: 'hobo@domain.com'
 		},
 		{
-			id: '1',
+			id: '12',
 			imageUrl: 'https://i.pravatar.cc/300?u=user1',
 			name: 'Ultraultraultra Long Username - Company Ltd.',
 			lastMessage:
@@ -159,7 +160,7 @@
 			email: 'nobody@domain.com'
 		},
 		{
-			id: '2',
+			id: '13',
 			imageUrl: 'https://i.pravatar.cc/300?u=user2',
 			name: 'Veryveryvery Long Username - Some Other Company Ltd.',
 			lastMessage:
@@ -170,7 +171,7 @@
 			email: 'nobodywithlong.long@domain.com'
 		},
 		{
-			id: '3',
+			id: '14',
 			imageUrl: 'https://i.pravatar.cc/300?u=user3',
 			name: 'Short Name',
 			lastMessage:
@@ -181,7 +182,7 @@
 			email: 'testuser@undefinedlongdomain.com'
 		},
 		{
-			id: '4',
+			id: '15',
 			imageUrl: 'https://i.pravatar.cc/300?u=user4',
 			name: 'John Doe',
 			lastMessage:
@@ -192,7 +193,7 @@
 			email: 'nobody.anybody@domain.com'
 		},
 		{
-			id: '5',
+			id: '16',
 			imageUrl: 'https://i.pravatar.cc/300?u=user5',
 			name: 'Jane Smith',
 			lastMessage:
@@ -203,7 +204,7 @@
 			email: 'seznam@radsianineznam.cz'
 		},
 		{
-			id: '6',
+			id: '17',
 			imageUrl: 'https://i.pravatar.cc/300?u=user6',
 			name: 'Jane Smith',
 			lastMessage:
@@ -214,7 +215,7 @@
 			email: 'undefined.name@on.undefined.domain'
 		},
 		{
-			id: '7',
+			id: '18',
 			imageUrl: 'https://i.pravatar.cc/300?u=user7',
 			name: 'User Name',
 			lastMessage:
@@ -225,7 +226,7 @@
 			email: 'nobody@domain.com'
 		},
 		{
-			id: '8',
+			id: '19',
 			imageUrl: 'https://i.pravatar.cc/300?u=user8',
 			name: 'Test User',
 			lastMessage:
@@ -236,7 +237,7 @@
 			email: 'info@yellownet.io'
 		},
 		{
-			id: '9',
+			id: '20',
 			imageUrl: 'https://i.pravatar.cc/300?u=user9',
 			name: 'Some Name',
 			lastMessage:
@@ -247,7 +248,7 @@
 			email: 'nobody@domain.com'
 		},
 		{
-			id: '10',
+			id: '21',
 			imageUrl: 'https://i.pravatar.cc/300?u=user10',
 			name: 'Nemp User',
 			lastMessage:
@@ -258,7 +259,7 @@
 			email: 'nobo@domain.com'
 		},
 		{
-			id: '11',
+			id: '22',
 			imageUrl: 'https://i.pravatar.cc/300?u=user11',
 			name: 'Name Here',
 			lastMessage:
@@ -295,10 +296,10 @@
 				<div class="group-icon" />
 				<div class="group-name">{groups[index / 5]}</div>
 				<div class="conversation__status__icons ingroup">
-					<div class="conversation__status__icons__unread-messages">888</div>
-					<div
-						class="conversation__status__icons__read-state conversation__status__icons__read-state--unread ingroup-status"
-					/>
+					<div class="conversation__status__icons__unread-messages">
+						{conversation.unreadMessages}
+					</div>
+					<div class="ticks"><MultiTick classList={['base', 'base', 'done']} /></div>
 				</div>
 				<div class="group-arrow" />
 			</div>

@@ -5,10 +5,37 @@
 	export let title = 'Modal Title'; // Defaultní název
 	const dispatch = createEventDispatcher();
 	export let modal; // Exportujte proměnnou modal
+	export let overlay = false;
+	export let resizeable = false;
 
 	let modalr;
 	let isDragging = false;
 	let offsetX, offsetY;
+	function handleKeydown(event) {
+		// ... (vaše stávající kód)
+		if (event.target.getAttribute('contenteditable') !== 'true') {
+			return;
+		}
+		// Pokud je stisknuta klávesa Enter (s nebo bez klávesy Shift), vložte dva <br> elementy
+		if (event.key === 'Enter') {
+			event.preventDefault();
+			const selection = window.getSelection();
+			const range = selection.getRangeAt(0);
+			range.deleteContents();
+
+			const br1 = document.createElement('br');
+			const br2 = document.createElement('br');
+
+			range.insertNode(br1);
+			range.insertNode(br2);
+
+			range.setStartAfter(br2);
+			range.setEndAfter(br2);
+
+			selection.removeAllRanges();
+			selection.addRange(range);
+		}
+	}
 
 	function handleMouseDown(event) {
 		isDragging = true;
@@ -42,9 +69,12 @@
 		modalr.style.top = (window.innerHeight - modalr.offsetHeight) / 2 + 'px';
 	});
 	function handleClose() {
+		console.log('sin1');
 		dispatch('close');
 	}
 	function closeModal() {
+		console.log('sin2');
+
 		dispatch('close');
 	}
 	let isResizing = false;
@@ -87,11 +117,18 @@
 </script>
 
 <div class="overlay" />
-<div class="modal" bind:this={modalr}>
-	<div class="modal-header" on:mousedown={handleMouseDown}>
-		<div class="modal-title">{title}</div>
-		<div class="close-icon" on:click={handleClose} />
+{#if !overlay}
+	<div class="modal" bind:this={modalr}>
+		<div class="modal-header" on:mousedown={handleMouseDown}>
+			<div class="modal-title">{title}</div>
+			<div class="close-icon" on:click={handleClose} />
+		</div>
+		<div class="modal-body" on:keydown={handleKeydown}><slot /></div>
+		{#if resizeable}<div class="resize-handle" on:mousedown={handleResizeMouseDown} /> {/if}
 	</div>
-	<div class="modal-body"><slot /></div>
-	<div class="resize-handle" on:mousedown={handleResizeMouseDown} />
-</div>
+{:else}
+	<div class="modal-o" bind:this={modalr}>
+		<div class="close-icon-o" on:click={handleClose} />
+		<div class="modal-body-o"><slot /></div>
+	</div>
+{/if}
