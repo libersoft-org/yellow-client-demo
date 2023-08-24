@@ -180,7 +180,10 @@
 	align-items: center;
 	width: 100%;
 }
-
+.multipart-message .conversation__info {
+	overflow-y: hidden;
+	w;
+}
 .multipart-message .element.text-input {
 	border-radius: 5px;
 	border: 2px solid #ccc;
@@ -252,6 +255,9 @@
 }
 .multipart-message .element .conversation__info {
 	margin: 5px 10px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 .multipart-message .element .image-container {
 	border-radius: 10px; /* Kulaté rohy */
@@ -1146,6 +1152,7 @@
 	overflow-y: auto;
 	width: 100%;
 	padding: 0px 20px;
+	overflow-x: hidden;
 }
 
 .conversation-detail .centered-message {
