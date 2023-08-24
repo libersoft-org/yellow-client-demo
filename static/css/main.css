@@ -717,7 +717,7 @@
 }
 
 .multipart-message .progressbar {
-	background-color: #1D1D1D;
+	background-color: #1d1d1d;
 	height: 15px;
 	width: 100%;
 	border-radius: 20px;
@@ -731,7 +731,7 @@
 	height: 100%;
 	border-radius: 10px;
 	background: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
-	background-color: hsl(49, 97%, 53%);
+	background-color: var(--primary-color);
 	background-size: 20px;
 	animation: move 1s linear infinite;
 }
@@ -1346,7 +1346,7 @@
 }
 
 .translation {
-	padding: 2px;
+	padding: 0px 10px;
 	background-color: rgba(0,0,0,0.05);
 }
 
