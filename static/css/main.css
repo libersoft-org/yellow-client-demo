@@ -381,7 +381,7 @@
 	z-index: -1;
 }
 .message__content .map {
-	width: 320px;
+	width: auto;
 }
 .leaflet-container .leaflet-right {
 	opacity: 0 !important;
