@@ -1108,7 +1108,6 @@
 	flex-shrink: 1;
 	-ms-flex-preferred-size: 0%;
 	flex-basis: 0%;
-	max-width: 85%;
 }
 
 .account__arrow {

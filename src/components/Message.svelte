@@ -116,9 +116,9 @@
 				<div class="element">
 					<div
 						class="image-container svelte-{isPaused ? 'paused' : ''}"
-						on:click={toggleVideoPlayback}
 					>
 						<div class="icon-container" >
+							on:click={toggleVideoPlayback}
 							<img src="../img/icons/icn_play.svg" alt="Play" class="play-icon" />
 						</div>
 						<video
@@ -145,9 +145,10 @@
 				<div class="element">
 					<div
 						class="image-container svelte-{isPaused ? 'paused' : ''}"
-						on:click={toggleVideoPlayback}
+
 					>
 						<div class="icon-container">
+							on:click={toggleVideoPlayback}
 							<img src="../img/icons/icn_play.svg" alt="Play" class="play-icon" />
 						</div>
 						<video
