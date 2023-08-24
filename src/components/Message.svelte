@@ -119,8 +119,7 @@
 							<img src="../img/icons/icn_play.svg" alt="Play" class="play-icon" />
 						</div>
 						<video
-							on:click={toggleVideoPlayback}
-							id="video-{uniqueId}"
+							id="videonessage-{uniqueId}"
 							src={url}
 							playsinline
 							poster={preview}
@@ -149,13 +148,14 @@
 							<img src="../img/icons/icn_play.svg" alt="Play" class="play-icon" />
 						</div>
 						<video
-							id="videomessage-{uniqueId}"
+							id="video-{uniqueId}"
 							src={url}
 							loop
 							playsinline
 							poster={preview}
 							on:play={handleVideoPlay}
 							on:pause={handleVideoPause}
+							on:timeupdate={updateTime}
 						>
 							<track kind="captions" />
 						</video>
