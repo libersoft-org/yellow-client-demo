@@ -125,6 +125,7 @@
 							src={url}
 							playsinline
 							poster={preview}
+							controls
 							on:play={handleVideoPlay}
 							on:pause={handleVideoPause}
 							on:timeupdate={updateTime}
@@ -155,6 +156,7 @@
 							loop
 							playsinline
 							poster={preview}
+							controls
 							on:play={handleVideoPlay}
 							on:pause={handleVideoPause}
 							on:timeupdate={updateTime}
