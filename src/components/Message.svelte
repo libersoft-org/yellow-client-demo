@@ -117,9 +117,8 @@
 					<div
 						class="image-container svelte-{isPaused ? 'paused' : ''}"
 					>
-						<div class="icon-container" >
-							on:click={toggleVideoPlayback}
-							<img src="../img/icons/icn_play.svg" alt="Play" class="play-icon" />
+						<div class="icon-container">
+							<img src="../img/icons/icn_play.svg" alt="Play" class="play-icon" on:click={toggleVideoPlayback}/>
 						</div>
 						<video
 							id="videonessage-{uniqueId}"
@@ -148,8 +147,7 @@
 
 					>
 						<div class="icon-container">
-							on:click={toggleVideoPlayback}
-							<img src="../img/icons/icn_play.svg" alt="Play" class="play-icon" />
+							<img src="../img/icons/icn_play.svg" alt="Play" class="play-icon"  on:click={toggleVideoPlayback}/>
 						</div>
 						<video
 							id="video-{uniqueId}"
