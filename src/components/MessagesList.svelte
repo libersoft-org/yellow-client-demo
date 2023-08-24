@@ -106,13 +106,13 @@
 		<div class="multipart-message">
 			<div class="element container">
 				<div class="element text-div">
-					<b>Uploading file: bigfile.zip</b>
+					<b>Uploading:</b> bigfile.zip
 				</div>
 				<div class="progressbar">
  					<div class="fill"></div>
 				</div>
 				<div class="element video-time-info">
-					<span>2.4GB z 3.2GB</span>
+					<span>2.4 GB / 3.2 GB</span>
 					<span>75%</span>
 				</div>
 		    </div>
