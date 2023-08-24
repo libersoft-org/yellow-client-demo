@@ -719,10 +719,11 @@
 .multipart-message .progressbar {
 	background-color: #1D1D1D;
 	height: 15px;
-	width: 250px;
+	width: 100%;
 	border-radius: 20px;
 	padding: 3px;
 	margin-top: 10px;
+
 }
 
 .multipart-message .fill {
