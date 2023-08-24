@@ -162,20 +162,14 @@
 				</div>
 			</div>
 			<div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</div>
-			<div class="element horizontal-line"/>
-
+			<div class="element horizontal-line"/></div>
 			<div class="element comment">
-                <!-- První div s ikonou komentáře -->
                 <div class="icon-comment">
                     <img src="./img/icons/icon_comment.svg" alt="Comment Icon">
                 </div>
-
-                <!-- Druhý div s textem "Leave a comment" -->
                 <div class="comment-text">
-                    Leave a comment
+                    Leave a comment..
                 </div>
-
-                <!-- Třetí div s ikonou odeslání -->
                 <div class="icon-send">
                     <img src="./img/icons/send_black.svg" alt="Send Icon">
                 </div>
@@ -189,19 +183,14 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
             </div>
 			<div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</div>
-			<div class="element horizontal-line"/>
+			<div class="element horizontal-line"/></div>
 			<div class="element comment">
-                <!-- První div s ikonou komentáře -->
                 <div class="icon-comment">
                     <img src="./img/icons/icon_comment.svg" alt="Comment Icon">
                 </div>
-
-                <!-- Druhý div s textem "Leave a comment" -->
                 <div class="comment-text">
                     Leave a comment..
                 </div>
-
-                <!-- Třetí div s ikonou odeslání -->
                 <div class="icon-send">
                     <img src="./img/icons/send_black.svg" alt="Send Icon">
                 </div>
