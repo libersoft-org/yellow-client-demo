@@ -230,26 +230,27 @@
 {#if showAddTemplateModal}
 	<Modal on:addTemplate={handleAddTemplate} on:close={closeModal} title="Add fast reply template">
 		<div class="element message-template-modal">
-			<div class="multipart-message">
+			<div class="multipart-message" 	>
 				<div class="element"><b>Template name:</b></div>
 				<div
+					style="display: flex; margin-top:10px; margin-bottom:4px;"
 					class="element text-input"
 					contenteditable="true"
 					maxlength="50"
 					bind:this={templateNameDiv}
 				/>
-				<div class="element">
+				<div class="element" style="height:0.8em">
 					<span class="hint1">This field can't be empty!</span>
 				</div>
-				<div class="element"><b>Template content:</b></div>
+				<div class="element" style="margin-top: 10px;"><b>Template content:</b></div>
 				<div
-					class="element area-input"
+						class="element area-input"
 					contenteditable="true"
-					style="height: 10em;"
+					style="height: 10em; display: flex; margin-top:10px; margin-bottom:4px;"
 					bind:this={templateContentDiv}
 				/>
-				<div class="element"><span class="hint2">This field can't be empty!</span></div>
-				<div class="element">
+				<div class="element" style="height:0.8em"><span class="hint2">This field can't be empty!</span></div>
+				<div class="element" style="margin-top: 10px;">
 					<button on:click={handleAddTemplate}>Add template</button>
 				</div>
 			</div>
