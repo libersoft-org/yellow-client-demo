@@ -640,10 +640,17 @@
 }
 
 .photo-circle--medium {
+	width: 48px;
+	height: 48px;
+	z-index: 1;
+}
+
+.photo-circle--big {
 	width: 60px;
 	height: 60px;
 	z-index: 1;
 }
+
 
 .photo-circle--large {
 	width: 100px;

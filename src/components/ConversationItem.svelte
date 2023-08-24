@@ -24,7 +24,7 @@
 	{#if !conversation.imageUrl2}
 		<div class="conversation__user-photo">
 			<img
-				class="photo-circle photo-circle--medium"
+				class="photo-circle photo-circle--big"
 				src={conversation.imageUrl}
 				alt={conversation.imageUrl}
 			/>
