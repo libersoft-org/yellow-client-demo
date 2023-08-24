@@ -281,7 +281,7 @@
 	];
 	const groupMockup = [
 		{
-			photo: 'https://i.pravatar.cc/300?u=user1',
+			photo: 'https://i.pravatar.cc/300?u=user4',
 			message: "Hey, what's up? <b>Nothing new?</b>",
 			time: new Date().toLocaleTimeString(),
 			sent: true,
@@ -319,7 +319,7 @@
 			messagetype: 'map'
 		},
 		{
-			photo: 'https://i.pravatar.cc/300?u=user2',
+			photo: 'https://i.pravatar.cc/300?u=user6',
 			messagetype: 'lottie',
 			message: animationData,
 			time: '11:22:33',
