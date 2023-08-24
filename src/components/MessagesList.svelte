@@ -3,7 +3,7 @@
 	import { onMount, tick } from 'svelte';
 	import { activeConversationIdStore, sendMessageStore } from '../stores/mainstore.js';
 	import { scrollToBottomStore } from '../stores/mainstore.js';
-	import animationData from '../content/email.json';
+	import animationData from '../content/easey.json';
 
 	export let visible = true;
 	import { afterUpdate } from 'svelte';
@@ -108,12 +108,12 @@
 				<div class="element text-div">
 					<b>Uploading file: bigfile.zip</b>
 				</div>
-				<div class="element progress-div">
-					<progress style="width:100%" value="0.8" max="3.2"></progress>
+				<div class="progressbar">
+ 					<div class="fill"></div>
 				</div>
 				<div class="element video-time-info">
-					<span>0.8GB z 3.2GB</span>
-					<span>25%</span>
+					<span>2.4GB z 3.2GB</span>
+					<span>75%</span>
 				</div>
 		    </div>
         </div>
@@ -163,10 +163,10 @@
                     <img src="./img/icons/icon_comment.svg" alt="Comment Icon">
                 </div>
                 <div class="comment-text">
-                    Leave a comment..
+                    <b>Comments</b>
                 </div>
                 <div class="icon-send">
-                    <img src="./img/icons/send_black.svg" alt="Send Icon">
+                    <img src="./img/icons/icon_caret_right.svg" alt="Send Icon">
                 </div>
             </div>
         </div>
@@ -184,10 +184,10 @@
                     <img src="./img/icons/icon_comment.svg" alt="Comment Icon">
                 </div>
                 <div class="comment-text">
-                    Leave a comment..
+                    <b>Comments</b>
                 </div>
                 <div class="icon-send">
-                    <img src="./img/icons/send_black.svg" alt="Send Icon">
+                    <img src="./img/icons/icon_caret_right.svg" alt="Send Icon">
                 </div>
             </div>
         </div>

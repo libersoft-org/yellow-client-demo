@@ -104,6 +104,7 @@
 		{:else if !messagetype || messagetype === 'multipart' || messagetype === 'news'}
 			<div class="message__content__text">{@html message}</div>
 			<div class="message__content__text translation" style="display: none">
+
 				V dávných dobách, v malebném městečku uprostřed kopcovité krajiny, žil mladý řemeslník
 				jménem Jan. Jan byl známý svými dovednostmi v řezbářství a jeho díla zdobila mnoho domů v
 				okolí. Každé ráno se probudil s východem slunce, nasnídal se čerstvým chlebem s máslem a šel

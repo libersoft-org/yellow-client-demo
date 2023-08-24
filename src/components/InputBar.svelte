@@ -233,7 +233,7 @@
 			<div class="multipart-message" 	>
 				<div class="element"><b>Template name:</b></div>
 				<div
-					style="display: flex; margin-top:10px; margin-bottom:4px;"
+					style="display: flex; margin-top:10px; margin-bottom:4px; height:1.2em;"
 					class="element text-input"
 					contenteditable="true"
 					maxlength="50"

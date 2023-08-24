@@ -299,7 +299,6 @@
 					<div class="conversation__status__icons__unread-messages">
 						{conversation.unreadMessages}
 					</div>
-					<div class="ticks"><MultiTick classList={['base', 'base', 'done']} /></div>
 				</div>
 				<div class="group-arrow" />
 			</div>

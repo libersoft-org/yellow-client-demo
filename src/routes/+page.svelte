@@ -18,20 +18,23 @@
 		navigator.clipboard.writeText(text);
 	}
 
-	function enterFullscreen() {
-		try {
-			if (!document.fullscreenElement) {
-				document.documentElement.requestFullscreen();
-			}
-		} catch (e) {
-			console.log();
-		}
-	}
 
 	onMount(() => {
-		if (window.innerWidth <= 795) {
-			enterFullscreen();
+		function setFullHeight() {
+			const vh = window.innerHeight * 0.01;
+			document.documentElement.style.setProperty('--vh', `${vh}px`);
 		}
+
+		// Nastavte výšku okna při načtení stránky
+		setFullHeight();
+
+		// Aktualizujte výšku okna při změně orientace nebo změně velikosti okna
+		window.addEventListener('resize', setFullHeight);
+
+		return () => {
+			// Odeberte posluchače událostí při zničení komponenty
+			window.removeEventListener('resize', setFullHeight);
+		};
 	});
 </script>
 
@@ -56,3 +59,8 @@
 		<InputBar id="f-input-bar" />
 	</div>
 </div>
+<style>
+	#page {
+	height: calc(100vh - var(--vh, 1vh));
+	}
+</style>
