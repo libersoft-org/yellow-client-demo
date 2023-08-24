@@ -533,13 +533,15 @@
 	cursor: pointer;
 	width: 24px; /* Opravena hodnota z '48x' na '48px' */
 	height: 24px;
-	background-color: transparent;
+	background-color: white;
 	background-image: url('../img/icons/icons8-close.svg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
+	border-radius: 5px;
 	margin-left: auto;
 	margin-right: 4px;
+	padding:10px;
 }
 .modal .modal-body {
 	overflow-y: auto; /* Přidáno pro automatický posuvník, pokud je obsah příliš dlouhý */
