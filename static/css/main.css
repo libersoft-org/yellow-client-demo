@@ -989,6 +989,8 @@
 .user-bar .conversation-user__photo {
 	padding-right: 20px;
 	display: flex;
+	width:60px;
+	height:60px;
 }
 
 .user-bar .conversation-user__detail {
