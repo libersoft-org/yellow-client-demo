@@ -529,18 +529,19 @@
 .modal-o .close-icon-o {
 	position: fixed;
 	right: 0px;
-	top: 4px;
+	top: 0px;
 	cursor: pointer;
 	width: 24px; /* Opravena hodnota z '48x' na '48px' */
 	height: 24px;
 	background-color: white;
-	background-image: url('../img/icons/icons8-close.svg');
+	background-image: url('../img/icons/icons8-closeb.svg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
-	border-radius: 5px;
+
 	margin-left: auto;
-	margin-right: 4px;
+	margin-right: 0px;
+	margin-top:0px;
 	padding:10px;
 }
 .modal .modal-body {
