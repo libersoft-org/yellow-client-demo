@@ -768,7 +768,7 @@
 	);
 }
 
-.multipart-message .progressbar {
+.x-multipart-message .progressbar {
 	background-color: #1d1d1d;
 	height: 15px;
 	width: 100%;
@@ -778,22 +778,44 @@
 
 }
 
-.multipart-message .fill {
+.x-multipart-message .fill {
 	width: 65%;
 	height: 100%;
 	border-radius: 10px;
 	background: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
 	background-color: var(--primary-color);
-	background-size: 20px;
+	background-size: 9px;
 	animation: move 1s linear infinite;
+}
+.multipart-message .progressbar {
+	background-color: #1d1d1d;
+	height: 15px;
+	width: 100%;
+	border-radius: 20px;
+	padding: 3px;
+	margin-top: 10px;
+	box-sizing: border-box;  /* Přidáno */
+}
+
+.multipart-message .fill {
+	width: 100%;  /* upraveno na 100% */
+	height: 100%;
+	border-radius: 20px;  /* upraveno na 20px */
+	background: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
+	background-color: var(--primary-color);
+	background-size: 9px;  /* upraveno na 40px */
+	animation: move 1s linear infinite;
+	box-sizing: border-box;  /* Přidáno */
 }
 
 @keyframes move {
+	0% {
+		background-position: 0 0;
+	}
 	100% {
-		background-position: 40px 0px;
+		background-position: 9px 0; /* posunutí o velikost pozadí */
 	}
 }
-
 .conversations-panel .conversation__info {
 	display: -webkit-box;
 	display: -ms-flexbox;
