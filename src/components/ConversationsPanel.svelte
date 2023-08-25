@@ -18,6 +18,7 @@
 		activeConversationIdStore.set(id);
 		conversationSelected.set(id !== null);
 		activeConversationId = id;
+		tick;
 		const scrollToBottom = get(scrollToBottomStore);
 		if (scrollToBottom) {
 			tick;

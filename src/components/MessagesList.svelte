@@ -50,6 +50,8 @@
 	afterUpdate(() => {
 		addImageClickListeners();
 		refreshMessages();
+		tick;
+		scrollToBottom();
 	});
 
 	let actualMessages = [];
@@ -239,6 +241,7 @@
 	});
 
 	const scrollToBottom = async (node) => {
+		console.log("scroll");
 		if (!node) node = messageBox;
 		node.scroll({ top: node.scrollHeight, behavior: 'smooth' });
 	};
