@@ -28,7 +28,7 @@
 		});
 
 		const markerElement = document.createElement('img');
-		markerElement.src = '/img/icons/marker.png';
+		markerElement.src = '/img/icons/marker2.svg';
 		markerElement.style.width = '32px';
 		markerElement.style.height = '32px';
 
