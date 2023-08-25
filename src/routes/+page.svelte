@@ -27,27 +27,23 @@
 			console.log();
 		}
 	}
-	function adjustPanelHeight() {
-		if ('visualViewport' in window) {
-			// Check if the visualViewport API is supported
 
-			const activePanel = document.querySelector('.active-panel');
-
-			// Initial adjustment
-			activePanel.style.height = `${window.visualViewport.height}px`;
-
-			window.visualViewport.addEventListener('resize', () => {
-				// Adjust the height of .active-panel when the visual viewport size changes
-				activePanel.style.height = `${window.visualViewport.height}px`;
-			});
-		}
-	}
 
 	onMount(() => {
-		document.addEventListener('DOMContentLoaded', adjustPanelHeight);
-		//if (window.innerWidth <= 794) {
-		//	enterFullscreen();
-		//}
+		console.log("wp:"+window.visualViewport);
+		if ('visualViewport' in window) {
+			const activePanel = document.querySelector('.active-panel');
+			// Initial height adjustment
+			activePanel.style.height = `${window.visualViewport.height}px`;
+			console.log("wph:"+activePanel.style.height);
+
+			window.visualViewport.addEventListener('resize', () => {
+				const activePanel = document.querySelector('.active-panel');
+				activePanel.style.height = `${window.visualViewport.height}px`;
+				document.querySelector("#message-text-input").innerText= "wphc:"+activePanel.style.height;
+
+			});
+		}
 	});
 </script>
 
