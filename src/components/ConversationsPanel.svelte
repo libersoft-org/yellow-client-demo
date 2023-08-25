@@ -277,14 +277,14 @@
 		const arrowElement = event.currentTarget.querySelector('.group-arrow');
 
 		// Přepnout třídy pro šipku
-		if (arrowElement.classList.contains('g-opened')) {
-			arrowElement.classList.remove('g-opened');
-		} else {
-			arrowElement.classList.add('g-opened');
-		}
+		arrowElement.classList.toggle('g-opened');
 
 		while (nextElement && !nextElement.classList.contains('group-conversation')) {
-			nextElement.style.display = nextElement.style.display === 'none' ? '' : 'none';
+			if (nextElement.classList.contains('conversation-item-hidden')) {
+				nextElement.classList.remove('conversation-item-hidden');
+			} else {
+				nextElement.classList.add('conversation-item-hidden');
+			}
 			nextElement = nextElement.nextElementSibling;
 		}
 	}

@@ -108,9 +108,9 @@
 			bind:isOpen={showControlsMenu}
 			toggleElementSelector=".icon-controls"
 			targetSelector={['.controls-menu']}
-			toggleClass="invisible"
+			toggleClass="invisiblef"
 		>
-			<div class="controls-menu no-select" class:invisible={!showControlsMenu}>
+			<div class="controls-menu no-select" class:invisiblef={!showControlsMenu}>
 				<p
 					on:click={() => {
 						/* Handle mute notifications */

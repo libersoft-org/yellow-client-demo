@@ -429,6 +429,11 @@
 	box-shadow: var(--basic-shadow);
 	bottom: 100%;
 	z-index: 1;
+	transform: translateY(0);
+	transition: transform 0.2s ease-in-out;
+}
+.fast-replies.hiddenf {
+	transform: translateY(150%);
 }
 
 .fast-replies div {
@@ -464,7 +469,7 @@
 .controls-menu {
 	position: absolute;
 	right: 0px;
-	top: 52px;
+	top: 64px;
 	margin-right: 0px;
 	background-color: hsl(
 		var(--primary-color-hue),
@@ -472,7 +477,13 @@
 		calc(var(--primary-color-lig) + 35%)
 	);
 	box-shadow: var(--basic-shadow);
+	transform: translateY(0px);
+	transition: transform 0.2s ease-in-out;
 }
+.controls-menu.invisiblef {
+	transform: translateY(-250px);
+}
+
 .controls-menu p {
 	cursor: pointer;
 	padding: 10px;
@@ -752,6 +763,7 @@
 		calc(var(--primary-color-lig) + 44%)
 	);
 	cursor: pointer;
+	transition: opacity 0.1s, max-height 0.2s, padding 0.2s;
 }
 
 .conversations-panel .conversation:hover {
@@ -1448,4 +1460,12 @@
 .message__content__info__icons__icon--read {
 	background-image: url(../img/icons/received.svg);
 	opacity: 0.5;
+}
+
+
+.conversation-item-hidden {
+	opacity: 0px;
+	max-height: 0;
+	padding:0px!important;
+	overflow: hidden;
 }

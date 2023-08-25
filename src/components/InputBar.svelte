@@ -188,12 +188,12 @@
 	<ToggleComponent
 		toggleElementSelector=".icon-message-template"
 		targetSelector={['.fast-replies']}
-		toggleClass="invisible"
+		toggleClass="hidenf"
 		closeOnEsc={false}
 		closeOnClickOutside={true}
 		bind:isOpen={showFastReplies}
 	>
-		<div class="fast-replies no-select" class:invisible={!showFastReplies}>
+		<div class="fast-replies no-select" class:hiddenf={!showFastReplies}>
 			<div class="reply" on:click={() => selectQuickReply('Call me later..')}>Call me later..</div>
 			<div class="reply" on:click={() => selectQuickReply("I'll let you know.")}>
 				I'll let you know.
