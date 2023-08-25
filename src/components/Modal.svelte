@@ -123,7 +123,7 @@
 			<div class="modal-title">{title}</div>
 			<div class="close-icon" on:click={handleClose} />
 		</div>
-		<div class="modal-body" on:keydown={handleKeydown}><slot /></div>
+		<div class="modal-body" on:keydown={handleKeydown}><slot></slot></div>
 		{#if resizeable}<div class="resize-handle" on:mousedown={handleResizeMouseDown} /> {/if}
 	</div>
 {:else}

@@ -17,6 +17,26 @@
 			document.removeEventListener('closeToggleComponent', closeHandler);
 		};
 	});
+	import GroupModalForm from './GroupModalForm.svelte'; // Cesta k vaší komponentě
+
+	let showGroupModal = false;
+
+	function openGroupModal() {
+		showGroupModal = true;
+	}
+	function closeGroupModalForm() {
+		showGroupModal = false;
+	}
+	import NewsGroupModalForm from './NewsGroupModalForm.svelte'; // Cesta k vaší komponentě
+
+	let showNewsGroupModal = false;
+
+	function openNewsGroupModal() {
+		showNewsGroupModal = true;
+	}
+	function closeNewsGroupModalForm() {
+		showNewsGroupModal = false;
+	}
 </script>
 
 <ToggleComponent
@@ -37,11 +57,11 @@
 					alt="New conversation"
 				/>New conversation
 			</div>
-			<div class="menu__item">
+			<div class="menu__item" on:click={openGroupModal}>
 				<img class="menu__item__icon" src="img/icons/new_chat.svg" alt="New chat group" />New chat
 				group
 			</div>
-			<div class="menu__item">
+			<div class="menu__item" on:click={openNewsGroupModal}>
 				<img class="menu__item__icon" src="img/icons/newsfeed.svg" alt="New news group" />New news
 				group
 			</div>
@@ -72,3 +92,9 @@
 		<DraggableSwipe target={'#menu-toggle'} swipeable={'#menu'} swipeableAmount="325" swipeabletype="margin-left"/>
 	</div>
 </ToggleComponent>
+{#if showGroupModal}
+	<GroupModalForm on:closeModalForm={closeGroupModalForm}/>
+{/if}
+{#if showNewsGroupModal}
+	<NewsGroupModalForm on:closeModalForm={closeNewsGroupModalForm}/>
+{/if}

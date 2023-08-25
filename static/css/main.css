@@ -181,6 +181,12 @@
 	height: 1em;
 	width: 1em;
 }
+
+.multipart-message {
+	width:100%;
+	box-sizing: border-box;
+	overflow: hidden;
+}
 .multipart-message .element {
 	margin-right: 5px;
 	align-items: center;
@@ -246,6 +252,7 @@
 	margin-right: 5px;
 	align-items: center;
 	width: 100%;
+	box-sizing: border-box;
 }
 .multipart-message .element.comment {
 	margin-right: 5px;
@@ -313,7 +320,7 @@
 	color: var(--secondary-color);
 	text-decoration: none; /* Obrázek bude oříznut, pokud nebude odpovídat poměru stran divu */
 }
-.multipart-message .element button {
+.multipart-message .element button, .multipart-message .element select{
 	background-color: var(--secondary-color);
 	color: #ffffff;
 	font-size: 1em;
@@ -503,11 +510,39 @@
 	width: 185px;
 }
 
+.modal .multipart-message .element {
+	max-width: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	margin: 5px 0;
+	border-radius: 5px;
+}
+.modal .multipart-message .element label {
+	font-weight: bold;
+}
+.modal .multipart-message .element input {
+	font-size:1em;
+	padding:5px;
+}
+.modal .multipart-message .element button {
+	margin-right: 0;
+	margin-left: auto;
+	display: flex;
+}
+.modal .multipart-message .element .image-container {
+	display: flex;
+	align-items: center;
+}
+.modal .multipart-message .element .image-container .photo-circle {
+	height: 15em;
+	width: 15em;
+}
+
 .modal {
 	display: flex;
 	flex-direction: column; /* Přidáno pro správné uspořádání obsahu */
 	position: fixed;
-	min-width: 25vw;
+	min-width: 50vw;
 	max-width: 90vw;
 	max-height: 90vh;
 	background-color: white;
@@ -532,7 +567,7 @@
 }
 
 .modal .modal-body-o {
-	overflow-y: hidden; /* Přidáno pro automatický posuvník, pokud je obsah příliš dlouhý */
+	overflow-y: auto; /* Přidáno pro automatický posuvník, pokud je obsah příliš dlouhý */
 	flex: 1; /* Zajistí, že tělo modálního okna zabere zbývající místo */
 	padding: 10px;
 	align-items: center;
@@ -590,6 +625,7 @@
 	overflow-y: auto; /* Přidáno pro automatický posuvník, pokud je obsah příliš dlouhý */
 	flex: 1; /* Zajistí, že tělo modálního okna zabere zbývající místo */
 	padding: 10px;
+	overflow-x: hidden;
 }
 
 .overlay {
