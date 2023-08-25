@@ -27,6 +27,7 @@
 				activeConversationIdStore.set(null);
 				document.querySelector(`.panel-left`).classList.add('active-panel');
 				document.querySelector(`.panel-right`).classList.remove('active-panel');
+				window.adjustPanels();
 			}
 		}
 		document.addEventListener('keydown', handleKeydown);

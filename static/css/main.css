@@ -3,9 +3,6 @@
 	grid-template-columns: 1fr auto 2fr; /* Rozdělení prostoru mezi panel-left a panel-right */
 	height: 100%;
 	overflow: hidden;
-	position: fixed;
-	top:0px;
-	left:0px;
 	width:100%;
 }
 #page .resizer {

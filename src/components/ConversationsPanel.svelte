@@ -311,6 +311,7 @@
 				document.querySelector(`.panel-right`).classList.add('active-panel');
 				document.querySelector(`.panel-left`).classList.remove('active-panel');
 				selectConversation(conversation.id);
+				window.adjustPanels();
 				setTimeout(() => {
 					document.querySelector(`#message-text-input`).focus();
 				}, 5);

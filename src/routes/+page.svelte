@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+	import {onMount, tick} from 'svelte';
 
 	import Menu from '../components/Menu.svelte';
 	import SearchBar from '../components/SearchBar.svelte';
@@ -30,17 +30,30 @@
 
 
 	onMount(() => {
-		console.log("wp:"+window.visualViewport);
+		window.adjustPanels = (() => {
+			let vv = window.visualViewport;
+			const panels = document.querySelectorAll('.panel');
+			const activePanel = document.querySelector('.active-panel');
+			tick();
+			if (vv.width <795) {
+				panels.forEach(panel => {
+					panel.style.height = '0px';
+					panel.style.width = '0px';
+				});
+				activePanel.style.height = `${vv.height}px`;
+				activePanel.style.width = '100%';
+			} else {
+				panels.forEach(panel => {
+					panel.style.height = `${vv.height}px`;
+				});
+			}
+		});
 		if ('visualViewport' in window) {
-			const activePanel = document.querySelector('#page');
+			const activePanel = document.querySelector('.active-panel');
 			// Initial height adjustment
 			activePanel.style.height = `${window.visualViewport.height}px`;
-			console.log("wph:"+activePanel.style.height);
-
 			window.visualViewport.addEventListener('resize', () => {
-				const activePanel = document.querySelector('#page');
-				activePanel.style.height = `${window.visualViewport.height}px`;
-				document.querySelector("#message-text-input").innerText= "wphc:"+activePanel.style.height;
+				window.adjustPanels();
 
 			});
 		}
