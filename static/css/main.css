@@ -31,7 +31,7 @@
 	background-color: #eee;
 	/*grid-template-rows: var(--searchbar-height) 1fr var(--inputbar-height);*/
 	display: flex;
-	flex-direction: column;;
+	flex-direction: column;
 	overflow-y: hidden;
 	overflow-x: hidden;
 	/*width: 100vw; viewport width */
@@ -647,6 +647,7 @@
 		min-width: 100vw;
 		display: flex;
 		flex-direction: column;
+		overflow: hidden;
 	}
 	.user-bar {
 		padding: 0 !important;
@@ -1231,7 +1232,7 @@
 	box-shadow: inset var(--basic-shadow);
 	color: #000000;
 	flex-grow: 1;
-	max-height: 100%;
+	/*max-height: 100%;*/
 }
 
 .conversation-detail .messages-box {

@@ -27,11 +27,25 @@
 			console.log();
 		}
 	}
+	import { onDestroy } from 'svelte';
 
+	let puvodniVyskaOkna;
 	onMount(() => {
-		//if (window.innerWidth <= 794) {
-		//	enterFullscreen();
-		//}
+		puvodniVyskaOkna = window.innerHeight;
+		function handleResize() {
+			if (window.innerHeight < puvodniVyskaOkna) {
+				document.querySelector(".active-panel").style.height = window.innerHeight + "px";
+			} else {
+				document.querySelector(".active-panel").style.height = "100%";
+			}
+		}
+
+		window.addEventListener("resize", handleResize);
+
+		// Odstraňte posluchač při zničení komponenty
+		onDestroy(() => {
+			window.removeEventListener("resize", handleResize);
+		});
 	});
 </script>
 
