@@ -10,11 +10,21 @@
 			const leaflet = await import('leaflet');
 
 			map = leaflet.map(mapElement).setView([51.505, -0.09], 16);
+			var myIcon = leaflet.icon({
+				iconUrl: '../content/marker.svg',
+				iconSize: [32,32],
+				iconAnchor: [22, 94],
+				popupAnchor: [-3, -76],
+				shadowUrl: 'my-icon-shadow.png',
+				shadowSize: [68, 95],
+				shadowAnchor: [22, 94]
+			});
 
 			leaflet
 				.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 					attribution:
-						'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+						'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+					icon: myIcon
 				})
 				.addTo(map);
 
