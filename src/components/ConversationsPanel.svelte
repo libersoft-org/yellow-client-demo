@@ -271,51 +271,50 @@
 			email: 'hobo@domain.com'
 		}
 	];
+	let groupedConversations = [];
+	for (let i = 0; i < conversations.length; i += 5) {
+		groupedConversations.push(conversations.slice(i, i + 5));
+	}
 
 	function toggleConversations(event) {
-		let nextElement = event.currentTarget.nextElementSibling;
 		const arrowElement = event.currentTarget.querySelector('.group-arrow');
-
-		// Přepnout třídy pro šipku
 		arrowElement.classList.toggle('g-opened');
-
-		while (nextElement && !nextElement.classList.contains('group-conversation')) {
-			if (nextElement.classList.contains('conversation-item-hidden')) {
-				nextElement.classList.remove('conversation-item-hidden');
-			} else {
-				nextElement.classList.add('conversation-item-hidden');
-			}
-			nextElement = nextElement.nextElementSibling;
-		}
+		event.currentTarget.parentElement.classList.toggle('group-visible');
 	}
 </script>
 
 <div class="conversations-panel no-select {!blurred ? '' : 'blurred'}">
-	{#each conversations as conversation, index}
-		{#if index % 5 === 0}
-			<div class="group-conversation" on:click={toggleConversations}>
-				<div class="group-icon" />
-				<div class="group-name">{groups[index / 5]}</div>
+	{#each groupedConversations as group, groupIndex}
+		<ul class="group-conversation" >
+			<li class = "group-header" on:click={toggleConversations}>
+				<div class="group-icon"></div>
+				<div class="group-name">{groups[groupIndex]}</div>
 				<div class="conversation__status__icons ingroup">
 					<div class="conversation__status__icons__unread-messages">
-						{conversation.unreadMessages}
+						{group[0].unreadMessages}
 					</div>
 				</div>
-				<div class="group-arrow" />
-			</div>
-		{/if}
-		<ConversationItem
-			{conversation}
-			isActive={activeConversationId === conversation.id}
-			onSelect={() => {
-				document.querySelector(`.panel-right`).classList.add('active-panel');
-				document.querySelector(`.panel-left`).classList.remove('active-panel');
-				selectConversation(conversation.id);
-				window.adjustPanels();
-				setTimeout(() => {
-					document.querySelector(`#message-text-input`).focus();
-				}, 5);
-			}}
-		/>
+				<div class="group-arrow"></div>
+			</li>
+
+			{#each group as conversation}
+				<li class="group-item">
+					<ConversationItem
+							{conversation}
+							isActive={activeConversationId === conversation.id}
+							onSelect={() => {
+                            document.querySelector(`.panel-right`).classList.add('active-panel');
+                            document.querySelector(`.panel-left`).classList.remove('active-panel');
+                            selectConversation(conversation.id);
+                            window.adjustPanels();
+                            setTimeout(() => {
+                                document.querySelector(`#message-text-input`).focus();
+                            }, 5);
+                        }}
+					/>
+				</li>
+			{/each}
+		</ul>
 	{/each}
 </div>
+

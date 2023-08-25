@@ -378,14 +378,37 @@
 
 .group-conversation {
 	display: flex;
-	align-items: center;
-	padding: 8px 8px;
+	align-items: flex-start;
+	padding: 0px 0px;
 	background-color: var(--primary-color);
 	color: #1d1d1d;
 	font-weight: bold;
 	cursor: pointer;
+	flex-direction: column;
+	box-sizing: border-box;
+	margin: 0;
+	max-height: 1000px;
+	overflow-y:auto;
+	transition: max-height 0.2s ease-in-out;
 }
-
+.group-conversation.group-visible {
+	max-height: 43px;
+	overflow: hidden;
+}
+.group-conversation .group-header{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding: 8px 8px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+.group-conversation .group-item{
+	width: 100%;
+	align-items: center;
+	padding: 0px 0px;
+	box-sizing: border-box;
+}
 .group-icon {
 	diaplay: none;
 }
@@ -894,6 +917,7 @@
 	font-size: 0.8em;
 	color: #808080;
 	text-align: right;
+	padding-right:5px;
 }
 
 .conversations-panel .conversation__status__icons {
