@@ -388,12 +388,11 @@
 	box-sizing: border-box;
 	margin: 0;
 	max-height: 1000px;
-	overflow-y:auto;
+	overflow:hidden;
 	transition: max-height 0.2s ease-in-out;
 }
 .group-conversation.group-visible {
 	max-height: 43px;
-	overflow: hidden;
 }
 .group-conversation .group-header{
 	width: 100%;
