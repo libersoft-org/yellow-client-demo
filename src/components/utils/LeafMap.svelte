@@ -1,51 +1,52 @@
 <script>
-	import { onMount, onDestroy } from 'svelte';
-	import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
+	import 'ol/ol.css';
+	import { Map, View } from 'ol';
+	import TileLayer from 'ol/layer/Tile';
+	import OSM from 'ol/source/OSM';
+	import Overlay from 'ol/Overlay';
+	import { fromLonLat } from 'ol/proj';
+
+	export let longitude = -0.09;
+	export let latitude = 51.505;
+	export let zoom = 16;
 
 	let mapElement;
-	let map;
 
-	onMount(async () => {
-		if (browser) {
-			const leaflet = await import('leaflet');
-
-			map = leaflet.map(mapElement).setView([51.505, -0.09], 16);
-			var myIcon = leaflet.icon({
-				iconUrl: '../content/marker.svg',
-				iconSize: [32,32],
-				iconAnchor: [22, 94],
-				popupAnchor: [-3, -76],
-				shadowUrl: 'my-icon-shadow.png',
-				shadowSize: [68, 95],
-				shadowAnchor: [22, 94]
-			});
-
-			leaflet
-				.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-					attribution:
-						'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-					icon: myIcon
+	onMount(() => {
+		const map = new Map({
+			target: mapElement,
+			layers: [
+				new TileLayer({
+					source: new OSM()
 				})
-				.addTo(map);
+			],
+			view: new View({
+				center: fromLonLat([longitude, latitude]),
+				zoom: zoom
+			})
+		});
 
-			leaflet.marker([51.505, -0.09]).addTo(map).bindPopup('Hi there!').openPopup();
-		}
-	});
+		const markerElement = document.createElement('img');
+		markerElement.src = '/img/icons/marker.png';
+		markerElement.style.width = '32px';
+		markerElement.style.height = '32px';
 
-	onDestroy(async () => {
-		if (map) {
-			map.remove();
-		}
+		const marker = new Overlay({
+			position: fromLonLat([longitude, latitude]),
+			positioning: 'center-center',
+			element: markerElement,
+			stopEvent: false
+		});
+		map.addOverlay(marker);
 	});
 </script>
 
-<main>
-	<div bind:this={mapElement} />
-</main>
-
 <style>
-	@import 'leaflet/dist/leaflet.css';
-	main div {
+	.mapContainer {
+		width: 250px;
 		height: 250px;
 	}
 </style>
+
+<div class="mapContainer" bind:this={mapElement}></div>

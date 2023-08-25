@@ -31,8 +31,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"leafmap": "^1.1.7",
 		"lottie-web": "^5.12.2",
+		"ol": "^7.5.1",
 		"wavesurfer.js": "^7.1.5"
 	}
 }
