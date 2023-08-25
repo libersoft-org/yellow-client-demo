@@ -17,7 +17,19 @@
 	function openAddTemplateModal() {
 		showAddTemplateModal = true;
 	}
+
 	onMount(() => {
+		const input = document.querySelector('#message-text-input');
+
+
+			input.addEventListener('focus', () => {
+				document.body.style.height = `${window.innerHeight}px`;
+			});
+
+			input.addEventListener('blur', () => {
+				document.body.style.height = '100vh';
+			});
+
 		const closeHandler = (event) => {
 			console.log('closing:' + id);
 			if (event.detail === id) {

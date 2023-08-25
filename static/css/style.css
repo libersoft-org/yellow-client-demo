@@ -100,8 +100,8 @@
 
 html,
 body {
-	height: 100%;
-	max-height: 100%;
+	height: 100vh; /* Výška obrazovky */
+	overflow: hidden; /* Zabrání scrollování */
 	overscroll-behavior-y: contain;
 }
 
