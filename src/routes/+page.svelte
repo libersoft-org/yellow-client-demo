@@ -27,25 +27,27 @@
 			console.log();
 		}
 	}
-	import { onDestroy } from 'svelte';
+	function adjustPanelHeight() {
+		if ('visualViewport' in window) {
+			// Check if the visualViewport API is supported
 
-	let puvodniVyskaOkna;
-	onMount(() => {
-		puvodniVyskaOkna = window.innerHeight;
-		function handleResize() {
-			if (window.innerHeight < puvodniVyskaOkna) {
-				document.querySelector(".active-panel").style.height = window.innerHeight + "px";
-			} else {
-				document.querySelector(".active-panel").style.height = "100%";
-			}
+			const activePanel = document.querySelector('.active-panel');
+
+			// Initial adjustment
+			activePanel.style.height = `${window.visualViewport.height}px`;
+
+			window.visualViewport.addEventListener('resize', () => {
+				// Adjust the height of .active-panel when the visual viewport size changes
+				activePanel.style.height = `${window.visualViewport.height}px`;
+			});
 		}
+	}
 
-		window.addEventListener("resize", handleResize);
-
-		// Odstraňte posluchač při zničení komponenty
-		onDestroy(() => {
-			window.removeEventListener("resize", handleResize);
-		});
+	onMount(() => {
+		document.addEventListener('DOMContentLoaded', adjustPanelHeight);
+		//if (window.innerWidth <= 794) {
+		//	enterFullscreen();
+		//}
 	});
 </script>
 
