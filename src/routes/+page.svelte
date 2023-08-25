@@ -32,13 +32,13 @@
 	onMount(() => {
 		console.log("wp:"+window.visualViewport);
 		if ('visualViewport' in window) {
-			const activePanel = document.querySelector('.active-panel');
+			const activePanel = document.querySelector('#page');
 			// Initial height adjustment
 			activePanel.style.height = `${window.visualViewport.height}px`;
 			console.log("wph:"+activePanel.style.height);
 
 			window.visualViewport.addEventListener('resize', () => {
-				const activePanel = document.querySelector('.active-panel');
+				const activePanel = document.querySelector('#page');
 				activePanel.style.height = `${window.visualViewport.height}px`;
 				document.querySelector("#message-text-input").innerText= "wphc:"+activePanel.style.height;
 
