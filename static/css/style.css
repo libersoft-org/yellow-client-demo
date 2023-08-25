@@ -200,11 +200,11 @@ input {
 .slide-in {
 	margin-left: -325px;
 	overflow-x: hidden;
-	transition: margin-left 0.3s;
+	transition: margin-left 0.2s ease-in-out, transform 0.2s ease-out;
 }
 
 .slide-in.show {
-	transform: translateX(325px);
+	margin-left: 0px;
 }
 
 #page #chat .container .message,

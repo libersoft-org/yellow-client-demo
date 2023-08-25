@@ -69,6 +69,6 @@
 				<a target="_blank" href="https://yellow.libersoft.org">https://yellow.libersoft.org</a>
 			</div>
 		</div>
-		<DraggableSwipe target={'#menu-toggle'} swipeable={'#menu'} swipeableAmount="325" />
+		<DraggableSwipe target={'#menu-toggle'} swipeable={'#menu'} swipeableAmount="325" swipeabletype="margin-left"/>
 	</div>
 </ToggleComponent>

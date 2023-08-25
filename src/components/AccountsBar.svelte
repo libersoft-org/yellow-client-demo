@@ -29,7 +29,7 @@
 	bind:isOpen
 	toggleElementSelector="#active-account"
 	targetSelector={['.accounts-bar__other-accounts']}
-	toggleClass="invisible"
+	toggleClass="accounts-visible"
 	closeOnEsc={false}
 	closeOnClickOutside={true}
 	modal={false}
@@ -48,7 +48,7 @@
 				<div class="account__arrow" />
 			</div>
 		</div>
-		<div class="accounts-bar__other-accounts {isOpen ? '' : 'invisible'}">
+		<div class="accounts-bar__other-accounts {isOpen ? 'accounts-visible' : ''}">
 			<!-- Ostatní účty zde... -->
 			<div class="accounts">
 				<div class="account">

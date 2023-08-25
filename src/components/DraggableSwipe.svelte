@@ -3,6 +3,7 @@
 	export let target; // cílový prvek, na který se má simulovat kliknutí
 	export let swipeable; //prvek pro swipe
 	export let swipeableAmount = 0;
+	export let swipeabletype ='';
 	let startX;
 	let currentX;
 	let isDragging = false;
@@ -21,7 +22,7 @@
 		currentX = event.touches ? event.touches[0].pageX : event.pageX;
 		const distanceX = currentX - startX;
 		if (distanceX < 0) {
-			let swipes = parseInt(swipeableAmount) + parseInt(distanceX);
+			let swipes =  parseInt(distanceX);
 			document.querySelector(swipeable).style.transform = `translateX(${swipes}px)`;
 		}
 		event.stopPropagation();
@@ -36,12 +37,16 @@
 			const targetElement = document.querySelector(target);
 			if (targetElement) {
 				targetElement.click();
+				setTimeout(() => {document.querySelector(swipeable).style.transform = ""},500);
 			}
+		} else {
+			setTimeout(() => {document.querySelector(swipeable).style.transform = ""},0);
 		}
+
 		document.removeEventListener('touchend', handleEnd);
 		document.removeEventListener('mouseup', handleEnd);
 
-		document.querySelector(swipeable).style.transform = '';
+
 		event.stopPropagation();
 	}
 

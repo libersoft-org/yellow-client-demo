@@ -138,7 +138,7 @@
 	right: 0;
 	bottom: 0;
 	background-color: gray;
-	transition: 0.4s;
+	transition: 0.2s;
 	border-radius: 10px;
 }
 
@@ -150,7 +150,7 @@
 	left: 1px;
 	bottom: 1px;
 	background-color: var(--primary-color);
-	transition: 0.4s;
+	transition: 0.2s;
 	border-radius: 50%;
 }
 
@@ -1095,12 +1095,15 @@
 .accounts-bar__active-account.menu-opened .account__arrow {
 	background-image: url('../img/icons/caret-up.svg');
 }
-
+.accounts-bar__other-accounts.accounts-visible {
+	max-height: 33vh;
+}
 .accounts-bar__other-accounts {
 	/* display: none; */
 	position: relative;
 	width: 100%;
-	max-height: 33vh;
+	max-height: 0;
+	transition: max-height 0.5s ease-in-out;
 	overflow-y: auto;
 	/*top: 114px;*/
 	z-index: -1;
