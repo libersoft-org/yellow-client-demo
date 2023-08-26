@@ -14,8 +14,19 @@
         groupUrlName = generateUrlName(groupName);
     }
 
+    function removeDiacritics(str) {
+        const diacriticsMap = {
+            'á': 'a', 'č': 'c', 'ď': 'd', 'é': 'e', 'ě': 'e', 'í': 'i', 'ň': 'n', 'ó': 'o', 'ř': 'r', 'š': 's', 'ť': 't', 'ú': 'u', 'ů': 'u', 'ý': 'y', 'ž': 'z',
+            'Á': 'A', 'Č': 'C', 'Ď': 'D', 'É': 'E', 'Ě': 'E', 'Í': 'I', 'Ň': 'N', 'Ó': 'O', 'Ř': 'R', 'Š': 'S', 'Ť': 'T', 'Ú': 'U', 'Ů': 'U', 'Ý': 'Y', 'Ž': 'Z',
+            // Můžete přidat další znaky s diakritikou podle potřeby
+        };
+
+        return str.split('').map(char => diacriticsMap[char] || char).join('');
+    }
+
     function generateUrlName(name) {
-        return name.toLowerCase().replace(/\s+/g, '_').replace(/[^\w\-]+/g, '');
+        const nameWithoutDiacritics = removeDiacritics(name);
+        return nameWithoutDiacritics.toLowerCase().replace(/\s+/g, '_').replace(/[^\w\-]+/g, '');
     }
 
     function handleUrlNameChange() {
@@ -71,12 +82,12 @@
         </div>
 
         <div class="element">
-            <label class="element" for="groupUrlName">URL friendly name:</label>
+            <label class="element" for="groupUrlName">URL name:</label>
             <input class="element" type="text" id="groupUrlName" bind:value={groupUrlName} on:input={handleUrlNameChange}>
         </div>
 
         <div class="element">
-            <label class="element" for="groupType">New group type:</label>
+            <label class="element" for="groupType">News group privacy:</label>
             <select class="element" id="groupType" bind:value={groupType}>
                 <option class="element" value="soukroma">Private</option>
                 <option class="element" value="verejna">Public</option>
