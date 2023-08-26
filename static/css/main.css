@@ -1277,7 +1277,7 @@
 	box-shadow: var(--basic-shadow);
 	z-index: 20;
 	padding-bottom: 4px;
-	padding-top;
+	padding-top: 4px;
 }
 
 .input-bar .text {
