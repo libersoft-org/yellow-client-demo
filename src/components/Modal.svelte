@@ -121,9 +121,15 @@
 			closeModal
 		};
 	});
+	function handleOutsideClick(event) {
+		// Kontrola, zda bylo kliknuto mimo oblast modálního okna
+		if (event.target.classList.contains('overlay')) {
+			handleClose();
+		}
+	}
 </script>
 
-<div class="overlay" on:click={handleOverlayClick} />
+<div class="overlay" on:click={handleOutsideClick} />
 {#if !overlay}
 	<div class="modal {classes}" bind:this={modalr}>
 		<div class="modal-header" on:mousedown={handleMouseDown}>
