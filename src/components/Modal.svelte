@@ -6,6 +6,8 @@
 	const dispatch = createEventDispatcher();
 	export let modal; // Exportujte proměnnou modal
 	export let overlay = false;
+	export let classes = null;
+	export let styles = null;
 	export let resizeable = false;
 
 	let modalr;
@@ -118,7 +120,7 @@
 
 <div class="overlay" />
 {#if !overlay}
-	<div class="modal" bind:this={modalr}>
+	<div class="modal {classes}" bind:this={modalr}>
 		<div class="modal-header" on:mousedown={handleMouseDown}>
 			<div class="modal-title">{title}</div>
 			<div class="close-icon" on:click={handleClose} />
@@ -127,7 +129,7 @@
 		{#if resizeable}<div class="resize-handle" on:mousedown={handleResizeMouseDown} /> {/if}
 	</div>
 {:else}
-	<div class="modal-o" bind:this={modalr}>
+	<div class="modal-o {classes}" bind:this={modalr}>
 		<div class="close-icon-o" on:click={handleClose} />
 		<div class="modal-body-o"><slot /></div>
 	</div>

@@ -23,16 +23,33 @@
 
 	function openGroupModal() {
 		showGroupModal = true;
+		document.querySelector('#menu-toggle').click();
 	}
 	function closeGroupModalForm() {
 		showGroupModal = false;
 	}
+
+	import SettingsModalForm from './SettingsModal.svelte'; // Cesta k vaší komponentě
+
+	let showSettingsModal = false;
+
+	function openSettingsModal() {
+		showSettingsModal = true;
+		document.querySelector('#menu-toggle').click();
+	}
+	function closeSettingsModalForm() {
+		showSettingsModal = false;
+	}
+
 	import NewsGroupModalForm from './NewsGroupModalForm.svelte'; // Cesta k vaší komponentě
 
 	let showNewsGroupModal = false;
 
 	function openNewsGroupModal() {
 		showNewsGroupModal = true;
+		document.querySelector('#menu-toggle').click();
+
+
 	}
 	function closeNewsGroupModalForm() {
 		showNewsGroupModal = false;
@@ -63,7 +80,7 @@
 				<img class="menu__item__icon" src="img/icons/contacts.svg" alt="My contacts" />My contacts
 			</div>
 			<div class="menu__item">
-				<img class="menu__item__icon" src="img/icons/calls.svg" alt="Settings" />My calls
+				<img class="menu__item__icon"  src="img/icons/calls.svg" alt="Calls" />My calls
 			</div>
 			<div class="menu__item">
 				<img
@@ -72,7 +89,7 @@
 					alt="Saved messages"
 				/>Saved messages
 			</div>
-			<div class="menu__item">
+			<div class="menu__item" on:click={openSettingsModal}>
 				<img class="menu__item__icon" src="img/icons/settings.svg" alt="Settings" />Settings
 			</div>
 		</div>
@@ -91,4 +108,7 @@
 {/if}
 {#if showNewsGroupModal}
 	<NewsGroupModalForm on:closeModalForm={closeNewsGroupModalForm}/>
+{/if}
+{#if showSettingsModal}
+	<SettingsModalForm on:closeModalForm={closeSettingsModalForm}/>
 {/if}

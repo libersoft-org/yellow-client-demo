@@ -70,7 +70,7 @@
     }
 </script>
 
-<Modal title="New news group" on:close={handleModalClose}>
+<Modal title="New news group" classes="modal-class-width-25" on:close={handleModalClose}>
     <div class="multipart-message">
         <div class="element">
             <div class="image-container">

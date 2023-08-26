@@ -70,7 +70,7 @@
     }
 </script>
 
-<Modal title="New chat group" on:close={handleModalClose}>
+<Modal title="New chat group" classes="modal-class-width-25" on:close={handleModalClose}>
     <div class="multipart-message">
         <div class="element">
             <div class="image-container">
