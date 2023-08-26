@@ -342,6 +342,22 @@
 	border-radius: 10px;
 	padding: 10px;
 }
+.mapContainer {
+	width: 250px;
+	height: 250px;
+}
+.multipart-message .element .mapContainer button.ol-zoom-in, .multipart-message .element .mapContainer button.ol-zoom-out {
+	background-color: #ffffff;
+	color:#1d1d1d;
+	border: 1px solid #dddddd;
+	padding:5px;
+	margin:0;
+	font-height:bold;
+	min-width: 0px;
+	height:auto;
+	border-radius: 2px;
+}
+
 .video-container {
 	position: relative;
 }
