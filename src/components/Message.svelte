@@ -23,6 +23,7 @@
 	let showTranslation = false;
 
 	function toggleTranslation(event) {
+		event.currentTarget.style.pointerType ='default';
 		const messageContent = event.currentTarget.closest('.message__content');
 		const translationDiv = messageContent.querySelector('.translation');
 		if (showTranslation) {
