@@ -455,7 +455,7 @@
 			read: false,
 			secure: false,
 			messagetype: 'video',
-			url: './content/yellow.mp4',
+			url: './content/yellown.mp4',
 			preview: './content/poster.png'
 		}
 	];
