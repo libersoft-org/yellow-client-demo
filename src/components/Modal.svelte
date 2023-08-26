@@ -38,7 +38,12 @@
 			selection.addRange(range);
 		}
 	}
-
+	function handleOverlayClick(event) {
+		// Kontrola, zda bylo kliknuto mimo oblast modálního okna
+		if (event.target === modalr) {
+			handleClose();
+		}
+	}
 	function handleMouseDown(event) {
 		isDragging = true;
 		offsetX = event.clientX - modalr.getBoundingClientRect().left;
@@ -118,7 +123,7 @@
 	});
 </script>
 
-<div class="overlay" />
+<div class="overlay" on:click={handleOverlayClick} />
 {#if !overlay}
 	<div class="modal {classes}" bind:this={modalr}>
 		<div class="modal-header" on:mousedown={handleMouseDown}>

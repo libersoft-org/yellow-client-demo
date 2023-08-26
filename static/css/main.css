@@ -356,6 +356,7 @@
 	min-width: 0px;
 	height:auto;
 	border-radius: 2px;
+	text-align: center;
 }
 
 .video-container {
@@ -691,6 +692,7 @@
 	border-radius: 5px;
 	border: 1px solid #808080;
 	color:#1d1d1d;
+	text-align: left;
 }
 
 .overlay {
