@@ -23,7 +23,7 @@
     }
 </script>
 
-<Modal title="Add new account" on:close={handleModalClose}>
+<Modal title="Add new account" resizeable=true on:close={handleModalClose}>
     <div class="multipart-message">
         <div class="element">
             <label class="element" for="server">Server:</label>
