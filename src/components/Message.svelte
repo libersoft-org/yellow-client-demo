@@ -45,7 +45,7 @@
 		return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
 	}
 	function toggleVideoPlayback(event) {
-		//event.stopPropagation();
+		event.preventDefault();
 		const videoContainer = event.currentTarget.closest('.image-container');
 		const videoElement = videoContainer.querySelector('video');
 		videoElement.controls = true;

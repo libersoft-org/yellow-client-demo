@@ -7,7 +7,8 @@
 
 	export let visible = true;
 	import { afterUpdate } from 'svelte';
-	import Modal from './Modal.svelte'; // Cesta k Modal.svelte
+	import Modal from './Modal.svelte';
+	import {set} from "ol/transform.js"; // Cesta k Modal.svelte
 	let isOpen = false;
 	let currentImage = '';
 	let modal;
@@ -51,7 +52,7 @@
 		addImageClickListeners();
 		refreshMessages();
 		tick;
-		scrollToBottom();
+		setTimeout(()=>{scrollToBottom()},10);
 	});
 
 	let actualMessages = [];
