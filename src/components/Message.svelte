@@ -144,7 +144,7 @@
 				<div class="element">{message}</div>
 				<div class="element">
 					<div
-						class="image-container svelte-{isPaused ? 'paused' : ''}" on:click={toggleVideoPlayback}
+						class="image-container video svelte-{isPaused ? 'paused' : ''}" on:click={toggleVideoPlayback}
 
 					>
 						<div class="icon-container">
