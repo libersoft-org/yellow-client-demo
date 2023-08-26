@@ -468,7 +468,7 @@
 	transition: transform 0.2s ease-in-out;
 }
 .fast-replies.hiddenf {
-	transform: translateY(150%);
+	transform: translateY(250%);
 }
 
 .fast-replies div {
@@ -1271,7 +1271,7 @@
 	/*padding: 1rem;*/
 	-webkit-box-align: end;
 	-ms-flex-align: end;
-	min-height: var(--inputbar-height);
+	min-height: max-content;/*var(--inputbar-height);*/
 	background-color: #1d1d1d;
 	-webkit-box-shadow: var(--basic-shadow);
 	box-shadow: var(--basic-shadow);
