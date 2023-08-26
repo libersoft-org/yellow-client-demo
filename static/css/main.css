@@ -194,8 +194,8 @@
 }
 
 .multipart-message .element .conversation__user-photo {
-	width:48px;
-	height:48px;
+	width:50px;
+	height:50px;
 }
 .multipart-message .conversation__info {
 	overflow-y: hidden;
@@ -316,6 +316,9 @@
 	width: 100%; /* Obrázek bude mít šířku rovnou šířce divu */
 	height: 100%; /* Obrázek bude mít výšku rovnou výšce divu */
 	object-fit: cover; /* Obrázek bude oříznut, pokud nebude odpovídat poměru stran divu */
+}
+.multipart-message .element .image-container.video {
+	cursor:pointer;
 }
 .multipart-message .element .image-container video {
 	width: 100%; /* Obrázek bude mít šířku rovnou šířce divu */
@@ -924,9 +927,10 @@
 
 .conversations-panel .conversation__status__date-time {
 	font-size: 0.8em;
-	color: #808080;
+	color: #1d1d1d;
 	text-align: right;
 	padding-right:5px;
+	font-weight: normal;
 }
 
 .conversations-panel .conversation__status__icons {
