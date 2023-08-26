@@ -564,7 +564,9 @@
 .modal-class-width-75 {
 	width:75vw!important;
 }
-
+.modal-class-width-400px {
+	width:400px!important;
+}
 .modal .multipart-message .element {
 	max-width: 100%;
 	width: 100%;
@@ -587,6 +589,7 @@
 .modal .multipart-message .element .image-container {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 .modal .multipart-message .element .image-container .photo-circle {
 	height: 15em;

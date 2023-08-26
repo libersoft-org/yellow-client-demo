@@ -9,7 +9,7 @@
     }
 </script>
 
-<Modal title="Setting" classes="modal-class-width-25" on:close={handleModalClose}>
+<Modal title="Setting" classes="modal-class-width-400px" on:close={handleModalClose}>
     <div class="settings-list">
         <div class="menu__item">
             <img class="menu__item__icon" src="./img/icons/icon_account.svg" alt="My account" />
