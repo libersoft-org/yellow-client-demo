@@ -15,7 +15,7 @@
 	<img src="img/icons/icon_newsfeed.svg" alt="Newsfeed" class="icon" />
 
 	<!-- Videocalls Icon -->
-	<img src="img/icons/icn_play.svg" alt="Video calls" class="icon" />
+	<img src="img/icons/icon_play_out.svg" alt="Video calls" class="icon" />
 
 	<!-- Videomeetings Icon -->
 	<img src="img/icons/icon_video_meeting.svg" alt="Video meetings" class="icon" />
