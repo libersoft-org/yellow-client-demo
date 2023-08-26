@@ -228,17 +228,18 @@
 }
 
 .multipart-message .element.text-input {
-	width: 300px;           /* Přizpůsobte podle vašich potřeb */
-	max-width: 300px;       /* Aby šířka zůstala neměnná */
-	white-space: pre-wrap;  /* Aby text byl zalomen */
-	word-wrap: break-word;  /* Zalomení delších slov, pokud je to nutné */
-	overflow-y: hidden;       /* Povoluje vertikální posunování, pokud je text delší než výška divu */
-	border: 2px solid gray; /* Pro vizuální indikaci divu */
-	line-height: 1.2;       /* Podle vašeho předchozího nastavení */
-	min-height: 1.2em;
-	height:1.2em;/* Přizpůsobte podle vašich potřeb */
+	width: 300px;
+	max-width: 300px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	overflow-y: hidden;
+	border: 2px solid gray;
+	line-height: 1em;
+	min-height: 1.5em;
+	font-size: 1em;
+	height: 2em;
 	border-radius: 5px;
-	padding:5px;
+	padding: 5px;
 	margin-top: 4px;
 }
 
@@ -286,14 +287,16 @@
 .multipart-message .element.contact {
 	display: flex;
 	background-color: var(--primary-color);
-	padding:5px;
+	padding: 8px;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
 	border-radius: 10px;
+	box-sizing: border-box;
+	align-items: center;
 }
 .multipart-message .element .conversation__info {
-	margin: 0px 10px;
+	margin: 0px 0px 0px 10px;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
@@ -304,7 +307,10 @@
 	height: 250px; /* Příklad výšky divu */
 }
 .multipart-message .audio div img {
-	height: 52px;
+	height: 54px;
+}
+.multipart-message .element .audio {
+	align-items: center;
 }
 .multipart-message .element .image-container img {
 	width: 100%; /* Obrázek bude mít šířku rovnou šířce divu */
@@ -847,6 +853,7 @@
 	border-radius: 20px;
 	padding: 3px;
 	margin-top: 10px;
+	box-sizing: border-box;
 
 }
 
@@ -858,6 +865,7 @@
 	background-color: var(--primary-color);
 	background-size: 15px;
 	animation: move 1s linear infinite;
+	box-sizing: border-box;
 }
 
 @keyframes move {
@@ -902,6 +910,7 @@
 	overflow: hidden;
 	white-space: nowrap;
 	margin-bottom: 8px;
+	font-weight: normal ;
 }
 
 .conversations-panel .conversation__info__last-message {
@@ -910,6 +919,7 @@
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
+	font-weight: normal;
 }
 
 .conversations-panel .conversation__status__date-time {
