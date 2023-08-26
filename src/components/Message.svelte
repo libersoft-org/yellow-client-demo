@@ -48,6 +48,7 @@
 		//event.stopPropagation();
 		const videoContainer = event.currentTarget.closest('.image-container');
 		const videoElement = videoContainer.querySelector('video');
+		videoElement.controls = true;
 		if (videoElement.paused) {
 			videoElement.play();
 		} else {
@@ -125,7 +126,6 @@
 							src={url}
 							playsinline
 							poster={preview}
-							controls
 							on:play={handleVideoPlay}
 							on:pause={handleVideoPause}
 							on:timeupdate={updateTime}
@@ -156,7 +156,6 @@
 							loop
 							playsinline
 							poster={preview}
-							controls
 							on:play={handleVideoPlay}
 							on:pause={handleVideoPause}
 							on:timeupdate={updateTime}
