@@ -9,7 +9,7 @@
     let password = "";
 
     function handleModalClose() {
-        dispatch('closeAddAccountModal');
+        dispatch('closeModalForm');
     }
 
     function addNewAccount() {

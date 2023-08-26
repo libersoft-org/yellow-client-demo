@@ -22,6 +22,17 @@
 			document.removeEventListener('closeToggleComponent', closeHandler);
 		};
 	});
+	import AddAccountModal from './AddAccountModal.svelte'; // Cesta k vaší komponentě
+
+	let showAddAccountModal = false;
+
+	function openAddAccount() {
+		showAddAccountModal = true;
+		document.querySelector('.accounts-bar__other-accounts').click();
+	}
+	function closeAddAccountModalForm() {
+		showAddAccountModal = false;
+	}
 </script>
 
 <ToggleComponent
@@ -101,7 +112,7 @@
 					</div>
 					<div class="account__name">onlyfans@verylongdomain.com</div>
 				</div>
-				<div class="account">
+				<div class="account" on:click={openAddAccount}>
 					<div class="account__photo">
 						<img class="plus-icon" src="./img/icons/icons8-plus.svg" alt="Nobody" />
 					</div>
@@ -112,3 +123,6 @@
 		</div>
 	</div>
 </ToggleComponent>
+{#if showAddAccountModal}
+	<AddAccountModal on:closeModalForm={closeAddAccountModalForm}/>
+{/if}
