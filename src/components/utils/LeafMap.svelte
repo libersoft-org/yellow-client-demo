@@ -47,6 +47,11 @@
 		width: 250px;
 		height: 250px;
 	}
+    .mapContainer button {
+        background-color: #cccccc;
+        color:#1d1d1d;
+        border: 1px solid black;
+    }
 </style>
 
 <div class="mapContainer" bind:this={mapElement}></div>
