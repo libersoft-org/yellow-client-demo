@@ -4,7 +4,7 @@
     let items = [
         { id: 0, title: "Conversations", icon: "icon_nemp_v4.svg", hasDot: true },
         { id: 1, title: "Newsfeed", icon: "icon_newsfeed.svg", hasDot: true },
-        { id: 2, title: "Video", icon: "icon_videocall.svg", hasDot: true },
+        { id: 2, title: "Video", icon: "icn_playn.svg", hasDot: true },
         { id: 3, title: "Video meeting", icon: "icon_video_meeting.svg", hasDot: true },
         { id: 4, title: "Forum", icon: "icon_help.svg", hasDot: false },
         { id: 5, title: "Events", icon: "icon_event.svg", hasDot: false },
