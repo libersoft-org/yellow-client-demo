@@ -1,4 +1,6 @@
 <script>
+    import {onMount} from "svelte";
+
     let draggedItem = null;
 
     function handleDragStart(event) {
@@ -52,6 +54,23 @@
     function toggleExpanded() {
         isExpanded = !isExpanded;
     }
+    onMount(() => {
+        const icons = document.querySelectorAll('.social-icon-container');
+        icons.forEach(icon => {
+            icon.addEventListener('touchstart', handleDragStart, false);
+            icon.addEventListener('touchmove', handleDragEnter, false);
+            icon.addEventListener('touchend', handleDragEnd, false);
+        });
+
+        return () => {
+            // Odebrání posluchačů událostí při zničení komponenty
+            icons.forEach(icon => {
+                icon.removeEventListener('touchstart', handleDragStart);
+                icon.removeEventListener('touchmove', handleDragEnter);
+                icon.removeEventListener('touchend', handleDragEnd);
+            });
+        };
+    });
 </script>
 
 <div class="social-icons" class:expanded={isExpanded}>
