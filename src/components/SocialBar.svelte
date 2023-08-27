@@ -7,6 +7,7 @@
         draggedItem = event.target.closest('.social-icon-container');
         event.dataTransfer.effectAllowed = 'move';
         event.dataTransfer.setData('text/plain', '');
+        event.preventDefault();
     }
 
     function handleDragEnter(event) {
@@ -24,6 +25,7 @@
                 }
             }
         }
+        event.preventDefault()
     }
 
     function handleDrop(event) {
@@ -33,6 +35,7 @@
 
     function handleDragEnd(event) {
         draggedItem = null;
+        event.preventDefault()
     }
 
     function handleDragOver(event) {
@@ -82,7 +85,7 @@
              on:drop={handleDrop}
              on:dragenter={handleDragEnter}
              on:dragend={handleDragEnd}>
-            <img src="img/icons/icon_nemp_v4.svg" alt="Conversations" class="icon"/>
+            <img src="img/icons/icon_nemp_v4.svg" alt="Conversations" class="icon" draggable="false"/>
             <div class="dot">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="12" cy="12" r="6" fill="red"/>
@@ -97,7 +100,7 @@
              on:drop={handleDrop}
              on:dragenter={handleDragEnter}
              on:dragend={handleDragEnd}>
-            <img src="img/icons/icon_help.svg" alt="Forum" class="icon"/>
+            <img src="img/icons/icon_help.svg" alt="Forum" class="icon" draggable="false"/>
         </div>
 
         <!-- Events Icon -->
@@ -107,7 +110,7 @@
              on:drop={handleDrop}
              on:dragenter={handleDragEnter}
              on:dragend={handleDragEnd}>
-            <img src="img/icons/icon_event.svg" alt="Events" class="icon"/>
+            <img src="img/icons/icon_event.svg" alt="Events" class="icon" draggable="false"/>
         </div>
 
         <!-- Blogs Icon -->
@@ -117,7 +120,7 @@
              on:drop={handleDrop}
              on:dragenter={handleDragEnter}
              on:dragend={handleDragEnd}>
-            <img src="img/icons/icon_help.svg" alt="Blogs" class="icon"/>
+            <img src="img/icons/icon_help.svg" alt="Blogs" class="icon" draggable="false"/>
         </div>
 
         <!-- File sharing Icon -->
@@ -127,7 +130,7 @@
              on:drop={handleDrop}
              on:dragenter={handleDragEnter}
              on:dragend={handleDragEnd}>
-            <img src="img/icons/icon_file_sharing.svg" alt="File sharing" class="icon"/>
+            <img src="img/icons/icon_file_sharing.svg" alt="File sharing" class="icon" draggable="false"/>
         </div>
 
         <!-- E-shops Icon -->
@@ -137,7 +140,7 @@
              on:drop={handleDrop}
              on:dragenter={handleDragEnter}
              on:dragend={handleDragEnd}>
-            <img src="img/icons/icon_help.svg" alt="E-shops" class="icon"/>
+            <img src="img/icons/icon_help.svg" alt="E-shops" class="icon" draggable="false"/>
         </div>
 
         <!-- Marketplace (with auctions) Icon -->
@@ -147,7 +150,7 @@
              on:drop={handleDrop}
              on:dragenter={handleDragEnter}
              on:dragend={handleDragEnd}>
-            <img src="img/icons/icon_help.svg" alt="Marketplace" class="icon"/>
+            <img src="img/icons/icon_help.svg" alt="Marketplace" class="icon" draggable="false"/>
         </div>
 
         <!-- Maps Icon -->
@@ -157,7 +160,7 @@
              on:drop={handleDrop}
              on:dragenter={handleDragEnter}
              on:dragend={handleDragEnd}>
-            <img src="img/icons/icon_map_pin.svg" alt="Maps" class="icon"/>
+            <img src="img/icons/icon_map_pin.svg" alt="Maps" class="icon" draggable="false"/>
         </div>
 
         <!-- Calendar Icon -->
@@ -167,7 +170,7 @@
              on:drop={handleDrop}
              on:dragenter={handleDragEnter}
              on:dragend={handleDragEnd}>
-            <img src="img/icons/icon_calendar.svg" alt="Calendar" class="icon"/>
+            <img src="img/icons/icon_calendar.svg" alt="Calendar" class="icon" draggable="false"/>
         </div>
 
         <!-- Tasks Icon -->
@@ -177,7 +180,7 @@
              on:drop={handleDrop}
              on:dragenter={handleDragEnter}
              on:dragend={handleDragEnd}>
-            <img src="img/icons/icon_task.svg" alt="Tasks" class="icon"/>
+            <img src="img/icons/icon_task.svg" alt="Tasks" class="icon" draggable="false"/>
         </div>
 
         <!-- Donations Icon -->
@@ -187,7 +190,7 @@
              on:drop={handleDrop}
              on:dragenter={handleDragEnter}
              on:dragend={handleDragEnd}>
-            <img src="img/icons/icon_donations.svg" alt="Donations" class="icon"/>
+            <img src="img/icons/icon_donations.svg" alt="Donations" class="icon" draggable="false"/>
         </div>
 
         <!-- Surveys Icon -->
@@ -197,7 +200,7 @@
              on:drop={handleDrop}
              on:dragenter={handleDragEnter}
              on:dragend={handleDragEnd}>
-            <img src="img/icons/icon_help.svg" alt="Surveys" class="icon"/>
+            <img src="img/icons/icon_help.svg" alt="Surveys" class="icon" draggable="false"/>
         </div>
 
 
@@ -208,7 +211,7 @@
              on:drop={handleDrop}
              on:dragenter={handleDragEnter}
              on:dragend={handleDragEnd}>
-            <img src="img/icons/icon_help.svg" alt="Payments" class="icon"/>
+            <img src="img/icons/icon_help.svg" alt="Payments" class="icon" draggable="false"/>
         </div>
 
         <!-- Media feed Icon -->
@@ -218,7 +221,7 @@
              on:drop={handleDrop}
              on:dragenter={handleDragEnter}
              on:dragend={handleDragEnd}>
-            <img src="img/icons/icon_help.svg" alt="Media feed" class="icon"/>
+            <img src="img/icons/icon_help.svg" alt="Media feed" class="icon" draggable="false"/>
         </div>
 
         <!-- Games Icon -->
@@ -228,7 +231,7 @@
              on:drop={handleDrop}
              on:dragenter={handleDragEnter}
              on:dragend={handleDragEnd}>
-            <img src="img/icons/icon_help.svg" alt="Games" class="icon"/>
+            <img src="img/icons/icon_help.svg" alt="Games" class="icon" draggable="false"/>
         </div>
 
         <!-- Dating Icon -->
@@ -238,7 +241,7 @@
              on:drop={handleDrop}
              on:dragenter={handleDragEnter}
              on:dragend={handleDragEnd}>
-            <img src="img/icons/icon_help.svg" alt="Dating" class="icon"/>
+            <img src="img/icons/icon_help.svg" alt="Dating" class="icon" draggable="false"/>
         </div>
     </div>
     <div class="social-arrow" class:expanded={isExpanded} on:click={toggleExpanded}></div>

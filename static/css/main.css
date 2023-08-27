@@ -68,6 +68,7 @@
 	display: inline-flex;
 	padding:5px;
 	align-content: center;
+	touch-action: none;
 }
 .social-icons .icon {
 	width: 48px;
