@@ -234,28 +234,4 @@
         height: 24px;
         z-index: 11;
     }
-
-    .social-arrow {
-        width: 32px;
-        position: absolute;
-        height: 64px;
-        background: url(../img/icons/caret-down.svg) no-repeat center center;
-        background-size: 13px 13px;
-        margin-left: auto;
-        top: 0px;
-        right: 0px;
-        cursor: pointer;
-    }
-
-    .social-arrow.expanded {
-        width: 32px;
-        position: absolute;
-        height: 64px;
-        background: url(../img/icons/caret-up.svg) no-repeat center center;
-        background-size: 13px 13px;
-        margin-left: auto;
-        top: 0px;
-        right: 0px;
-        cursor: pointer;
-    }
 </style>
