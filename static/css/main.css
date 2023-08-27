@@ -59,7 +59,7 @@
 	flex-wrap: wrap; /* Toto zajistí, že položky přejdou na další řádek, pokud přesáhnou šířku rodičovského prvku */
 	justify-content: center; /* Zarovná ikony k levému okraji */
 	background-color: #1d1d1d;
-	margin-right:15px;
+	margin-right:25px;
 	min-height:50px;
 }
 .social-icons-block, .social-icons-block:focus, .social-icons-block:active {
