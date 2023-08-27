@@ -3,21 +3,25 @@
 
     let items = [
         { id: 0, title: "Conversations", icon: "icon_nemp_v4.svg", hasDot: true },
-        { id: 1, title: "Forum", icon: "icon_help.svg", hasDot: false },
-        { id: 2, title: "Events", icon: "icon_event.svg", hasDot: false },
-        { id: 3, title: "Blogs", icon: "icon_help.svg", hasDot: false },
-        { id: 4, title: "File sharing", icon: "icon_file_sharing.svg", hasDot: false },
-        { id: 5, title: "E-shops", icon: "icon_help.svg", hasDot: false },
-        { id: 6, title: "Marketplace (with auctions)", icon: "icon_help.svg", hasDot: false },
-        { id: 7, title: "Maps", icon: "icon_map_pin.svg", hasDot: false },
-        { id: 8, title: "Calendar", icon: "icon_calendar.svg", hasDot: false },
-        { id: 9, title: "Tasks", icon: "icon_task.svg", hasDot: false },
-        { id: 10, title: "Donations", icon: "icon_donations.svg", hasDot: false },
-        { id: 11, title: "Surveys", icon: "icon_help.svg", hasDot: false },
-        { id: 12, title: "Payments", icon: "icon_help.svg", hasDot: false },
-        { id: 13, title: "Media feed", icon: "icon_help.svg", hasDot: false },
-        { id: 14, title: "Games", icon: "icon_help.svg", hasDot: false },
-        { id: 15, title: "Dating", icon: "icon_help.svg", hasDot: false }
+        { id: 1, title: "Newsfeed", icon: "icon_newsfeed.svg", hasDot: true },
+        { id: 2, title: "Video", icon: "icon_videocall.svg", hasDot: true },
+        { id: 3, title: "Video meeting", icon: "icon_video_meeting.svg", hasDot: true },
+        { id: 4, title: "Forum", icon: "icon_help.svg", hasDot: false },
+        { id: 5, title: "Events", icon: "icon_event.svg", hasDot: false },
+        { id: 6, title: "Blogs", icon: "icon_help.svg", hasDot: false },
+        { id: 7, title: "File sharing", icon: "icon_file_sharing.svg", hasDot: false },
+        { id: 8, title: "E-shops", icon: "icon_help.svg", hasDot: false },
+        { id: 9, title: "Marketplace (with auctions)", icon: "icon_help.svg", hasDot: false },
+        { id: 10, title: "Maps", icon: "icon_map_pin.svg", hasDot: false },
+        { id: 11, title: "Calendar", icon: "icon_calendar.svg", hasDot: false },
+        { id: 12, title: "Tasks", icon: "icon_task.svg", hasDot: false },
+        { id: 13, title: "Donations", icon: "icon_donations.svg", hasDot: false },
+        { id: 14, title: "Crowdfunding", icon: "icon_help.svg", hasDot: false },
+        { id: 15, title: "Cloud storage", icon: "icon_file.svg", hasDot: true },
+        { id: 16, title: "Payments", icon: "icon_help.svg", hasDot: false },
+        { id: 17, title: "Media feed", icon: "icon_help.svg", hasDot: false },
+        { id: 18, title: "Games", icon: "icon_help.svg", hasDot: false },
+        { id: 19, title: "Dating", icon: "icon_help.svg", hasDot: false }
     ].map(item => ({ ...item, type: 'icon' }));
 
     let isExpanded = false;
