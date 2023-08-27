@@ -37,6 +37,7 @@
 	--basic-shadow-mine: 4px 0px 8px -3px var(--basic-shadow-color),
 		0px 4px 8px -3px var(--basic-shadow-color);
 	--basic-shadow-right: 4px 0px 8px -3px var(--basic-shadow-color);
+	--scrollbar-background: hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 30%));
 }
 
 *:focus {

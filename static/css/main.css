@@ -878,34 +878,20 @@
 	height: 100px;
 }
 
-/* Pro WebKit prohlížeče (Chrome, Safari) */
+* {
+	scrollbar-color: var(--primary-color) var(--scrollbar-background);
+	scrollbar-width: thin;
+}
+
 ::-webkit-scrollbar {
-	width: 6px;
-	background-color: transparent;
+	width: 10px;
+	background-color: var(--scrollbar-background);
 }
 
 ::-webkit-scrollbar-thumb {
-	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
-	background-color: var(--primary-color-15);
-	border-radius: 8px;
+	background-color: var(--primary-color);
+	border-radius: 5px;
 }
-
-/* Pro Firefox */
-* {
-	scrollbar-color: var(--primary-color-15) transparent;
-}
-
-/* Pro Internet Explorer a starší verze Microsoft Edge - i když tyto prohlížeče již nejsou široce podporovány */
-*::-ms-scrollbar {
-	width: 6px;
-}
-
-*::-ms-scrollbar-thumb {
-	background-color: var(--primary-color-15);
-	border-radius: 8px;
-}
-
-
 .conversations-panel {
 	height: 100%;
 	position: relative;
