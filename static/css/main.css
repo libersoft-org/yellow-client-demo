@@ -879,18 +879,18 @@
 }
 
 * {
-	scrollbar-color: var(--primary-color) var(--scrollbar-background);
+	scrollbar-color: var(--primary-color-15) var(--scrollbar-background);
 	scrollbar-width: thin;
 }
 
 ::-webkit-scrollbar {
-	width: 10px;
+	width: 8px;
 	background-color: var(--scrollbar-background);
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: var(--primary-color);
-	border-radius: 5px;
+	background-color: var(--primary-color-15);
+	border-radius: 4px;
 }
 .conversations-panel {
 	height: 100%;
