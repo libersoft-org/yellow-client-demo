@@ -18,7 +18,7 @@
 
 .panel-left {
 	display: grid;
-	grid-template-rows: var(--searchbar-height) var(--searchbar-height) var(--accountbar-height) 1fr auto;
+	grid-template-rows: var(--searchbar-height) auto var(--accountbar-height) 1fr auto;
 	background-color: #fff;
 	overflow-y: hidden;
 	overflow-x: hidden;
@@ -39,13 +39,36 @@
 }
 
 .social-icons {
+	position: relative;
+	z-index: 1;
 	display: flex;
-	justify-content: space-evenly;
+	flex-wrap: wrap; /* Toto zajistí, že položky přejdou na další řádek, pokud přesáhnou šířku rodičovského prvku */
+	justify-content: center; /* Zarovná ikony k levému okraji */
 	background-color: #1d1d1d;
-	padding-top: 8px;
-	/*padding-bottom: 8px;*/
+	max-height: var(--searchbar-height);
+	transition: max-height 0.2s ease-in-out;
+}
+.social-icons.expanded {
+	max-height: calc(3*var(--searchbar-height));
+}
+	/*gap: 10px; /* Vzdálenost mezi ikonami */
+
+.social-icons .social-icons-block {
+	margin-top:5px;
+	display: flex;
+	flex-wrap: wrap; /* Toto zajistí, že položky přejdou na další řádek, pokud přesáhnou šířku rodičovského prvku */
+	justify-content: center; /* Zarovná ikony k levému okraji */
+	background-color: #1d1d1d;
+	margin-right:15px;
 }
 
+.social-icons .social-icon-container {
+	width: 48px;
+	height:48px;
+	display: inline-flex;
+	padding:5px;
+	align-content: center;
+}
 .social-icons .icon {
 	width: 48px;
 	height: 48px;
@@ -568,6 +591,9 @@
 .modal-class-width-400px {
 	width:400px!important;
 }
+.modal-class-qrmodal {
+ height:660px;
+}
 .modal .multipart-message .element {
 	max-width: 100%;
 	width: 100%;
@@ -588,6 +614,11 @@
 	display: flex;
 }
 .modal .multipart-message .element .image-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.modal .multipart-message .element.image-container {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -818,6 +849,7 @@
 	height: 100px;
 }
 
+/* Pro WebKit prohlížeče (Chrome, Safari) */
 ::-webkit-scrollbar {
 	width: 6px;
 	background-color: transparent;
@@ -829,11 +861,12 @@
 	border-radius: 8px;
 }
 
+/* Pro Firefox */
 * {
-	scrollbar-width: thin;
 	scrollbar-color: var(--primary-color-15) transparent;
 }
 
+/* Pro Internet Explorer a starší verze Microsoft Edge - i když tyto prohlížeče již nejsou široce podporovány */
 *::-ms-scrollbar {
 	width: 6px;
 }
@@ -842,6 +875,8 @@
 	background-color: var(--primary-color-15);
 	border-radius: 8px;
 }
+
+
 .conversations-panel {
 	height: 100%;
 	overflow-y: auto;
@@ -850,6 +885,7 @@
 	flex: 1; /* Takes up remaining space after accounts-bar and search-bar */
 	overflow-y: auto; /* Adds scrollbar if content overflows */
 	transition: filter 0.3s;
+	z-index: 1;
 }
 .conversations-panel .conversation {
 	display: -webkit-box;
@@ -1573,7 +1609,7 @@
 
 
 .conversation-item-hidden {
-	opacity: 0px;
+	opacity: 0;
 	max-height: 0;
 	padding:0px!important;
 	overflow: hidden;

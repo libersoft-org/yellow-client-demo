@@ -72,8 +72,14 @@
 	}
 
 	onMount(() => {
+
 		modalr.style.left = (window.innerWidth - modalr.offsetWidth) / 2 + 'px';
 		modalr.style.top = (window.innerHeight - modalr.offsetHeight) / 2 + 'px';
+
+		// Pokud jsou definovány vlastní styly, přidejte je k hlavnímu divu
+		console.log("XXXX");
+		console.log("SX:"+styles);
+
 	});
 	function handleClose() {
 		console.log('sin1');
@@ -115,12 +121,6 @@
 		document.removeEventListener('mouseup', handleResizeMouseUp);
 	}
 
-	// Po vytvoření komponenty nastavte modal na aktuální instanci
-	onMount(() => {
-		modal = {
-			closeModal
-		};
-	});
 	function handleOutsideClick(event) {
 		// Kontrola, zda bylo kliknuto mimo oblast modálního okna
 		if (event.target.classList.contains('overlay')) {

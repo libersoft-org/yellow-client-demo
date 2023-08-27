@@ -31,8 +31,12 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@root/passphrase": "^1.1.0",
+		"@scure/bip39": "^1.2.1",
+		"bip39": "^3.1.0",
 		"lottie-web": "^5.12.2",
 		"ol": "^7.5.1",
+		"qrcode": "^1.5.3",
 		"wavesurfer.js": "^7.1.5"
 	}
 }

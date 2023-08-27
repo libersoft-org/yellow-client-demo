@@ -7,8 +7,18 @@
     function handleModalClose() {
         dispatch('closeModalForm');
     }
-</script>
+    import PrivateKeysModal from './PrivateKeysModal.svelte'; // Cesta k vaší komponentě
 
+    let showPrivateKeysModal = false;
+
+    function openPrivateKeysModal() {
+        showPrivateKeysModal = true;
+    }
+    function closePrivateKeysModal() {
+        showPrivateKeysModal = false;
+
+    }
+</script>
 <Modal title="Setting" classes="modal-class-width-400px" on:close={handleModalClose}>
     <div class="settings-list">
         <div class="menu__item">
@@ -27,7 +37,7 @@
             <img class="menu__item__icon" src="./img/icons/icon_security.svg" alt="Privacy & security" />
             Privacy & security
         </div>
-        <div class="menu__item">
+        <div class="menu__item" on:click={openPrivateKeysModal}>
             <img class="menu__item__icon" src="./img/icons/icon_secured.svg" alt="Private keys" />
             Private keys
         </div>
@@ -43,8 +53,11 @@
             <img class="menu__item__icon" src="./img/icons/icon_newsfeed_filled.svg" alt="Other" />
             Other
         </div>
-    </div>
+    </div> s
 </Modal>
+{#if showPrivateKeysModal}
+    <PrivateKeysModal classa=".settings-modal" on:closePModalForm={closePrivateKeysModal}/>
+{/if}
 
 <style>
     .settings-list {
