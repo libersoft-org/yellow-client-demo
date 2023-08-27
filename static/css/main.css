@@ -60,6 +60,10 @@
 	justify-content: center; /* Zarovná ikony k levému okraji */
 	background-color: #1d1d1d;
 	margin-right:15px;
+	min-height:50px;
+}
+.social-icons-block, .social-icons-block:focus, .social-icons-block:active {
+	outline: none!important;
 }
 
 .social-icons .social-icon-container {
@@ -68,12 +72,12 @@
 	display: inline-flex;
 	padding:5px;
 	align-content: center;
-	touch-action: none;
+	cursor: pointer!important;
 }
 .social-icons .icon {
 	width: 48px;
 	height: 48px;
-	cursor: default; /* This ensures that the cursor doesn't change to a pointer on hover */
+	cursor: pointer; /* This ensures that the cursor doesn't change to a pointer on hover */
 }
 .social-arrow {
 	width: 32px;
@@ -463,6 +467,7 @@
 	max-height: 1000px;
 	overflow:hidden;
 	transition: max-height 0.2s ease-in-out;
+	position: relative;
 }
 .group-conversation.group-visible {
 	max-height: 43px;
@@ -903,6 +908,7 @@
 
 .conversations-panel {
 	height: 100%;
+	position: relative;
 	overflow-y: auto;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
