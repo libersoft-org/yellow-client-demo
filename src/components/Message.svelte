@@ -21,6 +21,7 @@
 	let currentTime = '0:00';
 	let duration = '0:00';
 	let showTranslation = false;
+	let playedstart = false;
 
 	function toggleTranslation(event) {
 		event.currentTarget.style.pointerType ='default';
@@ -46,14 +47,18 @@
 		return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
 	}
 	function toggleVideoPlayback(event) {
-		event.preventDefault();
-		const videoContainer = event.currentTarget.closest('.image-container');
-		const videoElement = videoContainer.querySelector('video');
-		videoElement.controls = true;
-		if (videoElement.paused) {
-			videoElement.play();
-		} else {
-			videoElement.pause();
+		if (!playedstart) {
+			event.preventDefault();
+			playedstart - true;
+			const videoContainer = event.currentTarget.closest('.image-container');
+			const videoElement = videoContainer.querySelector('video');
+			videoElement.controls = true;
+			if (videoElement.paused) {
+				videoElement.play();
+			} else {
+				videoElement.pause();
+			}
+
 		}
 	 // Zastavte výchozí událost
 
@@ -154,7 +159,6 @@
 						<video
 							id="video-{uniqueId}"
 							src={url}
-							loop
 							playsinline
 							poster={preview}
 							on:play={handleVideoPlay}
@@ -164,6 +168,10 @@
 							<track kind="captions" />
 						</video>
 					</div>
+				</div>
+				<div class="element video-time-info">
+					<span>{currentTime}</span>
+					<span>{duration}</span>
 				</div>
 			</div>
 		{/if}

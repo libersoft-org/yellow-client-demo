@@ -53,7 +53,7 @@
             <img class="menu__item__icon" src="./img/icons/icon_newsfeed_filled.svg" alt="Other" />
             Other
         </div>
-    </div> s
+    </div>
 </Modal>
 {#if showPrivateKeysModal}
     <PrivateKeysModal classa=".settings-modal" on:closePModalForm={closePrivateKeysModal}/>
