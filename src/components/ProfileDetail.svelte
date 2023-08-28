@@ -88,10 +88,10 @@
 </div>
 <style>
     .profile-detail {
-        margin: 0px 0px 64px 0px;
+        margin: 0px 0px 0px 0px;
         width: 100%;
         overflow-x: hidden;
-        padding-top: 16px;
+        /* padding-top: 16px; */
     }
     .profile-detail .profile-main {
         display: flex;
