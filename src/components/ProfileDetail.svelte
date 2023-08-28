@@ -148,6 +148,7 @@
         display: flex;
         overflow: hidden;
         flex-wrap: wrap;
+        padding:8px;
     }
     .profile-photo-info .profile-info {
         overflow: hidden;
@@ -165,8 +166,8 @@
 
     .profile-menu {
         flex-grow: 1;
-        min-width:150px;
-        max-width: 200px;
+        min-width:200px;
+        max-width: 216px;
         overflow: hidden;
         box-sizing: border-box;
         height: 200px;
@@ -186,7 +187,7 @@
     .profile-photo-container img {
         width: 200px;
         height: 200px;
-        box-shadow: var(--basic-shadow);
+        box-shadow: 0 0 8px 2px #1d1d1d3d;
     }
 
     .element {
