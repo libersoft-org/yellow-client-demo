@@ -460,7 +460,7 @@
 			secure: false,
 			messagetype: 'video',
 			url: './content/video.mp4',
-			preview: './content/poster.png'
+			preview: './content/poster.'
 		}
 	];
 
