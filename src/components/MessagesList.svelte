@@ -459,7 +459,7 @@
 			read: false,
 			secure: false,
 			messagetype: 'video',
-			url: './content/yellown.mp4',
+			url: './content/video.mp4',
 			preview: './content/poster.png'
 		}
 	];
