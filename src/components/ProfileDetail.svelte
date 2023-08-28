@@ -1,6 +1,24 @@
 <script>
+    import {
+        activeContactIdStore,
+        contactSelected
+    } from "../stores/mainstore.js";
+
     export let contactId;
+    function backButtonClick() {
+        contactSelected.set(false);
+        activeContactIdStore.set(null);
+        document.querySelector(`.panel-left`).classList.add('active-panel');
+        document.querySelector(`.panel-right`).classList.remove('active-panel');
+        window.adjustPanels();
+    }
 </script>
+<div class="profile-container">
+    <div class="back-button">
+        <a class="icon" on:click={backButtonClick}><img src="img/icons/icon_back.svg" alt="search" /></a
+        >
+    </div>
+
 <div class="profile-detail">
     <!-- První div -->
     <div style="display: flex; width: 100%;">
@@ -59,11 +77,18 @@
         </div>
     </div>
 </div>
+</div>
 <style>
     .profile-detail {
-        margin: 32px 0px 64px 0px;
+        margin: 0px 0px 64px 0px;
         width: 100%;
         overflow-x: hidden;
+        padding-top: 16px;
+    }
+    .profile-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
     }
     .profile-detail > div:first-child {
         display: flex;
@@ -83,6 +108,7 @@
         flex-wrap: wrap; /* Povolí zalomení položek flexboxu */
         justify-content: space-between;
         container-type: inline-size;
+        box-shadow: var(--basic-shadow);
     }
     .second-container-semi .element {
         /* min-width: 125px; */
@@ -101,7 +127,7 @@
     }
 
     .profile-photo-container {
-        padding: 0px 32px 0px 0px;
+        padding:0px 0px 0px 0px;
         width: 200px;
     }
     .profile-menu {
@@ -116,12 +142,15 @@
     }
     .profile-menu .element {
         border-radius: 5px;
-        margin: 0;
+        margin: 8px;
+
         max-height:32px;
+        box-shadow: 0 0 8px 2px #1d1d1d3d;
     }
     .profile-photo-container img{
         width:200px;
         height:200px;
+        box-shadow: var(--basic-shadow);
     }
     .element {
         width: auto;
@@ -146,5 +175,18 @@
     .selected-content {
         margin-top: 25px;
         text-align: center;
+    }
+    .back-button {
+        height: var(--userbar-height);
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+    }
+    .back-button a {
+        height: var(--userbar-height);
+    }
+    .back-button img {
+        width:48px;
+        height:48px;
     }
 </style>

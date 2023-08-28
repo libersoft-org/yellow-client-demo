@@ -46,11 +46,11 @@
 
 <div class="user-bar" class:hidden-bar={!isConversationSelected}>
 	<div class="user-bar-container">
-	<div class="back-button">
-		<a class="icon" on:click={backButtonClick}><img src="img/icons/icon_back.svg" alt="search" /></a
-		>
-	</div>
 	<div class="conversation-user">
+		<div class="back-button">
+			<a class="icon" on:click={backButtonClick}><img src="img/icons/icon_back.svg" alt="search" /></a
+			>
+		</div>
 		{#if idConversation === 1}
 			<div class="conversation-user__photo" on:click={() => (showModal = true)}>
 				<img
