@@ -1,6 +1,6 @@
 <script>
 	import ToggleComponent from './ToggleComponent.svelte';
-	import { menuOpen, toggleMenu } from '../stores/mainstore.js';
+	import { menuOpen, toggleMenu, actualMVC } from '../stores/mainstore.js';
 	import { onMount, onDestroy } from 'svelte';
 	import DraggableSwipe from './DraggableSwipe.svelte';
 
@@ -76,7 +76,7 @@
 				<img class="menu__item__icon" src="img/icons/newsfeed.svg" alt="New news group" />New news
 				group
 			</div>
-			<div class="menu__item">
+			<div class="menu__item" on:click={()=>{$actualMVC = 'contact';document.querySelector('#menu-toggle').click()}}>
 				<img class="menu__item__icon" src="img/icons/contacts.svg" alt="My contacts" />My contacts
 			</div>
 			<div class="menu__item">

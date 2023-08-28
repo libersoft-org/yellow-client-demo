@@ -17,6 +17,21 @@
 		var(--primary-color-sat),
 		calc(var(--primary-color-lig) - 35%)
 	);
+	--primary-color-p15: hsl(
+			var(--primary-color-hue),
+			var(--primary-color-sat),
+			calc(var(--primary-color-lig) + 15%)
+	);
+	--primary-color-p35: hsl(
+			var(--primary-color-hue),
+			var(--primary-color-sat),
+			calc(var(--primary-color-lig) + 35%)
+	);
+	--primary-color-p44: hsl(
+			var(--primary-color-hue),
+			var(--primary-color-sat),
+			calc(var(--primary-color-lig) + 44%)
+	);
 	--secondary-color: #336699;
 	--panel-left-width: 597px;
 	--resizer-width: 10px;

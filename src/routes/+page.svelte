@@ -11,6 +11,8 @@
 	import Resizer from '../components/Resizer.svelte';
 	import SocialBar from '../components/SocialBar.svelte';
 	import { setupGlobalListeners } from '../functions/globalListeners.js';
+	import {actualMVC} from "../stores/mainstore.js";
+	import ContactDetail from "../components/ContactDetail.svelte";
 
 	setupGlobalListeners();
 
@@ -76,8 +78,12 @@
 	</div>
 	<Resizer leftSelector=".panel-left" rightSelector=".panel-right" />
 	<div class="panel panel-right">
-		<UserBar id="f-user-bar" />
-		<ConversationDetail id="f-conversation-detail" />
-		<InputBar id="f-input-bar" />
+		{#if $actualMVC ==='conversation'}
+			<UserBar id="f-user-bar" />
+			<ConversationDetail id="f-conversation-detail" />
+			<InputBar id="f-input-bar" />
+		{:else if $actualMVC === 'contact'}
+			<ContactDetail id="f-conversation-detail"/>
+		{/if}
 	</div>
 </div>

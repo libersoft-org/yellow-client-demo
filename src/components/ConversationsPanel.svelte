@@ -1,14 +1,18 @@
 <script>
-	import { accountsIsOpen, conversationSelected } from '../stores/mainstore.js';
+	import {accountsIsOpen, contactSelected, conversationSelected} from '../stores/mainstore.js';
 	import ConversationItem from './ConversationItem.svelte';
+	import ContactItem from "./ContactItem.svelte";
 	import { scrollToBottomStore } from '../stores/mainstore.js';
 	import { get } from 'svelte/store';
 	import { tick } from 'svelte';
 	import { activeConversationIdStore } from '../stores/mainstore.js';
+	import {actualMVC} from '../stores/mainstore.js';
 	import MultiTick from './MultiTick.svelte';
 
 	let activeConversationId = null;
 	activeConversationIdStore.subscribe((value) => (activeConversationId = value));
+	let activeContactId = null;
+	activeConversationIdStore.subscribe((value) => (activeContactId = value));
 	let blurred;
 
 	let groups = ['Work', 'Family', 'Friend', 'Others', 'Blocked'];
@@ -18,6 +22,8 @@
 		activeConversationIdStore.set(id);
 		conversationSelected.set(id !== null);
 		activeConversationId = id;
+		contactSelected.set(id !== null);
+		activeContactId =id;
 		tick;
 		const scrollToBottom = get(scrollToBottomStore);
 		if (scrollToBottom) {
@@ -289,16 +295,19 @@
 			<li class = "group-header" on:click={toggleConversations}>
 				<div class="group-icon"></div>
 				<div class="group-name">{groups[groupIndex]}</div>
+				{#if $actualMVC === 'conversation'}
 				<div class="conversation__status__icons ingroup">
 					<div class="conversation__status__icons__unread-messages">
 						{group[0].unreadMessages}
 					</div>
 				</div>
+				{/if}
 				<div class="group-arrow"></div>
 			</li>
 
 			{#each group as conversation}
 				<li class="group-item">
+					{#if $actualMVC === 'conversation' }
 					<ConversationItem
 							{conversation}
 							isActive={activeConversationId === conversation.id}
@@ -312,6 +321,19 @@
                             }, 5);
                         }}
 					/>
+					{:else if $actualMVC === 'contact' }
+						<ContactItem
+								contact = {conversation}
+								isActive={activeConversationId === conversation.id}
+								onSelect={() => {
+                            document.querySelector(`.panel-right`).classList.add('active-panel');
+                            document.querySelector(`.panel-left`).classList.remove('active-panel');
+                            selectConversation(conversation.id);
+                            window.adjustPanels();
+
+                        }}
+						/>
+					{/if}
 				</li>
 			{/each}
 		</ul>

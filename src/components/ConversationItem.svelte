@@ -20,8 +20,7 @@
 				alt={conversation.imageUrl2}
 			/>
 		</div>
-	{/if}
-	{#if !conversation.imageUrl2}
+	{:else}
 		<div class="conversation__user-photo">
 			<img
 				class="photo-circle photo-circle--big"

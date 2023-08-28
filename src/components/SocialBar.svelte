@@ -1,8 +1,9 @@
 <script>
     import { dndzone } from 'svelte-dnd-action';
+    import {actualMVC} from "../stores/mainstore.js";
 
     let items = [
-        { id: 0, title: "Conversations", icon: "icon_nemp_v4.svg", hasDot: true },
+        { id: 0, title: "Conversations", icon: "icon_nemp_v4.svg", hasDot: true, onclick: ()=>{$actualMVC = 'conversation';document.querySelector('#menu-toggle').click()}},
         { id: 1, title: "Newsfeed", icon: "icon_newsfeed.svg", hasDot: true },
         { id: 2, title: "Video", icon: "icon_play_out.svg", hasDot: true },
         { id: 3, title: "Video meeting", icon: "icon_video_meeting.svg", hasDot: true },
@@ -52,7 +53,7 @@
 <div class="social-icons" class:expanded={isExpanded}>
     <div class="social-icons-block" use:dndzone={{ items }} on:consider="{handleDndConsider}" on:finalize="{handleDndFinalize}">
         {#each items as item (item.id)}
-            <div class="social-icon-container" title={item.title}>
+            <div class="social-icon-container" title={item.title} on:click={item.onclick}>
                 <img src={`img/icons/${item.icon}`} alt={item.title} class="icon"/>
                 {#if item.hasDot}
                     <div class="dot">

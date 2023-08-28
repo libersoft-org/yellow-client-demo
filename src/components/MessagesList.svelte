@@ -243,8 +243,12 @@
 
 	const scrollToBottom = async (node) => {
 		console.log("scroll");
-		if (!node) node = messageBox;
-		node.scroll({ top: node.scrollHeight, behavior: 'smooth' });
+		try {
+			if (!node) node = messageBox;
+			node.scroll({top: node.scrollHeight, behavior: 'smooth'});
+		} catch (e) {
+			console.log('scroll is not exist');
+		}
 	};
 
 	const newsgroupMockup = [

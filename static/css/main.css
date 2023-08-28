@@ -476,6 +476,7 @@
 	padding: 8px 8px;
 	box-sizing: border-box;
 	cursor: pointer;
+	min-height:48px;
 }
 .group-conversation .group-item{
 	width: 100%;
