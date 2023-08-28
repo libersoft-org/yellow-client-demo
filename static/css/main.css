@@ -111,10 +111,7 @@
 }
 
 .hidden-bar {
-	height: 0!important;
-	visibility: hidden;
-	overflow: hidden;
-	min-height:0!important;
+	display: none!important;
 }
 
 .blurred {
