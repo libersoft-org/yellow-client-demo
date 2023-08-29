@@ -16,4 +16,6 @@ export const conversationSelected = writable(false);
 export const activeContactIdStore = writable(null);
 export const contactSelected = writable(false);
 
+export const activeCallIdStore = writable(null);
+export const callSelected = writable(false);
 export const actualMVC = writable('conversation');

@@ -1,5 +1,11 @@
 <script>
-	import {accountsIsOpen, contactSelected, conversationSelected} from '../stores/mainstore.js';
+	import {
+		accountsIsOpen,
+		activeCallIdStore,
+		activeContactIdStore, callSelected,
+		contactSelected,
+		conversationSelected
+	} from '../stores/mainstore.js';
 	import ConversationItem from './ConversationItem.svelte';
 	import ContactItem from "./ContactItem.svelte";
 	import { scrollToBottomStore } from '../stores/mainstore.js';
@@ -8,11 +14,14 @@
 	import { activeConversationIdStore } from '../stores/mainstore.js';
 	import {actualMVC} from '../stores/mainstore.js';
 	import MultiTick from './MultiTick.svelte';
+	import CallItem from "./CallItem.svelte";
 
 	let activeConversationId = null;
 	activeConversationIdStore.subscribe((value) => (activeConversationId = value));
 	let activeContactId = null;
-	activeConversationIdStore.subscribe((value) => (activeContactId = value));
+	activeContactIdStore.subscribe((value) => (activeContactId = value));
+	let activeCallId = null;
+	activeCallIdStore.subscribe((value) => (activeCallId = value));
 	let blurred;
 
 	let groups = ['Work', 'Family', 'Friend', 'Others', 'Blocked'];
@@ -22,7 +31,11 @@
 		activeConversationIdStore.set(id);
 		conversationSelected.set(id !== null);
 		activeConversationId = id;
+		activeContactIdStore.set(id);
 		contactSelected.set(id !== null);
+		activeContactId =id;
+		activeCallIdStore.set(id);
+		callSelected.set(id !== null);
 		activeContactId =id;
 		tick;
 		const scrollToBottom = get(scrollToBottomStore);
@@ -295,7 +308,7 @@
 			<li class = "group-header" on:click={toggleConversations}>
 				<div class="group-icon"></div>
 				<div class="group-name">{groups[groupIndex]}</div>
-				{#if $actualMVC === 'conversation' }
+				{#if ($actualMVC === 'conversation') || ($actualMVC === 'call') }
 				<div class="conversation__status__icons ingroup">
 					<div class="conversation__status__icons__unread-messages">
 						{group[0].unreadMessages}
@@ -306,7 +319,7 @@
 			</li>
 
 			{#each group as conversation}
-				{#if ($actualMVC !== 'contact') ||(parseInt(conversation.id)>2)}
+				{#if (($actualMVC !== 'contact')&&($actualMVC != 'call')) ||(parseInt(conversation.id)>2)}
 				<li class="group-item">
 					{#if $actualMVC === 'conversation' }
 					<ConversationItem
@@ -326,6 +339,18 @@
 						<ContactItem
 								contact = {conversation}
 								isActive={activeConversationId === conversation.id}
+								onSelect={() => {
+                            document.querySelector(`.panel-right`).classList.add('active-panel');
+                            document.querySelector(`.panel-left`).classList.remove('active-panel');
+                            selectConversation(conversation.id);
+                            window.adjustPanels();
+
+                        }}
+						/>
+					{:else if $actualMVC === 'call' }
+						<CallItem
+								call = {conversation}
+								isActive={activeCallId === conversation.id}
 								onSelect={() => {
                             document.querySelector(`.panel-right`).classList.add('active-panel');
                             document.querySelector(`.panel-left`).classList.remove('active-panel');

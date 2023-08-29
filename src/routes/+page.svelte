@@ -13,6 +13,7 @@
 	import { setupGlobalListeners } from '../functions/globalListeners.js';
 	import {actualMVC} from "../stores/mainstore.js";
 	import ContactDetail from "../components/ContactDetail.svelte";
+	import CallDetail from "../components/CallDetail.svelte";
 
 	setupGlobalListeners();
 
@@ -85,6 +86,9 @@
 		{:else if $actualMVC === 'contact'}
 			<UserBar id="f-user-bar" />
 			<ContactDetail id="f-conversation-detail"/>
+		{:else if $actualMVC === 'call'}
+			<UserBar id="f-user-bar" />
+			<CallDetail id="f-conversation-detail"/>
 		{/if}
 	</div>
 </div>

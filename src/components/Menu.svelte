@@ -79,7 +79,7 @@
 			<div class="menu__item" on:click={()=>{$actualMVC = 'contact';document.querySelector('#menu-toggle').click()}}>
 				<img class="menu__item__icon" src="img/icons/contacts.svg" alt="My contacts" />My contacts
 			</div>
-			<div class="menu__item">
+			<div class="menu__item" on:click={()=>{$actualMVC = 'call';document.querySelector('#menu-toggle').click()}}>
 				<img class="menu__item__icon"  src="img/icons/calls.svg" alt="Calls" />My calls
 			</div>
 			<div class="menu__item">

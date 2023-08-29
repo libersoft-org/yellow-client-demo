@@ -268,7 +268,7 @@
         color: #1d1d1d;
     }
     .profile-menu .element:hover {
-        background-color: var(--primary-color-p25);
+        background-color: var(--primary-color-p15);
     }
     .imgdiv {
         width: 32px;
