@@ -53,27 +53,27 @@
         <div class="second-container" style="width: 100%;">
             <div class="second-container-semi" style="display: flex; justify-content: space-between;">
                 <div class="element">
-                    <div class="imgdiv"><img src="./img/icons/icon_newsfeed_d.svg" alt="Newsfeed Icon"></div>
+                    <div class="imgdiv"><img src="./img/icons/icon_newsfeed.svg" alt="Newsfeed Icon"></div>
                     <div><span>Newsfeed</span></div>
                 </div>
                 <div class="element">
-                    <div class="imgdiv"><img src="./img/icons/icon_play_out_d.svg" alt="Video Icon"></div>
+                    <div class="imgdiv"><img src="./img/icons/icon_play_out.svg" alt="Video Icon"></div>
                     <div><span>Video</span></div>
                 </div>
                 <div class="element">
-                    <div class="imgdiv"><img src="./img/icons/icon_help_n_d.svg" alt="Forum Icon"></div>
+                    <div class="imgdiv"><img src="./img/icons/icon_help_n.svg" alt="Forum Icon"></div>
                     <div><span>Forum</span></div>
                 </div>
                 <div class="element">
-                    <div class="imgdiv"><img src="./img/icons/icon_event_n_d.svg" alt="Events Icon"></div>
+                    <div class="imgdiv"><img src="./img/icons/icon_event_n.svg" alt="Events Icon"></div>
                     <div><span>Events</span></div>
                 </div>
                 <div class="element">
-                    <div class="imgdiv"><img src="./img/icons/icon_help_n_d.svg" alt="Blog Icon"></div>
+                    <div class="imgdiv"><img src="./img/icons/icon_help_n.svg" alt="Blog Icon"></div>
                     <div><span>Blog</span></div>
                 </div>
                 <div class="element">
-                    <div class="imgdiv"><img src="./img/icons/icon_help_n_d.svg" alt="Marketplace Icon"></div>
+                    <div class="imgdiv"><img src="./img/icons/icon_help_n.svg" alt="Marketplace Icon"></div>
                     <div><span>Marketplace</span></div>
                 </div>
             </div>
@@ -127,7 +127,7 @@
         justify-content: space-between;
         container-type: inline-size;
         box-shadow: var(--basic-shadow);
-        background-color: var(--primary-color-p44);
+        background-color: #1d1d1d; /*var(--primary-color-p44); */
     }
 
     .second-container-semi .element {
@@ -136,9 +136,14 @@
         flex-grow: 1;
         flex-basis: calc(16.6666% - 5px);
         max-width: calc(16.6666% - 0px);
+        background-color: #1d1d1d;
+        color: white;
+        font-weight: bold;
 
     }
-
+    .second-container-semi .element:hover {
+        background-color: #2d2d2d;
+    }
     @container (max-width: 750px) {
         .element {
             min-width: calc(33.3333% - 0px);
