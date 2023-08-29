@@ -215,7 +215,7 @@
                         </div>
                         <div class="element">
                             <div class="imgdiv"><img src="./img/icons/icon_help_n_d.svg" alt="Icon 4"></div>
-                            <div><span>Donate</span></div>
+                            <div><span>Send Yellow</span></div>
                         </div>
                     </div>
                 </div>
