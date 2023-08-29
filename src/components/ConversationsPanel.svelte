@@ -292,21 +292,21 @@
 <div class="conversations-panel no-select {!blurred ? '' : 'blurred'}">
 	{#each groupedConversations as group, groupIndex}
 		<ul class="group-conversation" >
-			{#if $actualMVC === 'conversation' }
 			<li class = "group-header" on:click={toggleConversations}>
 				<div class="group-icon"></div>
 				<div class="group-name">{groups[groupIndex]}</div>
+				{#if $actualMVC === 'conversation' }
 				<div class="conversation__status__icons ingroup">
 					<div class="conversation__status__icons__unread-messages">
 						{group[0].unreadMessages}
 					</div>
 				</div>
-
+				{/if}
 				<div class="group-arrow"></div>
 			</li>
-			{/if}
 
 			{#each group as conversation}
+				{#if ($actualMVC !== 'contact') ||(parseInt(conversation.id)>2)}
 				<li class="group-item">
 					{#if $actualMVC === 'conversation' }
 					<ConversationItem
@@ -336,6 +336,7 @@
 						/>
 					{/if}
 				</li>
+				{/if}
 			{/each}
 		</ul>
 	{/each}

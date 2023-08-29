@@ -1085,7 +1085,7 @@
 	top: var(--searchbar-height);
 	width: 300px;
 	height: calc(100% - var(--searchbar-height));
-	background-color: #fffef8;
+	background-color: var(--primary-color-p44);
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
