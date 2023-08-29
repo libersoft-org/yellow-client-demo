@@ -15,14 +15,11 @@
     }
 </script>
 <div class="profile-container">
-    <div class="back-button">
-        <a class="icon" on:click={backButtonClick}><img src="img/icons/icon_back.svg" alt="search"/></a
-        >
-    </div>
-
     <div class="profile-detail">
         <!-- První div -->
+
         <div class="profile-main">
+            <!--
             <div class="profile-photo-info">
                 <div class="profile-photo-container">
                     <img class="photo-circle photo-circle-large" src="https://i.pravatar.cc/300?u=ownprofile"
@@ -50,7 +47,7 @@
                     <div class="imgdiv"><img src="./img/icons/icon_donations_n_d.svg" alt="Icon 4"></div>
                     <div><span>Donate</span></div>
                 </div>
-            </div>
+            </div>-->
         </div>
         <!-- Druhý div -->
         <div class="second-container" style="width: 100%;">
@@ -105,14 +102,17 @@
         display: flex;
         flex-direction: column;
     }
-
+    .profile-detail .second-container {
+        position: relative;
+        z-index: 100;
+    }
     .profile-detail > div:first-child {
         display: flex;
         width: 100%;
         align-items: center;
         justify-content: space-between;
         box-sizing: border-box;
-        padding: 0 32px 32px 32px;
+        /*padding: 0 32px 32px 32px;*/
 
     }
 
@@ -127,21 +127,23 @@
         justify-content: space-between;
         container-type: inline-size;
         box-shadow: var(--basic-shadow);
+        background-color: var(--primary-color-p44);
     }
 
     .second-container-semi .element {
         /* min-width: 125px; */
-        width: calc(16.66% - 1px) !important;
+        width: calc(16.6666% - 0px) !important;
         flex-grow: 1;
-        flex-basis: calc(16.66% - 5px);
-        max-width: calc(16.66% - 1px);
+        flex-basis: calc(16.6666% - 5px);
+        max-width: calc(16.6666% - 0px);
+
     }
 
     @container (max-width: 750px) {
         .element {
-            min-width: calc(33.33% - 2px);
-            flex-basis: calc(33.33% - 2px);
-            max-width: calc(33.33% - 1px);
+            min-width: calc(33.3333% - 0px);
+            flex-basis: calc(33.3333% - 2px);
+            max-width: calc(33.3333% - 0px);
         }
     }
     .profile-photo-info {
@@ -195,12 +197,16 @@
         display: flex; /* Opravený překlep */
         align-items: center; /* Zarovnání položek vertikálně do středu */
         justify-content: flex-start; /* Ikonu vlevo a tlačítko vpravo */
-        background-color: var(--primary-color-p15);
-        border: 1px solid var(--primary-color-15);
+        background-color: var(--primary-color-p44);
+        /*border: 1px solid var(--primary-color-p35);*/
         height: 32px;
         margin: 0px 0px 0px 0px;
         flex: 1;
         color: #1d1d1d;
+    }
+    .element:hover {
+        background-color: var(--primary-color-p35);
+
     }
 
     .element div {

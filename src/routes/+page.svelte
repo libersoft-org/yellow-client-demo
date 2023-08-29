@@ -83,6 +83,7 @@
 			<ConversationDetail id="f-conversation-detail" />
 			<InputBar id="f-input-bar" />
 		{:else if $actualMVC === 'contact'}
+			<UserBar id="f-user-bar" />
 			<ContactDetail id="f-conversation-detail"/>
 		{/if}
 	</div>

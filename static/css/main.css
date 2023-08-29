@@ -586,7 +586,7 @@
 	transition: transform 0.2s ease-in-out;
 }
 .controls-menu.invisiblef {
-	transform: translateY(-250px);
+	transform: translateY(-300px);
 }
 
 .controls-menu p {
@@ -617,6 +617,9 @@
 }
 .modal-class-width-400px {
 	width:400px!important;
+}
+.modal-class-width-250px {
+	width:250px!important;
 }
 .modal-class-qrmodal {
  height:660px;
@@ -1112,7 +1115,7 @@
 }
 
 .menu__item:hover {
-	background-color: #f4f4f4;
+	background-color: var(--primary-color-p15);
 }
 
 .menu__item__icon {
@@ -1195,7 +1198,7 @@
 	-webkit-box-shadow: var(--basic-shadow);
 
 	box-shadow: var(--basic-shadow);
-	z-index: 99;
+	/*z-index: 99;*/
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
