@@ -236,7 +236,7 @@
         display: flex;
         flex-direction: column;
         box-shadow: 0 0 8px 2px #1d1d1d3d;
-        top:96px;
+        top:64px;
         z-index: 101;
 
     }
