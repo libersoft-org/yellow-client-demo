@@ -28,15 +28,20 @@
 	accountsIsOpen.subscribe((value) => (blurred = value));
 
 	async function selectConversation(id) {
-		activeConversationIdStore.set(id);
-		conversationSelected.set(id !== null);
-		activeConversationId = id;
-		activeContactIdStore.set(id);
-		contactSelected.set(id !== null);
-		activeContactId =id;
-		activeCallIdStore.set(id);
-		callSelected.set(id !== null);
-		activeContactId =id;
+		if ($actualMVC === 'conversation') {
+			activeConversationIdStore.set(id);
+			conversationSelected.set(id !== null);
+			activeConversationId = id;
+		} else if ($actualMVC === 'contact') {
+			activeContactIdStore.set(id);
+			contactSelected.set(id !== null);
+			activeContactId = id;
+		} else if ($actualMVC === 'call') {
+			activeCallIdStore.set(id);
+			callSelected.set(id !== null);
+			activeContactId = id;
+		}
+		console.log(activeConversationId+":"+activeContactId+":"+activeCallId);
 		tick;
 		const scrollToBottom = get(scrollToBottomStore);
 		if (scrollToBottom) {
@@ -352,7 +357,7 @@
 					{:else if $actualMVC === 'call' }
 						<CallItem
 								call = {conversation}
-								isActive={activeCallId === conversation.id}
+								isActive={activeConversationId === conversation.id}
 								onSelect={() => {
                             document.querySelector(`.panel-right`).classList.add('active-panel');
                             document.querySelector(`.panel-left`).classList.remove('active-panel');

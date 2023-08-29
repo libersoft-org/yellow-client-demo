@@ -66,10 +66,10 @@
         idContact = parseInt(value);
     });
     callSelected.subscribe((value) => {
-        isContactSelected = value;
+        isCallSelected = value;
     });
     activeCallIdStore.subscribe((value) => {
-        idContact = parseInt(value);
+        idCall = parseInt(value);
     });
 </script>
 
