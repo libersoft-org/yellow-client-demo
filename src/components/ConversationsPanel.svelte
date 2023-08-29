@@ -305,6 +305,7 @@
 <div class="conversations-panel no-select {!blurred ? '' : 'blurred'}">
 	{#each groupedConversations as group, groupIndex}
 		<ul class="group-conversation" >
+			{#if ($actualMVC !== 'call')}
 			<li class = "group-header" on:click={toggleConversations}>
 				<div class="group-icon"></div>
 				<div class="group-name">{groups[groupIndex]}</div>
@@ -317,6 +318,7 @@
 				{/if}
 				<div class="group-arrow"></div>
 			</li>
+			{/if}
 
 			{#each group as conversation}
 				{#if (($actualMVC !== 'contact')&&($actualMVC != 'call')) ||(parseInt(conversation.id)>2)}
