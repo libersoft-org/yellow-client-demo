@@ -180,7 +180,7 @@
                         </div>
                         <div class="element">
                             <div class="imgdiv"><img src="./img/icons/icon_donations_n_d.svg" alt="Icon 4"></div>
-                            <div><span>Donate</span></div>
+                            <div><span>Send Yellow</span></div>
                         </div>
                     </div>
                 </ToggleComponent>
@@ -211,11 +211,19 @@
                         </div>
                         <div class="element">
                             <div class="imgdiv"><img src="./img/icons/icon_help_n_d.svg" alt="Icon 3"></div>
-                            <div><span>Send message</span></div>
+                            <div><span>Edit contact</span></div>
+                        </div>
+                        <div class="element">
+                            <div class="imgdiv"><img src="./img/icons/icon_help_n_d.svg" alt="Icon 3"></div>
+                            <div><span>Share contact</span></div>
                         </div>
                         <div class="element">
                             <div class="imgdiv"><img src="./img/icons/icon_help_n_d.svg" alt="Icon 4"></div>
-                            <div><span>Send Yellow</span></div>
+                            <div><span>Delete contact</span></div>
+                        </div>
+                        <div class="element">
+                            <div class="imgdiv"><img src="./img/icons/icon_help_n_d.svg" alt="Icon 4"></div>
+                            <div><span>Block user</span></div>
                         </div>
                     </div>
                 </div>
@@ -235,7 +243,7 @@
         /*height: 200px;*/
         display: flex;
         flex-direction: column;
-        box-shadow: 0 0 8px 2px #1d1d1d3d;
+        /* box-shadow: 0 0 8px 2px #1d1d1d3d; */
         top:64px;
         z-index: 101;
 
@@ -252,7 +260,7 @@
         display: flex; /* Opravený překlep */
         align-items: center; /* Zarovnání položek vertikálně do středu */
         justify-content: flex-start; /* Ikonu vlevo a tlačítko vpravo */
-        background-color: var(--primary-color-p35);
+        /*background-color: var(--primary-color-p35); */
         /*border: 1px solid var(--primary-color-p35);*/
         height: 32px;
         margin: 0px 0px 0px 0px;
@@ -260,7 +268,7 @@
         color: #1d1d1d;
     }
     .profile-menu .element:hover {
-        background-color: var(--primary-color-p44);
+        background-color: var(--primary-color-p25);
     }
     .imgdiv {
         width: 32px;
