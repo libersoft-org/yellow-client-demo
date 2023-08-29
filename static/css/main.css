@@ -627,6 +627,9 @@
 .modal-class-qrmodal {
  height:660px;
 }
+.modal-class-height-5600px {
+	height:560px!important;
+}
 .modal .multipart-message .element {
 	max-width: 100%;
 	width: 100%;
