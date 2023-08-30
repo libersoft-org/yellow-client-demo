@@ -16,6 +16,14 @@
             icon4Src = './img/icons/icon_hangup_n.svg';
         }
     }
+    function setMaxWidth() {
+        const containers = document.querySelectorAll('.profile-photo-container');
+        containers.forEach(container => {
+            const height = container.offsetHeight; // Získá aktuální výšku prvku
+            const maxWidth = (height / 9) * 16; // Vypočítá max-width podle aktuální výšky
+            container.style.width = `${maxWidth}px`; // Nastaví max-width
+        });
+    }
 
     onMount(() => {
         const closeHandler = (event) => {
@@ -24,9 +32,16 @@
                 document.querySelector(`${id}`).click();
             }
         };
+        // Zavolá funkci při načtení stránky
+        window.addEventListener('load', setMaxWidth);
+
+// Zavolá funkci při změně velikosti okna
+        window.addEventListener('resize', setMaxWidth);
         document.addEventListener('closeToggleComponent', closeHandler);
         return () => {
             document.removeEventListener('closeToggleComponent', closeHandler);
+            window.removeEventListener('resize', setMaxWidth);
+            window.removeEventListener('load', setMaxWidth);
         };
     });
 </script>
@@ -73,63 +88,58 @@
 
 <style>
     .row {
+        width: auto; /* nebo pevná hodnota, např. 800px */
         display: flex;
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
+        margin: 0 auto;
+        height:25%;
     }
 
     .profile-photo-info {
-        flex: 1; /* Rozložení rovnoměrně přes celou šířku rodičovského kontejneru */
+        flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
         box-sizing: border-box;
-        /* padding: 10px;
-        width:160px;
-        height: 90px;
-        max-height: 90px;*/
         max-width: 25%;
-
-        border-radius: 10px;
-        border:2px solid #2d2d2d;
         overflow: hidden;
         padding: 0;
         margin: 2px;
         max-height:18vh;
-
-
-
+        width: 25%; /* Rozdělíme šířku na čtyři sloupce */
+        height: 100%; /* Výška bude odpovídat výšce řádku */
     }
 
     .profile-photo-info .profile-photo-container {
         position: relative;
-        width: 100%; /* Můžete nastavit pevnou šířku nebo procentuální šířku podle potřeby */
-        /*padding-bottom: 56.25%; /* Toto je pro poměr stran 16:9 */
+        display: inline-block;
+        width: 25vw;
         overflow: hidden;
         height: 100%;
+        border-radius: 10px;
+        border:2px solid #2d2d2d;
+        max-width: calc(15vh/0.565);
     }
 
     .profile-photo-container img {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Ořízne obrázek, aby vyplnil kontejner */
+        max-width: 100%; /* Maximální šířka obrázku je 100% šířky kontejneru */
+        max-height: 100%; /* Maximální výška obrázku je 100% výšky kontejneru */
+        object-fit: contain; /* Obrázek se přizpůsobí kontejneru a zachová svůj poměr stran */
         transform: translate(-50%, -50%); /* Vycentrování obrázku */
     }
-
 
     .profile-main {
         height: calc(100vh - 150px); /* Odečteme výšku titulku a dolního menu */
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-    }
-    .row {
-        width:100%;
-        height: 25%; /* Rozdělíme výšku na čtyři řádky */
+        margin: 0 auto;
+        width: fit-content;
     }
 
     .profile-photo-info {
