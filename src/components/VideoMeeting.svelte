@@ -1,7 +1,7 @@
 <script>
     import Modal from "./Modal.svelte";
     import {onMount} from "svelte";
-    export let classes='modal-class-width-75w modal-class-height-560px';
+    export let classes=''; //'modal-class-width-75w modal-class-height-560px';
     export let showModal = false;
 
     function closeModal() {
@@ -109,6 +109,7 @@
         /*padding: 5px;*/
         display: flex;
         justify-content: center;
+        height:100%;
     }
 
     .profile-photo-info .profile-photo-container img {

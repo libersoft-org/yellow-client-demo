@@ -1,7 +1,7 @@
 <script>
     import Modal from "./Modal.svelte";
     import {onMount} from "svelte";
-    export let classes='modal-class-width-400px modal-class-height-560px';
+    export let classes=''; // 'modal-class-width-400px modal-class-height-560px';
     export let showModal = false;
 
     function closeModal() {

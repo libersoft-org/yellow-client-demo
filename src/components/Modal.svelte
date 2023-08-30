@@ -72,14 +72,14 @@
 	}
 
 	onMount(() => {
+		setTimeout(()=> {
+			modalr.style.left = (window.innerWidth - modalr.offsetWidth) / 2 + 'px';
+			modalr.style.top = (window.innerHeight - modalr.offsetHeight) / 2 + 'px';
 
-		modalr.style.left = (window.innerWidth - modalr.offsetWidth) / 2 + 'px';
-		modalr.style.top = (window.innerHeight - modalr.offsetHeight) / 2 + 'px';
-
-		// Pokud jsou definovány vlastní styly, přidejte je k hlavnímu divu
-		console.log("XXXX");
-		console.log("SX:"+styles);
-
+			// Pokud jsou definovány vlastní styly, přidejte je k hlavnímu divu
+			console.log("XXXX");
+			console.log("SX:" + styles);
+		}, 10);
 	});
 	function handleClose() {
 		console.log('sin1');
