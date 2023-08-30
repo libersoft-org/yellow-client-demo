@@ -149,8 +149,6 @@
 
 <style>
 	.modal-title-o {
-		position: absolute;
-		top: 0;
 		padding: 10px;
 		color: white;
 		font-weight: bold;

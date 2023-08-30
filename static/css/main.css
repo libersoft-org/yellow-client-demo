@@ -695,6 +695,8 @@
 	align-items: center;
 	width: 100vw;
 	height: 100vh;
+	flex-direction: column;
+
 }
 
 .modal-o .modal-body-o {
@@ -702,7 +704,7 @@
 	flex: 1; /* Zajistí, že tělo modálního okna zabere zbývající místo */
 	padding: 10px;
 	align-items: center;
-	width:100%;
+	width:80%;
 }
 
 .modal .modal-header {
