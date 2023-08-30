@@ -2,7 +2,7 @@
 <script>
 	import { onMount, createEventDispatcher } from 'svelte';
 
-	export let title = 'Modal Title'; // Defaultní název
+	export let title = null; // Defaultní název
 	const dispatch = createEventDispatcher();
 	export let modal; // Exportujte proměnnou modal
 	export let overlay = false;
@@ -141,7 +141,18 @@
 	</div>
 {:else}
 	<div class="modal-o {classes}" bind:this={modalr}>
+		{#if title }<div class="modal-title-o">{title}</div>{/if}
 		<div class="close-icon-o" on:click={handleClose} />
 		<div class="modal-body-o"><slot /></div>
 	</div>
 {/if}
+
+<style>
+	.modal-title-o {
+		position: absolute;
+		top: 0;
+		padding: 10px;
+		color: white;
+		font-weight: bold;
+	}
+</style>

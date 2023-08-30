@@ -31,7 +31,7 @@
     });
 </script>
 
-<Modal title="Voice & Video call" classes="{classes}" on:close={closeModal}>
+<Modal overlay= true title="Video meeting" classes="{classes}" on:close={closeModal}>
     <div class="profile-main">
 
         {#each Array(4).fill() as _, row}
@@ -88,11 +88,11 @@
         flex-direction: column;
         align-items: center;
         box-sizing: border-box;
-        /* padding: 10px; */
+        /* padding: 10px;
         width:160px;
         height: 90px;
-        max-height: 90px;
-        max-width: 160px;
+        max-height: 90px;*/
+        max-width: 20%;
         border-radius: 5px;
         border:2px solid #2d2d2d;
         overflow: hidden;
@@ -104,16 +104,20 @@
     }
 
     .profile-photo-info .profile-photo-container {
-        width: 100%; /* Zmenšení šířky kontejneru fotky */
-        /*padding: 5px;*/
-        display: flex;
-        justify-content: center;
-        height:100%;
+        position: relative;
+        width: 100%; /* Můžete nastavit pevnou šířku nebo procentuální šířku podle potřeby */
+        padding-bottom: 56.25%; /* Toto je pro poměr stran 16:9 */
+        overflow: hidden;
     }
 
-    .profile-photo-info .profile-photo-container img {
-        width:100%;
-        max-height: 100%;
+    .profile-photo-container img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ořízne obrázek, aby vyplnil kontejner */
+        transform: translate(-50%, -50%); /* Vycentrování obrázku */
     }
 
     .profile-photo-info .profile-info {
@@ -178,4 +182,5 @@
     .toggle-animation {
         transition: all 0.2s;
     }
+
 </style>

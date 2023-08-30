@@ -697,11 +697,12 @@
 	height: 100vh;
 }
 
-.modal .modal-body-o {
+.modal-o .modal-body-o {
 	overflow-y: auto; /* Přidáno pro automatický posuvník, pokud je obsah příliš dlouhý */
 	flex: 1; /* Zajistí, že tělo modálního okna zabere zbývající místo */
 	padding: 10px;
 	align-items: center;
+	width:100%;
 }
 
 .modal .modal-header {
