@@ -99,6 +99,7 @@
         overflow: hidden;
         padding: 0;
         margin: 2px;
+        max-height:18vh;
 
 
 

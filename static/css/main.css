@@ -761,6 +761,7 @@
 	flex: 1; /* Zajistí, že tělo modálního okna zabere zbývající místo */
 	padding: 10px;
 	overflow-x: hidden;
+	position: relative;
 }
 
 .modal .multipart-message .element select {

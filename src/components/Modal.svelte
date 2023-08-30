@@ -152,5 +152,6 @@
 		padding: 10px;
 		color: white;
 		font-weight: bold;
+		position: relative;
 	}
 </style>
