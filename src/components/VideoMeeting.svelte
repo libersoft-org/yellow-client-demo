@@ -40,21 +40,19 @@
                     <div class="profile-photo-info">
                         <div class="profile-photo-container">
                             {#if row*4+col < 14}
-                            <img class="" src="./content/{row*4+col+1}.avif"
-                                 alt="Profile Photo">
+                                <img class="" src="./content/{row*4+col+1}.avif"
+                                     alt="Profile Photo">
                             {:else }
-                            <img class="" src="./content/{row*4+col+1}.jpg"
-                                 alt="Profile Photo">
-                           {/if}
+                                <img class="" src="./content/{row*4+col+1}.jpg"
+                                     alt="Profile Photo">
+                            {/if}
                         </div>
-                      <!--  <div class="profile-info">
-                            <div class="user-name"><b>Jane Smith</b></div>
-                        </div> -->
                     </div>
                 {/each}
             </div>
         {/each}
-    <div class="profile-menu">
+    </div>
+        <div class="profile-menu">
         <div class="element">
             <div class="imgdiv"><img src="./img/icons/icon_screen_share.svg" alt="Icon 1"></div>
         </div>
@@ -70,7 +68,6 @@
         <div class="element toggle-animation" on:click={toggleIcon4}>
             <div class="imgdiv"><img src="{icon4Src}" alt="Icon 4"></div>
         </div>
-    </div>
     </div>
 </Modal>
 
@@ -108,8 +105,9 @@
     .profile-photo-info .profile-photo-container {
         position: relative;
         width: 100%; /* Můžete nastavit pevnou šířku nebo procentuální šířku podle potřeby */
-        padding-bottom: 56.25%; /* Toto je pro poměr stran 16:9 */
+        /*padding-bottom: 56.25%; /* Toto je pro poměr stran 16:9 */
         overflow: hidden;
+        height: 100%;
     }
 
     .profile-photo-container img {
@@ -122,18 +120,23 @@
         transform: translate(-50%, -50%); /* Vycentrování obrázku */
     }
 
-    .profile-photo-info .profile-info {
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .profile-photo-info .profile-info {
-        font-size: 0.8em;
+
+    .profile-main {
+        height: calc(100vh - 150px); /* Odečteme výšku titulku a dolního menu */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     .row {
         width:100%;
-        margin:0;
+        height: 25%; /* Rozdělíme výšku na čtyři řádky */
     }
+
+    .profile-photo-info {
+        width: 25%; /* Rozdělíme šířku na čtyři sloupce */
+        height: 100%; /* Výška bude odpovídat výšce řádku */
+    }
+
     .profile-menu {
         min-width:250px;
         max-width: 250px;
