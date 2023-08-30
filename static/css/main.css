@@ -587,6 +587,7 @@
 	box-shadow: var(--basic-shadow);
 	transform: translateY(0px);
 	/*transition: transform 0.2s ease-in-out; */
+	z-index: 1000;
 }
 .controls-menu.invisiblef {
 	transform: translateY(-300px);
