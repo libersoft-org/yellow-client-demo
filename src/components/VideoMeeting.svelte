@@ -93,7 +93,7 @@
         height: 90px;
         max-height: 90px;*/
         max-width: 20%;
-        border-radius: 5px;
+        border-radius: 10px;
         border:2px solid #2d2d2d;
         overflow: hidden;
         padding: 0;
