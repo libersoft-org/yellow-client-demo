@@ -631,6 +631,10 @@
 .modal-class-height-560px {
 	height:560px!important;
 }
+.modal-body-black {
+	background-color: #1d1d1d!important;
+}
+
 .modal .multipart-message .element {
 	max-width: 100%;
 	width: 100%;

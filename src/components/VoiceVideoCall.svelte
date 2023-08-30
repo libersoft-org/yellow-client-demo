@@ -1,7 +1,7 @@
 <script>
     import Modal from "./Modal.svelte";
     import {onMount} from "svelte";
-    export let classes=''; // 'modal-class-width-400px modal-class-height-560px';
+    export let classes='modal-body-black'; // 'modal-class-width-400px modal-class-height-560px';
     export let showModal = false;
 
     function closeModal() {
@@ -94,7 +94,7 @@
         height: 64px;
         width: 64px;
         margin: 0px 0px 0px 0px;
-        color: #1d1d1d;
+        color: white;
         cursor: pointer;
     }
     .profile-menu .element:hover {
@@ -135,6 +135,7 @@
         text-align: center;
         margin-top:10px;
         margin-bottom:10px;
+        color: white;
     }
     .profile-main .profile-photo-info .profile-info .user-name {
         font-size:1.5em;

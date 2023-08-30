@@ -1,9 +1,8 @@
 <script>
     import Modal from "./Modal.svelte";
     import {onMount} from "svelte";
-    export let classes=''; //'modal-class-width-75w modal-class-height-560px';
     export let showModal = false;
-
+    export let classes='modal-body-black';
     function closeModal() {
         showModal = false;
     }
