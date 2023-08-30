@@ -28,6 +28,8 @@
     });
 
     let showControlsMenu = false;
+    import VoiceVideoCall from "./VoiceVideoCall.svelte";
+    let showVideoCall = false;
 
     function backButtonClick() {
         if ($actualMVC === 'conversation') {
@@ -126,11 +128,9 @@
         {#if $actualMVC === 'conversation'}
             <div class="conversation-controlls">
                 <a class="icon" onclick=""><img src="img/icons/search.svg" alt="search"/></a>
-                <a class="icon" onclick=""><img src="img/icons/videocall.svg" alt="videocall"/></a>
-                <a class="icon" onclick=""><img src="img/icons/call.svg" alt="call"/></a>
-                <a class="icon" onclick=""
-                ><img class="non-secure" src="img/icons/transparent/non-secure.svg" alt="secure"/></a
-                >
+                <a class="icon" on:click={()=>(showVideoCall = true)}><img src="img/icons/videocall.svg" alt="videocall"/></a>
+                <a class="icon" on:click={()=>(showVideoCall = true)}><img src="img/icons/call.svg" alt="call"/></a>
+                <a class="icon" onclick=""><img class="non-secure" src="img/icons/transparent/non-secure.svg" alt="secure"/></a>
                 <div class="icon icon-controls" on:click={() => (showControlsMenu = !showControlsMenu)}>
                     <img src="img/icons/dots.svg" alt="dots"/>
                 </div>
@@ -245,6 +245,9 @@
         />-->
     </div>
 </div>
+{#if showVideoCall} }
+    <VoiceVideoCall bind:showModal={showVideoCall}/>
+{/if}
 <style>
     .profile-menu {
         min-width:222px;

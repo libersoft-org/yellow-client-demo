@@ -1,14 +1,12 @@
 <script>
     import { dndzone } from 'svelte-dnd-action';
     import {actualMVC} from "../stores/mainstore.js";
-    import VoiceVideoCall from "./VoiceVideoCall.svelte";
     import VideoMeeting from "./VideoMeeting.svelte";
-    let showVideoCall = false;
     let showVideoMeet = false;
     let items = [
         { id: 0, title: "Conversations", icon: "icon_nemp_v4.svg", hasDot: true, onclick: ()=>{$actualMVC = 'conversation';document.querySelector('#menu-toggle').click()}},
         { id: 1, title: "Newsfeed", icon: "icon_newsfeed.svg", hasDot: true },
-        { id: 2, title: "Video", icon: "icon_play_out.svg", hasDot: true , onclick: ()=>{showVideoCall = true;}},
+        { id: 2, title: "Video", icon: "icon_play_out.svg", hasDot: true },
         { id: 3, title: "Video meeting", icon: "icon_video_meeting.svg", hasDot: true, onclick: ()=>{showVideoMeet = true;} },
         { id: 4, title: "Forum", icon: "icon_help_n.svg", hasDot: false },
         { id: 5, title: "Events", icon: "icon_event_n.svg", hasDot: false },
@@ -70,9 +68,6 @@
     </div>
     <div class="social-arrow" class:expanded={isExpanded} on:click={toggleExpanded}></div>
 </div>
-{#if showVideoCall} }
-<VoiceVideoCall bind:showModal={showVideoCall}/>
-{/if}
 {#if showVideoMeet} }
     <VideoMeeting bind:showModal={showVideoMeet}/>
 {/if}

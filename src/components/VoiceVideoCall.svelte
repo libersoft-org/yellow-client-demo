@@ -7,7 +7,14 @@
     function closeModal() {
         showModal = false;
     }
-
+    let icon4Src = './img/icons/icon_hangup_n.svg'; // Výchozí zdroj obrázku
+    function toggleIcon4() {
+        if (icon4Src === './img/icons/icon_hangup_n.svg') {
+            icon4Src = './img/icons/icon_call_a.svg';
+        } else {
+            icon4Src = './img/icons/icon_hangup_n.svg';
+        }
+    }
     const id = '.icon-controls';
 
     onMount(() => {
@@ -25,7 +32,7 @@
 
 </script>
 
-    <Modal title="Voice & Video call" classes="{classes}" on:close={closeModal}>
+    <Modal title="Calling..." classes="{classes}" on:close={closeModal}>
         <div class="profile-main">
 
             <div class="profile-photo-info">
@@ -43,13 +50,13 @@
                     <div class="imgdiv"><img src="./img/icons/icon_screen_share.svg" alt="Icon 1"></div>
                 </div>
                 <div class="element">
-                    <div class="imgdiv"><img src="./img/icons/icon_cam.svg" alt="Icon 2"></div>
+                    <div class="imgdiv"><img src="./img/icons/icon_videocall_filled.svg" alt="Icon 2"></div>
                 </div>
                 <div class="element">
-                    <div class="imgdiv"><img src="./img/icons/icon_micro.svg" alt="Icon 3"></div>
+                    <div class="imgdiv"><img src="./img/icons/icon_micro_n.svg" alt="Icon 3"></div>
                 </div>
-                <div class="element">
-                    <div class="imgdiv"><img src="./img/icons/icon_hangup.svg" alt="Icon 3"></div>
+                <div class="element toggle-animation" on:click={toggleIcon4}>
+                    <div class="imgdiv"><img src="{icon4Src}" alt="Icon 4"></div>
                 </div>
             </div>
         </div>
@@ -84,18 +91,19 @@
         justify-content: flex-start; /* Ikonu vlevo a tlačítko vpravo */
         /*background-color: var(--primary-color-p35); */
         /*border: 1px solid var(--primary-color-p35);*/
-        height: 40px;
-        width: 40px;
+        height: 64px;
+        width: 64px;
         margin: 0px 0px 0px 0px;
         color: #1d1d1d;
+        cursor: pointer;
     }
     .profile-menu .element:hover {
-        background-color: var(--primary-color-p35);
     }
     .imgdiv {
-        width: 24px;
-        height: 24px;
-        padding: 8px;
+        width: 40px;
+        height: 40px;
+        padding: 4px;
+
     }
     .imgdiv img {
         width:100%;
@@ -128,6 +136,9 @@
         margin-top:10px;
         margin-bottom:10px;
     }
+    .profile-main .profile-photo-info .profile-info .user-name {
+        font-size:1.5em;
+    }
     .profile-main .profile-photo-info .profile-photo-container {
         padding: 5px 5px 15px 5px;
         width: 210px;
@@ -142,6 +153,9 @@
     }
     .height-auto {
         height:auto;
+    }
+    .toggle-animation {
+        transition: all 0.2s;
     }
 
 </style>

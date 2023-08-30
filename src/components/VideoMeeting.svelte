@@ -9,6 +9,14 @@
     }
 
     const id = '.icon-controls';
+    let icon4Src = './img/icons/icon_hangup_n.svg'; // Výchozí zdroj obrázku
+    function toggleIcon4() {
+        if (icon4Src === './img/icons/icon_hangup_n.svg') {
+            icon4Src = './img/icons/icon_call_a.svg';
+        } else {
+            icon4Src = './img/icons/icon_hangup_n.svg';
+        }
+    }
 
     onMount(() => {
         const closeHandler = (event) => {
@@ -22,18 +30,23 @@
             document.removeEventListener('closeToggleComponent', closeHandler);
         };
     });
-
 </script>
 
 <Modal title="Voice & Video call" classes="{classes}" on:close={closeModal}>
     <div class="profile-main">
+
         {#each Array(4).fill() as _, row}
             <div class="row">
                 {#each Array(4).fill() as _, col}
                     <div class="profile-photo-info">
                         <div class="profile-photo-container">
-                            <img class="" src="https://i.pravatar.cc/300?u={col}"
+                            {#if row*4+col < 14}
+                            <img class="" src="./content/{row*4+col+1}.avif"
                                  alt="Profile Photo">
+                            {:else }
+                            <img class="" src="./content/{row*4+col+1}.jpg"
+                                 alt="Profile Photo">
+                           {/if}
                         </div>
                       <!--  <div class="profile-info">
                             <div class="user-name"><b>Jane Smith</b></div>
@@ -44,19 +57,19 @@
         {/each}
     <div class="profile-menu">
         <div class="element">
-            <div class="imgdiv"><img src="./img/icons/icon_screen_share.svg" alt="Screen share"></div>
+            <div class="imgdiv"><img src="./img/icons/icon_screen_share.svg" alt="Icon 1"></div>
         </div>
         <div class="element">
-            <div class="imgdiv"><img src="./img/icons/icon_cam.svg" alt="Camera"></div>
+            <div class="imgdiv"><img src="./img/icons/icon_videocall_filled.svg" alt="Icon 2"></div>
         </div>
         <div class="element">
-            <div class="imgdiv"><img src="./img/icons/icon_micro.svg" alt="Microphone"></div>
+            <div class="imgdiv"><img src="./img/icons/icon_micro_n.svg" alt="Icon 3"></div>
         </div>
         <div class="element">
             <div class="imgdiv"><img src="./img/icons/icon_chat.svg" alt="Chat"></div>
         </div>
-        <div class="element">
-            <div class="imgdiv"><img src="./img/icons/icon_hangup.svg" alt="Hang up"></div>
+        <div class="element toggle-animation" on:click={toggleIcon4}>
+            <div class="imgdiv"><img src="{icon4Src}" alt="Icon 4"></div>
         </div>
     </div>
     </div>
@@ -77,23 +90,30 @@
         align-items: center;
         box-sizing: border-box;
         /* padding: 10px; */
-        max-width:150px;
-        max-height: 150px;
-        height: auto;
+        width:160px;
+        height: 90px;
+        max-height: 90px;
+        max-width: 160px;
+        border-radius: 5px;
+        border:2px solid #2d2d2d;
+        overflow: hidden;
+        padding: 0;
+        margin: 2px;
+
+
 
     }
 
     .profile-photo-info .profile-photo-container {
-        width: 80%; /* Zmenšení šířky kontejneru fotky */
-        padding: 5px;
+        width: 100%; /* Zmenšení šířky kontejneru fotky */
+        /*padding: 5px;*/
         display: flex;
         justify-content: center;
     }
 
     .profile-photo-info .profile-photo-container img {
-        box-shadow: var(--basic-shadow);
-        width:160px; /* Zajistí, že obrázek nebude větší než kontejner */
-        max-height: 90px;
+        width:100%;
+        max-height: 100%;
     }
 
     .profile-photo-info .profile-info {
@@ -106,10 +126,11 @@
     }
     .row {
         width:100%;
+        margin:0;
     }
     .profile-menu {
-        min-width:222px;
-        max-width: 222px;
+        min-width:250px;
+        max-width: 250px;
         overflow: hidden;
         box-sizing: border-box;
         /*height: 200px;*/
@@ -136,8 +157,8 @@
         justify-content: flex-start; /* Ikonu vlevo a tlačítko vpravo */
         /*background-color: var(--primary-color-p35); */
         /*border: 1px solid var(--primary-color-p35);*/
-        height: 40px;
-        width: 40px;
+        height:64px;
+        width: 64px;
         margin: 0px 0px 0px 0px;
         color: #1d1d1d;
     }
@@ -145,12 +166,16 @@
         background-color: var(--primary-color-p35);
     }
     .imgdiv {
-        width: 24px;
-        height: 24px;
-        padding: 8px;
+        width: 40px;
+        height: 40px;
+        padding: 4px;
+        cursor: pointer;
     }
     .imgdiv img {
         width:100%;
         height:100%;
+    }
+    .toggle-animation {
+        transition: all 0.2s;
     }
 </style>
