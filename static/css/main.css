@@ -700,11 +700,12 @@
 }
 
 .modal-o .modal-body-o {
-	overflow-y: auto; /* Přidáno pro automatický posuvník, pokud je obsah příliš dlouhý */
+	overflow-y: hidden; /* Přidáno pro automatický posuvník, pokud je obsah příliš dlouhý */
 	flex: 1; /* Zajistí, že tělo modálního okna zabere zbývající místo */
 	padding: 10px;
 	align-items: center;
-	width:80%;
+	width:80vw;
+	height:80vh
 }
 
 .modal .modal-header {
