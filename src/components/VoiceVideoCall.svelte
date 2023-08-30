@@ -32,7 +32,7 @@
 
 </script>
 
-    <Modal overlay=true title="Calling..." classes="{classes}" on:close={closeModal}>
+    <Modal title="Calling..." classes="{classes}" on:close={closeModal}>
         <div class="profile-main">
 
             <div class="profile-photo-info">
