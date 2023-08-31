@@ -2,8 +2,10 @@
     import Modal from "./Modal.svelte";
     import {onMount} from "svelte";
     import {each} from "svelte/internal";
+
     export let showModal = false;
-    export let classes='modal-body-black';
+    export let classes = 'modal-body-black';
+
     function closeModal() {
         showModal = false;
     }
@@ -17,6 +19,7 @@
             icon4Src = './img/icons/icon_hangup_n.svg';
         }
     }
+
     let containerWidth;
     let containerHeight;
     let itemWidth;
@@ -40,6 +43,7 @@
 
         };
     });
+
     function adjustGridDimensions() {
         const container = document.querySelector('.profile-main');
 
@@ -62,7 +66,7 @@
         }
 
         // Check if the container width is less than 1/8 of its height
-        if ((itemHeight*4) < (containerHeight / 2)) {
+        if ((itemHeight * 4) < (containerHeight / 2)) {
             // Adjust for 2 columns and 8 rows
             container.style.gridTemplateColumns = "repeat(2, 1fr)";
 
@@ -100,13 +104,13 @@
         containerHeight = container.offsetHeight;
 
         // Calculate width and height for grid items
-        itemWidth = (containerWidth / 4) ;
-        itemHeight = (itemWidth * 9 / 16) ; // To maintain 16:9 aspect ratio
+        itemWidth = (containerWidth / 4);
+        itemHeight = (itemWidth * 9 / 16); // To maintain 16:9 aspect ratio
 
         // Check if the total height of items exceeds the container height
         if (itemHeight * 4 > containerHeight) {
-            itemHeight = (containerHeight / 4) ;
-            itemWidth = (itemHeight * 16 / 9) ;
+            itemHeight = (containerHeight / 4);
+            itemWidth = (itemHeight * 16 / 9);
         }
 
         // Set the container dimensions based on the item dimensions
@@ -122,30 +126,30 @@
 </script>
 
 
-<Modal overlay= true title="Video meeting" classes="{classes}" on:close={closeModal}>
+<Modal overlay=true title="Video meeting" classes="{classes}" on:close={closeModal}>
     <div class="profile-main">
 
         {#each Array(4).fill() as _, row}
 
-                {#each Array(4).fill() as _, col}
-                        <div class="profile-photo-container">
-                            <div class="photo-pad">
-                            {#if row*4+col < 14}
+            {#each Array(4).fill() as _, col}
+                <div class="profile-photo-container">
+                    <div class="photo-pad">
+                        {#if row * 4 + col < 14}
 
-                                <img class="" src="./content/{row*4+col+1}.avif"
-                                     alt="Profile Photo">
+                            <img class="" src="./content/{row*4+col+1}.avif"
+                                 alt="Profile Photo">
 
-                            {:else }
-                                <img class="" src="./content/{row*4+col+1}.jpg"
-                                     alt="Profile Photo">
-                            {/if}
-                            </div>
+                        {:else }
+                            <img class="" src="./content/{row*4+col+1}.jpg"
+                                 alt="Profile Photo">
+                        {/if}
                     </div>
-                {/each}
+                </div>
+            {/each}
 
         {/each}
     </div>
-        <div class="profile-menu">
+    <div class="profile-menu">
         <div class="element">
             <div class="imgdiv"><img src="./img/icons/icon_screen_share.svg" alt="Icon 1"></div>
         </div>
@@ -177,8 +181,8 @@
     }
 
     .profile-photo-container {
-        width:25%;
-        height:25%;
+        width: 25%;
+        height: 25%;
         overflow: hidden;
     }
 
@@ -191,6 +195,7 @@
         box-sizing: border-box;
 
     }
+
     .profile-photo-container .photo-pad {
         width: 100%;
         height: 100%;
@@ -202,7 +207,7 @@
     }
 
     .profile-menu {
-        min-width:250px;
+        min-width: 250px;
         max-width: 250px;
         overflow: hidden;
         box-sizing: border-box;
@@ -211,18 +216,20 @@
         flex-direction: row;
         justify-content: center;
         /* box-shadow: 0 0 8px 2px #1d1d1d3d; */
-        top:32px;
+        top: 32px;
         z-index: 101;
         margin-left: auto;
         margin-right: auto;
-        margin-top:16px;
+        margin-top: 16px;
     }
+
     .profile-menu .element {
         border-radius: 0px;
 
         max-height: 48px;
 
     }
+
     .profile-menu .element {
         width: auto;
         display: flex; /* Opravený překlep */
@@ -230,24 +237,30 @@
         justify-content: flex-start; /* Ikonu vlevo a tlačítko vpravo */
         /*background-color: var(--primary-color-p35); */
         /*border: 1px solid var(--primary-color-p35);*/
-        height:64px;
+        height: 64px;
         width: 64px;
         margin: 0px 0px 0px 0px;
         color: #1d1d1d;
+        box-sizing: border-box;;
     }
+
     .profile-menu .element:hover {
-        background-color: var(--primary-color-p35);
+        border-radius: 10px;
+        background-color: var(--primary-color-35);
     }
+
     .imgdiv {
         width: 40px;
         height: 40px;
-        padding: 4px;
+        padding: 5px;
         cursor: pointer;
     }
+
     .imgdiv img {
-        width:100%;
-        height:100%;
+        width: 100%;
+        height: 100%;
     }
+
     .toggle-animation {
         transition: all 0.2s;
     }
