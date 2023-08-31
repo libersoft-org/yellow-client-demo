@@ -16,7 +16,9 @@
 	function adjustModalHeight() {
 		if (overlay) {
 			modalr.style.height = window.visualViewport.height + 'px';
-		}
+			modalr.style.width = window.visualViewport.width + 'px';
+			modalr.style.left = '0px';
+			modalr.style.top = '0px';		}
 	}
 	function handleKeydown(event) {
 		// ... (vaše stávající kód)
