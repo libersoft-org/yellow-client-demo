@@ -1,6 +1,7 @@
 <script>
     import Modal from "./Modal.svelte";
     import {onMount} from "svelte";
+    import {each} from "svelte/internal";
     export let showModal = false;
     export let classes='modal-body-black';
     function closeModal() {
@@ -16,15 +17,10 @@
             icon4Src = './img/icons/icon_hangup_n.svg';
         }
     }
-    function setMaxWidth() {
-        const containers = document.querySelectorAll('.profile-photo-container');
-        containers.forEach(container => {
-            const height = container.offsetHeight; // Získá aktuální výšku prvku
-            const maxWidth = (height / 9) * 16; // Vypočítá max-width podle aktuální výšky
-            container.style.width = `${maxWidth}px`; // Nastaví max-width
-        });
-    }
-
+    let containerWidth;
+    let containerHeight;
+    let itemWidth;
+    let itemHeight;
     onMount(() => {
         const closeHandler = (event) => {
             if (event.detail === id) {
@@ -32,39 +28,121 @@
                 document.querySelector(`${id}`).click();
             }
         };
-        // Zavolá funkci při načtení stránky
-        window.addEventListener('load', setMaxWidth);
+        // Initial calculation
+        adjustGridDimensions();
 
-// Zavolá funkci při změně velikosti okna
-        window.addEventListener('resize', setMaxWidth);
+        // Add event listener for window resize
+        window.addEventListener('resize', adjustGridDimensions);
         document.addEventListener('closeToggleComponent', closeHandler);
         return () => {
             document.removeEventListener('closeToggleComponent', closeHandler);
-            window.removeEventListener('resize', setMaxWidth);
-            window.removeEventListener('load', setMaxWidth);
+            window.removeEventListener('resize', adjustGridDimensions);
+
         };
     });
+    function adjustGridDimensions() {
+        const container = document.querySelector('.profile-main');
+
+        // Reset the container to its max dimensions first
+        container.style.width = '100%';
+        container.style.height = 'calc(100vh - 150px)';
+        container.style.gridTemplateColumns = "repeat(4, 1fr)"; // Reset to default 4 columns
+
+        containerWidth = container.offsetWidth;
+        containerHeight = container.offsetHeight;
+
+        // Calculate width and height for grid items
+        itemWidth = (containerWidth / 4);
+        itemHeight = (itemWidth * 9 / 16); // To maintain 16:9 aspect ratio
+
+        // Check if the total height of items exceeds the container height
+        if (itemHeight * 4 > containerHeight) {
+            itemHeight = (containerHeight / 4);
+            itemWidth = (itemHeight * 16 / 9);
+        }
+
+        // Check if the container width is less than 1/8 of its height
+        if ((itemHeight*4) < (containerHeight / 2)) {
+            // Adjust for 2 columns and 8 rows
+            container.style.gridTemplateColumns = "repeat(2, 1fr)";
+
+            // Recalculate width and height for grid items
+            itemWidth = (containerWidth / 2);
+            itemHeight = (itemWidth * 9 / 16); // To maintain 16:9 aspect ratio
+
+            // Check if the total height of items exceeds the container height
+            if (itemHeight * 8 > containerHeight) {
+                itemHeight = (containerHeight / 8);
+                itemWidth = (itemHeight * 16 / 9);
+            }
+        }
+
+        // Set the container dimensions based on the item dimensions
+        container.style.width = `${itemWidth * (container.style.gridTemplateColumns === "repeat(2, 1fr)" ? 2 : 4)}px`;
+        container.style.height = `${itemHeight * (container.style.gridTemplateColumns === "repeat(2, 1fr)" ? 8 : 4)}px`;
+
+        let imgsContainers = document.querySelectorAll('.profile-photo-container');
+        imgsContainers.forEach(imgContainer => {
+            imgContainer.style.width = `${itemWidth}px`;
+            imgContainer.style.height = `${itemHeight}px`;
+        });
+    }
+
+
+    function adjustGridDimensionsStandard() {
+        const container = document.querySelector('.profile-main');
+
+        // Set the container to its max dimensions first
+        container.style.width = '100%';
+        container.style.height = 'calc(100vh - 150px)';
+
+        containerWidth = container.offsetWidth;
+        containerHeight = container.offsetHeight;
+
+        // Calculate width and height for grid items
+        itemWidth = (containerWidth / 4) ;
+        itemHeight = (itemWidth * 9 / 16) ; // To maintain 16:9 aspect ratio
+
+        // Check if the total height of items exceeds the container height
+        if (itemHeight * 4 > containerHeight) {
+            itemHeight = (containerHeight / 4) ;
+            itemWidth = (itemHeight * 16 / 9) ;
+        }
+
+        // Set the container dimensions based on the item dimensions
+        container.style.width = `${itemWidth * 4}px`;
+        container.style.height = `${itemHeight * 4}px`;
+
+        let imgsContainers = document.querySelectorAll('.profile-photo-container');
+        imgsContainers.forEach(imgContainer => {
+            imgContainer.style.width = `${itemWidth}px`;
+            imgContainer.style.height = `${itemHeight}px`;
+        });
+    }
 </script>
+
 
 <Modal overlay= true title="Video meeting" classes="{classes}" on:close={closeModal}>
     <div class="profile-main">
 
         {#each Array(4).fill() as _, row}
-            <div class="row">
+
                 {#each Array(4).fill() as _, col}
-                    <div class="profile-photo-info">
                         <div class="profile-photo-container">
+                            <div class="photo-pad">
                             {#if row*4+col < 14}
+
                                 <img class="" src="./content/{row*4+col+1}.avif"
                                      alt="Profile Photo">
+
                             {:else }
                                 <img class="" src="./content/{row*4+col+1}.jpg"
                                      alt="Profile Photo">
                             {/if}
-                        </div>
+                            </div>
                     </div>
                 {/each}
-            </div>
+
         {/each}
     </div>
         <div class="profile-menu">
@@ -87,64 +165,40 @@
 </Modal>
 
 <style>
-    .row {
-        width: auto; /* nebo pevná hodnota, např. 800px */
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 0 auto;
-        height:25%;
-    }
-
-    .profile-photo-info {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        box-sizing: border-box;
-        max-width: 25%;
-        overflow: hidden;
-        padding: 0;
-        margin: 2px;
-        max-height:18vh;
-        width: 25%; /* Rozdělíme šířku na čtyři sloupce */
-        height: 100%; /* Výška bude odpovídat výšce řádku */
-    }
-
-    .profile-photo-info .profile-photo-container {
-        position: relative;
-        display: inline-block;
-        width: 25vw;
-        overflow: hidden;
-        height: 100%;
-        border-radius: 10px;
-        border:2px solid #2d2d2d;
-        max-width: calc(15vh/0.565);
-    }
-
-    .profile-photo-container img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        max-width: 100%; /* Maximální šířka obrázku je 100% šířky kontejneru */
-        max-height: 100%; /* Maximální výška obrázku je 100% výšky kontejneru */
-        object-fit: contain; /* Obrázek se přizpůsobí kontejneru a zachová svůj poměr stran */
-        transform: translate(-50%, -50%); /* Vycentrování obrázku */
-    }
 
     .profile-main {
-        height: calc(100vh - 150px); /* Odečteme výšku titulku a dolního menu */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin: 0 auto;
-        width: fit-content;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 0px;
+        max-width: 100%;
+        max-height: calc(100vh - 150px);
+        margin: 0 auto; /* Center the container horizontally */
+        position: relative;
     }
 
-    .profile-photo-info {
-        width: 25%; /* Rozdělíme šířku na čtyři sloupce */
-        height: 100%; /* Výška bude odpovídat výšce řádku */
+    .profile-photo-container {
+        width:25%;
+        height:25%;
+        overflow: hidden;
+    }
+
+    .profile-photo-container .photo-pad img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+        border: 2px solid #2d2d2d;
+        box-sizing: border-box;
+
+    }
+    .profile-photo-container .photo-pad {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        overflow: hidden;
+        padding: 2px;
+
+        box-sizing: border-box;
     }
 
     .profile-menu {
