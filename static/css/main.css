@@ -685,7 +685,7 @@
 	pointer-events: auto;
 }
 .modal-o {
-	position: fixed;
+	position: relative;
 	top: 0;
 	left: 0;
 	background: #000;
