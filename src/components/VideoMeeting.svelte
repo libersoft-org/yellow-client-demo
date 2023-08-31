@@ -127,6 +127,7 @@
 
 
 <Modal overlay=true title="Video meeting" classes="{classes}" on:close={closeModal}>
+    <div class="meeting-main">
     <div class="profile-main">
 
         {#each Array(4).fill() as _, row}
@@ -166,17 +167,25 @@
             <div class="imgdiv"><img src="{icon4Src}" alt="Icon 4"></div>
         </div>
     </div>
+    </div>
 </Modal>
 
 <style>
-
+    .meeting-main {
+        width:auto;
+        height:auto;
+        overflow: hidden;
+        position: relative;
+        top:50%;
+        transform: translateY(-50%);
+    }
     .profile-main {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 0px;
         max-width: 100%;
         max-height: calc(100vh - 150px);
-        margin: 0 auto; /* Center the container horizontally */
+        margin: auto; /* Center the container horizontally */
         position: relative;
     }
 
@@ -207,8 +216,6 @@
     }
 
     .profile-menu {
-        min-width: 250px;
-        max-width: 250px;
         overflow: hidden;
         box-sizing: border-box;
         /*height: 200px;*/
@@ -220,7 +227,7 @@
         z-index: 101;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 16px;
+        margin-top: 24px;
     }
 
     .profile-menu .element {
@@ -234,7 +241,7 @@
         width: auto;
         display: flex; /* Opravený překlep */
         align-items: center; /* Zarovnání položek vertikálně do středu */
-        justify-content: flex-start; /* Ikonu vlevo a tlačítko vpravo */
+        justify-content: center; /* Ikonu vlevo a tlačítko vpravo */
         /*background-color: var(--primary-color-p35); */
         /*border: 1px solid var(--primary-color-p35);*/
         height: 64px;
