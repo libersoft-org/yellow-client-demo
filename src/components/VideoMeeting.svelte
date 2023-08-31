@@ -228,6 +228,7 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 24px;
+        margin-bottom: 16px;
     }
 
     .profile-menu .element {
