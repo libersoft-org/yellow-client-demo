@@ -13,6 +13,11 @@
 	let modalr;
 	let isDragging = false;
 	let offsetX, offsetY;
+	function adjustModalHeight() {
+		if (overlay) {
+			modalr.style.height = window.visualViewport.height + 'px';
+		}
+	}
 	function handleKeydown(event) {
 		// ... (vaše stávající kód)
 		if (event.target.getAttribute('contenteditable') !== 'true') {
@@ -80,6 +85,17 @@
 			console.log("XXXX");
 			console.log("SX:" + styles);
 		}, 10);
+		setTimeout(() => {
+			adjustModalHeight();
+			// ... (vaše stávající kód)
+		}, 10);
+
+		// Přidejte posluchače událostí pro změnu velikosti vizuálního viewportu
+		window.visualViewport.addEventListener('resize', adjustModalHeight);
+		return () => {
+			// Odeberte posluchače událostí při zničení komponenty
+			window.visualViewport.removeEventListener('resize', adjustModalHeight);
+		};
 	});
 	function handleClose() {
 		console.log('sin1');
