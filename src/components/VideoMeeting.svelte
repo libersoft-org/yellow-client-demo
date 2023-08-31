@@ -48,8 +48,8 @@
         const container = document.querySelector('.profile-main');
 
         // Reset the container to its max dimensions first
-        container.style.width = '100%';
-        container.style.height = `${(window.visualViewport.height- 150)}px`;
+        container.style.width =  `${(window.visualViewport.width)}px`;
+        container.style.height = `${(window.visualViewport.height- 125)}px`;
         container.style.gridTemplateColumns = "repeat(4, 1fr)"; // Reset to default 4 columns
 
         containerWidth = container.offsetWidth;
