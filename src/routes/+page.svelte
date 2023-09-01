@@ -14,6 +14,7 @@
 	import {actualMVC} from "../stores/mainstore.js";
 	import ContactDetail from "../components/ContactDetail.svelte";
 	import CallDetail from "../components/CallDetail.svelte";
+	import VideoModule from "../components/VideoModule.svelte";
 
 	setupGlobalListeners();
 
@@ -89,6 +90,9 @@
 		{:else if $actualMVC === 'call'}
 			<UserBar id="f-user-bar" />
 			<CallDetail id="f-conversation-detail"/>
+		{:else if $actualMVC === 'video'}
+			<UserBar id="f-user-bar" />
+			<VideoModule id="f-conversation-detail"/>
 		{/if}
 	</div>
 </div>

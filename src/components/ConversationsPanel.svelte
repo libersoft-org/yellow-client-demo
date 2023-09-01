@@ -4,10 +4,13 @@
 		activeCallIdStore,
 		activeContactIdStore, callSelected,
 		contactSelected,
-		conversationSelected
+		conversationSelected,
+			videoSelected,
+			activeVideoIdStore
 	} from '../stores/mainstore.js';
 	import ConversationItem from './ConversationItem.svelte';
 	import ContactItem from "./ContactItem.svelte";
+
 	import { scrollToBottomStore } from '../stores/mainstore.js';
 	import { get } from 'svelte/store';
 	import { tick } from 'svelte';
@@ -15,6 +18,7 @@
 	import {actualMVC} from '../stores/mainstore.js';
 	import MultiTick from './MultiTick.svelte';
 	import CallItem from "./CallItem.svelte";
+	import VideoItem from "./VideoItem.svelte";
 
 	let activeConversationId = null;
 	activeConversationIdStore.subscribe((value) => (activeConversationId = value));
@@ -22,6 +26,8 @@
 	activeContactIdStore.subscribe((value) => (activeContactId = value));
 	let activeCallId = null;
 	activeCallIdStore.subscribe((value) => (activeCallId = value));
+	let activeVideoId = null;
+	activeVideoIdStore.subscribe((value) => (activeVideoId = value));
 	let blurred;
 
 	let groups = ['Work', 'Family', 'Friend', 'Others', 'Blocked'];
@@ -40,8 +46,12 @@
 			activeCallIdStore.set(id);
 			callSelected.set(id !== null);
 			activeContactId = id;
+		} else if ($actualMVC === 'video') {
+			activeVideoIdStore.set(id);
+			videoSelected.set(id !== null);
+			activeVideoId = id;
 		}
-		console.log(activeConversationId+":"+activeContactId+":"+activeCallId);
+		console.log(activeConversationId+":"+activeContactId+":"+activeCallId+":"+activeVideoId);
 		tick;
 		const scrollToBottom = get(scrollToBottomStore);
 		if (scrollToBottom) {
@@ -310,7 +320,7 @@
 <div class="conversations-panel no-select {!blurred ? '' : 'blurred'}">
 	{#each groupedConversations as group, groupIndex}
 		<ul class="group-conversation" >
-			{#if ($actualMVC !== 'call')}
+			{#if ($actualMVC !== 'call') && ($actualMVC !== 'video')}
 			<li class = "group-header" on:click={toggleConversations}>
 				<div class="group-icon"></div>
 				<div class="group-name">{groups[groupIndex]}</div>
@@ -326,7 +336,7 @@
 			{/if}
 
 			{#each group as conversation}
-				{#if (($actualMVC !== 'contact')&&($actualMVC != 'call')) ||(parseInt(conversation.id)>2)}
+				{#if (($actualMVC !== 'contact')&&($actualMVC != 'call')&&($actualMVC != 'video')) ||(parseInt(conversation.id)>2)}
 				<li class="group-item">
 					{#if $actualMVC === 'conversation' }
 					<ConversationItem
@@ -357,6 +367,18 @@
 					{:else if $actualMVC === 'call' }
 						<CallItem
 								call = {conversation}
+								isActive={activeConversationId === conversation.id}
+								onSelect={() => {
+                            document.querySelector(`.panel-right`).classList.add('active-panel');
+                            document.querySelector(`.panel-left`).classList.remove('active-panel');
+                            selectConversation(conversation.id);
+                            window.adjustPanels();
+
+                        }}
+						/>
+					{:else if $actualMVC === 'video' }
+						<VideoItem
+								video = {conversation}
 								isActive={activeConversationId === conversation.id}
 								onSelect={() => {
                             document.querySelector(`.panel-right`).classList.add('active-panel');

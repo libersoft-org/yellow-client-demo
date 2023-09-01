@@ -18,4 +18,7 @@ export const contactSelected = writable(false);
 
 export const activeCallIdStore = writable(null);
 export const callSelected = writable(false);
+
+export const activeVideoIdStore = writable(null);
+export const videoSelected = writable(false);
 export const actualMVC = writable('conversation');

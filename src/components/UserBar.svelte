@@ -1,5 +1,5 @@
 <script>
-    import {activeConversationIdStore, conversationSelected, activeContactIdStore,contactSelected, activeCallIdStore, callSelected} from '../stores/mainstore.js';
+    import {activeConversationIdStore, conversationSelected, activeContactIdStore,contactSelected, activeCallIdStore, callSelected, activeVideoIdStore, videoSelected} from '../stores/mainstore.js';
     import {parse} from 'cookie';
     import ToggleComponent from './ToggleComponent.svelte';
     import {onMount} from 'svelte';
@@ -39,9 +39,12 @@
             contactSelected.set(false);
             activeContactIdStore.set(null);
         }  else if ($actualMVC === 'call') {
-        callSelected.set(false);
-        activeCallIdStore.set(null);
-        }
+            callSelected.set(false);
+            activeCallIdStore.set(null);
+        }  else if ($actualMVC === 'video') {
+            videoSelected.set(false);
+            activeVideoIdStore.set(null);
+         }
 
         document.querySelector(`.panel-left`).classList.add('active-panel');
         document.querySelector(`.panel-right`).classList.remove('active-panel');
@@ -54,6 +57,8 @@
     let isContactSelected = false;
     let idCall;
     let isCallSelected = false;
+    let idVideo;
+    let isVideoSelected = false;
 
     conversationSelected.subscribe((value) => {
         isConversationSelected = value;
@@ -73,14 +78,19 @@
     activeCallIdStore.subscribe((value) => {
         idCall = parseInt(value);
     });
+    videoSelected.subscribe((value) => {
+        isVideoSelected = value;
+    });
+    activeVideoIdStore.subscribe((value) => {
+        idVideo = parseInt(value);
+    });
 </script>
 
-<div class="user-bar" class:hidden-bar={((!isConversationSelected)&&($actualMVC === 'conversation'))||((!isContactSelected)&&($actualMVC === 'contact'))||((!isCallSelected)&&($actualMVC === 'call'))}>
+<div class="user-bar" class:hidden-bar={((!isConversationSelected)&&($actualMVC === 'conversation'))||((!isContactSelected)&&($actualMVC === 'contact'))||((!isCallSelected)&&($actualMVC === 'call'))||((!isVideoSelected)&&($actualMVC === 'video'))}>
     <div class="user-bar-container" class:noShadow={($actualMVC==='contact')}>
         <div class="conversation-user">
             <div class="back-button">
-                <a class="icon" on:click={backButtonClick}><img src="img/icons/icon_back.svg" alt="search"/></a
-                >
+                <a class="icon" on:click={backButtonClick}><img src="img/icons/icon_back.svg" alt="search"/></a>
             </div>
             {#if (idConversation === 1)&&($actualMVC === 'conversation')}
                 <div class="conversation-user__photo" >
