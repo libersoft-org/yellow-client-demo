@@ -225,7 +225,7 @@
         margin: 25px 0;
         position:relative;
         top:0px;
-        transform: scale(0.8);
+        height:100%;
 
     }
     .videomodule-news::before {
