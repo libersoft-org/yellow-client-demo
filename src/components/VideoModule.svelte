@@ -219,12 +219,12 @@
 
 <style>
     .videomodule-news, .videomodule-live, .videomodule-reels {
-        display: flex;
+        display: block;
         flex-direction: column;
         width: 100%;
         margin: 25px 0;
         position:relative;
-        top:0px;
+        top:64px;
         height:100%;
 
     }
@@ -300,5 +300,7 @@
     }
     .conversation-detail {
         flex-direction: column;
+        align-items: normal;
+        justify-content: start;
     }
 </style>
