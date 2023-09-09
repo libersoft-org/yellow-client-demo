@@ -44,8 +44,8 @@
     videoCItem[0].message = '---';
     videoCItem[0].name = 'Yellow development';
     videoCItem[0].channel = 'yellow news';
-    videoCItem[0].imageUrl = 'img/icons/icon_nemp_v3.svg';
-    videoCItem[0].preview = 'content/c-obrazek.jpeg';
+    videoCItem[0].imageUrl = 'https://i.pravatar.cc/300?u=user5';
+    videoCItem[0].preview = 'content/pv1.jpg';
     videoCItem[0].views = 1000;
     videoCItem[0].like = 250;
     videoCItem[0].dislike = 100;
@@ -55,69 +55,90 @@
     videoCItem[1].id = 2;
     videoCItem[1].message = '---';
     videoCItem[1].name = 'Libersoft ';
-    videoCItem[1].channel = 'yellow annoncements';
+    videoCItem[1].channel = 'yellow ';
     videoCItem[1].imageUrl = 'img/icons/icon_nemp_v1.svg';
-    videoCItem[1].preview = 'content/c-poster.png';
+    videoCItem[1].preview = 'content/pv2.jpg';
     videoCItem[1].views = 1500;
     videoCItem[1].like = 257;
     videoCItem[1].dislike = 10;
 
     videoCItem[2] = {};
 
-    videoCItem[2].id = 1;
+    videoCItem[2].id = 3;
     videoCItem[2].message = '---';
-    videoCItem[2].name = 'Hispter\'s world';
-    videoCItem[2].channel = 'Tears of world peace';
-    videoCItem[2].imageUrl = 'img/icons/icon_nemp_v4.svg';
-    videoCItem[2].preview = 'content/c1.jpg';
+    videoCItem[2].name = 'Another one';
+    videoCItem[2].channel = 'Tears of world';
+    videoCItem[2].imageUrl = 'https://i.pravatar.cc/300?u=user6';
+    videoCItem[2].preview = 'content/pv3.jpg';
     videoCItem[2].views = 10000;
     videoCItem[2].like = 0;
     videoCItem[2].dislike = 100;
 
     videoCItem[3] = {};
-    videoCItem[3].id = 1;
+    videoCItem[3].id = 4;
     videoCItem[3].message = '---';
     videoCItem[3].name = 'Yellow development';
     videoCItem[3].channel = 'yellow news';
-    videoCItem[3].imageUrl = 'img/icons/icon_chat.svg';
-    videoCItem[3].preview = 'content/c-obrazek2.jpeg';
+    videoCItem[3].imageUrl = 'https://i.pravatar.cc/300?u=user7';
+    videoCItem[3].preview = 'content/pv4.jpg';
     videoCItem[3].views = 1000;
     videoCItem[3].like = 250;
     videoCItem[3].dislike = 100;
 
     videoCItem[4] = {};
 
-    videoCItem[4].id = 2;
+    videoCItem[4].id = 5;
     videoCItem[4].message = '---';
     videoCItem[4].name = 'Libersoft ';
-    videoCItem[4].channel = 'yellow annoncements';
-    videoCItem[4].imageUrl = 'img/icons/icon_play.svg';
-    videoCItem[4].preview = 'content/c2.jpg';
+    videoCItem[4].channel = 'yellow';
+    videoCItem[4].imageUrl = 'https://i.pravatar.cc/300?u=user9';
+    videoCItem[4].preview = 'content/pv5.jpg';
     videoCItem[4].views = 1500;
     videoCItem[4].like = 257;
     videoCItem[4].dislike = 10;
 
     videoCItem[5] = {};
 
-    videoCItem[5].id = 1;
+    videoCItem[5].id = 6;
     videoCItem[5].message = '---';
-    videoCItem[5].name = 'Hispter\'s world';
-    videoCItem[5].channel = 'Tears of world peace';
-    videoCItem[5].imageUrl = 'img/icons/icon_nemp_v4.svg';
-    videoCItem[5].preview = 'content/c3.jpg';
+    videoCItem[5].name = 'Video of a day';
+    videoCItem[5].channel = 'Funny vids';
+    videoCItem[5].imageUrl = 'https://i.pravatar.cc/300?u=user8';
+    videoCItem[5].preview = 'content/pv6.jpg';
     videoCItem[5].views = 10000;
     videoCItem[5].like = 0;
     videoCItem[5].dislike = 100;
 
-    let videoLItem = [];
-    videoLItem = videoCItem;
+    let videoLItem = videoCItem.map(item => ({ ...item }));
+    videoLItem[0].preview ='content/pv7.jpg';
+    videoLItem[1].preview ='content/pv8.jpg';
+    videoLItem[2].preview ='content/pv9.jpg';
+    videoLItem[3].preview ='content/pv10.jpg';
+    videoLItem[4].preview ='content/pv11.jpg';
+    videoLItem[5].preview ='content/pv12.jpg';
+
+    let videoRItem = videoCItem.map(item => ({ ...item }));
+    videoRItem[0].preview ='content/pr1.jpg';
+    videoRItem[1].preview ='content/pr2.jpg';
+    videoRItem[2].preview ='content/pr3.jpg';
+    videoRItem[3].preview ='content/pr4.jpg';
+    videoRItem[4].preview ='content/pr5.jpg';
+    videoRItem[5].preview ='content/pr6.jpg';
+
 </script>
 
 <div class="conversation-detail">
+    <div class="subscibers-button" on:click={()=>{
+                document.querySelector(`.panel-left`).classList.add('active-panel');
+                document.querySelector(`.panel-right`).classList.remove('active-panel');
+                window.adjustPanels();
+    }}>
+        <span>Subscribers</span>
+    </div>
     <div class="videomodule-news">
         <div class="videomodule-title">
             <span>Video</span>
-            <hr/>
+
         </div>
         <div class="container-for-carousel">
             <div class="back-button">
@@ -129,59 +150,66 @@
                     <Carousel
                             let:showPrevPage
                             let:showNextPage
-                            particlesToShow={16} particlesToScroll={1} arrows=false loop>
+                            particlesToShow={18} particlesToScroll={3} arrows=false loop>
                         <div class="car1-p" slot="prev" on:click={showPrevPage}></div>
 
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[0]} templateType="video"/>
+                            <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[1]} templateType="video"/>
+                            <VideoModuletemplates message={videoCItem[1]} templateType="video"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[2]} templateType="video"/>
-                        </div>
-
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[3]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[4]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[5]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[0]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[1]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[2]} templateType="video"/>
+                            <VideoModuletemplates message={videoCItem[2]} templateType="video"/>
                         </div>
 
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[3]} templateType="video"/>
+                            <VideoModuletemplates message={videoCItem[3]} templateType="video"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[4]} templateType="video"/>
+                            <VideoModuletemplates message={videoCItem[4]} templateType="video"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[5]} templateType="video"/>
+                            <VideoModuletemplates message={videoCItem[5]} templateType="video"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[0]} templateType="video"/>
+                            <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[1]} templateType="video"/>
+                            <VideoModuletemplates message={videoCItem[1]} templateType="video"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[2]} templateType="video"/>
+                            <VideoModuletemplates message={videoCItem[2]} templateType="video"/>
                         </div>
 
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[3]} templateType="video"/>
+                            <VideoModuletemplates message={videoCItem[3]} templateType="video"/>
+                        </div>
+                        <div class="carousel-item">
+                            <VideoModuletemplates message={videoCItem[4]} templateType="video"/>
+                        </div>
+                        <div class="carousel-item">
+                            <VideoModuletemplates message={videoCItem[5]} templateType="video"/>
+                        </div>
+                        <div class="carousel-item">
+                            <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
+                        </div>
+                        <div class="carousel-item">
+                            <VideoModuletemplates message={videoCItem[1]} templateType="video"/>
+                        </div>
+                        <div class="carousel-item">
+                            <VideoModuletemplates message={videoCItem[2]} templateType="video"/>
+                        </div>
+
+                        <div class="carousel-item">
+                            <VideoModuletemplates message={videoCItem[3]} templateType="video"/>
+                        </div>
+                        <div class="carousel-item">
+                            <VideoModuletemplates message={videoCItem[4]} templateType="video"/>
+                        </div>
+
+                        <div class="carousel-item">
+                            <VideoModuletemplates message={videoCItem[5]} templateType="video"/>
                         </div>
 
 
@@ -199,7 +227,6 @@
     <div class="videomodule-live">
         <div class="videomodule-title">
             <span>Live</span>
-            <hr/>
         </div>
         <div class="container-for-carousel">
             <div class="back-button">
@@ -211,61 +238,67 @@
                     <Carousel
                             let:showPrevPage
                             let:showNextPage
-                            particlesToShow={16} particlesToScroll={1} arrows=false loop>
+                            particlesToShow={18} particlesToScroll={3} arrows=false loop>
                         <div class="car1-p2" slot="prev" on:click={showPrevPage}></div>
 
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[0]} templateType="live"/>
+                            <VideoModuletemplates message={videoLItem[0]} templateType="live"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[1]} templateType="live"/>
+                            <VideoModuletemplates message={videoLItem[1]} templateType="live"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[2]} templateType="live"/>
+                            <VideoModuletemplates message={videoLItem[2]} templateType="live"/>
                         </div>
 
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[3]} templateType="live"/>
+                            <VideoModuletemplates message={videoLItem[3]} templateType="live"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[4]} templateType="live"/>
+                            <VideoModuletemplates message={videoLItem[4]} templateType="live"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[5]} templateType="live"/>
+                            <VideoModuletemplates message={videoLItem[5]} templateType="live"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[0]} templateType="live"/>
+                            <VideoModuletemplates message={videoLItem[0]} templateType="live"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[1]} templateType="live"/>
+                            <VideoModuletemplates message={videoLItem[1]} templateType="live"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[2]} templateType="live"/>
+                            <VideoModuletemplates message={videoLItem[2]} templateType="live"/>
                         </div>
 
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[3]} templateType="live"/>
+                            <VideoModuletemplates message={videoLItem[3]} templateType="live"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[4]} templateType="live"/>
+                            <VideoModuletemplates message={videoLItem[4]} templateType="live"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[5]} templateType="live"/>
+                            <VideoModuletemplates message={videoLItem[5]} templateType="live"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[0]} templateType="live"/>
+                            <VideoModuletemplates message={videoLItem[0]} templateType="live"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[1]} templateType="live"/>
+                            <VideoModuletemplates message={videoLItem[1]} templateType="live"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[2]} templateType="live"/>
+                            <VideoModuletemplates message={videoLItem[2]} templateType="live"/>
                         </div>
 
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[3]} templateType="live"/>
+                            <VideoModuletemplates message={videoLItem[3]} templateType="live"/>
+                        </div>
+                        <div class="carousel-item">
+                            <VideoModuletemplates message={videoLItem[4]} templateType="video"/>
                         </div>
 
+                        <div class="carousel-item">
+                            <VideoModuletemplates message={videoLItem[5]} templateType="video"/>
+                        </div>
 
                         <div class="car1-n2" slot="next" on:click={showNextPage}></div>
                     </Carousel>
@@ -280,7 +313,7 @@
     <div class="videomodule-reels">
         <div class="videomodule-title">
             <span>Reels</span>
-            <hr/>
+
         </div>
         <div class="container-for-carousel reels">
             <div class="back-button">
@@ -288,65 +321,70 @@
                         src="img/icons/icon_back.svg" alt="search"/></a>
             </div>
             <div class="carousel-pack">
-                <div class="carousel-container">
+                <div class="carousel-container reels">
                     <Carousel
                             let:showPrevPage
                             let:showNextPage
-                            particlesToShow={16} particlesToScroll={1} arrows=false loop>
+                            particlesToShow={18} particlesToScroll={3} arrows=false loop>
                         <div class="car1-p3" slot="prev" on:click={showPrevPage}></div>
 
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[0]} templateType="reels"/>
+                            <VideoModuletemplates message={videoRItem[0]} templateType="reels"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[1]} templateType="reels"/>
+                            <VideoModuletemplates message={videoRItem[1]} templateType="reels"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[2]} templateType="reels"/>
+                            <VideoModuletemplates message={videoRItem[2]} templateType="reels"/>
                         </div>
 
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[3]} templateType="reels"/>
+                            <VideoModuletemplates message={videoRItem[3]} templateType="reels"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[4]} templateType="reels"/>
+                            <VideoModuletemplates message={videoRItem[4]} templateType="reels"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[5]} templateType="reels"/>
+                            <VideoModuletemplates message={videoRItem[5]} templateType="reels"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[0]} templateType="reels"/>
+                            <VideoModuletemplates message={videoRItem[0]} templateType="reels"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[1]} templateType="reels"/>
+                            <VideoModuletemplates message={videoRItem[1]} templateType="reels"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[2]} templateType="reels"/>
+                            <VideoModuletemplates message={videoRItem[2]} templateType="reels"/>
                         </div>
 
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[3]} templateType="reels"/>
+                            <VideoModuletemplates message={videoRItem[3]} templateType="reels"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[4]} templateType="reels"/>
+                            <VideoModuletemplates message={videoRItem[4]} templateType="reels"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[5]} templateType="reels"/>
+                            <VideoModuletemplates message={videoRItem[5]} templateType="reels"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[0]} templateType="reels"/>
+                            <VideoModuletemplates message={videoRItem[0]} templateType="reels"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[1]} templateType="reels"/>
+                            <VideoModuletemplates message={videoRItem[1]} templateType="reels"/>
                         </div>
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[2]} templateType="reels"/>
+                            <VideoModuletemplates message={videoRItem[2]} templateType="reels"/>
                         </div>
 
                         <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[3]} templateType="reels"/>
+                            <VideoModuletemplates message={videoRItem[3]} templateType="reels"/>
                         </div>
-
+                        <div class="carousel-item">
+                            <VideoModuletemplates message={videoRItem[4]} templateType="reels"/>
+                        </div>
+                        <div class="carousel-item">
+                            <VideoModuletemplates message={videoRItem[5]} templateType="reels"/>
+                        </div>
 
                         <div class="car1-n3" slot="next" on:click={showNextPage}></div>
                     </Carousel>
@@ -358,16 +396,15 @@
             </div>
         </div>
     </div>
-
-
 </div>
+
 
 <style>
     .videomodule-news, .videomodule-live, .videomodule-reels {
         display: flex;
         flex-direction: column;
         width: 100%;
-        margin: 16px 0;
+        margin: 8px 0 0 0;
         position: relative;
         height: 100%;
 
@@ -377,7 +414,7 @@
     .videomodule-news::before, .videomodule-live::before {
         content: "";
         position: absolute;
-        top: 40px;
+        top: 28px;
         left: 40px;
         width: calc(100% - 80px);
         height: 250px !important;
@@ -389,7 +426,7 @@
     .videomodule-reels::before {
         content: "";
         position: absolute;
-        top: 40px;
+        top: 28px;
         left: 40px;
         width: calc(100% - 80px);
         height: 440px !important;
@@ -400,12 +437,13 @@
     }
 
     .videomodule-title {
-        width: 100%;
-        height: 2em;
+        width: calc(100% - 110px);
+        height: 1.2em;
         font-weight: bold;
         margin-left: 58px;
-        margin-right: 58px;
-        margin-bottom: 8px;
+        margin-right: 105px;
+        border-bottom: 1px solid black;
+        text-align: start;
 
     }
 
@@ -418,6 +456,7 @@
         display: flex;
         width: 100%;
         overflow: hidden;
+        align-items: center;
 
     }
     .container-for-carousel.reels {
@@ -430,7 +469,12 @@
     }
 
     .carousel-container {
-        width: 3840px;
+        width: 5760px;
+        overflow: hidden;
+    }
+
+    .carousel-container.reels {
+        width: 3780px;
         overflow: hidden;
     }
 
@@ -445,18 +489,15 @@
     }
 
     .carousel-item {
-        width: 324px !important;
-        min-width: 324px !important;
+        width: 320px !important;
+        min-width: 320px !important;
         height: 240px;
         box-sizing: border-box;
         padding: 2px;
-        border: 1px solid #1d1d1d;
-        border-radius: 10px;
-        background-color: var(--primary-color-p35);
+        background-color: #ffffff;
         align-items: center;
         justify-content: center;
         display: flex;
-        margin: 2px;
     }
     .videomodule-reels .carousel-item {
         width: 210px !important;
@@ -464,13 +505,10 @@
         height: 428px;
         box-sizing: border-box;
         padding: 2px;
-        border: 1px solid #1d1d1d;
-        border-radius: 10px;
-        background-color: var(--primary-color-p35);
+        background-color: #ffffff;
         align-items: center;
         justify-content: center;
         display: flex;
-        margin: 2px;
     }
 
     .back-button {
@@ -481,9 +519,6 @@
         padding: 0;
     }
     .videomodule-reels .back-button {
-        top: 185px;
-        position: relative;
-
     }
     .back-button .icon img {
         padding: 0;
@@ -496,5 +531,23 @@
         align-items: normal;
         justify-content: start;
         overflow-x: hidden;
+        box-shadow: none!important;
+    }
+    .subscibers-button {
+        background-color: var(--primary-color-p15);
+        border-radius: 5px;
+        border: 1px solid black;
+        width:auto;
+        cursor: pointer;
+        width:100px;
+        margin-left:48px;
+        margin-top: 8px;
+        padding:4px;
+        text-align: center;
+    }
+    @media (min-width: 795px) {
+        .subscibers-button {
+            display: none!important;
+        }
     }
 </style>

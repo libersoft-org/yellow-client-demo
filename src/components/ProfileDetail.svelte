@@ -3,7 +3,8 @@
         activeContactIdStore,
         contactSelected
     } from "../stores/mainstore.js";
-
+    import {actualSMVC} from "../stores/mainstore.js";
+    import VideoModule from "./VideoModule.svelte";
     export let contactId;
 
     function backButtonClick() {
@@ -56,7 +57,7 @@
                     <div class="imgdiv"><img src="./img/icons/icon_newsfeed.svg" alt="Newsfeed Icon"></div>
                     <div><span>Newsfeed</span></div>
                 </div>
-                <div class="element">
+                <div class="element"  on:click={()=>{$actualSMVC='video'}}>
                     <div class="imgdiv"><img src="./img/icons/icon_play_out.svg" alt="Video Icon"></div>
                     <div><span>Video</span></div>
                 </div>
@@ -78,7 +79,11 @@
                 </div>
             </div>
             <div class="selected-content">
+                {#if $actualSMVC === 'video'}
+                    <VideoModule></VideoModule>
+                {:else}
                 TODO details from profile tabs
+                {/if}
             </div>
         </div>
     </div>
@@ -139,6 +144,7 @@
         background-color: #1d1d1d;
         color: white;
         font-weight: bold;
+        cursor: pointer;
 
     }
     .second-container-semi .element:hover {

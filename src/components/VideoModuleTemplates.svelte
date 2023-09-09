@@ -21,19 +21,19 @@
                          class="s-BTGIt7ri9Tsr"></div>
             </foreignObject>
             <g class="s-BTGIt7ri9Tsr" transform="translate(0,-30)">
-                <image xlink:href="img/icons/icon_nemp_v3.svg"
-                       class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" y="222" width="40"
-                       height="40" x="4"></image>
+                <foreignObject x="4" y="222" width="40" height="40">
+                    <div class="photo-circle photo-circle--small"><img src="{message.imageUrl}"/></div>
+                </foreignObject>
                 <text class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" dominant-baseline="middle"
-                      fill="black" font-size="16" font-weight="bold" x="50" y="234">{message.name}
+                      fill="black" font-size="16" font-weight="bold" x="50" y="234">{message.channel}
                 </text>
                 <text font-size="14" fill="black" class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
-                      x="50" y="258">{message.channel}
+                      x="50" y="258">{message.name}
                 </text>
                 <g text-anchor="end" class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" transform="translate(312)">
-                    <image height="24" xlink:href="img/icons/icon_horus.svg"
+                    <image height="16" xlink:href="img/icons/icon_eye.svg"
                            class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
-                           y="223" text-anchor="end" width="50" x="-115"></image>
+                           y="225" text-anchor="end" width="32" x="-108"></image>
                     <text font-size="14" fill="black"
                           class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
                           y="238" width="200" x="0">{message.views} views
@@ -67,22 +67,22 @@
                     <img src="{message.preview}" style="width: 100%; height: 100%;" alt="Image"
                          class="s-BTGIt7ri9Tsr"></div>
             </foreignObject>
-            <rect x="250" y="12" width="60" height="20" rx="5" ry="5" fill="#ff00007f"></rect>
-            <text font-size="16" x="265" y="28" fill="white">LIVE!</text>
+            <rect x="265" y="12" width="45" height="20" rx="4" ry="4" fill="#ff0000"></rect>
+            <text font-size="16" font-weight="bold" x="270" y="28" fill="white">LIVE</text>
             <g class="s-BTGIt7ri9Tsr" transform="translate(0,-30)">
-                <image xlink:href="img/icons/icon_nemp_v3.svg"
-                       class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" y="222" width="40"
-                       height="40" x="4"></image>
+                <foreignObject x="4" y="222" width="40" height="40">
+                    <div class="photo-circle photo-circle--small"><img src="{message.imageUrl}"/></div>
+                </foreignObject>
                 <text class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" dominant-baseline="middle"
-                      fill="black" font-size="16" font-weight="bold" x="50" y="234">{message.name}
+                      fill="black" font-size="16" font-weight="bold" x="50" y="234">{message.channel}
                 </text>
                 <text font-size="14" fill="black" class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
-                      x="50" y="258">{message.channel}
+                      x="50" y="258">{message.name}
                 </text>
                 <g text-anchor="end" class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" transform="translate(312)">
-                    <image height="24" xlink:href="img/icons/icon_horus.svg"
+                    <image height="16" xlink:href="img/icons/icon_eye.svg"
                            class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
-                           y="223" text-anchor="end" width="50" x="-115"></image>
+                           y="225" text-anchor="end" width="32" x="-108"></image>
                     <text font-size="14" fill="black"
                           class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
                           y="238" width="200" x="0">{message.views} views
@@ -116,15 +116,15 @@
                          class="s-BTGIt7ri9Tsr"></div>
             </foreignObject>
             <g class="s-BTGIt7ri9Tsr" transform="translate(0,115)">
-                <image xlink:href="img/icons/icon_nemp_v3.svg"
-                       class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" y="222" width="32"
-                       height="32" x="4"></image>
-                <text class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" dominant-baseline="middle" fill="black" font-size="14" font-weight="bold" x="40" y="232">{message.name}</text>
-                <text font-size="12" fill="black" class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" x="42" y="252">{message.channel}</text>
+                <foreignObject x="4" y="222" width="40" height="40">
+                    <div class="photo-circle photo-circle--small"><img src="{message.imageUrl}"/></div>
+                </foreignObject>
+                <text class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" dominant-baseline="middle" fill="black" font-size="14" font-weight="bold" x="48" y="232">{message.channel}</text>
+                <text font-size="12" fill="black" class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" x="48" y="252">{message.name}</text>
                 <g text-anchor="end" class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" transform="translate(108,40)">
-                    <image height="24" xlink:href="img/icons/icon_horus.svg"
+                    <image height="16" xlink:href="img/icons/icon_eye.svg"
                            class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
-                           y="223" text-anchor="end" width="50" x="-115"></image>
+                           y="225" text-anchor="end" width="32" x="-108"></image>
                     <text font-size="14" fill="black"
                           class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
                           y="238" width="200" x="0">{message.views} views
@@ -160,7 +160,7 @@
         z-index: 10;
         background-color: rgba(0, 0, 0, 0.7);
         padding: 0 0 8px 8px;
-        border-radius: 5px;
+        border-radius: 0px;
 
     }
 
@@ -273,5 +273,14 @@
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
+    }
+    .photo-circle--small {
+        width:38px;
+        height:38px;
+        overflow: hidden;
+    }
+    .photo-circle--small img {
+        width:100%;
+        height:100%;
     }
 </style>
