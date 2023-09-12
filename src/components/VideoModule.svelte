@@ -1,6 +1,6 @@
 <script>
     import {onMount} from 'svelte';
-    import {videoSelected} from '../stores/mainstore.js';
+    import {actualSMVC, videoSelected} from '../stores/mainstore.js';
     import {openComponentsStack} from '../stores/openComponentsStack.js';
     import {activeVideoIdStore} from '../stores/mainstore.js';
     import Carousel from 'svelte-carousel';
@@ -472,14 +472,45 @@
     </div>
     <div class="video-title">
         <div class="title">{selectedVid.name}</div>
-        <div class="views">{selectedVid.views}</div>
+        <div class="views"><div class="img"><img src="img/icons/icon_eye.svg"/></div><div>{selectedVid.views}</div></div>
+    </div>
+    <div class="video-info">
+        <div class="conversation__user-photo">
+            <img
+                    class="photo-circle photo-circle--medium"
+                    src={selectedVid.imageUrl}
+                    alt={selectedVid.imageUrl}
+            />
+        </div>
+        <div class="conversation__info">
+            <div class="conversation__info__user-name">{selectedVid.channel}</div>
+            <div class="conversation__info__user-email">152 000 subscribers</div>
+        </div>
+        <div class="second-container-semi" style="display: flex; justify-content: space-between;">
+            <div class="element">
+                <div class="imgdiv"><img src="./img/icons/icon_newsfeed.svg" alt="Newsfeed Icon"></div>
+                <div><span>Newsfeed</span></div>
+            </div>
+            <div class="element">
+                <div class="imgdiv"><img src="./img/icons/icon_help_n.svg" alt="Forum Icon"></div>
+                <div><span>Forum</span></div>
+            </div>
+            <div class="element">
+                <div class="imgdiv"><img src="./img/icons/icon_event_n.svg" alt="Events Icon"></div>
+                <div><span>Events</span></div>
+            </div>
+            <div class="element">
+                <div class="imgdiv"><img src="./img/icons/icon_help_n.svg" alt="Blog Icon"></div>
+                <div><span>Blog</span></div>
+            </div>
+        </div>
     </div>
 </div>
 
 
 <style>
     .video-detail {
-        margin: 0 64px 0 64px;
+        margin: 8px 64px 8px 64px;
         overflow: hidden;
         position: relative;
 
@@ -669,21 +700,66 @@
     .hidden {
         display: none;
     }
-    .conversation-detail .video-title {
-        margin: 16px 64px;
+    .conversation-detail .video-title, .conversation-detail .video-info {
+        margin: 8px 64px;
         flex-direction: row;
         align-content: space-between;
         display: inline-flex;
+        align-items: center;
 
+    }
+    .conversation-detail .video-info .conversation__user-photo {
+        height:50px;
+        width:50px;
+    }
+    .conversation-detail .video-info .conversation__info {
+        margin-left:16px;
+    }
+    .conversation-detail .video-info .conversation__info__user-name {
+        font-weight: bold;
     }
     .conversation-detail .video-title .title {
         font-weight: bold;
         font-size:16px;
     }
     .conversation-detail .video-title .views {
-        font-weight: bold;
+        font-weight: normal;
         font-size:16px;
         margin-right: 0;
         margin-left: auto;
+        display: inline-flex;
+    }
+    .conversation-detail .video-title .views .img {
+       margin: 2px 4px 0px 0px;
+        width:16px;
+        height:16px;
+    }
+    .conversation-detail .video-title .views img {
+        width:100%;
+        height:100%;
+    }
+    .second-container-semi {
+        margin-left: auto;
+        margin-right: 0;
+    }
+    .second-container-semi .element{
+        width:100px;
+        display:inline-flex;
+        background-color: var(--secondary-color);
+        border-radius: 5px;
+        border:1px solid #ccc;
+        margin-left:4px;
+        align-items: center;
+        font-size:0.8em;
+        font-weight: bold;
+        justify-content: center;
+    }
+    .second-container-semi .imgdiv {
+        width:24px;
+        height:24px;
+    }
+    .second-container-semi .imgdiv img{
+        width:100%;
+        height:100%;
     }
 </style>
