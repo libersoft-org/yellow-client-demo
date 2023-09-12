@@ -507,7 +507,7 @@
         left: 40px;
         width: calc(100% - 80px);
         height: 250px !important;
-        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 1) 100%);
+        /* background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 1) 100%); */
         pointer-events: none;
         z-index: 126;
         display: block;
@@ -519,7 +519,7 @@
         left: 40px;
         width: calc(100% - 80px);
         height: 440px !important;
-        background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 1) 100%);
+        /* background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 1) 100%); */
         pointer-events: none;
         z-index: 126;
         display: block;
@@ -529,7 +529,7 @@
         width: calc(100% - 110px);
         height: 1.2em;
         font-weight: bold;
-        margin-left: 58px;
+        margin-left: 40px;
         margin-right: 105px;
         border-bottom: 1px solid black;
         text-align: start;
