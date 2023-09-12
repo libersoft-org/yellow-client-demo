@@ -470,15 +470,18 @@
             </video>
         </div>
     </div>
-
+    <div class="video-title">
+        <div class="title">{selectedVid.name}</div>
+        <div class="views">{selectedVid.views}</div>
+    </div>
 </div>
 
 
 <style>
     .video-detail {
-        flex: 1;
         margin: 0 64px 0 64px;
         overflow: hidden;
+        position: relative;
 
     }
     .video-detail .image-container, .video-detail video {
@@ -615,7 +618,13 @@
         align-items: normal;
         justify-content: start;
         overflow-x: hidden;
+        overflow-y: auto;
+        /*box-shadow: none!important; */
+
+    }
+    .conversation-detail.videolist, .conversation-detail.videodetail {
         box-shadow: none!important;
+        background: transparent;
     }
     .subscibers-button, .videolist-button {
         background-color: var(--primary-color-p15);
@@ -623,11 +632,34 @@
         border: 1px solid black;
         width:auto;
         cursor: pointer;
-        width:100px;
-        margin-left:48px;
+        width:120px;
+        margin-left:64px;
         margin-top: 8px;
+        margin-bottom: 8px;
         padding:4px;
         text-align: center;
+    }
+    .image-container.video {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0px;
+        left:0px;
+        width:100%;
+        height:100%;
+
+    }
+    .image-container.video .icon-container {
+        width:25%;
+        height:25%;
+    }
+    .image-container.video .icon-container .play-icon {
+        width:100%;height:100%;
+    }
+    .image-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     @media (min-width: 795px) {
         .subscibers-button {
@@ -636,5 +668,22 @@
     }
     .hidden {
         display: none;
+    }
+    .conversation-detail .video-title {
+        margin: 16px 64px;
+        flex-direction: row;
+        align-content: space-between;
+        display: inline-flex;
+
+    }
+    .conversation-detail .video-title .title {
+        font-weight: bold;
+        font-size:16px;
+    }
+    .conversation-detail .video-title .views {
+        font-weight: bold;
+        font-size:16px;
+        margin-right: 0;
+        margin-left: auto;
     }
 </style>

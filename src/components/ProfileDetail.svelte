@@ -96,7 +96,7 @@
     .profile-detail {
         margin: 0px 0px 0px 0px;
         width: 100%;
-        overflow-x: hidden;
+        overflow: hidden;
         /* padding-top: 16px; */
     }
     .profile-detail .profile-main {
@@ -239,7 +239,7 @@
     }
 
     .selected-content {
-        margin-top: 25px;
+       /* margin-top: 25px;*/
         text-align: center;
     }
 

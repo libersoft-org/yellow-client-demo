@@ -92,7 +92,9 @@
 			<CallDetail id="f-conversation-detail"/>
 		{:else if $actualMVC === 'video'}
 			<UserBar id="f-user-bar" />
+			<div class="conversation-detail">
 			<VideoModule id="f-conversation-detail"/>
+			</div>
 		{/if}
 	</div>
 </div>
