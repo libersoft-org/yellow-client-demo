@@ -16,8 +16,8 @@
              width="320" transform="scale(1)" height="238">
             <foreignObject class="s-BTGIt7ri9Tsr" y="8" x="4" width="310" height="174">
                 <div xmlns="http://www.w3.org/1999/xhtml"
-                     style="width: 100%; height: 100%; border-radius: 10px; overflow: hidden;" class="s-BTGIt7ri9Tsr">
-                    <img src="{message.preview}" style="width: 100%; height: 100%;" alt="Image"
+                     style="width: 100%; height:100%; border-radius: 10px; overflow: hidden;" class="s-BTGIt7ri9Tsr">
+                    <img src="{message.preview}" style="width: 100%;object-fit: cover;height: 100%;" alt="Image"
                          class="s-BTGIt7ri9Tsr"></div>
             </foreignObject>
             <g class="s-BTGIt7ri9Tsr" transform="translate(0,-30)">
@@ -64,7 +64,7 @@
             <foreignObject class="s-BTGIt7ri9Tsr" y="8" x="4" width="310" height="174">
                 <div xmlns="http://www.w3.org/1999/xhtml"
                      style="width: 100%; height: 100%; border-radius: 10px; overflow: hidden;" class="s-BTGIt7ri9Tsr">
-                    <img src="{message.preview}" style="width: 100%; height: 100%;" alt="Image"
+                    <img src="{message.preview}" style="width: 100%;object-fit: cover;height: 100%;" alt="Image"
                          class="s-BTGIt7ri9Tsr"></div>
             </foreignObject>
             <rect x="265" y="12" width="45" height="20" rx="4" ry="4" fill="#ff0000"></rect>
@@ -111,8 +111,8 @@
              width="210" transform="scale(1)" height="440">
             <foreignObject class="s-BTGIt7ri9Tsr" y="8" x="4" width="196" height="320">
                 <div xmlns="http://www.w3.org/1999/xhtml"
-                     style="width: 100%; height: 100%; border-radius: 10px; overflow: hidden;" class="s-BTGIt7ri9Tsr">
-                    <img src="{message.preview}" style="width: 100%; height: 100%;" alt="Image"
+                     style="height: 100%; width:100%; border-radius: 10px; overflow: hidden;" class="s-BTGIt7ri9Tsr">
+                    <img src="{message.preview}" style="width: 100%;object-fit: cover;height: 100%;" alt="Image"
                          class="s-BTGIt7ri9Tsr"></div>
             </foreignObject>
             <g class="s-BTGIt7ri9Tsr" transform="translate(0,115)">

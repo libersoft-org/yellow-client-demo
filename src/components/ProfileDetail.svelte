@@ -58,7 +58,7 @@
                     <div class="imgdiv"><img src="./img/icons/icon_newsfeed.svg" alt="Newsfeed Icon"></div>
                     <div><span>Newsfeed</span></div>
                 </div>
-                <div class="element" class:selected={selectedSMVC==='video'} on:click={()=>{
+                <div class="element" class:selected={$actualSMVC==='video'} on:click={()=>{
                     $actualSMVC='video';
                     selectedSMVC = 'video'
                     }}>

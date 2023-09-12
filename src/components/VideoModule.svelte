@@ -127,7 +127,9 @@
     videoRItem[3].preview ='content/pr4.jpg';
     videoRItem[4].preview ='content/pr5.jpg';
     videoRItem[5].preview ='content/pr6.jpg';
-
+    let carpos1 = 0;
+    let carpos2 = 0;
+    let carpos3 = 0;
     export let isPaused = true;
     import AudioPlayer from './AudioPlayer.svelte';
     import LeafMap from './utils/LeafMap.svelte';
@@ -179,13 +181,6 @@
 </script>
 
 <div class="conversation-detail videolist" class:hidden={activeType != "videolist"}>
-    <div class="subscibers-button" on:click={()=>{
-                document.querySelector(`.panel-left`).classList.add('active-panel');
-                document.querySelector(`.panel-right`).classList.remove('active-panel');
-                window.adjustPanels();
-    }}>
-        <span>Subscribers</span>
-    </div>
     <div class="videomodule-news">
         <div class="videomodule-title">
             <span>Video</span>
@@ -193,7 +188,7 @@
         </div>
         <div class="container-for-carousel">
             <div class="back-button">
-                <a class="icon" on:click="{()=>{document.querySelector('.car1-p').click()}}" alt="search"><img
+                <a class="icon" class:hidden={carpos1<=0} on:click="{()=>{carpos1 -= 1;document.querySelector('.car1-p').click()}}" alt="search"><img
                         src="img/icons/icon_back.svg" alt="search"/></a>
             </div>
             <div class="carousel-pack">
@@ -201,7 +196,7 @@
                     <Carousel
                             let:showPrevPage
                             let:showNextPage
-                            particlesToShow={18} particlesToScroll={3} arrows=false loop>
+                            particlesToShow={18} particlesToScroll={1} arrows=false loop>
                         <div class="car1-p" slot="prev" on:click={showPrevPage}></div>
 
                         <div class="carousel-item" on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[0]}}>
@@ -269,7 +264,7 @@
                 </div>
             </div>
             <div class="back-button">
-                <a class="icon" on:click="{()=>{document.querySelector('.car1-n').click()}}" alt="search"><img
+                <a class="icon" class:hidden={carpos1>6} on:click="{()=>{carpos1+=1;document.querySelector('.car1-n').click()}}" alt="search"><img
                         src="img/icons/icon_forw.svg" alt="search"/></a>
             </div>
         </div>
@@ -281,7 +276,7 @@
         </div>
         <div class="container-for-carousel">
             <div class="back-button">
-                <a class="icon" on:click="{()=>{document.querySelector('.car1-p2').click()}}" alt="search"><img
+                <a class="icon" class:hidden={carpos2<=0} on:click="{()=>{carpos2 -=1 ;document.querySelector('.car1-p2').click()}}" alt="search"><img
                         src="img/icons/icon_back.svg" alt="search"/></a>
             </div>
             <div class="carousel-pack">
@@ -289,7 +284,7 @@
                     <Carousel
                             let:showPrevPage
                             let:showNextPage
-                            particlesToShow={18} particlesToScroll={3} arrows=false loop>
+                            particlesToShow={18} particlesToScroll={1} arrows=false loop>
                         <div class="car1-p2" slot="prev" on:click={showPrevPage}></div>
 
                         <div class="carousel-item">
@@ -356,7 +351,7 @@
                 </div>
             </div>
             <div class="back-button">
-                <a class="icon" on:click="{()=>{document.querySelector('.car1-n2').click()}}" alt="search"><img
+                <a class="icon" class:hidden={carpos2>6} on:click="{()=>{carpos2 +=1; document.querySelector('.car1-n2').click()}}" alt="search"><img
                         src="img/icons/icon_forw.svg" alt="search"/></a>
             </div>
         </div>
@@ -368,7 +363,7 @@
         </div>
         <div class="container-for-carousel reels">
             <div class="back-button">
-                <a class="icon" on:click="{()=>{document.querySelector('.car1-p3').click()}}" alt="search"><img
+                <a class="icon" class:hidden={carpos3<=0} on:click="{()=>{carpos3 -=1; document.querySelector('.car1-p3').click()}}" alt="search"><img
                         src="img/icons/icon_back.svg" alt="search"/></a>
             </div>
             <div class="carousel-pack">
@@ -376,7 +371,7 @@
                     <Carousel
                             let:showPrevPage
                             let:showNextPage
-                            particlesToShow={18} particlesToScroll={3} arrows=false loop>
+                            particlesToShow={18} particlesToScroll={1} arrows=false loop>
                         <div class="car1-p3" slot="prev" on:click={showPrevPage}></div>
 
                         <div class="carousel-item">
@@ -442,7 +437,7 @@
                 </div>
             </div>
             <div class="back-button">
-                <a class="icon" on:click="{()=>{document.querySelector('.car1-n3').click()}}" alt="search"><img
+                <a class="icon" class:hidden={carpos3>6} on:click="{()=>{carpos3 += 1 ;document.querySelector('.car1-n3').click()}}" alt="search"><img
                         src="img/icons/icon_forw.svg" alt="search"/></a>
             </div>
         </div>
@@ -495,7 +490,7 @@
         width: 100%;
         margin: 8px 0 0 0;
         position: relative;
-        height: 100%;
+        /* height: 100%; */
 
     }
 
@@ -526,11 +521,11 @@
     }
 
     .videomodule-title {
-        width: calc(100% - 110px);
+        width: calc(100% - 92px);
         height: 1.2em;
         font-weight: bold;
-        margin-left: 40px;
-        margin-right: 105px;
+        margin-left: 48px;
+        margin-right: 92px;
         border-bottom: 1px solid black;
         text-align: start;
 

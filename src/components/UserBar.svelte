@@ -86,7 +86,17 @@
     });
 </script>
 
-<div class="user-bar" class:hidden-bar={((!isConversationSelected)&&($actualMVC === 'conversation'))||((!isContactSelected)&&($actualMVC === 'contact'))||((!isCallSelected)&&($actualMVC === 'call'))||((!isVideoSelected)&&($actualMVC === 'video'))}>
+<div class="user-bar" class:back-bar={$actualMVC==='video' || $actualMVC==='newsfeed'} class:hidden-bar={((!isConversationSelected)&&($actualMVC === 'conversation'))||((!isContactSelected)&&($actualMVC === 'contact'))||((!isCallSelected)&&($actualMVC === 'call'))}>
+    {#if $actualMVC === 'video'}
+        <div class="user-bar-container" class:noShadow={($actualMVC==='contact')}>
+            <div class="conversation-user">
+                <div class="back-button">
+                    <a class="icon" on:click={backButtonClick}><img src="img/icons/icon_back.svg" alt="search"/></a>
+                </div>
+                <div class="title"><span>Show subscribers</span></div>
+            </div>
+        </div>
+    {:else}
     <div class="user-bar-container" class:noShadow={($actualMVC==='contact')}>
         <div class="conversation-user">
             <div class="back-button">
@@ -254,6 +264,7 @@
             class="message__content__info__icons__icon message__content__info__icons__icon--non-secure"
         />-->
     </div>
+    {/if}
 </div>
 {#if showVideoCall} }
     <VoiceVideoCall bind:showModal={showVideoCall}/>
@@ -333,6 +344,15 @@
     .profile-main .profile-photo-info .profile-photo-container img {
         width:100%;
         height:100%;
+    }
+    .conversation-user .title span {
+        font-weight: bold;
+    }
+
+    @media (min-width: 795px) {
+        .back-bar {
+            display:none;
+        }
     }
 
 </style>

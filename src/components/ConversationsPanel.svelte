@@ -15,7 +15,7 @@
 	import { get } from 'svelte/store';
 	import { tick } from 'svelte';
 	import { activeConversationIdStore } from '../stores/mainstore.js';
-	import {actualMVC} from '../stores/mainstore.js';
+	import {actualMVC, actualSMVC} from '../stores/mainstore.js';
 	import MultiTick from './MultiTick.svelte';
 	import CallItem from "./CallItem.svelte";
 	import VideoItem from "./VideoItem.svelte";
@@ -381,6 +381,7 @@
 								video = {conversation}
 								isActive={activeConversationId === conversation.id}
 								onSelect={() => {
+							$actualMVC = 'contact'; $actualSMVC = 'video';
                             document.querySelector(`.panel-right`).classList.add('active-panel');
                             document.querySelector(`.panel-left`).classList.remove('active-panel');
                             selectConversation(conversation.id);
