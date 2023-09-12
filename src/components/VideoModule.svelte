@@ -5,7 +5,8 @@
     import {activeVideoIdStore} from '../stores/mainstore.js';
     import Carousel from 'svelte-carousel';
     import VideoModuletemplates from "./VideoModuleTemplates.svelte";
-
+    let activeType = 'videolist';
+    let selectedVid ={};
     let storeSize;
     openComponentsStack.subscribe((value) => {
         storeSize = value.length;
@@ -49,6 +50,7 @@
     videoCItem[0].views = 1000;
     videoCItem[0].like = 250;
     videoCItem[0].dislike = 100;
+    videoCItem[0].videoUrl='content/video.mp4'
 
     videoCItem[1] = {};
 
@@ -61,6 +63,7 @@
     videoCItem[1].views = 1500;
     videoCItem[1].like = 257;
     videoCItem[1].dislike = 10;
+
 
     videoCItem[2] = {};
 
@@ -125,9 +128,57 @@
     videoRItem[4].preview ='content/pr5.jpg';
     videoRItem[5].preview ='content/pr6.jpg';
 
+    export let isPaused = true;
+    import AudioPlayer from './AudioPlayer.svelte';
+    import LeafMap from './utils/LeafMap.svelte';
+    let currentTime = '0:00';
+    let duration = '0:00';
+    let showTranslation = false;
+    let playedstart = false;
+
+    function updateTime(event) {
+        const videoElement = event.currentTarget;
+        currentTime = formatTime(videoElement.currentTime);
+        duration = formatTime(videoElement.duration);
+    }
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = Math.floor(seconds % 60);
+        return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+    }
+    function toggleVideoPlayback(event) {
+        if (!playedstart) {
+            event.preventDefault();
+            playedstart - true;
+            const videoContainer = event.currentTarget.closest('.image-container');
+            const videoElement = videoContainer.querySelector('video');
+            videoElement.controls = true;
+            if (videoElement.paused) {
+                videoElement.play();
+            } else {
+                videoElement.pause();
+            }
+
+        }
+        // Zastavte výchozí událost
+
+    }
+    function handleVideoPlay(event) {
+        const videoElement = event.currentTarget;
+        //videoElement.controls = true;
+        const iconContainer = videoElement.previousElementSibling;
+        iconContainer.style.display = 'none';
+    }
+
+    function handleVideoPause(event) {
+        const videoElement = event.currentTarget;
+        //videoElement.controls = false;
+        const iconContainer = videoElement.previousElementSibling;
+        iconContainer.style.display = 'none';
+    }
 </script>
 
-<div class="conversation-detail">
+<div class="conversation-detail videolist" class:hidden={activeType != "videolist"}>
     <div class="subscibers-button" on:click={()=>{
                 document.querySelector(`.panel-left`).classList.add('active-panel');
                 document.querySelector(`.panel-right`).classList.remove('active-panel');
@@ -153,7 +204,7 @@
                             particlesToShow={18} particlesToScroll={3} arrows=false loop>
                         <div class="car1-p" slot="prev" on:click={showPrevPage}></div>
 
-                        <div class="carousel-item">
+                        <div class="carousel-item" on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[0]}}>
                             <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
                         </div>
                         <div class="carousel-item">
@@ -397,9 +448,47 @@
         </div>
     </div>
 </div>
+<div class="conversation-detail videodetail" class:hidden={activeType != "videodetail"}>
+    <div class="videolist-button" on:click={()=>{
+                activeType = 'videolist';
+    }}>
+        <span>back to videos</span>
+    </div>
+    <div class="video-detail">
+        <div
+                class="image-container video svelte-{isPaused ? 'paused' : ''}" on:click={toggleVideoPlayback}
+
+        >
+            <div class="icon-container">
+                <img src="../img/icons/icn_play.svg" alt="Play" class="play-icon"  />
+            </div>
+            <video
+                    id="video-{selectedVid.id}"
+                    src={selectedVid.videoUrl}
+                    playsinline
+                    poster={selectedVid.preview}
+                    on:play={handleVideoPlay}
+                    on:pause={handleVideoPause}
+                    on:timeupdate={updateTime}
+            >
+                <track kind="captions" />
+            </video>
+        </div>
+    </div>
+
+</div>
 
 
 <style>
+    .video-detail {
+        flex: 1;
+        margin: 0 64px 0 64px;
+        overflow: hidden;
+
+    }
+    .video-detail .image-container, .video-detail video {
+        width:100%;
+    }
     .videomodule-news, .videomodule-live, .videomodule-reels {
         display: flex;
         flex-direction: column;
@@ -494,7 +583,7 @@
         height: 240px;
         box-sizing: border-box;
         padding: 2px;
-        background-color: #ffffff;
+        background-color: transparent;
         align-items: center;
         justify-content: center;
         display: flex;
@@ -505,7 +594,7 @@
         height: 428px;
         box-sizing: border-box;
         padding: 2px;
-        background-color: #ffffff;
+        background-color: transparent;
         align-items: center;
         justify-content: center;
         display: flex;
@@ -533,7 +622,7 @@
         overflow-x: hidden;
         box-shadow: none!important;
     }
-    .subscibers-button {
+    .subscibers-button, .videolist-button {
         background-color: var(--primary-color-p15);
         border-radius: 5px;
         border: 1px solid black;
@@ -549,5 +638,8 @@
         .subscibers-button {
             display: none!important;
         }
+    }
+    .hidden {
+        display: none;
     }
 </style>

@@ -14,6 +14,7 @@
         document.querySelector(`.panel-right`).classList.remove('active-panel');
         window.adjustPanels();
     }
+    let selectedSMVC = '';
 </script>
 <div class="profile-container">
     <div class="profile-detail">
@@ -57,7 +58,10 @@
                     <div class="imgdiv"><img src="./img/icons/icon_newsfeed.svg" alt="Newsfeed Icon"></div>
                     <div><span>Newsfeed</span></div>
                 </div>
-                <div class="element"  on:click={()=>{$actualSMVC='video'}}>
+                <div class="element" class:selected={selectedSMVC==='video'} on:click={()=>{
+                    $actualSMVC='video';
+                    selectedSMVC = 'video'
+                    }}>
                     <div class="imgdiv"><img src="./img/icons/icon_play_out.svg" alt="Video Icon"></div>
                     <div><span>Video</span></div>
                 </div>
@@ -149,6 +153,9 @@
     }
     .second-container-semi .element:hover {
         background-color: #2d2d2d;
+    }
+    .second-container-semi .element.selected {
+        background-color: #3d3d3d;
     }
     @container (max-width: 750px) {
         .element {
