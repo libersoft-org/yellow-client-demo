@@ -137,7 +137,7 @@ import CommentsList from "./CommentsList.svelte";
 </div>
 <style>
     .video-detail {
-        margin: 8px 64px 8px 64px;
+        margin: 8px 32px 8px 32px;
         position: relative;
         aspect-ratio: auto;
         height: auto;
@@ -295,10 +295,6 @@ import CommentsList from "./CommentsList.svelte";
         display: flex;
         flex-direction: column;
     }
-    .newsfeed-item {
-        display: flex;
-        flex-direction: column;
-    }
 
     .subscibers-button, .videolist-button {
         background-color: var(--primary-color-p15);
@@ -353,7 +349,7 @@ import CommentsList from "./CommentsList.svelte";
     }
 
     .conversation-detail .video-title, .conversation-detail .video-info {
-        margin: 8px 64px;
+        margin: 8px 32px;
         flex-direction: row;
         align-content: space-between;
         display: inline-flex;
@@ -401,13 +397,16 @@ import CommentsList from "./CommentsList.svelte";
 
     .second-container-semi {
         display: grid;
-        gap:2px;
+        gap: 2px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        margin: 0 64px;
+        margin: 8px 32px 8px 32px;
     }
+
     .second-container-semi .like-dislike {
         display: inline-flex;
         flex: 1;
+        box-shadow: var(--basic-shadow);
+        border-radius: 5px;
     }
     .second-container-semi .element {
         width: auto;
@@ -421,6 +420,7 @@ import CommentsList from "./CommentsList.svelte";
         justify-content: center;
         cursor: pointer;
         height:30px;
+        box-shadow: var(--basic-shadow);
     }
     .second-container-semi .element-l {
        flex: 1;
@@ -502,41 +502,56 @@ import CommentsList from "./CommentsList.svelte";
         width: 100%;
         height: 100%;
     }
-
+    .videodetail {
+        container-type: inline-size;
+        container-name: vid;
+    }
+    @container vid (max-width:540px) {
+        .newsfeed-item {
+            margin: 8px 8px 8px 8px!important;
+        }
+    }
     .video-info {
         container-type: inline-size;
+        container-name: vi;
     }
-
-    @container (max-width:600px) {
+    @container vi (max-width:795px) {
+        .second-container-semi {
+            margin:0;
+        }
+    }
+    @container vi (max-width:600px) {
         .second-container-semi {
             display: inline-grid!important;
             gap:2px;
             grid-template-columns: 1fr 1fr;
         }
     }
-    @container (max-width:400px) {
+    @container vi (max-width:400px) {
         .second-container-semi {
             display: inline-grid!important;
             gap:2px;
             grid-template-columns: 1fr;
         }
     }
+
     .photo-video-info {
         display:contents;
     }
     .video-description {
-        background-color: var(--primary-color-p35);
+        background-color: var(--primary-color-p44);
         border-radius: 5px;
-        border: 1px solid var(--primary-color-p35);
+        border: 1px solid var(--primary-color-p44);
         padding:8px;
-        margin: 8px 64px;
+        margin: 8px 32px;
         text-align: left;
+        box-shadow: var(--basic-shadow);
     }
     .video-description a  {
         text-decoration: none;
     }
     .comment-list {
-        margin:8px 64px 8px 64px;
+        margin:8px 32px 8px 32px;
     }
     .newsfeed-image {
         width:100%;
@@ -555,9 +570,23 @@ import CommentsList from "./CommentsList.svelte";
         text-align: right;
     }
     .newsfeed-line {
-        border-bottom:1px solid black;
+        border-bottom:1px solid transparent;
         width:100%;
         margin: 32px 0;
+
+    }
+    .photo-video-info .photo-circle {
+        box-shadow: var(--basic-shadow);
+    }
+    .newsfeed-item {
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        border: 1px solid var(--primary-color-p25);
+        margin: 16px 32px;
+        background-color: var(--primary-color-p35);
+        box-shadow: var(--basic-shadow);
+        padding-top: 16px;
 
     }
 </style>

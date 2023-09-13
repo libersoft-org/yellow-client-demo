@@ -16,6 +16,7 @@
 	import CallDetail from "../components/CallDetail.svelte";
 	import VideoModule from "../components/VideoModule.svelte";
 	import NewsFeedModule from "../components/NewsFeedModule.svelte";
+	import NewsFeedCarusel from "../components/NewsFeedCarusel.svelte";
 
 	setupGlobalListeners();
 
@@ -99,8 +100,15 @@
 		{:else if $actualMVC === 'newsfeed'}
 			<UserBar id="f-user-bar" />
 			<div class="conversation-detail">
+				<NewsFeedCarusel></NewsFeedCarusel>
 				<NewsFeedModule id="f-conversation-detail"/>
 			</div>
 		{/if}
 	</div>
 </div>
+<style>
+	.conversation-detail {
+		display: flex;
+		flex-direction: column;
+	}
+</style>

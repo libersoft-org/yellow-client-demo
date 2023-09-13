@@ -252,7 +252,8 @@
         text-align: center;
         height:100%;
         width:100%;
-        display: contents;
+        display: flex;
+        overflow-y: auto;
     }
 
     .back-button {

@@ -186,7 +186,7 @@
     }
 </script>
 
-<div class="conversation-detail videolist" class:hidden={activeType != "videolist"}>
+<div class="videolist" class:hidden={activeType != "videolist"}>
     <div class="videomodule-news">
         <div class="videomodule-title">
             <span>Video</span>
@@ -210,61 +210,90 @@
                              on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[0]}}>
                             <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[1]}}>
                             <VideoModuletemplates message={videoCItem[1]} templateType="video"/>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[2]}}>
                             <VideoModuletemplates message={videoCItem[2]} templateType="video"/>
                         </div>
 
-                        <div class="carousel-item">
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[3]}}>
                             <VideoModuletemplates message={videoCItem[3]} templateType="video"/>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[4]}}>
                             <VideoModuletemplates message={videoCItem[4]} templateType="video"/>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[5]}}>
                             <VideoModuletemplates message={videoCItem[5]} templateType="video"/>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[6]}}>
                             <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
                         </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[1]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[2]} templateType="video"/>
-                        </div>
-
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[3]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[4]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoCItem[5]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[0]}}>
                             <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[1]}}>
                             <VideoModuletemplates message={videoCItem[1]} templateType="video"/>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[2]}}>
                             <VideoModuletemplates message={videoCItem[2]} templateType="video"/>
                         </div>
 
-                        <div class="carousel-item">
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[3]}}>
                             <VideoModuletemplates message={videoCItem[3]} templateType="video"/>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[4]}}>
                             <VideoModuletemplates message={videoCItem[4]} templateType="video"/>
                         </div>
-
-                        <div class="carousel-item">
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[5]}}>
                             <VideoModuletemplates message={videoCItem[5]} templateType="video"/>
                         </div>
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[6]}}>
+                            <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
+                        </div>
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[0]}}>
+                            <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
+                        </div>
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[1]}}>
+                            <VideoModuletemplates message={videoCItem[1]} templateType="video"/>
+                        </div>
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[2]}}>
+                            <VideoModuletemplates message={videoCItem[2]} templateType="video"/>
+                        </div>
+
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[3]}}>
+                            <VideoModuletemplates message={videoCItem[3]} templateType="video"/>
+                        </div>
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[4]}}>
+                            <VideoModuletemplates message={videoCItem[4]} templateType="video"/>
+                        </div>
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[5]}}>
+                            <VideoModuletemplates message={videoCItem[5]} templateType="video"/>
+                        </div>
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[6]}}>
+                            <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
+                        </div>
+
 
 
                         <div class="car1-n" slot="next" on:click={showNextPage}></div>
@@ -456,12 +485,13 @@
         </div>
     </div>
 </div>
-<div class="conversation-detail videodetail" class:hidden={activeType != "videodetail"}>
+<div class="videodetail" class:hidden={activeType != "videodetail"}>
     <div class="videolist-button" on:click={()=>{
                 activeType = 'videolist';
     }}>
         <span>back to videos</span>
     </div>
+    <div class="videocontainer">
     <div class="video-detail">
         <div
                 class="image-container video svelte-{isPaused ? 'paused' : ''}" on:click={toggleVideoPlayback}
@@ -506,14 +536,14 @@
         </div>
         <div class="second-container-semi" style="display: flex; justify-content: space-between;">
             <div class="like-dislike">
-            <div class="element-l">
-                <div class="imgdiv-like"><img src="./img/icons/icon_like_b.svg" alt="Like Icon"></div>
-                <div><span>{selectedVid.like} </span></div>
-            </div>
-            <div class="element-p">
-                <div class="imgdiv-dislike"><img src="./img/icons/icon_dislike_b.svg" alt="Dislike Icon"></div>
-                <div><span>{selectedVid.dislike}</span></div>
-            </div>
+                <div class="element-l">
+                    <div class="imgdiv-like"><img src="./img/icons/icon_like_b.svg" alt="Like Icon"></div>
+                    <div><span>{selectedVid.like} </span></div>
+                </div>
+                <div class="element-p">
+                    <div class="imgdiv-dislike"><img src="./img/icons/icon_dislike_b.svg" alt="Dislike Icon"></div>
+                    <div><span>{selectedVid.dislike}</span></div>
+                </div>
             </div>
             <div class="element">
                 <div class="imgdiv-share"><img src="./img/icons/icon_share.svg" alt="Share Icon"></div>
@@ -530,20 +560,23 @@
         </div>
     </div>
     <div class="video-description">
-        <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+        <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
+            vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum
+            dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
         </div>
-        <div class="element"><b>Link: <a href="" >www.libersoft.org</a></b></div>
+        <div class="element"><b>Link: <a href="">www.libersoft.org</a></b></div>
+    </div>
     </div>
     <div class="comment-list">
-    <CommentsList/>
+        <CommentsList/>
     </div>
 </div>
 
 
 <style>
     .video-detail {
-        margin: 8px 64px 8px 64px;
+        margin: 8px 8px 8px 8px;
         position: relative;
         aspect-ratio: auto;
         height: auto;
@@ -551,6 +584,7 @@
 
     .video-detail .image-container, .video-detail video {
         width: 100%;
+
     }
 
     .videomodule-news, .videomodule-live, .videomodule-reels {
@@ -694,10 +728,33 @@
 
     }
 
-    .conversation-detail.videolist, .conversation-detail.videodetail {
+    .videolist {
         box-shadow: none !important;
         background: transparent;
-        height:calc(100% - 0px);
+        flex-direction: column;
+        align-items: normal;
+        justify-content: start;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .videodetail {
+        /*box-shadow: none !important;
+        background: transparent;
+        height:calc(100% - 0px); */
+        flex-direction: column;
+        align-items: normal;
+        justify-content: start;
+        overflow-x: hidden;
+        overflow-y: auto;
+        border-radius: 10px;
+        height: fit-content;
+        border: 1px solid var(--primary-color-p25);
+        margin: 16px 32px;
+        background: var(--primary-color-p35);
+        box-shadow: var(--basic-shadow);
+        padding-top: 16px;
+       /* width: calc(100% - 128px); */
     }
 
     .subscibers-button, .videolist-button {
@@ -707,7 +764,7 @@
         width: auto;
         cursor: pointer;
         width: 120px;
-        margin-left: 64px;
+        margin-left: 32px;
         margin-top: 8px;
         margin-bottom: 8px;
         padding: 4px;
@@ -752,35 +809,35 @@
         display: none;
     }
 
-    .conversation-detail .video-title, .conversation-detail .video-info {
-        margin: 8px 64px;
+    .videodetail .video-title, .videodetail .video-info {
+        margin: 8px 8px;
         flex-direction: row;
         align-content: space-between;
-        display: inline-flex;
+        display: flex;
         align-items: center;
 
     }
 
-    .conversation-detail .video-info .conversation__user-photo {
+    .video-info .conversation__user-photo {
         height: 50px;
         width: 50px;
     }
 
-    .conversation-detail .video-info .conversation__info {
+    .video-info .conversation__info {
         margin-left: 16px;
         text-align: left;
     }
 
-    .conversation-detail .video-info .conversation__info__user-name {
+    .video-info .conversation__info__user-name {
         font-weight: bold;
     }
 
-    .conversation-detail .video-title .title {
+    .video-title .title {
         font-weight: bold;
         font-size: 16px;
     }
 
-    .conversation-detail .video-title .views {
+    .video-title .views {
         font-weight: normal;
         font-size: 16px;
         margin-right: 0;
@@ -788,13 +845,13 @@
         display: inline-flex;
     }
 
-    .conversation-detail .video-title .views .img {
+    .video-title .views .img {
         margin: 2px 4px 0px 0px;
         width: 16px;
         height: 16px;
     }
 
-    .conversation-detail .video-title .views img {
+    .video-title .views img {
         width: 100%;
         height: 100%;
     }
@@ -806,9 +863,13 @@
         gap: 2px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+
     .second-container-semi .like-dislike {
         display: inline-flex;
+        border-radius: 5px;
+        box-shadow: var(--basic-shadow);
     }
+
     .second-container-semi .element {
         width: 100px;
         display: inline-flex;
@@ -820,8 +881,10 @@
         font-weight: bold;
         justify-content: center;
         cursor: pointer;
-        height:30px;
+        height: 30px;
+        box-shadow: var(--basic-shadow);
     }
+
     .second-container-semi .element-l {
         width: 45px;
         display: inline-flex;
@@ -835,15 +898,16 @@
         font-weight: bold;
         justify-content: center;
         cursor: pointer;
-        height:30px;
+        height: 30px;
         padding-right: 2px;
-        margin:0;
+        margin: 0;
     }
+
     .second-container-semi .element-p {
         width: 45px;
         display: inline-flex;
         background-color: var(--primary-color-p15);
-        border-radius:0px 5px 5px 0px;
+        border-radius: 0px 5px 5px 0px;
         border: 1px solid var(--primary-color-15);
         border-left: none;
         align-items: center;
@@ -851,10 +915,10 @@
         font-weight: bold;
         justify-content: center;
         cursor: pointer;
-        height:30px;
+        height: 30px;
         padding-left: 2px;
         padding-right: 6px;
-        margin:0;
+        margin: 0;
     }
 
     .second-container-semi .element:hover, .second-container-semi .element-l:hover, .second-container-semi .element-p:hover {
@@ -866,11 +930,13 @@
         height: 16px;
         margin-right: 2px;
     }
+
     .second-container-semi .imgdiv-download {
         width: 14px;
         height: 14px;
         margin-right: 2px;
     }
+
     .second-container-semi .imgdiv-subscribe {
         width: 14px;
         height: 14px;
@@ -884,9 +950,10 @@
         margin-left: 8px;
         margin-right: 2px;
     }
+
     .second-container-semi img {
-        width:100%;
-        height:100%;
+        width: 100%;
+        height: 100%;
     }
 
     .second-container-semi .imgdiv-dislike {
@@ -903,39 +970,54 @@
         height: 100%;
     }
 
+
+
     .video-info {
         container-type: inline-size;
+        container-name: vii;
     }
 
-    @container (max-width:600px) {
+    @container vii (max-width:600px) {
         .second-container-semi {
-            display: inline-grid!important;
-            gap:2px;
+            display: inline-grid !important;
+            gap: 2px;
             grid-template-columns: 1fr 1fr;
         }
     }
-    @container (max-width:400px) {
+
+    @container vii (max-width:400px) {
         .second-container-semi {
-            display: inline-grid!important;
-            gap:2px;
+            display: inline-grid !important;
+            gap: 2px;
             grid-template-columns: 1fr;
         }
     }
+
     .photo-video-info {
-        display:contents;
+        display: contents;
     }
+
     .video-description {
-        background-color: var(--primary-color-p35);
+        background-color: var(--primary-color-p44);
         border-radius: 5px;
-        border: 1px solid var(--primary-color-p35);
-        padding:8px;
-        margin: 8px 64px;
+        border: 1px solid var(--primary-color-p44);
+        padding: 8px;
+        margin: 8px 8px;
         text-align: left;
     }
-    .video-description a  {
+
+    .video-description a {
         text-decoration: none;
     }
+
     .comment-list {
-        margin:8px 64px 8px 64px;
+        margin: 8px 32px 8px 32px;
+    }
+    .videocontainer {
+        background:var(--primary-color-p44);
+        border-radius: 10px;
+        box-shadow: var(--basic-shadow);
+        padding:8px;
+        margin: 8px 32px 8px 32px;
     }
 </style>

@@ -381,7 +381,10 @@
 								video = {conversation}
 								isActive={activeConversationId === conversation.id}
 								onSelect={() => {
-							$actualMVC = 'contact'; $actualSMVC = 'video';
+
+							if ($actualMVC ==='video') $actualSMVC = 'video';
+							else $actualSMVC='newsfeed';
+							$actualMVC = 'contact';
                             document.querySelector(`.panel-right`).classList.add('active-panel');
                             document.querySelector(`.panel-left`).classList.remove('active-panel');
                             selectConversation(conversation.id);

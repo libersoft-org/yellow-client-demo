@@ -136,9 +136,15 @@
         margin-bottom: 32px;
     }
     .comment-input {
-        display: inline-flex;
+        display: flex;
         align-items: center;
         margin-bottom: 16px;
+        padding: 4px;
+        border-radius: 10px;
+        border: 1px solid #f0f0f0;
+        background-color: #f0f0f0;
+        box-shadow: var(--basic-shadow);
+        margin-top: 8px;
     }
     .c-input, .cc-input {
         border-bottom: 1px solid black;
@@ -174,6 +180,9 @@
     }
     .c-photo {
         margin-right: 8px;
+    }
+    .c-photo img {
+        box-shadow: var(--basic-shadow);
     }
     .like-dislike {
         margin-top:8px;
