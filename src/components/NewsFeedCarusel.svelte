@@ -3,6 +3,7 @@ import VideoModuletemplates from "./VideoModuleTemplates.svelte";
 import Carousel from "svelte-carousel";
 let carpos1 = 0;
 </script>
+<div class="main-cont">
 <div class="container-for-carousel">
     <div class="back-button">
         <a class="icon" class:hidden={carpos1<=0}
@@ -268,7 +269,20 @@ let carpos1 = 0;
                 src="img/icons/icon_forw.svg" alt="search"/></a>
     </div>
 </div>
+</div>
 <style>
+    .main-cont {
+        container-name: mcc;
+        container-type: inline-size;
+        width:100%;
+    }
+    @container mcc (max-width:540px) {
+        .container-for-carousel {
+            margin:32px 8px!important;
+            width: calc(100% - 16px)!important;
+        }
+
+    }
     .container-for-carousel {
         display: flex;
         width: calc(100% - 64px);
