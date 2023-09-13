@@ -811,6 +811,9 @@
 	height: 18px; /* Výška se přizpůsobí rodičovskému elementu */
 	width: auto; /* Šířka se přizpůsobí obsahu */
 }
+.sc-carousel-dots__container {
+	display: none!important;
+}
 @media (max-width: 794px) {
 
 	#page {
