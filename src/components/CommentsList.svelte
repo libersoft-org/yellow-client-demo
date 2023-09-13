@@ -168,7 +168,7 @@
         height: 100%;
     }
     .comment-info {
-        display: inline-flex;
+        display: flex;
         align-items: center;
         margin: 8px 0;
     }
