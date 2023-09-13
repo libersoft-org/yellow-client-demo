@@ -20,11 +20,12 @@
             <div class="c-photo">
                 <img class="photo-circle photo-circle--small" src="https://i.pravatar.cc/300?u=user5" alt="https://i.pravatar.cc/300?u=user5"/>
             </div>
-            <div class="c-info">
-                <b>NewUser</b> 1 month ago
-            </div>
+
         </div>
         <div class="comment-text message__content">
+            <div class="c-info">
+                <b>Matador</b> 1 month ago
+            </div>
             <div class="c-text">
                 <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
@@ -56,11 +57,11 @@
             <div class="c-photo">
                 <img class="photo-circle photo-circle--small" src="https://i.pravatar.cc/300?u=user7" alt="https://i.pravatar.cc/300?u=user7"/>
             </div>
+        </div>
+        <div class="comment-text message__content">
             <div class="c-info">
                 <b>Matador</b> 1 month ago
             </div>
-        </div>
-        <div class="comment-text message__content">
             <div class="c-text">
                 <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
             </div>
@@ -90,11 +91,11 @@
             <div class="c-photo">
                 <img class="photo-circle photo-circle--small" src="https://i.pravatar.cc/300?u=ownprofile" alt="https://i.pravatar.cc/300?u=ownprofile"/>
             </div>
-            <div class="c-info">
-                <b>MeWithAvatar</b> 1 month ago
-            </div>
         </div>
         <div class="comment-text message__content">
+            <div class="c-info">
+                <b>Matador</b> 1 month ago
+            </div>
             <div class="c-text">
                 <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
@@ -134,6 +135,8 @@
     }
     .comment {
         margin-bottom: 32px;
+        flex-direction: row;
+        display:flex;
     }
     .comment-input {
         display: flex;
@@ -175,14 +178,18 @@
     }
     .comment-info {
         display: flex;
-        align-items: center;
-        margin: 8px 0;
+        align-items: flex-end;
+        margin: 0px 0;
     }
     .c-photo {
         margin-right: 8px;
+        width:40px;
+        height:40px;
     }
     .c-photo img {
         box-shadow: var(--basic-shadow);
+        width:100%;
+        height:100%;
     }
     .like-dislike {
         margin-top:8px;
@@ -227,7 +234,25 @@
         text-align: left;
         font-weight: bold;
         cursor: pointer;
-        margin:16px;
+        margin:16px 0;
 
+    }
+    .c-info {
+        margin-bottom: 8px;
+        text-decoration: underline;
+    }
+    .message__content:after {
+        content: '';
+        position: absolute;
+        bottom: 6px;
+        left: -13px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 13px 16px 13px 0;
+        /* border-color: transparent hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 35%)) transparent transparent; */
+        border-color: transparent #f0f0f0 transparent transparent;
+        filter: drop-shadow(-6px 0px 4px #1d1d1d3d);
+        z-index: 1;
     }
 </style>
