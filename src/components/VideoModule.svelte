@@ -5,8 +5,9 @@
     import {activeVideoIdStore} from '../stores/mainstore.js';
     import Carousel from 'svelte-carousel';
     import VideoModuletemplates from "./VideoModuleTemplates.svelte";
+
     let activeType = 'videolist';
-    let selectedVid ={};
+    let selectedVid = {};
     let storeSize;
     openComponentsStack.subscribe((value) => {
         storeSize = value.length;
@@ -50,7 +51,7 @@
     videoCItem[0].views = 1000;
     videoCItem[0].like = 250;
     videoCItem[0].dislike = 100;
-    videoCItem[0].videoUrl='content/video.mp4'
+    videoCItem[0].videoUrl = 'content/video.mp4'
 
     videoCItem[1] = {};
 
@@ -112,27 +113,29 @@
     videoCItem[5].like = 0;
     videoCItem[5].dislike = 100;
 
-    let videoLItem = videoCItem.map(item => ({ ...item }));
-    videoLItem[0].preview ='content/pv7.jpg';
-    videoLItem[1].preview ='content/pv8.jpg';
-    videoLItem[2].preview ='content/pv9.jpg';
-    videoLItem[3].preview ='content/pv10.jpg';
-    videoLItem[4].preview ='content/pv11.jpg';
-    videoLItem[5].preview ='content/pv12.jpg';
+    let videoLItem = videoCItem.map(item => ({...item}));
+    videoLItem[0].preview = 'content/pv7.jpg';
+    videoLItem[1].preview = 'content/pv8.jpg';
+    videoLItem[2].preview = 'content/pv9.jpg';
+    videoLItem[3].preview = 'content/pv10.jpg';
+    videoLItem[4].preview = 'content/pv11.jpg';
+    videoLItem[5].preview = 'content/pv12.jpg';
 
-    let videoRItem = videoCItem.map(item => ({ ...item }));
-    videoRItem[0].preview ='content/pr1.jpg';
-    videoRItem[1].preview ='content/pr2.jpg';
-    videoRItem[2].preview ='content/pr3.jpg';
-    videoRItem[3].preview ='content/pr4.jpg';
-    videoRItem[4].preview ='content/pr5.jpg';
-    videoRItem[5].preview ='content/pr6.jpg';
+    let videoRItem = videoCItem.map(item => ({...item}));
+    videoRItem[0].preview = 'content/pr1.jpg';
+    videoRItem[1].preview = 'content/pr2.jpg';
+    videoRItem[2].preview = 'content/pr3.jpg';
+    videoRItem[3].preview = 'content/pr4.jpg';
+    videoRItem[4].preview = 'content/pr5.jpg';
+    videoRItem[5].preview = 'content/pr6.jpg';
     let carpos1 = 0;
     let carpos2 = 0;
     let carpos3 = 0;
     export let isPaused = true;
     import AudioPlayer from './AudioPlayer.svelte';
     import LeafMap from './utils/LeafMap.svelte';
+    import CommentsList from "./CommentsList.svelte";
+
     let currentTime = '0:00';
     let duration = '0:00';
     let showTranslation = false;
@@ -143,11 +146,13 @@
         currentTime = formatTime(videoElement.currentTime);
         duration = formatTime(videoElement.duration);
     }
+
     function formatTime(seconds) {
         const minutes = Math.floor(seconds / 60);
         const remainingSeconds = Math.floor(seconds % 60);
         return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
     }
+
     function toggleVideoPlayback(event) {
         if (!playedstart) {
             event.preventDefault();
@@ -165,6 +170,7 @@
         // Zastavte výchozí událost
 
     }
+
     function handleVideoPlay(event) {
         const videoElement = event.currentTarget;
         //videoElement.controls = true;
@@ -188,7 +194,8 @@
         </div>
         <div class="container-for-carousel">
             <div class="back-button">
-                <a class="icon" class:hidden={carpos1<=0} on:click="{()=>{carpos1 -= 1;document.querySelector('.car1-p').click()}}" alt="search"><img
+                <a class="icon" class:hidden={carpos1<=0}
+                   on:click="{()=>{carpos1 -= 1;document.querySelector('.car1-p').click()}}" alt="search"><img
                         src="img/icons/icon_back.svg" alt="search"/></a>
             </div>
             <div class="carousel-pack">
@@ -199,7 +206,8 @@
                             particlesToShow={18} particlesToScroll={1} arrows=false loop>
                         <div class="car1-p" slot="prev" on:click={showPrevPage}></div>
 
-                        <div class="carousel-item" on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[0]}}>
+                        <div class="carousel-item"
+                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[0]}}>
                             <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
                         </div>
                         <div class="carousel-item">
@@ -264,7 +272,8 @@
                 </div>
             </div>
             <div class="back-button">
-                <a class="icon" class:hidden={carpos1>6} on:click="{()=>{carpos1+=1;document.querySelector('.car1-n').click()}}" alt="search"><img
+                <a class="icon" class:hidden={carpos1>6}
+                   on:click="{()=>{carpos1+=1;document.querySelector('.car1-n').click()}}" alt="search"><img
                         src="img/icons/icon_forw.svg" alt="search"/></a>
             </div>
         </div>
@@ -276,7 +285,8 @@
         </div>
         <div class="container-for-carousel">
             <div class="back-button">
-                <a class="icon" class:hidden={carpos2<=0} on:click="{()=>{carpos2 -=1 ;document.querySelector('.car1-p2').click()}}" alt="search"><img
+                <a class="icon" class:hidden={carpos2<=0}
+                   on:click="{()=>{carpos2 -=1 ;document.querySelector('.car1-p2').click()}}" alt="search"><img
                         src="img/icons/icon_back.svg" alt="search"/></a>
             </div>
             <div class="carousel-pack">
@@ -351,7 +361,8 @@
                 </div>
             </div>
             <div class="back-button">
-                <a class="icon" class:hidden={carpos2>6} on:click="{()=>{carpos2 +=1; document.querySelector('.car1-n2').click()}}" alt="search"><img
+                <a class="icon" class:hidden={carpos2>6}
+                   on:click="{()=>{carpos2 +=1; document.querySelector('.car1-n2').click()}}" alt="search"><img
                         src="img/icons/icon_forw.svg" alt="search"/></a>
             </div>
         </div>
@@ -363,7 +374,8 @@
         </div>
         <div class="container-for-carousel reels">
             <div class="back-button">
-                <a class="icon" class:hidden={carpos3<=0} on:click="{()=>{carpos3 -=1; document.querySelector('.car1-p3').click()}}" alt="search"><img
+                <a class="icon" class:hidden={carpos3<=0}
+                   on:click="{()=>{carpos3 -=1; document.querySelector('.car1-p3').click()}}" alt="search"><img
                         src="img/icons/icon_back.svg" alt="search"/></a>
             </div>
             <div class="carousel-pack">
@@ -437,7 +449,8 @@
                 </div>
             </div>
             <div class="back-button">
-                <a class="icon" class:hidden={carpos3>6} on:click="{()=>{carpos3 += 1 ;document.querySelector('.car1-n3').click()}}" alt="search"><img
+                <a class="icon" class:hidden={carpos3>6}
+                   on:click="{()=>{carpos3 += 1 ;document.querySelector('.car1-n3').click()}}" alt="search"><img
                         src="img/icons/icon_forw.svg" alt="search"/></a>
             </div>
         </div>
@@ -455,7 +468,7 @@
 
         >
             <div class="icon-container">
-                <img src="../img/icons/icn_play.svg" alt="Play" class="play-icon"  />
+                <img src="../img/icons/icn_play.svg" alt="Play" class="play-icon"/>
             </div>
             <video
                     id="video-{selectedVid.id}"
@@ -466,44 +479,64 @@
                     on:pause={handleVideoPause}
                     on:timeupdate={updateTime}
             >
-                <track kind="captions" />
+                <track kind="captions"/>
             </video>
         </div>
     </div>
     <div class="video-title">
         <div class="title">{selectedVid.name}</div>
-        <div class="views"><div class="img"><img src="img/icons/icon_eye.svg"/></div><div>{selectedVid.views}</div></div>
+        <div class="views">
+            <div class="img"><img src="img/icons/icon_eye.svg"/></div>
+            <div>{selectedVid.views}</div>
+        </div>
     </div>
     <div class="video-info">
-        <div class="conversation__user-photo">
-            <img
-                    class="photo-circle photo-circle--medium"
-                    src={selectedVid.imageUrl}
-                    alt={selectedVid.imageUrl}
-            />
-        </div>
-        <div class="conversation__info">
-            <div class="conversation__info__user-name">{selectedVid.channel}</div>
-            <div class="conversation__info__user-email">152 000 subscribers</div>
+        <div class="photo-video-info">
+            <div class="conversation__user-photo">
+                <img
+                        class="photo-circle photo-circle--medium"
+                        src={selectedVid.imageUrl}
+                        alt={selectedVid.imageUrl}
+                />
+            </div>
+            <div class="conversation__info">
+                <div class="conversation__info__user-name">{selectedVid.channel}</div>
+                <div class="conversation__info__user-email">152 000 subscribers</div>
+            </div>
         </div>
         <div class="second-container-semi" style="display: flex; justify-content: space-between;">
-            <div class="element">
-                <div class="imgdiv"><img src="./img/icons/icon_newsfeed.svg" alt="Newsfeed Icon"></div>
-                <div><span>Newsfeed</span></div>
+            <div class="like-dislike">
+            <div class="element-l">
+                <div class="imgdiv-like"><img src="./img/icons/icon_like_b.svg" alt="Like Icon"></div>
+                <div><span>{selectedVid.like} </span></div>
+            </div>
+            <div class="element-p">
+                <div class="imgdiv-dislike"><img src="./img/icons/icon_dislike_b.svg" alt="Dislike Icon"></div>
+                <div><span>{selectedVid.dislike}</span></div>
+            </div>
             </div>
             <div class="element">
-                <div class="imgdiv"><img src="./img/icons/icon_help_n.svg" alt="Forum Icon"></div>
-                <div><span>Forum</span></div>
+                <div class="imgdiv-share"><img src="./img/icons/icon_share.svg" alt="Share Icon"></div>
+                <div><span>Share</span></div>
             </div>
             <div class="element">
-                <div class="imgdiv"><img src="./img/icons/icon_event_n.svg" alt="Events Icon"></div>
-                <div><span>Events</span></div>
+                <div class="imgdiv-download"><img src="./img/icons/icon_download.svg" alt="Download Icon"></div>
+                <div><span>Download</span></div>
             </div>
             <div class="element">
-                <div class="imgdiv"><img src="./img/icons/icon_help_n.svg" alt="Blog Icon"></div>
-                <div><span>Blog</span></div>
+                <div class="imgdiv-subscribe"><img src="./img/icons/icon_subscribe.svg" alt="Subscribe Icon"></div>
+                <div><span>Subscribe</span></div>
             </div>
         </div>
+    </div>
+    <div class="video-description">
+        <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+        </div>
+        <div class="element"><b>Link: <a href="" >www.libersoft.org</a></b></div>
+    </div>
+    <div class="comment-list">
+    <CommentsList/>
     </div>
 </div>
 
@@ -511,13 +544,15 @@
 <style>
     .video-detail {
         margin: 8px 64px 8px 64px;
-        overflow: hidden;
         position: relative;
+        aspect-ratio: auto;
+        height: auto;
+    }
 
-    }
     .video-detail .image-container, .video-detail video {
-        width:100%;
+        width: 100%;
     }
+
     .videomodule-news, .videomodule-live, .videomodule-reels {
         display: flex;
         flex-direction: column;
@@ -541,6 +576,7 @@
         z-index: 126;
         display: block;
     }
+
     .videomodule-reels::before {
         content: "";
         position: absolute;
@@ -577,6 +613,7 @@
         align-items: center;
 
     }
+
     .container-for-carousel.reels {
         height: 440px;
     }
@@ -617,6 +654,7 @@
         justify-content: center;
         display: flex;
     }
+
     .videomodule-reels .carousel-item {
         width: 210px !important;
         min-width: 210px !important;
@@ -636,8 +674,10 @@
         justify-content: center;
         padding: 0;
     }
+
     .videomodule-reels .back-button {
     }
+
     .back-button .icon img {
         padding: 0;
         width: 48px;
@@ -653,53 +693,65 @@
         /*box-shadow: none!important; */
 
     }
+
     .conversation-detail.videolist, .conversation-detail.videodetail {
-        box-shadow: none!important;
+        box-shadow: none !important;
         background: transparent;
+        height:calc(100% - 0px);
     }
+
     .subscibers-button, .videolist-button {
         background-color: var(--primary-color-p15);
         border-radius: 5px;
         border: 1px solid black;
-        width:auto;
+        width: auto;
         cursor: pointer;
-        width:120px;
-        margin-left:64px;
+        width: 120px;
+        margin-left: 64px;
         margin-top: 8px;
         margin-bottom: 8px;
-        padding:4px;
+        padding: 4px;
         text-align: center;
     }
+
     .image-container.video {
         display: flex;
         justify-content: center;
         align-items: center;
         top: 0px;
-        left:0px;
-        width:100%;
-        height:100%;
-
-    }
-    .image-container.video .icon-container {
-        width:25%;
-        height:25%;
-    }
-    .image-container.video .icon-container .play-icon {
-        width:100%;height:100%;
-    }
-    .image-container video {
+        left: 0px;
         width: 100%;
         height: 100%;
+
+    }
+
+    .image-container.video .icon-container {
+        width: 25%;
+        height: 25%;
+    }
+
+    .image-container.video .icon-container .play-icon {
+        width: 100%;
+        height: 100%;
+    }
+
+    .image-container video {
+        width: 100%;
+        aspect-ratio: auto;
+        height: auto;
         object-fit: cover;
     }
+
     @media (min-width: 795px) {
         .subscibers-button {
-            display: none!important;
+            display: none !important;
         }
     }
+
     .hidden {
         display: none;
     }
+
     .conversation-detail .video-title, .conversation-detail .video-info {
         margin: 8px 64px;
         flex-direction: row;
@@ -708,58 +760,182 @@
         align-items: center;
 
     }
+
     .conversation-detail .video-info .conversation__user-photo {
-        height:50px;
-        width:50px;
+        height: 50px;
+        width: 50px;
     }
+
     .conversation-detail .video-info .conversation__info {
-        margin-left:16px;
+        margin-left: 16px;
+        text-align: left;
     }
+
     .conversation-detail .video-info .conversation__info__user-name {
         font-weight: bold;
     }
+
     .conversation-detail .video-title .title {
         font-weight: bold;
-        font-size:16px;
+        font-size: 16px;
     }
+
     .conversation-detail .video-title .views {
         font-weight: normal;
-        font-size:16px;
+        font-size: 16px;
         margin-right: 0;
         margin-left: auto;
         display: inline-flex;
     }
+
     .conversation-detail .video-title .views .img {
-       margin: 2px 4px 0px 0px;
-        width:16px;
-        height:16px;
+        margin: 2px 4px 0px 0px;
+        width: 16px;
+        height: 16px;
     }
+
     .conversation-detail .video-title .views img {
-        width:100%;
-        height:100%;
+        width: 100%;
+        height: 100%;
     }
+
     .second-container-semi {
         margin-left: auto;
         margin-right: 0;
+        display: inline-grid;
+        gap: 2px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    .second-container-semi .element{
-        width:100px;
-        display:inline-flex;
-        background-color: var(--secondary-color);
+    .second-container-semi .like-dislike {
+        display: inline-flex;
+    }
+    .second-container-semi .element {
+        width: 100px;
+        display: inline-flex;
+        background-color: var(--primary-color-p15);
         border-radius: 5px;
-        border:1px solid #ccc;
-        margin-left:4px;
+        border: 1px solid var(--primary-color-15);
         align-items: center;
-        font-size:0.8em;
+        font-size: 0.8em;
         font-weight: bold;
         justify-content: center;
+        cursor: pointer;
+        height:30px;
     }
-    .second-container-semi .imgdiv {
-        width:24px;
-        height:24px;
+    .second-container-semi .element-l {
+        width: 45px;
+        display: inline-flex;
+        background-color: var(--primary-color-p15);
+        border-radius: 5px 0px 0px 5px;
+        border: 1px solid var(--primary-color-15);
+        border-right: none;
+
+        align-items: center;
+        font-size: 0.8em;
+        font-weight: bold;
+        justify-content: center;
+        cursor: pointer;
+        height:30px;
+        padding-right: 2px;
+        margin:0;
     }
-    .second-container-semi .imgdiv img{
+    .second-container-semi .element-p {
+        width: 45px;
+        display: inline-flex;
+        background-color: var(--primary-color-p15);
+        border-radius:0px 5px 5px 0px;
+        border: 1px solid var(--primary-color-15);
+        border-left: none;
+        align-items: center;
+        font-size: 0.8em;
+        font-weight: bold;
+        justify-content: center;
+        cursor: pointer;
+        height:30px;
+        padding-left: 2px;
+        padding-right: 6px;
+        margin:0;
+    }
+
+    .second-container-semi .element:hover, .second-container-semi .element-l:hover, .second-container-semi .element-p:hover {
+        background-color: var(--primary-color-p25)
+    }
+
+    .second-container-semi .imgdiv-share {
+        width: 16px;
+        height: 16px;
+        margin-right: 2px;
+    }
+    .second-container-semi .imgdiv-download {
+        width: 14px;
+        height: 14px;
+        margin-right: 2px;
+    }
+    .second-container-semi .imgdiv-subscribe {
+        width: 14px;
+        height: 14px;
+        margin-right: 2px;
+    }
+
+    .second-container-semi .imgdiv-like {
+        width: 20px;
+        height: 20px;
+        margin-top: -2px;
+        margin-left: 8px;
+        margin-right: 2px;
+    }
+    .second-container-semi img {
         width:100%;
         height:100%;
+    }
+
+    .second-container-semi .imgdiv-dislike {
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+        margin-left: 8px;
+        margin-right: 2px;
+
+    }
+
+    .second-container-semi .imgdiv img, .second-container-semi .imgdiv-like img, .second-container-semi .imgdiv-dislike img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .video-info {
+        container-type: inline-size;
+    }
+
+    @container (max-width:600px) {
+        .second-container-semi {
+            display: inline-grid!important;
+            gap:2px;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    @container (max-width:400px) {
+        .second-container-semi {
+            display: inline-grid!important;
+            gap:2px;
+            grid-template-columns: 1fr;
+        }
+    }
+    .photo-video-info {
+        display:contents;
+    }
+    .video-description {
+        background-color: var(--primary-color-p35);
+        border-radius: 5px;
+        border: 1px solid var(--primary-color-p35);
+        padding:8px;
+        margin: 8px 64px;
+        text-align: left;
+    }
+    .video-description a  {
+        text-decoration: none;
+    }
+    .comment-list {
+        margin:8px 64px 8px 64px;
     }
 </style>

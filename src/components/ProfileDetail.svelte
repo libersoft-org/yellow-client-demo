@@ -5,6 +5,7 @@
     } from "../stores/mainstore.js";
     import {actualSMVC} from "../stores/mainstore.js";
     import VideoModule from "./VideoModule.svelte";
+    import NewsFeedModule from "./NewsFeedModule.svelte";
     export let contactId;
 
     function backButtonClick() {
@@ -54,7 +55,10 @@
         <!-- Druhý div -->
         <div class="second-container" style="width: 100%;">
             <div class="second-container-semi" style="display: flex; justify-content: space-between;">
-                <div class="element">
+                <div class="element" class:selected={$actualSMVC==='newsfeed'} on:click={()=>{
+                    $actualSMVC='newsfeed';
+                    selectedSMVC = 'newsfeed'
+                    }}>
                     <div class="imgdiv"><img src="./img/icons/icon_newsfeed.svg" alt="Newsfeed Icon"></div>
                     <div><span>Newsfeed</span></div>
                 </div>
@@ -85,6 +89,8 @@
             <div class="selected-content">
                 {#if $actualSMVC === 'video'}
                     <VideoModule></VideoModule>
+                {:else if $actualSMVC === 'newsfeed'}
+                    <NewsFeedModule></NewsFeedModule>
                 {:else}
                 TODO details from profile tabs
                 {/if}
@@ -114,6 +120,9 @@
     .profile-detail .second-container {
         position: relative;
         z-index: 100;
+        height: 100%;
+        display: grid;
+        grid-template-rows: auto 1fr;
     }
     .profile-detail > div:first-child {
         display: flex;
@@ -241,6 +250,9 @@
     .selected-content {
        /* margin-top: 25px;*/
         text-align: center;
+        height:100%;
+        width:100%;
+        display: contents;
     }
 
     .back-button {

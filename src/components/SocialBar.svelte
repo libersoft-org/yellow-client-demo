@@ -5,7 +5,11 @@
     let showVideoMeet = false;
     let items = [
         { id: 0, title: "Conversations", icon: "icon_nemp_v4.svg", hasDot: true, onclick: ()=>{$actualMVC = 'conversation';document.querySelector('#menu-toggle').click()}},
-        { id: 1, title: "Newsfeed", icon: "icon_newsfeed.svg", hasDot: true },
+        { id: 1, title: "Newsfeed", icon: "icon_newsfeed.svg", hasDot: true, onclick: ()=>{
+                $actualMVC = 'newsfeed';document.querySelector('#menu-toggle').click();
+                document.querySelector(`.panel-left`).classList.remove('active-panel');
+                document.querySelector(`.panel-right`).classList.add('active-panel');
+                window.adjustPanels(); }},
         { id: 2, title: "Video", icon: "icon_play_out.svg", hasDot: true, onclick: ()=>{
             $actualMVC = 'video';document.querySelector('#menu-toggle').click();
             document.querySelector(`.panel-left`).classList.remove('active-panel');

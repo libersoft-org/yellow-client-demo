@@ -96,7 +96,16 @@
                 <div class="title"><span>Show subscribers</span></div>
             </div>
         </div>
-    {:else}
+    {:else if $actualMVC === 'newsfeed'}
+            <div class="user-bar-container" class:noShadow={($actualMVC==='contact')}>
+                <div class="conversation-user">
+                    <div class="back-button">
+                        <a class="icon" on:click={backButtonClick}><img src="img/icons/icon_back.svg" alt="search"/></a>
+                    </div>
+                    <div class="title"><span>Show followers</span></div>
+                </div>
+            </div>
+        {:else}
     <div class="user-bar-container" class:noShadow={($actualMVC==='contact')}>
         <div class="conversation-user">
             <div class="back-button">

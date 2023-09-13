@@ -320,7 +320,7 @@
 <div class="conversations-panel no-select {!blurred ? '' : 'blurred'}">
 	{#each groupedConversations as group, groupIndex}
 		<ul class="group-conversation" >
-			{#if ($actualMVC !== 'call') && ($actualMVC !== 'video')}
+			{#if ($actualMVC !== 'call') && ($actualMVC !== 'video') && ($actualMVC != 'newsfeed')}
 			<li class = "group-header" on:click={toggleConversations}>
 				<div class="group-icon"></div>
 				<div class="group-name">{groups[groupIndex]}</div>
@@ -336,7 +336,7 @@
 			{/if}
 
 			{#each group as conversation}
-				{#if (($actualMVC !== 'contact')&&($actualMVC != 'call')&&($actualMVC != 'video')) ||(parseInt(conversation.id)>2)}
+				{#if (($actualMVC !== 'contact')&&($actualMVC != 'call')&&($actualMVC != 'video')&&($actualMVC != 'newsfeed')) ||(parseInt(conversation.id)>2)}
 				<li class="group-item">
 					{#if $actualMVC === 'conversation' }
 					<ConversationItem
@@ -376,7 +376,7 @@
 
                         }}
 						/>
-					{:else if $actualMVC === 'video' }
+					{:else if $actualMVC === 'video' || $actualMVC === 'newsfeed' }
 						<VideoItem
 								video = {conversation}
 								isActive={activeConversationId === conversation.id}
