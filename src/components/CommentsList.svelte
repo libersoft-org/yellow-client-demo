@@ -141,7 +141,7 @@
     .comment-input {
         display: flex;
         align-items: center;
-        margin-bottom: 16px;
+        margin-bottom: 32px;
         padding: 4px;
         border-radius: 10px;
         border: 1px solid #f0f0f0;
