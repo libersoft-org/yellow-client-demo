@@ -811,16 +811,6 @@
 	height: 18px; /* Výška se přizpůsobí rodičovskému elementu */
 	width: auto; /* Šířka se přizpůsobí obsahu */
 }
-.conversation-detail{
-	container-type: inline-size;
-	container-name: cod;
-}
-
-@container cod (max-width:540px) {
-	.videodetail {
-		margin: 8px 8px 8px 8px !important;
-	}
-}
 @media (max-width: 794px) {
 
 	#page {

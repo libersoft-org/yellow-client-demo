@@ -186,7 +186,7 @@
     }
 </script>
 
-<div class="videolist" class:hidden={activeType != "videolist"}>
+<div class="conversation-detail videolist" class:hidden={activeType != "videolist"}>
     <div class="videomodule-news">
         <div class="videomodule-title">
             <span>Video</span>
@@ -485,7 +485,8 @@
         </div>
     </div>
 </div>
-<div class="videodetail" class:hidden={activeType != "videodetail"}>
+<div class="conversation-detail videodetail" class:hidden={activeType != "videodetail"}>
+    <div class="video-detail-item">
     <div class="videolist-button" on:click={()=>{
                 activeType = 'videolist';
     }}>
@@ -572,9 +573,16 @@
         <CommentsList/>
     </div>
 </div>
+</div>
 
 
 <style>
+    .video-detail-item {
+        border-radius: 10px;
+        border: 1px solid var(--primary-color-p25);
+        margin: 16px 32px;
+        background: var(--primary-color-p35);
+    }
     .video-detail {
         margin: 8px 8px 8px 8px;
         position: relative;
@@ -718,17 +726,16 @@
         height: 48px;
     }
 
-    .conversation-detail {
-        flex-direction: column;
-        align-items: normal;
+    .conversation-detail.videolist, .conversation-detail.videodetail{
+        box-shadow: none !important;
+        background: transparent;
+        height:calc(100% - 0px);
+        display: flex;
         justify-content: start;
-        overflow-x: hidden;
-        overflow-y: auto;
-        /*box-shadow: none!important; */
-
+        flex-direction: column;
     }
 
-    .videolist {
+    .videolistl {
         box-shadow: none !important;
         background: transparent;
         flex-direction: column;
@@ -738,17 +745,13 @@
         overflow-y: auto;
     }
 
-    .videodetail {
+    .conversation-detail.videodetaill {
         /*box-shadow: none !important;
         background: transparent;
         height:calc(100% - 0px); */
-        flex-direction: column;
-        align-items: normal;
-        justify-content: start;
-        overflow-x: hidden;
-        overflow-y: auto;
+
+
         border-radius: 10px;
-        height: fit-content;
         border: 1px solid var(--primary-color-p25);
         margin: 16px 32px;
         background: var(--primary-color-p35);
@@ -806,7 +809,7 @@
     }
 
     .hidden {
-        display: none;
+        display: none!important;
     }
 
     .videodetail .video-title, .videodetail .video-info {
@@ -970,7 +973,16 @@
         height: 100%;
     }
 
+    .videodetal{
+        container-type: inline-size;
+        container-name: cod;
+    }
 
+    @container cod (max-width:540px) {
+        .video-detail-item{
+            margin: 8px 8px 8px 8px !important;
+        }
+    }
 
     .video-info {
         container-type: inline-size;

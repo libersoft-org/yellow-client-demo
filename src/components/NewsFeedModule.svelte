@@ -1,8 +1,13 @@
 <script>
 import CommentsList from "./CommentsList.svelte";
+import NewsFeedCarusel from "./NewsFeedCarusel.svelte";
+import {actualMVC} from "../stores/mainstore.js";
 </script>
 
 <div class="conversation-detail videodetail" >
+    {#if $actualMVC === 'newsfeed'}
+    <NewsFeedCarusel></NewsFeedCarusel>
+    {/if}
     <div class="newsfeed-item">
     <div class="video-info">
         <div class="photo-video-info">

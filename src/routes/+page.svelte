@@ -100,7 +100,7 @@
 		{:else if $actualMVC === 'newsfeed'}
 			<UserBar id="f-user-bar" />
 			<div class="conversation-detail">
-				<NewsFeedCarusel></NewsFeedCarusel>
+				<!-- <NewsFeedCarusel></NewsFeedCarusel> -->
 				<NewsFeedModule id="f-conversation-detail"/>
 			</div>
 		{/if}

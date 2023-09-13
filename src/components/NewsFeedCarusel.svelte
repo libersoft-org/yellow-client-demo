@@ -272,7 +272,6 @@ let carpos1 = 0;
     .container-for-carousel {
         display: flex;
         width: calc(100% - 64px);
-        overflow: hidden;
         align-items: center;
         margin: 32px 32px;
         background: var(--primary-color-p35);
