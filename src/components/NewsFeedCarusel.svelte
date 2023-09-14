@@ -366,7 +366,7 @@ let carpos1 = 0;
         height:32px;
     }
     .hasnew {
-        background: linear-gradient(white, white) padding-box, linear-gradient(to left, red, red, red) border-box;
+        background: linear-gradient(white, white) padding-box, linear-gradient(to left, #ce0000, #ce0000, #ce0000) border-box;
         border-radius: 50em;
         border: 4px solid transparent;
     }
