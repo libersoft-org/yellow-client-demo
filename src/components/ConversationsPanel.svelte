@@ -359,6 +359,7 @@
 								contact = {conversation}
 								isActive={activeConversationId === conversation.id}
 								onSelect={() => {
+							$actualSMVC='newsfeed';
                             document.querySelector(`.panel-right`).classList.add('active-panel');
                             document.querySelector(`.panel-left`).classList.remove('active-panel');
                             selectConversation(conversation.id);
