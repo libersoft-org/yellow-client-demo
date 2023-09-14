@@ -1448,7 +1448,7 @@
 }
 
 .conversation-detail .messages {
-	max-width: 1000px;
+	max-width: var(--container-max-width);
 	width: 100%;
 	margin: 0px auto;
 }
