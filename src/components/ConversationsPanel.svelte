@@ -19,6 +19,8 @@
 	import MultiTick from './MultiTick.svelte';
 	import CallItem from "./CallItem.svelte";
 	import VideoItem from "./VideoItem.svelte";
+	import {activeVideView} from "../stores/mainstore.js";
+
 
 	let activeConversationId = null;
 	activeConversationIdStore.subscribe((value) => (activeConversationId = value));
@@ -382,7 +384,7 @@
 								isActive={activeConversationId === conversation.id}
 								onSelect={() => {
 
-							if ($actualMVC ==='video') $actualSMVC = 'video';
+							if ($actualMVC ==='video') {$actualSMVC = 'video';$activeVideView = 'videolist';}
 							else $actualSMVC='newsfeed';
 							$actualMVC = 'contact';
                             document.querySelector(`.panel-right`).classList.add('active-panel');

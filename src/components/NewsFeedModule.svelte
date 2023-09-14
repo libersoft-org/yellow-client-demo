@@ -365,15 +365,18 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
     .conversation-detail .video-info .conversation__user-photo {
         height: 50px;
         width: 50px;
+        cursor: pointer;
     }
 
     .conversation-detail .video-info .conversation__info {
         margin-left: 16px;
         text-align: left;
+        cursor: pointer;
     }
 
     .conversation-detail .video-info .conversation__info__user-name {
         font-weight: bold;
+        cursor: pointer;
     }
 
     .conversation-detail .video-title .title {
@@ -538,7 +541,6 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
         display: flex;
         align-items: center;
         flex: 1;
-        cursor: pointer;
     }
     .video-description {
         border-radius: 5px;
