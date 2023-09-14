@@ -207,19 +207,19 @@
                 >
                     <div class="controls-menu no-select profile-menu" class:invisiblef={!showControlsMenu}>
                         <div class="element">
-                            <div class="imgdiv"><img src="./img/icons/icon_help_n_d.svg" alt="Icon 1"></div>
+                            <div class="imgdiv"><img src="./img/icons/icon_help_n_d.svg" alt="Add contact"></div>
                             <div><span>Add contact</span></div>
                         </div>
                         <div class="element">
-                            <div class="imgdiv"><img src="./img/icons/icon_help_n_d.svg" alt="Icon 2"></div>
+                            <div class="imgdiv"><img src="./img/icons/icon_follow.svg" alt="Follow"></div>
                             <div><span>Follow</span></div>
                         </div>
                         <div class="element">
-                            <div class="imgdiv"><img src="./img/icons/icon_message_n_d.svg" alt="Icon 3"></div>
+                            <div class="imgdiv"><img src="./img/icons/icon_message_n_d.svg" alt="Send message"></div>
                             <div><span>Send message</span></div>
                         </div>
                         <div class="element">
-                            <div class="imgdiv"><img src="./img/icons/icon_donations_n_d.svg" alt="Icon 4"></div>
+                            <div class="imgdiv"><img src="./img/icons/icon_donations_n_d.svg" alt="Send Yellow"></div>
                             <div><span>Send Yellow</span></div>
                         </div>
                     </div>

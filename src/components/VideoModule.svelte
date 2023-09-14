@@ -908,7 +908,8 @@
         justify-content: center;
         cursor: pointer;
         height: 30px;
-        padding-right: 8px;
+        padding-right: 4px;
+        padding-left: 4px;
         margin: 0;
     }
 
@@ -925,8 +926,8 @@
         justify-content: center;
         cursor: pointer;
         height: 30px;
-        padding-left: 2px;
-        padding-right: 6px;
+        padding-left: 4px;
+        padding-right: 4px;
         margin: 0;
     }
 
@@ -956,7 +957,6 @@
         width: 20px;
         height: 20px;
         margin-top: -2px;
-        margin-left: 8px;
         margin-right: 2px;
     }
 
@@ -969,7 +969,6 @@
         width: 20px;
         height: 20px;
         margin-top: 2px;
-        margin-left: 8px;
         margin-right: 2px;
 
     }

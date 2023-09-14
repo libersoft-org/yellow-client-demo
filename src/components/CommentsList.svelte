@@ -24,7 +24,10 @@
         </div>
         <div class="comment-text message__content">
             <div class="c-info">
-                <b>Matador</b> 1 month ago
+                <b>Matador</b>
+            </div>
+            <div class="c-info-s">
+                1 month ago
             </div>
             <div class="c-text">
                 <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
@@ -60,7 +63,10 @@
         </div>
         <div class="comment-text message__content">
             <div class="c-info">
-                <b>Matador</b> 1 month ago
+                <b>Matador</b>
+            </div>
+            <div class="c-info-s">
+                1 month ago
             </div>
             <div class="c-text">
                 <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
@@ -94,7 +100,10 @@
         </div>
         <div class="comment-text message__content">
             <div class="c-info">
-                <b>Matador</b> 1 month ago
+                <b>Matador</b>
+            </div>
+            <div class="c-info-s">
+                1 month ago
             </div>
             <div class="c-text">
                 <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
@@ -238,8 +247,12 @@
 
     }
     .c-info {
+        text-decoration: none;
+    }
+    .c-info-s {
+        font-size:14px;
         margin-bottom: 8px;
-        text-decoration: underline;
+
     }
     .message__content {
         max-width: 100%;

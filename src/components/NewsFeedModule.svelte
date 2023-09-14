@@ -53,11 +53,11 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
         <div class="like-dislike">
             <div class="element-l">
                 <div class="imgdiv-like"><img src="./img/icons/icon_like_b.svg" alt="Like Icon"></div>
-                <div><span>121</span></div>
+                <div><span>181</span></div>
             </div>
             <div class="element-p">
                 <div class="imgdiv-dislike"><img src="./img/icons/icon_dislike_b.svg" alt="Dislike Icon"></div>
-                <div><span>14</span></div>
+                <div><span>207</span></div>
             </div>
         </div>
         <div class="element">
@@ -119,7 +119,7 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
             </div>
             <div class="element-p">
                 <div class="imgdiv-dislike"><img src="./img/icons/icon_dislike_b.svg" alt="Dislike Icon"></div>
-                <div><span>14</span></div>
+                <div><span>104</span></div>
             </div>
         </div>
         <div class="element">
@@ -442,7 +442,8 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
         justify-content: center;
         cursor: pointer;
         height:30px;
-        padding-right: 8px;
+        padding-right: 4px;
+        padding-left: 4px;
         margin:0;
     }
     .second-container-semi .element-p {
@@ -458,8 +459,8 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
         justify-content: center;
         cursor: pointer;
         height:30px;
-        padding-left: 2px;
-        padding-right: 6px;
+        padding-left: 4px;
+        padding-right: 4px;
         margin:0;
     }
 
@@ -487,7 +488,6 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
         width: 20px;
         height: 20px;
         margin-top: -2px;
-        margin-left: 8px;
         margin-right: 2px;
     }
     .second-container-semi img {
@@ -499,7 +499,6 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
         width: 20px;
         height: 20px;
         margin-top: 2px;
-        margin-left: 8px;
         margin-right: 2px;
 
     }
