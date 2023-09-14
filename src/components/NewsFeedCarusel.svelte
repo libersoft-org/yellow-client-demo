@@ -368,5 +368,8 @@ let carpos1 = 0;
         background: linear-gradient(45deg, #f06, #9f6);
         background-clip: padding-box;
     }
+    .hidden {
+        display: none!important;
+    }
 
 </style>
