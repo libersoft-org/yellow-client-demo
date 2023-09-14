@@ -144,8 +144,8 @@
         margin-bottom: 32px;
         padding: 4px;
         border-radius: 10px;
-        border: 1px solid var(--primary-color-p35);
-        background-color: var(--primary-color-p35);
+        border: 1px solid var(--primary-color-p40);
+        background-color: var(--primary-color-p40);
         box-shadow: var(--basic-shadow);
         margin-top: 8px;
     }
@@ -243,7 +243,7 @@
     }
     .message__content {
         max-width: 100%;
-        background-color: var(--primary-color-p35);
+        background-color: var(--primary-color-p40);
         margin: 0 0 0 22px;
     }
     .message__content:after {
@@ -256,7 +256,7 @@
         border-style: solid;
         border-width: 13px 16px 13px 0;
         /* border-color: transparent hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 35%)) transparent transparent; */
-        border-color: transparent var(--primary-color-p35) transparent transparent;
+        border-color: transparent var(--primary-color-p40) transparent transparent;
         filter: drop-shadow(-6px 0px 4px #1d1d1d3d);
         z-index: 1;
     }

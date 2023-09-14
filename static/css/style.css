@@ -33,6 +33,11 @@
 			var(--primary-color-sat),
 			calc(var(--primary-color-lig) + 35%)
 	);
+	--primary-color-p40: hsl(
+			var(--primary-color-hue),
+			var(--primary-color-sat),
+			calc(var(--primary-color-lig) + 40%)
+	);
 	--primary-color-p44: hsl(
 			var(--primary-color-hue),
 			var(--primary-color-sat),
