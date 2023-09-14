@@ -1,5 +1,5 @@
 <script>
-	import { onMount, onDestroy } from 'svelte';
+    import {onMount, onDestroy, tick} from 'svelte';
 	import { addGlobalListener, removeGlobalListener } from '../functions/globalListeners.js';
 	import { openComponentsStack } from '../stores/openComponentsStack.js';
 
