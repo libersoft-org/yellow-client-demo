@@ -211,7 +211,7 @@
                             <div><span>Add contact</span></div>
                         </div>
                         <div class="element">
-                            <div class="imgdiv"><img src="./img/icons/icon_follow.svg" alt="Follow"></div>
+                            <div class="imgdiv-follow"><img src="./img/icons/icon_follow.svg" alt="Follow"></div>
                             <div><span>Follow</span></div>
                         </div>
                         <div class="element">
@@ -317,6 +317,16 @@
     .imgdiv {
         width: 32px;
         height: 32px;
+    }
+    .imgdiv-follow {
+        width:32px;
+        height:32px;
+    }
+    .imgdiv-follow img {
+        width: 16px;
+        height: 16px;
+        object-fit: cover;
+        margin: 4px;
     }
     .icon .icon-controls {
 
