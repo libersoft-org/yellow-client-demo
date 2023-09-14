@@ -250,7 +250,7 @@
         text-decoration: none;
     }
     .c-info-s {
-        font-size:14px;
+        font-size:12px;
         margin-bottom: 8px;
 
     }
