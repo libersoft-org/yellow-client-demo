@@ -973,7 +973,7 @@
         height: 100%;
     }
 
-    .videodetal{
+    .videodetail{
         container-type: inline-size;
         container-name: cod;
     }
