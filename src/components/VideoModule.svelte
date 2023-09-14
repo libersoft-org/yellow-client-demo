@@ -1015,6 +1015,7 @@
     .photo-video-info {
         display: flex;
         align-items: center;
+        cursor: pointer;
     }
 
     .video-description {

@@ -1,6 +1,6 @@
 #page {
 	display: grid;
-	grid-template-columns: 0.5fr auto 2fr; /* Rozdělení prostoru mezi panel-left a panel-right */
+	grid-template-columns: 0.25fr auto 2fr; /* Rozdělení prostoru mezi panel-left a panel-right */
 	height: 100%;
 	overflow: hidden;
 	width:100%;

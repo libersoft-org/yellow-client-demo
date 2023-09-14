@@ -538,6 +538,7 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
         display: flex;
         align-items: center;
         flex: 1;
+        cursor: pointer;
     }
     .video-description {
         border-radius: 5px;
