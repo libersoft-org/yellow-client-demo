@@ -323,10 +323,10 @@
         height:32px;
     }
     .imgdiv-follow img {
-        width: 16px;
-        height: 16px;
+        width: 20px;
+        height: 20px;
         object-fit: cover;
-        margin: 4px;
+        margin: 6px 8px;
     }
     .icon .icon-controls {
 
