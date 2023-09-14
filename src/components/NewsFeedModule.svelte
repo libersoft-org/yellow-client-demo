@@ -1,7 +1,7 @@
 <script>
 import CommentsList from "./CommentsList.svelte";
 import NewsFeedCarusel from "./NewsFeedCarusel.svelte";
-import {actualMVC} from "../stores/mainstore.js";
+import {activeVideView, actualMVC} from "../stores/mainstore.js";
 </script>
 
 <div class="conversation-detail videodetail" >
@@ -11,14 +11,21 @@ import {actualMVC} from "../stores/mainstore.js";
     <div class="newsfeed-item">
     <div class="video-info">
         <div class="photo-video-info">
-            <div class="conversation__user-photo">
+            <div class="conversation__user-photo" on:click={() => {
+							document.querySelector('.conversation').click();
+
+                        }}>
                 <img
                         class="photo-circle photo-circle--medium"
                         src="https://i.pravatar.cc/300?u=user3"
                         alt="https://i.pravatar.cc/300?u=user3"
                 />
             </div>
-            <div class="conversation__info">
+            <div class="conversation__info" on:click={() => {
+
+							document.querySelector('.conversation').click();
+
+                        }}>
                 <div class="conversation__info__user-name">NewUser</div>
                 <div class="conversation__info__user-email">newuser@old.domain</div>
             </div>
@@ -528,7 +535,9 @@ import {actualMVC} from "../stores/mainstore.js";
     }
 
     .photo-video-info {
-        display:contents;
+        display: flex;
+        align-items: center;
+        flex: 1;
     }
     .video-description {
         border-radius: 5px;

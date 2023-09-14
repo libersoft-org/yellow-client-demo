@@ -44,13 +44,13 @@
 			calc(var(--primary-color-lig) + 44%)
 	);
 	--secondary-color: #336699;
-	--panel-left-width: 597px;
+	--panel-left-width: 440px;
 	--resizer-width: 10px;
 	--searchbar-height: 64px;
 	--userbar-height: 64px;
 	--inputbar-height: 44px;
 	--accountbar-height: 50px;
-	--leftpanel-min-width: 320px;
+	--leftpanel-min-width: 397px;
 	--leftpanel-max-width: 50vw;
 	--rightpanel-min-width: 397px;
 	--rightpanel-max-width: 100vw;

@@ -1,6 +1,6 @@
 <script>
     import {onMount} from 'svelte';
-    import {actualSMVC, videoSelected} from '../stores/mainstore.js';
+    import {activeContactIdStore, actualMVC, actualSMVC, contactSelected, videoSelected} from '../stores/mainstore.js';
     import {openComponentsStack} from '../stores/openComponentsStack.js';
     import {activeVideoIdStore} from '../stores/mainstore.js';
     import Carousel from 'svelte-carousel';
@@ -522,7 +522,12 @@
         </div>
     </div>
     <div class="video-info">
-        <div class="photo-video-info">
+        <div class="photo-video-info" on:click={() => {
+
+							$activeVideView='videolist';
+							document.querySelector('.conversation').click();
+
+                        }}>
             <div class="conversation__user-photo">
                 <img
                         class="photo-circle photo-circle--medium"
@@ -1008,7 +1013,8 @@
     }
 
     .photo-video-info {
-        display: contents;
+        display: flex;
+        align-items: center;
     }
 
     .video-description {

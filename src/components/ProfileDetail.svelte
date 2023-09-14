@@ -1,6 +1,6 @@
 <script>
     import {
-        activeContactIdStore,
+        activeContactIdStore, activeVideView,
         contactSelected
     } from "../stores/mainstore.js";
     import {actualSMVC} from "../stores/mainstore.js";
@@ -65,6 +65,7 @@
                 <div class="element" class:selected={$actualSMVC==='video'} on:click={()=>{
                     $actualSMVC='video';
                     selectedSMVC = 'video'
+                    $activeVideView ='videolist';
                     }}>
                     <div class="imgdiv"><img src="./img/icons/icon_play_out.svg" alt="Video Icon"></div>
                     <div><span>Video</span></div>
