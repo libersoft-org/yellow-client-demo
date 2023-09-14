@@ -144,8 +144,8 @@
         margin-bottom: 32px;
         padding: 4px;
         border-radius: 10px;
-        border: 1px solid #f0f0f0;
-        background-color: #f0f0f0;
+        border: 1px solid var(--primary-color-p35);
+        background-color: var(--primary-color-p35);
         box-shadow: var(--basic-shadow);
         margin-top: 8px;
     }
@@ -231,7 +231,7 @@
     }
     .comment-showall {
         width:100%;
-        text-align: left;
+        text-align: center;
         font-weight: bold;
         cursor: pointer;
         margin:16px 0;
@@ -240,6 +240,11 @@
     .c-info {
         margin-bottom: 8px;
         text-decoration: underline;
+    }
+    .message__content {
+        max-width: 100%;
+        background-color: var(--primary-color-p35);
+        margin: 0 0 0 22px;
     }
     .message__content:after {
         content: '';
@@ -251,7 +256,7 @@
         border-style: solid;
         border-width: 13px 16px 13px 0;
         /* border-color: transparent hsl(var(--primary-color-hue), var(--primary-color-sat), calc(var(--primary-color-lig) + 35%)) transparent transparent; */
-        border-color: transparent #f0f0f0 transparent transparent;
+        border-color: transparent var(--primary-color-p35) transparent transparent;
         filter: drop-shadow(-6px 0px 4px #1d1d1d3d);
         z-index: 1;
     }

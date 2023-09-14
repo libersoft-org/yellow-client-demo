@@ -1,4 +1,5 @@
 :root {
+	--container-max-width:1600px;
 	--primary-color-hue: 49;
 	--primary-color-sat: 97%;
 	--primary-color-lig: 53%;

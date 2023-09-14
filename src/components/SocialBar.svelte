@@ -1,6 +1,6 @@
 <script>
     import {dndzone} from 'svelte-dnd-action';
-    import {actualMVC} from "../stores/mainstore.js";
+    import {actualMVC, activeVideView} from "../stores/mainstore.js";
     import VideoMeeting from "./VideoMeeting.svelte";
 
     let showVideoMeet = false;
@@ -27,6 +27,7 @@
             id: 2, title: "Video", icon: "icon_play_out.svg", hasDot: true, onclick: (e) => {
                 e.preventDefault();
                 $actualMVC = 'video';
+                $activeVideView = 'videolist';
                 document.querySelector('#menu-toggle').click();
                 document.querySelector(`.panel-left`).classList.remove('active-panel');
                 document.querySelector(`.panel-right`).classList.add('active-panel');

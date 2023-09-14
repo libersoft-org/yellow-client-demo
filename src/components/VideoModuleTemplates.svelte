@@ -14,7 +14,7 @@
     <div class="multipart-message s-BTGIt7ri9Tsr">
         <svg xmlns="http://www.w3.org/2000/svg" class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
              width="320" transform="scale(1)" height="238">
-            <foreignObject class="s-BTGIt7ri9Tsr" y="8" x="4" width="310" height="174">
+            <foreignObject class="videoprev s-BTGIt7ri9Tsr" y="8" x="4" width="310" height="174">
                 <div xmlns="http://www.w3.org/1999/xhtml"
                      style="width: 100%; height:100%; border-radius: 10px; overflow: hidden;" class="s-BTGIt7ri9Tsr">
                     <img src="{message.preview}" style="width: 100%;object-fit: cover;height: 100%;" alt="Image"
@@ -61,7 +61,7 @@
 
         <svg xmlns="http://www.w3.org/2000/svg" class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
              width="320" transform="scale(1)" height="238">
-            <foreignObject class="s-BTGIt7ri9Tsr" y="8" x="4" width="310" height="174">
+            <foreignObject class="videoprev s-BTGIt7ri9Tsr" y="8" x="4" width="310" height="174">
                 <div xmlns="http://www.w3.org/1999/xhtml"
                      style="width: 100%; height: 100%; border-radius: 10px; overflow: hidden;" class="s-BTGIt7ri9Tsr">
                     <img src="{message.preview}" style="width: 100%;object-fit: cover;height: 100%;" alt="Image"
@@ -109,7 +109,7 @@
 
         <svg xmlns="http://www.w3.org/2000/svg" class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
              width="210" transform="scale(1)" height="440">
-            <foreignObject class="s-BTGIt7ri9Tsr" y="8" x="4" width="196" height="320">
+            <foreignObject class="videoprev s-BTGIt7ri9Tsr" y="8" x="4" width="196" height="320">
                 <div xmlns="http://www.w3.org/1999/xhtml"
                      style="height: 100%; width:100%; border-radius: 10px; overflow: hidden;" class="s-BTGIt7ri9Tsr">
                     <img src="{message.preview}" style="width: 100%;object-fit: cover;height: 100%;" alt="Image"
@@ -282,5 +282,8 @@
     .photo-circle--small img {
         width:100%;
         height:100%;
+    }
+    .videoprev {
+        cursor:pointer;
     }
 </style>

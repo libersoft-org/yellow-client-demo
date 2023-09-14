@@ -263,7 +263,7 @@ let carpos1 = 0;
             </Carousel>
         </div>
     </div>
-    <div class="back-button">
+    <div class="forw-button">
         <a class="icon" class:hidden={carpos1>6}
            on:click="{()=>{carpos1+=1;document.querySelector('.car1-n').click()}}" alt="search"><img
                 src="img/icons/icon_forw.svg" alt="search"/></a>
@@ -274,24 +274,22 @@ let carpos1 = 0;
     .main-cont {
         container-name: mcc;
         container-type: inline-size;
-        width:100%;
+        width:calc(100% - 32px);
+        margin: 0 auto;
+        max-width: var(--container-max-width);
     }
     @container mcc (max-width:540px) {
         .container-for-carousel {
-            margin:32px 8px!important;
-            width: calc(100% - 16px)!important;
+            margin:32px -12px!important;
+            width: calc(100% + 24px)!important;
         }
 
     }
     .container-for-carousel {
         display: flex;
-        width: calc(100% - 64px);
+        width: calc(100%);
         align-items: center;
-        margin: 32px 32px;
-        background: var(--primary-color-p35);
         border-radius: 10px;
-        box-shadow: var(--basic-shadow);
-        padding: 0 0 16px 0;
 
     }
     .carousel-container {
@@ -299,7 +297,7 @@ let carpos1 = 0;
         overflow: hidden;
     }
     .carousel-pack {
-        width: calc(100% - 80px);
+        width: calc(100%);
         overflow: hidden;
 
     }
@@ -313,7 +311,6 @@ let carpos1 = 0;
         align-items: center;
         justify-content: center;
         display: flex;
-        margin-top: 16px;
     }
     .photo-video-info {
         width:96px;
@@ -322,13 +319,12 @@ let carpos1 = 0;
     .photo-circle--medium {
         width:calc(100% - 16px);
         height:calc(100% - 16px);
-        margin:8px;
+        margin:0 8px;
         border: 2px solid transparent;
         padding: 4px;
         box-sizing: border-box;
     }
     .conversation__user-photo {
-        padding:4px;
     }
     .conversation__info {
         height:24px;
@@ -352,22 +348,29 @@ let carpos1 = 0;
     .back-button {
         width:40px;
         height:40px;
-        margin-top: 24px;
+        margin-top: 8px;
     }
-    .back-button a {
+    .forw-button {
+        width:40px;
+        height:40px;
+        margin-top: 8px;
+    }
+
+    .back-button a, .forw-button a {
         width:100%;
         height:100%;
         display: inline;
     }
-    .back-button img {
+    .back-button img, .forw-button img {
         width:32px;
         height:32px;
     }
     .hasnew {
-        border: 2px solid transparent;
-        background: linear-gradient(45deg, #f06, #9f6);
-        background-clip: padding-box;
+        background: linear-gradient(white, #fff) padding-box, linear-gradient(to left, aliceblue, var(--secondary-color), var(--primary-color)) border-box;
+        border-radius: 50em;
+        border: 4px solid transparent;
     }
+
     .hidden {
         display: none!important;
     }

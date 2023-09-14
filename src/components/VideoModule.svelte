@@ -5,8 +5,8 @@
     import {activeVideoIdStore} from '../stores/mainstore.js';
     import Carousel from 'svelte-carousel';
     import VideoModuletemplates from "./VideoModuleTemplates.svelte";
+    import {activeVideView} from "../stores/mainstore.js";
 
-    let activeType = 'videolist';
     let selectedVid = {};
     let storeSize;
     openComponentsStack.subscribe((value) => {
@@ -186,7 +186,7 @@
     }
 </script>
 
-<div class="conversation-detail videolist" class:hidden={activeType != "videolist"}>
+<div class="conversation-detail videolist" class:hidden={$activeVideView != "videolist"}>
     <div class="videomodule-news">
         <div class="videomodule-title">
             <span>Video</span>
@@ -207,90 +207,90 @@
                         <div class="car1-p" slot="prev" on:click={showPrevPage}></div>
 
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[0]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[0]}}>
                             <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
                         </div>
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[1]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[1]}}>
                             <VideoModuletemplates message={videoCItem[1]} templateType="video"/>
                         </div>
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[2]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[2]}}>
                             <VideoModuletemplates message={videoCItem[2]} templateType="video"/>
                         </div>
 
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[3]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[3]}}>
                             <VideoModuletemplates message={videoCItem[3]} templateType="video"/>
                         </div>
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[4]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[4]}}>
                             <VideoModuletemplates message={videoCItem[4]} templateType="video"/>
                         </div>
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[5]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[5]}}>
                             <VideoModuletemplates message={videoCItem[5]} templateType="video"/>
                         </div>
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[6]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[6]}}>
                             <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
                         </div>
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[0]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[0]}}>
                             <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
                         </div>
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[1]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[1]}}>
                             <VideoModuletemplates message={videoCItem[1]} templateType="video"/>
                         </div>
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[2]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[2]}}>
                             <VideoModuletemplates message={videoCItem[2]} templateType="video"/>
                         </div>
 
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[3]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[3]}}>
                             <VideoModuletemplates message={videoCItem[3]} templateType="video"/>
                         </div>
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[4]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[4]}}>
                             <VideoModuletemplates message={videoCItem[4]} templateType="video"/>
                         </div>
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[5]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[5]}}>
                             <VideoModuletemplates message={videoCItem[5]} templateType="video"/>
                         </div>
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[6]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[6]}}>
                             <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
                         </div>
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[0]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[0]}}>
                             <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
                         </div>
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[1]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[1]}}>
                             <VideoModuletemplates message={videoCItem[1]} templateType="video"/>
                         </div>
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[2]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[2]}}>
                             <VideoModuletemplates message={videoCItem[2]} templateType="video"/>
                         </div>
 
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[3]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[3]}}>
                             <VideoModuletemplates message={videoCItem[3]} templateType="video"/>
                         </div>
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[4]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[4]}}>
                             <VideoModuletemplates message={videoCItem[4]} templateType="video"/>
                         </div>
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[5]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[5]}}>
                             <VideoModuletemplates message={videoCItem[5]} templateType="video"/>
                         </div>
                         <div class="carousel-item"
-                             on:click={()=>{activeType='videodetail'; selectedVid = videoCItem[6]}}>
+                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[6]}}>
                             <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
                         </div>
 
@@ -485,10 +485,10 @@
         </div>
     </div>
 </div>
-<div class="conversation-detail videodetail" class:hidden={activeType != "videodetail"}>
+<div class="conversation-detail videodetail" class:hidden={$activeVideView != "videodetail"}>
     <div class="video-detail-item">
     <div class="videolist-button" on:click={()=>{
-                activeType = 'videolist';
+                $activeVideView = 'videolist';
     }}>
         <span>back to videos</span>
     </div>
@@ -579,12 +579,14 @@
 <style>
     .video-detail-item {
         border-radius: 10px;
-        border: 1px solid var(--primary-color-p25);
-        margin: 16px 32px;
-        background: var(--primary-color-p35);
+        margin: 16px auto 16px auto;
+        background: var(--primary-color-p44);
+        width:calc(100% - 64px);
+        max-width: var(--container-max-width);
+        box-shadow: var(--basic-shadow);
     }
     .video-detail {
-        margin: 8px 8px 8px 8px;
+        margin: 8px 0px 8px 0px;
         position: relative;
         aspect-ratio: auto;
         height: auto;
@@ -761,17 +763,16 @@
     }
 
     .subscibers-button, .videolist-button {
-        background-color: var(--primary-color-p15);
-        border-radius: 5px;
-        border: 1px solid black;
+        background-color: var(--primary-color);
+        border-radius: 10px 10px 0 0;
         width: auto;
         cursor: pointer;
-        width: 120px;
-        margin-left: 32px;
-        margin-top: 8px;
-        margin-bottom: 8px;
-        padding: 4px;
+        margin-bottom: 16px;
+        padding: 8px;
         text-align: center;
+    }
+    .videolist-button span {
+        font-weight:bold;
     }
 
     .image-container.video {
@@ -800,6 +801,8 @@
         aspect-ratio: auto;
         height: auto;
         object-fit: cover;
+        border-radius: 10px;
+        cursor: pointer;
     }
 
     @media (min-width: 795px) {
@@ -813,7 +816,7 @@
     }
 
     .videodetail .video-title, .videodetail .video-info {
-        margin: 8px 8px;
+        margin: 8px 0px;
         flex-direction: row;
         align-content: space-between;
         display: flex;
@@ -837,7 +840,7 @@
 
     .video-title .title {
         font-weight: bold;
-        font-size: 16px;
+        font-size: 24px;
     }
 
     .video-title .views {
@@ -870,7 +873,6 @@
     .second-container-semi .like-dislike {
         display: inline-flex;
         border-radius: 5px;
-        box-shadow: var(--basic-shadow);
     }
 
     .second-container-semi .element {
@@ -885,11 +887,10 @@
         justify-content: center;
         cursor: pointer;
         height: 30px;
-        box-shadow: var(--basic-shadow);
     }
 
     .second-container-semi .element-l {
-        width: 45px;
+        width: 42px;
         display: inline-flex;
         background-color: var(--primary-color-p15);
         border-radius: 5px 0px 0px 5px;
@@ -902,12 +903,12 @@
         justify-content: center;
         cursor: pointer;
         height: 30px;
-        padding-right: 2px;
+        padding-right: 8px;
         margin: 0;
     }
 
     .second-container-semi .element-p {
-        width: 45px;
+        width: 42px;
         display: inline-flex;
         background-color: var(--primary-color-p15);
         border-radius: 0px 5px 5px 0px;
@@ -981,6 +982,7 @@
     @container cod (max-width:540px) {
         .video-detail-item{
             margin: 8px 8px 8px 8px !important;
+            width: calc(100% - 16px) !important;
         }
     }
 
@@ -1013,8 +1015,8 @@
         background-color: var(--primary-color-p44);
         border-radius: 5px;
         border: 1px solid var(--primary-color-p44);
-        padding: 8px;
-        margin: 8px 8px;
+        padding: 8px 0px;
+        margin: 8px 0px;
         text-align: left;
     }
 
@@ -1026,10 +1028,7 @@
         margin: 8px 32px 8px 32px;
     }
     .videocontainer {
-        background:var(--primary-color-p44);
-        border-radius: 10px;
-        box-shadow: var(--basic-shadow);
-        padding:8px;
+
         margin: 8px 32px 8px 32px;
     }
 </style>

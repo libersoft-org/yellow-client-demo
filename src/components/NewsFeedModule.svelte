@@ -23,18 +23,15 @@ import {actualMVC} from "../stores/mainstore.js";
                 <div class="conversation__info__user-email">newuser@old.domain</div>
             </div>
             <div class="conversation-time">
-                <div class="conversation__info__user-name">Taday</div>
+                <div class="conversation__info__user-name">Today</div>
                 <div class="conversation__info__user-email">now</div>
+                <div class="views">
+                    <div class="img"><img src="img/icons/icon_eye.svg"/></div>
+                    <div>1234</div>
+                </div>
             </div>
         </div>
 
-    </div>
-    <div class="video-title">
-        <div class="title">Good news, everyone..</div>
-        <div class="views">
-            <div class="img"><img src="img/icons/icon_eye.svg"/></div>
-            <div>1234</div>
-        </div>
     </div>
     <div class="video-description">
         <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
@@ -73,7 +70,6 @@ import {actualMVC} from "../stores/mainstore.js";
         <CommentsList/>
     </div>
 </div>
-    <div class="newsfeed-line"></div>
 <div class="newsfeed-item">
     <div class="video-info">
         <div class="photo-video-info">
@@ -91,16 +87,13 @@ import {actualMVC} from "../stores/mainstore.js";
             <div class="conversation-time">
                 <div class="conversation__info__user-name">Tueasday</div>
                 <div class="conversation__info__user-email">17:20</div>
+                <div class="views">
+                    <div class="img"><img src="img/icons/icon_eye.svg"/></div>
+                    <div>1234</div>
+                </div>
             </div>
         </div>
 
-    </div>
-    <div class="video-title">
-        <div class="title">My newsfeed</div>
-        <div class="views">
-            <div class="img"><img src="img/icons/icon_eye.svg"/></div>
-            <div>1234</div>
-        </div>
     </div>
     <div class="video-description">
         <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
@@ -381,7 +374,7 @@ import {actualMVC} from "../stores/mainstore.js";
         font-size: 16px;
     }
 
-    .conversation-detail .video-title .views {
+    .conversation-detail .views {
         font-weight: normal;
         font-size: 16px;
         margin-right: 0;
@@ -389,13 +382,13 @@ import {actualMVC} from "../stores/mainstore.js";
         display: inline-flex;
     }
 
-    .conversation-detail .video-title .views .img {
+    .conversation-detail .views .img {
         margin: 2px 4px 0px 0px;
         width: 16px;
         height: 16px;
     }
 
-    .conversation-detail .video-title .views img {
+    .conversation-detail .views img {
         width: 100%;
         height: 100%;
     }
@@ -404,17 +397,16 @@ import {actualMVC} from "../stores/mainstore.js";
         display: grid;
         gap: 2px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        margin: 8px 32px 8px 32px;
+        margin: 8px 32px 8px auto;
     }
 
     .second-container-semi .like-dislike {
         display: inline-flex;
         flex: 1;
-        box-shadow: var(--basic-shadow);
         border-radius: 5px;
     }
     .second-container-semi .element {
-        width: auto;
+        width: 100px;
         display: inline-flex;
         background-color: var(--primary-color-p15);
         border-radius: 5px;
@@ -425,10 +417,9 @@ import {actualMVC} from "../stores/mainstore.js";
         justify-content: center;
         cursor: pointer;
         height:30px;
-        box-shadow: var(--basic-shadow);
     }
     .second-container-semi .element-l {
-       flex: 1;
+        width: 42px;
         display: inline-flex;
         background-color: var(--primary-color-p15);
         border-radius: 5px 0px 0px 5px;
@@ -441,11 +432,11 @@ import {actualMVC} from "../stores/mainstore.js";
         justify-content: center;
         cursor: pointer;
         height:30px;
-        padding-right: 2px;
+        padding-right: 8px;
         margin:0;
     }
     .second-container-semi .element-p {
-        flex: 1;
+        width: 42px;
         display: inline-flex;
         background-color: var(--primary-color-p15);
         border-radius:0px 5px 5px 0px;
@@ -514,16 +505,12 @@ import {actualMVC} from "../stores/mainstore.js";
     @container vid (max-width:540px) {
         .newsfeed-item {
             margin: 8px 8px 8px 8px!important;
+            width: calc(100% - 16px) !important;
         }
     }
-    .video-info {
+    .newsfeed-item {
         container-type: inline-size;
         container-name: vi;
-    }
-    @container vi (max-width:795px) {
-        .second-container-semi {
-            margin:0;
-        }
     }
     @container vi (max-width:600px) {
         .second-container-semi {
@@ -544,13 +531,9 @@ import {actualMVC} from "../stores/mainstore.js";
         display:contents;
     }
     .video-description {
-        background-color: var(--primary-color-p44);
         border-radius: 5px;
-        border: 1px solid var(--primary-color-p44);
-        padding:8px;
         margin: 8px 32px;
         text-align: left;
-        box-shadow: var(--basic-shadow);
     }
     .video-description a  {
         text-decoration: none;
@@ -568,6 +551,7 @@ import {actualMVC} from "../stores/mainstore.js";
         width:100%;
         height:100%;
         object-fit: cover;
+        border-radius:10px;
     }
     .conversation-time {
         margin-right: 0;
@@ -581,17 +565,18 @@ import {actualMVC} from "../stores/mainstore.js";
 
     }
     .photo-video-info .photo-circle {
-        box-shadow: var(--basic-shadow);
     }
     .newsfeed-item {
         display: flex;
         flex-direction: column;
         border-radius: 10px;
-        border: 1px solid var(--primary-color-p25);
-        margin: 16px 32px;
-        background-color: var(--primary-color-p35);
+        /* border: 1px solid var(--primary-color-p44); */
+        margin: 16px auto 16px auto;
+        background-color: var(--primary-color-p44);
         box-shadow: var(--basic-shadow);
         padding-top: 16px;
+        width: calc(100% - 64px);
+        max-width: var(--container-max-width);
 
     }
 </style>
