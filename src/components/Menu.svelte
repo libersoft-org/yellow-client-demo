@@ -69,28 +69,28 @@
 		<div class="menu__items">
 
 			<div class="menu__item" on:click={openGroupModal}>
-				<img class="menu__item__icon" src="img/icons/new_chat.svg" alt="New chat group" />New chat
+				<img class="menu__item__icon" src="img/icons_new/icon_new_chat.svg" alt="New chat group" />New chat
 				group
 			</div>
 			<div class="menu__item" on:click={openNewsGroupModal}>
-				<img class="menu__item__icon" src="img/icons/newsfeed.svg" alt="New news group" />New news
+				<img class="menu__item__icon" src="img/icons_new/icon_newsfeed.svg" alt="New news group" />New news
 				group
 			</div>
 			<div class="menu__item" on:click={()=>{$actualMVC = 'contact';document.querySelector('#menu-toggle').click()}}>
-				<img class="menu__item__icon" src="img/icons/contacts.svg" alt="My contacts" />My contacts
+				<img class="menu__item__icon" src="img/icons_new/icon_contacts.svg" alt="My contacts" />My contacts
 			</div>
 			<div class="menu__item" on:click={()=>{$actualMVC = 'call';document.querySelector('#menu-toggle').click()}}>
-				<img class="menu__item__icon"  src="img/icons/calls.svg" alt="Calls" />My calls
+				<img class="menu__item__icon"  src="img/icons_new/icon_calls.svg" alt="Calls" />My calls
 			</div>
 			<div class="menu__item">
 				<img
 					class="menu__item__icon"
-					src="img/icons/saved_messages.svg"
+					src="img/icons_new/icon_saved_messages.svg"
 					alt="Saved messages"
 				/>Saved messages
 			</div>
 			<div class="menu__item" on:click={openSettingsModal}>
-				<img class="menu__item__icon" src="img/icons/settings.svg" alt="Settings" />Settings
+				<img class="menu__item__icon" src="img/icons_new/icon_settings.svg" alt="Settings" />Settings
 			</div>
 		</div>
 		<div class="menu__app-info">

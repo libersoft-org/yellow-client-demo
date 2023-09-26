@@ -22,35 +22,35 @@
 <Modal title="Setting" classes="modal-class-width-400px" on:close={handleModalClose}>
     <div class="settings-list">
         <div class="menu__item">
-            <img class="menu__item__icon" src="./img/icons/icon_account.svg" alt="My account" />
+            <img class="menu__item__icon" src="./img/icons_new/icon_account.svg" alt="My account" />
             My account
         </div>
         <div class="menu__item">
-            <img class="menu__item__icon" src="./img/icons/icon_language.svg" alt="Language" />
+            <img class="menu__item__icon" src="./img/icons_new/icon_language.svg" alt="Language" />
             Language
         </div>
         <div class="menu__item">
-            <img class="menu__item__icon" src="./img/icons/icon_sounds.svg" alt="Notifications" />
+            <img class="menu__item__icon" src="./img/icons_new/icon_sounds.svg" alt="Notifications" />
             Notifications
         </div>
         <div class="menu__item">
-            <img class="menu__item__icon" src="./img/icons/icon_security.svg" alt="Privacy & security" />
+            <img class="menu__item__icon" src="./img/icons_new/icon_security.svg" alt="Privacy & security" />
             Privacy & security
         </div>
         <div class="menu__item" on:click={openPrivateKeysModal}>
-            <img class="menu__item__icon" src="./img/icons/icon_secured.svg" alt="Private keys" />
+            <img class="menu__item__icon" src="./img/icons_new/icon_secured.svg" alt="Private keys" />
             Private keys
         </div>
         <div class="menu__item">
-            <img class="menu__item__icon" src="./img/icons/icon_videocall_filled.svg" alt="Hardware" />
+            <img class="menu__item__icon" src="./img/icons_new/icon_videocall_filled.svg" alt="Hardware" />
             Hardware
         </div>
         <div class="menu__item">
-            <img class="menu__item__icon" src="./img/icons/icon_theme.svg" alt="Themes" />
+            <img class="menu__item__icon" src="./img/icons_new/icon_theme.svg" alt="Themes" />
             Themes
         </div>
         <div class="menu__item">
-            <img class="menu__item__icon" src="./img/icons/icon_newsfeed_filled.svg" alt="Other" />
+            <img class="menu__item__icon" src="./img/icons_new/icon_newsfeed_filled.svg" alt="Other" />
             Other
         </div>
     </div>

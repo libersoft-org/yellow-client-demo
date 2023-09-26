@@ -178,11 +178,11 @@
 </script>
 
 <div class="input-bar" class:hidden-bar={!isConversationSelected || parseInt(conversationId) === 2}>
-	<img class="icon" src="img/icons/icon_attachment.svg" alt="Attachment" />
+	<img class="icon" src="img/icons_new/icon_attachment.svg" alt="Attachment" />
 	<img
 		on:click={toggleFastReplies}
 		class="icon icon-message-template"
-		src="img/icons/icon_message_template.svg"
+		src="img/icons_new/icon_message_template.svg"
 		alt="Templete"
 	/>
 	<ToggleComponent
@@ -223,10 +223,10 @@
 		placeholder="Type a message ..."
 		data-placeholder="Type a message ..."
 	/>
-	<img class="icon" src="img/icons/icon_video_message.svg" alt="Voice message" />
-	<img class="icon" src="img/icons/icon_voice_message.svg" alt="Voice message" />
-	<img class="icon" src="img/icons/icon_emoji_filled.svg" alt="Emoji" />
-	<img on:click={callSendMessage} class="icon" src="img/icons/send.svg" alt="Send" />
+	<img class="icon" src="img/icons_new/icon_video_message.svg" alt="Voice message" />
+	<img class="icon" src="img/icons_new/icon_voice_message.svg" alt="Voice message" />
+	<img class="icon" src="img/icons_new/icon_emoji_filled.svg" alt="Emoji" />
+	<img on:click={callSendMessage} class="icon" src="img/icons_new/icon_send.svg" alt="Send" />
 </div>
 {#if showAddTemplateModal}
 	<Modal on:addTemplate={handleAddTemplate} on:close={closeModal} title="Add fast reply template">
