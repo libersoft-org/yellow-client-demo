@@ -1,4 +1,1 @@
-/node_modules/
-/.svelte-kit/
-/.idea/
-/package-lock.json
+*.log

@@ -517,7 +517,7 @@
     <div class="video-title">
         <div class="title">{selectedVid.name}</div>
         <div class="views">
-            <div class="img"><img src="img/icons/icon_eye.svg"/></div>
+            <div class="img"><img src="img/icons_new/views_noback.svg"/></div>
             <div>{selectedVid.views}</div>
         </div>
     </div>
@@ -543,16 +543,16 @@
         <div class="second-container-semi" style="display: flex; justify-content: space-between;">
             <div class="like-dislike">
                 <div class="element-l">
-                    <div class="imgdiv-like"><img src="./img/icons/icon_like_b.svg" alt="Like Icon"></div>
+                    <div class="imgdiv-like"><img src="./img/icons_new/like_noback.svg" alt="Like Icon"></div>
                     <div><span>{selectedVid.like} </span></div>
                 </div>
                 <div class="element-p">
-                    <div class="imgdiv-dislike"><img src="./img/icons/icon_dislike_b.svg" alt="Dislike Icon"></div>
+                    <div class="imgdiv-dislike"><img src="./img/icons_new/dislike_noback.svg" alt="Dislike Icon"></div>
                     <div><span>{selectedVid.dislike}</span></div>
                 </div>
             </div>
             <div class="element">
-                <div class="imgdiv-share"><img src="./img/icons/icon_share.svg" alt="Share Icon"></div>
+                <div class="imgdiv-share"><img src="./img/icons_new/forward_noback.svg" alt="Share Icon"></div>
                 <div><span>Share</span></div>
             </div>
             <div class="element">
@@ -560,8 +560,8 @@
                 <div><span>Download</span></div>
             </div>
             <div class="element">
-                <div class="imgdiv-subscribe"><img src="./img/icons/icon_subscribe.svg" alt="Subscribe Icon"></div>
-                <div><span>Subscribe</span></div>
+                <div class="imgdiv-subscribe"><img src="./img/icons_new/account_add_noback.svg" alt="Follow Icon"></div>
+                <div><span>Follow</span></div>
             </div>
         </div>
     </div>

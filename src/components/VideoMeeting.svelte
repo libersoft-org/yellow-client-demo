@@ -11,12 +11,12 @@
     }
 
     const id = '.icon-controls';
-    let icon4Src = './img/icons/icon_hangup_n.svg'; // Výchozí zdroj obrázku
+    let icon4Src = './img/icons_new/icon_accept_call.svg'; // Výchozí zdroj obrázku
     function toggleIcon4() {
-        if (icon4Src === './img/icons/icon_hangup_n.svg') {
-            icon4Src = './img/icons/icon_call_a.svg';
+        if (icon4Src === './img/icons_new/icon_reject_call.svg') {
+            icon4Src = './img/icons_new/icon_accept_call.svg';
         } else {
-            icon4Src = './img/icons/icon_hangup_n.svg';
+            icon4Src = './img/icons_new/icon_reject_call.svg';
         }
     }
 
@@ -152,16 +152,16 @@
     </div>
     <div class="profile-menu">
         <div class="element">
-            <div class="imgdiv"><img src="./img/icons/icon_screen_share.svg" alt="Icon 1"></div>
+            <div class="imgdiv"><img src="./img/icons_new/icon_screensharing.svg" alt="Icon 1"></div>
         </div>
         <div class="element">
-            <div class="imgdiv"><img src="./img/icons/icon_videocall_filled.svg" alt="Icon 2"></div>
+            <div class="imgdiv"><img src="./img/icons_new/icon_videocall.svg" alt="Icon 2"></div>
         </div>
         <div class="element">
-            <div class="imgdiv"><img src="./img/icons/icon_micro_n.svg" alt="Icon 3"></div>
+            <div class="imgdiv"><img src="./img/icons_new/icon_mic.svg" alt="Icon 3"></div>
         </div>
         <div class="element">
-            <div class="imgdiv"><img src="./img/icons/icon_chat.svg" alt="Chat"></div>
+            <div class="imgdiv"><img src="./img/icons_new/icon_message_template.svg" alt="Chat"></div>
         </div>
         <div class="element toggle-animation" on:click={toggleIcon4}>
             <div class="imgdiv"><img src="{icon4Src}" alt="Icon 4"></div>

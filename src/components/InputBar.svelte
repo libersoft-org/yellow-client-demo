@@ -178,11 +178,11 @@
 </script>
 
 <div class="input-bar" class:hidden-bar={!isConversationSelected || parseInt(conversationId) === 2}>
-	<img class="icon" src="img/icons_new/icon_attachment.svg" alt="Attachment" />
+	<img class="icon" src="img/icons_new/attachment_noback.svg" alt="Attachment" />
 	<img
 		on:click={toggleFastReplies}
 		class="icon icon-message-template"
-		src="img/icons_new/icon_message_template.svg"
+		src="img/icons_new/template_noback.svg"
 		alt="Templete"
 	/>
 	<ToggleComponent
@@ -208,7 +208,7 @@
 				Don't call me again!
 			</div>
 			<div class="last" on:click={openAddTemplateModal}>
-				<img src="./img/icons/icons8-plus.svg" alt="Nobody" />
+				<img src="./img/icons_new/add_noback_FILLED.svg" alt="Nobody" />
 				Add a new template
 			</div>
 		</div>
@@ -223,10 +223,10 @@
 		placeholder="Type a message ..."
 		data-placeholder="Type a message ..."
 	/>
-	<img class="icon" src="img/icons_new/icon_video_message.svg" alt="Voice message" />
-	<img class="icon" src="img/icons_new/icon_voice_message.svg" alt="Voice message" />
-	<img class="icon" src="img/icons_new/icon_emoji_filled.svg" alt="Emoji" />
-	<img on:click={callSendMessage} class="icon" src="img/icons_new/icon_send.svg" alt="Send" />
+	<img class="icon" src="img/icons_new/video_message_noback.svg" alt="Voice message" />
+	<img class="icon" src="img/icons_new/audio_message_noback.svg" alt="Voice message" />
+	<img class="icon" src="img/icons_new/emoji_noback.svg" alt="Emoji" />
+	<img on:click={callSendMessage} class="icon" src="img/icons_new/send_noback.svg" alt="Send" />
 </div>
 {#if showAddTemplateModal}
 	<Modal on:addTemplate={handleAddTemplate} on:close={closeModal} title="Add fast reply template">

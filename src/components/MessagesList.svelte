@@ -163,7 +163,7 @@
 			<div class="element horizontal-line"/></div>
 			<div class="element comment">
                 <div class="icon-comment">
-                    <img src="./img/icons/icon_comment.svg" alt="Comment Icon">
+                    <img src="./img/icons_new/comment_noback.svg" alt="Comment Icon">
                 </div>
                 <div class="comment-text">
                     <b>Comments</b>
@@ -184,7 +184,7 @@
 			<div class="element horizontal-line"/></div>
 			<div class="element comment">
                 <div class="icon-comment">
-                    <img src="./img/icons/icon_comment.svg" alt="Comment Icon">
+                    <img src="./img/icons_new/comment_noback.svg" alt="Comment Icon">
                 </div>
                 <div class="comment-text">
                     <b>Comments</b>

@@ -6,14 +6,14 @@
     let showVideoMeet = false;
     let items = [
         {
-            id: 0, title: "Conversations", icon: "icon_nemp_v4_filled.svg", hasDot: true, onclick: (e) => {
+            id: 0, title: "Conversations", icon: "conversations.svg", hasDot: true, onclick: (e) => {
                 e.preventDefault();
                 $actualMVC = 'conversation';
                 document.querySelector('#menu-toggle').click()
             }
         },
         {
-            id: 1, title: "Newsfeed", icon: "icon_newsfeed_filled.svg", hasDot: true, onclick: (e) => {
+            id: 1, title: "Newsfeed", icon: "newsfeed_noback_FILLED.svg", hasDot: true, onclick: (e) => {
                 e.preventDefault();
                 $actualMVC = 'newsfeed';
                 document.querySelector('#menu-toggle').click();
@@ -23,7 +23,7 @@
             }
         },
         {
-            id: 2, title: "Video", icon: "icon_play_filled.svg", hasDot: true, onclick: (e) => {
+            id: 2, title: "Video", icon: "video_noback.svg", hasDot: true, onclick: (e) => {
                 e.preventDefault();
                 $actualMVC = 'video';
                 $activeVideView = 'videolist';
@@ -34,26 +34,26 @@
             }
         },
         {
-            id: 3, title: "Video meeting", icon: "icon_video_meeting_filled.svg", hasDot: true, onclick: () => {
+            id: 3, title: "Video meeting", icon: "videoconference_noback.svg", hasDot: true, onclick: () => {
                 showVideoMeet = true;
             }
         },
-        {id: 4, title: "Forum", icon: "icon_forum_filled.svg", hasDot: false},
-        {id: 5, title: "Events", icon: "icon_event_filled.svg", hasDot: false},
-        {id: 6, title: "Blogs", icon: "icon_blog_filled.svg", hasDot: false},
-        {id: 7, title: "File sharing", icon: "icon_file_sharing_filled.svg", hasDot: false},
-        {id: 8, title: "E-shops", icon: "icon_e-shop_filled.svg", hasDot: false},
-        {id: 9, title: "Marketplace (with auctions)", icon: "icon_marketplace_filled.svg", hasDot: false},
-        {id: 10, title: "Maps", icon: "icon_map_pin_filled.svg", hasDot: false},
-        {id: 11, title: "Calendar", icon: "icon_calendar_filled.svg", hasDot: false},
-        {id: 12, title: "Tasks", icon: "icon_task.svg", hasDot: false},
-        {id: 13, title: "Donations", icon: "icon_donations.svg", hasDot: false},
-        {id: 14, title: "Crowdfunding", icon: "icon_crowdfunding.svg", hasDot: false},
-        {id: 15, title: "Cloud storage", icon: "icon_cloud_storage.svg", hasDot: true},
-        {id: 16, title: "Payments", icon: "icon_payments.svg", hasDot: false},
-        {id: 17, title: "Media feed", icon: "icon_mediafeed.svg", hasDot: false},
-        {id: 18, title: "Games", icon: "icon_games.svg", hasDot: false},
-        {id: 19, title: "Dating", icon: "icon_dating.svg", hasDot: false}
+        {id: 4, title: "Forum", icon: "forum_noback.svg", hasDot: false},
+        {id: 5, title: "Events", icon: "event_noback.svg", hasDot: false},
+        {id: 6, title: "Blogs", icon: "blogs_noback.svg", hasDot: false},
+        {id: 7, title: "File sharing", icon: "file_sharing_noback.svg", hasDot: false},
+        {id: 8, title: "E-shops", icon: "eshop_noback.svg", hasDot: false},
+        {id: 9, title: "Marketplace (with auctions)", icon: "marketplace_noback.svg", hasDot: false},
+        {id: 10, title: "Maps", icon: "map_noback.svg", hasDot: false},
+        {id: 11, title: "Calendar", icon: "calendar_noback.svg", hasDot: false},
+        {id: 12, title: "Tasks", icon: "tasks_noback.svg", hasDot: false},
+        {id: 13, title: "Donations", icon: "donations_noback.svg", hasDot: false},
+        {id: 14, title: "Crowdfunding", icon: "crowdfunding_noback.svg", hasDot: false},
+        {id: 15, title: "Cloud storage", icon: "cloud_noback.svg", hasDot: true},
+        {id: 16, title: "Payments", icon: "payments_noback.svg", hasDot: false},
+        {id: 17, title: "Media feed", icon: "media_noback.svg", hasDot: false},
+        {id: 18, title: "Games", icon: "games_noback.svg", hasDot: false},
+        {id: 19, title: "Dating", icon: "dating_noback.svg", hasDot: false}
     ];
 
     let isExpanded = false;
@@ -82,7 +82,9 @@
         height: 24px;
         z-index: 11;
     }
-
+    svg .primary-color-svg {
+        fill: #FCD213;
+    }
 </style>
 
 <div class="social-icons" class:expanded={isExpanded}>

@@ -59,7 +59,7 @@
                     $actualSMVC='newsfeed';
                     selectedSMVC = 'newsfeed'
                     }}>
-                    <div class="imgdiv"><img src="./img/icons/icon_newsfeed.svg" alt="Newsfeed Icon"></div>
+                    <div class="imgdiv"><img src="./img/icons_new/newsfeed_noback_FILLED.svg" alt="Newsfeed Icon"></div>
                     <div><span>Newsfeed</span></div>
                 </div>
                 <div class="element" class:selected={$actualSMVC==='video'} on:click={()=>{
@@ -67,23 +67,23 @@
                     selectedSMVC = 'video'
                     $activeVideView ='videolist';
                     }}>
-                    <div class="imgdiv"><img src="./img/icons/icon_play_out.svg" alt="Video Icon"></div>
+                    <div class="imgdiv"><img src="./img/icons_new/video_noback.svg" alt="Video Icon"></div>
                     <div><span>Video</span></div>
                 </div>
                 <div class="element">
-                    <div class="imgdiv"><img src="./img/icons/icon_help_n.svg" alt="Forum Icon"></div>
+                    <div class="imgdiv"><img src="./img/icons_new/forum_noback.svg" alt="Forum Icon"></div>
                     <div><span>Forum</span></div>
                 </div>
                 <div class="element">
-                    <div class="imgdiv"><img src="./img/icons/icon_event_n.svg" alt="Events Icon"></div>
+                    <div class="imgdiv"><img src="./img/icons_new/event_noback.svg" alt="Events Icon"></div>
                     <div><span>Events</span></div>
                 </div>
                 <div class="element">
-                    <div class="imgdiv"><img src="./img/icons/icon_help_n.svg" alt="Blog Icon"></div>
+                    <div class="imgdiv"><img src="./img/icons_new/blogs_noback.svg" alt="Blog Icon"></div>
                     <div><span>Blog</span></div>
                 </div>
                 <div class="element">
-                    <div class="imgdiv"><img src="./img/icons/icon_help_n.svg" alt="Marketplace Icon"></div>
+                    <div class="imgdiv"><img src="./img/icons_new/marketplace_noback.svg" alt="Marketplace Icon"></div>
                     <div><span>Marketplace</span></div>
                 </div>
             </div>

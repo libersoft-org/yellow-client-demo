@@ -114,7 +114,7 @@
 				</div>
 				<div class="account" on:click={openAddAccount}>
 					<div class="account__photo">
-						<img class="plus-icon" src="./img/icons/icons8-plus.svg" alt="Nobody" />
+						<img class="plus-icon" src="./img/icons_new/add_noback_FILLED.svg" alt="Nobody" />
 					</div>
 					<div class="account__name"><b>add new account</b></div>
 				</div>

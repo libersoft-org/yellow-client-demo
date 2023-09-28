@@ -156,12 +156,12 @@
         </div>
         {#if $actualMVC === 'conversation'}
             <div class="conversation-controlls">
-                <a class="icon" onclick=""><img src="img/icons_new/icon_search.svg" alt="search"/></a>
-                <a class="icon" on:click={()=>(showVideoCall = true)}><img src="img/icons_new/icon_videocall.svg" alt="videocall"/></a>
-                <a class="icon" on:click={()=>(showVideoCall = true)}><img src="img/icons_new/icon_call.svg" alt="call"/></a>
-                <a class="icon" onclick=""><img src="img/icons_new/icon_not_secure.svg" alt="secure"/></a>
+                <a class="icon" onclick=""><img src="img/icons_new/search_noback.svg" alt="search"/></a>
+                <a class="icon" on:click={()=>(showVideoCall = true)}><img src="img/icons_new/videocall_noback_black.svg" alt="videocall"/></a>
+                <a class="icon" on:click={()=>(showVideoCall = true)}><img src="img/icons_new/call_noback_black.svg" alt="call"/></a>
+                <a class="icon" onclick=""><img src="img/icons_new/encryption_off_noback.svg" alt="secure"/></a>
                 <div class="icon icon-controls" on:click={() => (showControlsMenu = !showControlsMenu)}>
-                    <img src="img/icons_new/icon_other.svg" alt="dots"/>
+                    <img src="img/icons_new/other_noback.svg" alt="dots"/>
                 </div>
                 <ToggleComponent
                         bind:isOpen={showControlsMenu}
@@ -197,7 +197,7 @@
         {:else if $actualMVC === 'contact'}
             <div class="conversation-controlls">
                 <div class="icon icon-controls" on:click={() => (showControlsMenu = !showControlsMenu)}>
-                    <img src="img/icons_new/icon_other.svg" alt="dots"/>
+                    <img src="img/icons_new/other_noback.svg" alt="dots"/>
                 </div>
                 <ToggleComponent
                         bind:isOpen={showControlsMenu}
@@ -207,19 +207,19 @@
                 >
                     <div class="controls-menu no-select profile-menu" class:invisiblef={!showControlsMenu}>
                         <div class="element">
-                            <div class="imgdiv"><img src="./img/icons_new/icon_add_contact.svg" alt="Add contact"></div>
+                            <div class="imgdiv"><img src="./img/icons_new/contact_add_noback.svg" alt="Add contact"></div>
                             <div><span>Add contact</span></div>
                         </div>
                         <div class="element">
-                            <div class="imgdiv"><img src="./img/icons_new/icon_help.svg" alt="Follow"></div>
+                            <div class="imgdiv"><img src="./img/icons_new/contact_add_noback2.svg" alt="Follow"></div>
                             <div><span>Follow</span></div>
                         </div>
                         <div class="element">
-                            <div class="imgdiv"><img src="./img/icons_new/icon_send.svg" alt="Send message"></div>
+                            <div class="imgdiv"><img src="./img/icons_new/send_noback.svg" alt="Send message"></div>
                             <div><span>Send message</span></div>
                         </div>
                         <div class="element">
-                            <div class="imgdiv"><img src="./img/icons_new/icon_donations.svg" alt="Send Yellow"></div>
+                            <div class="imgdiv"><img src="./img/icons_new/donations_noback.svg" alt="Send Yellow"></div>
                             <div><span>Send Yellow</span></div>
                         </div>
                     </div>
@@ -246,23 +246,23 @@
                             <div><span>Add contact</span></div>
                         </div>
                         <div class="element">
-                            <div class="imgdiv"><img src="./img/icons_new/icon_help.svg" alt="Icon 2"></div>
+                            <div class="imgdiv"><img src="./img/icons_new/icon_new_account.svg" alt="Icon 2"></div>
                             <div><span>Follow</span></div>
                         </div>
                         <div class="element">
-                            <div class="imgdiv"><img src="./img/icons_new/icon_help.svg" alt="Icon 3"></div>
+                            <div class="imgdiv"><img src="./img/icons_new/icon_account.svg" alt="Icon 3"></div>
                             <div><span>Edit contact</span></div>
                         </div>
                         <div class="element">
-                            <div class="imgdiv"><img src="./img/icons_new/icon_help.svg" alt="Icon 3"></div>
+                            <div class="imgdiv"><img src="./img/icons_new/icon_forward.svg" alt="Icon 3"></div>
                             <div><span>Share contact</span></div>
                         </div>
                         <div class="element">
-                            <div class="imgdiv"><img src="./img/icons_new/icon_help.svg" alt="Icon 4"></div>
+                            <div class="imgdiv"><img src="./img/icons_new/icon_account.svg" alt="Icon 4"></div>
                             <div><span>Delete contact</span></div>
                         </div>
                         <div class="element">
-                            <div class="imgdiv"><img src="./img/icons_new/icon_help.svg" alt="Icon 4"></div>
+                            <div class="imgdiv"><img src="./img/icons_new/icon_account.svg" alt="Icon 4"></div>
                             <div><span>Block user</span></div>
                         </div>
                     </div>

@@ -7,7 +7,7 @@
             <img class="photo-circle photo-circle--small" src="https://i.pravatar.cc/300?u=user5" alt="https://i.pravatar.cc/300?u=user5"/>
         </div> -->
         <div class="c-icon">
-            <img src="./img/icons/icon_comment.svg" alt="Comment Icon"/>
+            <img src="./img/icons_new/comment_noback.svg" alt="Comment Icon"/>
         </div>
         <div class="c-input" contenteditable="true">
         </div>
@@ -36,16 +36,16 @@
             </div>
             <div class="like-dislike">
                 <div class="element-l">
-                    <div class="imgdiv-like"><img src="./img/icons/icon_like_b.svg" alt="Like Icon"></div>
+                    <div class="imgdiv-like"><img src="./img/icons_new/like_noback.svg" alt="Like Icon"></div>
                     <div><span>15</span></div>
                 </div>
                 <div class="element-p">
-                    <div class="imgdiv-dislike"><img src="./img/icons/icon_dislike_b.svg" alt="Dislike Icon"></div>
+                    <div class="imgdiv-dislike"><img src="./img/icons_new/dislike_noback.svg" alt="Dislike Icon"></div>
                     <div><span>2</span></div>
                 </div>
 
             <div class="cc-icon">
-                <img src="./img/icons/icon_comment.svg" alt="Comment Icon"/>
+                <img src="./img/icons_new/comment_noback.svg" alt="Comment Icon"/>
             </div>
             <div class="cc-input" contenteditable="true">
             </div>
@@ -73,16 +73,16 @@
             </div>
             <div class="like-dislike">
                 <div class="element-l">
-                    <div class="imgdiv-like"><img src="./img/icons/icon_like_b.svg" alt="Like Icon"></div>
+                    <div class="imgdiv-like"><img src="./img/icons_new/like_noback.svg" alt="Like Icon"></div>
                     <div><span>15</span></div>
                 </div>
                 <div class="element-p">
-                    <div class="imgdiv-dislike"><img src="./img/icons/icon_dislike_b.svg" alt="Dislike Icon"></div>
+                    <div class="imgdiv-dislike"><img src="./img/icons_new/dislike_noback.svg" alt="Dislike Icon"></div>
                     <div><span>2</span></div>
                 </div>
 
                 <div class="cc-icon">
-                    <img src="./img/icons/icon_comment.svg" alt="Comment Icon"/>
+                    <img src="./img/icons_new/comment_noback.svg" alt="Comment Icon"/>
                 </div>
                 <div class="cc-input" contenteditable="true">
                 </div>
@@ -111,16 +111,16 @@
             </div>
             <div class="like-dislike">
                 <div class="element-l">
-                    <div class="imgdiv-like"><img src="./img/icons/icon_like_b.svg" alt="Like Icon"></div>
+                    <div class="imgdiv-like"><img src="./img/icons_new/like_noback.svg" alt="Like Icon"></div>
                     <div><span>15</span></div>
                 </div>
                 <div class="element-p">
-                    <div class="imgdiv-dislike"><img src="./img/icons/icon_dislike_b.svg" alt="Dislike Icon"></div>
+                    <div class="imgdiv-dislike"><img src="./img/icons_new/dislike_noback.svg" alt="Dislike Icon"></div>
                     <div><span>2</span></div>
                 </div>
 
                 <div class="cc-icon">
-                    <img src="./img/icons/icon_comment.svg" alt="Comment Icon"/>
+                    <img src="./img/icons_new/comment_noback.svg" alt="Comment Icon"/>
                 </div>
                 <div class="cc-input" contenteditable="true">
                 </div>

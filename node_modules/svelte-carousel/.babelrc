@@ -1,0 +1,19 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "modules": false,
+      "targets": {
+        "browsers": "ie >= 11"
+      }
+    }]
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/transform-runtime"
+  ],
+  "env": {
+    "test": {
+      "presets": [["@babel/preset-env"]]
+    }
+  }
+}

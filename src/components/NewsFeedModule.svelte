@@ -33,7 +33,7 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
                 <div class="conversation__info__user-name">Today</div>
                 <div class="conversation__info__user-email">now</div>
                 <div class="views">
-                    <div class="img"><img src="img/icons/icon_eye.svg"/></div>
+                    <div class="img"><img src="img/icons_new/views_noback.svg"/></div>
                     <div>1234</div>
                 </div>
             </div>
@@ -52,16 +52,16 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
     <div class="second-container-semi" >
         <div class="like-dislike">
             <div class="element-l">
-                <div class="imgdiv-like"><img src="./img/icons/icon_like_b.svg" alt="Like Icon"></div>
+                <div class="imgdiv-like"><img src="./img/icons_new/like_noback.svg" alt="Like Icon"></div>
                 <div><span>181</span></div>
             </div>
             <div class="element-p">
-                <div class="imgdiv-dislike"><img src="./img/icons/icon_dislike_b.svg" alt="Dislike Icon"></div>
+                <div class="imgdiv-dislike"><img src="./img/icons_new/dislike_noback.svg" alt="Dislike Icon"></div>
                 <div><span>207</span></div>
             </div>
         </div>
         <div class="element">
-            <div class="imgdiv-share"><img src="./img/icons/icon_share.svg" alt="Share Icon"></div>
+            <div class="imgdiv-share"><img src="./img/icons_new/forward_noback.svg" alt="Share Icon"></div>
             <div><span>Share</span></div>
         </div>
         <div class="element">
@@ -69,7 +69,7 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
             <div><span>Download</span></div>
         </div>
         <div class="element">
-            <div class="imgdiv-follow"><img src="./img/icons/icon_follow.svg" alt="Follow Icon"></div>
+            <div class="imgdiv-follow"><img src="./img/icons_new/account_add_noback.svg" alt="Follow Icon"></div>
             <div><span>Follow</span></div>
         </div>
     </div>
@@ -95,7 +95,7 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
                 <div class="conversation__info__user-name">Tueasday</div>
                 <div class="conversation__info__user-email">17:20</div>
                 <div class="views">
-                    <div class="img"><img src="img/icons/icon_eye.svg"/></div>
+                    <div class="img"><img src="img/icons_new/views_noback.svg"/></div>
                     <div>1234</div>
                 </div>
             </div>
@@ -114,16 +114,16 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
     <div class="second-container-semi" >
         <div class="like-dislike">
             <div class="element-l">
-                <div class="imgdiv-like"><img src="./img/icons/icon_like_b.svg" alt="Like Icon"></div>
+                <div class="imgdiv-like"><img src="./img/icons_new/like_noback.svg" alt="Like Icon"></div>
                 <div><span>121</span></div>
             </div>
             <div class="element-p">
-                <div class="imgdiv-dislike"><img src="./img/icons/icon_dislike_b.svg" alt="Dislike Icon"></div>
+                <div class="imgdiv-dislike"><img src="./img/icons_new/dislike_noback.svg" alt="Dislike Icon"></div>
                 <div><span>104</span></div>
             </div>
         </div>
         <div class="element">
-            <div class="imgdiv-share"><img src="./img/icons/icon_share.svg" alt="Share Icon"></div>
+            <div class="imgdiv-share"><img src="./img/icons_new/forward_noback.svg" alt="Share Icon"></div>
             <div><span>Share</span></div>
         </div>
         <div class="element">
@@ -131,7 +131,7 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
             <div><span>Download</span></div>
         </div>
         <div class="element">
-            <div class="imgdiv-follow"><img src="./img/icons/icon_follow.svg" alt="Follow Icon"></div>
+            <div class="imgdiv-follow"><img src="./img/icons_new/account_add_noback.svg" alt="Follow Icon"></div>
             <div><span>Follow</span></div>
         </div>
     </div>
