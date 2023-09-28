@@ -244,7 +244,7 @@
                         </div>
                     </div>
                     <div class="profile-menu">
-                        <div class="element" on:click={istogglecont= !istogglecont}>
+                        <div class="element" on:click={()=>{if (istogglecont) istogglecont = false; else istogglecont = true;}}>
                             <div class="imgdiv"><img src="./img/icons_new/icon_account.svg" alt="Toggle contact"></div>
                             <div><span>{istogglecont ? 'Delete contact' : 'Add contact'}</span></div>
                         </div>
@@ -259,10 +259,6 @@
                         <div class="element">
                             <div class="imgdiv"><img src="./img/icons_new/icon_forward.svg" alt="Icon 3"></div>
                             <div><span>Share contact</span></div>
-                        </div>
-                        <div class="element">
-                            <div class="imgdiv"><img src="./img/icons_new/icon_account.svg" alt="Icon 4"></div>
-                            <div><span>Delete contact</span></div>
                         </div>
                         <div class="element">
                             <div class="imgdiv"><img src="./img/icons_new/icon_account.svg" alt="Icon 4"></div>
