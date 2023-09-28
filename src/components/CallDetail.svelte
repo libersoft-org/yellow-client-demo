@@ -128,7 +128,7 @@
                 <div class="div2">8:25:00 - 8:35:30</div>
                 <div class="div3">10:30</div>
             </div>
-            <div class="child-div">account
+            <div class="child-div">
                 <div class="div1"><img class="arrow-icon" src="./img/icons_new/call_outgoing_noback.svg"/></div>
                 <div class="div2">7:00:00 - 7:00:00</div>
                 <div class="div3">0:00</div>
