@@ -1,1 +1,5 @@
 *.log
+/.svelte-kit/
+/node_modules/
+/.idea/
+poznamky.txt

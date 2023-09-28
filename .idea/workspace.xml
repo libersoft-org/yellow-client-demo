@@ -5,24 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57794ba3-2b67-436d-87bf-bf495240b17c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/static/img/icons_new/call_noback_black.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/icons_new/icon_commets.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/icons_new/micro_noback.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/icons_new/videocall_noback_black.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AccountsBar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AccountsBar.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CommentsList.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CommentsList.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InputBar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InputBar.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MessagesList.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MessagesList.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsFeedModule.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsFeedModule.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProfileDetail.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileDetail.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialBar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialBar.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UserBar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserBar.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VideoMeeting.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VideoMeeting.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VideoModule.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VideoModule.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VoiceVideoCall.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VoiceVideoCall.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +71,7 @@
       <updated>1695741877402</updated>
       <workItem from="1695741878428" duration="1312000" />
       <workItem from="1695743587359" duration="7388000" />
-      <workItem from="1695899035155" duration="17912000" />
+      <workItem from="1695899035155" duration="18085000" />
     </task>
     <servers />
   </component>
