@@ -45,22 +45,22 @@
                 <div class="messages__info__date">17 May 2023</div>
             </div>
             <div class="child-div">
-                <div class="div1"><img class="arrow-icon" src="./img/icons/icon_rt_arrow_out.svg"/></div>
+                <div class="div1"><img class="arrow-icon" src="./img/icons_new/icon_incoming_call.svg"/></div>
                 <div class="div2">10:25:00 - 10:27:30</div>
                 <div class="div3">2:30</div>
             </div>
             <div class="child-div">
-                <div class="div1"><img class="arrow-icon" src="./img/icons/icon_rt_arrow_r_out.svg"/></div>
+                <div class="div1"><img class="arrow-icon" src="./img/icons_new/icon_outgoing_call.svg"/></div>
                 <div class="div2">9:20:00 - 9:20:00</div>
                 <div class="div3">0:00</div>
             </div>
             <div class="child-div">
-                <div class="div1"><img class="arrow-icon" src="./img/icons/icon_ld_arrow_out.svg"/></div>
+                <div class="div1"><img class="arrow-icon" src="./img/icons_new/icon_incoming_call.svg"/></div>
                 <div class="div2">8:25:00 - 8:35:30</div>
                 <div class="div3">10:30</div>
             </div>
             <div class="child-div">
-                <div class="div1"><img class="arrow-icon" src="./img/icons/icon_ld_arrow_r_out.svg"/></div>
+                <div class="div1"><img class="arrow-icon" src="./img/icons_new/icon_outgoing_call.svg"/></div>
                 <div class="div2">7:00:00 - 7:00:00</div>
                 <div class="div3">0:00</div>
             </div>
@@ -68,22 +68,22 @@
                 <div class="messages__info__date">15 May 2023</div>
             </div>
             <div class="child-div">
-                <div class="div1"><img class="arrow-icon" src="./img/icons/icon_rt_arrow_out.svg"/></div>
+                <div class="div1"><img class="arrow-icon" src="./img/icons_new/icon_incoming_call.svg"/></div>
                 <div class="div2">10:25:00 - 10:27:30</div>
                 <div class="div3">2:30</div>
             </div>
             <div class="child-div">
-                <div class="div1"><img class="arrow-icon" src="./img/icons/icon_rt_arrow_r_out.svg"/></div>
+                <div class="div1"><img class="arrow-icon" src="./img/icons_new/icon_incoming_call.svg"/></div>
                 <div class="div2">9:20:00 - 9:20:00</div>
                 <div class="div3">0:00</div>
             </div>
             <div class="child-div">
-                <div class="div1"><img class="arrow-icon" src="./img/icons/icon_ld_arrow_out.svg"/></div>
+                <div class="div1"><img class="arrow-icon" src="./img/icons_new/icon_outgoing_call.svg"/></div>
                 <div class="div2">8:25:00 - 8:35:30</div>
                 <div class="div3">10:30</div>
             </div>
             <div class="child-div">
-                <div class="div1"><img class="arrow-icon" src="./img/icons/icon_ld_arrow_r_out.svg"/></div>
+                <div class="div1"><img class="arrow-icon" src="./img/icons_new/icon_outgoing_call.svg"/></div>
                 <div class="div2">7:00:00 - 7:00:00</div>
                 <div class="div3">0:00</div>
             </div>
@@ -91,22 +91,22 @@
                 <div class="messages__info__date">14 May 2023</div>
             </div>
             <div class="child-div">
-                <div class="div1"><img class="arrow-icon" src="./img/icons/icon_rt_arrow_out.svg"/></div>
+                <div class="div1"><img class="arrow-icon" src="./img/icons_new/icon_incoming_call.svg"/></div>
                 <div class="div2">10:25:00 - 10:27:30</div>
                 <div class="div3">2:30</div>
             </div>
             <div class="child-div">
-                <div class="div1"><img class="arrow-icon" src="./img/icons/icon_rt_arrow_r_out.svg"/></div>
+                <div class="div1"><img class="arrow-icon" src="./img/icons_new/icon_incoming_call.svg"/></div>
                 <div class="div2">9:20:00 - 9:20:00</div>
                 <div class="div3">0:00</div>
             </div>
             <div class="child-div">
-                <div class="div1"><img class="arrow-icon" src="./img/icons/icon_ld_arrow_out.svg"/></div>
+                <div class="div1"><img class="arrow-icon" src="./img/icons_new/icon_outgoing_call.svg"/></div>
                 <div class="div2">8:25:00 - 8:35:30</div>
                 <div class="div3">10:30</div>
             </div>
             <div class="child-div">
-                <div class="div1"><img class="arrow-icon" src="./img/icons/icon_ld_arrow_r_out.svg"/></div>
+                <div class="div1"><img class="arrow-icon" src="./img/icons_new/icon_incoming_call.svg"/></div>
                 <div class="div2">7:00:00 - 7:00:00</div>
                 <div class="div3">0:00</div>
             </div>
@@ -114,22 +114,22 @@
                 <div class="messages__info__date">12 May 2023</div>
             </div>
             <div class="child-div">
-                <div class="div1"><img class="arrow-icon" src="./img/icons/icon_rt_arrow_out.svg"/></div>
+                <div class="div1"><img class="arrow-icon" src="./img/icons_new/icon_incoming_call.svg"/></div>
                 <div class="div2">10:25:00 - 10:27:30</div>
                 <div class="div3">2:30</div>
             </div>
             <div class="child-div">
-                <div class="div1"><img class="arrow-icon" src="./img/icons/icon_rt_arrow_r_out.svg"/></div>
+                <div class="div1"><img class="arrow-icon" src="./img/icons_new/icon_incoming_call.svg"/></div>
                 <div class="div2">9:20:00 - 9:20:00</div>
                 <div class="div3">0:00</div>
             </div>
             <div class="child-div">
-                <div class="div1"><img class="arrow-icon" src="./img/icons/icon_ld_arrow_out.svg"/></div>
+                <div class="div1"><img class="arrow-icon" src="./img/icons_new/icon_outgoing_call.svg"/></div>
                 <div class="div2">8:25:00 - 8:35:30</div>
                 <div class="div3">10:30</div>
             </div>
-            <div class="child-div">
-                <div class="div1"><img class="arrow-icon" src="./img/icons/icon_ld_arrow_r_out.svg"/></div>
+            <div class="child-div">account
+                <div class="div1"><img class="arrow-icon" src="./img/icons_new/icon_outgoing_call.svg"/></div>
                 <div class="div2">7:00:00 - 7:00:00</div>
                 <div class="div3">0:00</div>
             </div>

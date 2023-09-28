@@ -388,7 +388,7 @@ const CallItem = create_ssr_component(($$result, $$props, $$bindings, slots) => 
     <div class="conversation__info"><div class="conversation__info__user-name">${escape(call.name)}</div>
         <div class="conversation__info__user-email">${escape(call.email)}</div></div>
     <div class="conversation__status"><div class="conversation__status__date-time">12:59:59</div>
-        <div class="conversation__status__icons"><div class="ticks"><img class="arrow-icon svelte-hopmug" src="./img/icons/icon_ld_arrow_r_out.svg"></div>
+        <div class="conversation__status__icons"><div class="ticks"><img class="arrow-icon svelte-hopmug" src="./img/icons_new/icon_incoming_call.svg"></div>
             <div class="conversation__status__icons__unread-messages">${escape(call.unreadMessages)}</div>
             </div></div>
 </div>`;
@@ -767,7 +767,7 @@ const ConversationsPanel = create_ssr_component(($$result, $$props, $$bindings, 
 const VoiceVideoCall_svelte_svelte_type_style_lang = "";
 const UserBar_svelte_svelte_type_style_lang = "";
 const css$g = {
-  code: ".profile-menu.svelte-uvpe4s.svelte-uvpe4s{min-width:222px;max-width:222px;overflow:hidden;box-sizing:border-box;display:flex;flex-direction:column;top:64px;z-index:101}.profile-menu.svelte-uvpe4s .element.svelte-uvpe4s{border-radius:0px;margin:0px;max-height:32px}.profile-menu.svelte-uvpe4s .element.svelte-uvpe4s{width:auto;display:flex;align-items:center;justify-content:flex-start;height:32px;margin:4px 4px;flex:1;color:#1d1d1d}.profile-menu.svelte-uvpe4s span.svelte-uvpe4s{padding-left:4px}.profile-menu.svelte-uvpe4s .element.svelte-uvpe4s:hover{background-color:var(--primary-color-p15)}.imgdiv.svelte-uvpe4s.svelte-uvpe4s{width:32px;height:32px}.noShadow.svelte-uvpe4s.svelte-uvpe4s{box-shadow:none;-webkit-box-shadow:none}.conversation-user__photo.svelte-uvpe4s.svelte-uvpe4s,.conversation-user__detail.svelte-uvpe4s.svelte-uvpe4s{cursor:pointer}.profile-main.svelte-uvpe4s.svelte-uvpe4s{margin-left:6px}.profile-main.svelte-uvpe4s .profile-photo-info.svelte-uvpe4s{width:100%;display:flex;flex-direction:column}.profile-main.svelte-uvpe4s .profile-photo-info .profile-info.svelte-uvpe4s{text-align:center;margin-top:10px;margin-bottom:10px}.profile-main.svelte-uvpe4s .profile-photo-info .profile-photo-container.svelte-uvpe4s{padding:5px 5px 15px 5px;width:210px}.profile-main.svelte-uvpe4s .profile-photo-info .profile-photo-container img.svelte-uvpe4s{box-shadow:var(--basic-shadow)}.profile-main.svelte-uvpe4s .profile-photo-info .profile-photo-container img.svelte-uvpe4s{width:100%;height:100%}.conversation-user.svelte-uvpe4s .title span.svelte-uvpe4s{font-weight:bold}@media(min-width: 795px){.back-bar.svelte-uvpe4s.svelte-uvpe4s{display:none}}",
+  code: ".profile-menu.svelte-z36r29.svelte-z36r29{min-width:222px;max-width:222px;overflow:hidden;box-sizing:border-box;display:flex;flex-direction:column;top:64px;z-index:101}.profile-menu.svelte-z36r29 .element.svelte-z36r29{border-radius:0px;margin:0px;max-height:32px}.profile-menu.svelte-z36r29 .element.svelte-z36r29{width:auto;display:flex;align-items:center;justify-content:flex-start;height:32px;padding:4px 4px;flex:1;color:#1d1d1d}.profile-menu.svelte-z36r29 span.svelte-z36r29{padding-left:4px}.profile-menu.svelte-z36r29 .element.svelte-z36r29:hover{background-color:var(--primary-color-p35)}.imgdiv.svelte-z36r29.svelte-z36r29{width:32px;height:32px}.noShadow.svelte-z36r29.svelte-z36r29{box-shadow:none;-webkit-box-shadow:none}.conversation-user__photo.svelte-z36r29.svelte-z36r29,.conversation-user__detail.svelte-z36r29.svelte-z36r29{cursor:pointer}.profile-main.svelte-z36r29.svelte-z36r29{margin-left:6px}.profile-main.svelte-z36r29 .profile-photo-info.svelte-z36r29{width:100%;display:flex;flex-direction:column}.profile-main.svelte-z36r29 .profile-photo-info .profile-info.svelte-z36r29{text-align:center;margin-top:10px;margin-bottom:10px}.profile-main.svelte-z36r29 .profile-photo-info .profile-photo-container.svelte-z36r29{padding:5px 5px 15px 5px;width:210px}.profile-main.svelte-z36r29 .profile-photo-info .profile-photo-container img.svelte-z36r29{box-shadow:var(--basic-shadow)}.profile-main.svelte-z36r29 .profile-photo-info .profile-photo-container img.svelte-z36r29{width:100%;height:100%}.conversation-user.svelte-z36r29 .title span.svelte-z36r29{font-weight:bold}@media(min-width: 795px){.back-bar.svelte-z36r29.svelte-z36r29{display:none}}",
   map: null
 };
 const UserBar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -804,24 +804,24 @@ const UserBar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   do {
     $$settled = true;
     $$rendered = `<div class="${[
-      "user-bar svelte-uvpe4s",
+      "user-bar svelte-z36r29",
       ($actualMVC === "video" || $actualMVC === "newsfeed" ? "back-bar" : "") + " " + (!isConversationSelected && $actualMVC === "conversation" || !isContactSelected && $actualMVC === "contact" || !isCallSelected && $actualMVC === "call" ? "hidden-bar" : "")
     ].join(" ").trim()}">${$actualMVC === "video" ? `<div class="${[
-      "user-bar-container svelte-uvpe4s",
+      "user-bar-container svelte-z36r29",
       $actualMVC === "contact" ? "noShadow" : ""
-    ].join(" ").trim()}"><div class="conversation-user svelte-uvpe4s"><div class="back-button"><a class="icon"><img src="img/icons/icon_back.svg" alt="search"></a></div>
-                <div class="title"><span class="svelte-uvpe4s">Show subscribers</span></div></div></div>` : `${$actualMVC === "newsfeed" ? `<div class="${[
-      "user-bar-container svelte-uvpe4s",
+    ].join(" ").trim()}"><div class="conversation-user svelte-z36r29"><div class="back-button"><a class="icon"><img src="img/icons/icon_back.svg" alt="search"></a></div>
+                <div class="title"><span class="svelte-z36r29">Show subscribers</span></div></div></div>` : `${$actualMVC === "newsfeed" ? `<div class="${[
+      "user-bar-container svelte-z36r29",
       $actualMVC === "contact" ? "noShadow" : ""
-    ].join(" ").trim()}"><div class="conversation-user svelte-uvpe4s"><div class="back-button"><a class="icon"><img src="img/icons/icon_back.svg" alt="search"></a></div>
-                    <div class="title"><span class="svelte-uvpe4s">Show followers</span></div></div></div>` : `<div class="${[
-      "user-bar-container svelte-uvpe4s",
+    ].join(" ").trim()}"><div class="conversation-user svelte-z36r29"><div class="back-button"><a class="icon"><img src="img/icons/icon_back.svg" alt="search"></a></div>
+                    <div class="title"><span class="svelte-z36r29">Show followers</span></div></div></div>` : `<div class="${[
+      "user-bar-container svelte-z36r29",
       $actualMVC === "contact" ? "noShadow" : ""
     ].join(" ").trim()}"><div class="conversation-user"><div class="back-button"><a class="icon"><img src="img/icons/icon_back.svg" alt="search"></a></div>
-            ${idConversation === 1 && $actualMVC === "conversation" ? `<div class="conversation-user__photo svelte-uvpe4s"><img class="photo-circle photo-circle--medium" src="../img/icons_new/icon_nemp_v4_filled.svg" alt="Yellow development"></div>
-                <div class="conversation-user__detail svelte-uvpe4s"><div class="conversation-user__detail__name">Yellow - development group</div></div>` : `${idConversation === 2 && $actualMVC === "conversation" ? `<div class="conversation-user__photo svelte-uvpe4s"><img class="photo-circle photo-circle--medium" src="../img/icons_new/icon_nemp_v5.svg" alt="Yellow announcements"></div>
-                <div class="conversation-user__detail svelte-uvpe4s"><div class="conversation-user__detail__name">Yellow - announcements newsgroup</div></div>` : `<div class="conversation-user__photo svelte-uvpe4s"><img class="photo-circle photo-circle--medium" src="https://i.pravatar.cc/300?u=user3" alt="user2"></div>
-                <div class="conversation-user__detail svelte-uvpe4s"><div class="conversation-user__detail__name">Veryveryvery Long Username - Some Other Company Ltd.
+            ${idConversation === 1 && $actualMVC === "conversation" ? `<div class="conversation-user__photo svelte-z36r29"><img class="photo-circle photo-circle--medium" src="../img/icons_new/icon_nemp_v4_filled.svg" alt="Yellow development"></div>
+                <div class="conversation-user__detail svelte-z36r29"><div class="conversation-user__detail__name">Yellow - development group</div></div>` : `${idConversation === 2 && $actualMVC === "conversation" ? `<div class="conversation-user__photo svelte-z36r29"><img class="photo-circle photo-circle--medium" src="../img/icons_new/icon_nemp_v5.svg" alt="Yellow announcements"></div>
+                <div class="conversation-user__detail svelte-z36r29"><div class="conversation-user__detail__name">Yellow - announcements newsgroup</div></div>` : `<div class="conversation-user__photo svelte-z36r29"><img class="photo-circle photo-circle--medium" src="https://i.pravatar.cc/300?u=user3" alt="user2"></div>
+                <div class="conversation-user__detail svelte-z36r29"><div class="conversation-user__detail__name">Veryveryvery Long Username - Some Other Company Ltd.
                     </div>
                     <div class="conversation-user__detail__address" onclick="copy('extremelyultralongusername@veryveryverylongdomain.com')">extremelyultralongusername@veryveryveryveryveryveryverylongdomain.com
                     </div></div>`}`}</div>
@@ -872,16 +872,16 @@ const UserBar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       {
         default: () => {
           return `<div class="${[
-            "controls-menu no-select profile-menu svelte-uvpe4s",
+            "controls-menu no-select profile-menu svelte-z36r29",
             !showControlsMenu ? "invisiblef" : ""
-          ].join(" ").trim()}"><div class="element svelte-uvpe4s"><div class="imgdiv svelte-uvpe4s"><img src="./img/icons_new/contact_add_noback.svg" alt="Add contact"></div>
-                            <div><span class="svelte-uvpe4s">Add contact</span></div></div>
-                        <div class="element svelte-uvpe4s"><div class="imgdiv svelte-uvpe4s"><img src="./img/icons_new/contact_add_noback2.svg" alt="Follow"></div>
-                            <div><span class="svelte-uvpe4s">Follow</span></div></div>
-                        <div class="element svelte-uvpe4s"><div class="imgdiv svelte-uvpe4s"><img src="./img/icons_new/send_noback.svg" alt="Send message"></div>
-                            <div><span class="svelte-uvpe4s">Send message</span></div></div>
-                        <div class="element svelte-uvpe4s"><div class="imgdiv svelte-uvpe4s"><img src="./img/icons_new/donations_noback.svg" alt="Send Yellow"></div>
-                            <div><span class="svelte-uvpe4s">Send Yellow</span></div></div></div>`;
+          ].join(" ").trim()}"><div class="element svelte-z36r29"><div class="imgdiv svelte-z36r29"><img src="./img/icons_new/contact_add_noback.svg" alt="Add contact"></div>
+                            <div><span class="svelte-z36r29">Add contact</span></div></div>
+                        <div class="element svelte-z36r29"><div class="imgdiv svelte-z36r29"><img src="./img/icons_new/contact_add_noback2.svg" alt="Follow"></div>
+                            <div><span class="svelte-z36r29">Follow</span></div></div>
+                        <div class="element svelte-z36r29"><div class="imgdiv svelte-z36r29"><img src="./img/icons_new/send_noback.svg" alt="Send message"></div>
+                            <div><span class="svelte-z36r29">Send message</span></div></div>
+                        <div class="element svelte-z36r29"><div class="imgdiv svelte-z36r29"><img src="./img/icons_new/donations_noback.svg" alt="Send Yellow"></div>
+                            <div><span class="svelte-z36r29">Send Yellow</span></div></div></div>`;
         }
       }
     )}</div>` : ``}`}
@@ -72614,55 +72614,56 @@ const CallDetail = create_ssr_component(($$result, $$props, $$bindings, slots) =
   });
   $$result.css.add(css$1);
   return `<div class="conversation-detail">${isCallSelected ? `<div class="parent-div svelte-1dfp8rd"><div class="date-info-container svelte-1dfp8rd"><div class="messages__info__date svelte-1dfp8rd">17 May 2023</div></div>
-            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons/icon_rt_arrow_out.svg"></div>
+            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons_new/icon_incoming_call.svg"></div>
                 <div class="div2 svelte-1dfp8rd">10:25:00 - 10:27:30</div>
                 <div class="div3 svelte-1dfp8rd">2:30</div></div>
-            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons/icon_rt_arrow_r_out.svg"></div>
+            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons_new/icon_outgoing_call.svg"></div>
                 <div class="div2 svelte-1dfp8rd">9:20:00 - 9:20:00</div>
                 <div class="div3 svelte-1dfp8rd">0:00</div></div>
-            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons/icon_ld_arrow_out.svg"></div>
+            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons_new/icon_incoming_call.svg"></div>
                 <div class="div2 svelte-1dfp8rd">8:25:00 - 8:35:30</div>
                 <div class="div3 svelte-1dfp8rd">10:30</div></div>
-            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons/icon_ld_arrow_r_out.svg"></div>
+            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons_new/icon_outgoing_call.svg"></div>
                 <div class="div2 svelte-1dfp8rd">7:00:00 - 7:00:00</div>
                 <div class="div3 svelte-1dfp8rd">0:00</div></div>
             <div class="date-info-container svelte-1dfp8rd"><div class="messages__info__date svelte-1dfp8rd">15 May 2023</div></div>
-            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons/icon_rt_arrow_out.svg"></div>
+            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons_new/icon_incoming_call.svg"></div>
                 <div class="div2 svelte-1dfp8rd">10:25:00 - 10:27:30</div>
                 <div class="div3 svelte-1dfp8rd">2:30</div></div>
-            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons/icon_rt_arrow_r_out.svg"></div>
+            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons_new/icon_incoming_call.svg"></div>
                 <div class="div2 svelte-1dfp8rd">9:20:00 - 9:20:00</div>
                 <div class="div3 svelte-1dfp8rd">0:00</div></div>
-            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons/icon_ld_arrow_out.svg"></div>
+            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons_new/icon_outgoing_call.svg"></div>
                 <div class="div2 svelte-1dfp8rd">8:25:00 - 8:35:30</div>
                 <div class="div3 svelte-1dfp8rd">10:30</div></div>
-            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons/icon_ld_arrow_r_out.svg"></div>
+            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons_new/icon_outgoing_call.svg"></div>
                 <div class="div2 svelte-1dfp8rd">7:00:00 - 7:00:00</div>
                 <div class="div3 svelte-1dfp8rd">0:00</div></div>
             <div class="date-info-container svelte-1dfp8rd"><div class="messages__info__date svelte-1dfp8rd">14 May 2023</div></div>
-            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons/icon_rt_arrow_out.svg"></div>
+            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons_new/icon_incoming_call.svg"></div>
                 <div class="div2 svelte-1dfp8rd">10:25:00 - 10:27:30</div>
                 <div class="div3 svelte-1dfp8rd">2:30</div></div>
-            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons/icon_rt_arrow_r_out.svg"></div>
+            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons_new/icon_incoming_call.svg"></div>
                 <div class="div2 svelte-1dfp8rd">9:20:00 - 9:20:00</div>
                 <div class="div3 svelte-1dfp8rd">0:00</div></div>
-            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons/icon_ld_arrow_out.svg"></div>
+            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons_new/icon_outgoing_call.svg"></div>
                 <div class="div2 svelte-1dfp8rd">8:25:00 - 8:35:30</div>
                 <div class="div3 svelte-1dfp8rd">10:30</div></div>
-            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons/icon_ld_arrow_r_out.svg"></div>
+            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons_new/icon_incoming_call.svg"></div>
                 <div class="div2 svelte-1dfp8rd">7:00:00 - 7:00:00</div>
                 <div class="div3 svelte-1dfp8rd">0:00</div></div>
             <div class="date-info-container svelte-1dfp8rd"><div class="messages__info__date svelte-1dfp8rd">12 May 2023</div></div>
-            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons/icon_rt_arrow_out.svg"></div>
+            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons_new/icon_incoming_call.svg"></div>
                 <div class="div2 svelte-1dfp8rd">10:25:00 - 10:27:30</div>
                 <div class="div3 svelte-1dfp8rd">2:30</div></div>
-            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons/icon_rt_arrow_r_out.svg"></div>
+            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons_new/icon_incoming_call.svg"></div>
                 <div class="div2 svelte-1dfp8rd">9:20:00 - 9:20:00</div>
                 <div class="div3 svelte-1dfp8rd">0:00</div></div>
-            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons/icon_ld_arrow_out.svg"></div>
+            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons_new/icon_outgoing_call.svg"></div>
                 <div class="div2 svelte-1dfp8rd">8:25:00 - 8:35:30</div>
                 <div class="div3 svelte-1dfp8rd">10:30</div></div>
-            <div class="child-div svelte-1dfp8rd"><div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons/icon_ld_arrow_r_out.svg"></div>
+            <div class="child-div svelte-1dfp8rd">account
+                <div class="div1 svelte-1dfp8rd"><img class="arrow-icon svelte-1dfp8rd" src="./img/icons_new/icon_outgoing_call.svg"></div>
                 <div class="div2 svelte-1dfp8rd">7:00:00 - 7:00:00</div>
                 <div class="div3 svelte-1dfp8rd">0:00</div></div></div>` : `<div class="${["centered-message", isCallSelected ? "invisible" : ""].join(" ").trim()}">Please select your contact...
         </div>`}
