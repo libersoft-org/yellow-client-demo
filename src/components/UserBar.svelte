@@ -309,6 +309,7 @@
         padding: 4px 4px;
         flex: 1;
         color: #1d1d1d;
+        cursor: pointer;
     }
     .profile-menu span {
         padding-left:4px;

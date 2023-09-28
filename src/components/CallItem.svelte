@@ -36,7 +36,7 @@
     <div class="conversation__status">
         <div class="conversation__status__date-time">12:59:59</div>
         <div class="conversation__status__icons">
-            <div class="ticks"><img class="arrow-icon" src="./img/icons_new/icon_incoming_call.svg"/></div>
+            <div class="ticks"><img class="arrow-icon" src="./img/icons_new/call_incoming_noback.svg"/></div>
             <div class="conversation__status__icons__unread-messages">{call.unreadMessages}</div>
             <!--<div
                 class="conversation__status__icons__read-state conversation__status__icons__read-state--unread"
