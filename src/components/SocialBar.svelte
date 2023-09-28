@@ -13,7 +13,7 @@
             }
         },
         {
-            id: 1, title: "Newsfeed", icon: "newsfeed_noback_FILLED.svg", hasDot: true, onclick: (e) => {
+            id: 1, title: "Newsfeed", icon: "icon_newsfeed_stroke.svg", hasDot: true, onclick: (e) => {
                 e.preventDefault();
                 $actualMVC = 'newsfeed';
                 document.querySelector('#menu-toggle').click();
@@ -97,9 +97,9 @@
                     <img src={`img/icons_new/${item.icon}`} alt={item.title} class="icon"/>
                     {#if item.hasDot}
                         <div class="dot">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="6" fill="red"/>
+                                <circle cx="18" cy="6" r="6" fill="red"/>
                             </svg>
                         </div>
                     {/if}

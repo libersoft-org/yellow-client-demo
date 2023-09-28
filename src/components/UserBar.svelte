@@ -84,6 +84,9 @@
     activeVideoIdStore.subscribe((value) => {
         idVideo = parseInt(value);
     });
+
+    let istogglecont = false;
+
 </script>
 
 <div class="user-bar" class:back-bar={$actualMVC==='video' || $actualMVC==='newsfeed'} class:hidden-bar={((!isConversationSelected)&&($actualMVC === 'conversation'))||((!isContactSelected)&&($actualMVC === 'contact'))||((!isCallSelected)&&($actualMVC === 'call'))}>
@@ -241,9 +244,9 @@
                         </div>
                     </div>
                     <div class="profile-menu">
-                        <div class="element">
-                            <div class="imgdiv"><img src="./img/icons_new/icon_add_contact.svg" alt="Icon 1"></div>
-                            <div><span>Add contact</span></div>
+                        <div class="element" on:click={istogglecont= !istogglecont}>
+                            <div class="imgdiv"><img src="./img/icons_new/icon_account.svg" alt="Toggle contact"></div>
+                            <div><span>{istogglecont ? 'Delete contact' : 'Add contact'}</span></div>
                         </div>
                         <div class="element">
                             <div class="imgdiv"><img src="./img/icons_new/icon_new_account.svg" alt="Icon 2"></div>
@@ -307,9 +310,12 @@
         /*background-color: var(--primary-color-p35); */
         /*border: 1px solid var(--primary-color-p35);*/
         height: 32px;
-        margin: 0px 0px 0px 0px;
+        margin: 4px 4px;
         flex: 1;
         color: #1d1d1d;
+    }
+    .profile-menu span {
+        padding-left:4px;
     }
     .profile-menu .element:hover {
         background-color: var(--primary-color-p15);

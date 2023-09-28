@@ -159,6 +159,7 @@
         color: white;
         font-weight: bold;
         cursor: pointer;
+        padding:2px;
 
     }
     .second-container-semi .element:hover {
@@ -244,8 +245,9 @@
     }
 
     .imgdiv {
-        width: 32px;
-        height: 32px;
+        width: 24px;
+        height: 24px;
+        padding: 4px;
     }
 
     .selected-content {

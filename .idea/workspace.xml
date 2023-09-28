@@ -5,8 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57794ba3-2b67-436d-87bf-bf495240b17c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/icons_new/icon_newsfeed_stroke.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/generated/server/internal.js" beforeDir="false" afterPath="$PROJECT_DIR$/.svelte-kit/generated/server/internal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/client/_app/immutable/assets/2.c2663db5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/client/_app/immutable/assets/_page.c2663db5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/client/_app/immutable/chunks/singletons.0a11733f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/client/_app/immutable/entry/app.3b2e88f1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/client/_app/immutable/entry/start.d4e52238.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/client/_app/immutable/nodes/1.c989f28b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/client/_app/immutable/nodes/2.9ec439b9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/client/_app/version.json" beforeDir="false" afterPath="$PROJECT_DIR$/.svelte-kit/output/client/_app/version.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/client/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/.svelte-kit/output/client/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/client/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/.svelte-kit/output/client/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/client/img/icons_new/encryption_off_noback.svg" beforeDir="false" afterPath="$PROJECT_DIR$/.svelte-kit/output/client/img/icons_new/encryption_off_noback.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/client/img/icons_new/encryption_on_noback.svg" beforeDir="false" afterPath="$PROJECT_DIR$/.svelte-kit/output/client/img/icons_new/encryption_on_noback.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/server/_app/immutable/assets/_page.c2663db5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/server/chunks/internal.js" beforeDir="false" afterPath="$PROJECT_DIR$/.svelte-kit/output/server/chunks/internal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/server/entries/pages/_page.svelte.js" beforeDir="false" afterPath="$PROJECT_DIR$/.svelte-kit/output/server/entries/pages/_page.svelte.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/server/manifest-full.js" beforeDir="false" afterPath="$PROJECT_DIR$/.svelte-kit/output/server/manifest-full.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/server/manifest.js" beforeDir="false" afterPath="$PROJECT_DIR$/.svelte-kit/output/server/manifest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/server/nodes/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/.svelte-kit/output/server/nodes/1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.svelte-kit/output/server/nodes/2.js" beforeDir="false" afterPath="$PROJECT_DIR$/.svelte-kit/output/server/nodes/2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AudioPlayer.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AudioPlayer.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfileDetail.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileDetail.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SocialBar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialBar.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserBar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserBar.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/VideoModule.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VideoModule.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/VideoModuleTemplates.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VideoModuleTemplates.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/icons_new/encryption_off_noback.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/icons_new/encryption_off_noback.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/icons_new/encryption_on_noback.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/icons_new/encryption_on_noback.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +101,7 @@
       <updated>1695741877402</updated>
       <workItem from="1695741878428" duration="1312000" />
       <workItem from="1695743587359" duration="7388000" />
-      <workItem from="1695899035155" duration="18085000" />
+      <workItem from="1695899035155" duration="24594000" />
     </task>
     <servers />
   </component>

@@ -537,7 +537,7 @@
             </div>
             <div class="conversation__info">
                 <div class="conversation__info__user-name">{selectedVid.channel}</div>
-                <div class="conversation__info__user-email">152 000 subscribers</div>
+                <div class="conversation__info__user-email">152 000 followers</div>
             </div>
         </div>
         <div class="second-container-semi" style="display: flex; justify-content: space-between;">

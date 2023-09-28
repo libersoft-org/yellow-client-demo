@@ -31,7 +31,7 @@
                       x="50" y="258">{message.name}
                 </text>
                 <g text-anchor="end" class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" transform="translate(312)">
-                    <image height="16" xlink:href="img/icons/icon_eye.svg"
+                    <image height="16" xlink:href="img/icons_new/views_noback.svg"
                            class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
                            y="225" text-anchor="end" width="32" x="-108"></image>
                     <text font-size="14" fill="black"
@@ -39,12 +39,12 @@
                           y="238" width="200" x="0">{message.views} views
                     </text>
                     <image class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" width="18"
-                           height="18" xlink:href="img/icons/icon_like.svg" y="244" x="-100"></image>
+                           height="18" xlink:href="img/icons_new/like_noback.svg" y="244" x="-100"></image>
                     <text font-size="14" fill="black"
                           class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" y="260"
                           x="-55">{message.like}
                     </text>
-                    <image xlink:href="img/icons/icon_dislike.svg"
+                    <image xlink:href="img/icons_new/dislike_noback.svg"
                            class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" width="18"
                            height="18" y="248" x="-45"></image>
                     <text font-size="14" fill="black"
@@ -80,7 +80,7 @@
                       x="50" y="258">{message.name}
                 </text>
                 <g text-anchor="end" class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" transform="translate(312)">
-                    <image height="16" xlink:href="img/icons/icon_eye.svg"
+                    <image height="16" xlink:href="img/icons_new/views_noback.svg"
                            class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
                            y="225" text-anchor="end" width="32" x="-108"></image>
                     <text font-size="14" fill="black"
@@ -88,12 +88,12 @@
                           y="238" width="200" x="0">{message.views} views
                     </text>
                     <image class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" width="18"
-                           height="18" xlink:href="img/icons/icon_like.svg" y="244" x="-100"></image>
+                           height="18" xlink:href="img/icons_new/like_noback.svg" y="244" x="-100"></image>
                     <text font-size="14" fill="black"
                           class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" y="260"
                           x="-55">{message.like}
                     </text>
-                    <image xlink:href="img/icons/icon_dislike.svg"
+                    <image xlink:href="img/icons_new/dislike_noback.svg"
                            class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" width="18"
                            height="18" y="248" x="-45"></image>
                     <text font-size="14" fill="black"
@@ -122,7 +122,7 @@
                 <text class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" dominant-baseline="middle" fill="black" font-size="14" font-weight="bold" x="48" y="232">{message.channel}</text>
                 <text font-size="12" fill="black" class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" x="48" y="252">{message.name}</text>
                 <g text-anchor="end" class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" transform="translate(108,40)">
-                    <image height="16" xlink:href="img/icons/icon_eye.svg"
+                    <image height="16" xlink:href="img/icons_new/views_noback.svg"
                            class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
                            y="225" text-anchor="end" width="32" x="-108"></image>
                     <text font-size="14" fill="black"
@@ -130,12 +130,12 @@
                           y="238" width="200" x="0">{message.views} views
                     </text>
                     <image class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" width="18"
-                           height="18" xlink:href="img/icons/icon_like.svg" y="244" x="-100"></image>
+                           height="18" xlink:href="img/icons_new/like_noback.svg" y="244" x="-100"></image>
                     <text font-size="14" fill="black"
                           class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" y="260"
                           x="-55">{message.like}
                     </text>
-                    <image xlink:href="img/icons/icon_dislike.svg"
+                    <image xlink:href="img/icons_new/dislike_noback.svg"
                            class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" width="18"
                            height="18" y="248" x="-45"></image>
                     <text font-size="14" fill="black"
