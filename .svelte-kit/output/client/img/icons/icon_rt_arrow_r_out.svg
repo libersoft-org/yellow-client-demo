@@ -1,6 +1,0 @@
-<?xml version="1.0" ?>
-<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
-<svg enable-background="new 0 0 49.26 49.26" height="49.26px" id="Слой_1" version="1.1" viewBox="0 0 49.26 49.26" width="49.26px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <circle cx="24.63" cy="24.63" r="22.63" fill="none" stroke="red" stroke-width="3"/>
-    <path transform="translate(9.815,9.815)" d="M4.287,27.713c0.388,0.388,1.017,0.388,1.404,0L26.004,7.4v7.596c0,0.552,0.448,1,1,1  s1-0.448,1-1v-10c0-0.265-0.103-0.521-0.291-0.709s-0.444-0.291-0.709-0.291h-10c-0.552,0-1,0.448-1,1s0.448,1,1,1H24.6  L4.287,26.309C3.899,26.697,3.899,27.326,4.287,27.713z" fill="red" id="Arrow_Up_Right" stroke="red" stroke-width="2"/>
-</svg>
