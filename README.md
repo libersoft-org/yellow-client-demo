@@ -10,22 +10,33 @@ If you just want to get your free [**Yellow**](https://yellow.libersoft.org) acc
 
 ## Installation
 
-- For developing purposes just follow these steps:
+**1. Download the latest version of Yellow Web Client:**
 
-```sh
-    git clone https://github.com/libersoft-org/yellow-client-web.git
-    cd yellow-client-web
-    git checkout svelte
-    git pull
-    npm i
-    npm run build
-    npm run preview -- --host 0.0.0.0
+```bash
+git clone https://github.com/libersoft-org/yellow-client-web.git
+cd yellow-client-web
+git checkout svelte
+npm i
 ```
 
-- For start testing server directly (simply script for last two commands):
+**2. Now you can either build the app and then host it on your web server or run a standalone web server:**
 
-```sh
-    npm run liveserver
+a) Build the app
+
+```bash
+npm run build
+```
+
+... and then you can either host it on your web server or run a web server for it:
+
+```bash
+npm run preview -- --host 0.0.0.0
+```
+
+b) To start the standalone web server:
+
+```bash
+npm run liveserver
 ```
 
 ## Documentation
