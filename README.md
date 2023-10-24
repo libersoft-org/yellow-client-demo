@@ -42,7 +42,6 @@ npm run liveserver
 ## Documentation
 
 - [**Development roadmap**](./ROADMAP.md)
-- [**Initial TODO**](./todomd)
 - [**License**](./LICENSE)
 
 ## Donations
