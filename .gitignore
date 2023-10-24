@@ -4,3 +4,4 @@
 /.idea/
 poznamky.txt
 package-lock.json
+/build/
