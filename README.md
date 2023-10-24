@@ -21,7 +21,7 @@ npm i
 
 **2. Now you can either build the app and then host it on your web server or run a standalone web server:**
 
-a) Build the app
+**a)** Build the app
 
 ```bash
 npm run build
@@ -33,7 +33,7 @@ npm run build
 npm run preview -- --host 0.0.0.0
 ```
 
-b) To start the standalone web server:
+**b)** To start the standalone web server:
 
 ```bash
 npm run liveserver
