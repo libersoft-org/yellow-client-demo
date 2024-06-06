@@ -71,7 +71,6 @@
 </script>
 
 <Modal title="New chat group" classes="modal-class-width-400px" on:close={handleModalClose}>
-banany!
 
     <div class="multipart-message">
         <div class="element">

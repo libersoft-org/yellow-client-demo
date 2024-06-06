@@ -320,6 +320,7 @@
 </script>
 
 <div class="conversations-panel no-select {!blurred ? '' : 'blurred'}">
+
 	{#each groupedConversations as group, groupIndex}
 		<ul class="group-conversation" >
 			{#if ($actualMVC !== 'call') && ($actualMVC !== 'video') && ($actualMVC != 'newsfeed')}
