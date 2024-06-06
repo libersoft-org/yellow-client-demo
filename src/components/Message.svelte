@@ -2,6 +2,7 @@
 	import MultiTick from './MultiTick.svelte';
 	import LottiePlayer from './LottiePlayer.svelte';
   import WidgetCheckers from './WidgetCheckers.svelte';
+  import WidgetView3d from './widgets/3d/WidgetView3d.svelte';
 
 	export let photo = null;
 	export let messagetype = null;
@@ -112,10 +113,16 @@
 					<LottiePlayer animationData={message} id={uniqueId} />
 				</div>
 			</div>
-		{:else if messagetype === 'checkers'}
+		{:else if messagetype === 'piskvorky'}
 			<div class="message__content_text">
 				<div class="multipart-message element image-container">
 					<WidgetCheckers id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'view3d'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+					<WidgetView3d id={uniqueId} />
 				</div>
 			</div>
 		{:else if !messagetype || messagetype === 'multipart' || messagetype === 'news'}

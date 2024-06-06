@@ -18,18 +18,20 @@ function selectAttachment(attachment) {
   {#if visible}
 	  <div class="fast-replies no-select" id="attachments">
   
-    <h4>Favorites</h4>
-  
-        <div class="reply" on:click={() => selectAttachment('tic-tac-toe')}>Tic-Tac-Toe</div>
+        <div class="reply" on:click={() => selectAttachment('piskvorky')}>Piškvorky</div>
         <div class="reply" on:click={() => selectAttachment("picture")}>
           Picture
         </div>
         <div class="reply" on:click={() => selectAttachment("payment")}>
           Payment
         </div>
+        <div class="reply">
+          ...
+          
+        </div>
+      
   
-  
-    <h4> ...</h4>
+    
   
     </div>
 		

@@ -14,8 +14,8 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/adapter-auto": "^1.0.0-next.90",
+		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/kit": "^1.0.0-next.587",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
@@ -41,6 +41,7 @@
 		"ol": "^7.5.1",
 		"qrcode": "^1.5.3",
 		"svelte-dnd-action": "^0.9.26",
+		"three": "^0.165.0",
 		"wavesurfer.js": "^7.1.5"
 	}
 }
