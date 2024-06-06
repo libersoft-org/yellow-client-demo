@@ -50,6 +50,8 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
         <div class="element"><b>Link: <a href="" >www.libersoft.org</a></b></div>
     </div>
     <div class="second-container-semi" >
+    donate!
+    
         <div class="like-dislike">
             <div class="element-l">
                 <div class="imgdiv-like"><img src="./img/icons_new/like_noback.svg" alt="Like Icon"></div>

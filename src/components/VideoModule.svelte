@@ -48,6 +48,8 @@
     videoCItem[0].channel = 'yellow news';
     videoCItem[0].imageUrl = 'https://i.pravatar.cc/300?u=user5';
     videoCItem[0].preview = 'content/pv1.jpg';
+    /* 19...90*/
+    /* donate button! */
     videoCItem[0].views = 1000;
     videoCItem[0].like = 250;
     videoCItem[0].dislike = 100;

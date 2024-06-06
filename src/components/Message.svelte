@@ -1,6 +1,7 @@
 <script>
 	import MultiTick from './MultiTick.svelte';
 	import LottiePlayer from './LottiePlayer.svelte';
+  import WidgetCheckers from './WidgetCheckers.svelte';
 
 	export let photo = null;
 	export let messagetype = null;
@@ -88,6 +89,9 @@
 	<div class="message__sender-photo{messagetype === 'news' ? ' news' : ''}" style="">
 		<img class="photo-circle photo-circle--medium" src={photo} alt="User Photo" />
 	</div>
+	
+	
+	
 	<div class="message__content{messagetype === 'news' ? ' news' : ''}">
 		{#if messagetype === 'audio'}
 			<div class="message__content__text">
@@ -106,6 +110,12 @@
 			<div class="message__content_text">
 				<div class="multipart-message element image-container">
 					<LottiePlayer animationData={message} id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'checkers'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+					<WidgetCheckers id={uniqueId} />
 				</div>
 			</div>
 		{:else if !messagetype || messagetype === 'multipart' || messagetype === 'news'}
@@ -128,7 +138,7 @@
 							<img src="../img/icons/icn_play.svg" alt="Play" class="play-icon" />
 						</div>
 						<video
-							id="videonessage-{uniqueId}"
+							id="videomessage-{uniqueId}"
 							src={url}
 							playsinline
 							poster={preview}

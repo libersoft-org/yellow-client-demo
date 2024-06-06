@@ -58,6 +58,14 @@
                 <div class="element toggle-animation" on:click={toggleIcon4}>
                     <div class="imgdiv"><img src="{icon4Src}" alt="Icon 4"></div>
                 </div>
+                <div class="element toggle-animation" on:click={toggleIcon4}>
+                    <div class="imgdiv">teamviewer!<img src="{icon4Src}" alt="Icon 4"></div>
+                </div>
+                <div class="element toggle-animation" on:click={toggleIcon4}>
+                    <div class="imgdiv">record!<img src="{icon4Src}" alt="Icon 4"></div>
+                </div>
+                
+                
             </div>
         </div>
     </Modal>

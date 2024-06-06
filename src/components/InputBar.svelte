@@ -5,6 +5,7 @@
 	import { sendMessageStore } from '../stores/mainstore.js';
 	import { onMount } from 'svelte';
 	import ToggleComponent from './ToggleComponent.svelte';
+  import InputMessageAttachPopout from './InputMessageAttachPopout.svelte';
 	import Modal from './Modal.svelte';
 	const id = '.icon-message-template';
 	let showFastReplies = false;
@@ -178,13 +179,17 @@
 </script>
 
 <div class="input-bar" class:hidden-bar={!isConversationSelected || parseInt(conversationId) === 2}>
-	<img class="icon" src="img/icons_new/attachment_noback.svg" alt="Attachment" />
+
+	<InputMessageAttachPopout />
+	
 	<img
 		on:click={toggleFastReplies}
 		class="icon icon-message-template"
 		src="img/icons_new/template_noback.svg"
 		alt="Templete"
 	/>
+	
+	
 	<ToggleComponent
 		toggleElementSelector=".icon-message-template"
 		targetSelector={['.fast-replies']}

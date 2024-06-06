@@ -115,7 +115,7 @@
  					<div class="fill"></div>
 				</div>
 				<div class="element video-time-info">
-					<span>2.4 GB / 3.2 GB</span>
+					<span>26.4 GB / 32.2 GB</span>
 					<span>75%</span>
 				</div>
 		    </div>
@@ -459,6 +459,17 @@
 			read: false,
 			secure: false,
 			messagetype: 'video',
+			url: './content/video.mp4',
+			preview: './content/poster.png'
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: 'Check my new video',
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false,
+			messagetype: 'checkers',
 			url: './content/video.mp4',
 			preview: './content/poster.png'
 		}

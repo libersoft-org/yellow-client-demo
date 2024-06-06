@@ -30,6 +30,11 @@
                 <text font-size="14" fill="black" class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
                       x="50" y="258">{message.name}
                 </text>
+                
+
+
+
+
                 <g text-anchor="end" class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" transform="translate(312)">
                     <image height="16" xlink:href="img/icons_new/views_noback.svg"
                            class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
@@ -40,6 +45,11 @@
                     </text>
                     <image class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" width="18"
                            height="18" xlink:href="img/icons_new/like_noback.svg" y="244" x="-100"></image>
+
+
+              <text font-size="16" font-weight="bold" x="10" y="28" fill="white">$19.90</text>
+
+
                     <text font-size="14" fill="black"
                           class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" y="260"
                           x="-55">{message.like}
@@ -68,6 +78,7 @@
                          class="s-BTGIt7ri9Tsr"></div>
             </foreignObject>
             <rect x="265" y="12" width="45" height="20" rx="4" ry="4" fill="#ff0000"></rect>
+
             <text font-size="16" font-weight="bold" x="270" y="28" fill="white">LIVE</text>
             <g class="s-BTGIt7ri9Tsr" transform="translate(0,-30)">
                 <foreignObject x="4" y="222" width="40" height="40">
