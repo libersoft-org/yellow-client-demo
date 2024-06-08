@@ -517,6 +517,17 @@
 			url: './content/video.mp4',
 			preview: './content/poster.png'
 		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: 'Check my new video',
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false,
+			messagetype: 'weather',
+			url: './content/video.mp4',
+			preview: './content/poster.png'
+		},
 	];
 
 	function adjustLastMessage() {

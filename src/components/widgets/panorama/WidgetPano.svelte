@@ -92,5 +92,5 @@ if (window.DeviceOrientationEvent) {
   
 </style>
 
-
+<b>panorama</b>
 <div id="panorama-container"/>

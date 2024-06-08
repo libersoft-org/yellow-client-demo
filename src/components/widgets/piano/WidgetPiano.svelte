@@ -171,7 +171,7 @@
     }
 
 </style>
-
+<b>piano</b>
 <div class="controls">
   <button class="instrument piano active" on:click={() => setInstrument('piano')}>🎹</button>
   <button class="instrument guitar" on:click={() => setInstrument('guitar')}>🎸</button>
