@@ -47,7 +47,7 @@
                            height="18" xlink:href="img/icons_new/like_noback.svg" y="244" x="-100"></image>
 
 
-              <text font-size="16" font-weight="bold" x="10" y="28" fill="white">$19.90</text>
+              <text font-size="16" font-weight="bold" x="0" y="210" fill="white">{message.price || ''}</text>
 
 
                     <text font-size="14" fill="black"
@@ -98,6 +98,9 @@
                           class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
                           y="238" width="200" x="0">{message.views} views
                     </text>
+                    
+                    <text font-size="16" font-weight="bold" x="0" y="210" fill="white">{message.price || ''}</text>
+                    
                     <image class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" width="18"
                            height="18" xlink:href="img/icons_new/like_noback.svg" y="244" x="-100"></image>
                     <text font-size="14" fill="black"

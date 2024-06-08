@@ -8,6 +8,8 @@
         showModal = false;
     }
     let icon4Src = './img/icons_new/icon_accept_call.svg'; // Výchozí zdroj obrázku
+
+    
     function toggleIcon4() {
         if (icon4Src === './img/icons_new/icon_accept_call.svg') {
             icon4Src = './img/icons_new/icon_reject_call.svg';
@@ -29,6 +31,16 @@
             document.removeEventListener('closeToggleComponent', closeHandler);
         };
     });
+
+    let icon_recording = './img/icons_new/icon_recording_off.png';
+    
+    function toggle_recording() {
+        if (icon_recording === './img/icons_new/icon_recording_off.png') {
+            icon_recording = './img/icons_new/icon_recording_on.png';
+        } else {
+            icon_recording = './img/icons_new/icon_recording_off.png';
+        }
+    }
 
 </script>
 
@@ -58,11 +70,11 @@
                 <div class="element toggle-animation" on:click={toggleIcon4}>
                     <div class="imgdiv"><img src="{icon4Src}" alt="Icon 4"></div>
                 </div>
-                <div class="element toggle-animation" on:click={toggleIcon4}>
-                    <div class="imgdiv">teamviewer!<img src="{icon4Src}" alt="Icon 4"></div>
+                <div class="element toggle-animation" on:click={toggle_recording}>
+                    <div class="imgdiv"><img src="{icon_recording}" alt="Icon 5"></div>
                 </div>
-                <div class="element toggle-animation" on:click={toggleIcon4}>
-                    <div class="imgdiv">record!<img src="{icon4Src}" alt="Icon 4"></div>
+                <div class="element">
+                    <div class="imgdiv"><img src="./img/icons_new/icon_teamviewer.png" alt="TV"></div>
                 </div>
                 
                 
@@ -71,7 +83,7 @@
     </Modal>
 <style>
     .profile-menu {
-        min-width:222px;
+        min-width:282px;
         max-width: 222px;
         overflow: hidden;
         box-sizing: border-box;
