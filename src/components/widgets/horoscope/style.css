@@ -1,0 +1,31 @@
+body {
+ margin: 10px;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ background-color: #EEE;
+}
+
+.container {
+ padding: 20px;
+ width: 300px;
+ border: 1px solid #999;
+ border-radius: 10px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+ background-color: #FFF;
+}
+
+.title {
+ margin-bottom: 10px;
+ font-size: 20px;
+ font-weight: bold;
+}
+
+.subtitle {
+ margin-bottom: 10px;
+ font-size: 18px;
+ font-weight: bold;
+}
+
+.error {
+ color: red;
+ margin-top: 10px;
+}

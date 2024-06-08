@@ -1,0 +1,2 @@
+- piano and oscilator sounds the same
+- make instruments sound more realistic

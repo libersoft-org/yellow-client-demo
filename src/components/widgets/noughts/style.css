@@ -1,0 +1,43 @@
+body {
+ font-family: Arial, sans-serif;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin: 0;
+ padding: 0;
+}
+
+#scoreboard {
+ display: flex;
+ justify-content: space-around;
+ width: 200px;
+ margin: 20px 0;
+}
+
+#currentPlayer {
+ font-size: 20px;
+ margin-bottom: 10px;
+}
+
+#board {
+ display: grid;
+ grid-template-columns: repeat(15, 40px);
+ grid-template-rows: repeat(15, 40px);
+ gap: 2px;
+}
+
+.cell {
+ width: 40px;
+ height: 40px;
+ background-color: #f0f0f0;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 24px;
+ cursor: pointer;
+ user-select: none;
+}
+
+.cell:hover {
+ background-color: #ddd;
+}

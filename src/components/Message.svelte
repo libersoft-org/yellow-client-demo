@@ -1,8 +1,15 @@
 <script>
 	import MultiTick from './MultiTick.svelte';
 	import LottiePlayer from './LottiePlayer.svelte';
+
+	import AudioPlayer from './AudioPlayer.svelte';
+	import LeafMap from './utils/LeafMap.svelte';
+
   import WidgetCheckers from './WidgetCheckers.svelte';
   import WidgetView3d from './widgets/3d/WidgetView3d.svelte';
+  import WidgetPaint from "./widgets/paint/WidgetPaint.svelte";
+  import WidgetPano from "./widgets/panorama/WidgetPano.svelte";
+  import WidgetPiano from "./widgets/piano/WidgetPiano.svelte";
 
 	export let photo = null;
 	export let messagetype = null;
@@ -18,8 +25,8 @@
 	export let hideAfter = false;
 	export let uniqueId;
 	export let isPaused = true;
-	import AudioPlayer from './AudioPlayer.svelte';
-	import LeafMap from './utils/LeafMap.svelte';
+
+
 	let currentTime = '0:00';
 	let duration = '0:00';
 	let showTranslation = false;
@@ -123,6 +130,24 @@
 			<div class="message__content_text">
 				<div class="multipart-message element image-container">
 					<WidgetView3d id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'paint'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+					<WidgetPaint id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'pano'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+					<WidgetPano id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'piano'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+					<WidgetPiano id={uniqueId} />
 				</div>
 			</div>
 		{:else if !messagetype || messagetype === 'multipart' || messagetype === 'news'}

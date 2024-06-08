@@ -49,5 +49,5 @@
 <style>
   canvas { display: block; width: 300px; height: 300px;}
 </style>
-
+<b>3D</b>
 <canvas bind:this={canvas}></canvas>

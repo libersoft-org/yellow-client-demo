@@ -1,0 +1,61 @@
+body {
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.poll-container {
+ width: 60%;
+ margin: 0 auto;
+}
+
+.question {
+ font-size: 1.5em;
+ margin-bottom: 20px;
+}
+
+.bar-container {
+ display: flex;
+ align-items: center;
+ margin: 10px 0;
+}
+
+.label {
+ width: 100px;
+}
+
+.bar {
+ height: 20px;
+ border-radius: 10px;
+ text-align: center;
+ color: white;
+ display: flex;
+ align-items: center;
+ padding-left: 10px;
+ position: relative;
+}
+
+.bar .percentage {
+ position: absolute;
+ right: 10px;
+ font-weight: bold;
+ font-size: 12px;
+}
+
+.bar.bitcoin {
+ background-color: #ff7300;
+ width: 52%;
+}
+
+.bar.ethereum {
+ background-color: #517BE8;
+ width: 24%;
+}
+
+.bar.polkadot {
+ background-color: #e6007a;
+ width: 18%;
+}
+
+.bar.other {
+ background-color: #666666;
+ width: 6%;
+}

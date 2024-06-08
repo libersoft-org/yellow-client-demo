@@ -47,7 +47,7 @@
 }
 </style>
 
-<b>Piškvorky!</b>
+<b>Piškvorky</b>
 
 <table id="deska" on:click={priKliknutiNaBunku}>
     <tr>
