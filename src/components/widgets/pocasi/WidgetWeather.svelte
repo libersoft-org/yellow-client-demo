@@ -21,7 +21,7 @@ onMount(() => {
      case 'rain':
       return 'rain.png';
      default:
-      return 'unknown.png';
+      return 'icon_no_connection_filled.svg';
     }
    }
   
@@ -43,7 +43,7 @@ onMount(() => {
      forecastItem.classList.add('forecast-item');
      forecastItem.innerHTML = `
       <h3>${new Date(day).toLocaleDateString('cs-CZ', { weekday: 'long' })}</h3>
-      <img src="icons/${weatherIcon}" alt="Počasí">
+      <img src="img/icons_new/${weatherIcon}" alt="Počasí">
       <p>${minTemp}°C / ${maxTemp}°C</p>
      `;
      forecastItem.addEventListener('click', () => displayHourlyForecast(i, data.hourly));
@@ -64,7 +64,7 @@ onMount(() => {
      forecastItem.innerHTML = `
 <span class="forecast-item">
        <h3>${new Date(hour).getHours()}:00</h3>
-       <img src="icons/${weatherIcon}" alt="Počasí">
+       <img src="img/icons_new/${weatherIcon}" alt="Počasí">
        <p>${temp}°C</p>
 </span>
      `;

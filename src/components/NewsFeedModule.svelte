@@ -50,8 +50,12 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
         <div class="element"><b>Link: <a href="" >www.libersoft.org</a></b></div>
     </div>
     <div class="second-container-semi" >
-    donate!
     
+    
+        <div class="element">
+            <div class="imgdiv"><img src="./img/icons_new/noun-donate-66592.svg" alt=""></div>
+            <div><span>Donate</span></div>
+        </div>
         <div class="like-dislike">
             <div class="element-l">
                 <div class="imgdiv-like"><img src="./img/icons_new/like_noback.svg" alt="Like Icon"></div>
@@ -470,6 +474,11 @@ import {activeVideView, actualMVC} from "../stores/mainstore.js";
         background-color: var(--primary-color-p25)
     }
 
+    .second-container-semi .imgdiv {
+        width: 16px;
+        height: 16px;
+        margin-right: 2px;
+    }
     .second-container-semi .imgdiv-share {
         width: 16px;
         height: 16px;
