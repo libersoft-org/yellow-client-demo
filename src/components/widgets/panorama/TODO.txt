@@ -1,0 +1,2 @@
+- mobile gyroscope is not rotating properly (360 degrees in real life is just about 45 degrees on a picture)
+- mobile version does not allow manual rotation by dragging on display

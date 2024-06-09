@@ -63,13 +63,13 @@
 	}
 
 	// Sample data for dynamically loaded conversations
-	let lmes = `<b>John Smith:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.`;
+	//let lmes = `piskvorky`;
 	let conversations = [
 		{
 			id: '1',
 			imageUrl: '../img/icons/icon_nemp_v4_filled.svg',
 			name: 'Yellow - development group',
-			lastMessage: lmes,
+			lastMessage: `<b>John Smith:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nunc nisl ultricies nunc, nec ultricies nunc nisl sit amet nunc.`,
 			time: '12:59:59',
 			unreadMessages: 10,
 			isRead: false,
@@ -320,6 +320,7 @@
 </script>
 
 <div class="conversations-panel no-select {!blurred ? '' : 'blurred'}">
+
 	{#each groupedConversations as group, groupIndex}
 		<ul class="group-conversation" >
 			{#if ($actualMVC !== 'call') && ($actualMVC !== 'video') && ($actualMVC != 'newsfeed')}

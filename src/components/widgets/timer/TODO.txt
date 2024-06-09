@@ -1,0 +1,3 @@
+- Change "Pause" to "Start" when the timer is over
+- Make a nicer beep
+- Setting minutes and seconds can be done inside timer, not below it

@@ -48,6 +48,9 @@
     videoCItem[0].channel = 'yellow news';
     videoCItem[0].imageUrl = 'https://i.pravatar.cc/300?u=user5';
     videoCItem[0].preview = 'content/pv1.jpg';
+    videoCItem[0].price = '$19.90'
+    /* 19...90*/
+    /* donate button! */
     videoCItem[0].views = 1000;
     videoCItem[0].like = 250;
     videoCItem[0].dislike = 100;
@@ -112,9 +115,12 @@
     videoCItem[5].views = 10000;
     videoCItem[5].like = 0;
     videoCItem[5].dislike = 100;
+    videoCItem[5].price = '$0.90'
 
     let videoLItem = videoCItem.map(item => ({...item}));
     videoLItem[0].preview = 'content/pv7.jpg';
+    videoLItem[0].price = undefined;
+    videoLItem[3].price = '$5';
     videoLItem[1].preview = 'content/pv8.jpg';
     videoLItem[2].preview = 'content/pv9.jpg';
     videoLItem[3].preview = 'content/pv10.jpg';

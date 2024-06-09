@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Bitcoin price</title>
+ <link rel="stylesheet" href="style.css">
+ <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+ <div class="container">
+  <h1>Bitcoin price</h1>
+  <div id="current-info">
+   <p id="current-date"></p>
+   <p id="current-price"></p>
+  </div>
+  <canvas id="bitcoinChart"></canvas>
+  <div class="buttons">
+   <button onclick="updateChart('day')">Day</button>
+   <button onclick="updateChart('week')">Week</button>
+   <button onclick="updateChart('month')">Month</button>
+   <button onclick="updateChart('year')">Year</button>
+   <button onclick="updateChart('all')">All Time</button>
+  </div>
+ </div>
+ <script src="script.js"></script>
+</body>
+</html>

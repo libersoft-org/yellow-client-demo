@@ -1,0 +1,4 @@
+- all time chart is not working
+- daily chart is not working
+- all dates should be in local format
+- price should be in local format ($71.000 for US, $71 000 for CZ etc.)

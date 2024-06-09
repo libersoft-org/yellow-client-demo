@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malování</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="toolbar">
+ <button id="pencil" class="tool active">🖊️</button>
+ <button id="eraser" class="tool">❌</button>
+ <button id="line" class="tool">🖋️</button>
+ <button id="rectangle" class="tool">⬜</button>
+ <button id="ellipse" class="tool">⚪</button>
+ <button id="text" class="tool">📜</button>
+ <button id="undo" class="tool">↩️</button>
+ <button id="redo" class="tool">↪️</button>
+ <button id="clear" class="tool">🗑️</button>
+ <button id="save" class="tool">💾</button>
+ </div>
+ <div class="toolbar">
+  <input type="color" id="colorPicker">
+  <input type="range" id="lineWidth" min="1" max="30" value="1">
+  <select id="fontSelect">
+   <option value="Arial">Arial</option>
+   <option value="Courier New">Courier New</option>
+   <option value="Georgia">Georgia</option>
+   <option value="Times New Roman">Times New Roman</option>
+   <option value="Verdana">Verdana</option>
+  </select>
+  <input type="number" id="fontSize" min="10" max="100" value="20">
+ </div>
+ <canvas id="canvas" width="800" height="600"></canvas>
+ <script src="script.js"></script>
+</body>
+</html>

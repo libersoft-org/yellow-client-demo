@@ -18,8 +18,8 @@
 	import NewsFeedModule from "../components/NewsFeedModule.svelte";
 	import NewsFeedCarusel from "../components/NewsFeedCarusel.svelte";
 
-	setupGlobalListeners();
-
+  setupGlobalListeners();
+  
 	function copy(text) {
 		navigator.clipboard.writeText(text);
 	}
@@ -82,28 +82,58 @@
 	</div>
 	<Resizer leftSelector=".panel-left" rightSelector=".panel-right" />
 	<div class="panel panel-right">
+	
 		{#if $actualMVC ==='conversation'}
 			<UserBar id="f-user-bar" />
 			<ConversationDetail id="f-conversation-detail" />
 			<InputBar id="f-input-bar" />
+	
 		{:else if $actualMVC === 'contact'}
 			<UserBar id="f-user-bar" />
 			<ContactDetail id="f-conversation-detail"/>
+	
 		{:else if $actualMVC === 'call'}
 			<UserBar id="f-user-bar" />
 			<CallDetail id="f-conversation-detail"/>
+	
 		{:else if $actualMVC === 'video'}
 			<UserBar id="f-user-bar" />
 			<div class="conversation-detail">
 			<VideoModule id="f-conversation-detail"/>
 			</div>
+	
 		{:else if $actualMVC === 'newsfeed'}
 			<UserBar id="f-user-bar" />
 			<div class="conversation-detail">
 				<!-- <NewsFeedCarusel></NewsFeedCarusel> -->
 				<NewsFeedModule id="f-conversation-detail"/>
 			</div>
+
+		{:else if $actualMVC === 'profiles'}
+			<div class="conversation-detail">
+			profiles
+			</div>
+
+		{:else if $actualMVC === 'profiles'}
+			<div class="conversation-detail">
+			profiles
+			</div>
+
+		{:else if $actualMVC === 'newsgroups'}
+			<div class="conversation-detail">
+			profiles
+			</div>
+
+		{:else if $actualMVC === 'chatgroups'}
+			<div class="conversation-detail">
+			profiles
+			</div>
+
+
+
+
 		{/if}
+
 	</div>
 </div>
 <style>

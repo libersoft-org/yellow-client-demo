@@ -2,6 +2,16 @@
 	import MultiTick from './MultiTick.svelte';
 	import LottiePlayer from './LottiePlayer.svelte';
 
+	import AudioPlayer from './AudioPlayer.svelte';
+	import LeafMap from './utils/LeafMap.svelte';
+
+  import WidgetCheckers from './WidgetCheckers.svelte';
+  import WidgetView3d from './widgets/3d/WidgetView3d.svelte';
+  import WidgetPaint from "./widgets/paint/WidgetPaint.svelte";
+  import WidgetPano from "./widgets/panorama/WidgetPano.svelte";
+  import WidgetPiano from "./widgets/piano/WidgetPiano.svelte";
+  import WidgetWeather from "./widgets/pocasi/WidgetWeather.svelte";
+
 	export let photo = null;
 	export let messagetype = null;
 	export let url = null;
@@ -16,8 +26,8 @@
 	export let hideAfter = false;
 	export let uniqueId;
 	export let isPaused = true;
-	import AudioPlayer from './AudioPlayer.svelte';
-	import LeafMap from './utils/LeafMap.svelte';
+
+
 	let currentTime = '0:00';
 	let duration = '0:00';
 	let showTranslation = false;
@@ -88,6 +98,9 @@
 	<div class="message__sender-photo{messagetype === 'news' ? ' news' : ''}" style="">
 		<img class="photo-circle photo-circle--medium" src={photo} alt="User Photo" />
 	</div>
+	
+	
+	
 	<div class="message__content{messagetype === 'news' ? ' news' : ''}">
 		{#if messagetype === 'audio'}
 			<div class="message__content__text">
@@ -106,6 +119,42 @@
 			<div class="message__content_text">
 				<div class="multipart-message element image-container">
 					<LottiePlayer animationData={message} id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'piskvorky'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+					<WidgetCheckers id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'view3d'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+					<WidgetView3d id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'paint'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+					<WidgetPaint id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'pano'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+					<WidgetPano id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'piano'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+					<WidgetPiano id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'weather'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+					<WidgetWeather id={uniqueId} />
 				</div>
 			</div>
 		{:else if !messagetype || messagetype === 'multipart' || messagetype === 'news'}
@@ -128,7 +177,7 @@
 							<img src="../img/icons/icn_play.svg" alt="Play" class="play-icon" />
 						</div>
 						<video
-							id="videonessage-{uniqueId}"
+							id="videomessage-{uniqueId}"
 							src={url}
 							playsinline
 							poster={preview}

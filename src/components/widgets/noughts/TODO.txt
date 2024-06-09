@@ -1,0 +1,2 @@
+- win move does not show X or O in last element (maybe because of alert)
+- win pattern (XXXXX or OOOOO) should be strikedthrough

@@ -1,0 +1,2 @@
+- undo and redo works weirdly - sometimes it doesnt the last action, sometimes it removes multiple actions etc.
+- text cannot be moved before placed somewhere

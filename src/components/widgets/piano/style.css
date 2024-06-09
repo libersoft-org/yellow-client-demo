@@ -1,0 +1,56 @@
+body {
+ font-family: monospace;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ height: 100vh;
+ background-color: #f0f0f0;
+}
+
+.controls {
+ margin-bottom: 20px;
+ font-size: 20px;
+}
+
+.keyboard {
+ display: flex;
+ background-color: #222;
+ padding: 20px;
+ border-radius: 20px;
+}
+
+.key {
+ width: 40px;
+ height: 150px;
+ margin: 2px;
+ background-color: white;
+ border: 1px solid black;
+ cursor: pointer;
+ display: flex;
+ justify-content: center;
+ align-items: flex-end;
+ font-size: 26px;
+ font-weight: bold;
+ border-radius: 10px;
+}
+
+.key:active,
+.key.active {
+ background-color: #ccc;
+}
+
+.instrument {
+ padding: 10px;
+ font-size: 30px;
+ width: 60px;
+ height: 60px;
+ border: 1px solid #000;
+ border-radius: 10px;
+ background-color: #FFF;
+ cursor: pointer;
+}
+
+.instrument.active {
+ background-color: #222;
+}

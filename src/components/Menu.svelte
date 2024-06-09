@@ -68,6 +68,15 @@
 	<div id="menu" class="menu slide-in no-select">
 		<div class="menu__items">
 
+			<div class="menu__item">
+				<img class="menu__item__icon" src="img/icons_new/icon_new_chat.svg" alt="Chat group list" />Chat group list
+			</div>
+			<div class="menu__item">
+				<img class="menu__item__icon" src="img/icons_new/icon_new_chat.svg" alt="News group list" />News group list
+			</div>
+			<div class="menu__item">
+				<img class="menu__item__icon" src="img/icons_new/icon_new_chat.svg" alt="News group list" />Profile list
+			</div>
 			<div class="menu__item" on:click={openGroupModal}>
 				<img class="menu__item__icon" src="img/icons_new/icon_new_chat.svg" alt="New chat group" />New chat
 				group

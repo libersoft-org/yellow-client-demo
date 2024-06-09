@@ -1,0 +1,39 @@
+body {
+ font-family: Arial, sans-serif;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin: 0;
+ padding: 0;
+}
+
+.forecast-container {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ margin: 20px 0;
+}
+
+.forecast-item {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin: 5px;
+ padding: 5px;
+ width: 60px;
+ cursor: pointer;
+ text-align: center;
+ font-size: 12px;
+ border: 1px solid #999;
+ border-radius: 10px;
+ background-color: #EEE;
+}
+
+.forecast-item img {
+ width: 60px;
+ height: 60px;
+}
+
+.forecast-item h3, .forecast-item p {
+ margin: 5px 0;
+}

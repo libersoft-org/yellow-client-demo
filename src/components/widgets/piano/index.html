@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music keyboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="controls">
+ <button class="instrument piano active" onclick="setInstrument('piano')">🎹</button>
+ <button class="instrument guitar" onclick="setInstrument('guitar')">🎸</button>
+ <button class="instrument violin" onclick="setInstrument('violin')">🎻</button>
+ <button class="instrument oscilator" onclick="setInstrument('oscilator')">↝</button>
+</div>
+<div class="keyboard">
+ <div class="key" data-note="C" data-key="A">A</div>
+ <div class="key" data-note="D" data-key="S">S</div>
+ <div class="key" data-note="E" data-key="D">D</div>
+ <div class="key" data-note="F" data-key="F">F</div>
+ <div class="key" data-note="G" data-key="G">G</div>
+ <div class="key" data-note="A" data-key="H">H</div>
+ <div class="key" data-note="B" data-key="J">J</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
