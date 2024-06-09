@@ -48,18 +48,28 @@
     flex-direction: row;
   }
   
+  .message_topic {
+    padding-right: 10px;
+  }
+  
+  .sipka-doleva {
+    padding-right: 10px;
+  }
+  
 </style>
 
 {#if conversationId == 3}
 
 <div class="topic-bar">
 
-  &lt; 
+  <div class="sipka-doleva">
+    &lt; 
+  </div>
 
   <div style="width: calc(100% - 40px);">
-    <span class="message_topic">General</span> 
-    <span class="message_topic">Wedding</span> 
-    <span class="message_topic">Dog</span> 
+    <span class="message_topic">General</span>
+    <span class="message_topic">Wedding</span>
+    <span class="message_topic">Dog</span>
   </div>
    
    <div style="width: 40px; text-align: right;">
