@@ -40,6 +40,7 @@
 <style>
   
   .topic-bar {
+    align-items: center;
     display: flex;
     line-height: 60px;
     padding: 0 20px;
@@ -63,9 +64,7 @@
 
 <div class="topic-bar">
   
-  <div class="sipka-doleva">
-    <img src="img/icons/icon_back_white.svg"/>
-  </div>
+    <img class="sipka-doleva" src="img/icons/icon_back_white.svg"/>
 
   <div style="width: calc(100% - 40px);">
     <span class="message_topic">General</span>
@@ -73,9 +72,7 @@
     <span class="message_topic">Dog</span>
   </div>
   
-   <div style="width: 40px; text-align: right;">
      <img src="img/icons/icon_forw_white.svg"/>
-   </div>
     
 </div>
   
