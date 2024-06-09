@@ -2,6 +2,12 @@
   
 import {onMount} from "svelte";
 
+let currentColor = '#000000';
+
+$: {
+console.trace('currentColor', currentColor);
+}
+
 onMount(() => {
     const canvas = document.getElementById('canvas');
     const pencilBtn = document.getElementById('pencil');
@@ -13,7 +19,6 @@ onMount(() => {
     const clearBtn = document.getElementById('clear');
     const undoBtn = document.getElementById('undo');
     const redoBtn = document.getElementById('redo');
-    const colorPicker = document.getElementById('colorPicker');
     const lineWidth = document.getElementById('lineWidth');
     const fontSelect = document.getElementById('fontSelect');
     const fontSize = document.getElementById('fontSize');
@@ -25,14 +30,13 @@ onMount(() => {
     let drawing = false;
     let tool = 'pencil';
     let startX, startY;
-    let currentColor = '#000000';
+
     let currentLineWidth = 1;
     let savedImageData;
     let undoStack = [];
     let redoStack = [];
     let isMoving = false;
     let selectedShape = null;
-    colorPicker.value = '#000000';
     lineWidth.value = 1;
     const cursorIndicator = document.createElement('div');
     cursorIndicator.classList.add('cursor-indicator');
@@ -52,7 +56,6 @@ onMount(() => {
     clearBtn.addEventListener('click', clearCanvas);
     undoBtn.addEventListener('click', undo);
     redoBtn.addEventListener('click', redo);
-    colorPicker.addEventListener('change', (e) => currentColor = e.target.value);
     lineWidth.addEventListener('change', (e) => currentLineWidth = e.target.value);
     saveBtn.addEventListener('click', saveCanvas);
 
@@ -80,6 +83,8 @@ onMount(() => {
             return;
         }
         ctx.globalCompositeOperation = tool === 'eraser' ? 'destination-out' : 'source-over';
+        ctx.strokeStyle = currentColor;
+        
         if (tool === 'pencil' || tool === 'eraser') {
             ctx.lineWidth = currentLineWidth;
             ctx.lineCap = 'round';
@@ -91,7 +96,7 @@ onMount(() => {
             ctx.putImageData(savedImageData, 0, 0);
             ctx.lineWidth = currentLineWidth;
             ctx.lineCap = 'round';
-            ctx.strokeStyle = currentColor;
+            
             switch (tool) {
                 case 'line':
                     drawLine(e);
@@ -218,6 +223,7 @@ onMount(() => {
    border-radius: 10px;
    border: 1px solid #000;
    font-size: 26px;
+   background-color: #ccc;
   }
   
   .tool.active {
@@ -237,19 +243,19 @@ onMount(() => {
 </style>
 <b>Paint</b>
 <div class="toolbar">
- <button id="pencil" class="tool active">🖊️</button>
- <button id="eraser" class="tool">❌</button>
- <button id="line" class="tool">🖋️</button>
- <button id="rectangle" class="tool">⬜</button>
- <button id="ellipse" class="tool">⚪</button>
- <button id="text" class="tool">📜</button>
- <button id="undo" class="tool">↩️</button>
- <button id="redo" class="tool">↪️</button>
- <button id="clear" class="tool">🗑️</button>
- <button id="save" class="tool">💾</button>
+ <button id="pencil"      class="tool active">🖊️</button>
+ <button id="eraser"      class="tool">❌</button>
+ <button id="line"        class="tool">🖋️</button>
+ <button id="rectangle"   class="tool">⬜</button>
+ <button id="ellipse"     class="tool">⚪</button>
+ <button id="text"        class="tool">📜</button>
+ <button id="undo"        class="tool">↩️</button>
+ <button id="redo"        class="tool">↪️</button>
+ <button id="clear"       class="tool">🗑️</button>
+ <button id="save"        class="tool">💾</button>
  </div>
  <div class="toolbar">
-  <input type="color" id="colorPicker">
+  <input type="color" bind:value={currentColor}/>
   <input type="range" id="lineWidth" min="1" max="30" value="1">
   <select id="fontSelect">
    <option value="Arial">Arial</option>

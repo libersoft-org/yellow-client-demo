@@ -299,7 +299,7 @@
 			read: false,
 			secure: false,
 			messagetype: 'audio',
-			url: '../content/voicemessage.ogg'
+			url: '../content/voice3.mp3'
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=ownprofile',
@@ -449,7 +449,7 @@
 			read: false,
 			secure: false,
 			messagetype: 'audio',
-			url: '../content/voicemessage.ogg'
+			url: '../content/voice3.mp3'
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',

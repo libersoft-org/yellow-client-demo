@@ -89,8 +89,11 @@
 
 
     onMount(() => {
-
+        
+        
+        
         document.addEventListener('keydown', (event) => {
+          if (!enabled) return;
             const key = [...keys].find(k => k.dataset.key === event.key.toUpperCase());
             if (key && !activeNodes[event.key.toUpperCase()]) {
                 startSound(key);
@@ -99,6 +102,7 @@
         });
 
         document.addEventListener('keyup', (event) => {
+          if (!enabled) return;
             const key = [...keys].find(k => k.dataset.key === event.key.toUpperCase());
             if (key) {
                 stopSound(key);
@@ -118,6 +122,17 @@
 
     });
 
+    let enabled = false;
+
+    function disable() {
+        enabled = false;
+        console.log('piano keys disabled');
+    }
+  
+    function enable() {
+          enabled = true;
+          console.log('piano keys enabled');
+      }
 
 </script>
 
@@ -172,6 +187,7 @@
 
 </style>
 <b>piano</b>
+<div  on:mouseover={() => enable()} on:mouseleave={() => disable()}>
 <div class="controls">
   <button class="instrument piano active" on:click={() => setInstrument('piano')}>🎹</button>
   <button class="instrument guitar" on:click={() => setInstrument('guitar')}>🎸</button>
@@ -187,4 +203,4 @@
   <div class="key" data-note="A" data-key="H">H</div>
   <div class="key" data-note="B" data-key="J">J</div>
 </div>
-
+</div>

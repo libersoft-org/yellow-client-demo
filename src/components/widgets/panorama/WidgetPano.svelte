@@ -17,7 +17,7 @@ container.addEventListener('mousedown', (e) => {
  startX = e.pageX - container.offsetLeft;
  scrollLeft = backgroundPosition;
  container.style.cursor = 'grabbing';
- e.preventPreventDefault();
+ //e.preventPreventDefault();
 });
 
 container.addEventListener('mouseleave', () => {
@@ -81,7 +81,7 @@ if (window.DeviceOrientationEvent) {
 #panorama-container {
  width: 800px;
  height: 480px;
- background: url('pano.jpg') repeat-x;
+ background: url('content/pano.jpg') repeat-x;
  background-size: auto 100%;
  cursor: grab;
  touch-action: none;
