@@ -51,7 +51,11 @@
   }
   
   .message_topic {
-    padding-right: 10px;
+    margin-right: 10px;
+  }
+  
+  .message_topic.active {
+    border-bottom: 2px solid #fff;
   }
   
   .sipka-doleva {
@@ -67,7 +71,7 @@
     <img class="sipka-doleva" src="img/icons/icon_back_white.svg"/>
 
   <div style="width: calc(100% - 40px);">
-    <span class="message_topic">General</span>
+    <span class="message_topic active">General</span>
     <span class="message_topic">Wedding</span>
     <span class="message_topic">Dog</span>
   </div>
