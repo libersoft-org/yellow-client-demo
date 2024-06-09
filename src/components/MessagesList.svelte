@@ -538,6 +538,22 @@
 			read: true,
 			secure: false
 		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			messagetype: 'payment',
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false,
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=ownprofile',
+			message: "thanks!",
+			time: '11:23:00',
+			sent: false,
+			read: true,
+			secure: false
+		},
 	];
 
 	function adjustLastMessage() {

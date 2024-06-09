@@ -70,13 +70,14 @@
                 <div class="element toggle-animation" on:click={toggleIcon4}>
                     <div class="imgdiv"><img src="{icon4Src}" alt="Icon 4"></div>
                 </div>
+              <!--
                 <div class="element toggle-animation" on:click={toggle_recording}>
                     <div class="imgdiv"><img src="{icon_recording}" alt="Icon 5"></div>
                 </div>
                 <div class="element">
                     <div class="imgdiv"><img src="./img/icons_new/icon_teamviewer.png" alt="TV"></div>
                 </div>
-                
+              -->
                 
             </div>
         </div>

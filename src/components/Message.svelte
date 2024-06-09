@@ -11,6 +11,7 @@
   import WidgetPano from "./widgets/panorama/WidgetPano.svelte";
   import WidgetPiano from "./widgets/piano/WidgetPiano.svelte";
   import WidgetWeather from "./widgets/pocasi/WidgetWeather.svelte";
+  import WidgetPayment from "./WidgetPayment.svelte";
 
 	export let photo = null;
 	export let messagetype = null;
@@ -155,6 +156,12 @@
 			<div class="message__content_text">
 				<div class="multipart-message element image-container">
 					<WidgetWeather id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'payment'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+					<WidgetPayment id={uniqueId} />
 				</div>
 			</div>
 		{:else if !messagetype || messagetype === 'multipart' || messagetype === 'news'}
