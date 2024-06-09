@@ -597,6 +597,7 @@
 	}
 </script>
 
+
 <div bind:this={messageBox} class="messages-box" class:invisible={!visible}>
 	<div class="messages">
 		{#each actualMessages as msg, index}

@@ -131,19 +131,6 @@
           </div>
 
 
-          <br/>
-          
-
-
-          <div class="topic-bar">
-            <img src="img/icons/icon_back.svg">
-            <span class="message_topic">General</span>
-            <span class="message_topic">Wedding</span>
-            <span class="message_topic">Dog</span>
-            <img src="img/icons/icon_forw.svg">
-          </div>
-
-
         {:else if (idConversation === 2) && ($actualMVC === 'conversation')}
           <div class="conversation-user__photo">
             <img

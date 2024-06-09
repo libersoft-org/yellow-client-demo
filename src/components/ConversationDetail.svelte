@@ -37,6 +37,32 @@
 	});
 </script>
 
+<style>
+  .topic-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 50px;
+    margin: 0px 10px;
+    background-color: #000;
+    color: #fff;
+  }
+  
+</style>
+
+{#if conversationId == 3}
+
+<div class="topic-bar">
+  &lt; 
+  <span class="message_topic">General</span>
+  <span class="message_topic">Wedding</span>
+  <span class="message_topic">Dog</span>
+  &gt;
+</div>
+
+{/if}
+
 <div class="conversation-detail">
 	<MessagesList visible={isConversationSelected} {conversationId} />
 	<div class="centered-message" class:invisible={isConversationSelected}>

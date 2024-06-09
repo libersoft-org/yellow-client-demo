@@ -1652,15 +1652,3 @@
 	padding:0px!important;
 	overflow: hidden;
 }
-
-.topic-bar {
-    justify-content: space-between;
-    align-items: center;
-    vertical-align: top;
-}
-
-.message_topic {
-    font-size: 1.2em;
-    font-weight: bold;
-    vertical-align: top;
-}
