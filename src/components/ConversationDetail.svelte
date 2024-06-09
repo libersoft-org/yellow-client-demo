@@ -41,6 +41,7 @@
   
   .topic-bar {
     display: flex;
+    line-height: 60px;
     padding: 0 20px;
     margin: 0px 0px;
     background-color: #000;
