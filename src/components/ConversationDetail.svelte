@@ -52,10 +52,12 @@
   
   .message_topic {
     margin-right: 10px;
+
   }
   
   .message_topic.active {
     border-bottom: 2px solid #fff;
+    font-weight: 600;
   }
   
   .sipka-doleva {
