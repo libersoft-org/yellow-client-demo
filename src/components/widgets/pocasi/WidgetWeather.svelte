@@ -154,7 +154,7 @@
 
   <div id="daily-forecast" class="forecast-container">
     {#each dailyForecast as forecast}
-      <div class="forecast-item forecast-day " on:click={() => displayHourlyForecast(forecast.index)}>
+      <div class="forecast-item forecast-day" on:click={() => displayHourlyForecast(forecast.index)}>
         <h3>{forecast.day}</h3>
         <img src="{forecast.icon}" alt="Počasí"/>
         <p>{forecast.maxTemp}°C / {forecast.minTemp}°C </p>

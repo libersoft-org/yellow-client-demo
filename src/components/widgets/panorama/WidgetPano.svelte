@@ -79,6 +79,7 @@ if (window.DeviceOrientationEvent) {
 <style>
 
 #panorama-container {
+ max-width: 100%;
  width: 800px;
  height: 480px;
  background: url('content/pano.jpg') repeat-x;

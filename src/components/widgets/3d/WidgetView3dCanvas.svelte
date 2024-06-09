@@ -61,6 +61,7 @@
 <style>
   canvas {
     cursor: move;
+    max-width: 100%;
   }
 </style>
 

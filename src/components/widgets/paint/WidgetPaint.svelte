@@ -214,6 +214,7 @@ onMount(() => {
    border: 1px solid #000;
 /*   cursor: none;*/
    background-color: #FFF;
+   max-width: 100%;
   }
   
   .tool {

@@ -372,31 +372,6 @@
 			secure: false
 		},
 		{
-			photo: 'https://i.pravatar.cc/300?u=user2',
-			message: 'Hi, how are you?',
-			time: '11:22:33',
-			sent: true,
-			read: true,
-			secure: false
-		},
-		{
-			photo: 'https://i.pravatar.cc/300?u=ownprofile',
-			message: "Hi, I'm fine and you?",
-			time: '11:23:00',
-			sent: false,
-			read: true,
-			secure: false
-		},
-		{
-			photo: 'https://i.pravatar.cc/300?u=user2',
-			message:
-				'I am sending you very very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long longvery very extremely long long long message.',
-			time: '15:35:00',
-			sent: true,
-			read: true,
-			secure: false
-		},
-		{
 			photo: 'https://i.pravatar.cc/300?u=ownprofile',
 			messagetype: 'multipart',
 			message: multipartImageA,
@@ -443,90 +418,125 @@
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
+			messagetype: 'audio',
 			message: 'Audio message',
 			time: new Date().toLocaleTimeString(),
 			sent: false,
 			read: false,
 			secure: false,
-			messagetype: 'audio',
 			url: '../content/voice3.mp3'
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
-			message: 'Check my new video',
-			time: new Date().toLocaleTimeString(),
-			sent: true,
-			read: false,
-			secure: false,
 			messagetype: 'video',
-			url: './content/video.mp4',
-			preview: './content/poster.png'
-		},
-		{
-			photo: 'https://i.pravatar.cc/300?u=user2',
 			message: 'Check my new video',
 			time: new Date().toLocaleTimeString(),
 			sent: true,
 			read: false,
 			secure: false,
+			url: './content/video.mp4',
+			preview: './content/poster.png'
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=ownprofile',
+			message: "cool!",
+			time: '11:23:00',
+			sent: false,
+			read: true,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: "I know!",
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: "Look what we can do here!",
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
 			messagetype: 'piskvorky',
-			url: './content/video.mp4',
-			preview: './content/poster.png'
-		},
-		{
-			photo: 'https://i.pravatar.cc/300?u=user2',
 			message: 'Check my new video',
 			time: new Date().toLocaleTimeString(),
 			sent: true,
 			read: false,
 			secure: false,
+			url: './content/video.mp4',
+			preview: './content/poster.png'
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=ownprofile',
+			message: "AHAHAHA!",
+			time: new Date().toLocaleTimeString(),
+			sent: false,
+			read: true,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
 			messagetype: 'view3d',
-			url: './content/video.mp4',
-			preview: './content/poster.png'
-		},
-		{
-			photo: 'https://i.pravatar.cc/300?u=user2',
-			message: 'Check my new video',
 			time: new Date().toLocaleTimeString(),
 			sent: true,
 			read: false,
 			secure: false,
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
 			messagetype: 'paint',
-			url: './content/video.mp4',
-			preview: './content/poster.png'
-		},
-		{
-			photo: 'https://i.pravatar.cc/300?u=user2',
-			message: 'Check my new video',
 			time: new Date().toLocaleTimeString(),
 			sent: true,
 			read: false,
 			secure: false,
+			url: './content/video.mp4',
+			preview: './content/poster.png'
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=ownprofile',
+			message: "nice!",
+			time: '11:23:00',
+			sent: false,
+			read: true,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
 			messagetype: 'pano',
-			url: './content/video.mp4',
-			preview: './content/poster.png'
-		},
-		{
-			photo: 'https://i.pravatar.cc/300?u=user2',
-			message: 'Check my new video',
 			time: new Date().toLocaleTimeString(),
 			sent: true,
 			read: false,
 			secure: false,
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
 			messagetype: 'piano',
-			url: './content/video.mp4',
-			preview: './content/poster.png'
-		},
-		{
-			photo: 'https://i.pravatar.cc/300?u=user2',
-			message: 'Check my new video',
 			time: new Date().toLocaleTimeString(),
 			sent: true,
 			read: false,
 			secure: false,
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
 			messagetype: 'weather',
-			url: './content/video.mp4',
-			preview: './content/poster.png'
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false,
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=ownprofile',
+			message: "very cool!",
+			time: '11:23:00',
+			sent: false,
+			read: true,
+			secure: false
 		},
 	];
 
