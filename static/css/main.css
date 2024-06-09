@@ -1653,8 +1653,14 @@
 	overflow: hidden;
 }
 
+.topic-bar {
+    justify-content: space-between;
+    align-items: center;
+    vertical-align: top;
+}
+
 .message_topic {
     font-size: 1.2em;
     font-weight: bold;
-    background-color: #f0f0f0;
+    vertical-align: top;
 }

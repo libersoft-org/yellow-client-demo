@@ -132,14 +132,15 @@
 
 
           <br/>
-          banany!!!!!
+          
 
 
-          <div class="user-bar">Topic:
-            <img src="img/icons/icon_back.svg" alt="search" class="s-LQr8RHfOuNOc">
+          <div class="topic-bar">
+            <img src="img/icons/icon_back.svg">
             <span class="message_topic">General</span>
             <span class="message_topic">Wedding</span>
             <span class="message_topic">Dog</span>
+            <img src="img/icons/icon_forw.svg">
           </div>
 
 
@@ -177,7 +178,7 @@
       </div>
       {#if $actualMVC === 'conversation'}
       
-      convo
+      
       
       
         <div class="conversation-controlls">
