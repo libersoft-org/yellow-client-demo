@@ -9,14 +9,14 @@
             id: 0, title: "Conversations", icon: "conversations.svg", hasDot: true, onclick: (e) => {
                 e.preventDefault();
                 $actualMVC = 'conversation';
-                document.querySelector('#menu-toggle').click()
+                //document.querySelector('#menu-toggle').click()
             }
         },
         {
             id: 1, title: "Newsfeed", icon: "icon_newsfeed_stroke.svg", hasDot: true, onclick: (e) => {
                 e.preventDefault();
                 $actualMVC = 'newsfeed';
-                document.querySelector('#menu-toggle').click();
+                //document.querySelector('#menu-toggle').click();
                 document.querySelector(`.panel-left`).classList.remove('active-panel');
                 document.querySelector(`.panel-right`).classList.add('active-panel');
                 window.adjustPanels();
@@ -27,7 +27,7 @@
                 e.preventDefault();
                 $actualMVC = 'video';
                 $activeVideView = 'videolist';
-                document.querySelector('#menu-toggle').click();
+                //document.querySelector('#menu-toggle').click();
                 document.querySelector(`.panel-left`).classList.remove('active-panel');
                 document.querySelector(`.panel-right`).classList.add('active-panel');
                 window.adjustPanels();
