@@ -4,6 +4,8 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
+                "dev0": "vite dev --host 0.0.0.0",
+
 		"build": "vite build",
 		"preview": "vite preview",
 		"liveserver": "vite build && vite preview --host 0.0.0.0",
