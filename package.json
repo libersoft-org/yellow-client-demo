@@ -40,7 +40,7 @@
 		"lottie-web": "^5.12.2",
 		"ol": "^7.5.1",
 		"qrcode": "^1.5.3",
-		"svelte-dnd-action": "^0.9.26",
+		"svelte-dnd-action": "^0.9.48",
 		"three": "^0.165.0",
 		"wavesurfer.js": "^7.1.5"
 	}

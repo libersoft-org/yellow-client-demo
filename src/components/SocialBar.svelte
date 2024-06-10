@@ -89,8 +89,7 @@
 
 <div class="social-icons" class:expanded={isExpanded}>
     {#if dndzone }
-        <div class="social-icons-block" on:click={()=>{console.log('www');}}>
-            <!-- use:dndzone={{ items }} on:consider={handleDndConsider} on:finalize={handleDndFinalize}  -->
+        <div class="social-icons-block" on:click={()=>{console.log('www');}} use:dndzone={{ items }} on:consider={handleDndConsider} on:finalize={handleDndFinalize} >
 
             {#each items as item (item.id)}
                 <div class="social-icon-container" title={item.title} on:click={item.onclick}>
