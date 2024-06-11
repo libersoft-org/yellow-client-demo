@@ -107,7 +107,7 @@
 
 
 <div class="container">
-  <h1>Bitcoin price</h1>
+  <b>Bitcoin price</b>
   <div id="current-info">
     <p id="current-date">{ date_text }</p>
     <p id="current-price">{ price_text }</p>
