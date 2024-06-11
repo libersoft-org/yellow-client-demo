@@ -37,7 +37,7 @@
 
     async function updateChart(interval){
         let ctx = canvas?.getContext('2d');
-    
+        if (!ctx) return;
         const data = await fetchData(interval);
         const labels = data.prices.map(price => {
             const date = new Date(price[0]);
