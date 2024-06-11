@@ -109,27 +109,20 @@
 				<NewsFeedModule id="f-conversation-detail"/>
 			</div>
 
-		{:else if $actualMVC === 'profiles'}
+		{:else if $actualMVC === 'chat_group_list'}
 			<div class="conversation-detail">
-			profiles
+			chat_group_list
 			</div>
 
-		{:else if $actualMVC === 'profiles'}
+		{:else if $actualMVC === 'news_group_list'}
 			<div class="conversation-detail">
-			profiles
+			news_group_list
 			</div>
 
-		{:else if $actualMVC === 'newsgroups'}
+		{:else if $actualMVC === 'profile_list'}
 			<div class="conversation-detail">
-			profiles
+			profile_list
 			</div>
-
-		{:else if $actualMVC === 'chatgroups'}
-			<div class="conversation-detail">
-			profiles
-			</div>
-
-
 
 
 		{/if}
