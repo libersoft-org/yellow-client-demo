@@ -8,7 +8,8 @@
 
     let date_text; 
     let price_text;
-
+    $: { console.log(date_text); console.log(price_text); }
+    
     async function fetchData(interval){
         let url = '';
         switch (interval) {
@@ -47,8 +48,8 @@
         const prices = data.prices.map(price => price[1]);
         const currentDate = new Date(data.prices[data.prices.length - 1][0]);
         const currentPrice = data.prices[data.prices.length - 1][1];
-        date_text  = `Date: ${currentDate.toDateString()} ${interval === 'day' ? currentDate.getHours() + ':00' : ''}`;
-        price_text = `Price: $${currentPrice.toFixed(2)}`;
+        date_text  = 'Date: '+currentDate.toDateString() + ' ' + (interval === 'day' ? currentDate.getHours() + ':00' : '');
+        price_text = 'Price: $' + currentPrice.toFixed(2);
         if (chart) chart.destroy();
         chart = new Chart(ctx, {
             type: 'line',
@@ -108,15 +109,15 @@
 <div class="container">
   <h1>Bitcoin price</h1>
   <div id="current-info">
-    <p id="current-date">{{ date_text }}</p>
-    <p id="current-price">{{ price_text }}</p>
+    <p id="current-date">{ date_text }</p>
+    <p id="current-price">{ price_text }</p>
   </div>
   <canvas id="bitcoinChart" bind:this={canvas}/>
   <div class="buttons">
-    <button on:click="{updateChart('day')}">Day</button>
-    <button on:click="{updateChart('week')}">Week</button>
-    <button on:click="{updateChart('month')}">Month</button>
-    <button on:click="{updateChart('year')}">Year</button>
-    <button on:click="{updateChart('all')}">All Time</button>
+    <button on:click={() => updateChart('day')}>Day</button>
+    <button on:click={() => updateChart('week')}>Week</button>
+    <button on:click={() => updateChart('month')}>Month</button>
+    <button on:click={() => updateChart('year')}>Year</button>
+    <button on:click={() => updateChart('all')}>All Time</button>
   </div>
 </div>
