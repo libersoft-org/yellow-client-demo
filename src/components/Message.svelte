@@ -13,6 +13,7 @@
   import WidgetWeather from "./widgets/pocasi/WidgetWeather.svelte";
   import WidgetPayment from "./WidgetPayment.svelte";
   import WidgetPrice from "./widgets/price/WidgetPrice.svelte";
+  import WidgetTimer from "./WidgetTimer.svelte";
 
 	export let photo = null;
 	export let messagetype = null;
@@ -169,7 +170,12 @@
 			<div class="message__content_text">
 				<div class="multipart-message element image-container">
 				  <WidgetPrice id={uniqueId} />
-					
+				</div>
+			</div>
+		{:else if messagetype === 'timer'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+				  <WidgetTimer id={uniqueId} />
 				</div>
 			</div>
 		{:else if !messagetype || messagetype === 'multipart' || messagetype === 'news'}

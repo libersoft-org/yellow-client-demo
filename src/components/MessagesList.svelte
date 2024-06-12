@@ -586,6 +586,14 @@
 			read: false,
 			secure: false,
 		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			messagetype: 'timer',
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false,
+		},
 	];
 
 	function adjustLastMessage() {
