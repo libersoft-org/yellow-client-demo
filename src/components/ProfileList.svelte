@@ -2,14 +2,14 @@
   
 
   let profiles = [
-      {name: "Cameron Diaz", followers: 11100, following: 0, posts: 300, icon: "cameron_diaz.jpg"},
-      {name: "Tom Cruise", followers: 2010, following: 300, posts: 400, icon: "tom_cruise.jpg"},
-      {name: "Angelina Jolie", followers: 21303, following: 404, posts: 505, icon: "angelina_jolie.jpg"},
-      {name: "Brad Pitt", followers: 40400, following: 5, posts: 606, icon: "brad_pitt.jpg"},
-      {name: "Jennifer Aniston", followers: 5505, following: 606, posts: 707, icon: "jennifer_aniston.jpg"},
-      {name: "Johnny Depp", followers: 60633, following: 7, posts: 808, icon: "johnny_depp.jpg"},
-      {name: "Julia Roberts", followers: 7027, following: 88, posts: 909, icon: "julia_roberts.jpg"},
-      {name: "George Clooney", followers: 80208, following: 9, posts: 1010, icon: "george_clooney.jpg"},
+      {name: "Cameron Diaz", followers: 11100, following: 0, posts: 300, icon: "diaz.jpg"},
+      {name: "Tom Cruise", followers: 2010, following: 300, posts: 400, icon: "cruise.jpg"},
+      {name: "Angelina Jolie", followers: 21303, following: 404, posts: 505, icon: "jolie.jpg"},
+      {name: "Brad Pitt", followers: 40400, following: 5, posts: 606, icon: "pitt.jpg"},
+      {name: "Jennifer Aniston", followers: 5505, following: 606, posts: 707, icon: "aniston.jpg"},
+      {name: "Johnny Depp", followers: 60633, following: 7, posts: 808, icon: "depp.jpg"},
+      {name: "Julia Roberts", followers: 7027, following: 88, posts: 909, icon: "roberts.jpg"},
+      {name: "George Clooney", followers: 80208, following: 9, posts: 1010, icon: "clooney.jpg"},
   ];
   
     
@@ -52,6 +52,13 @@
       padding: 10px;
       text-align: center;
   }
+  .profile-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  
+  
 </style>
 
 <center>
@@ -78,7 +85,7 @@
   <tbody>
     {#each displayed_profiles as profile}
       <tr>
-        <td><img src={profile.icon} alt={profile.name} /></td>
+        <td><img src={'img/profiles/' + profile.icon} alt={profile.name} class="profile-icon" /></td>
         <td>{profile.name}</td>
         <td>{profile.followers}</td>
         <td>{profile.following}</td>
