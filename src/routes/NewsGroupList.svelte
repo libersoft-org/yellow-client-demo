@@ -1,27 +1,27 @@
 <script>
   
   let groups = [
-    {category: 'cryptocurrencies', name: 'Bitcoin Weekly', subscribers: 10000, created: '2021-01-01', logo: 'bitcoin.svg'},
-    {category: 'cryptocurrencies', name: 'Ethereum Insights', subscribers: 8500, created: '2023-01-01', logo: 'ethereum.svg'},
-    {category: 'cryptocurrencies', name: 'Ripple Report', subscribers: 7000, created: '2020-01-01', logo: 'ripple.svg'},
-    {category: 'programming', name: 'JavaScript Journal', subscribers: 15000, created: '2025-01-01', logo: 'javascript.svg'},
-    {category: 'programming', name: 'Python Post', subscribers: 12000, created: '2031-01-01', logo: 'python.svg'},
-    {category: 'programming', name: 'Java Journey', subscribers: 11000, created: '2041-01-01', logo: 'java.svg'},
-    {category: 'sports', name: 'Football Fanatic', subscribers: 9000, created: '2001-01-01', logo: 'football.svg'},
-    {category: 'sports', name: 'Basketball Bulletin', subscribers: 8000, created: '2011-01-01', logo: 'basketball.svg'},
-    {category: 'sports', name: 'Tennis Times', subscribers: 7000, created: '2021-01-07', logo: 'tennis.svg'},
-    {category: 'technology', name: 'AI & ML Monthly', subscribers: 5000, created: '2022-02-02', logo: 'ai_ml.svg'},
-    {category: 'technology', name: 'Cloud Computing Chronicle', subscribers: 6000, created: '2023-03-03', logo: 'cloud_computing.svg'},
-    {category: 'technology', name: 'Cybersecurity Circular', subscribers: 7000, created: '2024-04-04', logo: 'cybersecurity.svg'},
-    {category: 'health', name: 'Nutrition Notes', subscribers: 8000, created: '2025-05-05', logo: 'nutrition.svg'},
-    {category: 'health', name: 'Fitness Facts', subscribers: 9000, created: '2026-06-06', logo: 'fitness.svg'},
-    {category: 'health', name: 'Mental Health Matters', subscribers: 10000, created: '2027-07-07', logo: 'mental_health.svg'},
-    {category: 'music', name: 'Rock Review', subscribers: 11000, created: '2028-08-08', logo: 'rock.svg'},
-    {category: 'music', name: 'Pop Press', subscribers: 12000, created: '2029-09-09', logo: 'pop.svg'},
-    {category: 'music', name: 'Classical Chronicle', subscribers: 13000, created: '2030-10-10', logo: 'classical.svg'},
-    {category: 'movies', name: 'Action Alert', subscribers: 14000, created: '2031-11-11', logo: 'action.svg'},
-    {category: 'movies', name: 'Comedy Courier', subscribers: 15000, created: '2032-12-12', logo: 'comedy.svg'},
-    {category: 'movies', name: 'Drama Digest', subscribers: 16000, created: '2033-01-13', logo: 'drama.svg'},
+    {category: 'cryptocurrencies', name: 'Bitcoin Weekly', subscribers: 10000, created: '2021-01-01', icon: 'bitcoin.jpg'},
+    {category: 'cryptocurrencies', name: 'Ethereum Insights', subscribers: 8500, created: '2023-01-01', icon: 'ethereum.jpg'},
+    {category: 'cryptocurrencies', name: 'Ripple Report', subscribers: 7000, created: '2020-01-01', icon: 'ripple.jpg'},
+    {category: 'programming', name: 'JavaScript Journal', subscribers: 15000, created: '2025-01-01', icon: 'javascript.png'},
+    {category: 'programming', name: 'Python Post', subscribers: 12000, created: '2031-01-01', icon: 'python.png'},
+    {category: 'programming', name: 'Java Journey', subscribers: 11000, created: '2041-01-01', icon: 'java.jpg'},
+    {category: 'sports', name: 'Football Fanatic', subscribers: 9000, created: '2001-01-01', icon: 'football.jpg'},
+    {category: 'sports', name: 'Basketball Bulletin', subscribers: 8000, created: '2011-01-01', icon: 'basketball.jpg'},
+    {category: 'sports', name: 'Tennis Times', subscribers: 7000, created: '2021-01-07', icon: 'tennis.jpg'},
+    {category: 'technology', name: 'AI & ML Monthly', subscribers: 5000, created: '2022-02-02', icon: 'ai_ml.jpg'},
+    {category: 'technology', name: 'Cloud Computing Chronicle', subscribers: 6000, created: '2023-03-03', icon: 'cloud_computing.jpg'},
+    {category: 'technology', name: 'Cybersecurity Circular', subscribers: 7000, created: '2024-04-04', icon: 'cybersecurity.jpg'},
+    {category: 'health', name: 'Nutrition Notes', subscribers: 8000, created: '2025-05-05', icon: 'nutrition.jpeg'},
+    {category: 'health', name: 'Fitness Facts', subscribers: 9000, created: '2026-06-06', icon: 'fitness.jpg'},
+    {category: 'health', name: 'Mental Health Matters', subscribers: 10000, created: '2027-07-07', icon: 'nutrition.jpeg'},
+    {category: 'music', name: 'Rock Review', subscribers: 11000, created: '2028-08-08', icon: 'rock.jpeg'},
+    {category: 'music', name: 'Pop Press', subscribers: 12000, created: '2029-09-09', icon: 'rock.jpeg'},
+    {category: 'music', name: 'Classical Chronicle', subscribers: 13000, created: '2030-10-10', icon: 'rock.jpeg'},
+    {category: 'movies', name: 'Action Alert', subscribers: 14000, created: '2031-11-11', icon: 'tvseries.jpg'},
+    {category: 'movies', name: 'Comedy Courier', subscribers: 15000, created: '2032-12-12', icon: 'tvseries.jpg'},
+    {category: 'movies', name: 'Drama Digest', subscribers: 16000, created: '2033-01-13', icon: 'tvseries.jpg'},
   ];
   
   
@@ -71,6 +71,13 @@
       text-align: center;
   }
   
+  .group-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  
 </style>
 
 <center>
@@ -108,7 +115,7 @@ sort by <select bind:value={sort}>
   <tbody>
     {#each displayed_groups as group}
     <tr>
-      <td><img src={`img/icons_new/${group.icon}`} alt={group.name} /></td>
+      <td><img src={`img/groups/${group.icon}`} class="group-icon" /></td>
       <td>{group.name}</td>
       <td>{group.category}</td>
       <td>{group.subscribers}</td>
