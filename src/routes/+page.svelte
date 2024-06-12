@@ -17,6 +17,9 @@
 	import VideoModule from "../components/VideoModule.svelte";
 	import NewsFeedModule from "../components/NewsFeedModule.svelte";
 	import NewsFeedCarusel from "../components/NewsFeedCarusel.svelte";
+  import ChatGroupList from "../components/ChatGroupList.svelte";
+  import NewsGroupList from "./NewsGroupList.svelte";
+  import ProfileList from "../components/ProfileList.svelte";
 
   setupGlobalListeners();
   
@@ -110,19 +113,13 @@
 			</div>
 
 		{:else if $actualMVC === 'chat_group_list'}
-			<div class="conversation-detail">
-			chat_group_list
-			</div>
+			<ChatGroupList/>
 
 		{:else if $actualMVC === 'news_group_list'}
-			<div class="conversation-detail">
-			news_group_list
-			</div>
+			<NewsGroupList/>
 
 		{:else if $actualMVC === 'profile_list'}
-			<div class="conversation-detail">
-			profile_list
-			</div>
+			<ProfileList/>
 
 
 		{/if}
