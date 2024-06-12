@@ -40,7 +40,7 @@
 
   /* even and odd table rows */
   tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: rgb(254, 238, 170);
   }
   tr:nth-child(odd) {
     background-color: #ffffff;
@@ -53,6 +53,8 @@
       text-align: center;
   }
 </style>
+
+<center>
 
 <div class="header">
   sort by <select bind:value={sort}>
@@ -85,3 +87,6 @@
     {/each}
   </tbody>
 </table>
+
+</center>
+

@@ -52,67 +52,81 @@
 </script>
 
 
+
 <style>
 
-  /* even and odd table rows */
   tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: rgb(254, 238, 170);
   }
   tr:nth-child(odd) {
     background-color: #ffffff;
   }
-  .header {
+  .fffff-header {
       position: sticky;
       top: 0;
       background-color: #f1f1f1;
       padding: 10px;
       text-align: center;
   }
+
+  .fffff {
+   	background-image: url('../img/background/doodle.png');
+    background-repeat: repeat;
+    background-size: 500px;
+    background-color: hsl(
+      var(--primary-color-hue),
+      var(--primary-color-sat),
+      calc(var(--primary-color-lig) + 44%)
+    );
+  }
   
 </style>
 
 
-<div class="header">
-filter by categories: <select bind:value={filter}>
-<option value="all">All</option>
-<option value="all">All</option>
-  {#each [...new Set(groups.map(group => group.category))] as category}
-    <option value="{category}">{category}</option>
-  {/each}
-</select>
-
-sort by <select bind:value={sort}>
-<option value="newest">Newest</option>
-<option value="name">Name</option>
-<option value="members">Members</option>
-</select>
-
-<button on:click={() => {ascending=true}}  >⌃</button>
-<button on:click={() => {ascending=false}} >⌄</button>
-
-</div>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Icon</th>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Members</th>
-      <th>Created</th>
-    </tr>
-  </thead>
-  <tbody>
-    {#each displayed_groups as group}
-    <tr>
-      <td><img src={`img/icons_new/${group.icon}`} alt={group.name} /></td>
-      <td>{group.name}</td>
-      <td>{group.category}</td>
-      <td>{group.members}</td>
-      <td>{group.created}</td>
-    </tr>
+<center>
+<div class="fffff">
+  
+  <div class="fffff-header">
+  filter by categories: <select bind:value={filter}>
+  <option value="all">All</option>
+  <option value="all">All</option>
+    {#each [...new Set(groups.map(group => group.category))] as category}
+      <option value="{category}">{category}</option>
     {/each}
-  </tbody>
-</table>
-
+  </select>
+  
+  sort by <select bind:value={sort}>
+  <option value="newest">Newest</option>
+  <option value="name">Name</option>
+  <option value="members">Members</option>
+  </select>
+  
+  <button on:click={() => {ascending=true}}  >⌃</button>
+  <button on:click={() => {ascending=false}} >⌄</button>
+  
+  </div>
+  
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Members</th>
+        <th>Created</th>
+      </tr>
+    </thead>
+    <tbody>
+      {#each displayed_groups as group}
+      <tr>
+        <td><img src={`img/icons_new/${group.icon}`} alt={group.name} />
+        {group.name}</td>
+        <td>{group.category}</td>
+        <td>{group.members}</td>
+        <td>{group.created}</td>
+      </tr>
+      {/each}
+    </tbody>
+  </table>
+</div>
+</center>

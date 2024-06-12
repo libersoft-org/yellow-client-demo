@@ -58,7 +58,7 @@
 
   /* even and odd table rows */
   tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: rgb(254, 238, 170);
   }
   tr:nth-child(odd) {
     background-color: #ffffff;
@@ -73,6 +73,7 @@
   
 </style>
 
+<center>
 
 <div class="header">
 filter by categories: <select bind:value={filter}>
@@ -117,3 +118,4 @@ sort by <select bind:value={sort}>
   </tbody>
 </table>
 
+</center>
