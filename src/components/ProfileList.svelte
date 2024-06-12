@@ -38,6 +38,18 @@
 
 <style>
 
+  .fffff {
+   	background-image: url('../img/background/doodle.png');
+    background-repeat: repeat;
+    background-size: 500px;
+    background-color: hsl(
+      var(--primary-color-hue),
+      var(--primary-color-sat),
+      calc(var(--primary-color-lig) + 44%)
+    );
+  }
+  
+
   /* even and odd table rows */
   tr:nth-child(even) {
     background-color: rgb(254, 238, 170);
@@ -53,14 +65,27 @@
       text-align: center;
   }
   .profile-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
   }
   
+
+  table {
+    border-collapse: collapse;
+    border-radius: 10px;
+    
+  }
+  td {
+    padding: 5px;
+  }
+  th {
+    padding: 5px;
+  }
   
 </style>
 
+<div class="fffff">
 <center>
 
 <div class="header">
@@ -96,4 +121,4 @@
 </table>
 
 </center>
-
+</div>

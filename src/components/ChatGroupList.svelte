@@ -3,7 +3,7 @@
   let groups = [
     {category: 'cryptocurrencies', name: 'Bitcoin', members: 10000, created: '2021-01-01', icon: 'bitcoin.jpg'},
     {category: 'cryptocurrencies', name: 'Ethereum', members: 8500, created: '2023-01-01', icon: 'ethereum.jpg'},
-    {category: 'cryptocurrencies', name: 'Ripple', members: 7000, created: '2020-01-01', icon: 'ripple.jpg'},
+    {category: 'cryptocurrencies', name: 'Ripple', members: 7000, created: '2020-01-01', icon: 'ripple.png'},
     {category: 'programming', name: 'JavaScript', members: 15000, created: '2025-01-01', icon: 'javascript.png'},
     {category: 'programming', name: 'Python', members: 12000, created: '2031-01-01', icon: 'python.png'},
     {category: 'programming', name: 'Java', members: 11000, created: '2041-01-01', icon: 'java.jpg'},
@@ -11,7 +11,7 @@
     {category: 'sports', name: 'Basketball', members: 8000, created: '2011-01-01', icon: 'basketball.jpg'},
     {category: 'sports', name: 'Tennis', members: 7000, created: '2021-01-07', icon: 'tennis.jpg'},
     {category: 'technology', name: 'AI & ML', members: 5000, created: '2022-02-02', icon: 'ai_ml.jpg'},
-    {category: 'technology', name: 'Cloud Computing', members: 6000, created: '2023-03-03', icon: 'cloud_computing.jpg'},
+    {category: 'technology', name: 'Cloud Computing', members: 6000, created: '2023-03-03', icon: 'cloud.jpg'},
     {category: 'technology', name: 'Cybersecurity', members: 7000, created: '2024-04-04', icon: 'cybersecurity.jpg'},
     {category: 'health', name: 'Nutrition', members: 8000, created: '2025-05-05', icon: 'nutrition.jpeg'},
     {category: 'health', name: 'Fitness', members: 9000, created: '2026-06-06', icon: 'fitness.jpg'},
@@ -81,10 +81,24 @@
   }
   
   .group-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
   }
+  
+
+  table {
+    border-collapse: collapse;
+    border-radius: 10px;
+    
+  }
+  td {
+    padding: 5px;
+  }
+  th {
+    padding: 5px;
+  }
+  
 </style>
 
 
