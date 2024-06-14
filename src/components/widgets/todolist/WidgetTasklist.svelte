@@ -2,8 +2,8 @@
   
   let items = [
     { text: 'create frontend mockup', checked: true },
-    { text: 'create protocol spec', checked: true },
-    { text: 'find serious investor', checked: false }
+    { text: 'write protocol spec', checked: true },
+    { text: 'buy milk', checked: false }
   ];
   
   let newItem = '';
