@@ -351,7 +351,12 @@
                             selectConversation(conversation.id);
                             window.adjustPanels();
                             setTimeout(() => {
+                                try {
                                 document.querySelector(`#message-text-input`).focus();
+                                }
+                                catch (e) {
+                                    console.log(e);
+                                }
                             }, 5);
                         }}
 					/>
