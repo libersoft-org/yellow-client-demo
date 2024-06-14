@@ -96,7 +96,7 @@
                 </div>
                 <div class="element">
                     <div class="imgdiv"><img src="./img/icons_new/donations_noback.svg"></div>
-                    <div><span>Calendar</span></div>
+                    <div><span>Donations</span></div>
                 </div>
                 <div class="element">
                     <div class="imgdiv"><img src="./img/icons_new/calendar_noback.svg"></div>
