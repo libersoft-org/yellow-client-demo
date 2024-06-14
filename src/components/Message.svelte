@@ -14,6 +14,7 @@
   import WidgetPayment from "./WidgetPayment.svelte";
   import WidgetPrice from "./widgets/price/WidgetPrice.svelte";
   import WidgetTimer from "./WidgetTimer.svelte";
+  import WidgetRandomRecipe from "./widgets/recipe/WidgetRandomRecipe.svelte";
 
 	export let photo = null;
 	export let messagetype = null;
@@ -128,6 +129,12 @@
 			<div class="message__content_text">
 				<div class="multipart-message element image-container">
 					<WidgetCheckers id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'random_recipe'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+					<WidgetRandomRecipe id={uniqueId} />
 				</div>
 			</div>
 		{:else if messagetype === 'view3d'}

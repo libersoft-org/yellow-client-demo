@@ -580,6 +580,14 @@
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: "There is more, look!",
+			time: '11:22:33',
+			sent: true,
+			read: true,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
 			messagetype: 'price',
 			time: new Date().toLocaleTimeString(),
 			sent: true,
@@ -593,6 +601,30 @@
 			sent: true,
 			read: false,
 			secure: false,
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: "Random recipe!",
+			time: '11:22:33',
+			sent: true,
+			read: true,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			messagetype: 'random_recipe',
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false,
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=ownprofile',
+			message: "Shut up and take my money!",
+			time: '11:23:00',
+			sent: false,
+			read: true,
+			secure: false
 		},
 	];
 

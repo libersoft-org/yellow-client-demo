@@ -8,9 +8,9 @@
     {category: 'programming', name: 'Python', members: 12000, created: '2031-01-01', icon: 'python.png'},
     {category: 'programming', name: 'Java', members: 11000, created: '2041-01-01', icon: 'java.jpg'},
     {category: 'sports', name: 'Football', members: 9000, created: '2001-01-01', icon: 'football.jpg'},
-    {category: 'sports', name: 'Basketball', members: 8000, created: '2011-01-01', icon: 'basketball.jpg'},
+    {category: 'sports', name: 'Basketball', members: 8000, created: '2011-01-01', icon: 'football.jpg'},
     {category: 'sports', name: 'Tennis', members: 7000, created: '2021-01-07', icon: 'tennis.jpg'},
-    {category: 'technology', name: 'AI & ML', members: 5000, created: '2022-02-02', icon: 'ai_ml.jpg'},
+    {category: 'technology', name: 'AI & ML', members: 5000, created: '2022-02-02', icon: 'cloud.jpg'},
     {category: 'technology', name: 'Cloud Computing', members: 6000, created: '2023-03-03', icon: 'cloud.jpg'},
     {category: 'technology', name: 'Cybersecurity', members: 7000, created: '2024-04-04', icon: 'cybersecurity.jpg'},
     {category: 'health', name: 'Nutrition', members: 8000, created: '2025-05-05', icon: 'nutrition.jpeg'},
@@ -56,10 +56,10 @@
 <style>
 
   tr:nth-child(even) {
-    background-color: rgb(254, 238, 170);
+    background-color: #FFDD4430;
   }
   tr:nth-child(odd) {
-    background-color: #ffffff;
+    background-color: #FFDD0040;
   }
   .fffff-header {
       position: sticky;
@@ -79,7 +79,7 @@
       calc(var(--primary-color-lig) + 44%)
     );
   }
-  
+
   .group-icon {
     width: 100px;
     height: 100px;
@@ -90,7 +90,6 @@
   table {
     border-collapse: collapse;
     border-radius: 10px;
-    
   }
   td {
     padding: 5px;
@@ -105,7 +104,7 @@
 <center>
 <div class="fffff">
   
-  <div class="fffff-header">
+  <div class="fffff-header fffff">
   filter by categories: <select bind:value={filter}>
   <option value="all">All</option>
   <option value="all">All</option>
@@ -126,26 +125,29 @@
   </div>
   
   
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Category</th>
-        <th>Members</th>
-        <th>Created</th>
-      </tr>
-    </thead>
-    <tbody>
-      {#each displayed_groups as group}
-      <tr>
-        <td><img src={`img/groups/${group.icon}`} class="group-icon" />
-        {group.name}</td>
-        <td>{group.category}</td>
-        <td>{group.members}</td>
-        <td>{group.created}</td>
-      </tr>
-      {/each}
-    </tbody>
-  </table>
+  <div class="main">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Members</th>
+          <th>Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        {#each displayed_groups as group}
+        <tr>
+          <td><img src={`img/groups/${group.icon}`} class="group-icon" />
+          {group.name}</td>
+          <td>{group.category}</td>
+          <td>{group.members}</td>
+          <td>{group.created}</td>
+        </tr>
+        {/each}
+      </tbody>
+    </table>
+  </div>
 </div>
 </center>
+

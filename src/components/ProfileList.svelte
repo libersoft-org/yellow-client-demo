@@ -48,14 +48,18 @@
       calc(var(--primary-color-lig) + 44%)
     );
   }
+
+  .footer {
+    height: 100%;
+  }
   
 
   /* even and odd table rows */
   tr:nth-child(even) {
-    background-color: rgb(254, 238, 170);
+    background-color: #FFDD4430;
   }
   tr:nth-child(odd) {
-    background-color: #ffffff;
+    background-color: #FFDD0040;
   }
   .header {
       position: sticky;
@@ -88,7 +92,7 @@
 <div class="fffff">
 <center>
 
-<div class="header">
+<div class="header fffff">
   sort by <select bind:value={sort}>
     <option value="name">name</option>
     <option value="followers">followers</option>
@@ -122,3 +126,5 @@
 
 </center>
 </div>
+
+<div class="fffff footer"></div>

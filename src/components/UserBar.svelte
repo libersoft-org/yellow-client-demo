@@ -111,6 +111,16 @@
         <div class="title"><span>Show followers</span></div>
       </div>
     </div>
+    
+  {:else if $actualMVC === 'profile_list' || $actualMVC === 'chat_group_list' || $actualMVC === 'news_group_list' || $actualMVC === 'wallet'}
+    <div class="user-bar-container" class:noShadow={($actualMVC==='contact')}>
+      <div class="conversation-user">
+        <div class="back-button">
+          <a class="icon" on:click={backButtonClick}><img src="img/icons/icon_back.svg" alt="search"/></a>
+        </div>
+      </div>
+    </div>
+    
   {:else}
     <div class="user-bar-container" class:noShadow={($actualMVC==='contact')}>
       <div class="conversation-user">

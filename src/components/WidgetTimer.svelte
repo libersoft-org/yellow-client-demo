@@ -41,15 +41,16 @@
 <div><b>countdown</b></div>
 
 <div>set time: <input type="number" bind:value={time} /> seconds</div>
-
+<br/>
 <button on:click={start}>Start</button>
 
 <button on:click={() => clearInterval(interval)}>Stop</button>
 
 <button on:click={() => countdown = 5 * 60}>Reset</button>
-
-
+<br/>
+<br/>
 
   time remaining: {countdown_string}!
   
 </div>
+

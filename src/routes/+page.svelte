@@ -18,8 +18,9 @@
 	import NewsFeedModule from "../components/NewsFeedModule.svelte";
 	import NewsFeedCarusel from "../components/NewsFeedCarusel.svelte";
   import ChatGroupList from "../components/ChatGroupList.svelte";
-  import NewsGroupList from "./NewsGroupList.svelte";
+  import NewsGroupList from "../components/NewsGroupList.svelte";
   import ProfileList from "../components/ProfileList.svelte";
+  import Wallet from "../components/Wallet.svelte";
 
   setupGlobalListeners();
   
@@ -113,13 +114,20 @@
 			</div>
 
 		{:else if $actualMVC === 'chat_group_list'}
+		  <UserBar id="f-user-bar" />
 			<ChatGroupList/>
 
 		{:else if $actualMVC === 'news_group_list'}
+		  <UserBar id="f-user-bar" />
 			<NewsGroupList/>
 
 		{:else if $actualMVC === 'profile_list'}
+		  <UserBar id="f-user-bar" />
 			<ProfileList/>
+
+		{:else if $actualMVC === 'wallet'}
+		  <UserBar id="f-user-bar" />
+			<Wallet/>
 
 
 		{/if}

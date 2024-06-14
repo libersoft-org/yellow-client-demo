@@ -25,6 +25,9 @@ function selectAttachment(attachment) {
         <div class="reply" on:click={() => selectAttachment("payment")}>
           Payment
         </div>
+        <div class="reply" on:click={() => selectAttachment("random_recipe")}>
+          Recipe
+        </div>
         <div class="reply">
           ...
           

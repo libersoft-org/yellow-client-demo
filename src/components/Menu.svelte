@@ -68,13 +68,13 @@
 	<div id="menu" class="menu slide-in no-select">
 		<div class="menu__items">
 
-			<div class="menu__item" on:click={()=>{$actualMVC = 'chat_group_list';document.querySelector('#menu-toggle').click()}}>
+			<div class="menu__item" on:click={()=>{$actualMVC = 'chat_group_list';document.querySelector('#menu-toggle').click();document.querySelector(`.panel-left`).classList.remove('active-panel');document.querySelector(`.panel-right`).classList.add('active-panel');window.adjustPanels();}}>
 				<img class="menu__item__icon" src="img/icons_new/icon_new_chat.svg" alt="Chat group list" />Chat group list
 			</div>
-			<div class="menu__item" on:click={()=>{$actualMVC = 'news_group_list';document.querySelector('#menu-toggle').click()}}>
+			<div class="menu__item" on:click={()=>{$actualMVC = 'news_group_list';document.querySelector('#menu-toggle').click();document.querySelector(`.panel-left`).classList.remove('active-panel');document.querySelector(`.panel-right`).classList.add('active-panel');window.adjustPanels();}}>
 				<img class="menu__item__icon" src="img/icons_new/icon_new_chat.svg" alt="News group list" />News group list
 			</div>
-			<div class="menu__item" on:click={()=>{$actualMVC = 'profile_list';document.querySelector('#menu-toggle').click()}}>
+			<div class="menu__item" on:click={()=>{$actualMVC = 'profile_list';   document.querySelector('#menu-toggle').click();document.querySelector(`.panel-left`).classList.remove('active-panel');document.querySelector(`.panel-right`).classList.add('active-panel');window.adjustPanels();}}>
 				<img class="menu__item__icon" src="img/icons_new/icon_new_chat.svg" alt="Profile list" />Profile list
 			</div>
 			<div class="menu__item" on:click={openGroupModal}>
@@ -91,6 +91,11 @@
 			<div class="menu__item" on:click={()=>{$actualMVC = 'call';document.querySelector('#menu-toggle').click()}}>
 				<img class="menu__item__icon"  src="img/icons_new/icon_calls.svg" alt="Calls" />My calls
 			</div>
+
+			<div class="menu__item" on:click={()=>{$actualMVC = 'wallet';   document.querySelector('#menu-toggle').click();document.querySelector(`.panel-left`).classList.remove('active-panel');document.querySelector(`.panel-right`).classList.add('active-panel');window.adjustPanels();}}>
+				<img class="menu__item__icon" src="img/icons_new/icon_new_chat.svg" />Wallet
+			</div>
+
 			<div class="menu__item">
 				<img
 					class="menu__item__icon"

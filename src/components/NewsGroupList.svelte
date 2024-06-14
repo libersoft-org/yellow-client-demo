@@ -7,7 +7,7 @@
     {category: 'programming', name: 'JavaScript Journal', subscribers: 15000, created: '2025-01-01', icon: 'javascript.png'},
     {category: 'programming', name: 'Python Post', subscribers: 12000, created: '2031-01-01', icon: 'python.png'},
     {category: 'programming', name: 'Java Journey', subscribers: 11000, created: '2041-01-01', icon: 'java.jpg'},
-    {category: 'sports', name: 'Football Fanatic', subscribers: 9000, created: '2001-01-01', icon: 'football.jpg'},
+    {category: 'sports', name: 'Football Fanatic', subscribers: 900000, created: '2001-01-01', icon: 'football.jpg'},
     {category: 'sports', name: 'Basketball Bulletin', subscribers: 8000, created: '2011-01-01', icon: 'basketball.jpg'},
     {category: 'sports', name: 'Tennis Times', subscribers: 7000, created: '2021-01-07', icon: 'tennis.jpg'},
     {category: 'technology', name: 'AI & ML Monthly', subscribers: 5000, created: '2022-02-02', icon: 'ai_ml.jpg'},
@@ -15,7 +15,7 @@
     {category: 'technology', name: 'Cybersecurity Circular', subscribers: 7000, created: '2024-04-04', icon: 'cybersecurity.jpg'},
     {category: 'health', name: 'Nutrition Notes', subscribers: 8000, created: '2025-05-05', icon: 'nutrition.jpeg'},
     {category: 'health', name: 'Fitness Facts', subscribers: 9000, created: '2026-06-06', icon: 'fitness.jpg'},
-    {category: 'health', name: 'Mental Health Matters', subscribers: 10000, created: '2027-07-07', icon: 'nutrition.jpeg'},
+    {category: 'health', name: 'Mental Health Matters', subscribers: 100000, created: '2027-07-07', icon: 'nutrition.jpeg'},
     {category: 'music', name: 'Rock Review', subscribers: 11000, created: '2028-08-08', icon: 'rock.jpeg'},
     {category: 'music', name: 'Pop Press', subscribers: 12000, created: '2029-09-09', icon: 'rock.jpeg'},
     {category: 'music', name: 'Classical Chronicle', subscribers: 13000, created: '2030-10-10', icon: 'rock.jpeg'},
@@ -26,7 +26,7 @@
   
   
   let filter = 'all';
-  let sort = 'newest';
+  let sort = 'subscribers';
   let ascending = true;
   
   $: displayed_groups = get_displayed_groups(groups, filter, sort, ascending);
@@ -66,13 +66,16 @@
     );
   }
   
+  .footer {
+    height: 100%;
+  }
 
   /* even and odd table rows */
   tr:nth-child(even) {
-    background-color: rgb(254, 238, 170);
+    background-color: #FFDD4430;
   }
   tr:nth-child(odd) {
-    background-color: #ffffff;
+    background-color: #FFDD0040;
   }
   .header {
       position: sticky;
@@ -106,7 +109,7 @@
 <div class="fffff">
 <center>
 
-<div class="header">
+<div class="header fffff">
 filter by categories: <select bind:value={filter}>
 <option value="all">All</option>
   {#each [...new Set(groups.map(group => group.category))] as category}
@@ -151,3 +154,5 @@ sort by <select bind:value={sort}>
 
 </center>
 </div>
+
+<div class="fffff footer"></div>
