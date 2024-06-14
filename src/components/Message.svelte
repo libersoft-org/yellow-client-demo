@@ -16,6 +16,7 @@
   import WidgetTimer from "./WidgetTimer.svelte";
   import WidgetRandomRecipe from "./widgets/recipe/WidgetRandomRecipe.svelte";
   import WidgetPaymentRequest from "./WidgetPaymentRequest.svelte";
+  import WidgetTasklist from "./widgets/todolist/WidgetTasklist.svelte";
 
 	export let photo = null;
 	export let messagetype = null;
@@ -190,6 +191,12 @@
 			<div class="message__content_text">
 				<div class="multipart-message element image-container">
 				  <WidgetTimer id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'tasklist'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+				  <WidgetTasklist id={uniqueId} />
 				</div>
 			</div>
 		{:else if !messagetype || messagetype === 'multipart' || messagetype === 'news'}
