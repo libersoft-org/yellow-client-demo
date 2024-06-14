@@ -14,11 +14,10 @@
     newItem = '';
   }
   
-  function toggleItem(e) {
-    const index = e.target.innerText;
-    items = items.map((item, i) => {
-      if (i === index) {
-        item.checked = !item.checked;
+  function toggleItem(i) {
+    items = items.map((item, index) => {
+      if (index === i) {
+        return { text: item.text, checked: !item.checked };
       }
       return item;
     });
@@ -133,7 +132,7 @@ li:hover {
   </div>
   <ul id="shoppingList">
     {#each items as item, i}
-      <li on:click={toggleItem} class:checked={item.checked}>
+      <li on:click={() => {toggleItem(i)}} class:checked={item.checked}>
         {item.text}
         <button class="delete-btn" on:click={deleteItem(i)}>X</button>
       </li>
