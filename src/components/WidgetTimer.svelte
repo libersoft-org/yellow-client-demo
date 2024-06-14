@@ -31,9 +31,45 @@
 
 
 <style>
-  input {
-    width: 50px;
-  }
+
+.container {
+ text-align: center;
+ background: white;
+ padding: 20px;
+ border-radius: 10px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mode-selector {
+ margin-bottom: 20px;
+}
+
+button {
+ padding: 10px 20px;
+ margin: 5px;
+ font-size: 1em;
+ cursor: pointer;
+}
+
+.timer {
+ display: none;
+}
+
+#time {
+ font-size: 2em;
+ margin: 20px 0;
+}
+
+input {
+ width: 50px;
+ text-align: center;
+}
+
+#settings {
+ display: none;
+}
+  
+  
 </style>
 
 

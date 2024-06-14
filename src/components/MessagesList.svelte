@@ -564,7 +564,7 @@
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
-			messagetype: 'payment',
+			messagetype: 'payment_request',
 			time: new Date().toLocaleTimeString(),
 			sent: true,
 			read: false,

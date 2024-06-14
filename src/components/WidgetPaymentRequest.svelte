@@ -2,7 +2,30 @@
   
 </script>
 
+<style>
+
+
+.container {
+ text-align: center;
+ background: white;
+ padding: 20px;
+ border-radius: 10px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+</style>
 
 
 
 <b>payment request</b>
+<div class="container">
+
+<img src="content/qr.png" alt="QR Code" width="200" height="200">
+
+<p>Amount: 0.0001 BTC</p>
+
+<button>Pay</button>
+
+</div>

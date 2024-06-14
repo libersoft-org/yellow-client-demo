@@ -105,6 +105,44 @@
 
 </script>
 
+<style>
+  
+  .container {
+ text-align: center;
+ background: #fff;
+ padding: 20px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ border-radius: 20px;
+}
+
+#current-info {
+ margin-bottom: 20px;
+}
+
+canvas {
+ max-width: 100%;
+}
+
+.buttons {
+ margin-top: 20px;
+}
+
+button {
+ padding: 10px 20px;
+ margin: 5px;
+ border: none;
+ background: #007bff;
+ color: white;
+ cursor: pointer;
+ border-radius: 5px;
+}
+
+button:hover {
+ background: #0056b3;
+}
+
+  
+</style>
 
 <div class="container">
   <b>Bitcoin price</b>
