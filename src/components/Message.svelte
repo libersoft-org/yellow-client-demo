@@ -11,6 +11,12 @@
   import WidgetPano from "./widgets/panorama/WidgetPano.svelte";
   import WidgetPiano from "./widgets/piano/WidgetPiano.svelte";
   import WidgetWeather from "./widgets/pocasi/WidgetWeather.svelte";
+  import WidgetPayment from "./WidgetPayment.svelte";
+  import WidgetPrice from "./widgets/price/WidgetPrice.svelte";
+  import WidgetTimer from "./WidgetTimer.svelte";
+  import WidgetRandomRecipe from "./widgets/recipe/WidgetRandomRecipe.svelte";
+  import WidgetPaymentRequest from "./WidgetPaymentRequest.svelte";
+  import WidgetTasklist from "./widgets/todolist/WidgetTasklist.svelte";
 
 	export let photo = null;
 	export let messagetype = null;
@@ -127,6 +133,12 @@
 					<WidgetCheckers id={uniqueId} />
 				</div>
 			</div>
+		{:else if messagetype === 'random_recipe'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+					<WidgetRandomRecipe id={uniqueId} />
+				</div>
+			</div>
 		{:else if messagetype === 'view3d'}
 			<div class="message__content_text">
 				<div class="multipart-message element image-container">
@@ -155,6 +167,36 @@
 			<div class="message__content_text">
 				<div class="multipart-message element image-container">
 					<WidgetWeather id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'payment'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+					<WidgetPayment id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'payment_request'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+					<WidgetPaymentRequest id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'price'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+				  <WidgetPrice id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'timer'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+				  <WidgetTimer id={uniqueId} />
+				</div>
+			</div>
+		{:else if messagetype === 'tasklist'}
+			<div class="message__content_text">
+				<div class="multipart-message element image-container">
+				  <WidgetTasklist id={uniqueId} />
 				</div>
 			</div>
 		{:else if !messagetype || messagetype === 'multipart' || messagetype === 'news'}

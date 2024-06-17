@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
+		"dev0": "vite dev --host 0.0.0.0",
 		"build": "vite build",
 		"preview": "vite preview",
 		"liveserver": "vite build && vite preview --host 0.0.0.0",
@@ -36,11 +37,13 @@
 		"@root/passphrase": "^1.1.0",
 		"@scure/bip39": "^1.2.1",
 		"@sveltejs/adapter-static": "^2.0.3",
+		"axios": "^1.7.2",
 		"bip39": "^3.1.0",
+		"chart.js": "^4.4.3",
 		"lottie-web": "^5.12.2",
 		"ol": "^7.5.1",
 		"qrcode": "^1.5.3",
-		"svelte-dnd-action": "^0.9.26",
+		"svelte-dnd-action": "^0.9.48",
 		"three": "^0.165.0",
 		"wavesurfer.js": "^7.1.5"
 	}

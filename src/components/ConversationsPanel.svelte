@@ -36,7 +36,7 @@
 	accountsIsOpen.subscribe((value) => (blurred = value));
 
 	async function selectConversation(id) {
-		if ($actualMVC === 'conversation') {
+		if ($actualMVC === 'conversation' || $actualMVC === 'chat_group_list') {
 			activeConversationIdStore.set(id);
 			conversationSelected.set(id !== null);
 			activeConversationId = id;
@@ -323,7 +323,7 @@
 
 	{#each groupedConversations as group, groupIndex}
 		<ul class="group-conversation" >
-			{#if ($actualMVC !== 'call') && ($actualMVC !== 'video') && ($actualMVC != 'newsfeed')}
+			{#if ($actualMVC !== 'call') && ($actualMVC !== 'video') && ($actualMVC != 'newsfeed') && ($actualMVC !== 'news_group_list') && ($actualMVC !== 'profile_list')}
 			<li class = "group-header" on:click={toggleConversations}>
 				<div class="group-icon"></div>
 				<div class="group-name">{groups[groupIndex]}</div>
@@ -339,9 +339,9 @@
 			{/if}
 
 			{#each group as conversation}
-				{#if (($actualMVC !== 'contact')&&($actualMVC != 'call')&&($actualMVC != 'video')&&($actualMVC != 'newsfeed')) ||(parseInt(conversation.id)>2)}
+				{#if (($actualMVC !== 'wallet')&&($actualMVC !== 'contact')&&($actualMVC != 'call')&&($actualMVC != 'video')&&($actualMVC != 'newsfeed')) ||(parseInt(conversation.id)>2)}
 				<li class="group-item">
-					{#if $actualMVC === 'conversation' }
+					{#if $actualMVC === 'conversation' || $actualMVC === 'chat_group_list' || $actualMVC === 'news_group_list' || $actualMVC === 'profile_list' }
 					<ConversationItem
 							{conversation}
 							isActive={activeConversationId === conversation.id}
@@ -351,11 +351,16 @@
                             selectConversation(conversation.id);
                             window.adjustPanels();
                             setTimeout(() => {
+                                try {
                                 document.querySelector(`#message-text-input`).focus();
+                                }
+                                catch (e) {
+                                    console.log(e);
+                                }
                             }, 5);
                         }}
 					/>
-					{:else if $actualMVC === 'contact' }
+					{:else if $actualMVC === 'contact' || $actualMVC === 'wallet'}
 						<ContactItem
 								contact = {conversation}
 								isActive={activeConversationId === conversation.id}
@@ -380,7 +385,7 @@
 
                         }}
 						/>
-					{:else if $actualMVC === 'video' || $actualMVC === 'newsfeed' }
+					{:else if $actualMVC === 'video' || $actualMVC === 'newsfeed'}
 						<VideoItem
 								video = {conversation}
 								isActive={activeConversationId === conversation.id}

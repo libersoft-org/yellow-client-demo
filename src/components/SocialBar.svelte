@@ -9,14 +9,25 @@
             id: 0, title: "Conversations", icon: "conversations.svg", hasDot: true, onclick: (e) => {
                 e.preventDefault();
                 $actualMVC = 'conversation';
-                document.querySelector('#menu-toggle').click()
+            }
+        },
+        {
+            id: '0b', title: "My Calls", icon: "calls_noback.svg", hasDot: true, onclick: (e) => {
+                e.preventDefault();
+                $actualMVC = 'call';
+            }
+        },
+        {
+            id: '0c', title: "My Contacts", icon: "contacts_noback.svg", hasDot: true, onclick: (e) => {
+                e.preventDefault();
+                $actualMVC = 'contact';
             }
         },
         {
             id: 1, title: "Newsfeed", icon: "icon_newsfeed_stroke.svg", hasDot: true, onclick: (e) => {
                 e.preventDefault();
                 $actualMVC = 'newsfeed';
-                document.querySelector('#menu-toggle').click();
+                //document.querySelector('#menu-toggle').click();
                 document.querySelector(`.panel-left`).classList.remove('active-panel');
                 document.querySelector(`.panel-right`).classList.add('active-panel');
                 window.adjustPanels();
@@ -27,7 +38,7 @@
                 e.preventDefault();
                 $actualMVC = 'video';
                 $activeVideView = 'videolist';
-                document.querySelector('#menu-toggle').click();
+                //document.querySelector('#menu-toggle').click();
                 document.querySelector(`.panel-left`).classList.remove('active-panel');
                 document.querySelector(`.panel-right`).classList.add('active-panel');
                 window.adjustPanels();
@@ -37,6 +48,15 @@
             id: 3, title: "Video meeting", icon: "videoconference_noback.svg", hasDot: true, onclick: () => {
                 showVideoMeet = true;
             }
+        },
+        {id: '16', title: "Wallet", icon: "payments_noback.svg", hasDot: false,
+          onclick: (e) => {
+                  e.preventDefault();
+                  $actualMVC = 'wallet';
+                  document.querySelector(`.panel-left`).classList.remove('active-panel');
+                  document.querySelector(`.panel-right`).classList.add('active-panel');
+                  window.adjustPanels();
+              }
         },
         {id: 4, title: "Forum", icon: "forum_noback.svg", hasDot: false},
         {id: 5, title: "Events", icon: "event_noback.svg", hasDot: false},
@@ -50,7 +70,6 @@
         {id: 13, title: "Donations", icon: "donations_noback.svg", hasDot: false},
         {id: 14, title: "Crowdfunding", icon: "crowdfunding_noback.svg", hasDot: false},
         {id: 15, title: "Cloud storage", icon: "cloud_noback.svg", hasDot: true},
-        {id: 16, title: "Payments", icon: "payments_noback.svg", hasDot: false},
         {id: 17, title: "Media feed", icon: "media_noback.svg", hasDot: false},
         {id: 18, title: "Games", icon: "games_noback.svg", hasDot: false},
         {id: 19, title: "Dating", icon: "dating_noback.svg", hasDot: false}
@@ -89,9 +108,8 @@
 
 <div class="social-icons" class:expanded={isExpanded}>
     {#if dndzone }
-        <div class="social-icons-block" use:dndzone={{ items }} on:click={()=>{console.log('www');}}
-             on:consider={handleDndConsider}
-             on:finalize={handleDndFinalize}>
+        <div class="social-icons-block" on:click={()=>{console.log('www');}} use:dndzone={{ items }} on:consider={handleDndConsider} on:finalize={handleDndFinalize} >
+
             {#each items as item (item.id)}
                 <div class="social-icon-container" title={item.title} on:click={item.onclick}>
                     <img src={`img/icons_new/${item.icon}`} alt={item.title} class="icon"/>

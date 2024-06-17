@@ -474,7 +474,7 @@
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=ownprofile',
-			message: "AHAHAHA!",
+			message: "cool, what else is there!?",
 			time: new Date().toLocaleTimeString(),
 			sent: false,
 			read: true,
@@ -508,6 +508,14 @@
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: "Look at this wonderful panoramic photo",
+			time: '11:22:33',
+			sent: true,
+			read: true,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
 			messagetype: 'pano',
 			time: new Date().toLocaleTimeString(),
 			sent: true,
@@ -516,11 +524,27 @@
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: "We can play piano together in real time!",
+			time: '11:22:33',
+			sent: true,
+			read: true,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
 			messagetype: 'piano',
 			time: new Date().toLocaleTimeString(),
 			sent: true,
 			read: false,
 			secure: false,
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: "Let's see the weather forecast in Prague for the next week",
+			time: '11:22:33',
+			sent: true,
+			read: true,
+			secure: false
 		},
 		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
@@ -537,6 +561,70 @@
 			sent: false,
 			read: true,
 			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			messagetype: 'payment_request',
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false,
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=ownprofile',
+			message: "thanks!",
+			time: '11:23:00',
+			sent: false,
+			read: true,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: "There is more, look!",
+			time: '11:22:33',
+			sent: true,
+			read: true,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			messagetype: 'price',
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false,
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			messagetype: 'timer',
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false,
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			message: "Random recipe!",
+			time: '11:22:33',
+			sent: true,
+			read: true,
+			secure: false
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			messagetype: 'random_recipe',
+			time: new Date().toLocaleTimeString(),
+			sent: true,
+			read: false,
+			secure: false,
+		},
+		{
+			photo: 'https://i.pravatar.cc/300?u=user2',
+			messagetype: 'tasklist',
+			time: new Date().toLocaleTimeString(),
+			sent: false,
+			read: false,
+			secure: false,
 		},
 	];
 

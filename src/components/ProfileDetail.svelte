@@ -83,8 +83,24 @@
                     <div><span>Blog</span></div>
                 </div>
                 <div class="element">
+                    <div class="imgdiv"><img src="./img/icons_new/calendar_noback.svg"></div>
+                    <div><span>Calendar</span></div>
+                </div>
+                <div class="element">
                     <div class="imgdiv"><img src="./img/icons_new/marketplace_noback.svg" alt="Marketplace Icon"></div>
                     <div><span>Marketplace</span></div>
+                </div>
+                <div class="element">
+                    <div class="imgdiv"><img src="./img/icons_new/eshop_noback.svg"></div>
+                    <div><span>E-shop</span></div>
+                </div>
+                <div class="element">
+                    <div class="imgdiv"><img src="./img/icons/icon_newsfeed.svg"></div>
+                    <div><span>Crowdfunding</span></div>
+                </div>
+                <div class="element">
+                    <div class="imgdiv"><img src="./img/icons_new/donations_noback.svg"></div>
+                    <div><span>Donations</span></div>
                 </div>
             </div>
             <div class="selected-content">

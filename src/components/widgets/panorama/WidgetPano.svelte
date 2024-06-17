@@ -82,7 +82,7 @@ if (window.DeviceOrientationEvent) {
  max-width: 100%;
  width: 800px;
  height: 480px;
- background: url('content/pano.jpg') repeat-x;
+ background: url('/pano.jpg') repeat-x;
  background-size: auto 100%;
  cursor: grab;
  touch-action: none;
