@@ -4,6 +4,7 @@
     export let contact;
     export let isActive = false;
     export let onSelect = () => {};
+    export let wallet = '';
 </script>
 
 <div class="conversation {isActive ? 'active' : ''}" on:click={onSelect}>
@@ -32,7 +33,14 @@
     <div class="contact-info">
         <div class="conversation__info__user-name">{contact.name}</div>
         <div class="conversation__info__user-email">{contact.email}</div>
+        {#if wallet != ''}
+          <div class="conversation__info__user-email">
+            wallet: {wallet}
+          </div>
+        {/if}
     </div>
+    
+  
 </div>
 <style>
     .contact-info {

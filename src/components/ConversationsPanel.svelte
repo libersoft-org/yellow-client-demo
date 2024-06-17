@@ -363,6 +363,7 @@
 					{:else if $actualMVC === 'contact' || $actualMVC === 'wallet'}
 						<ContactItem
 								contact = {conversation}
+								wallet="0xabcdffff65465465...."
 								isActive={activeConversationId === conversation.id}
 								onSelect={() => {
 							$actualSMVC='newsfeed';
