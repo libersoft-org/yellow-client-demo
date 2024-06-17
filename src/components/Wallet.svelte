@@ -10,10 +10,31 @@ let settings_visible = false;
 <style scoped>
 
 
+.body {
+   	background-image: url('../img/background/doodle.png');
+    background-repeat: repeat;
+    background-size: 500px;
+    background-color: hsl(
+      var(--primary-color-hue),
+      var(--primary-color-sat),
+      calc(var(--primary-color-lig) + 44%)
+    );
+}
+
 .wallet_box {
+  
+  background-image: url('../img/background/doodle.png');
+  background-repeat: repeat;
+  background-size: 500px;
+  background-color: hsl(
+    var(--primary-color-hue),
+    var(--primary-color-sat),
+    calc(var(--primary-color-lig) + 44%)
+  );
+    
  display: flex;
  flex-direction: column;
- margin: 0 auto;
+ margin: 20px auto;
  width: 100%;
  height: calc(100vh - 40px);
  max-width: 768px;
@@ -166,7 +187,7 @@ let settings_visible = false;
 </style>
 
 
-
+<div class="body">
   <div class="wallet_box">
    <div class="wallet_panel">
     <div class="wallet_item">Polygon - mainnet ▼</div>
@@ -223,5 +244,4 @@ let settings_visible = false;
     </div>
    </div>
   </div>
-  
-  
+</div>  

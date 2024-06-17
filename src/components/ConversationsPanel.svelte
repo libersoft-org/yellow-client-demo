@@ -339,7 +339,7 @@
 			{/if}
 
 			{#each group as conversation}
-				{#if (($actualMVC !== 'contact')&&($actualMVC != 'call')&&($actualMVC != 'video')&&($actualMVC != 'newsfeed')) ||(parseInt(conversation.id)>2)}
+				{#if (($actualMVC !== 'wallet')&&($actualMVC !== 'contact')&&($actualMVC != 'call')&&($actualMVC != 'video')&&($actualMVC != 'newsfeed')) ||(parseInt(conversation.id)>2)}
 				<li class="group-item">
 					{#if $actualMVC === 'conversation' || $actualMVC === 'chat_group_list' || $actualMVC === 'news_group_list' || $actualMVC === 'profile_list' }
 					<ConversationItem
@@ -360,7 +360,7 @@
                             }, 5);
                         }}
 					/>
-					{:else if $actualMVC === 'contact' }
+					{:else if $actualMVC === 'contact' || $actualMVC === 'wallet'}
 						<ContactItem
 								contact = {conversation}
 								isActive={activeConversationId === conversation.id}

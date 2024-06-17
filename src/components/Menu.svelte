@@ -85,18 +85,7 @@
 				<img class="menu__item__icon" src="img/icons_new/icon_newsfeed.svg" alt="New news group" />New news
 				group
 			</div>
-			<div class="menu__item" on:click={()=>{$actualMVC = 'contact';document.querySelector('#menu-toggle').click()}}>
-				<img class="menu__item__icon" src="img/icons_new/icon_contacts.svg" alt="My contacts" />My contacts
-			</div>
-			<div class="menu__item" on:click={()=>{$actualMVC = 'call';document.querySelector('#menu-toggle').click()}}>
-				<img class="menu__item__icon"  src="img/icons_new/icon_calls.svg" alt="Calls" />My calls
-			</div>
-
-			<div class="menu__item" on:click={()=>{$actualMVC = 'wallet';   document.querySelector('#menu-toggle').click();document.querySelector(`.panel-left`).classList.remove('active-panel');document.querySelector(`.panel-right`).classList.add('active-panel');window.adjustPanels();}}>
-				<img class="menu__item__icon" src="img/icons_new/icon_new_chat.svg" />Wallet
-			</div>
-
-			<div class="menu__item">
+      <div class="menu__item">
 				<img
 					class="menu__item__icon"
 					src="img/icons_new/icon_saved_messages.svg"

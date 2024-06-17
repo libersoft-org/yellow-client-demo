@@ -13,6 +13,20 @@
             }
         },
         {
+            id: '0b', title: "My Calls", icon: "icon_calls.svg", hasDot: true, onclick: (e) => {
+                e.preventDefault();
+                $actualMVC = 'call';
+                document.querySelector('#menu-toggle').click()
+            }
+        },
+        {
+            id: '0c', title: "My Contacts", icon: "icon_contacts.svg", hasDot: true, onclick: (e) => {
+                e.preventDefault();
+                $actualMVC = 'contact';
+                document.querySelector('#menu-toggle').click()
+            }
+        },
+        {
             id: 1, title: "Newsfeed", icon: "icon_newsfeed_stroke.svg", hasDot: true, onclick: (e) => {
                 e.preventDefault();
                 $actualMVC = 'newsfeed';
@@ -38,6 +52,16 @@
                 showVideoMeet = true;
             }
         },
+        {id: '16', title: "Wallet", icon: "payments_noback.svg", hasDot: false,
+          onclick: (e) => {
+                  e.preventDefault();
+                  $actualMVC = 'wallet';
+                  document.querySelector('#menu-toggle').click();
+                  document.querySelector(`.panel-left`).classList.remove('active-panel');
+                  document.querySelector(`.panel-right`).classList.add('active-panel');
+                  window.adjustPanels();
+              }
+        },
         {id: 4, title: "Forum", icon: "forum_noback.svg", hasDot: false},
         {id: 5, title: "Events", icon: "event_noback.svg", hasDot: false},
         {id: 6, title: "Blogs", icon: "blogs_noback.svg", hasDot: false},
@@ -50,7 +74,6 @@
         {id: 13, title: "Donations", icon: "donations_noback.svg", hasDot: false},
         {id: 14, title: "Crowdfunding", icon: "crowdfunding_noback.svg", hasDot: false},
         {id: 15, title: "Cloud storage", icon: "cloud_noback.svg", hasDot: true},
-        {id: 16, title: "Payments", icon: "payments_noback.svg", hasDot: false},
         {id: 17, title: "Media feed", icon: "media_noback.svg", hasDot: false},
         {id: 18, title: "Games", icon: "games_noback.svg", hasDot: false},
         {id: 19, title: "Dating", icon: "dating_noback.svg", hasDot: false}
