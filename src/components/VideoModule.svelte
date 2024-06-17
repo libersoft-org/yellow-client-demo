@@ -500,10 +500,7 @@
     </div>
     <div class="videocontainer">
     <div class="video-detail">
-        <div
-                class="image-container video svelte-{isPaused ? 'paused' : ''}" on:click={toggleVideoPlayback}
-
-        >
+        <div class="image-container video svelte-{isPaused ? 'paused' : ''}" on:click={toggleVideoPlayback}>
             <div class="icon-container">
                 <img src="../img/icons/icn_play.svg" alt="Play" class="play-icon"/>
             </div>
@@ -569,6 +566,26 @@
                 <div class="imgdiv-subscribe"><img src="./img/icons_new/account_add_noback.svg" alt="Follow Icon"></div>
                 <div><span>Follow</span></div>
             </div>
+            <div class="element">
+                <div class="imgdiv"><img src="img/icons_new/eshop_noback.svg"></div>
+                <div><span>E-shop</span></div>
+            </div>
+                <div class="element">
+                    <div class="imgdiv"><img src="img/icons_new/donations_noback.svg"></div>
+                    <div><span>Donations</span></div>
+                </div>
+                <div class="element">
+                    <div class="imgdiv"><img src="img/icons_new/marketplace_noback.svg" alt="Marketplace Icon"></div>
+                    <div><span>Marketplace</span></div>
+                </div>
+                <div class="element">
+                    <div class="imgdiv"><img src="img/icons_new/event_noback.svg" alt="Events Icon"></div>
+                    <div><span>Events</span></div>
+                </div>
+                <div class="element">
+                    <div class="imgdiv"><img src="img/icons_new/calendar_noback.svg"></div>
+                    <div><span>Calendar</span></div>
+                </div>
         </div>
     </div>
     <div class="video-description">
@@ -588,6 +605,13 @@
 
 
 <style>
+    .imgdiv {
+        width: 24px;
+        height: 24px;
+        padding: 4px;
+    }
+
+
     .video-detail-item {
         border-radius: 10px;
         margin: 16px auto 16px auto;

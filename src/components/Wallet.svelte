@@ -1,8 +1,5 @@
 <script>
   
-
-let settings_visible = false;  
-  
 </script>
 
 
@@ -196,8 +193,8 @@ let settings_visible = false;
      <div class="wallet_address">0x123abc...123def <a href="#"><img src="img/icons_new/copy.svg" alt="Copy address" /></a></div>
     </div>
     <div class="wallet_menu">
+     <div class="wallet_item">Settings</div>
      <div class="wallet_item">Logout</div>
-      <div></div>
     </div>
 
    </div>
