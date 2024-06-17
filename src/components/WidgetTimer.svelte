@@ -55,7 +55,7 @@ button {
  display: none;
 }
 
-#time {
+.time {
  font-size: 2em;
  margin: 20px 0;
 }
@@ -73,7 +73,7 @@ input {
 </style>
 
 
-<div>
+<div class="container">
 <div><b>countdown</b></div>
 
 <div>set time: <input type="number" bind:value={time} /> seconds</div>
@@ -85,8 +85,8 @@ input {
 <button on:click={() => countdown = 5 * 60}>Reset</button>
 <br/>
 <br/>
-
-  time remaining: {countdown_string}!
-  
+  <div class="time">
+    time remaining: {countdown_string}!
+  </div>
 </div>
 

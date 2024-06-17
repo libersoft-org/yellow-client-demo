@@ -13,14 +13,14 @@
             }
         },
         {
-            id: '0b', title: "My Calls", icon: "icon_calls.svg", hasDot: true, onclick: (e) => {
+            id: '0b', title: "My Calls", icon: "calls_noback.svg", hasDot: true, onclick: (e) => {
                 e.preventDefault();
                 $actualMVC = 'call';
                 document.querySelector('#menu-toggle').click()
             }
         },
         {
-            id: '0c', title: "My Contacts", icon: "icon_contacts.svg", hasDot: true, onclick: (e) => {
+            id: '0c', title: "My Contacts", icon: "contacts_noback.svg", hasDot: true, onclick: (e) => {
                 e.preventDefault();
                 $actualMVC = 'contact';
                 document.querySelector('#menu-toggle').click()
