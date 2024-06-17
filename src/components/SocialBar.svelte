@@ -9,21 +9,18 @@
             id: 0, title: "Conversations", icon: "conversations.svg", hasDot: true, onclick: (e) => {
                 e.preventDefault();
                 $actualMVC = 'conversation';
-                //document.querySelector('#menu-toggle').click()
             }
         },
         {
             id: '0b', title: "My Calls", icon: "calls_noback.svg", hasDot: true, onclick: (e) => {
                 e.preventDefault();
                 $actualMVC = 'call';
-                document.querySelector('#menu-toggle').click()
             }
         },
         {
             id: '0c', title: "My Contacts", icon: "contacts_noback.svg", hasDot: true, onclick: (e) => {
                 e.preventDefault();
                 $actualMVC = 'contact';
-                document.querySelector('#menu-toggle').click()
             }
         },
         {
