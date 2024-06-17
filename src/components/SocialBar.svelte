@@ -53,7 +53,6 @@
           onclick: (e) => {
                   e.preventDefault();
                   $actualMVC = 'wallet';
-                  document.querySelector('#menu-toggle').click();
                   document.querySelector(`.panel-left`).classList.remove('active-panel');
                   document.querySelector(`.panel-right`).classList.add('active-panel');
                   window.adjustPanels();

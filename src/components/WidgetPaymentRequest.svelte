@@ -13,7 +13,9 @@
  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
+.button {
+   font-size: 2em;
+}
 
 </style>
 
@@ -26,6 +28,8 @@
 
 <p>Amount: 0.0001 BTC</p>
 
-<button>Pay</button>
 
+<div class="button">
+  <button>Pay</button>
+</div>
 </div>

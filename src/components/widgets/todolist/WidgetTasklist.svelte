@@ -1,9 +1,9 @@
 <script>
   
   let items = [
-    { text: 'create frontend mockup', checked: true },
-    { text: 'write protocol spec', checked: true },
-    { text: 'buy milk', checked: false }
+    { text: 'Banana', checked: true },
+    { text: 'Cucumber', checked: true },
+    { text: 'Milk', checked: false }
   ];
   
   let newItem = '';

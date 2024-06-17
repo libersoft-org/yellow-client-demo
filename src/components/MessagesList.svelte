@@ -619,14 +619,6 @@
 			secure: false,
 		},
 		{
-			photo: 'https://i.pravatar.cc/300?u=ownprofile',
-			message: "Shut up and take my money!",
-			time: '11:23:00',
-			sent: false,
-			read: true,
-			secure: false
-		},
-		{
 			photo: 'https://i.pravatar.cc/300?u=user2',
 			messagetype: 'tasklist',
 			time: new Date().toLocaleTimeString(),
