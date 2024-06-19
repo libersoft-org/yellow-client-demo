@@ -566,26 +566,50 @@
                 <div class="imgdiv-subscribe"><img src="./img/icons_new/account_add_noback.svg" alt="Follow Icon"></div>
                 <div><span>Follow</span></div>
             </div>
-            <div class="element">
-                <div class="imgdiv"><img src="img/icons_new/eshop_noback.svg"></div>
-                <div><span>E-shop</span></div>
+            <div class="second-container-semi" style="display: flex; justify-content: space-between;">
+
+              <div class="element">
+                  <div class="imgdiv"><img src="img/icons_new/eshop_noback.svg"></div>
+                  <div><span>E-shop</span></div>
+              </div>
+              <div class="element">
+                  <div class="imgdiv"><img src="img/icons_new/profile_noback.svg"></div>
+                  <div><span>Profile</span></div>
+              </div>
+              <div class="element">
+                  <div class="imgdiv"><img src="img/icons_new/sendmessage_noback.svg"></div>
+                  <div><span>Send message</span></div>
+              </div>
+              <div class="element">
+                  <div class="imgdiv"><img src="img/icons_new/callus_noback.svg"></div>
+                  <div><span>Call us</span></div>
+              </div>
+              <div class="element">
+                  <div class="imgdiv"><img src="img/icons_new/crowdfunding_noback.svg"></div>
+                  <div><span>Crowdfunding</span></div>
+              </div>
+              <div class="element">
+                  <div class="imgdiv"><img src="img/icons_new/ourforum_noback.svg"></div>
+                  <div><span>Our forum</span></div>
+              </div>
+
+              <div class="element">
+                  <div class="imgdiv"><img src="img/icons_new/donations_noback.svg"></div>
+                  <div><span>Donations</span></div>
+              </div>
+              <div class="element">
+                  <div class="imgdiv"><img src="img/icons_new/marketplace_noback.svg" alt="Marketplace Icon"></div>
+                  <div><span>Marketplace</span></div>
+              </div>
+              <div class="element">
+                  <div class="imgdiv"><img src="img/icons_new/event_noback.svg" alt="Events Icon"></div>
+                  <div><span>Events</span></div>
+              </div>
+              <div class="element">
+                  <div class="imgdiv"><img src="img/icons_new/calendar_noback.svg"></div>
+                  <div><span>Calendar</span></div>
+              </div>
             </div>
-                <div class="element">
-                    <div class="imgdiv"><img src="img/icons_new/donations_noback.svg"></div>
-                    <div><span>Donations</span></div>
-                </div>
-                <div class="element">
-                    <div class="imgdiv"><img src="img/icons_new/marketplace_noback.svg" alt="Marketplace Icon"></div>
-                    <div><span>Marketplace</span></div>
-                </div>
-                <div class="element">
-                    <div class="imgdiv"><img src="img/icons_new/event_noback.svg" alt="Events Icon"></div>
-                    <div><span>Events</span></div>
-                </div>
-                <div class="element">
-                    <div class="imgdiv"><img src="img/icons_new/calendar_noback.svg"></div>
-                    <div><span>Calendar</span></div>
-                </div>
         </div>
     </div>
     <div class="video-description">
