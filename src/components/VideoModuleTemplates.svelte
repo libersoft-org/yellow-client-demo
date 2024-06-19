@@ -47,9 +47,11 @@
                            height="18" xlink:href="img/icons_new/like_noback.svg" y="244" x="-100"></image>
 
 
-              <text font-size="16" font-weight="bold" x="0" y="210" fill="white">{message.price || ''}</text>
-
-
+                  {#if message.price}
+                    <rect x="-45" y="190" width="45" height="20" rx="4" ry="4" fill="#ff0000"></rect>
+                    <text font-size="16" font-weight="bold" x="0" y="210" fill="white">{message.price || ''}</text>
+                  {/if}
+        
                     <text font-size="14" fill="black"
                           class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" y="260"
                           x="-55">{message.like}
@@ -98,8 +100,11 @@
                           class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr"
                           y="238" width="200" x="0">{message.views} views
                     </text>
-                    
+
+                  {#if message.price}
+                    <rect x="-45" y="190" width="45" height="20" rx="4" ry="4" fill="#ff0000"></rect>
                     <text font-size="16" font-weight="bold" x="0" y="210" fill="white">{message.price || ''}</text>
+                  {/if}
                     
                     <image class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" width="18"
                            height="18" xlink:href="img/icons_new/like_noback.svg" y="244" x="-100"></image>
