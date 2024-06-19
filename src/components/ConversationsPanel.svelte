@@ -20,6 +20,7 @@
 	import CallItem from "./CallItem.svelte";
 	import VideoItem from "./VideoItem.svelte";
 	import {activeVideView} from "../stores/mainstore.js";
+  import FollowedProfileContactlistItem from "./FollowedProfileContactlistItem.svelte";
 
 
 	let activeConversationId = null;
@@ -317,10 +318,36 @@
 		arrowElement.classList.toggle('g-opened');
 		event.currentTarget.parentElement.classList.toggle('group-visible');
 	}
+	
+	let followed =  [
+		{
+			id: '22',
+			imageUrl: 'img/profiles/jolie.jpg',
+			name: 'Angelina Jolie',
+		}	];
+	
 </script>
 
 <div class="conversations-panel no-select {!blurred ? '' : 'blurred'}">
 
+
+  {#if $actualMVC === 'profile_list'}
+  
+  
+  <ul class="group-conversation" >
+  <li class = "group-header">
+    <div class="group-name">Followed</div>
+
+						<div class="group-arrow"></div>
+  </li>
+<li class="group-item">
+						<FollowedProfileContactlistItem	contact = {followed[0]} />
+</li>
+  </ul>
+
+
+ {:else}
+  
 	{#each groupedConversations as group, groupIndex}
 		<ul class="group-conversation" >
 			{#if ($actualMVC !== 'call') && ($actualMVC !== 'video') && ($actualMVC != 'newsfeed') && ($actualMVC !== 'news_group_list') && ($actualMVC !== 'profile_list')}
@@ -408,5 +435,7 @@
 			{/each}
 		</ul>
 	{/each}
+	
+	{/if}
 </div>
 
