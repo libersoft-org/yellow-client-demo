@@ -48,7 +48,7 @@
 
 
                   {#if message.price}
-                    <rect x="-45" y="190" width="45" height="20" rx="4" ry="4" fill="#ff0000"></rect>
+                    <rect x="-75" y="193" width="79" height="20" rx="8" ry="4" fill="#ff0000"></rect>
                     <text font-size="16" font-weight="bold" x="0" y="210" fill="white">{message.price || ''}</text>
                   {/if}
         
@@ -102,7 +102,7 @@
                     </text>
 
                   {#if message.price}
-                    <rect x="-45" y="190" width="45" height="20" rx="4" ry="4" fill="#ff0000"></rect>
+                    <rect x="-75" y="193" width="79" height="20" rx="8" ry="4" fill="#ff0000"></rect>
                     <text font-size="16" font-weight="bold" x="0" y="210" fill="white">{message.price || ''}</text>
                   {/if}
                     

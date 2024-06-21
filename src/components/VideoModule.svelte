@@ -15,7 +15,7 @@
 
     let isVideoSelected = false;
     let videoId;
-
+    
     videoSelected.subscribe((value) => {
         isVideoSelected = value;
     });
@@ -48,7 +48,7 @@
     videoCItem[0].channel = 'yellow news';
     videoCItem[0].imageUrl = 'https://i.pravatar.cc/300?u=user5';
     videoCItem[0].preview = 'content/pv1.jpg';
-    videoCItem[0].price = '$19.90'
+    videoCItem[0].price = '19.90 DAI'
     /* 19...90*/
     /* donate button! */
     videoCItem[0].views = 1000;
@@ -115,12 +115,12 @@
     videoCItem[5].views = 10000;
     videoCItem[5].like = 0;
     videoCItem[5].dislike = 100;
-    videoCItem[5].price = '$0.90'
+    videoCItem[5].price = '$0.90 DAI'
 
     let videoLItem = videoCItem.map(item => ({...item}));
     videoLItem[0].preview = 'content/pv7.jpg';
     videoLItem[0].price = undefined;
-    videoLItem[3].price = '$5';
+    videoLItem[3].price = '50.00 DAI';
     videoLItem[1].preview = 'content/pv8.jpg';
     videoLItem[2].preview = 'content/pv9.jpg';
     videoLItem[3].preview = 'content/pv10.jpg';
@@ -141,6 +141,8 @@
     import AudioPlayer from './AudioPlayer.svelte';
     import LeafMap from './utils/LeafMap.svelte';
     import CommentsList from "./CommentsList.svelte";
+    import InputMessageAttachPopout from "./InputMessageAttachPopout.svelte";
+    import MoreActionsPopout from "./MoreActionsPopout.svelte";
 
     let currentTime = '0:00';
     let duration = '0:00';
@@ -566,51 +568,16 @@
                 <div class="imgdiv-subscribe"><img src="./img/icons_new/account_add_noback.svg" alt="Follow Icon"></div>
                 <div><span>Follow</span></div>
             </div>
-            <div class="second-container-semi" style="display: flex; justify-content: space-between;">
-
-              <div class="element">
-                  <div class="imgdiv"><img src="img/icons_new/eshop_noback.svg"></div>
-                  <div><span>E-shop</span></div>
-              </div>
-              <div class="element">
-                  <div class="imgdiv"><img src="img/icons_new/profile_noback.svg"></div>
-                  <div><span>Profile</span></div>
-              </div>
-              <div class="element">
-                  <div class="imgdiv"><img src="img/icons_new/sendmessage_noback.svg"></div>
-                  <div><span>Send message</span></div>
-              </div>
-              <div class="element">
-                  <div class="imgdiv"><img src="img/icons_new/callus_noback.svg"></div>
-                  <div><span>Call us</span></div>
-              </div>
-              <div class="element">
-                  <div class="imgdiv"><img src="img/icons_new/crowdfunding_noback.svg"></div>
-                  <div><span>Crowdfunding</span></div>
-              </div>
-              <div class="element">
-                  <div class="imgdiv"><img src="img/icons_new/ourforum_noback.svg"></div>
-                  <div><span>Our forum</span></div>
-              </div>
-
-              <div class="element">
-                  <div class="imgdiv"><img src="img/icons_new/donations_noback.svg"></div>
-                  <div><span>Donations</span></div>
-              </div>
-              <div class="element">
-                  <div class="imgdiv"><img src="img/icons_new/marketplace_noback.svg" alt="Marketplace Icon"></div>
-                  <div><span>Marketplace</span></div>
-              </div>
-              <div class="element">
-                  <div class="imgdiv"><img src="img/icons_new/event_noback.svg" alt="Events Icon"></div>
-                  <div><span>Events</span></div>
-              </div>
-              <div class="element">
-                  <div class="imgdiv"><img src="img/icons_new/calendar_noback.svg"></div>
-                  <div><span>Calendar</span></div>
-              </div>
-            </div>
         </div>
+
+
+
+        <div class="second-container-semi" style="display: flex; justify-content: space-between;">
+            <MoreActionsPopout />
+        </div>
+
+
+
     </div>
     <div class="video-description">
         <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
