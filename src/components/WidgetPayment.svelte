@@ -1,24 +1,18 @@
 <script>
-
 import Modal from './Modal.svelte';
 
 let mainModalOpen = false;
 
 function closeModal() {
-  mainModalOpen = false;
+ mainModalOpen = false;
 }
-
 </script>
 
 <div>
-  
-  <b>payment</b>
-  
+  <strong>Payment</strong>
   <div>
     amount: $17.00
   </div>
-
-  
   {#if mainModalOpen}
     <Modal on:close={closeModal} title="Pay">
   

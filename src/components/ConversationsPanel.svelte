@@ -319,12 +319,21 @@
 		event.currentTarget.parentElement.classList.toggle('group-visible');
 	}
 	
-	let followed =  [
+	let followed = [
 		{
 			id: '22',
 			imageUrl: 'img/profiles/jolie.jpg',
 			name: 'Angelina Jolie',
-		}	];
+		}, {
+			id: '22',
+			imageUrl: 'img/profiles/pitt.jpg',
+			name: 'Brad Pitt',
+		}, {
+			id: '22',
+			imageUrl: 'img/profiles/aniston.jpg',
+			name: 'Jennifer Aniston',
+		}
+ ];
 	
 </script>
 

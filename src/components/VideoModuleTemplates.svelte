@@ -48,8 +48,8 @@
 
 
                   {#if message.price}
-                    <rect x="-75" y="193" width="79" height="20" rx="8" ry="4" fill="#ff0000"></rect>
-                    <text font-size="16" font-weight="bold" x="0" y="210" fill="white">{message.price || ''}</text>
+                    <rect x="-62" y="188" width="60" height="20" rx="8" ry="4" fill="#ff0000"></rect>
+                    <text font-size="16" font-weight="bold" x="-5" y="205" fill="white">{message.price || ''}</text>
                   {/if}
         
                     <text font-size="14" fill="black"
@@ -102,8 +102,8 @@
                     </text>
 
                   {#if message.price}
-                    <rect x="-75" y="193" width="79" height="20" rx="8" ry="4" fill="#ff0000"></rect>
-                    <text font-size="16" font-weight="bold" x="0" y="210" fill="white">{message.price || ''}</text>
+                    <rect x="-62" y="188" width="60" height="20" rx="8" ry="4" fill="#ff0000"></rect>
+                    <text font-size="16" font-weight="bold" x="-5" y="205" fill="white">{message.price || ''}</text>
                   {/if}
                     
                     <image class="s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr s-BTGIt7ri9Tsr" width="18"

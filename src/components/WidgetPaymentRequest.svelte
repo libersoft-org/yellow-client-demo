@@ -1,35 +1,29 @@
-<script>
-  
-</script>
-
 <style>
+ .container {
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ }
 
-
-.container {
- text-align: center;
- background: white;
- padding: 20px;
- border-radius: 10px;
- box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.button {
-   font-size: 2em;
-}
-
+ .button {
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: var(--secondary-color);
+  color: #FFF;
+  cursor: pointer;
+ }
 </style>
 
 
-
-<b>payment request</b>
+<strong>Payment request</strong>
 <div class="container">
-
 <img src="content/qr.png" alt="QR Code" width="200" height="200">
-
-<p>Amount: 0.0001 BTC</p>
-
-
-<div class="button">
-  <button>Pay</button>
-</div>
+<p>Amount: <strong>8.3 DAI</strong></p>
+<p>Network: <strong>Polygon</strong></p>
+<p>Note: <strong>Software license</strong></p>
+<div class="button">Pay</div>
 </div>
