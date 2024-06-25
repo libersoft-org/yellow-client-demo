@@ -545,7 +545,6 @@
         </div>
 
         <div class="tlacitka">
-
           <div class="second-container-semi">
             <div class="like-dislike">
               <div class="element-l">
@@ -570,52 +569,46 @@
               <div><span>Follow</span></div>
             </div>
           </div>
-
-
-          <div class="second-container-semi" style="display: flex; justify-content: space-between;">
-            <div class="second-container-semi" style="display: flex; justify-content: space-between;">
-
-              <div class="element">
-                <div class="imgdiv"><img src="img/icons_new/eshop_noback_black.svg" alt="E-shop"></div>
-                <div><span>E-shop</span></div>
-              </div>
-              <div class="element">
-                <div class="imgdiv"><img src="img/icons_new/profile_noback.svg" alt="Profile"></div>
-                <div><span>Profile</span></div>
-              </div>
-              <div class="element">
-                <div class="imgdiv"><img src="img/icons_new/sendmessage_noback.svg" alt="Send messages"></div>
-                <div><span>Send message</span></div>
-              </div>
-              <div class="element">
-                <div class="imgdiv"><img src="img/icons_new/callus_noback.svg" alt="Call us"></div>
-                <div><span>Call us</span></div>
-              </div>
-              <div class="element">
-                <div class="imgdiv"><img src="img/icons_new/crowdfunding_noback_black.svg" alt="Crowdfunding"></div>
-                <div><span>Crowdfunding</span></div>
-              </div>
-              <div class="element">
-                <div class="imgdiv"><img src="img/icons_new/ourforum_noback.svg" alt="Our forum"></div>
-                <div><span>Our forum</span></div>
-              </div>
-
-              <div class="element">
-                <div class="imgdiv"><img src="img/icons_new/donations_noback_black.svg" alt="Donations"></div>
-                <div><span>Donations</span></div>
-              </div>
-              <div class="element">
-                <div class="imgdiv"><img src="img/icons_new/marketplace_noback_black.svg" alt="Marketplace"></div>
-                <div><span>Marketplace</span></div>
-              </div>
-              <div class="element">
-                <div class="imgdiv"><img src="img/icons_new/event_noback_black.svg" alt="Events"></div>
-                <div><span>Events</span></div>
-              </div>
-              <div class="element">
-                <div class="imgdiv"><img src="img/icons_new/calendar_noback_black.svg" alt="Calendar"></div>
-                <div><span>Calendar</span></div>
-              </div>
+          <div class="second-container-semi" style="display: flex; justify-content: right; flex-wrap: wrap">
+            <div class="element">
+              <div class="imgdiv"><img src="img/icons_new/eshop_noback_black.svg" alt="E-shop"></div>
+              <div><span>E-shop</span></div>
+            </div>
+            <div class="element">
+              <div class="imgdiv"><img src="img/icons_new/profile_noback.svg" alt="Profile"></div>
+              <div><span>Profile</span></div>
+            </div>
+            <div class="element">
+              <div class="imgdiv"><img src="img/icons_new/sendmessage_noback.svg" alt="Send messages"></div>
+              <div><span>Send message</span></div>
+            </div>
+            <div class="element">
+              <div class="imgdiv"><img src="img/icons_new/callus_noback.svg" alt="Call us"></div>
+              <div><span>Call us</span></div>
+            </div>
+            <div class="element">
+              <div class="imgdiv"><img src="img/icons_new/crowdfunding_noback_black.svg" alt="Crowdfunding"></div>
+              <div><span>Crowdfunding</span></div>
+            </div>
+            <div class="element">
+              <div class="imgdiv"><img src="img/icons_new/ourforum_noback.svg" alt="Our forum"></div>
+              <div><span>Our forum</span></div>
+            </div>
+            <div class="element">
+              <div class="imgdiv"><img src="img/icons_new/donations_noback_black.svg" alt="Donations"></div>
+              <div><span>Donations</span></div>
+            </div>
+            <div class="element">
+              <div class="imgdiv"><img src="img/icons_new/marketplace_noback_black.svg" alt="Marketplace"></div>
+              <div><span>Marketplace</span></div>
+            </div>
+            <div class="element">
+              <div class="imgdiv"><img src="img/icons_new/event_noback_black.svg" alt="Events"></div>
+              <div><span>Events</span></div>
+            </div>
+            <div class="element">
+              <div class="imgdiv"><img src="img/icons_new/calendar_noback_black.svg" alt="Calendar"></div>
+              <div><span>Calendar</span></div>
             </div>
           </div>
         </div>
@@ -889,9 +882,9 @@
     .videodetail .video-title, .videodetail .video-info {
         margin: 8px 0px;
         flex-direction: row;
-        align-content: space-between;
+        justify-content: space-between;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
 
     }
 
@@ -1106,7 +1099,9 @@
     }
     
     .tlacitka {
+        display: flex;
         flex-direction: column;
+        justify-content: right;
     }
     
 </style>
