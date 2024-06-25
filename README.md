@@ -24,7 +24,7 @@ npm i
 **a)** Build the app
 
 ```bash
-npm run build
+./build.sh
 ```
 
 ... and then you can either host it on your web server or run a web server for it:
@@ -32,6 +32,14 @@ npm run build
 ```bash
 npm run preview -- --host 0.0.0.0
 ```
+
+**b)** Build the app and pack it
+
+```bash
+./build-pack.sh
+```
+
+... then you will find **yellow.tar.gz** file in project root directory. Running the build script again will delete the original packed file.
 
 **b)** To start the standalone web server:
 

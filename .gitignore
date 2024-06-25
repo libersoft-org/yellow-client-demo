@@ -1,7 +1,10 @@
-*.log
 /.svelte-kit/
-/node_modules/
 /.idea/
-poznamky.txt
-package-lock.json
 /build/
+/node_modules/
+package-lock.json
+commit.sh
+.secret_git
+*.tar.gz
+*.log
+
