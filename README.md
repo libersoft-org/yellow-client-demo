@@ -47,6 +47,12 @@ npm run preview -- --host 0.0.0.0
 npm run liveserver
 ```
 
+**d)** To start the standalone server in development mode (hot reload, but slow):
+
+```bash
+npm run dev -- --host
+```
+
 ## Documentation
 
 - [**Development roadmap**](./ROADMAP.md)
