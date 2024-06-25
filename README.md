@@ -27,7 +27,7 @@ npm i
 ./build.sh
 ```
 
-... and then you can either host it on your web server or run a web server for it:
+... and then you can either host it on your web server (the content is in "build" directory) or run a web server for it:
 
 ```bash
 npm run preview -- --host 0.0.0.0
