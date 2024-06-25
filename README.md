@@ -41,7 +41,7 @@ npm run preview -- --host 0.0.0.0
 
 ... then you will find **yellow.tar.gz** file in project root directory. Running the build script again will delete the original packed file.
 
-**b)** To start the standalone web server:
+**c)** To start the standalone web server:
 
 ```bash
 npm run liveserver
