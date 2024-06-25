@@ -19,8 +19,6 @@
 }
 
 .wallet_box {
-  
-  background-image: url('../img/background/doodle.png');
   background-repeat: repeat;
   background-size: 500px;
   background-color: hsl(
@@ -33,7 +31,7 @@
  flex-direction: column;
  margin: 20px auto;
  width: 100%;
- height: calc(100vh - 40px);
+ height: calc(100vh - 100px);
  max-width: 768px;
  border-radius: 10px;
  overflow: hidden;
