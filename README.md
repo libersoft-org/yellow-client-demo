@@ -2,11 +2,11 @@
 
 [![Created Badge](https://badges.pufler.dev/created/libersoft-org/yellow-client-web)](https://badges.pufler.dev) [![Updated Badge](https://badges.pufler.dev/updated/libersoft-org/yellow-client-web)](https://badges.pufler.dev) [![Visits Badge](https://badges.pufler.dev/visits/libersoft-org/yellow-client-web)](https://badges.pufler.dev)
 
-This is the web client implementation of [**ODTP Protocol**](https://github.com/libersoft-org/odtp-documentation/).
+This is the implementation of **Yellow Web Client**.
 
 If you just want to get your free [**Yellow**](https://yellow.libersoft.org) account hosted on our server, please navigate to:
 
-[![YellowNet.io](https://raw.githubusercontent.com/libersoft-org/odtp-documentation/main/logo.png)](https://yellownet.io)
+[![YellowNet.io](https://raw.githubusercontent.com/libersoft-org/yellow-documentation/main/logo.png)](https://yellownet.io)
 
 ## Installation
 
