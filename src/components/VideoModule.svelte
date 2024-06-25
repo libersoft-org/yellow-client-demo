@@ -15,7 +15,7 @@
 
     let isVideoSelected = false;
     let videoId;
-    
+
     videoSelected.subscribe((value) => {
         isVideoSelected = value;
     });
@@ -142,7 +142,6 @@
     import LeafMap from './utils/LeafMap.svelte';
     import CommentsList from "./CommentsList.svelte";
     import InputMessageAttachPopout from "./InputMessageAttachPopout.svelte";
-    import MoreActionsPopout from "./MoreActionsPopout.svelte";
 
     let currentTime = '0:00';
     let duration = '0:00';
@@ -195,403 +194,447 @@
 </script>
 
 <div class="conversation-detail videolist" class:hidden={$activeVideView != "videolist"}>
-    <div class="videomodule-news">
-        <div class="videomodule-title">
-            <span>Video</span>
+  <div class="videomodule-news">
+    <div class="videomodule-title">
+      <span>Video</span>
 
-        </div>
-        <div class="container-for-carousel">
-            <div class="back-button">
-                <a class="icon" class:hidden={carpos1<=0}
-                   on:click="{()=>{carpos1 -= 1;document.querySelector('.car1-p').click()}}" alt="search"><img
-                        src="img/icons/icon_back.svg" alt="search"/></a>
-            </div>
-            <div class="carousel-pack">
-                <div class="carousel-container">
-                    <Carousel
-                            let:showPrevPage
-                            let:showNextPage
-                            particlesToShow={18} particlesToScroll={1} arrows=false loop>
-                        <div class="car1-p" slot="prev" on:click={showPrevPage}></div>
-
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[0]}}>
-                            <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[1]}}>
-                            <VideoModuletemplates message={videoCItem[1]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[2]}}>
-                            <VideoModuletemplates message={videoCItem[2]} templateType="video"/>
-                        </div>
-
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[3]}}>
-                            <VideoModuletemplates message={videoCItem[3]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[4]}}>
-                            <VideoModuletemplates message={videoCItem[4]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[5]}}>
-                            <VideoModuletemplates message={videoCItem[5]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[6]}}>
-                            <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[0]}}>
-                            <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[1]}}>
-                            <VideoModuletemplates message={videoCItem[1]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[2]}}>
-                            <VideoModuletemplates message={videoCItem[2]} templateType="video"/>
-                        </div>
-
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[3]}}>
-                            <VideoModuletemplates message={videoCItem[3]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[4]}}>
-                            <VideoModuletemplates message={videoCItem[4]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[5]}}>
-                            <VideoModuletemplates message={videoCItem[5]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[6]}}>
-                            <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[0]}}>
-                            <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[1]}}>
-                            <VideoModuletemplates message={videoCItem[1]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[2]}}>
-                            <VideoModuletemplates message={videoCItem[2]} templateType="video"/>
-                        </div>
-
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[3]}}>
-                            <VideoModuletemplates message={videoCItem[3]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[4]}}>
-                            <VideoModuletemplates message={videoCItem[4]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[5]}}>
-                            <VideoModuletemplates message={videoCItem[5]} templateType="video"/>
-                        </div>
-                        <div class="carousel-item"
-                             on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[6]}}>
-                            <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
-                        </div>
-
-
-
-                        <div class="car1-n" slot="next" on:click={showNextPage}></div>
-                    </Carousel>
-                </div>
-            </div>
-            <div class="back-button">
-                <a class="icon" class:hidden={carpos1>6}
-                   on:click="{()=>{carpos1+=1;document.querySelector('.car1-n').click()}}" alt="search"><img
-                        src="img/icons/icon_forw.svg" alt="search"/></a>
-            </div>
-        </div>
     </div>
+    <div class="container-for-carousel">
+      <div class="back-button">
+        <a class="icon" class:hidden={carpos1<=0}
+           on:click="{()=>{carpos1 -= 1;document.querySelector('.car1-p').click()}}" alt="search"><img
+                src="img/icons/icon_back.svg" alt="search"/></a>
+      </div>
+      <div class="carousel-pack">
+        <div class="carousel-container">
+          <Carousel
+                  let:showPrevPage
+                  let:showNextPage
+                  particlesToShow={18} particlesToScroll={1} arrows=false loop>
+            <div class="car1-p" slot="prev" on:click={showPrevPage}></div>
 
-    <div class="videomodule-live">
-        <div class="videomodule-title">
-            <span>Live</span>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[0]}}>
+              <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
+            </div>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[1]}}>
+              <VideoModuletemplates message={videoCItem[1]} templateType="video"/>
+            </div>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[2]}}>
+              <VideoModuletemplates message={videoCItem[2]} templateType="video"/>
+            </div>
+
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[3]}}>
+              <VideoModuletemplates message={videoCItem[3]} templateType="video"/>
+            </div>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[4]}}>
+              <VideoModuletemplates message={videoCItem[4]} templateType="video"/>
+            </div>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[5]}}>
+              <VideoModuletemplates message={videoCItem[5]} templateType="video"/>
+            </div>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[6]}}>
+              <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
+            </div>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[0]}}>
+              <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
+            </div>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[1]}}>
+              <VideoModuletemplates message={videoCItem[1]} templateType="video"/>
+            </div>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[2]}}>
+              <VideoModuletemplates message={videoCItem[2]} templateType="video"/>
+            </div>
+
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[3]}}>
+              <VideoModuletemplates message={videoCItem[3]} templateType="video"/>
+            </div>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[4]}}>
+              <VideoModuletemplates message={videoCItem[4]} templateType="video"/>
+            </div>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[5]}}>
+              <VideoModuletemplates message={videoCItem[5]} templateType="video"/>
+            </div>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[6]}}>
+              <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
+            </div>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[0]}}>
+              <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
+            </div>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[1]}}>
+              <VideoModuletemplates message={videoCItem[1]} templateType="video"/>
+            </div>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[2]}}>
+              <VideoModuletemplates message={videoCItem[2]} templateType="video"/>
+            </div>
+
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[3]}}>
+              <VideoModuletemplates message={videoCItem[3]} templateType="video"/>
+            </div>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[4]}}>
+              <VideoModuletemplates message={videoCItem[4]} templateType="video"/>
+            </div>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[5]}}>
+              <VideoModuletemplates message={videoCItem[5]} templateType="video"/>
+            </div>
+            <div class="carousel-item"
+                 on:click={()=>{$activeVideView='videodetail'; selectedVid = videoCItem[6]}}>
+              <VideoModuletemplates message={videoCItem[0]} templateType="video"/>
+            </div>
+
+
+            <div class="car1-n" slot="next" on:click={showNextPage}></div>
+          </Carousel>
         </div>
-        <div class="container-for-carousel">
-            <div class="back-button">
-                <a class="icon" class:hidden={carpos2<=0}
-                   on:click="{()=>{carpos2 -=1 ;document.querySelector('.car1-p2').click()}}" alt="search"><img
-                        src="img/icons/icon_back.svg" alt="search"/></a>
-            </div>
-            <div class="carousel-pack">
-                <div class="carousel-container">
-                    <Carousel
-                            let:showPrevPage
-                            let:showNextPage
-                            particlesToShow={18} particlesToScroll={1} arrows=false loop>
-                        <div class="car1-p2" slot="prev" on:click={showPrevPage}></div>
-
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[0]} templateType="live"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[1]} templateType="live"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[2]} templateType="live"/>
-                        </div>
-
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[3]} templateType="live"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[4]} templateType="live"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[5]} templateType="live"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[0]} templateType="live"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[1]} templateType="live"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[2]} templateType="live"/>
-                        </div>
-
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[3]} templateType="live"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[4]} templateType="live"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[5]} templateType="live"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[0]} templateType="live"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[1]} templateType="live"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[2]} templateType="live"/>
-                        </div>
-
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[3]} templateType="live"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[4]} templateType="video"/>
-                        </div>
-
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoLItem[5]} templateType="video"/>
-                        </div>
-
-                        <div class="car1-n2" slot="next" on:click={showNextPage}></div>
-                    </Carousel>
-                </div>
-            </div>
-            <div class="back-button">
-                <a class="icon" class:hidden={carpos2>6}
-                   on:click="{()=>{carpos2 +=1; document.querySelector('.car1-n2').click()}}" alt="search"><img
-                        src="img/icons/icon_forw.svg" alt="search"/></a>
-            </div>
-        </div>
+      </div>
+      <div class="back-button">
+        <a class="icon" class:hidden={carpos1>6}
+           on:click="{()=>{carpos1+=1;document.querySelector('.car1-n').click()}}" alt="search"><img
+                src="img/icons/icon_forw.svg" alt="search"/></a>
+      </div>
     </div>
-    <div class="videomodule-reels">
-        <div class="videomodule-title">
-            <span>Reels</span>
+  </div>
 
-        </div>
-        <div class="container-for-carousel reels">
-            <div class="back-button">
-                <a class="icon" class:hidden={carpos3<=0}
-                   on:click="{()=>{carpos3 -=1; document.querySelector('.car1-p3').click()}}" alt="search"><img
-                        src="img/icons/icon_back.svg" alt="search"/></a>
-            </div>
-            <div class="carousel-pack">
-                <div class="carousel-container reels">
-                    <Carousel
-                            let:showPrevPage
-                            let:showNextPage
-                            particlesToShow={18} particlesToScroll={1} arrows=false loop>
-                        <div class="car1-p3" slot="prev" on:click={showPrevPage}></div>
-
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[0]} templateType="reels"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[1]} templateType="reels"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[2]} templateType="reels"/>
-                        </div>
-
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[3]} templateType="reels"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[4]} templateType="reels"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[5]} templateType="reels"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[0]} templateType="reels"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[1]} templateType="reels"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[2]} templateType="reels"/>
-                        </div>
-
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[3]} templateType="reels"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[4]} templateType="reels"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[5]} templateType="reels"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[0]} templateType="reels"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[1]} templateType="reels"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[2]} templateType="reels"/>
-                        </div>
-
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[3]} templateType="reels"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[4]} templateType="reels"/>
-                        </div>
-                        <div class="carousel-item">
-                            <VideoModuletemplates message={videoRItem[5]} templateType="reels"/>
-                        </div>
-
-                        <div class="car1-n3" slot="next" on:click={showNextPage}></div>
-                    </Carousel>
-                </div>
-            </div>
-            <div class="back-button">
-                <a class="icon" class:hidden={carpos3>6}
-                   on:click="{()=>{carpos3 += 1 ;document.querySelector('.car1-n3').click()}}" alt="search"><img
-                        src="img/icons/icon_forw.svg" alt="search"/></a>
-            </div>
-        </div>
+  <div class="videomodule-live">
+    <div class="videomodule-title">
+      <span>Live</span>
     </div>
+    <div class="container-for-carousel">
+      <div class="back-button">
+        <a class="icon" class:hidden={carpos2<=0}
+           on:click="{()=>{carpos2 -=1 ;document.querySelector('.car1-p2').click()}}" alt="search"><img
+                src="img/icons/icon_back.svg" alt="search"/></a>
+      </div>
+      <div class="carousel-pack">
+        <div class="carousel-container">
+          <Carousel
+                  let:showPrevPage
+                  let:showNextPage
+                  particlesToShow={18} particlesToScroll={1} arrows=false loop>
+            <div class="car1-p2" slot="prev" on:click={showPrevPage}></div>
+
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[0]} templateType="live"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[1]} templateType="live"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[2]} templateType="live"/>
+            </div>
+
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[3]} templateType="live"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[4]} templateType="live"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[5]} templateType="live"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[0]} templateType="live"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[1]} templateType="live"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[2]} templateType="live"/>
+            </div>
+
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[3]} templateType="live"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[4]} templateType="live"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[5]} templateType="live"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[0]} templateType="live"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[1]} templateType="live"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[2]} templateType="live"/>
+            </div>
+
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[3]} templateType="live"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[4]} templateType="video"/>
+            </div>
+
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoLItem[5]} templateType="video"/>
+            </div>
+
+            <div class="car1-n2" slot="next" on:click={showNextPage}></div>
+          </Carousel>
+        </div>
+      </div>
+      <div class="back-button">
+        <a class="icon" class:hidden={carpos2>6}
+           on:click="{()=>{carpos2 +=1; document.querySelector('.car1-n2').click()}}" alt="search"><img
+                src="img/icons/icon_forw.svg" alt="search"/></a>
+      </div>
+    </div>
+  </div>
+  <div class="videomodule-reels">
+    <div class="videomodule-title">
+      <span>Reels</span>
+
+    </div>
+    <div class="container-for-carousel reels">
+      <div class="back-button">
+        <a class="icon" class:hidden={carpos3<=0}
+           on:click="{()=>{carpos3 -=1; document.querySelector('.car1-p3').click()}}" alt="search"><img
+                src="img/icons/icon_back.svg" alt="search"/></a>
+      </div>
+      <div class="carousel-pack">
+        <div class="carousel-container reels">
+          <Carousel
+                  let:showPrevPage
+                  let:showNextPage
+                  particlesToShow={18} particlesToScroll={1} arrows=false loop>
+            <div class="car1-p3" slot="prev" on:click={showPrevPage}></div>
+
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[0]} templateType="reels"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[1]} templateType="reels"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[2]} templateType="reels"/>
+            </div>
+
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[3]} templateType="reels"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[4]} templateType="reels"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[5]} templateType="reels"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[0]} templateType="reels"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[1]} templateType="reels"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[2]} templateType="reels"/>
+            </div>
+
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[3]} templateType="reels"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[4]} templateType="reels"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[5]} templateType="reels"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[0]} templateType="reels"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[1]} templateType="reels"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[2]} templateType="reels"/>
+            </div>
+
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[3]} templateType="reels"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[4]} templateType="reels"/>
+            </div>
+            <div class="carousel-item">
+              <VideoModuletemplates message={videoRItem[5]} templateType="reels"/>
+            </div>
+
+            <div class="car1-n3" slot="next" on:click={showNextPage}></div>
+          </Carousel>
+        </div>
+      </div>
+      <div class="back-button">
+        <a class="icon" class:hidden={carpos3>6}
+           on:click="{()=>{carpos3 += 1 ;document.querySelector('.car1-n3').click()}}" alt="search"><img
+                src="img/icons/icon_forw.svg" alt="search"/></a>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="conversation-detail videodetail" class:hidden={$activeVideView != "videodetail"}>
-    <div class="video-detail-item">
+  <div class="video-detail-item">
     <div class="videolist-button" on:click={()=>{
                 $activeVideView = 'videolist';
     }}>
-        <span>back to videos</span>
+      <span>back to videos</span>
     </div>
     <div class="videocontainer">
-    <div class="video-detail">
+      <div class="video-detail">
         <div class="image-container video svelte-{isPaused ? 'paused' : ''}" on:click={toggleVideoPlayback}>
-            <div class="icon-container">
-                <img src="../img/icons/icn_play.svg" alt="Play" class="play-icon"/>
-            </div>
-            <video
-                    id="video-{selectedVid.id}"
-                    src={selectedVid.videoUrl}
-                    playsinline
-                    poster={selectedVid.preview}
-                    on:play={handleVideoPlay}
-                    on:pause={handleVideoPause}
-                    on:timeupdate={updateTime}
-            >
-                <track kind="captions"/>
-            </video>
+          <div class="icon-container">
+            <img src="../img/icons/icn_play.svg" alt="Play" class="play-icon"/>
+          </div>
+          <video
+                  id="video-{selectedVid.id}"
+                  src={selectedVid.videoUrl}
+                  playsinline
+                  poster={selectedVid.preview}
+                  on:play={handleVideoPlay}
+                  on:pause={handleVideoPause}
+                  on:timeupdate={updateTime}
+          >
+            <track kind="captions"/>
+          </video>
         </div>
-    </div>
-    <div class="video-title">
+      </div>
+      <div class="video-title">
         <div class="title">{selectedVid.name}</div>
         <div class="views">
-            <div class="img"><img src="img/icons_new/views_noback.svg"/></div>
-            <div>{selectedVid.views}</div>
+          <div class="img"><img src="img/icons_new/views_noback.svg"/></div>
+          <div>{selectedVid.views}</div>
         </div>
-    </div>
-    <div class="video-info">
+      </div>
+      <div class="video-info">
         <div class="photo-video-info" on:click={() => {
 
 							$activeVideView='videolist';
 							document.querySelector('.conversation').click();
 
                         }}>
-            <div class="conversation__user-photo">
-                <img
-                        class="photo-circle photo-circle--medium"
-                        src={selectedVid.imageUrl}
-                        alt={selectedVid.imageUrl}
-                />
-            </div>
-            <div class="conversation__info">
-                <div class="conversation__info__user-name">{selectedVid.channel}</div>
-                <div class="conversation__info__user-email">152 000 followers</div>
-            </div>
+          <div class="conversation__user-photo">
+            <img
+                    class="photo-circle photo-circle--medium"
+                    src={selectedVid.imageUrl}
+                    alt={selectedVid.imageUrl}
+            />
+          </div>
+          <div class="conversation__info">
+            <div class="conversation__info__user-name">{selectedVid.channel}</div>
+            <div class="conversation__info__user-email">152 000 followers</div>
+          </div>
         </div>
-        <div class="second-container-semi" style="display: flex; justify-content: space-between;">
+
+        <div class="tlacitka">
+
+          <div class="second-container-semi">
             <div class="like-dislike">
-                <div class="element-l">
-                    <div class="imgdiv-like"><img src="./img/icons_new/like_noback.svg" alt="Like Icon"></div>
-                    <div><span>{selectedVid.like} </span></div>
-                </div>
-                <div class="element-p">
-                    <div class="imgdiv-dislike"><img src="./img/icons_new/dislike_noback.svg" alt="Dislike Icon"></div>
-                    <div><span>{selectedVid.dislike}</span></div>
-                </div>
+              <div class="element-l">
+                <div class="imgdiv-like"><img src="./img/icons_new/like_noback.svg" alt="Like Icon"></div>
+                <div><span>{selectedVid.like} </span></div>
+              </div>
+              <div class="element-p">
+                <div class="imgdiv-dislike"><img src="./img/icons_new/dislike_noback.svg" alt="Dislike Icon"></div>
+                <div><span>{selectedVid.dislike}</span></div>
+              </div>
             </div>
             <div class="element">
-                <div class="imgdiv-share"><img src="./img/icons_new/forward_noback.svg" alt="Share Icon"></div>
-                <div><span>Share</span></div>
+              <div class="imgdiv-share"><img src="./img/icons_new/forward_noback.svg" alt="Share Icon"></div>
+              <div><span>Share</span></div>
             </div>
             <div class="element">
-                <div class="imgdiv-download"><img src="./img/icons/icon_download.svg" alt="Download Icon"></div>
-                <div><span>Download</span></div>
+              <div class="imgdiv-download"><img src="./img/icons/icon_download.svg" alt="Download Icon"></div>
+              <div><span>Download</span></div>
             </div>
             <div class="element">
-                <div class="imgdiv-subscribe"><img src="./img/icons_new/account_add_noback.svg" alt="Follow Icon"></div>
-                <div><span>Follow</span></div>
+              <div class="imgdiv-subscribe"><img src="./img/icons_new/account_add_noback.svg" alt="Follow Icon"></div>
+              <div><span>Follow</span></div>
             </div>
+          </div>
+
+
+          <div class="second-container-semi" style="display: flex; justify-content: space-between;">
+            <div class="second-container-semi" style="display: flex; justify-content: space-between;">
+
+              <div class="element">
+                <div class="imgdiv"><img src="img/icons_new/eshop_noback.svg"></div>
+                <div><span>E-shop</span></div>
+              </div>
+              <div class="element">
+                <div class="imgdiv"><img src="img/icons_new/profile_noback.svg"></div>
+                <div><span>Profile</span></div>
+              </div>
+              <div class="element">
+                <div class="imgdiv"><img src="img/icons_new/sendmessage_noback.svg"></div>
+                <div><span>Send message</span></div>
+              </div>
+              <div class="element">
+                <div class="imgdiv"><img src="img/icons_new/callus_noback.svg"></div>
+                <div><span>Call us</span></div>
+              </div>
+              <div class="element">
+                <div class="imgdiv"><img src="img/icons_new/crowdfunding_noback.svg"></div>
+                <div><span>Crowdfunding</span></div>
+              </div>
+              <div class="element">
+                <div class="imgdiv"><img src="img/icons_new/ourforum_noback.svg"></div>
+                <div><span>Our forum</span></div>
+              </div>
+
+              <div class="element">
+                <div class="imgdiv"><img src="img/icons_new/donations_noback.svg"></div>
+                <div><span>Donations</span></div>
+              </div>
+              <div class="element">
+                <div class="imgdiv"><img src="img/icons_new/marketplace_noback.svg" alt="Marketplace Icon"></div>
+                <div><span>Marketplace</span></div>
+              </div>
+              <div class="element">
+                <div class="imgdiv"><img src="img/icons_new/event_noback.svg" alt="Events Icon"></div>
+                <div><span>Events</span></div>
+              </div>
+              <div class="element">
+                <div class="imgdiv"><img src="img/icons_new/calendar_noback.svg"></div>
+                <div><span>Calendar</span></div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
 
-
-        <div class="second-container-semi" style="display: flex; justify-content: space-between;">
-            <MoreActionsPopout />
-        </div>
-
-
-
-    </div>
-    <div class="video-description">
+      <div class="video-description">
         <div class="element">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae
-            vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+          vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
         </div>
         <div class="element"><b>Link: <a href="">www.libersoft.org</a></b></div>
-    </div>
+      </div>
     </div>
     <div class="comment-list">
-        <CommentsList/>
+      <CommentsList/>
     </div>
-</div>
+  </div>
 </div>
 
 
@@ -607,10 +650,11 @@
         border-radius: 10px;
         margin: 16px auto 16px auto;
         background: var(--primary-color-p44);
-        width:calc(100% - 64px);
+        width: calc(100% - 64px);
         max-width: var(--container-max-width);
         box-shadow: var(--basic-shadow);
     }
+
     .video-detail {
         margin: 8px 0px 8px 0px;
         position: relative;
@@ -754,10 +798,10 @@
         height: 48px;
     }
 
-    .conversation-detail.videolist, .conversation-detail.videodetail{
+    .conversation-detail.videolist, .conversation-detail.videodetail {
         box-shadow: none !important;
         background: transparent;
-        height:calc(100% - 0px);
+        height: calc(100% - 0px);
         display: flex;
         justify-content: start;
         flex-direction: column;
@@ -785,7 +829,7 @@
         background: var(--primary-color-p35);
         box-shadow: var(--basic-shadow);
         padding-top: 16px;
-       /* width: calc(100% - 128px); */
+        /* width: calc(100% - 128px); */
     }
 
     .subscibers-button, .videolist-button {
@@ -797,8 +841,9 @@
         padding: 8px;
         text-align: center;
     }
+
     .videolist-button span {
-        font-weight:bold;
+        font-weight: bold;
     }
 
     .image-container.video {
@@ -838,7 +883,7 @@
     }
 
     .hidden {
-        display: none!important;
+        display: none !important;
     }
 
     .videodetail .video-title, .videodetail .video-info {
@@ -999,13 +1044,13 @@
         height: 100%;
     }
 
-    .videodetail{
+    .videodetail {
         container-type: inline-size;
         container-name: cod;
     }
 
     @container cod (max-width:540px) {
-        .video-detail-item{
+        .video-detail-item {
             margin: 8px 8px 8px 8px !important;
             width: calc(100% - 16px) !important;
         }
@@ -1054,8 +1099,14 @@
     .comment-list {
         margin: 8px 32px 8px 32px;
     }
+
     .videocontainer {
 
         margin: 8px 32px 8px 32px;
     }
+    
+    .tlacitka {
+        flex-direction: column;
+    }
+    
 </style>
